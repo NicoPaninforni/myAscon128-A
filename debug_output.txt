@@ -1,0 +1,906 @@
+ initial value:
+00001000808c0001 0706050403020100 0f0e0d0c0b0a0908 08090a0b0c0d0e0f 0001020304050607
+ permutation input:
+  x0=00001000808c0001
+  x1=0706050403020100
+  x2=0f0e0d0c0b0a0908
+  x3=08090a0b0c0d0e0f
+  x4=0001020304050607
+ round constant addition:
+  x0=00001000808c0001
+  x1=0706050403020100
+  x2=0f0e0d0c0b0a09f8
+  x3=08090a0b0c0d0e0f
+  x4=0001020304050607
+ substitution layer:
+  x0=07071707878b07f6
+  x1=0f0e1d0c8b8609f9
+  x2=f7f7f7f7f7f7f707
+  x3=00001000808400f1
+  x4=0f0e0d0c0b0a0908
+ linear diffusion layer:
+  x0=1f49a887151a877f
+  x1=6e69f97b25a85a0b
+  x2=13d3d3d3d3d3d358
+  x3=3c38900488a461b3
+  x4=99159412971b9a1c
+ round constant addition:
+  x0=1f49a887151a877f
+  x1=6e69f97b25a85a0b
+  x2=13d3d3d3d3d3d3b9
+  x3=3c38900488a461b3
+  x4=99159412971b9a1c
+ substitution layer:
+  x0=5ac2fb696a452574
+  x1=f9a7576a7d7ea6d9
+  x2=0340d1451e9fec41
+  x3=c2d7863fe9c4764d
+  x4=cd0cc57c3a17b9a7
+ linear diffusion layer:
+  x0=5a3e27749907beaa
+  x1=e06711742578deb8
+  x2=86edbaa285aa65d0
+  x3=6a81d2b5a521f3b2
+  x4=3c8bd72a118510b6
+ round constant addition:
+  x0=5a3e27749907beaa
+  x1=e06711742578deb8
+  x2=86edbaa285aa6502
+  x3=6a81d2b5a521f3b2
+  x4=3c8bd72a118510b6
+ substitution layer:
+  x0=b6755e6399dc3cba
+  x1=885b1b89285911a6
+  x2=8d7f51234fa94441
+  x3=38b48c291d754414
+  x4=d64804bf91dcb3a4
+ linear diffusion layer:
+  x0=ac21c3065545a9b8
+  x1=d8d375e327812aa5
+  x2=4df504f665434370
+  x3=9fb0bd50512697ff
+  x4=c02c7aef3c942ec1
+ round constant addition:
+  x0=ac21c3065545a9b8
+  x1=d8d375e327812aa5
+  x2=4df504f6654343b3
+  x3=9fb0bd50512697ff
+  x4=c02c7aef3c942ec1
+ substitution layer:
+  x0=a6673a40422157d1
+  x1=bb6a405e1f367a27
+  x2=2ad5cc4591adbee9
+  x3=6a9bb6aa3f35d0a8
+  x4=cf4e83bd6bb291ba
+ linear diffusion layer:
+  x0=ae887396c31afb91
+  x1=dc062e5aa9f37f9a
+  x2=1b147d564f3dd766
+  x3=a8d5250a4eef0246
+  x4=6465c7f2cc0253d8
+ round constant addition:
+  x0=ae887396c31afb91
+  x1=dc062e5aa9f37f9a
+  x2=1b147d564f3dd7d2
+  x3=a8d5250a4eef0246
+  x4=6465c7f2cc0253d8
+ substitution layer:
+  x0=114f0d826b1a2e05
+  x1=3d3eef38e8c65595
+  x2=7ccd6e039931062f
+  x3=29aaa0f2253153d7
+  x4=d8b2e8e2220e060c
+ linear diffusion layer:
+  x0=e52d4ffa9e5abb40
+  x1=a5181a54848e84e2
+  x2=7f58ecba5bcd4120
+  x3=758b5e8f49c10d1b
+  x4=b0128a30e0264374
+ round constant addition:
+  x0=e52d4ffa9e5abb40
+  x1=a5181a54848e84e2
+  x2=7f58ecba5bcd4185
+  x3=758b5e8f49c10d1b
+  x4=b0128a30e0264374
+ substitution layer:
+  x0=6ae6efcb0c58f39c
+  x1=8fec3335a13335cb
+  x2=a5af8921809a78fc
+  x3=3ffd291160bc3a08
+  x4=6599ceab29654aad
+ linear diffusion layer:
+  x0=b11a5b517fcf6ea7
+  x1=9bcfccf33fb543f1
+  x2=05eef395c6d52d61
+  x3=a0f6c9a5b06ca558
+  x4=6ac64f9329854cdf
+ round constant addition:
+  x0=b11a5b517fcf6ea7
+  x1=9bcfccf33fb543f1
+  x2=05eef395c6d52df7
+  x3=a0f6c9a5b06ca558
+  x4=6ac64f9329854cdf
+ substitution layer:
+  x0=15cf69c12656a678
+  x1=64e52bb4a9b3ccd7
+  x2=2bdec68b0f1ed97e
+  x3=651be011068f81a1
+  x4=ca334e07b05ca806
+ linear diffusion layer:
+  x0=a46a0cf997981ea0
+  x1=2a9f11884ae4603b
+  x2=c69eded4a4adcea4
+  x3=cd921464f2c6a106
+  x4=c47f06cfbc5908f1
+ round constant addition:
+  x0=a46a0cf997981ea0
+  x1=2a9f11884ae4603b
+  x2=c69eded4a4adce23
+  x3=cd921464f2c6a106
+  x4=c47f06cfbc5908f1
+ substitution layer:
+  x0=a772c7418173518c
+  x1=8f18c5cad5aaf96c
+  x2=139332281daf5916
+  x3=41eed1a731d611ef
+  x4=036703230ebbc9dd
+ linear diffusion layer:
+  x0=da764b65aeb715ba
+  x1=6275be6ea1e30383
+  x2=4214e7f4b30e48f9
+  x3=32c90ae430c9fc80
+  x4=28e690c1a6270dcf
+ round constant addition:
+  x0=da764b65aeb715ba
+  x1=6275be6ea1e30383
+  x2=4214e7f4b30e4881
+  x3=32c90ae430c9fc80
+  x4=28e690c1a6270dcf
+ substitution layer:
+  x0=e8da245b2d11a2b8
+  x1=826d263e9b7fe776
+  x2=d7b836646b34b5b2
+  x3=fa1e82ffac12befd
+  x4=1a4abe6f378df2cd
+ linear diffusion layer:
+  x0=0d9712cee43882a8
+  x1=ec32e804ad84068e
+  x2=773acd8fcf023dbd
+  x3=1a1ef85052866c5b
+  x4=b7e5edea8f6fcc77
+ round constant addition:
+  x0=0d9712cee43882a8
+  x1=ec32e804ad84068e
+  x2=773acd8fcf023dd4
+  x3=1a1ef85052866c5b
+  x4=b7e5edea8f6fcc77
+ substitution layer:
+  x0=4081ef15703cd7a3
+  x1=455ecafb94d13500
+  x2=c116dfde10104481
+  x3=36f732759f7f99f6
+  x4=e9fb15ba5969a02c
+ linear diffusion layer:
+  x0=d9b8fd3145c088f3
+  x1=98813f4d32d22097
+  x2=2699eb4e605827d3
+  x3=878194c29b2289af
+  x4=6d0457413baf8ee6
+ round constant addition:
+  x0=d9b8fd3145c088f3
+  x1=98813f4d32d22097
+  x2=2699eb4e60582789
+  x3=878194c29b2289af
+  x4=6d0457413baf8ee6
+ substitution layer:
+  x0=7020bcfc9e7a26d6
+  x1=0ba455ff8595a92b
+  x2=29e368fd8df8fea1
+  x3=45a52bb0b74788e5
+  x4=e284d68ea01d27cb
+ linear diffusion layer:
+  x0=d3581f9f8bee7ad0
+  x1=a98dd151ff2fa8d8
+  x2=39b55120bd33620b
+  x3=b886e028ceb202a4
+  x4=3211d1b058ac5fef
+ round constant addition:
+  x0=d3581f9f8bee7ad0
+  x1=a98dd151ff2fa8d8
+  x2=39b55120bd336240
+  x3=b886e028ceb202a4
+  x4=3211d1b058ac5fef
+ substitution layer:
+  x0=736aeec76961b2b4
+  x1=70727f56a0dfcfc3
+  x2=6dd66e1eadef682c
+  x3=4be7bfeedde2b543
+  x4=821320c8ba33d58b
+ linear diffusion layer:
+  x0=d3274bed0217b3ee
+  x1=5ea03a7c20c15526
+  x2=ea8a00a981af619a
+  x3=4194e3f2f9a2a31f
+  x4=f14a1f63ee86bbb0
+ initialization:
+d3274bed0217b3ee 5ea03a7c20c15526 ea8a00a981af619a 4692e6f6faa0a21f fe44126fe58cb2b8
+ permutation input:
+  x0=3032a8559b64ba9b
+  x1=3240ba6ce362b3b4
+  x2=ea8a00a981af619a
+  x3=4692e6f6faa0a21f
+  x4=fe44126fe58cb2b8
+ round constant addition:
+  x0=3032a8559b64ba9b
+  x1=3240ba6ce362b3b4
+  x2=ea8a00a981af612e
+  x3=4692e6f6faa0a21f
+  x4=fe44126fe58cb2b8
+ substitution layer:
+  x0=8e2a4e66e04beb1a
+  x1=32ac44e50527db98
+  x2=9f715533983e3dc5
+  x3=603c4618fda16825
+  x4=88d6f4dd9e2ea333
+ linear diffusion layer:
+  x0=f7f7ae0b4b23d17d
+  x1=6dc42c7a1c7c5fd0
+  x2=46b43afe9a41dbd0
+  x3=dd76f91758927eaf
+  x4=81084e65bcd6950f
+ round constant addition:
+  x0=f7f7ae0b4b23d17d
+  x1=6dc42c7a1c7c5fd0
+  x2=46b43afe9a41db75
+  x3=dd76f91758927eaf
+  x4=81084e65bcd6950f
+ substitution layer:
+  x0=21b1498899b83477
+  x1=cd0d3783310ae18d
+  x2=d487ef1bdd86fa5a
+  x3=d48fa9ff695a7f58
+  x4=557ebb62ec4cf020
+ linear diffusion layer:
+  x0=bcbceaccab9dbfc9
+  x1=a3069e59a2c7f78c
+  x2=d596072a5c339c9e
+  x3=3d16e052c27f9d6a
+  x4=a4a2606c39bed69d
+ round constant addition:
+  x0=bcbceaccab9dbfc9
+  x1=a3069e59a2c7f78c
+  x2=d596072a5c339c08
+  x3=3d16e052c27f9d6a
+  x4=a4a2606c39bed69d
+ substitution layer:
+  x0=763a1fe51516bc2b
+  x1=e68e75db6cdf02b2
+  x2=09cf66a0388bd6ee
+  x3=cb2c738d0529947b
+  x4=3ab49467db05dd7f
+ linear diffusion layer:
+  x0=f0d4b395354be0d8
+  x1=642465056fea0bce
+  x2=b50fe86aa42c12c2
+  x3=1fe35d07dfae5c8a
+  x4=f72c7fa1ab2e8c8f
+ round constant addition:
+  x0=f0d4b395354be0d8
+  x1=642465056fea0bce
+  x2=b50fe86aa42c1245
+  x3=1fe35d07dfae5c8a
+  x4=f72c7fa1ab2e8c8f
+ substitution layer:
+  x0=1e3847f90b6bafdb
+  x1=fc17715b65a33398
+  x2=ced8503014396671
+  x3=29f43ed8be0de956
+  x4=88cb03a7150ad38d
+ linear diffusion layer:
+  x0=dd79d98fe010f126
+  x1=aa67bde7794281bd
+  x2=ee8f1968de7530d0
+  x3=88d5572d174e352a
+  x4=405010c99de4a3ab
+ round constant addition:
+  x0=dd79d98fe010f126
+  x1=aa67bde7794281bd
+  x2=ee8f1968de7530a8
+  x3=88d5572d174e352a
+  x4=405010c99de4a3ab
+ substitution layer:
+  x0=3362ba0b7169753c
+  x1=fbd3278992cbe71a
+  x2=fb175bb0d068cc6b
+  x3=99157b604d8d46b2
+  x4=eac373458aa817b1
+ linear diffusion layer:
+  x0=0b526fa41003bba6
+  x1=366f8c0b31637982
+  x2=a970ab067b1d096f
+  x3=96ea72b4282e0325
+  x4=2bd3a1a8d9482627
+ round constant addition:
+  x0=0b526fa41003bba6
+  x1=366f8c0b31637982
+  x2=a970ab067b1d0906
+  x3=96ea72b4282e0325
+  x4=2bd3a1a8d9482627
+ substitution layer:
+  x0=02c63e174211d885
+  x1=9f1e31b39234e726
+  x2=49f159fa64c1ab79
+  x3=2064d8b1bb19cf22
+  x4=ab57d31fc1464500
+ linear diffusion layer:
+  x0=18cb161fa9b0d1b3
+  x1=00cbd5e14eade271
+  x2=082e3060bf327868
+  x3=0f7dd1b5fb2fd4dd
+  x4=25e1df9b7e916263
+ round constant addition:
+  x0=18cb161fa9b0d1b3
+  x1=00cbd5e14eade271
+  x2=082e3060bf327832
+  x3=0f7dd1b5fb2fd4dd
+  x4=25e1df9b7e916263
+ substitution layer:
+  x0=1f53f3cbeb015d4d
+  x1=32dd2c5122be0d3f
+  x2=d79a14740af0479e
+  x3=323afbbe5c216dfc
+  x4=2a5d1a4f8d32f69f
+ linear diffusion layer:
+  x0=84ef84f060471c93
+  x1=067132c2492bde9e
+  x2=c709761fdfa3a54f
+  x3=fbc86c1dce694bb7
+  x4=33cf39005dbdbdff
+ round constant addition:
+  x0=84ef84f060471c93
+  x1=067132c2492bde9e
+  x2=c709761fdfa3a504
+  x3=fbc86c1dce694bb7
+  x4=33cf39005dbdbdff
+ substitution layer:
+  x0=be7eaef278af28b6
+  x1=4ad9e32faa305ed7
+  x2=3e80aa2278e3302d
+  x3=0d979120655f8541
+  x4=c856571fd3d5a8da
+ linear diffusion layer:
+  x0=d19af2564a9b8884
+  x1=43429aef55271bab
+  x2=153afd9bcd7124fb
+  x3=9f74720fe5d6e00f
+  x4=f22f1165811628a0
+ permutation input:
+  x0=ffdb0c8efaa96222
+  x1=43429aee35aec863
+  x2=153afd9bcd7124fb
+  x3=9f74720fe5d6e00f
+  x4=f22f1165811628a0
+ round constant addition:
+  x0=ffdb0c8efaa96222
+  x1=43429aee35aec863
+  x2=153afd9bcd71244f
+  x3=9f74720fe5d6e00f
+  x4=f22f1165811628a0
+ substitution layer:
+  x0=36959994d32e2640
+  x1=d38af21e8340a6ee
+  x2=c98c99ea07201b73
+  x3=a9a3089b06360683
+  x4=2f59e16e60c048ce
+ linear diffusion layer:
+  x0=c0bffb4509452568
+  x1=72dbe3a744e2847c
+  x2=e26ce778acac96a7
+  x3=0a08b488a4ba0819
+  x4=04373288db1664af
+ round constant addition:
+  x0=c0bffb4509452568
+  x1=72dbe3a744e2847c
+  x2=e26ce778acac9602
+  x3=0a08b488a4ba0819
+  x4=04373288db1664af
+ substitution layer:
+  x0=78c069b70153bb4b
+  x1=3c7f9e323a0ddfb8
+  x2=6b7ff9204cb58927
+  x3=5e08fb9a97a37f80
+  x4=3c6ca4227b0ce88e
+ linear diffusion layer:
+  x0=1a92b2188063c011
+  x1=bbf7741c9a1bdd45
+  x2=436dfa54ebdd9b90
+  x3=01df56a00ccbdc8e
+  x4=3129fb1e78e4c70d
+ round constant addition:
+  x0=1a92b2188063c011
+  x1=bbf7741c9a1bdd45
+  x2=436dfa54ebdd9b06
+  x3=01df56a00ccbdc8e
+  x4=3129fb1e78e4c70d
+ substitution layer:
+  x0=cb015ae0ef74c6dc
+  x1=d101e7fa0f5140d7
+  x2=3745d8a9fe1dbabd
+  x3=c26c31f685a99dd0
+  x4=a0b299a67637c3c2
+ linear diffusion layer:
+  x0=a496ae4c743d753c
+  x1=ad107aabda7945a6
+  x2=583a239fa6eb1109
+  x3=78b4cbcce0f3b563
+  x4=f6c8e774db8bf509
+ round constant addition:
+  x0=a496ae4c743d753c
+  x1=ad107aabda7945a6
+  x2=583a239fa6eb118e
+  x3=78b4cbcce0f3b563
+  x4=f6c8e774db8bf509
+ substitution layer:
+  x0=21085617e00595d5
+  x1=a7f0b04fd12c74d8
+  x2=8c9d82fb9865ebdf
+  x3=5bd4f7c803ef2156
+  x4=237c1e3b6b3105e8
+ linear diffusion layer:
+  x0=93ebaf64fa4208ab
+  x1=07d76ad8e900337d
+  x2=34e1358dba36899f
+  x3=9ee92f1f8a0bdb69
+  x4=ee8f7e85e9f6d9ec
+ round constant addition:
+  x0=93ebaf64fa4208ab
+  x1=07d76ad8e900337d
+  x2=34e1358dba3689e7
+  x3=9ee92f1f8a0bdb69
+  x4=ee8f7e85e9f6d9ec
+ substitution layer:
+  x0=3fb1bf668a7f7978
+  x1=c65a8e36608b2bd9
+  x2=accff02acd3d45e1
+  x3=c0d9a0aba8c9b035
+  x4=72f57b828bfd20bd
+ linear diffusion layer:
+  x0=77692f1346885e5f
+  x1=984fe9d2d75ec00b
+  x2=fc1b37ff00971206
+  x3=15b376af5276563d
+  x4=c9556fe5d053a041
+ round constant addition:
+  x0=77692f1346885e5f
+  x1=984fe9d2d75ec00b
+  x2=fc1b37ff0097126f
+  x3=15b376af5276563d
+  x4=c9556fe5d053a041
+ substitution layer:
+  x0=0689e691557b1a07
+  x1=53c09f8b41322868
+  x2=53ef2892a8378ddb
+  x3=9bbbe17611642c1b
+  x4=dca5b04ac321f67d
+ linear diffusion layer:
+  x0=3278a630013759bd
+  x1=db4607819804ea15
+  x2=97570079b68c9501
+  x3=8b50c253bc5b7da2
+  x4=027d6bd16849e749
+ round constant addition:
+  x0=3278a630013759bd
+  x1=db4607819804ea15
+  x2=97570079b68c955b
+  x3=8b50c253bc5b7da2
+  x4=027d6bd16849e749
+ substitution layer:
+  x0=767b661b0be47154
+  x1=6c120a1b47a1410b
+  x2=b3c3d187917702f8
+  x3=f76ca84afbbfa4b1
+  x4=426fab824412daea
+ linear diffusion layer:
+  x0=4616fd9300917198
+  x1=3a0d18436c736d44
+  x2=08ed360247895f8f
+  x3=094988d6bd243687
+  x4=57c97db835bbc88a
+ round constant addition:
+  x0=4616fd9300917198
+  x1=3a0d18436c736d44
+  x2=08ed360247895fc4
+  x3=094988d6bd243687
+  x4=57c97db835bbc88a
+ substitution layer:
+  x0=65bf4b05f66c11db
+  x1=223b3efeced5c2d1
+  x2=9b9fa496d49e0577
+  x3=6c76d3bea365cd1d
+  x4=7480ed2ec0ceba49
+ linear diffusion layer:
+  x0=81453a0444f81f49
+  x1=ce7f628d1a3fa225
+  x2=883e084fe5837fd9
+  x3=cda37831251245dc
+  x4=71098ba9b9f5674b
+ process associated data:
+81453a0444f81f49 ce7f628d1a3fa225 883e084fe5837fd9 cda37831251245dc f1098ba9b9f5674b
+ permutation input:
+  x0=837ff415f9006c05
+  x1=28baaa688590f6ee
+  x2=883e084fe5837fd9
+  x3=cda37831251245dc
+  x4=f1098ba9b9f5674b
+ round constant addition:
+  x0=837ff415f9006c05
+  x1=28baaa688590f6ee
+  x2=883e084fe5837f6d
+  x3=cda37831251245dc
+  x4=f1098ba9b9f5674b
+ substitution layer:
+  x0=c6500c633911d478
+  x1=97eb8dc3a066b0fd
+  x2=6f73de500709547f
+  x3=1f7b55ba9df4e714
+  x4=342273d819e7d637
+ linear diffusion layer:
+  x0=6dc253255d9d7569
+  x1=aff72ebf587ce00a
+  x2=2577fe014491db11
+  x3=a9f684d2598ed4d7
+  x4=b646c4d4b24e08a2
+ round constant addition:
+  x0=6dc253255d9d7569
+  x1=aff72ebf587ce00a
+  x2=2577fe014491dbb4
+  x3=a9f684d2598ed4d7
+  x4=b646c4d4b24e08a2
+ substitution layer:
+  x0=e0472ff910be3a0a
+  x1=55056d0ef22c4234
+  x2=637f6f454152cc61
+  x3=f5728399e330c6c3
+  x4=3bc36808fbec5c75
+ linear diffusion layer:
+  x0=2ce5d35ff133e78c
+  x1=e0ca5dfd0be4594c
+  x2=574d255af4fee160
+  x3=26ee25804484fb6a
+  x4=d5c918f6d0866579
+ round constant addition:
+  x0=2ce5d35ff133e78c
+  x1=e0ca5dfd0be4594c
+  x2=574d255af4fee1f6
+  x3=26ee25804484fb6a
+  x4=d5c918f6d0866579
+ substitution layer:
+  x0=1dccc2894bede55c
+  x1=0e8bb356decf384b
+  x2=99799f2e90e74354
+  x3=486087d80a294725
+  x4=f3e529229e42c71b
+ linear diffusion layer:
+  x0=1fb914f10f70e4b5
+  x1=d76bb790beabed75
+  x2=87a0b6c562d77ff3
+  x3=22a03bc9bfc7c860
+  x4=554dc2135687b001
+ round constant addition:
+  x0=1fb914f10f70e4b5
+  x1=d76bb790beabed75
+  x2=87a0b6c562d77f74
+  x3=22a03bc9bfc7c860
+  x4=554dc2135687b001
+ substitution layer:
+  x0=a8920e6d56eb9794
+  x1=bf3f5bbf848be3a1
+  x2=fa793eb863835dff
+  x3=2f36fcae330c6ef4
+  x4=e2e6d8ca4f48d120
+ linear diffusion layer:
+  x0=b4d9e2359e06db9c
+  x1=39cc9184e3aa801b
+  x2=f8ac451eb3ccfe77
+  x3=a547268a66d7b469
+  x4=c604b1134ba733ee
+ round constant addition:
+  x0=b4d9e2359e06db9c
+  x1=39cc9184e3aa801b
+  x2=f8ac451eb3ccfe0f
+  x3=a547268a66d7b469
+  x4=c604b1134ba733ee
+ substitution layer:
+  x0=d8be0025ca9f11f8
+  x1=af36a4b800de9604
+  x2=7c9fba74a6b9826d
+  x3=36bb2327ef10a18b
+  x4=6a4317190f7a878e
+ linear diffusion layer:
+  x0=937004bf817baaf7
+  x1=a6823c540f744b68
+  x2=772219a7277fa552
+  x3=04b316b2b778922b
+  x4=fa102c74fa51530a
+ round constant addition:
+  x0=937004bf817baaf7
+  x1=a6823c540f744b68
+  x2=772219a7277fa53b
+  x3=04b316b2b778922b
+  x4=fa102c74fa51530a
+ substitution layer:
+  x0=406107ba125c9ecf
+  x1=9ad1073cc32506ae
+  x2=d45ff2489ff550ac
+  x3=2e531b0ce57005a4
+  x4=78212ed2497dc321
+ linear diffusion layer:
+  x0=f671034234bba725
+  x1=35df74d7873891d4
+  x2=0d2174a5f2702db8
+  x3=458a98e3abcf2b1d
+  x4=53f5d26e7d532830
+ round constant addition:
+  x0=f671034234bba725
+  x1=35df74d7873891d4
+  x2=0d2174a5f2702de2
+  x3=458a98e3abcf2b1d
+  x4=53f5d26e7d532830
+ substitution layer:
+  x0=ab80bf526924b0da
+  x1=dd7b3d5a341731ea
+  x2=d574bd81dea743e9
+  x3=ce814bbd83f71b1b
+  x4=06246e5e508c13ed
+ linear diffusion layer:
+  x0=afd0e788c6c508d8
+  x1=82caf9e8411448c6
+  x2=989b31b7368e7f12
+  x3=85ff0cafc9492726
+  x4=f300608b1aae19fd
+ round constant addition:
+  x0=afd0e788c6c508d8
+  x1=82caf9e8411448c6
+  x2=989b31b7368e7f59
+  x3=85ff0cafc9492726
+  x4=f300608b1aae19fd
+ substitution layer:
+  x0=b03493d838125025
+  x1=43a57a5c23b46eda
+  x2=97ae57a09ac3d0b9
+  x3=e5ae27f3a07d0944
+  x4=f4f514ccd2f37619
+ linear diffusion layer:
+  x0=7b152785a9206aa4
+  x1=e6c9c0608a9052fc
+  x2=ba27c52e55c937a7
+  x3=30353ead4f6cc638
+  x4=a175875e47acea7f
+ process plaintext:
+4eb5de33aca8546a e6c9c0608a9053fe ba27c52e55c937a7 30353ead4f6cc638 a175875e47acea7f
+ permutation input:
+  x0=4eb5de33aca8546a
+  x1=e6c9c0608a9053fe
+  x2=bd21c02a56cb36a7
+  x3=3f3b33a14466cf30
+  x4=a175875e47acea7f
+ round constant addition:
+  x0=4eb5de33aca8546a
+  x1=e6c9c0608a9053fe
+  x2=bd21c02a56cb3657
+  x3=3f3b33a14466cf30
+  x4=a175875e47acea7f
+ substitution layer:
+  x0=68a76d98bc15feb1
+  x1=343aaaa635fb43fa
+  x2=24537beb202cba19
+  x3=8517feb573b110c6
+  x4=9e4734ff035a64a5
+ linear diffusion layer:
+  x0=162eab9adbd030b8
+  x1=d98409106e49297e
+  x2=d2eb8bf11cba55fd
+  x3=3cd5f9c121b7455a
+  x4=aafa17a4af93f3f6
+ round constant addition:
+  x0=162eab9adbd030b8
+  x1=d98409106e49297e
+  x2=d2eb8bf11cba551c
+  x3=3cd5f9c121b7455a
+  x4=aafa17a4af93f3f6
+ substitution layer:
+  x0=6990d1bae0dd09d2
+  x1=53ab4ecf0bbcbf28
+  x2=76ba7b3a030c3139
+  x3=9d406d1ead07cade
+  x4=d72fef65842c9e9c
+ linear diffusion layer:
+  x0=c57a01ae63e74e67
+  x1=50e641c906fe10f7
+  x2=283daf4bea861961
+  x3=cf8873a5dc23ddaf
+  x4=5c43a6f4014f5056
+ round constant addition:
+  x0=c57a01ae63e74e67
+  x1=50e641c906fe10f7
+  x2=283daf4bea8619b3
+  x3=cf8873a5dc23ddaf
+  x4=5c43a6f4014f5056
+ substitution layer:
+  x0=622d9c8853929a0e
+  x1=66c659b49c55d36d
+  x2=9767952d12cbf6eb
+  x3=af203b7d1397c6bb
+  x4=d30d95d0d93a8d3f
+ linear diffusion layer:
+  x0=0845f02bc2da58f9
+  x1=39cc3fb6a436c4b5
+  x2=f289c1ef2fe52245
+  x3=e29624e3d16daa81
+  x4=44c713bde7617eef
+ round constant addition:
+  x0=0845f02bc2da58f9
+  x1=39cc3fb6a436c4b5
+  x2=f289c1ef2fe52286
+  x3=e29624e3d16daa81
+  x4=44c713bde7617eef
+ substitution layer:
+  x0=199e08a1987210db
+  x1=97dd1ccbda60c821
+  x2=30fb12ba522c4da2
+  x3=651009267d0d3acc
+  x4=971d2b7eb60814cf
+ linear diffusion layer:
+  x0=dca46623c086a9cc
+  x1=be813b054a493314
+  x2=a04577ad9272da45
+  x3=4b6f7fac30014704
+  x4=b76815222caf8a73
+ round constant addition:
+  x0=dca46623c086a9cc
+  x1=be813b054a493314
+  x2=a04577ad9272daf1
+  x3=4b6f7fac30014704
+  x4=b76815222caf8a73
+ substitution layer:
+  x0=038e552362f53629
+  x1=94223fa81652de4a
+  x2=553bb3552b6a9e69
+  x3=e26322070495041a
+  x4=6806628a1eeedd77
+ linear diffusion layer:
+  x0=8a1817c290b40841
+  x1=651f675431ec6861
+  x2=5af28432ea727b24
+  x3=66d6cbfe1457a311
+  x4=c3d91921b16703fc
+ round constant addition:
+  x0=8a1817c290b40841
+  x1=651f675431ec6861
+  x2=5af28432ea727b81
+  x3=66d6cbfe1457a311
+  x4=c3d91921b16703fc
+ substitution layer:
+  x0=d2303d0a5eddd890
+  x1=762ce10dde6cd04d
+  x2=411b0c988541ecf3
+  x3=90f234b96e2abb0d
+  x4=8111b3cbb51cc0ad
+ linear diffusion layer:
+  x0=84ffae417a7f43ee
+  x1=dcf730c3b7e60be4
+  x2=2c92e6e6a5f41d39
+  x3=0e10c04d5a2d86b6
+  x4=3fc91ecc74b671f5
+ round constant addition:
+  x0=84ffae417a7f43ee
+  x1=dcf730c3b7e60be4
+  x2=2c92e6e6a5f41daf
+  x3=0e10c04d5a2d86b6
+  x4=3fc91ecc74b671f5
+ substitution layer:
+  x0=ee2ea86a9164d8b7
+  x1=49d14622f112ad40
+  x2=3e53375ac97f98f5
+  x3=459a28e46cede1a4
+  x4=7518dec39fbdfea7
+ linear diffusion layer:
+  x0=6375ded1a6830c32
+  x1=42b9526ff91465ce
+  x2=7583e02ac6e5aaec
+  x3=dc596ca34184ecaa
+  x4=5a3d31814b380935
+ round constant addition:
+  x0=6375ded1a6830c32
+  x1=42b9526ff91465ce
+  x2=7583e02ac6e5aa6b
+  x3=dc596ca34184ecaa
+  x4=5a3d31814b380935
+ substitution layer:
+  x0=c89f025df1e20a71
+  x1=86b2519d524acae2
+  x2=cae15cbaca36314f
+  x3=d04f6db6914e221a
+  x4=c4d54d0d1ab88557
+ linear diffusion layer:
+  x0=97f19c5298599192
+  x1=898448e20511f955
+  x2=10ba77954405f12d
+  x3=47f6164a4a313935
+  x4=edd1bbd5ab6f9efb
+ round constant addition:
+  x0=97f19c5298599192
+  x1=898448e20511f955
+  x2=10ba77954405f155
+  x3=47f6164a4a313935
+  x4=edd1bbd5ab6f9efb
+ substitution layer:
+  x0=41b9f56d966d58b3
+  x1=a55e58787c02c709
+  x2=cec0691d1fa57135
+  x3=26c982a8b84bbfde
+  x4=2ba3e5ffe55f57da
+ linear diffusion layer:
+  x0=8c7a166eb35fbca7
+  x1=7f549e358f5e43f4
+  x2=fe9b5c37e4095c6b
+  x3=0eaf23acd331f114
+  x4=60060d9ff7803887
+ round constant addition:
+  x0=8c7a166eb35fbca7
+  x1=7f549e358f5e43f4
+  x2=fe9b5c37e4095c02
+  x3=0eaf23acd331f114
+  x4=60060d9ff7803887
+ substitution layer:
+  x0=115ef1c48b6f1265
+  x1=1d83e46a3ba03bd6
+  x2=1e3031eeb028e88a
+  x3=6f34fc7ddca8e241
+  x4=7da9aa37afb18a47
+ linear diffusion layer:
+  x0=45e375be40b89f40
+  x1=25eb874c4a9ae2ae
+  x2=3950e9de52fc3f6d
+  x3=8e4f86d8bde1262d
+  x4=e88521a6e3503d86
+ round constant addition:
+  x0=45e375be40b89f40
+  x1=25eb874c4a9ae2ae
+  x2=3950e9de52fc3f37
+  x3=8e4f86d8bde1262d
+  x4=e88521a6e3503d86
+ substitution layer:
+  x0=d33518b0a52fe454
+  x1=12d93b8e5c977f5d
+  x2=83c4b04ba5893be4
+  x3=7b50996c46df4272
+  x4=6643243a16a35b83
+ linear diffusion layer:
+  x0=7d41c79b35687bfb
+  x1=98a9c902020937c2
+  x2=5029faaf59db82f9
+  x3=46f770e25178d6cd
+  x4=7d84f3dfa33d3ca6
+ round constant addition:
+  x0=7d41c79b35687bfb
+  x1=98a9c902020937c2
+  x2=5029faaf59db82b2
+  x3=46f770e25178d6cd
+  x4=7d84f3dfa33d3ca6
+ substitution layer:
+  x0=e39e4cd63dca1d84
+  x1=de1b8fa9cda6b222
+  x2=0e7f4f4f062862ad
+  x3=b7f3f412acbf4e8b
+  x4=a35b4a3ff24ddae9
+ linear diffusion layer:
+  x0=7c8f08ebcdb4175e
+  x1=7d5cbf83e52f142b
+  x2=3d7915d5b924f271
+  x3=b25bd316521d3707
+  x4=6fe4da46f978ecf9
+ finalization:
+7c8f08ebcdb4175e 7d5cbf83e52f142b 3d7915d5b924f271 b55dd612511f3607 60ead74af272e5f1
+Ciphertext: 056c00f915f47f83eef6908568aaba286a54a8ac33deb54efe
+Tag: 07361f5112d65db5f1e572f24ad7ea60

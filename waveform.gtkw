@@ -1,0 +1,73 @@
+[*]
+[*] GTKWave Analyzer v3.3.116 (w)1999-2023 BSI
+[*] Wed May 21 16:06:35 2025
+[*]
+[dumpfile] "/mnt/d/Tesi/Ascon128/ascon128a_PAR/dump.vcd"
+[dumpfile_mtime] "Wed May 21 16:06:18 2025"
+[dumpfile_size] 5383272
+[savefile] "/mnt/d/Tesi/Ascon128/ascon128a_PAR/waveform.gtkw"
+[timestart] 45
+[size] 1920 1080
+[pos] 38 59
+*0.000000 47 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] TOP.
+[treeopen] TOP.ascon_top.
+[sst_width] 276
+[signals_width] 445
+[sst_expanded] 1
+[sst_vpaned_height] 325
+@24
+TOP.ascon_top.PAR[31:0]
+TOP.ascon_top.NUMBER_BIT_MASK[31:0]
+TOP.ascon_top.NUMBER_BIT_NOMASK[31:0]
+TOP.ascon_top.state_reg.SHIFT_PAR_D_PLUS_1_LAST[31:0]
+@c00024
+TOP.ascon_top.state_reg.SHIFT_PAR_LAST[31:0]
+@28
+(0)TOP.ascon_top.state_reg.SHIFT_PAR_LAST[31:0]
+(1)TOP.ascon_top.state_reg.SHIFT_PAR_LAST[31:0]
+(2)TOP.ascon_top.state_reg.SHIFT_PAR_LAST[31:0]
+(3)TOP.ascon_top.state_reg.SHIFT_PAR_LAST[31:0]
+(4)TOP.ascon_top.state_reg.SHIFT_PAR_LAST[31:0]
+(5)TOP.ascon_top.state_reg.SHIFT_PAR_LAST[31:0]
+(6)TOP.ascon_top.state_reg.SHIFT_PAR_LAST[31:0]
+(7)TOP.ascon_top.state_reg.SHIFT_PAR_LAST[31:0]
+(8)TOP.ascon_top.state_reg.SHIFT_PAR_LAST[31:0]
+(9)TOP.ascon_top.state_reg.SHIFT_PAR_LAST[31:0]
+(10)TOP.ascon_top.state_reg.SHIFT_PAR_LAST[31:0]
+(11)TOP.ascon_top.state_reg.SHIFT_PAR_LAST[31:0]
+(12)TOP.ascon_top.state_reg.SHIFT_PAR_LAST[31:0]
+(13)TOP.ascon_top.state_reg.SHIFT_PAR_LAST[31:0]
+(14)TOP.ascon_top.state_reg.SHIFT_PAR_LAST[31:0]
+(15)TOP.ascon_top.state_reg.SHIFT_PAR_LAST[31:0]
+(16)TOP.ascon_top.state_reg.SHIFT_PAR_LAST[31:0]
+(17)TOP.ascon_top.state_reg.SHIFT_PAR_LAST[31:0]
+(18)TOP.ascon_top.state_reg.SHIFT_PAR_LAST[31:0]
+(19)TOP.ascon_top.state_reg.SHIFT_PAR_LAST[31:0]
+(20)TOP.ascon_top.state_reg.SHIFT_PAR_LAST[31:0]
+(21)TOP.ascon_top.state_reg.SHIFT_PAR_LAST[31:0]
+(22)TOP.ascon_top.state_reg.SHIFT_PAR_LAST[31:0]
+(23)TOP.ascon_top.state_reg.SHIFT_PAR_LAST[31:0]
+(24)TOP.ascon_top.state_reg.SHIFT_PAR_LAST[31:0]
+(25)TOP.ascon_top.state_reg.SHIFT_PAR_LAST[31:0]
+(26)TOP.ascon_top.state_reg.SHIFT_PAR_LAST[31:0]
+(27)TOP.ascon_top.state_reg.SHIFT_PAR_LAST[31:0]
+(28)TOP.ascon_top.state_reg.SHIFT_PAR_LAST[31:0]
+(29)TOP.ascon_top.state_reg.SHIFT_PAR_LAST[31:0]
+(30)TOP.ascon_top.state_reg.SHIFT_PAR_LAST[31:0]
+(31)TOP.ascon_top.state_reg.SHIFT_PAR_LAST[31:0]
+@1401200
+-group_end
+@24
+TOP.ascon_top.state_reg.SHIFT_PAR[31:0]
+TOP.ascon_top.state_reg.SHIFT_PAR_D_PLUS_1[31:0]
+@28
+TOP.clk
+@22
+TOP.ascon_top.current_state[4:0]
+@24
+TOP.ascon_top.round_counter[3:0]
+@29
+TOP.ascon_top.bit_counter[2:0]
+[pattern_trace] 1
+[pattern_trace] 0
