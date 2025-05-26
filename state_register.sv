@@ -1,3 +1,32 @@
+// ============================================================================
+// Module: state_register
+// Descrizione:
+//   Questo modulo rappresenta un registro di stato parametrico per l'algoritmo 
+//   ASCON (o simili), in grado di memorizzare e gestire 5 parole da 64 bit 
+//   ciascuna (tipicamente lo stato interno dell'algoritmo).
+//
+//   Supporta due operazioni principali:
+//     - **Scrittura parallela** dell'intero stato (`write_en`),
+//     - **Shift seriale** dello stato, in due modalità:
+//         • shift di PAR bit per parola (non mascherato),
+//         • shift di (d+1)*PAR bit per parola (mascherato).
+//
+//   È progettato per integrarsi con architetture mascherate, adattandosi al 
+//   grado di parallelismo e all’ordine di mascheramento specificato. Gestisce 
+//   anche l’ultimo ciclo di shift con quantità inferiore di bit tramite `last_cycle`.
+//
+//   Parametri:
+//     - WORDS: numero di parole (default: 5),
+//     - WORD_SIZE: dimensione in bit di ogni parola (default: 64),
+//     - PAR: grado di parallelismo,
+//     - d: ordine del mascheramento,
+//     - SHIFT_PAR[_LAST], SHIFT_PAR_D_PLUS_1[_LAST]: gestiscono i casi di shift completi/parziali.
+//
+//   Output:
+//     - `data_out`: stato completo attuale,
+//     - `out_shifted_dplus1`: porzione di bit destinata allo shift mascherato.
+//
+// ============================================================================
 module state_register 
 #(
     parameter int WORDS = 5,

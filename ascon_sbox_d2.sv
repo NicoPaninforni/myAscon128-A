@@ -1,3 +1,23 @@
+// ============================================================================
+// Module: ascon_sbox_d2
+// Descrizione:
+//   Questo modulo implementa la S-box dell'algoritmo ASCON in una versione 
+//   sicura contro attacchi side-channel, usando tecniche di mascheramento a 
+//   d+1 condivisioni (shares).
+//
+//   In particolare, realizza una S-box a 5 bit con mascheramento d'ordine d,
+//   sfruttando la tecnica DOM (Domain-Oriented Masking) per proteggere le 
+//   operazioni AND. Il modulo include:
+//     - La computazione combinatoria della funzione S-box mascherata,
+//     - L'uso di randomness fresca per ogni DOM-AND,
+//     - La registrazione dei risultati per garantire la sicurezza contro glitch,
+//     - L'output sia mascherato che non mascherato (per debug o verifica).
+//
+//   Parametri:
+//     - d: ordine di mascheramento (es. 1 = 2 shares),
+//     - num_shares: numero di condivisioni (tipicamente d+1).
+//
+// ============================================================================
 module ascon_sbox_d2 
 #(
     parameter int d = 2,  // ordine di mascheramento

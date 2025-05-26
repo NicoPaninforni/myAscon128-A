@@ -13,7 +13,7 @@
 //definizione dei parameter:
 #define d 2
 #define COL_SIZE 5
-#define PAR 22
+#define PAR 14
 #define WIDTH_RAND (d * COL_SIZE * PAR)  // 110
 
 const int WORD_SIZE = 64;
@@ -129,19 +129,19 @@ int main(int argc, char** argv) {
 
     // === Dati random
     int aad_len = generate_random_length(32);
-    int msg_len = generate_random_length(128);
+    int msg_len =  generate_random_length(128);
 
     unsigned int seed_aad = std::chrono::system_clock::now().time_since_epoch().count();
     unsigned int seed_msg = std::random_device{}();
 
     auto aad_data = generate_random_bytes(aad_len, seed_aad);
-    std::cout << "✅ AAD generation completed" << std::endl;
+    //std::cout << "✅ AAD generation completed" << std::endl;
     auto msg_data = generate_random_bytes(msg_len, seed_msg);
-    std::cout << "✅ MSG generation completed" << std::endl;
+    //std::cout << "✅ MSG generation completed" << std::endl;
 
     // === Salva per golden model
     std::ofstream data_out("data.txt");
-    std::cout << "✅ data.txt opened" << std::endl;
+    //std::cout << "✅ data.txt opened" << std::endl;
     data_out << std::hex << std::setfill('0');
     data_out << "aad_len " << aad_len << "\n";
     for (int i = 0; i < aad_len; ++i) data_out << std::setw(2) << (int)aad_data[i];
@@ -182,12 +182,12 @@ int main(int argc, char** argv) {
     std::ofstream logfile("debug_output.txt", std::ios::app);
 
     // === Sim loop
-    std::cout << "✅ Entering main sim loop" << std::endl;
+    //std::cout << "✅ Entering main sim loop" << std::endl;
 
     for (int cycle = 0; cycle < 10000; ++cycle) {
         bool dut_ready = top->ready_for_data;
         // ------------------DEBUG-------------
-        if (cycle % 1000 == 0) {
+        /*if (cycle % 1000 == 0) {
             std::cout << "Cycle: " << cycle << ", aad_index: " << aad_index
                     << ", msg_index: " << msg_index
                     << ", aad_done: " << aad_done
@@ -197,7 +197,7 @@ int main(int argc, char** argv) {
                     << ", EOT: " << top->EOT
                     << std::endl;
         }
-        // -------------------------------------
+        // -------------------------------------*/
 
         top->clk = 0;
 
@@ -309,7 +309,7 @@ int main(int argc, char** argv) {
             saw_state_init_diffuse_last = false;
         }
         
-        if (top->debug_state == 0x09) {
+        if (top->debug_state == 0x06 && (top->valid_data_in == 1 || top->debug_extra_padding_ff == 1)) {
             saw_state_absorbAD = true;
         } else if (saw_state_absorbAD == true) {
             // Stampa stile permutazione
@@ -323,7 +323,7 @@ int main(int argc, char** argv) {
             saw_state_absorbAD = false;
         }
 
-        if ((top->debug_bitcounter == NUMBER_BIT_NOMASK) && top->debug_state == 0x0B){
+        if ((top->debug_bitcounter == NUMBER_BIT_NOMASK) && top->debug_state == 0x08){
             logfile << " round constant addition:" << std::endl;
             logfile << std::hex << std::setfill('0');
             logfile << "  x0=" << std::setw(16) << top->debug_round_state_0 << std::endl;
@@ -333,7 +333,7 @@ int main(int argc, char** argv) {
             logfile << "  x4=" << std::setw(16) << top->debug_round_state_4 << std::endl;
         }
 
-        if ((top->debug_bitcounter == 0) && (top->debug_state == 0x0C || top->debug_state == 0x0D)){
+        if ((top->debug_bitcounter == 0) && (top->debug_state == 0x09 || top->debug_state == 0x0A)){
             logfile << " substitution layer:" << std::endl;
             logfile << std::hex << std::setfill('0');
             logfile << "  x0=" << std::setw(16) << top->debug_state_0 << std::endl;
@@ -343,7 +343,7 @@ int main(int argc, char** argv) {
             logfile << "  x4=" << std::setw(16) << top->debug_state_4 << std::endl;
         }
 
-        if (top->debug_state == 0x0C){
+        if (top->debug_state == 0x09){
             saw_state_AD_diffuse = true;
         } else if (saw_state_AD_diffuse){
             logfile << " linear diffusion layer:" << std::endl;
@@ -356,7 +356,7 @@ int main(int argc, char** argv) {
             saw_state_AD_diffuse = false;
         }
 
-        if (top->debug_state == 0x0D) {
+        if (top->debug_state == 0x0A) {
             saw_state_AD_diffuse_last = true;
             saved_diff3 = top->debug_linear_diffusion_state3;
             saved_diff4 = top->debug_linear_diffusion_state4;
@@ -369,7 +369,7 @@ int main(int argc, char** argv) {
             logfile << "  x3=" << std::setw(16) << saved_diff3 << std::endl;
             logfile << "  x4=" << std::setw(16) << saved_diff4 << std::endl;
             
-            if (top->debug_state == 0x0E || top->debug_state == 0x0F || top->debug_state == 0x11) {
+            if (top->debug_state == 0x0B) {
                 // Aggiunta della riga di process associated data:
                 logfile << " process associated data:" << std::endl;
                 logfile << std::setw(16) << top->debug_state_0 << " "
@@ -381,7 +381,7 @@ int main(int argc, char** argv) {
             saw_state_AD_diffuse_last = false;
         }
 
-        if (top->debug_state == 0x11) {
+        if (top->debug_state == 0x0B && (top->valid_data_in == 1 || top->debug_extra_padding_ff == 1)) {
             saw_state_absorbMSG = true;
             flag = top->debug_extra_padding_ff;
             saved_diff0 = top->debug_state_0;
@@ -390,7 +390,7 @@ int main(int argc, char** argv) {
             saved_diff3 = top->debug_state_3;
             saved_diff4 = top->debug_state_4;
         } else if (saw_state_absorbMSG == true) {
-            if (top->debug_state == 0x16) {
+            if (top->debug_state == 0x10) {
                 // Aggiunta della riga di process associated data:
                 logfile << " process plaintext:" << std::endl;
                 logfile << std::setw(16) << top->debug_state_0 << " "
@@ -410,7 +410,7 @@ int main(int argc, char** argv) {
             saw_state_absorbMSG = false;
         }
 
-        if ((top->debug_bitcounter == NUMBER_BIT_NOMASK) && top->debug_state == 0x13){
+        if ((top->debug_bitcounter == NUMBER_BIT_NOMASK) && top->debug_state == 0x0D){
             logfile << " round constant addition:" << std::endl;
             logfile << std::hex << std::setfill('0');
             logfile << "  x0=" << std::setw(16) << top->debug_round_state_0 << std::endl;
@@ -420,7 +420,7 @@ int main(int argc, char** argv) {
             logfile << "  x4=" << std::setw(16) << top->debug_round_state_4 << std::endl;
         }
 
-        if ((top->debug_bitcounter == 0) && (top->debug_state == 0x14 || top->debug_state == 0x15)){
+        if ((top->debug_bitcounter == 0) && (top->debug_state == 0x0E || top->debug_state == 0x0F)){
             logfile << " substitution layer:" << std::endl;
             logfile << std::hex << std::setfill('0');
             logfile << "  x0=" << std::setw(16) << top->debug_state_0 << std::endl;
@@ -430,7 +430,7 @@ int main(int argc, char** argv) {
             logfile << "  x4=" << std::setw(16) << top->debug_state_4 << std::endl;
         }
 
-        if (top->debug_state == 0x14){
+        if (top->debug_state == 0x0E){
             saw_state_MSG_diffuse = true;
         } else if (saw_state_MSG_diffuse){
             logfile << " linear diffusion layer:" << std::endl;
@@ -443,7 +443,7 @@ int main(int argc, char** argv) {
             saw_state_MSG_diffuse = false;
         }
 
-        if (top->debug_state == 0x15) {
+        if (top->debug_state == 0x0F) {
             saw_state_MSG_diffuse_last = true;
             saved_diff3 = top->debug_linear_diffusion_state3;
             saved_diff4 = top->debug_linear_diffusion_state4;
@@ -459,7 +459,7 @@ int main(int argc, char** argv) {
             saw_state_MSG_diffuse_last = false;
         }
 
-        if ((top->debug_bitcounter == NUMBER_BIT_MASK-1) && top->debug_state == 0x16){
+        if ((top->debug_bitcounter == NUMBER_BIT_MASK-1) && top->debug_state == 0x10){
             logfile << " round constant addition:" << std::endl;
             logfile << std::hex << std::setfill('0');
             logfile << "  x0=" << std::setw(16) << top->debug_round_state_0 << std::endl;
@@ -469,7 +469,7 @@ int main(int argc, char** argv) {
             logfile << "  x4=" << std::setw(16) << top->debug_round_state_4 << std::endl;
         }
 
-        if ((top->debug_bitcounter == 0) && (top->debug_state == 0x18)){
+        if ((top->debug_bitcounter == 0) && (top->debug_state == 0x12)){
             logfile << " substitution layer:" << std::endl;
             logfile << std::hex << std::setfill('0');
             logfile << "  x0=" << std::setw(16) << top->debug_state_0 << std::endl;
@@ -479,7 +479,7 @@ int main(int argc, char** argv) {
             logfile << "  x4=" << std::setw(16) << top->debug_state_4 << std::endl;
         }
 
-        if (top->debug_state == 0x18){
+        if (top->debug_state == 0x12){
             saw_state_finalization_diffuse = true;
         } else if (saw_state_finalization_diffuse){
             logfile << " linear diffusion layer:" << std::endl;
@@ -492,7 +492,7 @@ int main(int argc, char** argv) {
             saw_state_finalization_diffuse = false;
         }
 
-        if (top->debug_state == 0x18 && top->debug_roundcounter == 0x0B) {
+        if (top->debug_state == 0x12 && top->debug_roundcounter == 0x0B) {
             saw_state_finalization_diffuse_last = true;
             saved_diff3 = top->tag1;
             saved_diff4 = top->tag2;

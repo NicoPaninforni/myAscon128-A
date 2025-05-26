@@ -1,0 +1,5 @@
+*.vcd
+*gtkw
+*.txt
+*.dat
+.obj_dir/

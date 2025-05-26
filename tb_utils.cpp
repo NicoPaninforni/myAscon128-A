@@ -13,7 +13,7 @@ int generate_random_length(int max_bytes) {
 
 // funzione che genera i byte random:
 std::vector<uint8_t> generate_random_bytes(int len, unsigned int seed) {
-    std::cout << "Generazione di " << len << " byte randomici " << std::endl;
+    //std::cout << "Generazione di " << len << " byte randomici " << std::endl;
     std::mt19937 gen(seed); // controllabile per test ripetibili
     std::uniform_int_distribution<> dis(0, 255);
 

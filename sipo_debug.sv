@@ -1,3 +1,27 @@
+// ============================================================================
+// Module: sipo_debug
+// Descrizione:
+//   Questo modulo implementa uno shift register serial-in/parallel-out (SIPO)
+//   utilizzato esclusivamente a scopo di **debug** per tracciare e registrare
+//   i risultati delle costanti di round nel contesto di implementazioni
+//   mascherate (ad esempio ASCON).
+//
+//   Il modulo può operare in due modalità:
+//     - Shift di PAR bit (non mascherato),
+//     - Shift di (d+1)*PAR bit (mascherato).
+//
+//   L'accumulo dei bit avviene all'interno del registro `state`, che viene
+//   aggiornato a ogni ciclo abilitato da `shift_en`, con supporto per shift
+//   finali parziali tramite `last_cycle`.
+//
+//   Parametri:
+//     - WORD_SIZE: dimensione del registro di accumulo,
+//     - PAR: grado di parallelismo,
+//     - d: ordine del mascheramento.
+//
+//   ⚠️ **Nota**: questo modulo non è utilizzato nel funzionamento critico del
+//   circuito, ma solo per ispezionare valori interni a fini di verifica e debug.
+// ============================================================================
 module sipo_debug #(
     parameter int WORD_SIZE = 64,
     parameter int PAR = 7,
