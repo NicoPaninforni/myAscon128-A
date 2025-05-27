@@ -749,107 +749,107 @@ VL_INLINE_OPT void Vascon_top___024root___nba_sequent__TOP__1(Vascon_top___024ro
         = (((((QData)((IData)(vlSelfRef.ascon_top__DOT__state_reg_out[1U])) 
               << 0x20U) | (QData)((IData)(vlSelfRef.ascon_top__DOT__state_reg_out[0U]))) 
             ^ ([&]() {
-                    vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__111__x 
+                    vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__112__x 
                         = (((QData)((IData)(vlSelfRef.ascon_top__DOT__state_reg_out[1U])) 
                             << 0x20U) | (QData)((IData)(
                                                         vlSelfRef.ascon_top__DOT__state_reg_out[0U])));
-                    vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__111__Vfuncout 
-                        = (VL_SHIFTR_QQI(64,64,32, vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__111__x, 0x13U) 
-                           | VL_SHIFTL_QQI(64,64,32, vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__111__x, 0x2dU));
-                }(), vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__111__Vfuncout)) 
+                    vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__112__Vfuncout 
+                        = (VL_SHIFTR_QQI(64,64,32, vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__112__x, 0x13U) 
+                           | VL_SHIFTL_QQI(64,64,32, vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__112__x, 0x2dU));
+                }(), vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__112__Vfuncout)) 
            ^ ([&]() {
-                vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__112__x 
+                vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__113__x 
                     = (((QData)((IData)(vlSelfRef.ascon_top__DOT__state_reg_out[1U])) 
                         << 0x20U) | (QData)((IData)(
                                                     vlSelfRef.ascon_top__DOT__state_reg_out[0U])));
-                vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__112__Vfuncout 
-                    = (VL_SHIFTR_QQI(64,64,32, vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__112__x, 0x1cU) 
-                       | VL_SHIFTL_QQI(64,64,32, vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__112__x, 0x24U));
-            }(), vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__112__Vfuncout));
+                vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__113__Vfuncout 
+                    = (VL_SHIFTR_QQI(64,64,32, vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__113__x, 0x1cU) 
+                       | VL_SHIFTL_QQI(64,64,32, vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__113__x, 0x24U));
+            }(), vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__113__Vfuncout));
     vlSelfRef.ascon_top__DOT__linear_diffusion_debug[1U] 
         = (((((QData)((IData)(vlSelfRef.ascon_top__DOT__state_reg_out[3U])) 
               << 0x20U) | (QData)((IData)(vlSelfRef.ascon_top__DOT__state_reg_out[2U]))) 
             ^ ([&]() {
-                    vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__113__x 
+                    vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__114__x 
                         = (((QData)((IData)(vlSelfRef.ascon_top__DOT__state_reg_out[3U])) 
                             << 0x20U) | (QData)((IData)(
                                                         vlSelfRef.ascon_top__DOT__state_reg_out[2U])));
-                    vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__113__Vfuncout 
-                        = (VL_SHIFTR_QQI(64,64,32, vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__113__x, 0x3dU) 
-                           | VL_SHIFTL_QQI(64,64,32, vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__113__x, 3U));
-                }(), vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__113__Vfuncout)) 
+                    vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__114__Vfuncout 
+                        = (VL_SHIFTR_QQI(64,64,32, vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__114__x, 0x3dU) 
+                           | VL_SHIFTL_QQI(64,64,32, vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__114__x, 3U));
+                }(), vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__114__Vfuncout)) 
            ^ ([&]() {
-                vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__114__x 
+                vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__115__x 
                     = (((QData)((IData)(vlSelfRef.ascon_top__DOT__state_reg_out[3U])) 
                         << 0x20U) | (QData)((IData)(
                                                     vlSelfRef.ascon_top__DOT__state_reg_out[2U])));
-                vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__114__Vfuncout 
-                    = (VL_SHIFTR_QQI(64,64,32, vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__114__x, 0x27U) 
-                       | VL_SHIFTL_QQI(64,64,32, vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__114__x, 0x19U));
-            }(), vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__114__Vfuncout));
+                vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__115__Vfuncout 
+                    = (VL_SHIFTR_QQI(64,64,32, vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__115__x, 0x27U) 
+                       | VL_SHIFTL_QQI(64,64,32, vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__115__x, 0x19U));
+            }(), vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__115__Vfuncout));
     vlSelfRef.ascon_top__DOT__linear_diffusion_debug[2U] 
         = (((((QData)((IData)(vlSelfRef.ascon_top__DOT__state_reg_out[5U])) 
               << 0x20U) | (QData)((IData)(vlSelfRef.ascon_top__DOT__state_reg_out[4U]))) 
             ^ ([&]() {
-                    vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__115__x 
+                    vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__116__x 
                         = (((QData)((IData)(vlSelfRef.ascon_top__DOT__state_reg_out[5U])) 
                             << 0x20U) | (QData)((IData)(
                                                         vlSelfRef.ascon_top__DOT__state_reg_out[4U])));
-                    vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__115__Vfuncout 
-                        = (VL_SHIFTR_QQI(64,64,32, vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__115__x, 1U) 
-                           | VL_SHIFTL_QQI(64,64,32, vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__115__x, 0x3fU));
-                }(), vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__115__Vfuncout)) 
+                    vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__116__Vfuncout 
+                        = (VL_SHIFTR_QQI(64,64,32, vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__116__x, 1U) 
+                           | VL_SHIFTL_QQI(64,64,32, vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__116__x, 0x3fU));
+                }(), vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__116__Vfuncout)) 
            ^ ([&]() {
-                vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__116__x 
+                vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__117__x 
                     = (((QData)((IData)(vlSelfRef.ascon_top__DOT__state_reg_out[5U])) 
                         << 0x20U) | (QData)((IData)(
                                                     vlSelfRef.ascon_top__DOT__state_reg_out[4U])));
-                vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__116__Vfuncout 
-                    = (VL_SHIFTR_QQI(64,64,32, vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__116__x, 6U) 
-                       | VL_SHIFTL_QQI(64,64,32, vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__116__x, 0x3aU));
-            }(), vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__116__Vfuncout));
+                vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__117__Vfuncout 
+                    = (VL_SHIFTR_QQI(64,64,32, vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__117__x, 6U) 
+                       | VL_SHIFTL_QQI(64,64,32, vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__117__x, 0x3aU));
+            }(), vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__117__Vfuncout));
     vlSelfRef.ascon_top__DOT__linear_diffusion_debug[3U] 
         = (((((QData)((IData)(vlSelfRef.ascon_top__DOT__state_reg_out[7U])) 
               << 0x20U) | (QData)((IData)(vlSelfRef.ascon_top__DOT__state_reg_out[6U]))) 
             ^ ([&]() {
-                    vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__117__x 
+                    vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__118__x 
                         = (((QData)((IData)(vlSelfRef.ascon_top__DOT__state_reg_out[7U])) 
                             << 0x20U) | (QData)((IData)(
                                                         vlSelfRef.ascon_top__DOT__state_reg_out[6U])));
-                    vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__117__Vfuncout 
-                        = (VL_SHIFTR_QQI(64,64,32, vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__117__x, 0xaU) 
-                           | VL_SHIFTL_QQI(64,64,32, vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__117__x, 0x36U));
-                }(), vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__117__Vfuncout)) 
+                    vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__118__Vfuncout 
+                        = (VL_SHIFTR_QQI(64,64,32, vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__118__x, 0xaU) 
+                           | VL_SHIFTL_QQI(64,64,32, vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__118__x, 0x36U));
+                }(), vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__118__Vfuncout)) 
            ^ ([&]() {
-                vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__118__x 
+                vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__119__x 
                     = (((QData)((IData)(vlSelfRef.ascon_top__DOT__state_reg_out[7U])) 
                         << 0x20U) | (QData)((IData)(
                                                     vlSelfRef.ascon_top__DOT__state_reg_out[6U])));
-                vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__118__Vfuncout 
-                    = (VL_SHIFTR_QQI(64,64,32, vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__118__x, 0x11U) 
-                       | VL_SHIFTL_QQI(64,64,32, vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__118__x, 0x2fU));
-            }(), vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__118__Vfuncout));
+                vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__119__Vfuncout 
+                    = (VL_SHIFTR_QQI(64,64,32, vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__119__x, 0x11U) 
+                       | VL_SHIFTL_QQI(64,64,32, vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__119__x, 0x2fU));
+            }(), vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__119__Vfuncout));
     vlSelfRef.ascon_top__DOT__linear_diffusion_debug[4U] 
         = (((((QData)((IData)(vlSelfRef.ascon_top__DOT__state_reg_out[9U])) 
               << 0x20U) | (QData)((IData)(vlSelfRef.ascon_top__DOT__state_reg_out[8U]))) 
             ^ ([&]() {
-                    vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__119__x 
+                    vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__120__x 
                         = (((QData)((IData)(vlSelfRef.ascon_top__DOT__state_reg_out[9U])) 
                             << 0x20U) | (QData)((IData)(
                                                         vlSelfRef.ascon_top__DOT__state_reg_out[8U])));
-                    vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__119__Vfuncout 
-                        = (VL_SHIFTR_QQI(64,64,32, vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__119__x, 7U) 
-                           | VL_SHIFTL_QQI(64,64,32, vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__119__x, 0x39U));
-                }(), vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__119__Vfuncout)) 
+                    vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__120__Vfuncout 
+                        = (VL_SHIFTR_QQI(64,64,32, vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__120__x, 7U) 
+                           | VL_SHIFTL_QQI(64,64,32, vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__120__x, 0x39U));
+                }(), vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__120__Vfuncout)) 
            ^ ([&]() {
-                vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__120__x 
+                vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__121__x 
                     = (((QData)((IData)(vlSelfRef.ascon_top__DOT__state_reg_out[9U])) 
                         << 0x20U) | (QData)((IData)(
                                                     vlSelfRef.ascon_top__DOT__state_reg_out[8U])));
-                vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__120__Vfuncout 
-                    = (VL_SHIFTR_QQI(64,64,32, vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__120__x, 0x29U) 
-                       | VL_SHIFTL_QQI(64,64,32, vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__120__x, 0x17U));
-            }(), vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__120__Vfuncout));
+                vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__121__Vfuncout 
+                    = (VL_SHIFTR_QQI(64,64,32, vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__121__x, 0x29U) 
+                       | VL_SHIFTL_QQI(64,64,32, vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__121__x, 0x17U));
+            }(), vlSelfRef.__Vfunc_ascon_top__DOT__rotr64__121__Vfuncout));
     vlSelfRef.ascon_top__DOT__fresh_r = ((4U & (vlSelfRef.ascon_top__DOT__state_reg_out[1U] 
                                                 >> 1U)) 
                                          | ((2U & (
@@ -858,11 +858,11 @@ VL_INLINE_OPT void Vascon_top___024root___nba_sequent__TOP__1(Vascon_top___024ro
                                             | (1U & 
                                                (vlSelfRef.ascon_top__DOT__state_reg_out[0U] 
                                                 >> 0xbU))));
-    vlSelfRef.ascon_top__DOT__state_reg_in_bypass[2U] 
+    vlSelfRef.ascon_top__DOT__state_reg_in_absorb[2U] 
         = vlSelfRef.debug_state_2;
-    vlSelfRef.ascon_top__DOT__state_reg_in_bypass[3U] 
+    vlSelfRef.ascon_top__DOT__state_reg_in_absorb[3U] 
         = vlSelfRef.debug_state_3;
-    vlSelfRef.ascon_top__DOT__state_reg_in_bypass[4U] 
+    vlSelfRef.ascon_top__DOT__state_reg_in_absorb[4U] 
         = vlSelfRef.debug_state_4;
     vlSelfRef.debug_linear_diffusion_state3 = vlSelfRef.ascon_top__DOT__linear_diffusion_debug
         [3U];

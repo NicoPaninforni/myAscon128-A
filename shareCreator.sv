@@ -9,6 +9,20 @@
 //   calcolata come XOR tra il dato originale e tutte le maschere. Questo schema
 //   garantisce che la somma XOR di tutte le shares restituisca il dato originale.
 //
+//   Le shares sono ordinate in uscita come segue:
+//     - Le condivisioni sono raggruppate per dominio (es. A, B, C) a blocchi di
+//       COL_SIZE*PAR bit ciascuna.
+//     - L'ordine è: 
+//         [dominio_C][dominio_B]...[dominio_A]
+//       cioè dalla maschera più recente (random_masks[d-1]) fino alla "corretta"
+//       (XOR finale), con:
+//         shares_out = {x_COL_C, x_COL_B, ..., x_COL_A}
+//
+//   Ad esempio, con d = 2 e COL_SIZE = 5:
+//     - `shares_out[14:10]` contiene x4_C, ..., x0_C (dominio C),
+//     - `shares_out[9:5]`   contiene x4_B, ..., x0_B (dominio B),
+//     - `shares_out[4:0]`   contiene x4_A, ..., x0_A (dominio A/corretta).
+//
 //   Parametri:
 //     - d: ordine del mascheramento (es. 2 implica 3 shares),
 //     - COL_SIZE: dimensione di un blocco di dati (es. 5 bit),

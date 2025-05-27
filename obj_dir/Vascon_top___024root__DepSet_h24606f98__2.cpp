@@ -2709,7 +2709,7 @@ void Vascon_top___024root___eval(Vascon_top___024root* vlSelf) {
 #ifdef VL_DEBUG
             Vascon_top___024root___dump_triggers__ico(vlSelf);
 #endif
-            VL_FATAL_MT("ascon_top.sv", 1, "", "Input combinational region did not converge.");
+            VL_FATAL_MT("ascon_top.sv", 37, "", "Input combinational region did not converge.");
         }
         __VicoIterCount = ((IData)(1U) + __VicoIterCount);
         __VicoContinue = 0U;
@@ -2725,7 +2725,7 @@ void Vascon_top___024root___eval(Vascon_top___024root* vlSelf) {
 #ifdef VL_DEBUG
             Vascon_top___024root___dump_triggers__nba(vlSelf);
 #endif
-            VL_FATAL_MT("ascon_top.sv", 1, "", "NBA region did not converge.");
+            VL_FATAL_MT("ascon_top.sv", 37, "", "NBA region did not converge.");
         }
         __VnbaIterCount = ((IData)(1U) + __VnbaIterCount);
         __VnbaContinue = 0U;
@@ -2736,7 +2736,7 @@ void Vascon_top___024root___eval(Vascon_top___024root* vlSelf) {
 #ifdef VL_DEBUG
                 Vascon_top___024root___dump_triggers__act(vlSelf);
 #endif
-                VL_FATAL_MT("ascon_top.sv", 1, "", "Active region did not converge.");
+                VL_FATAL_MT("ascon_top.sv", 37, "", "Active region did not converge.");
             }
             vlSelfRef.__VactIterCount = ((IData)(1U) 
                                          + vlSelfRef.__VactIterCount);
@@ -2775,5 +2775,7 @@ void Vascon_top___024root___eval_debug_assertions(Vascon_top___024root* vlSelf) 
         Verilated::overWidthError("EOT");}
     if (VL_UNLIKELY(((vlSelfRef.random_masks[6U] & 0xf0000000U)))) {
         Verilated::overWidthError("random_masks");}
+    if (VL_UNLIKELY(((vlSelfRef.random_masks_sbox & 0xf8U)))) {
+        Verilated::overWidthError("random_masks_sbox");}
 }
 #endif  // VL_DEBUG

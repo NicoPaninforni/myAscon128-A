@@ -7,7 +7,7 @@ verilator -Wall --cc ascon_top.sv --exe --trace --trace-structs tb_auto.cpp tb_u
 #gtkwave dump.vcd waveform.gtkw &
 python3 test_ascon.py > output.txt
 echo "Confronto file:"
-#diff <(head -n 700 debug_output.txt) <(head -n 700 output.txt)
+#diff <(head -n 100 debug_output.txt) <(head -n 100 output.txt)
 diff debug_output.txt output.txt
 
 

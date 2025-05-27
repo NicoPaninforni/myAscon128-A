@@ -11,3 +11,4 @@ NOTA: è possibile testare l'architettura con i diversi tipi di parallelismo (PA
 
 2. Per eseguire lo script lanciare:
     >> ./run.sh
+

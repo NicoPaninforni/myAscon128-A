@@ -1553,6 +1553,7 @@ VL_ATTR_COLD void Vascon_top___024root___ctor_var_reset(Vascon_top___024root* vl
     vlSelf->valid_bytes = VL_RAND_RESET_I(4);
     vlSelf->EOT = VL_RAND_RESET_I(1);
     VL_RAND_RESET_W(220, vlSelf->random_masks);
+    vlSelf->random_masks_sbox = VL_RAND_RESET_I(3);
     vlSelf->ciphertext_valid = VL_RAND_RESET_I(1);
     VL_RAND_RESET_W(128, vlSelf->ciphertext);
     vlSelf->done = VL_RAND_RESET_I(1);
@@ -1560,6 +1561,7 @@ VL_ATTR_COLD void Vascon_top___024root___ctor_var_reset(Vascon_top___024root* vl
     vlSelf->tag1 = VL_RAND_RESET_Q(64);
     vlSelf->tag2 = VL_RAND_RESET_Q(64);
     vlSelf->ready_for_data = VL_RAND_RESET_I(1);
+    vlSelf->debug_extra_padding_ff = VL_RAND_RESET_I(1);
     vlSelf->debug_bitcounter = VL_RAND_RESET_I(3);
     vlSelf->debug_roundcounter = VL_RAND_RESET_I(4);
     vlSelf->debug_state = VL_RAND_RESET_I(5);
@@ -1575,29 +1577,34 @@ VL_ATTR_COLD void Vascon_top___024root___ctor_var_reset(Vascon_top___024root* vl
     vlSelf->debug_round_state_4 = VL_RAND_RESET_Q(64);
     vlSelf->debug_linear_diffusion_state3 = VL_RAND_RESET_Q(64);
     vlSelf->debug_linear_diffusion_state4 = VL_RAND_RESET_Q(64);
-    vlSelf->debug_extra_padding_ff = VL_RAND_RESET_I(1);
-    VL_RAND_RESET_W(320, vlSelf->ascon_top__DOT__state_reg_out);
-    VL_RAND_RESET_W(320, vlSelf->ascon_top__DOT__state_reg_in);
-    vlSelf->ascon_top__DOT__sel_load_iv_nonce_key = VL_RAND_RESET_I(1);
-    vlSelf->ascon_top__DOT__write_en = VL_RAND_RESET_I(1);
     vlSelf->ascon_top__DOT__shift_en = VL_RAND_RESET_I(1);
     vlSelf->ascon_top__DOT__shift_type = VL_RAND_RESET_I(1);
+    vlSelf->ascon_top__DOT__write_en = VL_RAND_RESET_I(1);
     vlSelf->ascon_top__DOT__last_cycle = VL_RAND_RESET_I(1);
-    VL_RAND_RESET_W(320, vlSelf->ascon_top__DOT__state_reg_out_shiftdplus1);
-    vlSelf->ascon_top__DOT__load_reg_data_in = VL_RAND_RESET_I(1);
-    VL_RAND_RESET_W(128, vlSelf->ascon_top__DOT__reg_data_in);
     vlSelf->ascon_top__DOT__reg_key1_load = VL_RAND_RESET_I(1);
-    vlSelf->ascon_top__DOT__reg_key1_serial_out = VL_RAND_RESET_I(22);
     vlSelf->ascon_top__DOT__reg_key2_load = VL_RAND_RESET_I(1);
-    vlSelf->ascon_top__DOT__shift_enable_x0 = VL_RAND_RESET_I(1);
-    vlSelf->ascon_top__DOT__last_cycle_x0 = VL_RAND_RESET_I(1);
+    vlSelf->ascon_top__DOT__sel_mux_linear_diffusion_out_x3 = VL_RAND_RESET_I(1);
+    vlSelf->ascon_top__DOT__sel_mux_linear_diffusion_out_x4 = VL_RAND_RESET_I(1);
+    vlSelf->ascon_top__DOT__sel_init_load = VL_RAND_RESET_I(1);
+    vlSelf->ascon_top__DOT__sel_masked_round = VL_RAND_RESET_I(1);
+    vlSelf->ascon_top__DOT__sel_padding = VL_RAND_RESET_I(1);
+    vlSelf->ascon_top__DOT__sel_xor_signal = VL_RAND_RESET_I(1);
+    vlSelf->ascon_top__DOT__sel_absorb_data = VL_RAND_RESET_I(1);
+    vlSelf->ascon_top__DOT__extra_padding = VL_RAND_RESET_I(1);
+    vlSelf->ascon_top__DOT__shift_enable_sipo = VL_RAND_RESET_I(1);
+    vlSelf->ascon_top__DOT__last_cycle_sipo = VL_RAND_RESET_I(1);
+    vlSelf->ascon_top__DOT__round_counter = VL_RAND_RESET_I(4);
+    vlSelf->ascon_top__DOT__bit_counter = VL_RAND_RESET_I(3);
+    VL_RAND_RESET_W(320, vlSelf->ascon_top__DOT__state_reg_out);
+    VL_RAND_RESET_W(320, vlSelf->ascon_top__DOT__state_reg_in);
+    VL_RAND_RESET_W(320, vlSelf->ascon_top__DOT__state_reg_out_shiftdplus1);
+    VL_RAND_RESET_W(320, vlSelf->ascon_top__DOT__state_reg_in_shiftdplus1);
     vlSelf->ascon_top__DOT____Vcellinp__sipo_reg_x2_debug__in_shifted_1bit = VL_RAND_RESET_I(22);
     for (int __Vi0 = 0; __Vi0 < 3; ++__Vi0) {
         vlSelf->ascon_top__DOT__rc_block[__Vi0] = VL_RAND_RESET_I(22);
     }
     VL_RAND_RESET_W(330, vlSelf->ascon_top__DOT__shares_out);
     VL_RAND_RESET_W(110, vlSelf->ascon_top__DOT__shares_in);
-    vlSelf->ascon_top__DOT__sel_masked_round = VL_RAND_RESET_I(1);
     for (int __Vi0 = 0; __Vi0 < 3; ++__Vi0) {
         VL_RAND_RESET_W(110, vlSelf->ascon_top__DOT__affine_layer_in[__Vi0]);
     }
@@ -1627,32 +1634,14 @@ VL_ATTR_COLD void Vascon_top___024root___ctor_var_reset(Vascon_top___024root* vl
         VL_RAND_RESET_W(110, vlSelf->ascon_top__DOT__affine_layer2nd_out[__Vi0]);
     }
     VL_RAND_RESET_W(110, vlSelf->ascon_top__DOT__recombine_shares);
-    VL_RAND_RESET_W(320, vlSelf->ascon_top__DOT__state_reg_in_shiftdplus1);
-    vlSelf->ascon_top__DOT__sel_bypass = VL_RAND_RESET_I(1);
     for (int __Vi0 = 0; __Vi0 < 5; ++__Vi0) {
-        vlSelf->ascon_top__DOT__state_reg_in_bypass[__Vi0] = VL_RAND_RESET_Q(64);
+        vlSelf->ascon_top__DOT__state_reg_in_absorb[__Vi0] = VL_RAND_RESET_Q(64);
     }
+    VL_RAND_RESET_W(128, vlSelf->ascon_top__DOT__data_in_padded);
     VL_RAND_RESET_W(128, vlSelf->ascon_top__DOT__reverse_reg_data_out);
     for (int __Vi0 = 0; __Vi0 < 5; ++__Vi0) {
         vlSelf->ascon_top__DOT__linear_diffusion_debug[__Vi0] = VL_RAND_RESET_Q(64);
     }
-    vlSelf->ascon_top__DOT__xor_signal = VL_RAND_RESET_Q(64);
-    vlSelf->ascon_top__DOT__sel_mux_linear_diffusion_out_x3 = VL_RAND_RESET_I(1);
-    vlSelf->ascon_top__DOT__sel_mux_linear_diffusion_out_x4 = VL_RAND_RESET_I(1);
-    vlSelf->ascon_top__DOT__current_state = VL_RAND_RESET_I(5);
-    vlSelf->ascon_top__DOT__next_state = VL_RAND_RESET_I(5);
-    vlSelf->ascon_top__DOT__bit_counter = VL_RAND_RESET_I(3);
-    vlSelf->ascon_top__DOT__number_bits = VL_RAND_RESET_I(3);
-    vlSelf->ascon_top__DOT__round_counter = VL_RAND_RESET_I(4);
-    vlSelf->ascon_top__DOT__number_round = VL_RAND_RESET_I(4);
-    vlSelf->ascon_top__DOT__last_block_process = VL_RAND_RESET_I(1);
-    vlSelf->ascon_top__DOT__last_block_process_ff = VL_RAND_RESET_I(1);
-    vlSelf->ascon_top__DOT__last_block_process_load = VL_RAND_RESET_I(1);
-    vlSelf->ascon_top__DOT__round_counter_enable = VL_RAND_RESET_I(1);
-    vlSelf->ascon_top__DOT__extra_padding = VL_RAND_RESET_I(1);
-    vlSelf->ascon_top__DOT__extra_padding_ff = VL_RAND_RESET_I(1);
-    vlSelf->ascon_top__DOT__extra_padding_load = VL_RAND_RESET_I(1);
-    vlSelf->ascon_top__DOT__rst_counter_round = VL_RAND_RESET_I(1);
     vlSelf->ascon_top__DOT__unnamedblk1__DOT__p = 0;
     vlSelf->ascon_top__DOT__recombine__BRA__0__KET____DOT__temp_bits = VL_RAND_RESET_I(3);
     vlSelf->ascon_top__DOT__recombine__BRA__1__KET____DOT__temp_bits = VL_RAND_RESET_I(3);
@@ -1764,8 +1753,7 @@ VL_ATTR_COLD void Vascon_top___024root___ctor_var_reset(Vascon_top___024root* vl
     vlSelf->ascon_top__DOT__recombine__BRA__107__KET____DOT__temp_bits = VL_RAND_RESET_I(3);
     vlSelf->ascon_top__DOT__recombine__BRA__108__KET____DOT__temp_bits = VL_RAND_RESET_I(3);
     vlSelf->ascon_top__DOT__recombine__BRA__109__KET____DOT__temp_bits = VL_RAND_RESET_I(3);
-    vlSelf->ascon_top__DOT__unnamedblk8__DOT__i = 0;
-    vlSelf->ascon_top__DOT__unnamedblk9__DOT__i = 0;
+    vlSelf->ascon_top__DOT__unnamedblk5__DOT__i = 0;
     vlSelf->ascon_top__DOT____Vlvbound_h438ededb__0 = VL_RAND_RESET_I(1);
     vlSelf->ascon_top__DOT____Vlvbound_hfe1f1a3f__0 = VL_RAND_RESET_I(1);
     vlSelf->ascon_top__DOT____Vlvbound_h56f822d7__0 = VL_RAND_RESET_I(1);
@@ -1775,6 +1763,16 @@ VL_ATTR_COLD void Vascon_top___024root___ctor_var_reset(Vascon_top___024root* vl
     vlSelf->ascon_top__DOT____VdfgRegularize_h0932e10f_3_6 = VL_RAND_RESET_I(22);
     vlSelf->ascon_top__DOT____VdfgRegularize_h0932e10f_3_8 = VL_RAND_RESET_I(22);
     vlSelf->ascon_top__DOT____VdfgRegularize_h0932e10f_3_9 = VL_RAND_RESET_I(22);
+    vlSelf->ascon_top__DOT__mealy_fsm__DOT__current_state = VL_RAND_RESET_I(5);
+    vlSelf->ascon_top__DOT__mealy_fsm__DOT__next_state = VL_RAND_RESET_I(5);
+    vlSelf->ascon_top__DOT__mealy_fsm__DOT__number_bits = VL_RAND_RESET_I(3);
+    vlSelf->ascon_top__DOT__mealy_fsm__DOT__number_round = VL_RAND_RESET_I(4);
+    vlSelf->ascon_top__DOT__mealy_fsm__DOT__last_block_process = VL_RAND_RESET_I(1);
+    vlSelf->ascon_top__DOT__mealy_fsm__DOT__last_block_process_ff = VL_RAND_RESET_I(1);
+    vlSelf->ascon_top__DOT__mealy_fsm__DOT__last_block_process_load = VL_RAND_RESET_I(1);
+    vlSelf->ascon_top__DOT__mealy_fsm__DOT__extra_padding_load = VL_RAND_RESET_I(1);
+    vlSelf->ascon_top__DOT__mealy_fsm__DOT__round_counter_enable = VL_RAND_RESET_I(1);
+    vlSelf->ascon_top__DOT__mealy_fsm__DOT__rst_counter_round = VL_RAND_RESET_I(1);
     for (int __Vi0 = 0; __Vi0 < 5; ++__Vi0) {
         vlSelf->ascon_top__DOT__state_reg__DOT__state[__Vi0] = VL_RAND_RESET_Q(64);
     }
@@ -1786,7 +1784,6 @@ VL_ATTR_COLD void Vascon_top___024root___ctor_var_reset(Vascon_top___024root* vl
     vlSelf->ascon_top__DOT__state_reg__DOT____Vlvbound_hf68ebc64__2 = VL_RAND_RESET_Q(64);
     vlSelf->ascon_top__DOT__state_reg__DOT____Vlvbound_hf68ebc64__3 = VL_RAND_RESET_Q(64);
     vlSelf->ascon_top__DOT__state_reg__DOT____Vlvbound_hf68ebc64__4 = VL_RAND_RESET_Q(64);
-    VL_RAND_RESET_W(128, vlSelf->ascon_top__DOT__data_in_shifter__DOT__reg_q);
     vlSelf->ascon_top__DOT__key1_reg__DOT__reg_q = VL_RAND_RESET_Q(64);
     vlSelf->ascon_top__DOT__key2_reg__DOT__reg_q = VL_RAND_RESET_Q(64);
     vlSelf->ascon_top__DOT__sipo_reg_x0_debug__DOT__state = VL_RAND_RESET_Q(64);
@@ -2244,9 +2241,12 @@ VL_ATTR_COLD void Vascon_top___024root___ctor_var_reset(Vascon_top___024root* vl
     for (int __Vi0 = 0; __Vi0 < 3; ++__Vi0) {
         vlSelf->__Vfunc_ascon_top__DOT__xor_tree__109__stage[__Vi0] = VL_RAND_RESET_I(3);
     }
+    VL_RAND_RESET_W(128, vlSelf->__Vfunc_ascon_top__DOT__reverse_bytes__110__Vfuncout);
+    VL_RAND_RESET_W(128, vlSelf->__Vfunc_ascon_top__DOT__reverse_bytes__110__x);
     VL_RAND_RESET_W(128, vlSelf->__Vfunc_ascon_top__DOT__reverse_bytes__110__y);
-    vlSelf->__Vfunc_ascon_top__DOT__rotr64__111__Vfuncout = VL_RAND_RESET_Q(64);
-    vlSelf->__Vfunc_ascon_top__DOT__rotr64__111__x = VL_RAND_RESET_Q(64);
+    VL_RAND_RESET_W(128, vlSelf->__Vfunc_ascon_top__DOT__reverse_bytes__111__Vfuncout);
+    VL_RAND_RESET_W(128, vlSelf->__Vfunc_ascon_top__DOT__reverse_bytes__111__x);
+    VL_RAND_RESET_W(128, vlSelf->__Vfunc_ascon_top__DOT__reverse_bytes__111__y);
     vlSelf->__Vfunc_ascon_top__DOT__rotr64__112__Vfuncout = VL_RAND_RESET_Q(64);
     vlSelf->__Vfunc_ascon_top__DOT__rotr64__112__x = VL_RAND_RESET_Q(64);
     vlSelf->__Vfunc_ascon_top__DOT__rotr64__113__Vfuncout = VL_RAND_RESET_Q(64);
@@ -2265,6 +2265,8 @@ VL_ATTR_COLD void Vascon_top___024root___ctor_var_reset(Vascon_top___024root* vl
     vlSelf->__Vfunc_ascon_top__DOT__rotr64__119__x = VL_RAND_RESET_Q(64);
     vlSelf->__Vfunc_ascon_top__DOT__rotr64__120__Vfuncout = VL_RAND_RESET_Q(64);
     vlSelf->__Vfunc_ascon_top__DOT__rotr64__120__x = VL_RAND_RESET_Q(64);
+    vlSelf->__Vfunc_ascon_top__DOT__rotr64__121__Vfuncout = VL_RAND_RESET_Q(64);
+    vlSelf->__Vfunc_ascon_top__DOT__rotr64__121__x = VL_RAND_RESET_Q(64);
     vlSelf->__Vtrigprevexpr___TOP__clk__0 = VL_RAND_RESET_I(1);
     vlSelf->__Vtrigprevexpr___TOP__reset_n__0 = VL_RAND_RESET_I(1);
     for (int __Vi0 = 0; __Vi0 < 5; ++__Vi0) {

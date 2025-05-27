@@ -18,7 +18,11 @@ module fsm #(
     parameter int WORD_SIZE = 64,
     parameter int PAR = 22,
     parameter int NUMBER_BIT_MASK = ((64+PAR-1)/PAR) + 1,
-    parameter int NUMBER_BIT_NOMASK = ((64 + PAR*(d+1)) / (PAR*(d+1)))
+    //NOTA: qua non c'era il caso con il ?
+    parameter int NUMBER_BIT_NOMASK = (64 % PAR*(d+1) == 0) ? 
+                                ((64 + PAR*(d+1)) / (PAR*(d+1)) - 1) :
+                                ((64 + PAR*(d+1)) / (PAR*(d+1))) 
+
 )(
     input  logic clk,
     input  logic reset_n,

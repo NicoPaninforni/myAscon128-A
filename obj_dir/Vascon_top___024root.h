@@ -48,43 +48,34 @@ class alignas(VL_CACHE_LINE_BYTES) Vascon_top___024root final : public Verilated
         VL_IN8(last_block,0,0);
         VL_IN8(valid_bytes,3,0);
         VL_IN8(EOT,0,0);
+        VL_IN8(random_masks_sbox,2,0);
         VL_OUT8(ciphertext_valid,0,0);
         VL_OUT8(done,0,0);
         VL_OUT8(ready_tag,0,0);
         VL_OUT8(ready_for_data,0,0);
+        VL_OUT8(debug_extra_padding_ff,0,0);
         VL_OUT8(debug_bitcounter,2,0);
         VL_OUT8(debug_roundcounter,3,0);
         VL_OUT8(debug_state,4,0);
-        VL_OUT8(debug_extra_padding_ff,0,0);
-        CData/*0:0*/ ascon_top__DOT__sel_load_iv_nonce_key;
-        CData/*0:0*/ ascon_top__DOT__write_en;
         CData/*0:0*/ ascon_top__DOT__shift_en;
         CData/*0:0*/ ascon_top__DOT__shift_type;
+        CData/*0:0*/ ascon_top__DOT__write_en;
         CData/*0:0*/ ascon_top__DOT__last_cycle;
-        CData/*0:0*/ ascon_top__DOT__load_reg_data_in;
         CData/*0:0*/ ascon_top__DOT__reg_key1_load;
         CData/*0:0*/ ascon_top__DOT__reg_key2_load;
-        CData/*0:0*/ ascon_top__DOT__shift_enable_x0;
-        CData/*0:0*/ ascon_top__DOT__last_cycle_x0;
-        CData/*0:0*/ ascon_top__DOT__sel_masked_round;
-        CData/*2:0*/ ascon_top__DOT__fresh_r;
-        CData/*0:0*/ ascon_top__DOT__sel_bypass;
         CData/*0:0*/ ascon_top__DOT__sel_mux_linear_diffusion_out_x3;
         CData/*0:0*/ ascon_top__DOT__sel_mux_linear_diffusion_out_x4;
-        CData/*4:0*/ ascon_top__DOT__current_state;
-        CData/*4:0*/ ascon_top__DOT__next_state;
-        CData/*2:0*/ ascon_top__DOT__bit_counter;
-        CData/*2:0*/ ascon_top__DOT__number_bits;
-        CData/*3:0*/ ascon_top__DOT__round_counter;
-        CData/*3:0*/ ascon_top__DOT__number_round;
-        CData/*0:0*/ ascon_top__DOT__last_block_process;
-        CData/*0:0*/ ascon_top__DOT__last_block_process_ff;
-        CData/*0:0*/ ascon_top__DOT__last_block_process_load;
-        CData/*0:0*/ ascon_top__DOT__round_counter_enable;
+        CData/*0:0*/ ascon_top__DOT__sel_init_load;
+        CData/*0:0*/ ascon_top__DOT__sel_masked_round;
+        CData/*0:0*/ ascon_top__DOT__sel_padding;
+        CData/*0:0*/ ascon_top__DOT__sel_xor_signal;
+        CData/*0:0*/ ascon_top__DOT__sel_absorb_data;
         CData/*0:0*/ ascon_top__DOT__extra_padding;
-        CData/*0:0*/ ascon_top__DOT__extra_padding_ff;
-        CData/*0:0*/ ascon_top__DOT__extra_padding_load;
-        CData/*0:0*/ ascon_top__DOT__rst_counter_round;
+        CData/*0:0*/ ascon_top__DOT__shift_enable_sipo;
+        CData/*0:0*/ ascon_top__DOT__last_cycle_sipo;
+        CData/*3:0*/ ascon_top__DOT__round_counter;
+        CData/*2:0*/ ascon_top__DOT__bit_counter;
+        CData/*2:0*/ ascon_top__DOT__fresh_r;
         CData/*2:0*/ ascon_top__DOT__recombine__BRA__0__KET____DOT__temp_bits;
         CData/*2:0*/ ascon_top__DOT__recombine__BRA__1__KET____DOT__temp_bits;
         CData/*2:0*/ ascon_top__DOT__recombine__BRA__2__KET____DOT__temp_bits;
@@ -104,8 +95,6 @@ class alignas(VL_CACHE_LINE_BYTES) Vascon_top___024root final : public Verilated
         CData/*2:0*/ ascon_top__DOT__recombine__BRA__16__KET____DOT__temp_bits;
         CData/*2:0*/ ascon_top__DOT__recombine__BRA__17__KET____DOT__temp_bits;
         CData/*2:0*/ ascon_top__DOT__recombine__BRA__18__KET____DOT__temp_bits;
-    };
-    struct {
         CData/*2:0*/ ascon_top__DOT__recombine__BRA__19__KET____DOT__temp_bits;
         CData/*2:0*/ ascon_top__DOT__recombine__BRA__20__KET____DOT__temp_bits;
         CData/*2:0*/ ascon_top__DOT__recombine__BRA__21__KET____DOT__temp_bits;
@@ -115,6 +104,8 @@ class alignas(VL_CACHE_LINE_BYTES) Vascon_top___024root final : public Verilated
         CData/*2:0*/ ascon_top__DOT__recombine__BRA__25__KET____DOT__temp_bits;
         CData/*2:0*/ ascon_top__DOT__recombine__BRA__26__KET____DOT__temp_bits;
         CData/*2:0*/ ascon_top__DOT__recombine__BRA__27__KET____DOT__temp_bits;
+    };
+    struct {
         CData/*2:0*/ ascon_top__DOT__recombine__BRA__28__KET____DOT__temp_bits;
         CData/*2:0*/ ascon_top__DOT__recombine__BRA__29__KET____DOT__temp_bits;
         CData/*2:0*/ ascon_top__DOT__recombine__BRA__30__KET____DOT__temp_bits;
@@ -170,8 +161,6 @@ class alignas(VL_CACHE_LINE_BYTES) Vascon_top___024root final : public Verilated
         CData/*2:0*/ ascon_top__DOT__recombine__BRA__80__KET____DOT__temp_bits;
         CData/*2:0*/ ascon_top__DOT__recombine__BRA__81__KET____DOT__temp_bits;
         CData/*2:0*/ ascon_top__DOT__recombine__BRA__82__KET____DOT__temp_bits;
-    };
-    struct {
         CData/*2:0*/ ascon_top__DOT__recombine__BRA__83__KET____DOT__temp_bits;
         CData/*2:0*/ ascon_top__DOT__recombine__BRA__84__KET____DOT__temp_bits;
         CData/*2:0*/ ascon_top__DOT__recombine__BRA__85__KET____DOT__temp_bits;
@@ -181,6 +170,8 @@ class alignas(VL_CACHE_LINE_BYTES) Vascon_top___024root final : public Verilated
         CData/*2:0*/ ascon_top__DOT__recombine__BRA__89__KET____DOT__temp_bits;
         CData/*2:0*/ ascon_top__DOT__recombine__BRA__90__KET____DOT__temp_bits;
         CData/*2:0*/ ascon_top__DOT__recombine__BRA__91__KET____DOT__temp_bits;
+    };
+    struct {
         CData/*2:0*/ ascon_top__DOT__recombine__BRA__92__KET____DOT__temp_bits;
         CData/*2:0*/ ascon_top__DOT__recombine__BRA__93__KET____DOT__temp_bits;
         CData/*2:0*/ ascon_top__DOT__recombine__BRA__94__KET____DOT__temp_bits;
@@ -202,6 +193,16 @@ class alignas(VL_CACHE_LINE_BYTES) Vascon_top___024root final : public Verilated
         CData/*0:0*/ ascon_top__DOT____Vlvbound_h438ededb__0;
         CData/*0:0*/ ascon_top__DOT____Vlvbound_hfe1f1a3f__0;
         CData/*0:0*/ ascon_top__DOT____Vlvbound_h56f822d7__0;
+        CData/*4:0*/ ascon_top__DOT__mealy_fsm__DOT__current_state;
+        CData/*4:0*/ ascon_top__DOT__mealy_fsm__DOT__next_state;
+        CData/*2:0*/ ascon_top__DOT__mealy_fsm__DOT__number_bits;
+        CData/*3:0*/ ascon_top__DOT__mealy_fsm__DOT__number_round;
+        CData/*0:0*/ ascon_top__DOT__mealy_fsm__DOT__last_block_process;
+        CData/*0:0*/ ascon_top__DOT__mealy_fsm__DOT__last_block_process_ff;
+        CData/*0:0*/ ascon_top__DOT__mealy_fsm__DOT__last_block_process_load;
+        CData/*0:0*/ ascon_top__DOT__mealy_fsm__DOT__extra_padding_load;
+        CData/*0:0*/ ascon_top__DOT__mealy_fsm__DOT__round_counter_enable;
+        CData/*0:0*/ ascon_top__DOT__mealy_fsm__DOT__rst_counter_round;
         CData/*0:0*/ __VstlFirstIteration;
         CData/*0:0*/ __VicoFirstIteration;
         CData/*0:0*/ __Vtrigprevexpr___TOP__clk__0;
@@ -213,17 +214,15 @@ class alignas(VL_CACHE_LINE_BYTES) Vascon_top___024root final : public Verilated
         VlWide<10>/*319:0*/ ascon_top__DOT__state_reg_out;
         VlWide<10>/*319:0*/ ascon_top__DOT__state_reg_in;
         VlWide<10>/*319:0*/ ascon_top__DOT__state_reg_out_shiftdplus1;
-        VlWide<4>/*127:0*/ ascon_top__DOT__reg_data_in;
-        IData/*21:0*/ ascon_top__DOT__reg_key1_serial_out;
+        VlWide<10>/*319:0*/ ascon_top__DOT__state_reg_in_shiftdplus1;
         IData/*21:0*/ ascon_top__DOT____Vcellinp__sipo_reg_x2_debug__in_shifted_1bit;
         VlWide<11>/*329:0*/ ascon_top__DOT__shares_out;
         VlWide<4>/*109:0*/ ascon_top__DOT__shares_in;
         VlWide<4>/*109:0*/ ascon_top__DOT__recombine_shares;
-        VlWide<10>/*319:0*/ ascon_top__DOT__state_reg_in_shiftdplus1;
+        VlWide<4>/*127:0*/ ascon_top__DOT__data_in_padded;
         VlWide<4>/*127:0*/ ascon_top__DOT__reverse_reg_data_out;
         IData/*31:0*/ ascon_top__DOT__unnamedblk1__DOT__p;
-        IData/*31:0*/ ascon_top__DOT__unnamedblk8__DOT__i;
-        IData/*31:0*/ ascon_top__DOT__unnamedblk9__DOT__i;
+        IData/*31:0*/ ascon_top__DOT__unnamedblk5__DOT__i;
         VlWide<6>/*191:0*/ ascon_top__DOT____VdfgRegularize_h0932e10f_2_0;
         IData/*21:0*/ ascon_top__DOT____VdfgRegularize_h0932e10f_3_3;
         IData/*21:0*/ ascon_top__DOT____VdfgRegularize_h0932e10f_3_5;
@@ -231,15 +230,14 @@ class alignas(VL_CACHE_LINE_BYTES) Vascon_top___024root final : public Verilated
         IData/*21:0*/ ascon_top__DOT____VdfgRegularize_h0932e10f_3_8;
         IData/*21:0*/ ascon_top__DOT____VdfgRegularize_h0932e10f_3_9;
         IData/*31:0*/ ascon_top__DOT__state_reg__DOT__unnamedblk3__DOT__i;
-        VlWide<4>/*127:0*/ ascon_top__DOT__data_in_shifter__DOT__reg_q;
         VlWide<4>/*109:0*/ ascon_top__DOT__share_creator__DOT__temp;
         IData/*31:0*/ __Vfunc_ascon_top__DOT__xor_tree__0__unnamedblk3__DOT__i;
         IData/*31:0*/ __Vfunc_ascon_top__DOT__xor_tree__1__unnamedblk3__DOT__i;
         IData/*31:0*/ __Vfunc_ascon_top__DOT__xor_tree__2__unnamedblk3__DOT__i;
-    };
-    struct {
         IData/*31:0*/ __Vfunc_ascon_top__DOT__xor_tree__3__unnamedblk3__DOT__i;
         IData/*31:0*/ __Vfunc_ascon_top__DOT__xor_tree__4__unnamedblk3__DOT__i;
+    };
+    struct {
         IData/*31:0*/ __Vfunc_ascon_top__DOT__xor_tree__5__unnamedblk3__DOT__i;
         IData/*31:0*/ __Vfunc_ascon_top__DOT__xor_tree__6__unnamedblk3__DOT__i;
         IData/*31:0*/ __Vfunc_ascon_top__DOT__xor_tree__7__unnamedblk3__DOT__i;
@@ -302,10 +300,10 @@ class alignas(VL_CACHE_LINE_BYTES) Vascon_top___024root final : public Verilated
         IData/*31:0*/ __Vfunc_ascon_top__DOT__xor_tree__62__unnamedblk3__DOT__i;
         IData/*31:0*/ __Vfunc_ascon_top__DOT__xor_tree__63__unnamedblk3__DOT__i;
         IData/*31:0*/ __Vfunc_ascon_top__DOT__xor_tree__64__unnamedblk3__DOT__i;
-    };
-    struct {
         IData/*31:0*/ __Vfunc_ascon_top__DOT__xor_tree__65__unnamedblk3__DOT__i;
         IData/*31:0*/ __Vfunc_ascon_top__DOT__xor_tree__66__unnamedblk3__DOT__i;
+    };
+    struct {
         IData/*31:0*/ __Vfunc_ascon_top__DOT__xor_tree__67__unnamedblk3__DOT__i;
         IData/*31:0*/ __Vfunc_ascon_top__DOT__xor_tree__68__unnamedblk3__DOT__i;
         IData/*31:0*/ __Vfunc_ascon_top__DOT__xor_tree__69__unnamedblk3__DOT__i;
@@ -351,7 +349,12 @@ class alignas(VL_CACHE_LINE_BYTES) Vascon_top___024root final : public Verilated
         IData/*31:0*/ __Vfunc_ascon_top__DOT__xor_tree__107__unnamedblk3__DOT__i;
         IData/*31:0*/ __Vfunc_ascon_top__DOT__xor_tree__108__unnamedblk3__DOT__i;
         IData/*31:0*/ __Vfunc_ascon_top__DOT__xor_tree__109__unnamedblk3__DOT__i;
+        VlWide<4>/*127:0*/ __Vfunc_ascon_top__DOT__reverse_bytes__110__Vfuncout;
+        VlWide<4>/*127:0*/ __Vfunc_ascon_top__DOT__reverse_bytes__110__x;
         VlWide<4>/*127:0*/ __Vfunc_ascon_top__DOT__reverse_bytes__110__y;
+        VlWide<4>/*127:0*/ __Vfunc_ascon_top__DOT__reverse_bytes__111__Vfuncout;
+        VlWide<4>/*127:0*/ __Vfunc_ascon_top__DOT__reverse_bytes__111__x;
+        VlWide<4>/*127:0*/ __Vfunc_ascon_top__DOT__reverse_bytes__111__y;
         IData/*31:0*/ __VactIterCount;
         VL_IN64(key1,63,0);
         VL_IN64(key2,63,0);
@@ -365,16 +368,15 @@ class alignas(VL_CACHE_LINE_BYTES) Vascon_top___024root final : public Verilated
         VL_OUT64(debug_state_2,63,0);
         VL_OUT64(debug_state_3,63,0);
         VL_OUT64(debug_state_4,63,0);
+    };
+    struct {
         VL_OUT64(debug_round_state_0,63,0);
         VL_OUT64(debug_round_state_1,63,0);
         VL_OUT64(debug_round_state_2,63,0);
-    };
-    struct {
         VL_OUT64(debug_round_state_3,63,0);
         VL_OUT64(debug_round_state_4,63,0);
         VL_OUT64(debug_linear_diffusion_state3,63,0);
         VL_OUT64(debug_linear_diffusion_state4,63,0);
-        QData/*63:0*/ ascon_top__DOT__xor_signal;
         QData/*63:0*/ ascon_top__DOT__state_reg__DOT____Vlvbound_hf68ebc64__1;
         QData/*63:0*/ ascon_top__DOT__state_reg__DOT____Vlvbound_hf68ebc64__2;
         QData/*63:0*/ ascon_top__DOT__state_reg__DOT____Vlvbound_hf68ebc64__3;
@@ -391,8 +393,6 @@ class alignas(VL_CACHE_LINE_BYTES) Vascon_top___024root final : public Verilated
         QData/*63:0*/ ascon_top__DOT__sipo_reg_x3_debug__DOT__next_state;
         QData/*63:0*/ ascon_top__DOT__sipo_reg_x4_debug__DOT__state;
         QData/*63:0*/ ascon_top__DOT__sipo_reg_x4_debug__DOT__next_state;
-        QData/*63:0*/ __Vfunc_ascon_top__DOT__rotr64__111__Vfuncout;
-        QData/*63:0*/ __Vfunc_ascon_top__DOT__rotr64__111__x;
         QData/*63:0*/ __Vfunc_ascon_top__DOT__rotr64__112__Vfuncout;
         QData/*63:0*/ __Vfunc_ascon_top__DOT__rotr64__112__x;
         QData/*63:0*/ __Vfunc_ascon_top__DOT__rotr64__113__Vfuncout;
@@ -411,6 +411,8 @@ class alignas(VL_CACHE_LINE_BYTES) Vascon_top___024root final : public Verilated
         QData/*63:0*/ __Vfunc_ascon_top__DOT__rotr64__119__x;
         QData/*63:0*/ __Vfunc_ascon_top__DOT__rotr64__120__Vfuncout;
         QData/*63:0*/ __Vfunc_ascon_top__DOT__rotr64__120__x;
+        QData/*63:0*/ __Vfunc_ascon_top__DOT__rotr64__121__Vfuncout;
+        QData/*63:0*/ __Vfunc_ascon_top__DOT__rotr64__121__x;
         VlUnpacked<IData/*21:0*/, 3> ascon_top__DOT__rc_block;
         VlUnpacked<VlWide<4>/*109:0*/, 3> ascon_top__DOT__affine_layer_in;
         VlUnpacked<VlWide<4>/*109:0*/, 3> ascon_top__DOT__affine_layer_out;
@@ -421,7 +423,7 @@ class alignas(VL_CACHE_LINE_BYTES) Vascon_top___024root final : public Verilated
         VlUnpacked<SData/*14:0*/, 22> ascon_top__DOT__mux_sbox_out;
         VlUnpacked<VlWide<4>/*109:0*/, 3> ascon_top__DOT__affine_layer2nd_in;
         VlUnpacked<VlWide<4>/*109:0*/, 3> ascon_top__DOT__affine_layer2nd_out;
-        VlUnpacked<QData/*63:0*/, 5> ascon_top__DOT__state_reg_in_bypass;
+        VlUnpacked<QData/*63:0*/, 5> ascon_top__DOT__state_reg_in_absorb;
         VlUnpacked<QData/*63:0*/, 5> ascon_top__DOT__linear_diffusion_debug;
         VlUnpacked<QData/*63:0*/, 5> ascon_top__DOT__state_reg__DOT__state;
         VlUnpacked<QData/*63:0*/, 5> ascon_top__DOT__state_reg__DOT__next_state;
@@ -432,10 +434,10 @@ class alignas(VL_CACHE_LINE_BYTES) Vascon_top___024root final : public Verilated
         VlUnpacked<CData/*2:0*/, 3> __Vfunc_ascon_top__DOT__xor_tree__4__stage;
         VlUnpacked<CData/*2:0*/, 3> __Vfunc_ascon_top__DOT__xor_tree__5__stage;
         VlUnpacked<CData/*2:0*/, 3> __Vfunc_ascon_top__DOT__xor_tree__6__stage;
-        VlUnpacked<CData/*2:0*/, 3> __Vfunc_ascon_top__DOT__xor_tree__7__stage;
-        VlUnpacked<CData/*2:0*/, 3> __Vfunc_ascon_top__DOT__xor_tree__8__stage;
     };
     struct {
+        VlUnpacked<CData/*2:0*/, 3> __Vfunc_ascon_top__DOT__xor_tree__7__stage;
+        VlUnpacked<CData/*2:0*/, 3> __Vfunc_ascon_top__DOT__xor_tree__8__stage;
         VlUnpacked<CData/*2:0*/, 3> __Vfunc_ascon_top__DOT__xor_tree__9__stage;
         VlUnpacked<CData/*2:0*/, 3> __Vfunc_ascon_top__DOT__xor_tree__10__stage;
         VlUnpacked<CData/*2:0*/, 3> __Vfunc_ascon_top__DOT__xor_tree__11__stage;
@@ -498,10 +500,10 @@ class alignas(VL_CACHE_LINE_BYTES) Vascon_top___024root final : public Verilated
         VlUnpacked<CData/*2:0*/, 3> __Vfunc_ascon_top__DOT__xor_tree__68__stage;
         VlUnpacked<CData/*2:0*/, 3> __Vfunc_ascon_top__DOT__xor_tree__69__stage;
         VlUnpacked<CData/*2:0*/, 3> __Vfunc_ascon_top__DOT__xor_tree__70__stage;
-        VlUnpacked<CData/*2:0*/, 3> __Vfunc_ascon_top__DOT__xor_tree__71__stage;
-        VlUnpacked<CData/*2:0*/, 3> __Vfunc_ascon_top__DOT__xor_tree__72__stage;
     };
     struct {
+        VlUnpacked<CData/*2:0*/, 3> __Vfunc_ascon_top__DOT__xor_tree__71__stage;
+        VlUnpacked<CData/*2:0*/, 3> __Vfunc_ascon_top__DOT__xor_tree__72__stage;
         VlUnpacked<CData/*2:0*/, 3> __Vfunc_ascon_top__DOT__xor_tree__73__stage;
         VlUnpacked<CData/*2:0*/, 3> __Vfunc_ascon_top__DOT__xor_tree__74__stage;
         VlUnpacked<CData/*2:0*/, 3> __Vfunc_ascon_top__DOT__xor_tree__75__stage;

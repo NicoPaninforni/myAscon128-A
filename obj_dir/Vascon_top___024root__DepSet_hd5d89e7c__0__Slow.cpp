@@ -178,16 +178,16 @@ VL_ATTR_COLD void Vascon_top___024root___stl_sequent__TOP__1(Vascon_top___024roo
     ascon_top__DOT____Vlvbound_h9bff81b0__0 = 0;
     IData/*21:0*/ ascon_top__DOT____VdfgRegularize_h0932e10f_4_2;
     ascon_top__DOT____VdfgRegularize_h0932e10f_4_2 = 0;
-    QData/*43:0*/ ascon_top__DOT____VdfgRegularize_h0932e10f_4_4;
-    ascon_top__DOT____VdfgRegularize_h0932e10f_4_4 = 0;
-    IData/*21:0*/ ascon_top__DOT____VdfgRegularize_h0932e10f_4_7;
+    QData/*43:0*/ ascon_top__DOT____VdfgRegularize_h0932e10f_4_3;
+    ascon_top__DOT____VdfgRegularize_h0932e10f_4_3 = 0;
+    IData/*21:0*/ ascon_top__DOT____VdfgRegularize_h0932e10f_4_6;
+    ascon_top__DOT____VdfgRegularize_h0932e10f_4_6 = 0;
+    QData/*43:0*/ ascon_top__DOT____VdfgRegularize_h0932e10f_4_7;
     ascon_top__DOT____VdfgRegularize_h0932e10f_4_7 = 0;
-    QData/*43:0*/ ascon_top__DOT____VdfgRegularize_h0932e10f_4_9;
-    ascon_top__DOT____VdfgRegularize_h0932e10f_4_9 = 0;
-    IData/*21:0*/ ascon_top__DOT____VdfgRegularize_h0932e10f_4_12;
-    ascon_top__DOT____VdfgRegularize_h0932e10f_4_12 = 0;
-    QData/*43:0*/ ascon_top__DOT____VdfgRegularize_h0932e10f_4_14;
-    ascon_top__DOT____VdfgRegularize_h0932e10f_4_14 = 0;
+    IData/*21:0*/ ascon_top__DOT____VdfgRegularize_h0932e10f_4_10;
+    ascon_top__DOT____VdfgRegularize_h0932e10f_4_10 = 0;
+    QData/*43:0*/ ascon_top__DOT____VdfgRegularize_h0932e10f_4_11;
+    ascon_top__DOT____VdfgRegularize_h0932e10f_4_11 = 0;
     CData/*0:0*/ __Vfunc_ascon_top__DOT__xor_tree__0__Vfuncout;
     __Vfunc_ascon_top__DOT__xor_tree__0__Vfuncout = 0;
     CData/*2:0*/ __Vfunc_ascon_top__DOT__xor_tree__0__in;
@@ -2686,7 +2686,7 @@ VL_ATTR_COLD void Vascon_top___024root___stl_sequent__TOP__1(Vascon_top___024roo
         = ((0x1fffU & vlSelfRef.ascon_top__DOT__affine_layer2nd_in
             [2U][3U]) | (0x2000U & (vlSelfRef.ascon_top__DOT__mux_sbox_out
                                     [0x15U] >> 1U)));
-    ascon_top__DOT____VdfgRegularize_h0932e10f_4_12 
+    ascon_top__DOT____VdfgRegularize_h0932e10f_4_10 
         = (0x3fffffU & (((vlSelfRef.ascon_top__DOT__affine_layer2nd_in
                           [2U][2U] << 0x1eU) | (vlSelfRef.ascon_top__DOT__affine_layer2nd_in
                                                 [2U][2U] 
@@ -2695,7 +2695,7 @@ VL_ATTR_COLD void Vascon_top___024root___stl_sequent__TOP__1(Vascon_top___024roo
                             [2U][2U] << 0x14U) | (vlSelfRef.ascon_top__DOT__affine_layer2nd_in
                                                   [2U][1U] 
                                                   >> 0xcU))));
-    ascon_top__DOT____VdfgRegularize_h0932e10f_4_7 
+    ascon_top__DOT____VdfgRegularize_h0932e10f_4_6 
         = (0x3fffffU & (((vlSelfRef.ascon_top__DOT__affine_layer2nd_in
                           [1U][2U] << 0x1eU) | (vlSelfRef.ascon_top__DOT__affine_layer2nd_in
                                                 [1U][2U] 
@@ -2713,7 +2713,7 @@ VL_ATTR_COLD void Vascon_top___024root___stl_sequent__TOP__1(Vascon_top___024roo
                             [0U][2U] << 0x14U) | (vlSelfRef.ascon_top__DOT__affine_layer2nd_in
                                                   [0U][1U] 
                                                   >> 0xcU))));
-    ascon_top__DOT____VdfgRegularize_h0932e10f_4_14 
+    ascon_top__DOT____VdfgRegularize_h0932e10f_4_11 
         = (0xfffffffffffULL & ((((QData)((IData)(vlSelfRef.ascon_top__DOT__affine_layer2nd_in
                                                  [2U][1U])) 
                                  << 0x20U) | (QData)((IData)(
@@ -2731,7 +2731,7 @@ VL_ATTR_COLD void Vascon_top___024root___stl_sequent__TOP__1(Vascon_top___024roo
                                                                    | (vlSelfRef.ascon_top__DOT__affine_layer2nd_in
                                                                       [2U][2U] 
                                                                       >> 0x18U))))))));
-    ascon_top__DOT____VdfgRegularize_h0932e10f_4_9 
+    ascon_top__DOT____VdfgRegularize_h0932e10f_4_7 
         = (0xfffffffffffULL & ((((QData)((IData)(vlSelfRef.ascon_top__DOT__affine_layer2nd_in
                                                  [1U][1U])) 
                                  << 0x20U) | (QData)((IData)(
@@ -2749,7 +2749,7 @@ VL_ATTR_COLD void Vascon_top___024root___stl_sequent__TOP__1(Vascon_top___024roo
                                                                    | (vlSelfRef.ascon_top__DOT__affine_layer2nd_in
                                                                       [1U][2U] 
                                                                       >> 0x18U))))))));
-    ascon_top__DOT____VdfgRegularize_h0932e10f_4_4 
+    ascon_top__DOT____VdfgRegularize_h0932e10f_4_3 
         = (0xfffffffffffULL & ((((QData)((IData)(vlSelfRef.ascon_top__DOT__affine_layer2nd_in
                                                  [0U][1U])) 
                                  << 0x20U) | (QData)((IData)(
@@ -2768,10 +2768,10 @@ VL_ATTR_COLD void Vascon_top___024root___stl_sequent__TOP__1(Vascon_top___024roo
                                                                       [0U][2U] 
                                                                       >> 0x18U))))))));
     vlSelfRef.ascon_top__DOT__affine_layer2nd_out[2U][0U] 
-        = (IData)(ascon_top__DOT____VdfgRegularize_h0932e10f_4_14);
+        = (IData)(ascon_top__DOT____VdfgRegularize_h0932e10f_4_11);
     vlSelfRef.ascon_top__DOT__affine_layer2nd_out[2U][1U] 
         = ((0xfffff000U & vlSelfRef.ascon_top__DOT__affine_layer2nd_out
-            [2U][1U]) | (IData)((ascon_top__DOT____VdfgRegularize_h0932e10f_4_14 
+            [2U][1U]) | (IData)((ascon_top__DOT____VdfgRegularize_h0932e10f_4_11 
                                  >> 0x20U)));
     vlSelfRef.ascon_top__DOT__affine_layer2nd_out[2U][1U] 
         = ((0xfffU & vlSelfRef.ascon_top__DOT__affine_layer2nd_out
@@ -2788,7 +2788,7 @@ VL_ATTR_COLD void Vascon_top___024root___stl_sequent__TOP__1(Vascon_top___024roo
                                >> 0x14U)));
     vlSelfRef.ascon_top__DOT__affine_layer2nd_out[2U][2U] 
         = ((0xff000003U & vlSelfRef.ascon_top__DOT__affine_layer2nd_out
-            [2U][2U]) | (ascon_top__DOT____VdfgRegularize_h0932e10f_4_12 
+            [2U][2U]) | (ascon_top__DOT____VdfgRegularize_h0932e10f_4_10 
                          << 2U));
     vlSelfRef.ascon_top__DOT__affine_layer2nd_out[2U][2U] 
         = ((0xffffffU & vlSelfRef.ascon_top__DOT__affine_layer2nd_out
@@ -2798,10 +2798,10 @@ VL_ATTR_COLD void Vascon_top___024root___stl_sequent__TOP__1(Vascon_top___024roo
         = (0x3fffU & vlSelfRef.ascon_top__DOT__affine_layer2nd_in
            [2U][3U]);
     vlSelfRef.ascon_top__DOT__affine_layer2nd_out[1U][0U] 
-        = (IData)(ascon_top__DOT____VdfgRegularize_h0932e10f_4_9);
+        = (IData)(ascon_top__DOT____VdfgRegularize_h0932e10f_4_7);
     vlSelfRef.ascon_top__DOT__affine_layer2nd_out[1U][1U] 
         = ((0xfffff000U & vlSelfRef.ascon_top__DOT__affine_layer2nd_out
-            [1U][1U]) | (IData)((ascon_top__DOT____VdfgRegularize_h0932e10f_4_9 
+            [1U][1U]) | (IData)((ascon_top__DOT____VdfgRegularize_h0932e10f_4_7 
                                  >> 0x20U)));
     vlSelfRef.ascon_top__DOT__affine_layer2nd_out[1U][1U] 
         = ((0xfffU & vlSelfRef.ascon_top__DOT__affine_layer2nd_out
@@ -2818,7 +2818,7 @@ VL_ATTR_COLD void Vascon_top___024root___stl_sequent__TOP__1(Vascon_top___024roo
                                >> 0x14U)));
     vlSelfRef.ascon_top__DOT__affine_layer2nd_out[1U][2U] 
         = ((0xff000003U & vlSelfRef.ascon_top__DOT__affine_layer2nd_out
-            [1U][2U]) | (ascon_top__DOT____VdfgRegularize_h0932e10f_4_7 
+            [1U][2U]) | (ascon_top__DOT____VdfgRegularize_h0932e10f_4_6 
                          << 2U));
     vlSelfRef.ascon_top__DOT__affine_layer2nd_out[1U][2U] 
         = ((0xffffffU & vlSelfRef.ascon_top__DOT__affine_layer2nd_out
@@ -2828,47 +2828,47 @@ VL_ATTR_COLD void Vascon_top___024root___stl_sequent__TOP__1(Vascon_top___024roo
         = (0x3fffU & vlSelfRef.ascon_top__DOT__affine_layer2nd_in
            [1U][3U]);
     vlSelfRef.ascon_top__DOT__state_reg_in_shiftdplus1[0U] 
-        = (IData)((((QData)((IData)((0xfffffU & (IData)(ascon_top__DOT____VdfgRegularize_h0932e10f_4_14)))) 
+        = (IData)((((QData)((IData)((0xfffffU & (IData)(ascon_top__DOT____VdfgRegularize_h0932e10f_4_11)))) 
                     << 0x2cU) | (((QData)((IData)((0x3fffffU 
-                                                   & (IData)(ascon_top__DOT____VdfgRegularize_h0932e10f_4_9)))) 
+                                                   & (IData)(ascon_top__DOT____VdfgRegularize_h0932e10f_4_7)))) 
                                   << 0x16U) | (QData)((IData)(
                                                               (0x3fffffU 
-                                                               & (IData)(ascon_top__DOT____VdfgRegularize_h0932e10f_4_4)))))));
+                                                               & (IData)(ascon_top__DOT____VdfgRegularize_h0932e10f_4_3)))))));
     vlSelfRef.ascon_top__DOT__state_reg_in_shiftdplus1[1U] 
-        = (IData)(((((QData)((IData)((0xfffffU & (IData)(ascon_top__DOT____VdfgRegularize_h0932e10f_4_14)))) 
+        = (IData)(((((QData)((IData)((0xfffffU & (IData)(ascon_top__DOT____VdfgRegularize_h0932e10f_4_11)))) 
                      << 0x2cU) | (((QData)((IData)(
                                                    (0x3fffffU 
-                                                    & (IData)(ascon_top__DOT____VdfgRegularize_h0932e10f_4_9)))) 
+                                                    & (IData)(ascon_top__DOT____VdfgRegularize_h0932e10f_4_7)))) 
                                    << 0x16U) | (QData)((IData)(
                                                                (0x3fffffU 
-                                                                & (IData)(ascon_top__DOT____VdfgRegularize_h0932e10f_4_4)))))) 
+                                                                & (IData)(ascon_top__DOT____VdfgRegularize_h0932e10f_4_3)))))) 
                    >> 0x20U));
     vlSelfRef.ascon_top__DOT__state_reg_in_shiftdplus1[2U] 
         = (IData)((((QData)((IData)((0xfffffU & (IData)(
-                                                        (ascon_top__DOT____VdfgRegularize_h0932e10f_4_14 
+                                                        (ascon_top__DOT____VdfgRegularize_h0932e10f_4_11 
                                                          >> 0x16U))))) 
                     << 0x2cU) | (((QData)((IData)((0x3fffffU 
                                                    & (IData)(
-                                                             (ascon_top__DOT____VdfgRegularize_h0932e10f_4_9 
+                                                             (ascon_top__DOT____VdfgRegularize_h0932e10f_4_7 
                                                               >> 0x16U))))) 
                                   << 0x16U) | (QData)((IData)(
                                                               (0x3fffffU 
                                                                & (IData)(
-                                                                         (ascon_top__DOT____VdfgRegularize_h0932e10f_4_4 
+                                                                         (ascon_top__DOT____VdfgRegularize_h0932e10f_4_3 
                                                                           >> 0x16U))))))));
     vlSelfRef.ascon_top__DOT__state_reg_in_shiftdplus1[3U] 
         = (IData)(((((QData)((IData)((0xfffffU & (IData)(
-                                                         (ascon_top__DOT____VdfgRegularize_h0932e10f_4_14 
+                                                         (ascon_top__DOT____VdfgRegularize_h0932e10f_4_11 
                                                           >> 0x16U))))) 
                      << 0x2cU) | (((QData)((IData)(
                                                    (0x3fffffU 
                                                     & (IData)(
-                                                              (ascon_top__DOT____VdfgRegularize_h0932e10f_4_9 
+                                                              (ascon_top__DOT____VdfgRegularize_h0932e10f_4_7 
                                                                >> 0x16U))))) 
                                    << 0x16U) | (QData)((IData)(
                                                                (0x3fffffU 
                                                                 & (IData)(
-                                                                          (ascon_top__DOT____VdfgRegularize_h0932e10f_4_4 
+                                                                          (ascon_top__DOT____VdfgRegularize_h0932e10f_4_3 
                                                                            >> 0x16U))))))) 
                    >> 0x20U));
     vlSelfRef.ascon_top__DOT__state_reg_in_shiftdplus1[4U] 
@@ -2898,12 +2898,12 @@ VL_ATTR_COLD void Vascon_top___024root___stl_sequent__TOP__1(Vascon_top___024roo
                                          [2U][1U] >> 0xcU))) 
               << 0xcU));
     vlSelfRef.ascon_top__DOT__state_reg_in_shiftdplus1[6U] 
-        = (IData)((((QData)((IData)((0xfffffU & ascon_top__DOT____VdfgRegularize_h0932e10f_4_12))) 
-                    << 0x2cU) | (((QData)((IData)(ascon_top__DOT____VdfgRegularize_h0932e10f_4_7)) 
+        = (IData)((((QData)((IData)((0xfffffU & ascon_top__DOT____VdfgRegularize_h0932e10f_4_10))) 
+                    << 0x2cU) | (((QData)((IData)(ascon_top__DOT____VdfgRegularize_h0932e10f_4_6)) 
                                   << 0x16U) | (QData)((IData)(ascon_top__DOT____VdfgRegularize_h0932e10f_4_2)))));
     vlSelfRef.ascon_top__DOT__state_reg_in_shiftdplus1[7U] 
-        = (IData)(((((QData)((IData)((0xfffffU & ascon_top__DOT____VdfgRegularize_h0932e10f_4_12))) 
-                     << 0x2cU) | (((QData)((IData)(ascon_top__DOT____VdfgRegularize_h0932e10f_4_7)) 
+        = (IData)(((((QData)((IData)((0xfffffU & ascon_top__DOT____VdfgRegularize_h0932e10f_4_10))) 
+                     << 0x2cU) | (((QData)((IData)(ascon_top__DOT____VdfgRegularize_h0932e10f_4_6)) 
                                    << 0x16U) | (QData)((IData)(ascon_top__DOT____VdfgRegularize_h0932e10f_4_2)))) 
                    >> 0x20U));
     vlSelfRef.ascon_top__DOT__state_reg_in_shiftdplus1[8U] 
@@ -2963,10 +2963,10 @@ VL_ATTR_COLD void Vascon_top___024root___stl_sequent__TOP__1(Vascon_top___024roo
                                                                       >> 0x18U)))))) 
                                  >> 0x20U)) << 0x16U));
     vlSelfRef.ascon_top__DOT__affine_layer2nd_out[0U][0U] 
-        = (IData)(ascon_top__DOT____VdfgRegularize_h0932e10f_4_4);
+        = (IData)(ascon_top__DOT____VdfgRegularize_h0932e10f_4_3);
     vlSelfRef.ascon_top__DOT__affine_layer2nd_out[0U][1U] 
         = ((0xfffff000U & vlSelfRef.ascon_top__DOT__affine_layer2nd_out
-            [0U][1U]) | (IData)((ascon_top__DOT____VdfgRegularize_h0932e10f_4_4 
+            [0U][1U]) | (IData)((ascon_top__DOT____VdfgRegularize_h0932e10f_4_3 
                                  >> 0x20U)));
     vlSelfRef.ascon_top__DOT__affine_layer2nd_out[0U][1U] 
         = ((0xfffU & vlSelfRef.ascon_top__DOT__affine_layer2nd_out

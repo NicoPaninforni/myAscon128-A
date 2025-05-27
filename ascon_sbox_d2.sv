@@ -27,6 +27,7 @@ module ascon_sbox_d2
     input  logic clk,
     input  logic [((d+1)*5)-1:0] x_in, // 5 bit × (d+1) share
     input  logic [((d+1)*(d)/2)-1:0] fresh_r, // 3 bit di fresh per ogni AND
+    input logic sel_masked_round, // selettore per mascheramento
     output logic [((d+1)*5)-1:0] x_out,
     output logic [((d+1)*5)-1:0] x_out_noMask
 );
@@ -49,7 +50,17 @@ module ascon_sbox_d2
             logic [(d+1)-1:0] xi        = x[i]; //xi contiene xi con tutti i bit delle shares
             logic [(d+1)-1:0] xiprox1   = x[(i+1)%5];
             logic [(d+1)-1:0] xiprox2   = x[(i+2)%5];
-            logic [(d+1)-1:0] not_xiprox1 = ~xiprox1;
+            //logic [(d+1)-1:0] not_xiprox1 = ~xiprox1;
+            logic [(d+1)-1:0] not_xiprox1;
+            if (( d % 2 == 1 ) && (sel_masked_round == 1)) begin
+                // Se d è pari, non nego la prima share
+                not_xiprox1 = xiprox1;
+                not_xiprox1[0] = ~xiprox1[0]; // Nego solo la prima share, questo si fa perchè se ho un numero di share pari e come non effettuare la negazione!
+            end else begin
+                // Se d è dispari, nego la prima share
+                not_xiprox1 = ~xiprox1;
+            end
+              
             
             // reset del risultato
             and_result_bank[i] = '{default: 0};

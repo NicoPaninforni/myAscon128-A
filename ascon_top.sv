@@ -39,7 +39,8 @@ module ascon_top #(
     parameter int WORD_SIZE = 64,
     parameter int COL_SIZE = 5,
     parameter int STATE_WIDTH = 320,
-    parameter int PAR = 14,
+    parameter int PAR = 22,
+
     parameter int SHIFT_PAR_D_PLUS_1 = (((d+1)*PAR) > 64) ? 64 : ((d+1)*PAR),
     parameter int NUMBER_BIT_MASK = ((64+PAR-1)/PAR) + 1
 )(
@@ -64,7 +65,9 @@ module ascon_top #(
     input  logic EOT, //fine del messaggio in input
     //In Hardware ascon-sca c'è anche bdi_pad_loc e bdi_valid_bytes per gestire il padding
     input  logic [d*COL_SIZE*PAR-1:0] random_masks, //per la creazione delle shares poi vedremo bene come crearle
-
+    /* verilator lint_off UNUSEDSIGNAL */
+    input  logic [(d+1)*d/2-1:0] random_masks_sbox, //per la s-box
+    /* verilator lint_on UNUSEDSIGNAL */
     output logic ciphertext_valid, //se il messaggio in output è valido
     output logic [2*WORD_SIZE-1:0] ciphertext,
     output logic done, //se il processo è finito
@@ -460,14 +463,26 @@ module ascon_top #(
                     .clk(clk),
                     .x_in(sbox_input[p]),
                     .fresh_r(fresh_r),
+                    .sel_masked_round(sel_masked_round),
                     .x_out(sbox_output[p]),
                     .x_out_noMask(sbox_output_unmasked[p])
                 );
             end
         end else begin : gen_unsupported
-            // Questo causerà errore di sintesi volontario
-            initial begin
-                $fatal("ERROR: fresh_r_CoG not supported for d > 2.");
+            for (p = 0; p < PAR; p++) begin : gen_sbox
+                //Funziona perchè ad ogni nuova permutazione i bit sono già shiftati dentro lo state_reg
+                assign fresh_r = random_masks_sbox;
+                ascon_sbox_d2 #(
+                    .d(d),
+                    .num_shares(d+1)
+                ) u_sbox (
+                    .clk(clk),
+                    .x_in(sbox_input[p]),
+                    .fresh_r(fresh_r),
+                    .sel_masked_round(sel_masked_round),
+                    .x_out(sbox_output[p]),
+                    .x_out_noMask(sbox_output_unmasked[p])
+                );
             end
         end
     endgenerate
@@ -496,11 +511,23 @@ module ascon_top #(
     logic [PAR*COL_SIZE-1:0] affine_layer2nd_out[d:0];
     genvar i_2ndAff_out; //i: sono i diversi domini
     generate
+
+        
         for (i_2ndAff_out = 0; i_2ndAff_out < d+1; i_2ndAff_out++) begin : affine_layer
+            
+            logic [PAR-1:0] affine_layer2nd_in_temp;
+            //Se ho un numero di shares pari devo invertire solo x2 del primo share, altrimenti l'effetto si annulla
+            always_comb begin
+                if ((d % 2) == 1 && i_2ndAff_out > 0 && sel_masked_round == 1)
+                    affine_layer2nd_in_temp = affine_layer2nd_in[i_2ndAff_out][2*PAR+:PAR];
+                else
+                    affine_layer2nd_in_temp = ~affine_layer2nd_in[i_2ndAff_out][2*PAR+:PAR];
+            end
+
             assign affine_layer2nd_out[i_2ndAff_out] = {
                 affine_layer2nd_in[i_2ndAff_out][4*PAR+:PAR],
                 affine_layer2nd_in[i_2ndAff_out][3*PAR+:PAR] ^ affine_layer2nd_in[i_2ndAff_out][2*PAR+:PAR],
-                ~affine_layer2nd_in[i_2ndAff_out][2*PAR+:PAR],
+                affine_layer2nd_in_temp,
                 affine_layer2nd_in[i_2ndAff_out][PAR+:PAR] ^ affine_layer2nd_in[i_2ndAff_out][0+:PAR],
                 affine_layer2nd_in[i_2ndAff_out][0+:PAR] ^ affine_layer2nd_in[i_2ndAff_out][4*PAR+:PAR]
             };

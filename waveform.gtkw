@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.3.116 (w)1999-2023 BSI
-[*] Fri May 23 13:42:37 2025
+[*] Tue May 27 14:35:30 2025
 [*]
-[dumpfile] "/mnt/d/Tesi/Ascon128/myAscon-128a/dump.vcd"
-[dumpfile_mtime] "Fri May 23 13:40:56 2025"
-[dumpfile_size] 5058510
-[savefile] "/mnt/d/Tesi/Ascon128/myAscon-128a/waveform.gtkw"
-[timestart] 931
+[dumpfile] "/mnt/d/Tesi/Ascon128/ascon128a_PAR/dump.vcd"
+[dumpfile_mtime] "Tue May 27 14:28:27 2025"
+[dumpfile_size] 5753701
+[savefile] "/mnt/d/Tesi/Ascon128/ascon128a_PAR/waveform.gtkw"
+[timestart] 199
 [size] 1920 1080
 [pos] 38 59
-*0.000000 933 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*0.000000 200 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] TOP.
 [treeopen] TOP.ascon_top.
 [sst_width] 276
@@ -64,31 +64,17 @@ TOP.ascon_top.state_reg.SHIFT_PAR_D_PLUS_1[31:0]
 TOP.clk
 @24
 TOP.ascon_top.round_counter[3:0]
-TOP.ascon_top.bit_counter[4:0]
+TOP.ascon_top.bit_counter[2:0]
 @28
 TOP.ascon_top.last_cycle
 @22
+TOP.ascon_top.mealy_fsm.current_state[4:0]
 TOP.ascon_top.debug_state_0[63:0]
 TOP.ascon_top.debug_state_1[63:0]
 TOP.ascon_top.debug_state_2[63:0]
 TOP.ascon_top.debug_state_3[63:0]
 TOP.ascon_top.debug_state_4[63:0]
 @23
-TOP.ascon_top.mealy_fsm.current_state[4:0]
-@28
-TOP.ascon_top.debug_extra_padding_ff
-TOP.ascon_top.last_block
-TOP.ascon_top.EOT
-TOP.ascon_top.valid_data_in
-TOP.ascon_top.mealy_fsm.last_block_process_ff
-TOP.ascon_top.sel_absorb_data
-@22
-TOP.ascon_top.valid_bytes[3:0]
-TOP.ascon_top.data_in[127:0]
-TOP.ascon_top.data_in_padded[127:0]
-TOP.ascon_top.reverse_reg_data_out[127:0]
-@28
-TOP.ascon_top.mealy_fsm.sel_padding
-TOP.ascon_top.ready_for_data
+TOP.ascon_top.debug_round_state_0[63:0]
 [pattern_trace] 1
 [pattern_trace] 0

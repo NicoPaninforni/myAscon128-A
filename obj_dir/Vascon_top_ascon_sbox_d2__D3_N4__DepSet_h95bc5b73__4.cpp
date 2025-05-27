@@ -1,0 +1,2322 @@
+// Verilated -*- C++ -*-
+// DESCRIPTION: Verilator output: Design implementation internals
+// See Vascon_top.h for the primary calling header
+
+#include "Vascon_top__pch.h"
+#include "Vascon_top__Syms.h"
+#include "Vascon_top_ascon_sbox_d2__D3_N4.h"
+
+VL_INLINE_OPT void Vascon_top_ascon_sbox_d2__D3_N4___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__15__KET____DOT__u_sbox__0(Vascon_top_ascon_sbox_d2__D3_N4* vlSelf) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+        Vascon_top_ascon_sbox_d2__D3_N4___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__15__KET____DOT__u_sbox__0\n"); );
+    Vascon_top__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    auto& vlSelfRef = std::ref(*vlSelf).get();
+    // Init
+    SData/*15:0*/ __Vlvbound_h5a65583a__0;
+    __Vlvbound_h5a65583a__0 = 0;
+    CData/*0:0*/ __Vlvbound_h2aa06c0c__0;
+    __Vlvbound_h2aa06c0c__0 = 0;
+    CData/*0:0*/ __Vfunc_xor_tree__15__Vfuncout;
+    __Vfunc_xor_tree__15__Vfuncout = 0;
+    CData/*3:0*/ __Vfunc_xor_tree__15__in;
+    __Vfunc_xor_tree__15__in = 0;
+    IData/*31:0*/ __Vfunc_xor_tree__15__N;
+    __Vfunc_xor_tree__15__N = 0;
+    IData/*31:0*/ __Vfunc_xor_tree__15__unnamedblk8__DOT__i;
+    __Vfunc_xor_tree__15__unnamedblk8__DOT__i = 0;
+    IData/*31:0*/ __Vfunc_xor_tree__15__level;
+    __Vfunc_xor_tree__15__level = 0;
+    IData/*31:0*/ __Vfunc_xor_tree__15__num;
+    __Vfunc_xor_tree__15__num = 0;
+    SData/*15:0*/ __VdlyVal__and_result_reg__v0;
+    __VdlyVal__and_result_reg__v0 = 0;
+    SData/*15:0*/ __VdlyVal__and_result_reg__v1;
+    __VdlyVal__and_result_reg__v1 = 0;
+    SData/*15:0*/ __VdlyVal__and_result_reg__v2;
+    __VdlyVal__and_result_reg__v2 = 0;
+    SData/*15:0*/ __VdlyVal__and_result_reg__v3;
+    __VdlyVal__and_result_reg__v3 = 0;
+    SData/*15:0*/ __VdlyVal__and_result_reg__v4;
+    __VdlyVal__and_result_reg__v4 = 0;
+    // Body
+    vlSelfRef.__PVT__unnamedblk7__DOT__i = 5U;
+    vlSelfRef.__PVT__x[4U] = (0xfU & (vlSymsp->TOP.ascon_top__DOT__sbox_input
+                                      [0xfU] >> 0x10U));
+    vlSelfRef.__PVT__x[3U] = (0xfU & (vlSymsp->TOP.ascon_top__DOT__sbox_input
+                                      [0xfU] >> 0xcU));
+    vlSelfRef.__PVT__x[2U] = (0xfU & (vlSymsp->TOP.ascon_top__DOT__sbox_input
+                                      [0xfU] >> 8U));
+    vlSelfRef.__PVT__x[1U] = (0xfU & (vlSymsp->TOP.ascon_top__DOT__sbox_input
+                                      [0xfU] >> 4U));
+    vlSelfRef.__PVT__x[0U] = (0xfU & vlSymsp->TOP.ascon_top__DOT__sbox_input
+                              [0xfU]);
+    __Vlvbound_h5a65583a__0 = vlSelfRef.__PVT__and_result_bank
+        [0U];
+    __VdlyVal__and_result_reg__v0 = __Vlvbound_h5a65583a__0;
+    __Vlvbound_h5a65583a__0 = vlSelfRef.__PVT__and_result_bank
+        [1U];
+    __VdlyVal__and_result_reg__v1 = __Vlvbound_h5a65583a__0;
+    __Vlvbound_h5a65583a__0 = vlSelfRef.__PVT__and_result_bank
+        [2U];
+    __VdlyVal__and_result_reg__v2 = __Vlvbound_h5a65583a__0;
+    __Vlvbound_h5a65583a__0 = vlSelfRef.__PVT__and_result_bank
+        [3U];
+    __VdlyVal__and_result_reg__v3 = __Vlvbound_h5a65583a__0;
+    __Vlvbound_h5a65583a__0 = vlSelfRef.__PVT__and_result_bank
+        [4U];
+    __VdlyVal__and_result_reg__v4 = __Vlvbound_h5a65583a__0;
+    vlSelfRef.__PVT__and_result_reg[0U] = __VdlyVal__and_result_reg__v0;
+    vlSelfRef.__PVT__and_result_reg[1U] = __VdlyVal__and_result_reg__v1;
+    vlSelfRef.__PVT__and_result_reg[2U] = __VdlyVal__and_result_reg__v2;
+    vlSelfRef.__PVT__and_result_reg[3U] = __VdlyVal__and_result_reg__v3;
+    vlSelfRef.__PVT__and_result_reg[4U] = __VdlyVal__and_result_reg__v4;
+    vlSelfRef.__PVT__unnamedblk10__DOT__unnamedblk11__DOT__unnamedblk12__DOT__temp 
+        = (0xfU & vlSelfRef.__PVT__and_result_reg[0U]);
+    __Vfunc_xor_tree__15__N = 4U;
+    __Vfunc_xor_tree__15__in = vlSelfRef.__PVT__unnamedblk10__DOT__unnamedblk11__DOT__unnamedblk12__DOT__temp;
+    vlSelf->__Vfunc_xor_tree__15__unnamedblk9__DOT__i = 0;
+    for (int __Vi0 = 0; __Vi0 < 3; ++__Vi0) {
+        vlSelf->__Vfunc_xor_tree__15__stage[__Vi0] = VL_RAND_RESET_I(4);
+    }
+    __Vfunc_xor_tree__15__level = 0U;
+    __Vfunc_xor_tree__15__num = 4U;
+    __Vfunc_xor_tree__15__unnamedblk8__DOT__i = 0U;
+    while (VL_LTS_III(32, __Vfunc_xor_tree__15__unnamedblk8__DOT__i, __Vfunc_xor_tree__15__N)) {
+        vlSelfRef.__Vfunc_xor_tree__15__stage[0U] = 
+            (((~ ((IData)(1U) << (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))) 
+              & vlSelfRef.__Vfunc_xor_tree__15__stage
+              [0U]) | (0xfU & ((1U & ((IData)(__Vfunc_xor_tree__15__in) 
+                                      >> (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))) 
+                               << (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))));
+        __Vfunc_xor_tree__15__unnamedblk8__DOT__i = 
+            ((IData)(1U) + __Vfunc_xor_tree__15__unnamedblk8__DOT__i);
+    }
+    while (VL_LTS_III(32, 1U, __Vfunc_xor_tree__15__num)) {
+        vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i = 0U;
+        while (VL_LTS_III(32, vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i, 
+                          VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)))) {
+            vlSelfRef.__Vlvbound_h70e7ebe7__0 = (1U 
+                                                 & ((((2U 
+                                                       >= 
+                                                       (3U 
+                                                        & __Vfunc_xor_tree__15__level))
+                                                       ? 
+                                                      vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                      [
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level)]
+                                                       : 0U) 
+                                                     >> 
+                                                     (3U 
+                                                      & VL_MULS_III(32, (IData)(2U), vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))) 
+                                                    ^ 
+                                                    (((2U 
+                                                       >= 
+                                                       (3U 
+                                                        & __Vfunc_xor_tree__15__level))
+                                                       ? 
+                                                      vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                      [
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level)]
+                                                       : 0U) 
+                                                     >> 
+                                                     (3U 
+                                                      & ((IData)(1U) 
+                                                         + 
+                                                         VL_MULS_III(32, (IData)(2U), vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))))));
+            if (VL_LIKELY(((2U >= (3U & ((IData)(1U) 
+                                         + __Vfunc_xor_tree__15__level)))))) {
+                vlSelfRef.__Vfunc_xor_tree__15__stage[(3U 
+                                                       & ((IData)(1U) 
+                                                          + __Vfunc_xor_tree__15__level))] 
+                    = (((~ ((IData)(1U) << (3U & vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))) 
+                        & vlSelfRef.__Vfunc_xor_tree__15__stage
+                        [(3U & ((IData)(1U) + __Vfunc_xor_tree__15__level))]) 
+                       | (0xfU & ((IData)(vlSelfRef.__Vlvbound_h70e7ebe7__0) 
+                                  << (3U & vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))));
+            }
+            vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i 
+                = ((IData)(1U) + vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i);
+        }
+        if ((1U == VL_MODDIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)))) {
+            vlSelfRef.__Vlvbound_hece044c0__0 = (1U 
+                                                 & (((2U 
+                                                      >= 
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level))
+                                                      ? 
+                                                     vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                     [
+                                                     (3U 
+                                                      & __Vfunc_xor_tree__15__level)]
+                                                      : 0U) 
+                                                    >> 
+                                                    (3U 
+                                                     & (__Vfunc_xor_tree__15__num 
+                                                        - (IData)(1U)))));
+            if (VL_LIKELY(((2U >= (3U & ((IData)(1U) 
+                                         + __Vfunc_xor_tree__15__level)))))) {
+                vlSelfRef.__Vfunc_xor_tree__15__stage[(3U 
+                                                       & ((IData)(1U) 
+                                                          + __Vfunc_xor_tree__15__level))] 
+                    = (((~ ((IData)(1U) << (3U & VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U))))) 
+                        & vlSelfRef.__Vfunc_xor_tree__15__stage
+                        [(3U & ((IData)(1U) + __Vfunc_xor_tree__15__level))]) 
+                       | (0xfU & ((IData)(vlSelfRef.__Vlvbound_hece044c0__0) 
+                                  << (3U & VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U))))));
+            }
+            __Vfunc_xor_tree__15__num = ((IData)(1U) 
+                                         + VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)));
+        } else {
+            __Vfunc_xor_tree__15__num = VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U));
+        }
+        __Vfunc_xor_tree__15__level = ((IData)(1U) 
+                                       + __Vfunc_xor_tree__15__level);
+    }
+    __Vfunc_xor_tree__15__Vfuncout = ((2U >= (3U & __Vfunc_xor_tree__15__level))
+                                       ? (1U & vlSelfRef.__Vfunc_xor_tree__15__stage
+                                          [(3U & __Vfunc_xor_tree__15__level)])
+                                       : 0U);
+    __Vlvbound_h2aa06c0c__0 = __Vfunc_xor_tree__15__Vfuncout;
+    vlSelfRef.__PVT__y[0U] = ((0xeU & vlSelfRef.__PVT__y
+                               [0U]) | (IData)(__Vlvbound_h2aa06c0c__0));
+    vlSelfRef.__PVT__unnamedblk10__DOT__unnamedblk11__DOT__unnamedblk12__DOT__temp 
+        = (0xfU & (vlSelfRef.__PVT__and_result_reg[0U] 
+                   >> 4U));
+    __Vfunc_xor_tree__15__N = 4U;
+    __Vfunc_xor_tree__15__in = vlSelfRef.__PVT__unnamedblk10__DOT__unnamedblk11__DOT__unnamedblk12__DOT__temp;
+    vlSelf->__Vfunc_xor_tree__15__unnamedblk9__DOT__i = 0;
+    for (int __Vi0 = 0; __Vi0 < 3; ++__Vi0) {
+        vlSelf->__Vfunc_xor_tree__15__stage[__Vi0] = VL_RAND_RESET_I(4);
+    }
+    __Vfunc_xor_tree__15__level = 0U;
+    __Vfunc_xor_tree__15__num = 4U;
+    __Vfunc_xor_tree__15__unnamedblk8__DOT__i = 0U;
+    while (VL_LTS_III(32, __Vfunc_xor_tree__15__unnamedblk8__DOT__i, __Vfunc_xor_tree__15__N)) {
+        vlSelfRef.__Vfunc_xor_tree__15__stage[0U] = 
+            (((~ ((IData)(1U) << (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))) 
+              & vlSelfRef.__Vfunc_xor_tree__15__stage
+              [0U]) | (0xfU & ((1U & ((IData)(__Vfunc_xor_tree__15__in) 
+                                      >> (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))) 
+                               << (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))));
+        __Vfunc_xor_tree__15__unnamedblk8__DOT__i = 
+            ((IData)(1U) + __Vfunc_xor_tree__15__unnamedblk8__DOT__i);
+    }
+    while (VL_LTS_III(32, 1U, __Vfunc_xor_tree__15__num)) {
+        vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i = 0U;
+        while (VL_LTS_III(32, vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i, 
+                          VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)))) {
+            vlSelfRef.__Vlvbound_h70e7ebe7__0 = (1U 
+                                                 & ((((2U 
+                                                       >= 
+                                                       (3U 
+                                                        & __Vfunc_xor_tree__15__level))
+                                                       ? 
+                                                      vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                      [
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level)]
+                                                       : 0U) 
+                                                     >> 
+                                                     (3U 
+                                                      & VL_MULS_III(32, (IData)(2U), vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))) 
+                                                    ^ 
+                                                    (((2U 
+                                                       >= 
+                                                       (3U 
+                                                        & __Vfunc_xor_tree__15__level))
+                                                       ? 
+                                                      vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                      [
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level)]
+                                                       : 0U) 
+                                                     >> 
+                                                     (3U 
+                                                      & ((IData)(1U) 
+                                                         + 
+                                                         VL_MULS_III(32, (IData)(2U), vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))))));
+            if (VL_LIKELY(((2U >= (3U & ((IData)(1U) 
+                                         + __Vfunc_xor_tree__15__level)))))) {
+                vlSelfRef.__Vfunc_xor_tree__15__stage[(3U 
+                                                       & ((IData)(1U) 
+                                                          + __Vfunc_xor_tree__15__level))] 
+                    = (((~ ((IData)(1U) << (3U & vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))) 
+                        & vlSelfRef.__Vfunc_xor_tree__15__stage
+                        [(3U & ((IData)(1U) + __Vfunc_xor_tree__15__level))]) 
+                       | (0xfU & ((IData)(vlSelfRef.__Vlvbound_h70e7ebe7__0) 
+                                  << (3U & vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))));
+            }
+            vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i 
+                = ((IData)(1U) + vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i);
+        }
+        if ((1U == VL_MODDIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)))) {
+            vlSelfRef.__Vlvbound_hece044c0__0 = (1U 
+                                                 & (((2U 
+                                                      >= 
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level))
+                                                      ? 
+                                                     vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                     [
+                                                     (3U 
+                                                      & __Vfunc_xor_tree__15__level)]
+                                                      : 0U) 
+                                                    >> 
+                                                    (3U 
+                                                     & (__Vfunc_xor_tree__15__num 
+                                                        - (IData)(1U)))));
+            if (VL_LIKELY(((2U >= (3U & ((IData)(1U) 
+                                         + __Vfunc_xor_tree__15__level)))))) {
+                vlSelfRef.__Vfunc_xor_tree__15__stage[(3U 
+                                                       & ((IData)(1U) 
+                                                          + __Vfunc_xor_tree__15__level))] 
+                    = (((~ ((IData)(1U) << (3U & VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U))))) 
+                        & vlSelfRef.__Vfunc_xor_tree__15__stage
+                        [(3U & ((IData)(1U) + __Vfunc_xor_tree__15__level))]) 
+                       | (0xfU & ((IData)(vlSelfRef.__Vlvbound_hece044c0__0) 
+                                  << (3U & VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U))))));
+            }
+            __Vfunc_xor_tree__15__num = ((IData)(1U) 
+                                         + VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)));
+        } else {
+            __Vfunc_xor_tree__15__num = VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U));
+        }
+        __Vfunc_xor_tree__15__level = ((IData)(1U) 
+                                       + __Vfunc_xor_tree__15__level);
+    }
+    __Vfunc_xor_tree__15__Vfuncout = ((2U >= (3U & __Vfunc_xor_tree__15__level))
+                                       ? (1U & vlSelfRef.__Vfunc_xor_tree__15__stage
+                                          [(3U & __Vfunc_xor_tree__15__level)])
+                                       : 0U);
+    __Vlvbound_h2aa06c0c__0 = __Vfunc_xor_tree__15__Vfuncout;
+    vlSelfRef.__PVT__y[0U] = ((0xdU & vlSelfRef.__PVT__y
+                               [0U]) | ((IData)(__Vlvbound_h2aa06c0c__0) 
+                                        << 1U));
+    vlSelfRef.__PVT__unnamedblk10__DOT__unnamedblk11__DOT__unnamedblk12__DOT__temp 
+        = (0xfU & (vlSelfRef.__PVT__and_result_reg[0U] 
+                   >> 8U));
+    __Vfunc_xor_tree__15__N = 4U;
+    __Vfunc_xor_tree__15__in = vlSelfRef.__PVT__unnamedblk10__DOT__unnamedblk11__DOT__unnamedblk12__DOT__temp;
+    vlSelf->__Vfunc_xor_tree__15__unnamedblk9__DOT__i = 0;
+    for (int __Vi0 = 0; __Vi0 < 3; ++__Vi0) {
+        vlSelf->__Vfunc_xor_tree__15__stage[__Vi0] = VL_RAND_RESET_I(4);
+    }
+    __Vfunc_xor_tree__15__level = 0U;
+    __Vfunc_xor_tree__15__num = 4U;
+    __Vfunc_xor_tree__15__unnamedblk8__DOT__i = 0U;
+    while (VL_LTS_III(32, __Vfunc_xor_tree__15__unnamedblk8__DOT__i, __Vfunc_xor_tree__15__N)) {
+        vlSelfRef.__Vfunc_xor_tree__15__stage[0U] = 
+            (((~ ((IData)(1U) << (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))) 
+              & vlSelfRef.__Vfunc_xor_tree__15__stage
+              [0U]) | (0xfU & ((1U & ((IData)(__Vfunc_xor_tree__15__in) 
+                                      >> (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))) 
+                               << (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))));
+        __Vfunc_xor_tree__15__unnamedblk8__DOT__i = 
+            ((IData)(1U) + __Vfunc_xor_tree__15__unnamedblk8__DOT__i);
+    }
+    while (VL_LTS_III(32, 1U, __Vfunc_xor_tree__15__num)) {
+        vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i = 0U;
+        while (VL_LTS_III(32, vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i, 
+                          VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)))) {
+            vlSelfRef.__Vlvbound_h70e7ebe7__0 = (1U 
+                                                 & ((((2U 
+                                                       >= 
+                                                       (3U 
+                                                        & __Vfunc_xor_tree__15__level))
+                                                       ? 
+                                                      vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                      [
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level)]
+                                                       : 0U) 
+                                                     >> 
+                                                     (3U 
+                                                      & VL_MULS_III(32, (IData)(2U), vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))) 
+                                                    ^ 
+                                                    (((2U 
+                                                       >= 
+                                                       (3U 
+                                                        & __Vfunc_xor_tree__15__level))
+                                                       ? 
+                                                      vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                      [
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level)]
+                                                       : 0U) 
+                                                     >> 
+                                                     (3U 
+                                                      & ((IData)(1U) 
+                                                         + 
+                                                         VL_MULS_III(32, (IData)(2U), vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))))));
+            if (VL_LIKELY(((2U >= (3U & ((IData)(1U) 
+                                         + __Vfunc_xor_tree__15__level)))))) {
+                vlSelfRef.__Vfunc_xor_tree__15__stage[(3U 
+                                                       & ((IData)(1U) 
+                                                          + __Vfunc_xor_tree__15__level))] 
+                    = (((~ ((IData)(1U) << (3U & vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))) 
+                        & vlSelfRef.__Vfunc_xor_tree__15__stage
+                        [(3U & ((IData)(1U) + __Vfunc_xor_tree__15__level))]) 
+                       | (0xfU & ((IData)(vlSelfRef.__Vlvbound_h70e7ebe7__0) 
+                                  << (3U & vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))));
+            }
+            vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i 
+                = ((IData)(1U) + vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i);
+        }
+        if ((1U == VL_MODDIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)))) {
+            vlSelfRef.__Vlvbound_hece044c0__0 = (1U 
+                                                 & (((2U 
+                                                      >= 
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level))
+                                                      ? 
+                                                     vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                     [
+                                                     (3U 
+                                                      & __Vfunc_xor_tree__15__level)]
+                                                      : 0U) 
+                                                    >> 
+                                                    (3U 
+                                                     & (__Vfunc_xor_tree__15__num 
+                                                        - (IData)(1U)))));
+            if (VL_LIKELY(((2U >= (3U & ((IData)(1U) 
+                                         + __Vfunc_xor_tree__15__level)))))) {
+                vlSelfRef.__Vfunc_xor_tree__15__stage[(3U 
+                                                       & ((IData)(1U) 
+                                                          + __Vfunc_xor_tree__15__level))] 
+                    = (((~ ((IData)(1U) << (3U & VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U))))) 
+                        & vlSelfRef.__Vfunc_xor_tree__15__stage
+                        [(3U & ((IData)(1U) + __Vfunc_xor_tree__15__level))]) 
+                       | (0xfU & ((IData)(vlSelfRef.__Vlvbound_hece044c0__0) 
+                                  << (3U & VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U))))));
+            }
+            __Vfunc_xor_tree__15__num = ((IData)(1U) 
+                                         + VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)));
+        } else {
+            __Vfunc_xor_tree__15__num = VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U));
+        }
+        __Vfunc_xor_tree__15__level = ((IData)(1U) 
+                                       + __Vfunc_xor_tree__15__level);
+    }
+    __Vfunc_xor_tree__15__Vfuncout = ((2U >= (3U & __Vfunc_xor_tree__15__level))
+                                       ? (1U & vlSelfRef.__Vfunc_xor_tree__15__stage
+                                          [(3U & __Vfunc_xor_tree__15__level)])
+                                       : 0U);
+    __Vlvbound_h2aa06c0c__0 = __Vfunc_xor_tree__15__Vfuncout;
+    vlSelfRef.__PVT__y[0U] = ((0xbU & vlSelfRef.__PVT__y
+                               [0U]) | ((IData)(__Vlvbound_h2aa06c0c__0) 
+                                        << 2U));
+    vlSelfRef.__PVT__unnamedblk10__DOT__unnamedblk11__DOT__unnamedblk12__DOT__temp 
+        = (0xfU & (vlSelfRef.__PVT__and_result_reg[0U] 
+                   >> 0xcU));
+    __Vfunc_xor_tree__15__N = 4U;
+    __Vfunc_xor_tree__15__in = vlSelfRef.__PVT__unnamedblk10__DOT__unnamedblk11__DOT__unnamedblk12__DOT__temp;
+    vlSelf->__Vfunc_xor_tree__15__unnamedblk9__DOT__i = 0;
+    for (int __Vi0 = 0; __Vi0 < 3; ++__Vi0) {
+        vlSelf->__Vfunc_xor_tree__15__stage[__Vi0] = VL_RAND_RESET_I(4);
+    }
+    __Vfunc_xor_tree__15__level = 0U;
+    __Vfunc_xor_tree__15__num = 4U;
+    __Vfunc_xor_tree__15__unnamedblk8__DOT__i = 0U;
+    while (VL_LTS_III(32, __Vfunc_xor_tree__15__unnamedblk8__DOT__i, __Vfunc_xor_tree__15__N)) {
+        vlSelfRef.__Vfunc_xor_tree__15__stage[0U] = 
+            (((~ ((IData)(1U) << (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))) 
+              & vlSelfRef.__Vfunc_xor_tree__15__stage
+              [0U]) | (0xfU & ((1U & ((IData)(__Vfunc_xor_tree__15__in) 
+                                      >> (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))) 
+                               << (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))));
+        __Vfunc_xor_tree__15__unnamedblk8__DOT__i = 
+            ((IData)(1U) + __Vfunc_xor_tree__15__unnamedblk8__DOT__i);
+    }
+    while (VL_LTS_III(32, 1U, __Vfunc_xor_tree__15__num)) {
+        vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i = 0U;
+        while (VL_LTS_III(32, vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i, 
+                          VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)))) {
+            vlSelfRef.__Vlvbound_h70e7ebe7__0 = (1U 
+                                                 & ((((2U 
+                                                       >= 
+                                                       (3U 
+                                                        & __Vfunc_xor_tree__15__level))
+                                                       ? 
+                                                      vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                      [
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level)]
+                                                       : 0U) 
+                                                     >> 
+                                                     (3U 
+                                                      & VL_MULS_III(32, (IData)(2U), vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))) 
+                                                    ^ 
+                                                    (((2U 
+                                                       >= 
+                                                       (3U 
+                                                        & __Vfunc_xor_tree__15__level))
+                                                       ? 
+                                                      vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                      [
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level)]
+                                                       : 0U) 
+                                                     >> 
+                                                     (3U 
+                                                      & ((IData)(1U) 
+                                                         + 
+                                                         VL_MULS_III(32, (IData)(2U), vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))))));
+            if (VL_LIKELY(((2U >= (3U & ((IData)(1U) 
+                                         + __Vfunc_xor_tree__15__level)))))) {
+                vlSelfRef.__Vfunc_xor_tree__15__stage[(3U 
+                                                       & ((IData)(1U) 
+                                                          + __Vfunc_xor_tree__15__level))] 
+                    = (((~ ((IData)(1U) << (3U & vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))) 
+                        & vlSelfRef.__Vfunc_xor_tree__15__stage
+                        [(3U & ((IData)(1U) + __Vfunc_xor_tree__15__level))]) 
+                       | (0xfU & ((IData)(vlSelfRef.__Vlvbound_h70e7ebe7__0) 
+                                  << (3U & vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))));
+            }
+            vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i 
+                = ((IData)(1U) + vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i);
+        }
+        if ((1U == VL_MODDIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)))) {
+            vlSelfRef.__Vlvbound_hece044c0__0 = (1U 
+                                                 & (((2U 
+                                                      >= 
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level))
+                                                      ? 
+                                                     vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                     [
+                                                     (3U 
+                                                      & __Vfunc_xor_tree__15__level)]
+                                                      : 0U) 
+                                                    >> 
+                                                    (3U 
+                                                     & (__Vfunc_xor_tree__15__num 
+                                                        - (IData)(1U)))));
+            if (VL_LIKELY(((2U >= (3U & ((IData)(1U) 
+                                         + __Vfunc_xor_tree__15__level)))))) {
+                vlSelfRef.__Vfunc_xor_tree__15__stage[(3U 
+                                                       & ((IData)(1U) 
+                                                          + __Vfunc_xor_tree__15__level))] 
+                    = (((~ ((IData)(1U) << (3U & VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U))))) 
+                        & vlSelfRef.__Vfunc_xor_tree__15__stage
+                        [(3U & ((IData)(1U) + __Vfunc_xor_tree__15__level))]) 
+                       | (0xfU & ((IData)(vlSelfRef.__Vlvbound_hece044c0__0) 
+                                  << (3U & VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U))))));
+            }
+            __Vfunc_xor_tree__15__num = ((IData)(1U) 
+                                         + VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)));
+        } else {
+            __Vfunc_xor_tree__15__num = VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U));
+        }
+        __Vfunc_xor_tree__15__level = ((IData)(1U) 
+                                       + __Vfunc_xor_tree__15__level);
+    }
+    __Vfunc_xor_tree__15__Vfuncout = ((2U >= (3U & __Vfunc_xor_tree__15__level))
+                                       ? (1U & vlSelfRef.__Vfunc_xor_tree__15__stage
+                                          [(3U & __Vfunc_xor_tree__15__level)])
+                                       : 0U);
+    __Vlvbound_h2aa06c0c__0 = __Vfunc_xor_tree__15__Vfuncout;
+    vlSelfRef.__PVT__y[0U] = ((7U & vlSelfRef.__PVT__y
+                               [0U]) | ((IData)(__Vlvbound_h2aa06c0c__0) 
+                                        << 3U));
+    vlSelfRef.__PVT__unnamedblk10__DOT__unnamedblk11__DOT__unnamedblk12__DOT__temp 
+        = (0xfU & vlSelfRef.__PVT__and_result_reg[1U]);
+    __Vfunc_xor_tree__15__N = 4U;
+    __Vfunc_xor_tree__15__in = vlSelfRef.__PVT__unnamedblk10__DOT__unnamedblk11__DOT__unnamedblk12__DOT__temp;
+    vlSelf->__Vfunc_xor_tree__15__unnamedblk9__DOT__i = 0;
+    for (int __Vi0 = 0; __Vi0 < 3; ++__Vi0) {
+        vlSelf->__Vfunc_xor_tree__15__stage[__Vi0] = VL_RAND_RESET_I(4);
+    }
+    __Vfunc_xor_tree__15__level = 0U;
+    __Vfunc_xor_tree__15__num = 4U;
+    __Vfunc_xor_tree__15__unnamedblk8__DOT__i = 0U;
+    while (VL_LTS_III(32, __Vfunc_xor_tree__15__unnamedblk8__DOT__i, __Vfunc_xor_tree__15__N)) {
+        vlSelfRef.__Vfunc_xor_tree__15__stage[0U] = 
+            (((~ ((IData)(1U) << (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))) 
+              & vlSelfRef.__Vfunc_xor_tree__15__stage
+              [0U]) | (0xfU & ((1U & ((IData)(__Vfunc_xor_tree__15__in) 
+                                      >> (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))) 
+                               << (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))));
+        __Vfunc_xor_tree__15__unnamedblk8__DOT__i = 
+            ((IData)(1U) + __Vfunc_xor_tree__15__unnamedblk8__DOT__i);
+    }
+    while (VL_LTS_III(32, 1U, __Vfunc_xor_tree__15__num)) {
+        vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i = 0U;
+        while (VL_LTS_III(32, vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i, 
+                          VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)))) {
+            vlSelfRef.__Vlvbound_h70e7ebe7__0 = (1U 
+                                                 & ((((2U 
+                                                       >= 
+                                                       (3U 
+                                                        & __Vfunc_xor_tree__15__level))
+                                                       ? 
+                                                      vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                      [
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level)]
+                                                       : 0U) 
+                                                     >> 
+                                                     (3U 
+                                                      & VL_MULS_III(32, (IData)(2U), vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))) 
+                                                    ^ 
+                                                    (((2U 
+                                                       >= 
+                                                       (3U 
+                                                        & __Vfunc_xor_tree__15__level))
+                                                       ? 
+                                                      vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                      [
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level)]
+                                                       : 0U) 
+                                                     >> 
+                                                     (3U 
+                                                      & ((IData)(1U) 
+                                                         + 
+                                                         VL_MULS_III(32, (IData)(2U), vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))))));
+            if (VL_LIKELY(((2U >= (3U & ((IData)(1U) 
+                                         + __Vfunc_xor_tree__15__level)))))) {
+                vlSelfRef.__Vfunc_xor_tree__15__stage[(3U 
+                                                       & ((IData)(1U) 
+                                                          + __Vfunc_xor_tree__15__level))] 
+                    = (((~ ((IData)(1U) << (3U & vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))) 
+                        & vlSelfRef.__Vfunc_xor_tree__15__stage
+                        [(3U & ((IData)(1U) + __Vfunc_xor_tree__15__level))]) 
+                       | (0xfU & ((IData)(vlSelfRef.__Vlvbound_h70e7ebe7__0) 
+                                  << (3U & vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))));
+            }
+            vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i 
+                = ((IData)(1U) + vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i);
+        }
+        if ((1U == VL_MODDIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)))) {
+            vlSelfRef.__Vlvbound_hece044c0__0 = (1U 
+                                                 & (((2U 
+                                                      >= 
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level))
+                                                      ? 
+                                                     vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                     [
+                                                     (3U 
+                                                      & __Vfunc_xor_tree__15__level)]
+                                                      : 0U) 
+                                                    >> 
+                                                    (3U 
+                                                     & (__Vfunc_xor_tree__15__num 
+                                                        - (IData)(1U)))));
+            if (VL_LIKELY(((2U >= (3U & ((IData)(1U) 
+                                         + __Vfunc_xor_tree__15__level)))))) {
+                vlSelfRef.__Vfunc_xor_tree__15__stage[(3U 
+                                                       & ((IData)(1U) 
+                                                          + __Vfunc_xor_tree__15__level))] 
+                    = (((~ ((IData)(1U) << (3U & VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U))))) 
+                        & vlSelfRef.__Vfunc_xor_tree__15__stage
+                        [(3U & ((IData)(1U) + __Vfunc_xor_tree__15__level))]) 
+                       | (0xfU & ((IData)(vlSelfRef.__Vlvbound_hece044c0__0) 
+                                  << (3U & VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U))))));
+            }
+            __Vfunc_xor_tree__15__num = ((IData)(1U) 
+                                         + VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)));
+        } else {
+            __Vfunc_xor_tree__15__num = VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U));
+        }
+        __Vfunc_xor_tree__15__level = ((IData)(1U) 
+                                       + __Vfunc_xor_tree__15__level);
+    }
+    __Vfunc_xor_tree__15__Vfuncout = ((2U >= (3U & __Vfunc_xor_tree__15__level))
+                                       ? (1U & vlSelfRef.__Vfunc_xor_tree__15__stage
+                                          [(3U & __Vfunc_xor_tree__15__level)])
+                                       : 0U);
+    __Vlvbound_h2aa06c0c__0 = __Vfunc_xor_tree__15__Vfuncout;
+    vlSelfRef.__PVT__y[1U] = ((0xeU & vlSelfRef.__PVT__y
+                               [1U]) | (IData)(__Vlvbound_h2aa06c0c__0));
+    vlSelfRef.__PVT__unnamedblk10__DOT__unnamedblk11__DOT__unnamedblk12__DOT__temp 
+        = (0xfU & (vlSelfRef.__PVT__and_result_reg[1U] 
+                   >> 4U));
+    __Vfunc_xor_tree__15__N = 4U;
+    __Vfunc_xor_tree__15__in = vlSelfRef.__PVT__unnamedblk10__DOT__unnamedblk11__DOT__unnamedblk12__DOT__temp;
+    vlSelf->__Vfunc_xor_tree__15__unnamedblk9__DOT__i = 0;
+    for (int __Vi0 = 0; __Vi0 < 3; ++__Vi0) {
+        vlSelf->__Vfunc_xor_tree__15__stage[__Vi0] = VL_RAND_RESET_I(4);
+    }
+    __Vfunc_xor_tree__15__level = 0U;
+    __Vfunc_xor_tree__15__num = 4U;
+    __Vfunc_xor_tree__15__unnamedblk8__DOT__i = 0U;
+    while (VL_LTS_III(32, __Vfunc_xor_tree__15__unnamedblk8__DOT__i, __Vfunc_xor_tree__15__N)) {
+        vlSelfRef.__Vfunc_xor_tree__15__stage[0U] = 
+            (((~ ((IData)(1U) << (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))) 
+              & vlSelfRef.__Vfunc_xor_tree__15__stage
+              [0U]) | (0xfU & ((1U & ((IData)(__Vfunc_xor_tree__15__in) 
+                                      >> (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))) 
+                               << (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))));
+        __Vfunc_xor_tree__15__unnamedblk8__DOT__i = 
+            ((IData)(1U) + __Vfunc_xor_tree__15__unnamedblk8__DOT__i);
+    }
+    while (VL_LTS_III(32, 1U, __Vfunc_xor_tree__15__num)) {
+        vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i = 0U;
+        while (VL_LTS_III(32, vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i, 
+                          VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)))) {
+            vlSelfRef.__Vlvbound_h70e7ebe7__0 = (1U 
+                                                 & ((((2U 
+                                                       >= 
+                                                       (3U 
+                                                        & __Vfunc_xor_tree__15__level))
+                                                       ? 
+                                                      vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                      [
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level)]
+                                                       : 0U) 
+                                                     >> 
+                                                     (3U 
+                                                      & VL_MULS_III(32, (IData)(2U), vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))) 
+                                                    ^ 
+                                                    (((2U 
+                                                       >= 
+                                                       (3U 
+                                                        & __Vfunc_xor_tree__15__level))
+                                                       ? 
+                                                      vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                      [
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level)]
+                                                       : 0U) 
+                                                     >> 
+                                                     (3U 
+                                                      & ((IData)(1U) 
+                                                         + 
+                                                         VL_MULS_III(32, (IData)(2U), vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))))));
+            if (VL_LIKELY(((2U >= (3U & ((IData)(1U) 
+                                         + __Vfunc_xor_tree__15__level)))))) {
+                vlSelfRef.__Vfunc_xor_tree__15__stage[(3U 
+                                                       & ((IData)(1U) 
+                                                          + __Vfunc_xor_tree__15__level))] 
+                    = (((~ ((IData)(1U) << (3U & vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))) 
+                        & vlSelfRef.__Vfunc_xor_tree__15__stage
+                        [(3U & ((IData)(1U) + __Vfunc_xor_tree__15__level))]) 
+                       | (0xfU & ((IData)(vlSelfRef.__Vlvbound_h70e7ebe7__0) 
+                                  << (3U & vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))));
+            }
+            vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i 
+                = ((IData)(1U) + vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i);
+        }
+        if ((1U == VL_MODDIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)))) {
+            vlSelfRef.__Vlvbound_hece044c0__0 = (1U 
+                                                 & (((2U 
+                                                      >= 
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level))
+                                                      ? 
+                                                     vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                     [
+                                                     (3U 
+                                                      & __Vfunc_xor_tree__15__level)]
+                                                      : 0U) 
+                                                    >> 
+                                                    (3U 
+                                                     & (__Vfunc_xor_tree__15__num 
+                                                        - (IData)(1U)))));
+            if (VL_LIKELY(((2U >= (3U & ((IData)(1U) 
+                                         + __Vfunc_xor_tree__15__level)))))) {
+                vlSelfRef.__Vfunc_xor_tree__15__stage[(3U 
+                                                       & ((IData)(1U) 
+                                                          + __Vfunc_xor_tree__15__level))] 
+                    = (((~ ((IData)(1U) << (3U & VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U))))) 
+                        & vlSelfRef.__Vfunc_xor_tree__15__stage
+                        [(3U & ((IData)(1U) + __Vfunc_xor_tree__15__level))]) 
+                       | (0xfU & ((IData)(vlSelfRef.__Vlvbound_hece044c0__0) 
+                                  << (3U & VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U))))));
+            }
+            __Vfunc_xor_tree__15__num = ((IData)(1U) 
+                                         + VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)));
+        } else {
+            __Vfunc_xor_tree__15__num = VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U));
+        }
+        __Vfunc_xor_tree__15__level = ((IData)(1U) 
+                                       + __Vfunc_xor_tree__15__level);
+    }
+    __Vfunc_xor_tree__15__Vfuncout = ((2U >= (3U & __Vfunc_xor_tree__15__level))
+                                       ? (1U & vlSelfRef.__Vfunc_xor_tree__15__stage
+                                          [(3U & __Vfunc_xor_tree__15__level)])
+                                       : 0U);
+    __Vlvbound_h2aa06c0c__0 = __Vfunc_xor_tree__15__Vfuncout;
+    vlSelfRef.__PVT__y[1U] = ((0xdU & vlSelfRef.__PVT__y
+                               [1U]) | ((IData)(__Vlvbound_h2aa06c0c__0) 
+                                        << 1U));
+    vlSelfRef.__PVT__unnamedblk10__DOT__unnamedblk11__DOT__unnamedblk12__DOT__temp 
+        = (0xfU & (vlSelfRef.__PVT__and_result_reg[1U] 
+                   >> 8U));
+    __Vfunc_xor_tree__15__N = 4U;
+    __Vfunc_xor_tree__15__in = vlSelfRef.__PVT__unnamedblk10__DOT__unnamedblk11__DOT__unnamedblk12__DOT__temp;
+    vlSelf->__Vfunc_xor_tree__15__unnamedblk9__DOT__i = 0;
+    for (int __Vi0 = 0; __Vi0 < 3; ++__Vi0) {
+        vlSelf->__Vfunc_xor_tree__15__stage[__Vi0] = VL_RAND_RESET_I(4);
+    }
+    __Vfunc_xor_tree__15__level = 0U;
+    __Vfunc_xor_tree__15__num = 4U;
+    __Vfunc_xor_tree__15__unnamedblk8__DOT__i = 0U;
+    while (VL_LTS_III(32, __Vfunc_xor_tree__15__unnamedblk8__DOT__i, __Vfunc_xor_tree__15__N)) {
+        vlSelfRef.__Vfunc_xor_tree__15__stage[0U] = 
+            (((~ ((IData)(1U) << (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))) 
+              & vlSelfRef.__Vfunc_xor_tree__15__stage
+              [0U]) | (0xfU & ((1U & ((IData)(__Vfunc_xor_tree__15__in) 
+                                      >> (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))) 
+                               << (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))));
+        __Vfunc_xor_tree__15__unnamedblk8__DOT__i = 
+            ((IData)(1U) + __Vfunc_xor_tree__15__unnamedblk8__DOT__i);
+    }
+    while (VL_LTS_III(32, 1U, __Vfunc_xor_tree__15__num)) {
+        vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i = 0U;
+        while (VL_LTS_III(32, vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i, 
+                          VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)))) {
+            vlSelfRef.__Vlvbound_h70e7ebe7__0 = (1U 
+                                                 & ((((2U 
+                                                       >= 
+                                                       (3U 
+                                                        & __Vfunc_xor_tree__15__level))
+                                                       ? 
+                                                      vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                      [
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level)]
+                                                       : 0U) 
+                                                     >> 
+                                                     (3U 
+                                                      & VL_MULS_III(32, (IData)(2U), vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))) 
+                                                    ^ 
+                                                    (((2U 
+                                                       >= 
+                                                       (3U 
+                                                        & __Vfunc_xor_tree__15__level))
+                                                       ? 
+                                                      vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                      [
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level)]
+                                                       : 0U) 
+                                                     >> 
+                                                     (3U 
+                                                      & ((IData)(1U) 
+                                                         + 
+                                                         VL_MULS_III(32, (IData)(2U), vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))))));
+            if (VL_LIKELY(((2U >= (3U & ((IData)(1U) 
+                                         + __Vfunc_xor_tree__15__level)))))) {
+                vlSelfRef.__Vfunc_xor_tree__15__stage[(3U 
+                                                       & ((IData)(1U) 
+                                                          + __Vfunc_xor_tree__15__level))] 
+                    = (((~ ((IData)(1U) << (3U & vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))) 
+                        & vlSelfRef.__Vfunc_xor_tree__15__stage
+                        [(3U & ((IData)(1U) + __Vfunc_xor_tree__15__level))]) 
+                       | (0xfU & ((IData)(vlSelfRef.__Vlvbound_h70e7ebe7__0) 
+                                  << (3U & vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))));
+            }
+            vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i 
+                = ((IData)(1U) + vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i);
+        }
+        if ((1U == VL_MODDIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)))) {
+            vlSelfRef.__Vlvbound_hece044c0__0 = (1U 
+                                                 & (((2U 
+                                                      >= 
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level))
+                                                      ? 
+                                                     vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                     [
+                                                     (3U 
+                                                      & __Vfunc_xor_tree__15__level)]
+                                                      : 0U) 
+                                                    >> 
+                                                    (3U 
+                                                     & (__Vfunc_xor_tree__15__num 
+                                                        - (IData)(1U)))));
+            if (VL_LIKELY(((2U >= (3U & ((IData)(1U) 
+                                         + __Vfunc_xor_tree__15__level)))))) {
+                vlSelfRef.__Vfunc_xor_tree__15__stage[(3U 
+                                                       & ((IData)(1U) 
+                                                          + __Vfunc_xor_tree__15__level))] 
+                    = (((~ ((IData)(1U) << (3U & VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U))))) 
+                        & vlSelfRef.__Vfunc_xor_tree__15__stage
+                        [(3U & ((IData)(1U) + __Vfunc_xor_tree__15__level))]) 
+                       | (0xfU & ((IData)(vlSelfRef.__Vlvbound_hece044c0__0) 
+                                  << (3U & VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U))))));
+            }
+            __Vfunc_xor_tree__15__num = ((IData)(1U) 
+                                         + VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)));
+        } else {
+            __Vfunc_xor_tree__15__num = VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U));
+        }
+        __Vfunc_xor_tree__15__level = ((IData)(1U) 
+                                       + __Vfunc_xor_tree__15__level);
+    }
+    __Vfunc_xor_tree__15__Vfuncout = ((2U >= (3U & __Vfunc_xor_tree__15__level))
+                                       ? (1U & vlSelfRef.__Vfunc_xor_tree__15__stage
+                                          [(3U & __Vfunc_xor_tree__15__level)])
+                                       : 0U);
+    __Vlvbound_h2aa06c0c__0 = __Vfunc_xor_tree__15__Vfuncout;
+    vlSelfRef.__PVT__y[1U] = ((0xbU & vlSelfRef.__PVT__y
+                               [1U]) | ((IData)(__Vlvbound_h2aa06c0c__0) 
+                                        << 2U));
+    vlSelfRef.__PVT__unnamedblk10__DOT__unnamedblk11__DOT__unnamedblk12__DOT__temp 
+        = (0xfU & (vlSelfRef.__PVT__and_result_reg[1U] 
+                   >> 0xcU));
+    __Vfunc_xor_tree__15__N = 4U;
+    __Vfunc_xor_tree__15__in = vlSelfRef.__PVT__unnamedblk10__DOT__unnamedblk11__DOT__unnamedblk12__DOT__temp;
+    vlSelf->__Vfunc_xor_tree__15__unnamedblk9__DOT__i = 0;
+    for (int __Vi0 = 0; __Vi0 < 3; ++__Vi0) {
+        vlSelf->__Vfunc_xor_tree__15__stage[__Vi0] = VL_RAND_RESET_I(4);
+    }
+    __Vfunc_xor_tree__15__level = 0U;
+    __Vfunc_xor_tree__15__num = 4U;
+    __Vfunc_xor_tree__15__unnamedblk8__DOT__i = 0U;
+    while (VL_LTS_III(32, __Vfunc_xor_tree__15__unnamedblk8__DOT__i, __Vfunc_xor_tree__15__N)) {
+        vlSelfRef.__Vfunc_xor_tree__15__stage[0U] = 
+            (((~ ((IData)(1U) << (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))) 
+              & vlSelfRef.__Vfunc_xor_tree__15__stage
+              [0U]) | (0xfU & ((1U & ((IData)(__Vfunc_xor_tree__15__in) 
+                                      >> (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))) 
+                               << (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))));
+        __Vfunc_xor_tree__15__unnamedblk8__DOT__i = 
+            ((IData)(1U) + __Vfunc_xor_tree__15__unnamedblk8__DOT__i);
+    }
+    while (VL_LTS_III(32, 1U, __Vfunc_xor_tree__15__num)) {
+        vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i = 0U;
+        while (VL_LTS_III(32, vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i, 
+                          VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)))) {
+            vlSelfRef.__Vlvbound_h70e7ebe7__0 = (1U 
+                                                 & ((((2U 
+                                                       >= 
+                                                       (3U 
+                                                        & __Vfunc_xor_tree__15__level))
+                                                       ? 
+                                                      vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                      [
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level)]
+                                                       : 0U) 
+                                                     >> 
+                                                     (3U 
+                                                      & VL_MULS_III(32, (IData)(2U), vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))) 
+                                                    ^ 
+                                                    (((2U 
+                                                       >= 
+                                                       (3U 
+                                                        & __Vfunc_xor_tree__15__level))
+                                                       ? 
+                                                      vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                      [
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level)]
+                                                       : 0U) 
+                                                     >> 
+                                                     (3U 
+                                                      & ((IData)(1U) 
+                                                         + 
+                                                         VL_MULS_III(32, (IData)(2U), vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))))));
+            if (VL_LIKELY(((2U >= (3U & ((IData)(1U) 
+                                         + __Vfunc_xor_tree__15__level)))))) {
+                vlSelfRef.__Vfunc_xor_tree__15__stage[(3U 
+                                                       & ((IData)(1U) 
+                                                          + __Vfunc_xor_tree__15__level))] 
+                    = (((~ ((IData)(1U) << (3U & vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))) 
+                        & vlSelfRef.__Vfunc_xor_tree__15__stage
+                        [(3U & ((IData)(1U) + __Vfunc_xor_tree__15__level))]) 
+                       | (0xfU & ((IData)(vlSelfRef.__Vlvbound_h70e7ebe7__0) 
+                                  << (3U & vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))));
+            }
+            vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i 
+                = ((IData)(1U) + vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i);
+        }
+        if ((1U == VL_MODDIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)))) {
+            vlSelfRef.__Vlvbound_hece044c0__0 = (1U 
+                                                 & (((2U 
+                                                      >= 
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level))
+                                                      ? 
+                                                     vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                     [
+                                                     (3U 
+                                                      & __Vfunc_xor_tree__15__level)]
+                                                      : 0U) 
+                                                    >> 
+                                                    (3U 
+                                                     & (__Vfunc_xor_tree__15__num 
+                                                        - (IData)(1U)))));
+            if (VL_LIKELY(((2U >= (3U & ((IData)(1U) 
+                                         + __Vfunc_xor_tree__15__level)))))) {
+                vlSelfRef.__Vfunc_xor_tree__15__stage[(3U 
+                                                       & ((IData)(1U) 
+                                                          + __Vfunc_xor_tree__15__level))] 
+                    = (((~ ((IData)(1U) << (3U & VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U))))) 
+                        & vlSelfRef.__Vfunc_xor_tree__15__stage
+                        [(3U & ((IData)(1U) + __Vfunc_xor_tree__15__level))]) 
+                       | (0xfU & ((IData)(vlSelfRef.__Vlvbound_hece044c0__0) 
+                                  << (3U & VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U))))));
+            }
+            __Vfunc_xor_tree__15__num = ((IData)(1U) 
+                                         + VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)));
+        } else {
+            __Vfunc_xor_tree__15__num = VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U));
+        }
+        __Vfunc_xor_tree__15__level = ((IData)(1U) 
+                                       + __Vfunc_xor_tree__15__level);
+    }
+    __Vfunc_xor_tree__15__Vfuncout = ((2U >= (3U & __Vfunc_xor_tree__15__level))
+                                       ? (1U & vlSelfRef.__Vfunc_xor_tree__15__stage
+                                          [(3U & __Vfunc_xor_tree__15__level)])
+                                       : 0U);
+    __Vlvbound_h2aa06c0c__0 = __Vfunc_xor_tree__15__Vfuncout;
+    vlSelfRef.__PVT__y[1U] = ((7U & vlSelfRef.__PVT__y
+                               [1U]) | ((IData)(__Vlvbound_h2aa06c0c__0) 
+                                        << 3U));
+    vlSelfRef.__PVT__unnamedblk10__DOT__unnamedblk11__DOT__unnamedblk12__DOT__temp 
+        = (0xfU & vlSelfRef.__PVT__and_result_reg[2U]);
+    __Vfunc_xor_tree__15__N = 4U;
+    __Vfunc_xor_tree__15__in = vlSelfRef.__PVT__unnamedblk10__DOT__unnamedblk11__DOT__unnamedblk12__DOT__temp;
+    vlSelf->__Vfunc_xor_tree__15__unnamedblk9__DOT__i = 0;
+    for (int __Vi0 = 0; __Vi0 < 3; ++__Vi0) {
+        vlSelf->__Vfunc_xor_tree__15__stage[__Vi0] = VL_RAND_RESET_I(4);
+    }
+    __Vfunc_xor_tree__15__level = 0U;
+    __Vfunc_xor_tree__15__num = 4U;
+    __Vfunc_xor_tree__15__unnamedblk8__DOT__i = 0U;
+    while (VL_LTS_III(32, __Vfunc_xor_tree__15__unnamedblk8__DOT__i, __Vfunc_xor_tree__15__N)) {
+        vlSelfRef.__Vfunc_xor_tree__15__stage[0U] = 
+            (((~ ((IData)(1U) << (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))) 
+              & vlSelfRef.__Vfunc_xor_tree__15__stage
+              [0U]) | (0xfU & ((1U & ((IData)(__Vfunc_xor_tree__15__in) 
+                                      >> (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))) 
+                               << (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))));
+        __Vfunc_xor_tree__15__unnamedblk8__DOT__i = 
+            ((IData)(1U) + __Vfunc_xor_tree__15__unnamedblk8__DOT__i);
+    }
+    while (VL_LTS_III(32, 1U, __Vfunc_xor_tree__15__num)) {
+        vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i = 0U;
+        while (VL_LTS_III(32, vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i, 
+                          VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)))) {
+            vlSelfRef.__Vlvbound_h70e7ebe7__0 = (1U 
+                                                 & ((((2U 
+                                                       >= 
+                                                       (3U 
+                                                        & __Vfunc_xor_tree__15__level))
+                                                       ? 
+                                                      vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                      [
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level)]
+                                                       : 0U) 
+                                                     >> 
+                                                     (3U 
+                                                      & VL_MULS_III(32, (IData)(2U), vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))) 
+                                                    ^ 
+                                                    (((2U 
+                                                       >= 
+                                                       (3U 
+                                                        & __Vfunc_xor_tree__15__level))
+                                                       ? 
+                                                      vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                      [
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level)]
+                                                       : 0U) 
+                                                     >> 
+                                                     (3U 
+                                                      & ((IData)(1U) 
+                                                         + 
+                                                         VL_MULS_III(32, (IData)(2U), vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))))));
+            if (VL_LIKELY(((2U >= (3U & ((IData)(1U) 
+                                         + __Vfunc_xor_tree__15__level)))))) {
+                vlSelfRef.__Vfunc_xor_tree__15__stage[(3U 
+                                                       & ((IData)(1U) 
+                                                          + __Vfunc_xor_tree__15__level))] 
+                    = (((~ ((IData)(1U) << (3U & vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))) 
+                        & vlSelfRef.__Vfunc_xor_tree__15__stage
+                        [(3U & ((IData)(1U) + __Vfunc_xor_tree__15__level))]) 
+                       | (0xfU & ((IData)(vlSelfRef.__Vlvbound_h70e7ebe7__0) 
+                                  << (3U & vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))));
+            }
+            vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i 
+                = ((IData)(1U) + vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i);
+        }
+        if ((1U == VL_MODDIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)))) {
+            vlSelfRef.__Vlvbound_hece044c0__0 = (1U 
+                                                 & (((2U 
+                                                      >= 
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level))
+                                                      ? 
+                                                     vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                     [
+                                                     (3U 
+                                                      & __Vfunc_xor_tree__15__level)]
+                                                      : 0U) 
+                                                    >> 
+                                                    (3U 
+                                                     & (__Vfunc_xor_tree__15__num 
+                                                        - (IData)(1U)))));
+            if (VL_LIKELY(((2U >= (3U & ((IData)(1U) 
+                                         + __Vfunc_xor_tree__15__level)))))) {
+                vlSelfRef.__Vfunc_xor_tree__15__stage[(3U 
+                                                       & ((IData)(1U) 
+                                                          + __Vfunc_xor_tree__15__level))] 
+                    = (((~ ((IData)(1U) << (3U & VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U))))) 
+                        & vlSelfRef.__Vfunc_xor_tree__15__stage
+                        [(3U & ((IData)(1U) + __Vfunc_xor_tree__15__level))]) 
+                       | (0xfU & ((IData)(vlSelfRef.__Vlvbound_hece044c0__0) 
+                                  << (3U & VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U))))));
+            }
+            __Vfunc_xor_tree__15__num = ((IData)(1U) 
+                                         + VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)));
+        } else {
+            __Vfunc_xor_tree__15__num = VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U));
+        }
+        __Vfunc_xor_tree__15__level = ((IData)(1U) 
+                                       + __Vfunc_xor_tree__15__level);
+    }
+    __Vfunc_xor_tree__15__Vfuncout = ((2U >= (3U & __Vfunc_xor_tree__15__level))
+                                       ? (1U & vlSelfRef.__Vfunc_xor_tree__15__stage
+                                          [(3U & __Vfunc_xor_tree__15__level)])
+                                       : 0U);
+    __Vlvbound_h2aa06c0c__0 = __Vfunc_xor_tree__15__Vfuncout;
+    vlSelfRef.__PVT__y[2U] = ((0xeU & vlSelfRef.__PVT__y
+                               [2U]) | (IData)(__Vlvbound_h2aa06c0c__0));
+    vlSelfRef.__PVT__unnamedblk10__DOT__unnamedblk11__DOT__unnamedblk12__DOT__temp 
+        = (0xfU & (vlSelfRef.__PVT__and_result_reg[2U] 
+                   >> 4U));
+    __Vfunc_xor_tree__15__N = 4U;
+    __Vfunc_xor_tree__15__in = vlSelfRef.__PVT__unnamedblk10__DOT__unnamedblk11__DOT__unnamedblk12__DOT__temp;
+    vlSelf->__Vfunc_xor_tree__15__unnamedblk9__DOT__i = 0;
+    for (int __Vi0 = 0; __Vi0 < 3; ++__Vi0) {
+        vlSelf->__Vfunc_xor_tree__15__stage[__Vi0] = VL_RAND_RESET_I(4);
+    }
+    __Vfunc_xor_tree__15__level = 0U;
+    __Vfunc_xor_tree__15__num = 4U;
+    __Vfunc_xor_tree__15__unnamedblk8__DOT__i = 0U;
+    while (VL_LTS_III(32, __Vfunc_xor_tree__15__unnamedblk8__DOT__i, __Vfunc_xor_tree__15__N)) {
+        vlSelfRef.__Vfunc_xor_tree__15__stage[0U] = 
+            (((~ ((IData)(1U) << (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))) 
+              & vlSelfRef.__Vfunc_xor_tree__15__stage
+              [0U]) | (0xfU & ((1U & ((IData)(__Vfunc_xor_tree__15__in) 
+                                      >> (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))) 
+                               << (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))));
+        __Vfunc_xor_tree__15__unnamedblk8__DOT__i = 
+            ((IData)(1U) + __Vfunc_xor_tree__15__unnamedblk8__DOT__i);
+    }
+    while (VL_LTS_III(32, 1U, __Vfunc_xor_tree__15__num)) {
+        vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i = 0U;
+        while (VL_LTS_III(32, vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i, 
+                          VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)))) {
+            vlSelfRef.__Vlvbound_h70e7ebe7__0 = (1U 
+                                                 & ((((2U 
+                                                       >= 
+                                                       (3U 
+                                                        & __Vfunc_xor_tree__15__level))
+                                                       ? 
+                                                      vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                      [
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level)]
+                                                       : 0U) 
+                                                     >> 
+                                                     (3U 
+                                                      & VL_MULS_III(32, (IData)(2U), vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))) 
+                                                    ^ 
+                                                    (((2U 
+                                                       >= 
+                                                       (3U 
+                                                        & __Vfunc_xor_tree__15__level))
+                                                       ? 
+                                                      vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                      [
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level)]
+                                                       : 0U) 
+                                                     >> 
+                                                     (3U 
+                                                      & ((IData)(1U) 
+                                                         + 
+                                                         VL_MULS_III(32, (IData)(2U), vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))))));
+            if (VL_LIKELY(((2U >= (3U & ((IData)(1U) 
+                                         + __Vfunc_xor_tree__15__level)))))) {
+                vlSelfRef.__Vfunc_xor_tree__15__stage[(3U 
+                                                       & ((IData)(1U) 
+                                                          + __Vfunc_xor_tree__15__level))] 
+                    = (((~ ((IData)(1U) << (3U & vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))) 
+                        & vlSelfRef.__Vfunc_xor_tree__15__stage
+                        [(3U & ((IData)(1U) + __Vfunc_xor_tree__15__level))]) 
+                       | (0xfU & ((IData)(vlSelfRef.__Vlvbound_h70e7ebe7__0) 
+                                  << (3U & vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))));
+            }
+            vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i 
+                = ((IData)(1U) + vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i);
+        }
+        if ((1U == VL_MODDIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)))) {
+            vlSelfRef.__Vlvbound_hece044c0__0 = (1U 
+                                                 & (((2U 
+                                                      >= 
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level))
+                                                      ? 
+                                                     vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                     [
+                                                     (3U 
+                                                      & __Vfunc_xor_tree__15__level)]
+                                                      : 0U) 
+                                                    >> 
+                                                    (3U 
+                                                     & (__Vfunc_xor_tree__15__num 
+                                                        - (IData)(1U)))));
+            if (VL_LIKELY(((2U >= (3U & ((IData)(1U) 
+                                         + __Vfunc_xor_tree__15__level)))))) {
+                vlSelfRef.__Vfunc_xor_tree__15__stage[(3U 
+                                                       & ((IData)(1U) 
+                                                          + __Vfunc_xor_tree__15__level))] 
+                    = (((~ ((IData)(1U) << (3U & VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U))))) 
+                        & vlSelfRef.__Vfunc_xor_tree__15__stage
+                        [(3U & ((IData)(1U) + __Vfunc_xor_tree__15__level))]) 
+                       | (0xfU & ((IData)(vlSelfRef.__Vlvbound_hece044c0__0) 
+                                  << (3U & VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U))))));
+            }
+            __Vfunc_xor_tree__15__num = ((IData)(1U) 
+                                         + VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)));
+        } else {
+            __Vfunc_xor_tree__15__num = VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U));
+        }
+        __Vfunc_xor_tree__15__level = ((IData)(1U) 
+                                       + __Vfunc_xor_tree__15__level);
+    }
+    __Vfunc_xor_tree__15__Vfuncout = ((2U >= (3U & __Vfunc_xor_tree__15__level))
+                                       ? (1U & vlSelfRef.__Vfunc_xor_tree__15__stage
+                                          [(3U & __Vfunc_xor_tree__15__level)])
+                                       : 0U);
+    __Vlvbound_h2aa06c0c__0 = __Vfunc_xor_tree__15__Vfuncout;
+    vlSelfRef.__PVT__y[2U] = ((0xdU & vlSelfRef.__PVT__y
+                               [2U]) | ((IData)(__Vlvbound_h2aa06c0c__0) 
+                                        << 1U));
+    vlSelfRef.__PVT__unnamedblk10__DOT__unnamedblk11__DOT__unnamedblk12__DOT__temp 
+        = (0xfU & (vlSelfRef.__PVT__and_result_reg[2U] 
+                   >> 8U));
+    __Vfunc_xor_tree__15__N = 4U;
+    __Vfunc_xor_tree__15__in = vlSelfRef.__PVT__unnamedblk10__DOT__unnamedblk11__DOT__unnamedblk12__DOT__temp;
+    vlSelf->__Vfunc_xor_tree__15__unnamedblk9__DOT__i = 0;
+    for (int __Vi0 = 0; __Vi0 < 3; ++__Vi0) {
+        vlSelf->__Vfunc_xor_tree__15__stage[__Vi0] = VL_RAND_RESET_I(4);
+    }
+    __Vfunc_xor_tree__15__level = 0U;
+    __Vfunc_xor_tree__15__num = 4U;
+    __Vfunc_xor_tree__15__unnamedblk8__DOT__i = 0U;
+    while (VL_LTS_III(32, __Vfunc_xor_tree__15__unnamedblk8__DOT__i, __Vfunc_xor_tree__15__N)) {
+        vlSelfRef.__Vfunc_xor_tree__15__stage[0U] = 
+            (((~ ((IData)(1U) << (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))) 
+              & vlSelfRef.__Vfunc_xor_tree__15__stage
+              [0U]) | (0xfU & ((1U & ((IData)(__Vfunc_xor_tree__15__in) 
+                                      >> (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))) 
+                               << (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))));
+        __Vfunc_xor_tree__15__unnamedblk8__DOT__i = 
+            ((IData)(1U) + __Vfunc_xor_tree__15__unnamedblk8__DOT__i);
+    }
+    while (VL_LTS_III(32, 1U, __Vfunc_xor_tree__15__num)) {
+        vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i = 0U;
+        while (VL_LTS_III(32, vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i, 
+                          VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)))) {
+            vlSelfRef.__Vlvbound_h70e7ebe7__0 = (1U 
+                                                 & ((((2U 
+                                                       >= 
+                                                       (3U 
+                                                        & __Vfunc_xor_tree__15__level))
+                                                       ? 
+                                                      vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                      [
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level)]
+                                                       : 0U) 
+                                                     >> 
+                                                     (3U 
+                                                      & VL_MULS_III(32, (IData)(2U), vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))) 
+                                                    ^ 
+                                                    (((2U 
+                                                       >= 
+                                                       (3U 
+                                                        & __Vfunc_xor_tree__15__level))
+                                                       ? 
+                                                      vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                      [
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level)]
+                                                       : 0U) 
+                                                     >> 
+                                                     (3U 
+                                                      & ((IData)(1U) 
+                                                         + 
+                                                         VL_MULS_III(32, (IData)(2U), vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))))));
+            if (VL_LIKELY(((2U >= (3U & ((IData)(1U) 
+                                         + __Vfunc_xor_tree__15__level)))))) {
+                vlSelfRef.__Vfunc_xor_tree__15__stage[(3U 
+                                                       & ((IData)(1U) 
+                                                          + __Vfunc_xor_tree__15__level))] 
+                    = (((~ ((IData)(1U) << (3U & vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))) 
+                        & vlSelfRef.__Vfunc_xor_tree__15__stage
+                        [(3U & ((IData)(1U) + __Vfunc_xor_tree__15__level))]) 
+                       | (0xfU & ((IData)(vlSelfRef.__Vlvbound_h70e7ebe7__0) 
+                                  << (3U & vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))));
+            }
+            vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i 
+                = ((IData)(1U) + vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i);
+        }
+        if ((1U == VL_MODDIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)))) {
+            vlSelfRef.__Vlvbound_hece044c0__0 = (1U 
+                                                 & (((2U 
+                                                      >= 
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level))
+                                                      ? 
+                                                     vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                     [
+                                                     (3U 
+                                                      & __Vfunc_xor_tree__15__level)]
+                                                      : 0U) 
+                                                    >> 
+                                                    (3U 
+                                                     & (__Vfunc_xor_tree__15__num 
+                                                        - (IData)(1U)))));
+            if (VL_LIKELY(((2U >= (3U & ((IData)(1U) 
+                                         + __Vfunc_xor_tree__15__level)))))) {
+                vlSelfRef.__Vfunc_xor_tree__15__stage[(3U 
+                                                       & ((IData)(1U) 
+                                                          + __Vfunc_xor_tree__15__level))] 
+                    = (((~ ((IData)(1U) << (3U & VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U))))) 
+                        & vlSelfRef.__Vfunc_xor_tree__15__stage
+                        [(3U & ((IData)(1U) + __Vfunc_xor_tree__15__level))]) 
+                       | (0xfU & ((IData)(vlSelfRef.__Vlvbound_hece044c0__0) 
+                                  << (3U & VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U))))));
+            }
+            __Vfunc_xor_tree__15__num = ((IData)(1U) 
+                                         + VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)));
+        } else {
+            __Vfunc_xor_tree__15__num = VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U));
+        }
+        __Vfunc_xor_tree__15__level = ((IData)(1U) 
+                                       + __Vfunc_xor_tree__15__level);
+    }
+    __Vfunc_xor_tree__15__Vfuncout = ((2U >= (3U & __Vfunc_xor_tree__15__level))
+                                       ? (1U & vlSelfRef.__Vfunc_xor_tree__15__stage
+                                          [(3U & __Vfunc_xor_tree__15__level)])
+                                       : 0U);
+    __Vlvbound_h2aa06c0c__0 = __Vfunc_xor_tree__15__Vfuncout;
+    vlSelfRef.__PVT__y[2U] = ((0xbU & vlSelfRef.__PVT__y
+                               [2U]) | ((IData)(__Vlvbound_h2aa06c0c__0) 
+                                        << 2U));
+    vlSelfRef.__PVT__unnamedblk10__DOT__unnamedblk11__DOT__unnamedblk12__DOT__temp 
+        = (0xfU & (vlSelfRef.__PVT__and_result_reg[2U] 
+                   >> 0xcU));
+    __Vfunc_xor_tree__15__N = 4U;
+    __Vfunc_xor_tree__15__in = vlSelfRef.__PVT__unnamedblk10__DOT__unnamedblk11__DOT__unnamedblk12__DOT__temp;
+    vlSelf->__Vfunc_xor_tree__15__unnamedblk9__DOT__i = 0;
+    for (int __Vi0 = 0; __Vi0 < 3; ++__Vi0) {
+        vlSelf->__Vfunc_xor_tree__15__stage[__Vi0] = VL_RAND_RESET_I(4);
+    }
+    __Vfunc_xor_tree__15__level = 0U;
+    __Vfunc_xor_tree__15__num = 4U;
+    __Vfunc_xor_tree__15__unnamedblk8__DOT__i = 0U;
+    while (VL_LTS_III(32, __Vfunc_xor_tree__15__unnamedblk8__DOT__i, __Vfunc_xor_tree__15__N)) {
+        vlSelfRef.__Vfunc_xor_tree__15__stage[0U] = 
+            (((~ ((IData)(1U) << (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))) 
+              & vlSelfRef.__Vfunc_xor_tree__15__stage
+              [0U]) | (0xfU & ((1U & ((IData)(__Vfunc_xor_tree__15__in) 
+                                      >> (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))) 
+                               << (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))));
+        __Vfunc_xor_tree__15__unnamedblk8__DOT__i = 
+            ((IData)(1U) + __Vfunc_xor_tree__15__unnamedblk8__DOT__i);
+    }
+    while (VL_LTS_III(32, 1U, __Vfunc_xor_tree__15__num)) {
+        vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i = 0U;
+        while (VL_LTS_III(32, vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i, 
+                          VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)))) {
+            vlSelfRef.__Vlvbound_h70e7ebe7__0 = (1U 
+                                                 & ((((2U 
+                                                       >= 
+                                                       (3U 
+                                                        & __Vfunc_xor_tree__15__level))
+                                                       ? 
+                                                      vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                      [
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level)]
+                                                       : 0U) 
+                                                     >> 
+                                                     (3U 
+                                                      & VL_MULS_III(32, (IData)(2U), vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))) 
+                                                    ^ 
+                                                    (((2U 
+                                                       >= 
+                                                       (3U 
+                                                        & __Vfunc_xor_tree__15__level))
+                                                       ? 
+                                                      vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                      [
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level)]
+                                                       : 0U) 
+                                                     >> 
+                                                     (3U 
+                                                      & ((IData)(1U) 
+                                                         + 
+                                                         VL_MULS_III(32, (IData)(2U), vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))))));
+            if (VL_LIKELY(((2U >= (3U & ((IData)(1U) 
+                                         + __Vfunc_xor_tree__15__level)))))) {
+                vlSelfRef.__Vfunc_xor_tree__15__stage[(3U 
+                                                       & ((IData)(1U) 
+                                                          + __Vfunc_xor_tree__15__level))] 
+                    = (((~ ((IData)(1U) << (3U & vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))) 
+                        & vlSelfRef.__Vfunc_xor_tree__15__stage
+                        [(3U & ((IData)(1U) + __Vfunc_xor_tree__15__level))]) 
+                       | (0xfU & ((IData)(vlSelfRef.__Vlvbound_h70e7ebe7__0) 
+                                  << (3U & vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))));
+            }
+            vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i 
+                = ((IData)(1U) + vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i);
+        }
+        if ((1U == VL_MODDIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)))) {
+            vlSelfRef.__Vlvbound_hece044c0__0 = (1U 
+                                                 & (((2U 
+                                                      >= 
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level))
+                                                      ? 
+                                                     vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                     [
+                                                     (3U 
+                                                      & __Vfunc_xor_tree__15__level)]
+                                                      : 0U) 
+                                                    >> 
+                                                    (3U 
+                                                     & (__Vfunc_xor_tree__15__num 
+                                                        - (IData)(1U)))));
+            if (VL_LIKELY(((2U >= (3U & ((IData)(1U) 
+                                         + __Vfunc_xor_tree__15__level)))))) {
+                vlSelfRef.__Vfunc_xor_tree__15__stage[(3U 
+                                                       & ((IData)(1U) 
+                                                          + __Vfunc_xor_tree__15__level))] 
+                    = (((~ ((IData)(1U) << (3U & VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U))))) 
+                        & vlSelfRef.__Vfunc_xor_tree__15__stage
+                        [(3U & ((IData)(1U) + __Vfunc_xor_tree__15__level))]) 
+                       | (0xfU & ((IData)(vlSelfRef.__Vlvbound_hece044c0__0) 
+                                  << (3U & VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U))))));
+            }
+            __Vfunc_xor_tree__15__num = ((IData)(1U) 
+                                         + VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)));
+        } else {
+            __Vfunc_xor_tree__15__num = VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U));
+        }
+        __Vfunc_xor_tree__15__level = ((IData)(1U) 
+                                       + __Vfunc_xor_tree__15__level);
+    }
+    __Vfunc_xor_tree__15__Vfuncout = ((2U >= (3U & __Vfunc_xor_tree__15__level))
+                                       ? (1U & vlSelfRef.__Vfunc_xor_tree__15__stage
+                                          [(3U & __Vfunc_xor_tree__15__level)])
+                                       : 0U);
+    __Vlvbound_h2aa06c0c__0 = __Vfunc_xor_tree__15__Vfuncout;
+    vlSelfRef.__PVT__y[2U] = ((7U & vlSelfRef.__PVT__y
+                               [2U]) | ((IData)(__Vlvbound_h2aa06c0c__0) 
+                                        << 3U));
+    vlSelfRef.__PVT__unnamedblk10__DOT__unnamedblk11__DOT__unnamedblk12__DOT__temp 
+        = (0xfU & vlSelfRef.__PVT__and_result_reg[3U]);
+    __Vfunc_xor_tree__15__N = 4U;
+    __Vfunc_xor_tree__15__in = vlSelfRef.__PVT__unnamedblk10__DOT__unnamedblk11__DOT__unnamedblk12__DOT__temp;
+    vlSelf->__Vfunc_xor_tree__15__unnamedblk9__DOT__i = 0;
+    for (int __Vi0 = 0; __Vi0 < 3; ++__Vi0) {
+        vlSelf->__Vfunc_xor_tree__15__stage[__Vi0] = VL_RAND_RESET_I(4);
+    }
+    __Vfunc_xor_tree__15__level = 0U;
+    __Vfunc_xor_tree__15__num = 4U;
+    __Vfunc_xor_tree__15__unnamedblk8__DOT__i = 0U;
+    while (VL_LTS_III(32, __Vfunc_xor_tree__15__unnamedblk8__DOT__i, __Vfunc_xor_tree__15__N)) {
+        vlSelfRef.__Vfunc_xor_tree__15__stage[0U] = 
+            (((~ ((IData)(1U) << (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))) 
+              & vlSelfRef.__Vfunc_xor_tree__15__stage
+              [0U]) | (0xfU & ((1U & ((IData)(__Vfunc_xor_tree__15__in) 
+                                      >> (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))) 
+                               << (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))));
+        __Vfunc_xor_tree__15__unnamedblk8__DOT__i = 
+            ((IData)(1U) + __Vfunc_xor_tree__15__unnamedblk8__DOT__i);
+    }
+    while (VL_LTS_III(32, 1U, __Vfunc_xor_tree__15__num)) {
+        vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i = 0U;
+        while (VL_LTS_III(32, vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i, 
+                          VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)))) {
+            vlSelfRef.__Vlvbound_h70e7ebe7__0 = (1U 
+                                                 & ((((2U 
+                                                       >= 
+                                                       (3U 
+                                                        & __Vfunc_xor_tree__15__level))
+                                                       ? 
+                                                      vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                      [
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level)]
+                                                       : 0U) 
+                                                     >> 
+                                                     (3U 
+                                                      & VL_MULS_III(32, (IData)(2U), vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))) 
+                                                    ^ 
+                                                    (((2U 
+                                                       >= 
+                                                       (3U 
+                                                        & __Vfunc_xor_tree__15__level))
+                                                       ? 
+                                                      vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                      [
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level)]
+                                                       : 0U) 
+                                                     >> 
+                                                     (3U 
+                                                      & ((IData)(1U) 
+                                                         + 
+                                                         VL_MULS_III(32, (IData)(2U), vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))))));
+            if (VL_LIKELY(((2U >= (3U & ((IData)(1U) 
+                                         + __Vfunc_xor_tree__15__level)))))) {
+                vlSelfRef.__Vfunc_xor_tree__15__stage[(3U 
+                                                       & ((IData)(1U) 
+                                                          + __Vfunc_xor_tree__15__level))] 
+                    = (((~ ((IData)(1U) << (3U & vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))) 
+                        & vlSelfRef.__Vfunc_xor_tree__15__stage
+                        [(3U & ((IData)(1U) + __Vfunc_xor_tree__15__level))]) 
+                       | (0xfU & ((IData)(vlSelfRef.__Vlvbound_h70e7ebe7__0) 
+                                  << (3U & vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))));
+            }
+            vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i 
+                = ((IData)(1U) + vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i);
+        }
+        if ((1U == VL_MODDIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)))) {
+            vlSelfRef.__Vlvbound_hece044c0__0 = (1U 
+                                                 & (((2U 
+                                                      >= 
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level))
+                                                      ? 
+                                                     vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                     [
+                                                     (3U 
+                                                      & __Vfunc_xor_tree__15__level)]
+                                                      : 0U) 
+                                                    >> 
+                                                    (3U 
+                                                     & (__Vfunc_xor_tree__15__num 
+                                                        - (IData)(1U)))));
+            if (VL_LIKELY(((2U >= (3U & ((IData)(1U) 
+                                         + __Vfunc_xor_tree__15__level)))))) {
+                vlSelfRef.__Vfunc_xor_tree__15__stage[(3U 
+                                                       & ((IData)(1U) 
+                                                          + __Vfunc_xor_tree__15__level))] 
+                    = (((~ ((IData)(1U) << (3U & VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U))))) 
+                        & vlSelfRef.__Vfunc_xor_tree__15__stage
+                        [(3U & ((IData)(1U) + __Vfunc_xor_tree__15__level))]) 
+                       | (0xfU & ((IData)(vlSelfRef.__Vlvbound_hece044c0__0) 
+                                  << (3U & VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U))))));
+            }
+            __Vfunc_xor_tree__15__num = ((IData)(1U) 
+                                         + VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)));
+        } else {
+            __Vfunc_xor_tree__15__num = VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U));
+        }
+        __Vfunc_xor_tree__15__level = ((IData)(1U) 
+                                       + __Vfunc_xor_tree__15__level);
+    }
+    __Vfunc_xor_tree__15__Vfuncout = ((2U >= (3U & __Vfunc_xor_tree__15__level))
+                                       ? (1U & vlSelfRef.__Vfunc_xor_tree__15__stage
+                                          [(3U & __Vfunc_xor_tree__15__level)])
+                                       : 0U);
+    __Vlvbound_h2aa06c0c__0 = __Vfunc_xor_tree__15__Vfuncout;
+    vlSelfRef.__PVT__y[3U] = ((0xeU & vlSelfRef.__PVT__y
+                               [3U]) | (IData)(__Vlvbound_h2aa06c0c__0));
+    vlSelfRef.__PVT__unnamedblk10__DOT__unnamedblk11__DOT__unnamedblk12__DOT__temp 
+        = (0xfU & (vlSelfRef.__PVT__and_result_reg[3U] 
+                   >> 4U));
+    __Vfunc_xor_tree__15__N = 4U;
+    __Vfunc_xor_tree__15__in = vlSelfRef.__PVT__unnamedblk10__DOT__unnamedblk11__DOT__unnamedblk12__DOT__temp;
+    vlSelf->__Vfunc_xor_tree__15__unnamedblk9__DOT__i = 0;
+    for (int __Vi0 = 0; __Vi0 < 3; ++__Vi0) {
+        vlSelf->__Vfunc_xor_tree__15__stage[__Vi0] = VL_RAND_RESET_I(4);
+    }
+    __Vfunc_xor_tree__15__level = 0U;
+    __Vfunc_xor_tree__15__num = 4U;
+    __Vfunc_xor_tree__15__unnamedblk8__DOT__i = 0U;
+    while (VL_LTS_III(32, __Vfunc_xor_tree__15__unnamedblk8__DOT__i, __Vfunc_xor_tree__15__N)) {
+        vlSelfRef.__Vfunc_xor_tree__15__stage[0U] = 
+            (((~ ((IData)(1U) << (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))) 
+              & vlSelfRef.__Vfunc_xor_tree__15__stage
+              [0U]) | (0xfU & ((1U & ((IData)(__Vfunc_xor_tree__15__in) 
+                                      >> (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))) 
+                               << (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))));
+        __Vfunc_xor_tree__15__unnamedblk8__DOT__i = 
+            ((IData)(1U) + __Vfunc_xor_tree__15__unnamedblk8__DOT__i);
+    }
+    while (VL_LTS_III(32, 1U, __Vfunc_xor_tree__15__num)) {
+        vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i = 0U;
+        while (VL_LTS_III(32, vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i, 
+                          VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)))) {
+            vlSelfRef.__Vlvbound_h70e7ebe7__0 = (1U 
+                                                 & ((((2U 
+                                                       >= 
+                                                       (3U 
+                                                        & __Vfunc_xor_tree__15__level))
+                                                       ? 
+                                                      vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                      [
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level)]
+                                                       : 0U) 
+                                                     >> 
+                                                     (3U 
+                                                      & VL_MULS_III(32, (IData)(2U), vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))) 
+                                                    ^ 
+                                                    (((2U 
+                                                       >= 
+                                                       (3U 
+                                                        & __Vfunc_xor_tree__15__level))
+                                                       ? 
+                                                      vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                      [
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level)]
+                                                       : 0U) 
+                                                     >> 
+                                                     (3U 
+                                                      & ((IData)(1U) 
+                                                         + 
+                                                         VL_MULS_III(32, (IData)(2U), vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))))));
+            if (VL_LIKELY(((2U >= (3U & ((IData)(1U) 
+                                         + __Vfunc_xor_tree__15__level)))))) {
+                vlSelfRef.__Vfunc_xor_tree__15__stage[(3U 
+                                                       & ((IData)(1U) 
+                                                          + __Vfunc_xor_tree__15__level))] 
+                    = (((~ ((IData)(1U) << (3U & vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))) 
+                        & vlSelfRef.__Vfunc_xor_tree__15__stage
+                        [(3U & ((IData)(1U) + __Vfunc_xor_tree__15__level))]) 
+                       | (0xfU & ((IData)(vlSelfRef.__Vlvbound_h70e7ebe7__0) 
+                                  << (3U & vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))));
+            }
+            vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i 
+                = ((IData)(1U) + vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i);
+        }
+        if ((1U == VL_MODDIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)))) {
+            vlSelfRef.__Vlvbound_hece044c0__0 = (1U 
+                                                 & (((2U 
+                                                      >= 
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level))
+                                                      ? 
+                                                     vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                     [
+                                                     (3U 
+                                                      & __Vfunc_xor_tree__15__level)]
+                                                      : 0U) 
+                                                    >> 
+                                                    (3U 
+                                                     & (__Vfunc_xor_tree__15__num 
+                                                        - (IData)(1U)))));
+            if (VL_LIKELY(((2U >= (3U & ((IData)(1U) 
+                                         + __Vfunc_xor_tree__15__level)))))) {
+                vlSelfRef.__Vfunc_xor_tree__15__stage[(3U 
+                                                       & ((IData)(1U) 
+                                                          + __Vfunc_xor_tree__15__level))] 
+                    = (((~ ((IData)(1U) << (3U & VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U))))) 
+                        & vlSelfRef.__Vfunc_xor_tree__15__stage
+                        [(3U & ((IData)(1U) + __Vfunc_xor_tree__15__level))]) 
+                       | (0xfU & ((IData)(vlSelfRef.__Vlvbound_hece044c0__0) 
+                                  << (3U & VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U))))));
+            }
+            __Vfunc_xor_tree__15__num = ((IData)(1U) 
+                                         + VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)));
+        } else {
+            __Vfunc_xor_tree__15__num = VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U));
+        }
+        __Vfunc_xor_tree__15__level = ((IData)(1U) 
+                                       + __Vfunc_xor_tree__15__level);
+    }
+    __Vfunc_xor_tree__15__Vfuncout = ((2U >= (3U & __Vfunc_xor_tree__15__level))
+                                       ? (1U & vlSelfRef.__Vfunc_xor_tree__15__stage
+                                          [(3U & __Vfunc_xor_tree__15__level)])
+                                       : 0U);
+    __Vlvbound_h2aa06c0c__0 = __Vfunc_xor_tree__15__Vfuncout;
+    vlSelfRef.__PVT__y[3U] = ((0xdU & vlSelfRef.__PVT__y
+                               [3U]) | ((IData)(__Vlvbound_h2aa06c0c__0) 
+                                        << 1U));
+    vlSelfRef.__PVT__unnamedblk10__DOT__unnamedblk11__DOT__unnamedblk12__DOT__temp 
+        = (0xfU & (vlSelfRef.__PVT__and_result_reg[3U] 
+                   >> 8U));
+    __Vfunc_xor_tree__15__N = 4U;
+    __Vfunc_xor_tree__15__in = vlSelfRef.__PVT__unnamedblk10__DOT__unnamedblk11__DOT__unnamedblk12__DOT__temp;
+    vlSelf->__Vfunc_xor_tree__15__unnamedblk9__DOT__i = 0;
+    for (int __Vi0 = 0; __Vi0 < 3; ++__Vi0) {
+        vlSelf->__Vfunc_xor_tree__15__stage[__Vi0] = VL_RAND_RESET_I(4);
+    }
+    __Vfunc_xor_tree__15__level = 0U;
+    __Vfunc_xor_tree__15__num = 4U;
+    __Vfunc_xor_tree__15__unnamedblk8__DOT__i = 0U;
+    while (VL_LTS_III(32, __Vfunc_xor_tree__15__unnamedblk8__DOT__i, __Vfunc_xor_tree__15__N)) {
+        vlSelfRef.__Vfunc_xor_tree__15__stage[0U] = 
+            (((~ ((IData)(1U) << (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))) 
+              & vlSelfRef.__Vfunc_xor_tree__15__stage
+              [0U]) | (0xfU & ((1U & ((IData)(__Vfunc_xor_tree__15__in) 
+                                      >> (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))) 
+                               << (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))));
+        __Vfunc_xor_tree__15__unnamedblk8__DOT__i = 
+            ((IData)(1U) + __Vfunc_xor_tree__15__unnamedblk8__DOT__i);
+    }
+    while (VL_LTS_III(32, 1U, __Vfunc_xor_tree__15__num)) {
+        vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i = 0U;
+        while (VL_LTS_III(32, vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i, 
+                          VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)))) {
+            vlSelfRef.__Vlvbound_h70e7ebe7__0 = (1U 
+                                                 & ((((2U 
+                                                       >= 
+                                                       (3U 
+                                                        & __Vfunc_xor_tree__15__level))
+                                                       ? 
+                                                      vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                      [
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level)]
+                                                       : 0U) 
+                                                     >> 
+                                                     (3U 
+                                                      & VL_MULS_III(32, (IData)(2U), vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))) 
+                                                    ^ 
+                                                    (((2U 
+                                                       >= 
+                                                       (3U 
+                                                        & __Vfunc_xor_tree__15__level))
+                                                       ? 
+                                                      vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                      [
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level)]
+                                                       : 0U) 
+                                                     >> 
+                                                     (3U 
+                                                      & ((IData)(1U) 
+                                                         + 
+                                                         VL_MULS_III(32, (IData)(2U), vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))))));
+            if (VL_LIKELY(((2U >= (3U & ((IData)(1U) 
+                                         + __Vfunc_xor_tree__15__level)))))) {
+                vlSelfRef.__Vfunc_xor_tree__15__stage[(3U 
+                                                       & ((IData)(1U) 
+                                                          + __Vfunc_xor_tree__15__level))] 
+                    = (((~ ((IData)(1U) << (3U & vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))) 
+                        & vlSelfRef.__Vfunc_xor_tree__15__stage
+                        [(3U & ((IData)(1U) + __Vfunc_xor_tree__15__level))]) 
+                       | (0xfU & ((IData)(vlSelfRef.__Vlvbound_h70e7ebe7__0) 
+                                  << (3U & vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))));
+            }
+            vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i 
+                = ((IData)(1U) + vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i);
+        }
+        if ((1U == VL_MODDIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)))) {
+            vlSelfRef.__Vlvbound_hece044c0__0 = (1U 
+                                                 & (((2U 
+                                                      >= 
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level))
+                                                      ? 
+                                                     vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                     [
+                                                     (3U 
+                                                      & __Vfunc_xor_tree__15__level)]
+                                                      : 0U) 
+                                                    >> 
+                                                    (3U 
+                                                     & (__Vfunc_xor_tree__15__num 
+                                                        - (IData)(1U)))));
+            if (VL_LIKELY(((2U >= (3U & ((IData)(1U) 
+                                         + __Vfunc_xor_tree__15__level)))))) {
+                vlSelfRef.__Vfunc_xor_tree__15__stage[(3U 
+                                                       & ((IData)(1U) 
+                                                          + __Vfunc_xor_tree__15__level))] 
+                    = (((~ ((IData)(1U) << (3U & VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U))))) 
+                        & vlSelfRef.__Vfunc_xor_tree__15__stage
+                        [(3U & ((IData)(1U) + __Vfunc_xor_tree__15__level))]) 
+                       | (0xfU & ((IData)(vlSelfRef.__Vlvbound_hece044c0__0) 
+                                  << (3U & VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U))))));
+            }
+            __Vfunc_xor_tree__15__num = ((IData)(1U) 
+                                         + VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)));
+        } else {
+            __Vfunc_xor_tree__15__num = VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U));
+        }
+        __Vfunc_xor_tree__15__level = ((IData)(1U) 
+                                       + __Vfunc_xor_tree__15__level);
+    }
+    __Vfunc_xor_tree__15__Vfuncout = ((2U >= (3U & __Vfunc_xor_tree__15__level))
+                                       ? (1U & vlSelfRef.__Vfunc_xor_tree__15__stage
+                                          [(3U & __Vfunc_xor_tree__15__level)])
+                                       : 0U);
+    __Vlvbound_h2aa06c0c__0 = __Vfunc_xor_tree__15__Vfuncout;
+    vlSelfRef.__PVT__y[3U] = ((0xbU & vlSelfRef.__PVT__y
+                               [3U]) | ((IData)(__Vlvbound_h2aa06c0c__0) 
+                                        << 2U));
+    vlSelfRef.__PVT__unnamedblk10__DOT__unnamedblk11__DOT__unnamedblk12__DOT__temp 
+        = (0xfU & (vlSelfRef.__PVT__and_result_reg[3U] 
+                   >> 0xcU));
+    __Vfunc_xor_tree__15__N = 4U;
+    __Vfunc_xor_tree__15__in = vlSelfRef.__PVT__unnamedblk10__DOT__unnamedblk11__DOT__unnamedblk12__DOT__temp;
+    vlSelf->__Vfunc_xor_tree__15__unnamedblk9__DOT__i = 0;
+    for (int __Vi0 = 0; __Vi0 < 3; ++__Vi0) {
+        vlSelf->__Vfunc_xor_tree__15__stage[__Vi0] = VL_RAND_RESET_I(4);
+    }
+    __Vfunc_xor_tree__15__level = 0U;
+    __Vfunc_xor_tree__15__num = 4U;
+    __Vfunc_xor_tree__15__unnamedblk8__DOT__i = 0U;
+    while (VL_LTS_III(32, __Vfunc_xor_tree__15__unnamedblk8__DOT__i, __Vfunc_xor_tree__15__N)) {
+        vlSelfRef.__Vfunc_xor_tree__15__stage[0U] = 
+            (((~ ((IData)(1U) << (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))) 
+              & vlSelfRef.__Vfunc_xor_tree__15__stage
+              [0U]) | (0xfU & ((1U & ((IData)(__Vfunc_xor_tree__15__in) 
+                                      >> (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))) 
+                               << (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))));
+        __Vfunc_xor_tree__15__unnamedblk8__DOT__i = 
+            ((IData)(1U) + __Vfunc_xor_tree__15__unnamedblk8__DOT__i);
+    }
+    while (VL_LTS_III(32, 1U, __Vfunc_xor_tree__15__num)) {
+        vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i = 0U;
+        while (VL_LTS_III(32, vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i, 
+                          VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)))) {
+            vlSelfRef.__Vlvbound_h70e7ebe7__0 = (1U 
+                                                 & ((((2U 
+                                                       >= 
+                                                       (3U 
+                                                        & __Vfunc_xor_tree__15__level))
+                                                       ? 
+                                                      vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                      [
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level)]
+                                                       : 0U) 
+                                                     >> 
+                                                     (3U 
+                                                      & VL_MULS_III(32, (IData)(2U), vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))) 
+                                                    ^ 
+                                                    (((2U 
+                                                       >= 
+                                                       (3U 
+                                                        & __Vfunc_xor_tree__15__level))
+                                                       ? 
+                                                      vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                      [
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level)]
+                                                       : 0U) 
+                                                     >> 
+                                                     (3U 
+                                                      & ((IData)(1U) 
+                                                         + 
+                                                         VL_MULS_III(32, (IData)(2U), vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))))));
+            if (VL_LIKELY(((2U >= (3U & ((IData)(1U) 
+                                         + __Vfunc_xor_tree__15__level)))))) {
+                vlSelfRef.__Vfunc_xor_tree__15__stage[(3U 
+                                                       & ((IData)(1U) 
+                                                          + __Vfunc_xor_tree__15__level))] 
+                    = (((~ ((IData)(1U) << (3U & vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))) 
+                        & vlSelfRef.__Vfunc_xor_tree__15__stage
+                        [(3U & ((IData)(1U) + __Vfunc_xor_tree__15__level))]) 
+                       | (0xfU & ((IData)(vlSelfRef.__Vlvbound_h70e7ebe7__0) 
+                                  << (3U & vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))));
+            }
+            vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i 
+                = ((IData)(1U) + vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i);
+        }
+        if ((1U == VL_MODDIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)))) {
+            vlSelfRef.__Vlvbound_hece044c0__0 = (1U 
+                                                 & (((2U 
+                                                      >= 
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level))
+                                                      ? 
+                                                     vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                     [
+                                                     (3U 
+                                                      & __Vfunc_xor_tree__15__level)]
+                                                      : 0U) 
+                                                    >> 
+                                                    (3U 
+                                                     & (__Vfunc_xor_tree__15__num 
+                                                        - (IData)(1U)))));
+            if (VL_LIKELY(((2U >= (3U & ((IData)(1U) 
+                                         + __Vfunc_xor_tree__15__level)))))) {
+                vlSelfRef.__Vfunc_xor_tree__15__stage[(3U 
+                                                       & ((IData)(1U) 
+                                                          + __Vfunc_xor_tree__15__level))] 
+                    = (((~ ((IData)(1U) << (3U & VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U))))) 
+                        & vlSelfRef.__Vfunc_xor_tree__15__stage
+                        [(3U & ((IData)(1U) + __Vfunc_xor_tree__15__level))]) 
+                       | (0xfU & ((IData)(vlSelfRef.__Vlvbound_hece044c0__0) 
+                                  << (3U & VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U))))));
+            }
+            __Vfunc_xor_tree__15__num = ((IData)(1U) 
+                                         + VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)));
+        } else {
+            __Vfunc_xor_tree__15__num = VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U));
+        }
+        __Vfunc_xor_tree__15__level = ((IData)(1U) 
+                                       + __Vfunc_xor_tree__15__level);
+    }
+    __Vfunc_xor_tree__15__Vfuncout = ((2U >= (3U & __Vfunc_xor_tree__15__level))
+                                       ? (1U & vlSelfRef.__Vfunc_xor_tree__15__stage
+                                          [(3U & __Vfunc_xor_tree__15__level)])
+                                       : 0U);
+    __Vlvbound_h2aa06c0c__0 = __Vfunc_xor_tree__15__Vfuncout;
+    vlSelfRef.__PVT__y[3U] = ((7U & vlSelfRef.__PVT__y
+                               [3U]) | ((IData)(__Vlvbound_h2aa06c0c__0) 
+                                        << 3U));
+    vlSelfRef.__PVT__unnamedblk10__DOT__unnamedblk11__DOT__unnamedblk12__DOT__temp 
+        = (0xfU & vlSelfRef.__PVT__and_result_reg[4U]);
+    __Vfunc_xor_tree__15__N = 4U;
+    __Vfunc_xor_tree__15__in = vlSelfRef.__PVT__unnamedblk10__DOT__unnamedblk11__DOT__unnamedblk12__DOT__temp;
+    vlSelf->__Vfunc_xor_tree__15__unnamedblk9__DOT__i = 0;
+    for (int __Vi0 = 0; __Vi0 < 3; ++__Vi0) {
+        vlSelf->__Vfunc_xor_tree__15__stage[__Vi0] = VL_RAND_RESET_I(4);
+    }
+    __Vfunc_xor_tree__15__level = 0U;
+    __Vfunc_xor_tree__15__num = 4U;
+    __Vfunc_xor_tree__15__unnamedblk8__DOT__i = 0U;
+    while (VL_LTS_III(32, __Vfunc_xor_tree__15__unnamedblk8__DOT__i, __Vfunc_xor_tree__15__N)) {
+        vlSelfRef.__Vfunc_xor_tree__15__stage[0U] = 
+            (((~ ((IData)(1U) << (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))) 
+              & vlSelfRef.__Vfunc_xor_tree__15__stage
+              [0U]) | (0xfU & ((1U & ((IData)(__Vfunc_xor_tree__15__in) 
+                                      >> (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))) 
+                               << (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))));
+        __Vfunc_xor_tree__15__unnamedblk8__DOT__i = 
+            ((IData)(1U) + __Vfunc_xor_tree__15__unnamedblk8__DOT__i);
+    }
+    while (VL_LTS_III(32, 1U, __Vfunc_xor_tree__15__num)) {
+        vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i = 0U;
+        while (VL_LTS_III(32, vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i, 
+                          VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)))) {
+            vlSelfRef.__Vlvbound_h70e7ebe7__0 = (1U 
+                                                 & ((((2U 
+                                                       >= 
+                                                       (3U 
+                                                        & __Vfunc_xor_tree__15__level))
+                                                       ? 
+                                                      vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                      [
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level)]
+                                                       : 0U) 
+                                                     >> 
+                                                     (3U 
+                                                      & VL_MULS_III(32, (IData)(2U), vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))) 
+                                                    ^ 
+                                                    (((2U 
+                                                       >= 
+                                                       (3U 
+                                                        & __Vfunc_xor_tree__15__level))
+                                                       ? 
+                                                      vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                      [
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level)]
+                                                       : 0U) 
+                                                     >> 
+                                                     (3U 
+                                                      & ((IData)(1U) 
+                                                         + 
+                                                         VL_MULS_III(32, (IData)(2U), vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))))));
+            if (VL_LIKELY(((2U >= (3U & ((IData)(1U) 
+                                         + __Vfunc_xor_tree__15__level)))))) {
+                vlSelfRef.__Vfunc_xor_tree__15__stage[(3U 
+                                                       & ((IData)(1U) 
+                                                          + __Vfunc_xor_tree__15__level))] 
+                    = (((~ ((IData)(1U) << (3U & vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))) 
+                        & vlSelfRef.__Vfunc_xor_tree__15__stage
+                        [(3U & ((IData)(1U) + __Vfunc_xor_tree__15__level))]) 
+                       | (0xfU & ((IData)(vlSelfRef.__Vlvbound_h70e7ebe7__0) 
+                                  << (3U & vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))));
+            }
+            vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i 
+                = ((IData)(1U) + vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i);
+        }
+        if ((1U == VL_MODDIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)))) {
+            vlSelfRef.__Vlvbound_hece044c0__0 = (1U 
+                                                 & (((2U 
+                                                      >= 
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level))
+                                                      ? 
+                                                     vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                     [
+                                                     (3U 
+                                                      & __Vfunc_xor_tree__15__level)]
+                                                      : 0U) 
+                                                    >> 
+                                                    (3U 
+                                                     & (__Vfunc_xor_tree__15__num 
+                                                        - (IData)(1U)))));
+            if (VL_LIKELY(((2U >= (3U & ((IData)(1U) 
+                                         + __Vfunc_xor_tree__15__level)))))) {
+                vlSelfRef.__Vfunc_xor_tree__15__stage[(3U 
+                                                       & ((IData)(1U) 
+                                                          + __Vfunc_xor_tree__15__level))] 
+                    = (((~ ((IData)(1U) << (3U & VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U))))) 
+                        & vlSelfRef.__Vfunc_xor_tree__15__stage
+                        [(3U & ((IData)(1U) + __Vfunc_xor_tree__15__level))]) 
+                       | (0xfU & ((IData)(vlSelfRef.__Vlvbound_hece044c0__0) 
+                                  << (3U & VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U))))));
+            }
+            __Vfunc_xor_tree__15__num = ((IData)(1U) 
+                                         + VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)));
+        } else {
+            __Vfunc_xor_tree__15__num = VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U));
+        }
+        __Vfunc_xor_tree__15__level = ((IData)(1U) 
+                                       + __Vfunc_xor_tree__15__level);
+    }
+    __Vfunc_xor_tree__15__Vfuncout = ((2U >= (3U & __Vfunc_xor_tree__15__level))
+                                       ? (1U & vlSelfRef.__Vfunc_xor_tree__15__stage
+                                          [(3U & __Vfunc_xor_tree__15__level)])
+                                       : 0U);
+    __Vlvbound_h2aa06c0c__0 = __Vfunc_xor_tree__15__Vfuncout;
+    vlSelfRef.__PVT__y[4U] = ((0xeU & vlSelfRef.__PVT__y
+                               [4U]) | (IData)(__Vlvbound_h2aa06c0c__0));
+    vlSelfRef.__PVT__unnamedblk10__DOT__unnamedblk11__DOT__unnamedblk12__DOT__temp 
+        = (0xfU & (vlSelfRef.__PVT__and_result_reg[4U] 
+                   >> 4U));
+    __Vfunc_xor_tree__15__N = 4U;
+    __Vfunc_xor_tree__15__in = vlSelfRef.__PVT__unnamedblk10__DOT__unnamedblk11__DOT__unnamedblk12__DOT__temp;
+    vlSelf->__Vfunc_xor_tree__15__unnamedblk9__DOT__i = 0;
+    for (int __Vi0 = 0; __Vi0 < 3; ++__Vi0) {
+        vlSelf->__Vfunc_xor_tree__15__stage[__Vi0] = VL_RAND_RESET_I(4);
+    }
+    __Vfunc_xor_tree__15__level = 0U;
+    __Vfunc_xor_tree__15__num = 4U;
+    __Vfunc_xor_tree__15__unnamedblk8__DOT__i = 0U;
+    while (VL_LTS_III(32, __Vfunc_xor_tree__15__unnamedblk8__DOT__i, __Vfunc_xor_tree__15__N)) {
+        vlSelfRef.__Vfunc_xor_tree__15__stage[0U] = 
+            (((~ ((IData)(1U) << (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))) 
+              & vlSelfRef.__Vfunc_xor_tree__15__stage
+              [0U]) | (0xfU & ((1U & ((IData)(__Vfunc_xor_tree__15__in) 
+                                      >> (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))) 
+                               << (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))));
+        __Vfunc_xor_tree__15__unnamedblk8__DOT__i = 
+            ((IData)(1U) + __Vfunc_xor_tree__15__unnamedblk8__DOT__i);
+    }
+    while (VL_LTS_III(32, 1U, __Vfunc_xor_tree__15__num)) {
+        vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i = 0U;
+        while (VL_LTS_III(32, vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i, 
+                          VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)))) {
+            vlSelfRef.__Vlvbound_h70e7ebe7__0 = (1U 
+                                                 & ((((2U 
+                                                       >= 
+                                                       (3U 
+                                                        & __Vfunc_xor_tree__15__level))
+                                                       ? 
+                                                      vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                      [
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level)]
+                                                       : 0U) 
+                                                     >> 
+                                                     (3U 
+                                                      & VL_MULS_III(32, (IData)(2U), vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))) 
+                                                    ^ 
+                                                    (((2U 
+                                                       >= 
+                                                       (3U 
+                                                        & __Vfunc_xor_tree__15__level))
+                                                       ? 
+                                                      vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                      [
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level)]
+                                                       : 0U) 
+                                                     >> 
+                                                     (3U 
+                                                      & ((IData)(1U) 
+                                                         + 
+                                                         VL_MULS_III(32, (IData)(2U), vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))))));
+            if (VL_LIKELY(((2U >= (3U & ((IData)(1U) 
+                                         + __Vfunc_xor_tree__15__level)))))) {
+                vlSelfRef.__Vfunc_xor_tree__15__stage[(3U 
+                                                       & ((IData)(1U) 
+                                                          + __Vfunc_xor_tree__15__level))] 
+                    = (((~ ((IData)(1U) << (3U & vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))) 
+                        & vlSelfRef.__Vfunc_xor_tree__15__stage
+                        [(3U & ((IData)(1U) + __Vfunc_xor_tree__15__level))]) 
+                       | (0xfU & ((IData)(vlSelfRef.__Vlvbound_h70e7ebe7__0) 
+                                  << (3U & vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))));
+            }
+            vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i 
+                = ((IData)(1U) + vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i);
+        }
+        if ((1U == VL_MODDIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)))) {
+            vlSelfRef.__Vlvbound_hece044c0__0 = (1U 
+                                                 & (((2U 
+                                                      >= 
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level))
+                                                      ? 
+                                                     vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                     [
+                                                     (3U 
+                                                      & __Vfunc_xor_tree__15__level)]
+                                                      : 0U) 
+                                                    >> 
+                                                    (3U 
+                                                     & (__Vfunc_xor_tree__15__num 
+                                                        - (IData)(1U)))));
+            if (VL_LIKELY(((2U >= (3U & ((IData)(1U) 
+                                         + __Vfunc_xor_tree__15__level)))))) {
+                vlSelfRef.__Vfunc_xor_tree__15__stage[(3U 
+                                                       & ((IData)(1U) 
+                                                          + __Vfunc_xor_tree__15__level))] 
+                    = (((~ ((IData)(1U) << (3U & VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U))))) 
+                        & vlSelfRef.__Vfunc_xor_tree__15__stage
+                        [(3U & ((IData)(1U) + __Vfunc_xor_tree__15__level))]) 
+                       | (0xfU & ((IData)(vlSelfRef.__Vlvbound_hece044c0__0) 
+                                  << (3U & VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U))))));
+            }
+            __Vfunc_xor_tree__15__num = ((IData)(1U) 
+                                         + VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)));
+        } else {
+            __Vfunc_xor_tree__15__num = VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U));
+        }
+        __Vfunc_xor_tree__15__level = ((IData)(1U) 
+                                       + __Vfunc_xor_tree__15__level);
+    }
+    __Vfunc_xor_tree__15__Vfuncout = ((2U >= (3U & __Vfunc_xor_tree__15__level))
+                                       ? (1U & vlSelfRef.__Vfunc_xor_tree__15__stage
+                                          [(3U & __Vfunc_xor_tree__15__level)])
+                                       : 0U);
+    __Vlvbound_h2aa06c0c__0 = __Vfunc_xor_tree__15__Vfuncout;
+    vlSelfRef.__PVT__y[4U] = ((0xdU & vlSelfRef.__PVT__y
+                               [4U]) | ((IData)(__Vlvbound_h2aa06c0c__0) 
+                                        << 1U));
+    vlSelfRef.__PVT__unnamedblk10__DOT__unnamedblk11__DOT__unnamedblk12__DOT__temp 
+        = (0xfU & (vlSelfRef.__PVT__and_result_reg[4U] 
+                   >> 8U));
+    __Vfunc_xor_tree__15__N = 4U;
+    __Vfunc_xor_tree__15__in = vlSelfRef.__PVT__unnamedblk10__DOT__unnamedblk11__DOT__unnamedblk12__DOT__temp;
+    vlSelf->__Vfunc_xor_tree__15__unnamedblk9__DOT__i = 0;
+    for (int __Vi0 = 0; __Vi0 < 3; ++__Vi0) {
+        vlSelf->__Vfunc_xor_tree__15__stage[__Vi0] = VL_RAND_RESET_I(4);
+    }
+    __Vfunc_xor_tree__15__level = 0U;
+    __Vfunc_xor_tree__15__num = 4U;
+    __Vfunc_xor_tree__15__unnamedblk8__DOT__i = 0U;
+    while (VL_LTS_III(32, __Vfunc_xor_tree__15__unnamedblk8__DOT__i, __Vfunc_xor_tree__15__N)) {
+        vlSelfRef.__Vfunc_xor_tree__15__stage[0U] = 
+            (((~ ((IData)(1U) << (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))) 
+              & vlSelfRef.__Vfunc_xor_tree__15__stage
+              [0U]) | (0xfU & ((1U & ((IData)(__Vfunc_xor_tree__15__in) 
+                                      >> (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))) 
+                               << (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))));
+        __Vfunc_xor_tree__15__unnamedblk8__DOT__i = 
+            ((IData)(1U) + __Vfunc_xor_tree__15__unnamedblk8__DOT__i);
+    }
+    while (VL_LTS_III(32, 1U, __Vfunc_xor_tree__15__num)) {
+        vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i = 0U;
+        while (VL_LTS_III(32, vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i, 
+                          VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)))) {
+            vlSelfRef.__Vlvbound_h70e7ebe7__0 = (1U 
+                                                 & ((((2U 
+                                                       >= 
+                                                       (3U 
+                                                        & __Vfunc_xor_tree__15__level))
+                                                       ? 
+                                                      vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                      [
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level)]
+                                                       : 0U) 
+                                                     >> 
+                                                     (3U 
+                                                      & VL_MULS_III(32, (IData)(2U), vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))) 
+                                                    ^ 
+                                                    (((2U 
+                                                       >= 
+                                                       (3U 
+                                                        & __Vfunc_xor_tree__15__level))
+                                                       ? 
+                                                      vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                      [
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level)]
+                                                       : 0U) 
+                                                     >> 
+                                                     (3U 
+                                                      & ((IData)(1U) 
+                                                         + 
+                                                         VL_MULS_III(32, (IData)(2U), vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))))));
+            if (VL_LIKELY(((2U >= (3U & ((IData)(1U) 
+                                         + __Vfunc_xor_tree__15__level)))))) {
+                vlSelfRef.__Vfunc_xor_tree__15__stage[(3U 
+                                                       & ((IData)(1U) 
+                                                          + __Vfunc_xor_tree__15__level))] 
+                    = (((~ ((IData)(1U) << (3U & vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))) 
+                        & vlSelfRef.__Vfunc_xor_tree__15__stage
+                        [(3U & ((IData)(1U) + __Vfunc_xor_tree__15__level))]) 
+                       | (0xfU & ((IData)(vlSelfRef.__Vlvbound_h70e7ebe7__0) 
+                                  << (3U & vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))));
+            }
+            vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i 
+                = ((IData)(1U) + vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i);
+        }
+        if ((1U == VL_MODDIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)))) {
+            vlSelfRef.__Vlvbound_hece044c0__0 = (1U 
+                                                 & (((2U 
+                                                      >= 
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level))
+                                                      ? 
+                                                     vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                     [
+                                                     (3U 
+                                                      & __Vfunc_xor_tree__15__level)]
+                                                      : 0U) 
+                                                    >> 
+                                                    (3U 
+                                                     & (__Vfunc_xor_tree__15__num 
+                                                        - (IData)(1U)))));
+            if (VL_LIKELY(((2U >= (3U & ((IData)(1U) 
+                                         + __Vfunc_xor_tree__15__level)))))) {
+                vlSelfRef.__Vfunc_xor_tree__15__stage[(3U 
+                                                       & ((IData)(1U) 
+                                                          + __Vfunc_xor_tree__15__level))] 
+                    = (((~ ((IData)(1U) << (3U & VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U))))) 
+                        & vlSelfRef.__Vfunc_xor_tree__15__stage
+                        [(3U & ((IData)(1U) + __Vfunc_xor_tree__15__level))]) 
+                       | (0xfU & ((IData)(vlSelfRef.__Vlvbound_hece044c0__0) 
+                                  << (3U & VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U))))));
+            }
+            __Vfunc_xor_tree__15__num = ((IData)(1U) 
+                                         + VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)));
+        } else {
+            __Vfunc_xor_tree__15__num = VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U));
+        }
+        __Vfunc_xor_tree__15__level = ((IData)(1U) 
+                                       + __Vfunc_xor_tree__15__level);
+    }
+    __Vfunc_xor_tree__15__Vfuncout = ((2U >= (3U & __Vfunc_xor_tree__15__level))
+                                       ? (1U & vlSelfRef.__Vfunc_xor_tree__15__stage
+                                          [(3U & __Vfunc_xor_tree__15__level)])
+                                       : 0U);
+    __Vlvbound_h2aa06c0c__0 = __Vfunc_xor_tree__15__Vfuncout;
+    vlSelfRef.__PVT__y[4U] = ((0xbU & vlSelfRef.__PVT__y
+                               [4U]) | ((IData)(__Vlvbound_h2aa06c0c__0) 
+                                        << 2U));
+    vlSelfRef.__PVT__unnamedblk10__DOT__unnamedblk11__DOT__unnamedblk12__DOT__temp 
+        = (0xfU & (vlSelfRef.__PVT__and_result_reg[4U] 
+                   >> 0xcU));
+    __Vfunc_xor_tree__15__N = 4U;
+    __Vfunc_xor_tree__15__in = vlSelfRef.__PVT__unnamedblk10__DOT__unnamedblk11__DOT__unnamedblk12__DOT__temp;
+    vlSelf->__Vfunc_xor_tree__15__unnamedblk9__DOT__i = 0;
+    for (int __Vi0 = 0; __Vi0 < 3; ++__Vi0) {
+        vlSelf->__Vfunc_xor_tree__15__stage[__Vi0] = VL_RAND_RESET_I(4);
+    }
+    __Vfunc_xor_tree__15__level = 0U;
+    __Vfunc_xor_tree__15__num = 4U;
+    __Vfunc_xor_tree__15__unnamedblk8__DOT__i = 0U;
+    while (VL_LTS_III(32, __Vfunc_xor_tree__15__unnamedblk8__DOT__i, __Vfunc_xor_tree__15__N)) {
+        vlSelfRef.__Vfunc_xor_tree__15__stage[0U] = 
+            (((~ ((IData)(1U) << (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))) 
+              & vlSelfRef.__Vfunc_xor_tree__15__stage
+              [0U]) | (0xfU & ((1U & ((IData)(__Vfunc_xor_tree__15__in) 
+                                      >> (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))) 
+                               << (3U & __Vfunc_xor_tree__15__unnamedblk8__DOT__i))));
+        __Vfunc_xor_tree__15__unnamedblk8__DOT__i = 
+            ((IData)(1U) + __Vfunc_xor_tree__15__unnamedblk8__DOT__i);
+    }
+    while (VL_LTS_III(32, 1U, __Vfunc_xor_tree__15__num)) {
+        vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i = 0U;
+        while (VL_LTS_III(32, vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i, 
+                          VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)))) {
+            vlSelfRef.__Vlvbound_h70e7ebe7__0 = (1U 
+                                                 & ((((2U 
+                                                       >= 
+                                                       (3U 
+                                                        & __Vfunc_xor_tree__15__level))
+                                                       ? 
+                                                      vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                      [
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level)]
+                                                       : 0U) 
+                                                     >> 
+                                                     (3U 
+                                                      & VL_MULS_III(32, (IData)(2U), vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))) 
+                                                    ^ 
+                                                    (((2U 
+                                                       >= 
+                                                       (3U 
+                                                        & __Vfunc_xor_tree__15__level))
+                                                       ? 
+                                                      vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                      [
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level)]
+                                                       : 0U) 
+                                                     >> 
+                                                     (3U 
+                                                      & ((IData)(1U) 
+                                                         + 
+                                                         VL_MULS_III(32, (IData)(2U), vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))))));
+            if (VL_LIKELY(((2U >= (3U & ((IData)(1U) 
+                                         + __Vfunc_xor_tree__15__level)))))) {
+                vlSelfRef.__Vfunc_xor_tree__15__stage[(3U 
+                                                       & ((IData)(1U) 
+                                                          + __Vfunc_xor_tree__15__level))] 
+                    = (((~ ((IData)(1U) << (3U & vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))) 
+                        & vlSelfRef.__Vfunc_xor_tree__15__stage
+                        [(3U & ((IData)(1U) + __Vfunc_xor_tree__15__level))]) 
+                       | (0xfU & ((IData)(vlSelfRef.__Vlvbound_h70e7ebe7__0) 
+                                  << (3U & vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i))));
+            }
+            vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i 
+                = ((IData)(1U) + vlSelfRef.__Vfunc_xor_tree__15__unnamedblk9__DOT__i);
+        }
+        if ((1U == VL_MODDIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)))) {
+            vlSelfRef.__Vlvbound_hece044c0__0 = (1U 
+                                                 & (((2U 
+                                                      >= 
+                                                      (3U 
+                                                       & __Vfunc_xor_tree__15__level))
+                                                      ? 
+                                                     vlSelfRef.__Vfunc_xor_tree__15__stage
+                                                     [
+                                                     (3U 
+                                                      & __Vfunc_xor_tree__15__level)]
+                                                      : 0U) 
+                                                    >> 
+                                                    (3U 
+                                                     & (__Vfunc_xor_tree__15__num 
+                                                        - (IData)(1U)))));
+            if (VL_LIKELY(((2U >= (3U & ((IData)(1U) 
+                                         + __Vfunc_xor_tree__15__level)))))) {
+                vlSelfRef.__Vfunc_xor_tree__15__stage[(3U 
+                                                       & ((IData)(1U) 
+                                                          + __Vfunc_xor_tree__15__level))] 
+                    = (((~ ((IData)(1U) << (3U & VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U))))) 
+                        & vlSelfRef.__Vfunc_xor_tree__15__stage
+                        [(3U & ((IData)(1U) + __Vfunc_xor_tree__15__level))]) 
+                       | (0xfU & ((IData)(vlSelfRef.__Vlvbound_hece044c0__0) 
+                                  << (3U & VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U))))));
+            }
+            __Vfunc_xor_tree__15__num = ((IData)(1U) 
+                                         + VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U)));
+        } else {
+            __Vfunc_xor_tree__15__num = VL_DIVS_III(32, __Vfunc_xor_tree__15__num, (IData)(2U));
+        }
+        __Vfunc_xor_tree__15__level = ((IData)(1U) 
+                                       + __Vfunc_xor_tree__15__level);
+    }
+    __Vfunc_xor_tree__15__Vfuncout = ((2U >= (3U & __Vfunc_xor_tree__15__level))
+                                       ? (1U & vlSelfRef.__Vfunc_xor_tree__15__stage
+                                          [(3U & __Vfunc_xor_tree__15__level)])
+                                       : 0U);
+    __Vlvbound_h2aa06c0c__0 = __Vfunc_xor_tree__15__Vfuncout;
+    vlSelfRef.__PVT__y[4U] = ((7U & vlSelfRef.__PVT__y
+                               [4U]) | ((IData)(__Vlvbound_h2aa06c0c__0) 
+                                        << 3U));
+}

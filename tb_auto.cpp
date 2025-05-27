@@ -13,13 +13,16 @@
 //definizione dei parameter:
 #define d 2
 #define COL_SIZE 5
-#define PAR 14
+#define PAR 22
 #define WIDTH_RAND (d * COL_SIZE * PAR)  // 110
+#define WIDTH_RAND_SBOX (d*(d+1)/2)
 
 const int WORD_SIZE = 64;
 const int STATE_WIDTH = 320;
 const int NUMBER_BIT_MASK = ((64+PAR-1)/PAR) + 1;
-const int NUMBER_BIT_NOMASK = ((64 + PAR*(d+1)) / (PAR*(d+1)));
+const int NUMBER_BIT_NOMASK = ((64 % (PAR * (d + 1))) == 0)
+    ? ((64 + PAR * (d + 1)) / (PAR * (d + 1)) - 1)
+    : ((64 + PAR * (d + 1)) / (PAR * (d + 1)));
 const int WORDS_RAND = (WIDTH_RAND + WORD_SIZE - 1) / WORD_SIZE;
 
 bool last_block_was_sent = false;
@@ -73,9 +76,44 @@ void assign_random_masks(Vascon_top* top) {
     #endif
     }
 
+    void assign_random_masks_sbox(Vascon_top* top) {
+    //std::cout << "[DEBUG] Inizio assign_random_masks()" << std::endl;
+    constexpr int total_bits = WIDTH_RAND_SBOX;
+    const int total_bytes = (total_bits + 7) / 8;
+    const int words_needed = (total_bits + 63) / 64;
 
+    //std::cout << "[DEBUG] Generazione random..." << std::endl;
+    std::vector<uint8_t> rand_bytes = generate_random_bytes(total_bytes, 123);
+    //std::cout << "[DEBUG] Byte generati: " << total_bytes << std::endl;
 
+    #if WIDTH_RAND_SBOX <= 64
+        //std::cout << "[DEBUG] Caso <= 64 bit" << std::endl;
+        uint64_t val = 0;
+        for (int i = 0; i < total_bytes; ++i)
+            val |= static_cast<uint64_t>(rand_bytes[i]) << (8 * i);
 
+        top->random_masks_sbox = val;
+        //std::cout << "[DEBUG] random_masks assegnato: " << std::hex << val << std::endl;
+    #else
+        // === Caso generico: > 64 bit, usa WData e VL_ASSIGN_W
+        constexpr int num_words = (WIDTH_RAND + 31) / 32;
+        vluint32_t temp_data[num_words] = {0};
+
+        for (int i = 0; i < total_bytes; ++i) {
+            int word_index = i / 4;
+            int byte_offset = (i % 4) * 8;
+            temp_data[word_index] |= static_cast<uint32_t>(rand_bytes[i]) << byte_offset;
+        }
+
+        int excess_bits = (num_words * 32) - WIDTH_RAND;
+        if (excess_bits > 0) {
+            uint32_t mask = (1U << (32 - excess_bits)) - 1;
+            temp_data[num_words - 1] &= mask;
+        }
+
+        VL_ASSIGN_W(WIDTH_RAND, top->random_masks_sbox, temp_data);
+    #endif
+    }
 
 int main(int argc, char** argv) {
     //std::cout << "[INFO] Inizio simulazione" << std::endl;
@@ -110,6 +148,7 @@ int main(int argc, char** argv) {
     top->reset_n = 1;
 
     assign_random_masks(top);
+    assign_random_masks_sbox(top);
 
     
     // === Inizializza input ===

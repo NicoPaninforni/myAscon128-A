@@ -39,14 +39,15 @@ class alignas(VL_CACHE_LINE_BYTES) Vascon_top VL_NOT_FINAL : public VerilatedMod
     VL_IN8(&last_block,0,0);
     VL_IN8(&valid_bytes,3,0);
     VL_IN8(&EOT,0,0);
+    VL_IN8(&random_masks_sbox,2,0);
     VL_OUT8(&ciphertext_valid,0,0);
     VL_OUT8(&done,0,0);
     VL_OUT8(&ready_tag,0,0);
     VL_OUT8(&ready_for_data,0,0);
+    VL_OUT8(&debug_extra_padding_ff,0,0);
     VL_OUT8(&debug_bitcounter,2,0);
     VL_OUT8(&debug_roundcounter,3,0);
     VL_OUT8(&debug_state,4,0);
-    VL_OUT8(&debug_extra_padding_ff,0,0);
     VL_INW(&data_in,127,0,4);
     VL_INW(&random_masks,219,0,7);
     VL_OUTW(&ciphertext,127,0,4);

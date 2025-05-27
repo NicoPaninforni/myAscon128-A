@@ -18,14 +18,15 @@ Vascon_top::Vascon_top(VerilatedContext* _vcontextp__, const char* _vcname__)
     , last_block{vlSymsp->TOP.last_block}
     , valid_bytes{vlSymsp->TOP.valid_bytes}
     , EOT{vlSymsp->TOP.EOT}
+    , random_masks_sbox{vlSymsp->TOP.random_masks_sbox}
     , ciphertext_valid{vlSymsp->TOP.ciphertext_valid}
     , done{vlSymsp->TOP.done}
     , ready_tag{vlSymsp->TOP.ready_tag}
     , ready_for_data{vlSymsp->TOP.ready_for_data}
+    , debug_extra_padding_ff{vlSymsp->TOP.debug_extra_padding_ff}
     , debug_bitcounter{vlSymsp->TOP.debug_bitcounter}
     , debug_roundcounter{vlSymsp->TOP.debug_roundcounter}
     , debug_state{vlSymsp->TOP.debug_state}
-    , debug_extra_padding_ff{vlSymsp->TOP.debug_extra_padding_ff}
     , data_in{vlSymsp->TOP.data_in}
     , random_masks{vlSymsp->TOP.random_masks}
     , ciphertext{vlSymsp->TOP.ciphertext}

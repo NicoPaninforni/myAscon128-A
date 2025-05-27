@@ -41,7 +41,7 @@ Vascon_top__Syms::Vascon_top__Syms(VerilatedContext* contextp, const char* namep
     , TOP__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__9__KET____DOT__u_sbox{this, Verilated::catName(namep, "ascon_top.gen_cog.gen_sbox[9].u_sbox")}
 {
         // Check resources
-        Verilated::stackCheck(12743);
+        Verilated::stackCheck(12647);
     // Configure time unit / time precision
     _vm_contextp__->timeunit(-12);
     _vm_contextp__->timeprecision(-12);
