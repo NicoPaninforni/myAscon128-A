@@ -30,24 +30,22 @@ void Vascon_top___024root___eval_triggers__act(Vascon_top___024root* vlSelf) {
 
 void Vascon_top___024root___nba_sequent__TOP__0(Vascon_top___024root* vlSelf);
 void Vascon_top___024root___nba_sequent__TOP__1(Vascon_top___024root* vlSelf);
-void Vascon_top_ascon_sbox_d2__D3_N4___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__0(Vascon_top_ascon_sbox_d2__D3_N4* vlSelf);
-void Vascon_top_ascon_sbox_d2__D3_N4___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__0(Vascon_top_ascon_sbox_d2__D3_N4* vlSelf);
-void Vascon_top_ascon_sbox_d2__D3_N4___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__0(Vascon_top_ascon_sbox_d2__D3_N4* vlSelf);
-void Vascon_top_ascon_sbox_d2__D3_N4___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__0(Vascon_top_ascon_sbox_d2__D3_N4* vlSelf);
-void Vascon_top_ascon_sbox_d2__D3_N4___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__0(Vascon_top_ascon_sbox_d2__D3_N4* vlSelf);
-void Vascon_top_ascon_sbox_d2__D3_N4___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__0(Vascon_top_ascon_sbox_d2__D3_N4* vlSelf);
-void Vascon_top_ascon_sbox_d2__D3_N4___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__6__KET____DOT__u_sbox__0(Vascon_top_ascon_sbox_d2__D3_N4* vlSelf);
-void Vascon_top_ascon_sbox_d2__D3_N4___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__7__KET____DOT__u_sbox__0(Vascon_top_ascon_sbox_d2__D3_N4* vlSelf);
-void Vascon_top_ascon_sbox_d2__D3_N4___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__8__KET____DOT__u_sbox__0(Vascon_top_ascon_sbox_d2__D3_N4* vlSelf);
-void Vascon_top_ascon_sbox_d2__D3_N4___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__9__KET____DOT__u_sbox__0(Vascon_top_ascon_sbox_d2__D3_N4* vlSelf);
-void Vascon_top_ascon_sbox_d2__D3_N4___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__10__KET____DOT__u_sbox__0(Vascon_top_ascon_sbox_d2__D3_N4* vlSelf);
-void Vascon_top_ascon_sbox_d2__D3_N4___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__11__KET____DOT__u_sbox__0(Vascon_top_ascon_sbox_d2__D3_N4* vlSelf);
-void Vascon_top_ascon_sbox_d2__D3_N4___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__12__KET____DOT__u_sbox__0(Vascon_top_ascon_sbox_d2__D3_N4* vlSelf);
+void Vascon_top_ascon_sbox_d2__D4_N5___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__0(Vascon_top_ascon_sbox_d2__D4_N5* vlSelf);
+void Vascon_top_ascon_sbox_d2__D4_N5___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__0(Vascon_top_ascon_sbox_d2__D4_N5* vlSelf);
+void Vascon_top_ascon_sbox_d2__D4_N5___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__0(Vascon_top_ascon_sbox_d2__D4_N5* vlSelf);
+void Vascon_top_ascon_sbox_d2__D4_N5___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__0(Vascon_top_ascon_sbox_d2__D4_N5* vlSelf);
+void Vascon_top_ascon_sbox_d2__D4_N5___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__0(Vascon_top_ascon_sbox_d2__D4_N5* vlSelf);
+void Vascon_top_ascon_sbox_d2__D4_N5___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__0(Vascon_top_ascon_sbox_d2__D4_N5* vlSelf);
+void Vascon_top_ascon_sbox_d2__D4_N5___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__6__KET____DOT__u_sbox__0(Vascon_top_ascon_sbox_d2__D4_N5* vlSelf);
+void Vascon_top_ascon_sbox_d2__D4_N5___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__7__KET____DOT__u_sbox__0(Vascon_top_ascon_sbox_d2__D4_N5* vlSelf);
+void Vascon_top_ascon_sbox_d2__D4_N5___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__8__KET____DOT__u_sbox__0(Vascon_top_ascon_sbox_d2__D4_N5* vlSelf);
+void Vascon_top_ascon_sbox_d2__D4_N5___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__9__KET____DOT__u_sbox__0(Vascon_top_ascon_sbox_d2__D4_N5* vlSelf);
+void Vascon_top_ascon_sbox_d2__D4_N5___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__10__KET____DOT__u_sbox__0(Vascon_top_ascon_sbox_d2__D4_N5* vlSelf);
+void Vascon_top_ascon_sbox_d2__D4_N5___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__11__KET____DOT__u_sbox__0(Vascon_top_ascon_sbox_d2__D4_N5* vlSelf);
+void Vascon_top_ascon_sbox_d2__D4_N5___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__12__KET____DOT__u_sbox__0(Vascon_top_ascon_sbox_d2__D4_N5* vlSelf);
 void Vascon_top___024root___nba_sequent__TOP__2(Vascon_top___024root* vlSelf);
 void Vascon_top___024root___nba_comb__TOP__0(Vascon_top___024root* vlSelf);
-void Vascon_top_ascon_sbox_d2__D3_N4___ico_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__0(Vascon_top_ascon_sbox_d2__D3_N4* vlSelf);
-void Vascon_top___024root___ico_sequent__TOP__1(Vascon_top___024root* vlSelf);
-void Vascon_top___024root___ico_sequent__TOP__2(Vascon_top___024root* vlSelf);
+void Vascon_top___024root___nba_comb__TOP__1(Vascon_top___024root* vlSelf);
 
 void Vascon_top___024root___eval_nba(Vascon_top___024root* vlSelf) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vascon_top___024root___eval_nba\n"); );
@@ -61,39 +59,25 @@ void Vascon_top___024root___eval_nba(Vascon_top___024root* vlSelf) {
     if ((1ULL & vlSelfRef.__VnbaTriggered.word(0U))) {
         Vascon_top___024root___nba_sequent__TOP__1(vlSelf);
         vlSelfRef.__Vm_traceActivity[3U] = 1U;
-        Vascon_top_ascon_sbox_d2__D3_N4___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__0((&vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox));
-        Vascon_top_ascon_sbox_d2__D3_N4___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__0((&vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox));
-        Vascon_top_ascon_sbox_d2__D3_N4___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__0((&vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox));
-        Vascon_top_ascon_sbox_d2__D3_N4___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__0((&vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox));
-        Vascon_top_ascon_sbox_d2__D3_N4___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__0((&vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox));
-        Vascon_top_ascon_sbox_d2__D3_N4___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__0((&vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox));
-        Vascon_top_ascon_sbox_d2__D3_N4___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__6__KET____DOT__u_sbox__0((&vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__6__KET____DOT__u_sbox));
-        Vascon_top_ascon_sbox_d2__D3_N4___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__7__KET____DOT__u_sbox__0((&vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__7__KET____DOT__u_sbox));
-        Vascon_top_ascon_sbox_d2__D3_N4___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__8__KET____DOT__u_sbox__0((&vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__8__KET____DOT__u_sbox));
-        Vascon_top_ascon_sbox_d2__D3_N4___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__9__KET____DOT__u_sbox__0((&vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__9__KET____DOT__u_sbox));
-        Vascon_top_ascon_sbox_d2__D3_N4___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__10__KET____DOT__u_sbox__0((&vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__10__KET____DOT__u_sbox));
-        Vascon_top_ascon_sbox_d2__D3_N4___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__11__KET____DOT__u_sbox__0((&vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__11__KET____DOT__u_sbox));
-        Vascon_top_ascon_sbox_d2__D3_N4___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__12__KET____DOT__u_sbox__0((&vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__12__KET____DOT__u_sbox));
+        Vascon_top_ascon_sbox_d2__D4_N5___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__0((&vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox));
+        Vascon_top_ascon_sbox_d2__D4_N5___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__0((&vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox));
+        Vascon_top_ascon_sbox_d2__D4_N5___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__0((&vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox));
+        Vascon_top_ascon_sbox_d2__D4_N5___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__0((&vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox));
+        Vascon_top_ascon_sbox_d2__D4_N5___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__0((&vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox));
+        Vascon_top_ascon_sbox_d2__D4_N5___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__0((&vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox));
+        Vascon_top_ascon_sbox_d2__D4_N5___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__6__KET____DOT__u_sbox__0((&vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__6__KET____DOT__u_sbox));
+        Vascon_top_ascon_sbox_d2__D4_N5___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__7__KET____DOT__u_sbox__0((&vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__7__KET____DOT__u_sbox));
+        Vascon_top_ascon_sbox_d2__D4_N5___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__8__KET____DOT__u_sbox__0((&vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__8__KET____DOT__u_sbox));
+        Vascon_top_ascon_sbox_d2__D4_N5___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__9__KET____DOT__u_sbox__0((&vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__9__KET____DOT__u_sbox));
+        Vascon_top_ascon_sbox_d2__D4_N5___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__10__KET____DOT__u_sbox__0((&vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__10__KET____DOT__u_sbox));
+        Vascon_top_ascon_sbox_d2__D4_N5___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__11__KET____DOT__u_sbox__0((&vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__11__KET____DOT__u_sbox));
+        Vascon_top_ascon_sbox_d2__D4_N5___nba_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__12__KET____DOT__u_sbox__0((&vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__12__KET____DOT__u_sbox));
         Vascon_top___024root___nba_sequent__TOP__2(vlSelf);
     }
     if ((3ULL & vlSelfRef.__VnbaTriggered.word(0U))) {
         Vascon_top___024root___nba_comb__TOP__0(vlSelf);
         vlSelfRef.__Vm_traceActivity[4U] = 1U;
-        Vascon_top_ascon_sbox_d2__D3_N4___ico_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__0((&vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox));
-        Vascon_top_ascon_sbox_d2__D3_N4___ico_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__0((&vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox));
-        Vascon_top_ascon_sbox_d2__D3_N4___ico_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__0((&vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox));
-        Vascon_top_ascon_sbox_d2__D3_N4___ico_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__0((&vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox));
-        Vascon_top_ascon_sbox_d2__D3_N4___ico_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__0((&vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox));
-        Vascon_top_ascon_sbox_d2__D3_N4___ico_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__0((&vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox));
-        Vascon_top_ascon_sbox_d2__D3_N4___ico_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__0((&vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__6__KET____DOT__u_sbox));
-        Vascon_top_ascon_sbox_d2__D3_N4___ico_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__0((&vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__7__KET____DOT__u_sbox));
-        Vascon_top_ascon_sbox_d2__D3_N4___ico_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__0((&vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__8__KET____DOT__u_sbox));
-        Vascon_top_ascon_sbox_d2__D3_N4___ico_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__0((&vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__9__KET____DOT__u_sbox));
-        Vascon_top_ascon_sbox_d2__D3_N4___ico_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__0((&vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__10__KET____DOT__u_sbox));
-        Vascon_top_ascon_sbox_d2__D3_N4___ico_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__0((&vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__11__KET____DOT__u_sbox));
-        Vascon_top_ascon_sbox_d2__D3_N4___ico_sequent__TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__0((&vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__12__KET____DOT__u_sbox));
-        Vascon_top___024root___ico_sequent__TOP__1(vlSelf);
-        Vascon_top___024root___ico_sequent__TOP__2(vlSelf);
+        Vascon_top___024root___nba_comb__TOP__1(vlSelf);
     }
 }
 
@@ -102,199 +86,342 @@ VL_INLINE_OPT void Vascon_top___024root___nba_sequent__TOP__2(Vascon_top___024ro
     Vascon_top__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Body
+    vlSelfRef.ascon_top__DOT__sbox_output_unmasked[0U] 
+        = (((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox.__PVT__y_noMask
+             [4U] << 0x14U) | (vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox.__PVT__y_noMask
+                               [3U] << 0xfU)) | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox.__PVT__y_noMask
+                                                  [2U] 
+                                                  << 0xaU) 
+                                                 | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox.__PVT__y_noMask
+                                                     [1U] 
+                                                     << 5U) 
+                                                    | vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox.__PVT__y_noMask
+                                                    [0U])));
     vlSelfRef.ascon_top__DOT__sbox_output[0U] = (((
                                                    vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox.__PVT__y
                                                    [4U] 
-                                                   << 0x10U) 
+                                                   << 0x14U) 
                                                   | (vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox.__PVT__y
                                                      [3U] 
-                                                     << 0xcU)) 
+                                                     << 0xfU)) 
                                                  | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox.__PVT__y
                                                      [2U] 
-                                                     << 8U) 
+                                                     << 0xaU) 
                                                     | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox.__PVT__y
                                                         [1U] 
-                                                        << 4U) 
+                                                        << 5U) 
                                                        | vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox.__PVT__y
                                                        [0U])));
+    vlSelfRef.ascon_top__DOT__sbox_output_unmasked[1U] 
+        = (((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox.__PVT__y_noMask
+             [4U] << 0x14U) | (vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox.__PVT__y_noMask
+                               [3U] << 0xfU)) | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox.__PVT__y_noMask
+                                                  [2U] 
+                                                  << 0xaU) 
+                                                 | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox.__PVT__y_noMask
+                                                     [1U] 
+                                                     << 5U) 
+                                                    | vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox.__PVT__y_noMask
+                                                    [0U])));
     vlSelfRef.ascon_top__DOT__sbox_output[1U] = (((
                                                    vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox.__PVT__y
                                                    [4U] 
-                                                   << 0x10U) 
+                                                   << 0x14U) 
                                                   | (vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox.__PVT__y
                                                      [3U] 
-                                                     << 0xcU)) 
+                                                     << 0xfU)) 
                                                  | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox.__PVT__y
                                                      [2U] 
-                                                     << 8U) 
+                                                     << 0xaU) 
                                                     | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox.__PVT__y
                                                         [1U] 
-                                                        << 4U) 
+                                                        << 5U) 
                                                        | vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox.__PVT__y
                                                        [0U])));
+    vlSelfRef.ascon_top__DOT__sbox_output_unmasked[2U] 
+        = (((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox.__PVT__y_noMask
+             [4U] << 0x14U) | (vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox.__PVT__y_noMask
+                               [3U] << 0xfU)) | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox.__PVT__y_noMask
+                                                  [2U] 
+                                                  << 0xaU) 
+                                                 | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox.__PVT__y_noMask
+                                                     [1U] 
+                                                     << 5U) 
+                                                    | vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox.__PVT__y_noMask
+                                                    [0U])));
     vlSelfRef.ascon_top__DOT__sbox_output[2U] = (((
                                                    vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox.__PVT__y
                                                    [4U] 
-                                                   << 0x10U) 
+                                                   << 0x14U) 
                                                   | (vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox.__PVT__y
                                                      [3U] 
-                                                     << 0xcU)) 
+                                                     << 0xfU)) 
                                                  | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox.__PVT__y
                                                      [2U] 
-                                                     << 8U) 
+                                                     << 0xaU) 
                                                     | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox.__PVT__y
                                                         [1U] 
-                                                        << 4U) 
+                                                        << 5U) 
                                                        | vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox.__PVT__y
                                                        [0U])));
+    vlSelfRef.ascon_top__DOT__sbox_output_unmasked[3U] 
+        = (((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox.__PVT__y_noMask
+             [4U] << 0x14U) | (vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox.__PVT__y_noMask
+                               [3U] << 0xfU)) | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox.__PVT__y_noMask
+                                                  [2U] 
+                                                  << 0xaU) 
+                                                 | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox.__PVT__y_noMask
+                                                     [1U] 
+                                                     << 5U) 
+                                                    | vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox.__PVT__y_noMask
+                                                    [0U])));
     vlSelfRef.ascon_top__DOT__sbox_output[3U] = (((
                                                    vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox.__PVT__y
                                                    [4U] 
-                                                   << 0x10U) 
+                                                   << 0x14U) 
                                                   | (vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox.__PVT__y
                                                      [3U] 
-                                                     << 0xcU)) 
+                                                     << 0xfU)) 
                                                  | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox.__PVT__y
                                                      [2U] 
-                                                     << 8U) 
+                                                     << 0xaU) 
                                                     | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox.__PVT__y
                                                         [1U] 
-                                                        << 4U) 
+                                                        << 5U) 
                                                        | vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox.__PVT__y
                                                        [0U])));
+    vlSelfRef.ascon_top__DOT__sbox_output_unmasked[4U] 
+        = (((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox.__PVT__y_noMask
+             [4U] << 0x14U) | (vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox.__PVT__y_noMask
+                               [3U] << 0xfU)) | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox.__PVT__y_noMask
+                                                  [2U] 
+                                                  << 0xaU) 
+                                                 | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox.__PVT__y_noMask
+                                                     [1U] 
+                                                     << 5U) 
+                                                    | vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox.__PVT__y_noMask
+                                                    [0U])));
     vlSelfRef.ascon_top__DOT__sbox_output[4U] = (((
                                                    vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox.__PVT__y
                                                    [4U] 
-                                                   << 0x10U) 
+                                                   << 0x14U) 
                                                   | (vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox.__PVT__y
                                                      [3U] 
-                                                     << 0xcU)) 
+                                                     << 0xfU)) 
                                                  | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox.__PVT__y
                                                      [2U] 
-                                                     << 8U) 
+                                                     << 0xaU) 
                                                     | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox.__PVT__y
                                                         [1U] 
-                                                        << 4U) 
+                                                        << 5U) 
                                                        | vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox.__PVT__y
                                                        [0U])));
+    vlSelfRef.ascon_top__DOT__sbox_output_unmasked[5U] 
+        = (((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox.__PVT__y_noMask
+             [4U] << 0x14U) | (vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox.__PVT__y_noMask
+                               [3U] << 0xfU)) | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox.__PVT__y_noMask
+                                                  [2U] 
+                                                  << 0xaU) 
+                                                 | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox.__PVT__y_noMask
+                                                     [1U] 
+                                                     << 5U) 
+                                                    | vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox.__PVT__y_noMask
+                                                    [0U])));
     vlSelfRef.ascon_top__DOT__sbox_output[5U] = (((
                                                    vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox.__PVT__y
                                                    [4U] 
-                                                   << 0x10U) 
+                                                   << 0x14U) 
                                                   | (vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox.__PVT__y
                                                      [3U] 
-                                                     << 0xcU)) 
+                                                     << 0xfU)) 
                                                  | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox.__PVT__y
                                                      [2U] 
-                                                     << 8U) 
+                                                     << 0xaU) 
                                                     | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox.__PVT__y
                                                         [1U] 
-                                                        << 4U) 
+                                                        << 5U) 
                                                        | vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox.__PVT__y
                                                        [0U])));
+    vlSelfRef.ascon_top__DOT__sbox_output_unmasked[6U] 
+        = (((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__6__KET____DOT__u_sbox.__PVT__y_noMask
+             [4U] << 0x14U) | (vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__6__KET____DOT__u_sbox.__PVT__y_noMask
+                               [3U] << 0xfU)) | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__6__KET____DOT__u_sbox.__PVT__y_noMask
+                                                  [2U] 
+                                                  << 0xaU) 
+                                                 | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__6__KET____DOT__u_sbox.__PVT__y_noMask
+                                                     [1U] 
+                                                     << 5U) 
+                                                    | vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__6__KET____DOT__u_sbox.__PVT__y_noMask
+                                                    [0U])));
     vlSelfRef.ascon_top__DOT__sbox_output[6U] = (((
                                                    vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__6__KET____DOT__u_sbox.__PVT__y
                                                    [4U] 
-                                                   << 0x10U) 
+                                                   << 0x14U) 
                                                   | (vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__6__KET____DOT__u_sbox.__PVT__y
                                                      [3U] 
-                                                     << 0xcU)) 
+                                                     << 0xfU)) 
                                                  | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__6__KET____DOT__u_sbox.__PVT__y
                                                      [2U] 
-                                                     << 8U) 
+                                                     << 0xaU) 
                                                     | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__6__KET____DOT__u_sbox.__PVT__y
                                                         [1U] 
-                                                        << 4U) 
+                                                        << 5U) 
                                                        | vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__6__KET____DOT__u_sbox.__PVT__y
                                                        [0U])));
+    vlSelfRef.ascon_top__DOT__sbox_output_unmasked[7U] 
+        = (((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__7__KET____DOT__u_sbox.__PVT__y_noMask
+             [4U] << 0x14U) | (vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__7__KET____DOT__u_sbox.__PVT__y_noMask
+                               [3U] << 0xfU)) | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__7__KET____DOT__u_sbox.__PVT__y_noMask
+                                                  [2U] 
+                                                  << 0xaU) 
+                                                 | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__7__KET____DOT__u_sbox.__PVT__y_noMask
+                                                     [1U] 
+                                                     << 5U) 
+                                                    | vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__7__KET____DOT__u_sbox.__PVT__y_noMask
+                                                    [0U])));
     vlSelfRef.ascon_top__DOT__sbox_output[7U] = (((
                                                    vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__7__KET____DOT__u_sbox.__PVT__y
                                                    [4U] 
-                                                   << 0x10U) 
+                                                   << 0x14U) 
                                                   | (vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__7__KET____DOT__u_sbox.__PVT__y
                                                      [3U] 
-                                                     << 0xcU)) 
+                                                     << 0xfU)) 
                                                  | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__7__KET____DOT__u_sbox.__PVT__y
                                                      [2U] 
-                                                     << 8U) 
+                                                     << 0xaU) 
                                                     | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__7__KET____DOT__u_sbox.__PVT__y
                                                         [1U] 
-                                                        << 4U) 
+                                                        << 5U) 
                                                        | vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__7__KET____DOT__u_sbox.__PVT__y
                                                        [0U])));
+    vlSelfRef.ascon_top__DOT__sbox_output_unmasked[8U] 
+        = (((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__8__KET____DOT__u_sbox.__PVT__y_noMask
+             [4U] << 0x14U) | (vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__8__KET____DOT__u_sbox.__PVT__y_noMask
+                               [3U] << 0xfU)) | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__8__KET____DOT__u_sbox.__PVT__y_noMask
+                                                  [2U] 
+                                                  << 0xaU) 
+                                                 | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__8__KET____DOT__u_sbox.__PVT__y_noMask
+                                                     [1U] 
+                                                     << 5U) 
+                                                    | vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__8__KET____DOT__u_sbox.__PVT__y_noMask
+                                                    [0U])));
     vlSelfRef.ascon_top__DOT__sbox_output[8U] = (((
                                                    vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__8__KET____DOT__u_sbox.__PVT__y
                                                    [4U] 
-                                                   << 0x10U) 
+                                                   << 0x14U) 
                                                   | (vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__8__KET____DOT__u_sbox.__PVT__y
                                                      [3U] 
-                                                     << 0xcU)) 
+                                                     << 0xfU)) 
                                                  | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__8__KET____DOT__u_sbox.__PVT__y
                                                      [2U] 
-                                                     << 8U) 
+                                                     << 0xaU) 
                                                     | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__8__KET____DOT__u_sbox.__PVT__y
                                                         [1U] 
-                                                        << 4U) 
+                                                        << 5U) 
                                                        | vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__8__KET____DOT__u_sbox.__PVT__y
                                                        [0U])));
+    vlSelfRef.ascon_top__DOT__sbox_output_unmasked[9U] 
+        = (((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__9__KET____DOT__u_sbox.__PVT__y_noMask
+             [4U] << 0x14U) | (vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__9__KET____DOT__u_sbox.__PVT__y_noMask
+                               [3U] << 0xfU)) | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__9__KET____DOT__u_sbox.__PVT__y_noMask
+                                                  [2U] 
+                                                  << 0xaU) 
+                                                 | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__9__KET____DOT__u_sbox.__PVT__y_noMask
+                                                     [1U] 
+                                                     << 5U) 
+                                                    | vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__9__KET____DOT__u_sbox.__PVT__y_noMask
+                                                    [0U])));
     vlSelfRef.ascon_top__DOT__sbox_output[9U] = (((
                                                    vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__9__KET____DOT__u_sbox.__PVT__y
                                                    [4U] 
-                                                   << 0x10U) 
+                                                   << 0x14U) 
                                                   | (vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__9__KET____DOT__u_sbox.__PVT__y
                                                      [3U] 
-                                                     << 0xcU)) 
+                                                     << 0xfU)) 
                                                  | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__9__KET____DOT__u_sbox.__PVT__y
                                                      [2U] 
-                                                     << 8U) 
+                                                     << 0xaU) 
                                                     | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__9__KET____DOT__u_sbox.__PVT__y
                                                         [1U] 
-                                                        << 4U) 
+                                                        << 5U) 
                                                        | vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__9__KET____DOT__u_sbox.__PVT__y
                                                        [0U])));
+    vlSelfRef.ascon_top__DOT__sbox_output_unmasked[0xaU] 
+        = (((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__10__KET____DOT__u_sbox.__PVT__y_noMask
+             [4U] << 0x14U) | (vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__10__KET____DOT__u_sbox.__PVT__y_noMask
+                               [3U] << 0xfU)) | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__10__KET____DOT__u_sbox.__PVT__y_noMask
+                                                  [2U] 
+                                                  << 0xaU) 
+                                                 | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__10__KET____DOT__u_sbox.__PVT__y_noMask
+                                                     [1U] 
+                                                     << 5U) 
+                                                    | vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__10__KET____DOT__u_sbox.__PVT__y_noMask
+                                                    [0U])));
     vlSelfRef.ascon_top__DOT__sbox_output[0xaU] = (
                                                    ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__10__KET____DOT__u_sbox.__PVT__y
                                                      [4U] 
-                                                     << 0x10U) 
+                                                     << 0x14U) 
                                                     | (vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__10__KET____DOT__u_sbox.__PVT__y
                                                        [3U] 
-                                                       << 0xcU)) 
+                                                       << 0xfU)) 
                                                    | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__10__KET____DOT__u_sbox.__PVT__y
                                                        [2U] 
-                                                       << 8U) 
+                                                       << 0xaU) 
                                                       | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__10__KET____DOT__u_sbox.__PVT__y
                                                           [1U] 
-                                                          << 4U) 
+                                                          << 5U) 
                                                          | vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__10__KET____DOT__u_sbox.__PVT__y
                                                          [0U])));
+    vlSelfRef.ascon_top__DOT__sbox_output_unmasked[0xbU] 
+        = (((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__11__KET____DOT__u_sbox.__PVT__y_noMask
+             [4U] << 0x14U) | (vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__11__KET____DOT__u_sbox.__PVT__y_noMask
+                               [3U] << 0xfU)) | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__11__KET____DOT__u_sbox.__PVT__y_noMask
+                                                  [2U] 
+                                                  << 0xaU) 
+                                                 | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__11__KET____DOT__u_sbox.__PVT__y_noMask
+                                                     [1U] 
+                                                     << 5U) 
+                                                    | vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__11__KET____DOT__u_sbox.__PVT__y_noMask
+                                                    [0U])));
     vlSelfRef.ascon_top__DOT__sbox_output[0xbU] = (
                                                    ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__11__KET____DOT__u_sbox.__PVT__y
                                                      [4U] 
-                                                     << 0x10U) 
+                                                     << 0x14U) 
                                                     | (vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__11__KET____DOT__u_sbox.__PVT__y
                                                        [3U] 
-                                                       << 0xcU)) 
+                                                       << 0xfU)) 
                                                    | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__11__KET____DOT__u_sbox.__PVT__y
                                                        [2U] 
-                                                       << 8U) 
+                                                       << 0xaU) 
                                                       | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__11__KET____DOT__u_sbox.__PVT__y
                                                           [1U] 
-                                                          << 4U) 
+                                                          << 5U) 
                                                          | vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__11__KET____DOT__u_sbox.__PVT__y
                                                          [0U])));
+    vlSelfRef.ascon_top__DOT__sbox_output_unmasked[0xcU] 
+        = (((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__12__KET____DOT__u_sbox.__PVT__y_noMask
+             [4U] << 0x14U) | (vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__12__KET____DOT__u_sbox.__PVT__y_noMask
+                               [3U] << 0xfU)) | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__12__KET____DOT__u_sbox.__PVT__y_noMask
+                                                  [2U] 
+                                                  << 0xaU) 
+                                                 | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__12__KET____DOT__u_sbox.__PVT__y_noMask
+                                                     [1U] 
+                                                     << 5U) 
+                                                    | vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__12__KET____DOT__u_sbox.__PVT__y_noMask
+                                                    [0U])));
     vlSelfRef.ascon_top__DOT__sbox_output[0xcU] = (
                                                    ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__12__KET____DOT__u_sbox.__PVT__y
                                                      [4U] 
-                                                     << 0x10U) 
+                                                     << 0x14U) 
                                                     | (vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__12__KET____DOT__u_sbox.__PVT__y
                                                        [3U] 
-                                                       << 0xcU)) 
+                                                       << 0xfU)) 
                                                    | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__12__KET____DOT__u_sbox.__PVT__y
                                                        [2U] 
-                                                       << 8U) 
+                                                       << 0xaU) 
                                                       | ((vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__12__KET____DOT__u_sbox.__PVT__y
                                                           [1U] 
-                                                          << 4U) 
+                                                          << 5U) 
                                                          | vlSymsp->TOP__ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__12__KET____DOT__u_sbox.__PVT__y
                                                          [0U])));
 }

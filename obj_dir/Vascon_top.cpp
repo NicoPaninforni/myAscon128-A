@@ -18,7 +18,6 @@ Vascon_top::Vascon_top(VerilatedContext* _vcontextp__, const char* _vcname__)
     , last_block{vlSymsp->TOP.last_block}
     , valid_bytes{vlSymsp->TOP.valid_bytes}
     , EOT{vlSymsp->TOP.EOT}
-    , random_masks_sbox{vlSymsp->TOP.random_masks_sbox}
     , ciphertext_valid{vlSymsp->TOP.ciphertext_valid}
     , done{vlSymsp->TOP.done}
     , ready_tag{vlSymsp->TOP.ready_tag}
@@ -35,6 +34,7 @@ Vascon_top::Vascon_top(VerilatedContext* _vcontextp__, const char* _vcname__)
     , nonce1{vlSymsp->TOP.nonce1}
     , nonce2{vlSymsp->TOP.nonce2}
     , initialVector{vlSymsp->TOP.initialVector}
+    , random_masks_sbox{vlSymsp->TOP.random_masks_sbox}
     , tag1{vlSymsp->TOP.tag1}
     , tag2{vlSymsp->TOP.tag2}
     , debug_state_0{vlSymsp->TOP.debug_state_0}
@@ -49,28 +49,6 @@ Vascon_top::Vascon_top(VerilatedContext* _vcontextp__, const char* _vcname__)
     , debug_round_state_4{vlSymsp->TOP.debug_round_state_4}
     , debug_linear_diffusion_state3{vlSymsp->TOP.debug_linear_diffusion_state3}
     , debug_linear_diffusion_state4{vlSymsp->TOP.debug_linear_diffusion_state4}
-    , __PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox{vlSymsp->TOP.__PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox}
-    , __PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox{vlSymsp->TOP.__PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox}
-    , __PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox{vlSymsp->TOP.__PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox}
-    , __PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox{vlSymsp->TOP.__PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox}
-    , __PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox{vlSymsp->TOP.__PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox}
-    , __PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox{vlSymsp->TOP.__PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox}
-    , __PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__6__KET____DOT__u_sbox{vlSymsp->TOP.__PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__6__KET____DOT__u_sbox}
-    , __PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__7__KET____DOT__u_sbox{vlSymsp->TOP.__PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__7__KET____DOT__u_sbox}
-    , __PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__8__KET____DOT__u_sbox{vlSymsp->TOP.__PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__8__KET____DOT__u_sbox}
-    , __PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__9__KET____DOT__u_sbox{vlSymsp->TOP.__PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__9__KET____DOT__u_sbox}
-    , __PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__10__KET____DOT__u_sbox{vlSymsp->TOP.__PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__10__KET____DOT__u_sbox}
-    , __PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__11__KET____DOT__u_sbox{vlSymsp->TOP.__PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__11__KET____DOT__u_sbox}
-    , __PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__12__KET____DOT__u_sbox{vlSymsp->TOP.__PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__12__KET____DOT__u_sbox}
-    , __PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__13__KET____DOT__u_sbox{vlSymsp->TOP.__PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__13__KET____DOT__u_sbox}
-    , __PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__14__KET____DOT__u_sbox{vlSymsp->TOP.__PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__14__KET____DOT__u_sbox}
-    , __PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__15__KET____DOT__u_sbox{vlSymsp->TOP.__PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__15__KET____DOT__u_sbox}
-    , __PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__16__KET____DOT__u_sbox{vlSymsp->TOP.__PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__16__KET____DOT__u_sbox}
-    , __PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__17__KET____DOT__u_sbox{vlSymsp->TOP.__PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__17__KET____DOT__u_sbox}
-    , __PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__18__KET____DOT__u_sbox{vlSymsp->TOP.__PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__18__KET____DOT__u_sbox}
-    , __PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__19__KET____DOT__u_sbox{vlSymsp->TOP.__PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__19__KET____DOT__u_sbox}
-    , __PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__20__KET____DOT__u_sbox{vlSymsp->TOP.__PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__20__KET____DOT__u_sbox}
-    , __PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__21__KET____DOT__u_sbox{vlSymsp->TOP.__PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__21__KET____DOT__u_sbox}
     , rootp{&(vlSymsp->TOP)}
 {
     // Register model with the context

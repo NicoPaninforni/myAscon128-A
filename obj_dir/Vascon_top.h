@@ -13,8 +13,6 @@
 class Vascon_top__Syms;
 class Vascon_top___024root;
 class VerilatedVcdC;
-class Vascon_top_ascon_sbox_d2;
-
 
 // This class is the main interface to the Verilated model
 class alignas(VL_CACHE_LINE_BYTES) Vascon_top VL_NOT_FINAL : public VerilatedModel {
@@ -39,23 +37,23 @@ class alignas(VL_CACHE_LINE_BYTES) Vascon_top VL_NOT_FINAL : public VerilatedMod
     VL_IN8(&last_block,0,0);
     VL_IN8(&valid_bytes,3,0);
     VL_IN8(&EOT,0,0);
-    VL_IN8(&random_masks_sbox,2,0);
     VL_OUT8(&ciphertext_valid,0,0);
     VL_OUT8(&done,0,0);
     VL_OUT8(&ready_tag,0,0);
     VL_OUT8(&ready_for_data,0,0);
     VL_OUT8(&debug_extra_padding_ff,0,0);
-    VL_OUT8(&debug_bitcounter,2,0);
+    VL_OUT8(&debug_bitcounter,3,0);
     VL_OUT8(&debug_roundcounter,3,0);
     VL_OUT8(&debug_state,4,0);
     VL_INW(&data_in,127,0,4);
-    VL_INW(&random_masks,219,0,7);
+    VL_INW(&random_masks,299,0,10);
     VL_OUTW(&ciphertext,127,0,4);
     VL_IN64(&key1,63,0);
     VL_IN64(&key2,63,0);
     VL_IN64(&nonce1,63,0);
     VL_IN64(&nonce2,63,0);
     VL_IN64(&initialVector,63,0);
+    VL_IN64(&random_masks_sbox,54,0);
     VL_OUT64(&tag1,63,0);
     VL_OUT64(&tag2,63,0);
     VL_OUT64(&debug_state_0,63,0);
@@ -74,28 +72,6 @@ class alignas(VL_CACHE_LINE_BYTES) Vascon_top VL_NOT_FINAL : public VerilatedMod
     // CELLS
     // Public to allow access to /* verilator public */ items.
     // Otherwise the application code can consider these internals.
-    Vascon_top_ascon_sbox_d2* const __PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox;
-    Vascon_top_ascon_sbox_d2* const __PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox;
-    Vascon_top_ascon_sbox_d2* const __PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox;
-    Vascon_top_ascon_sbox_d2* const __PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox;
-    Vascon_top_ascon_sbox_d2* const __PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox;
-    Vascon_top_ascon_sbox_d2* const __PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox;
-    Vascon_top_ascon_sbox_d2* const __PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__6__KET____DOT__u_sbox;
-    Vascon_top_ascon_sbox_d2* const __PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__7__KET____DOT__u_sbox;
-    Vascon_top_ascon_sbox_d2* const __PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__8__KET____DOT__u_sbox;
-    Vascon_top_ascon_sbox_d2* const __PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__9__KET____DOT__u_sbox;
-    Vascon_top_ascon_sbox_d2* const __PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__10__KET____DOT__u_sbox;
-    Vascon_top_ascon_sbox_d2* const __PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__11__KET____DOT__u_sbox;
-    Vascon_top_ascon_sbox_d2* const __PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__12__KET____DOT__u_sbox;
-    Vascon_top_ascon_sbox_d2* const __PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__13__KET____DOT__u_sbox;
-    Vascon_top_ascon_sbox_d2* const __PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__14__KET____DOT__u_sbox;
-    Vascon_top_ascon_sbox_d2* const __PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__15__KET____DOT__u_sbox;
-    Vascon_top_ascon_sbox_d2* const __PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__16__KET____DOT__u_sbox;
-    Vascon_top_ascon_sbox_d2* const __PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__17__KET____DOT__u_sbox;
-    Vascon_top_ascon_sbox_d2* const __PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__18__KET____DOT__u_sbox;
-    Vascon_top_ascon_sbox_d2* const __PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__19__KET____DOT__u_sbox;
-    Vascon_top_ascon_sbox_d2* const __PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__20__KET____DOT__u_sbox;
-    Vascon_top_ascon_sbox_d2* const __PVT__ascon_top__DOT__gen_cog__DOT__gen_sbox__BRA__21__KET____DOT__u_sbox;
 
     // Root instance pointer to allow access to model internals,
     // including inlined /* verilator public_flat_* */ items.

@@ -45,6 +45,9 @@ module ascon_sbox_d2
     // === Fase 1: Calcolo DOM-AND combinatoriale ===
     always_comb begin
         int fresh_idx = 0;
+        foreach (y_noMask[i]) begin
+            y_noMask[i] = '0;
+        end
 
         for (int i = 0; i < 5; i++) begin
             logic [(d+1)-1:0] xi        = x[i]; //xi contiene xi con tutti i bit delle shares
@@ -71,10 +74,9 @@ module ascon_sbox_d2
                         and_result_bank[i][j][k] = not_xiprox1[j] & xiprox2[k] ^ xi[j];
                         y_noMask[i][j] = and_result_bank[i][j][k]; // output non mascherato
                     end else if (j < k) begin
-                        logic r = fresh_r[fresh_idx];
+                        and_result_bank[i][j][k] = not_xiprox1[j] & xiprox2[k] ^ fresh_r[fresh_idx];
+                        and_result_bank[i][k][j] = not_xiprox1[k] & xiprox2[j] ^ fresh_r[fresh_idx];
                         fresh_idx++;
-                        and_result_bank[i][j][k] = not_xiprox1[j] & xiprox2[k] ^ r;
-                        and_result_bank[i][k][j] = not_xiprox1[k] & xiprox2[j] ^ r;
                     end
                 end
             end

@@ -11,9 +11,9 @@
 #include "tb_utils.h"
 
 //definizione dei parameter:
-#define d 2
+#define d 10
 #define COL_SIZE 5
-#define PAR 22
+#define PAR 6
 #define WIDTH_RAND (d * COL_SIZE * PAR)  // 110
 #define WIDTH_RAND_SBOX (d*(d+1)/2)
 

@@ -13,6 +13,7 @@ VL_ATTR_COLD void Vascon_top_ascon_sbox_d2__D4_N5___ctor_var_reset(Vascon_top_as
     vlSelf->clk = VL_RAND_RESET_I(1);
     vlSelf->x_in = VL_RAND_RESET_I(25);
     vlSelf->fresh_r = VL_RAND_RESET_I(10);
+    vlSelf->sel_masked_round = VL_RAND_RESET_I(1);
     vlSelf->x_out = VL_RAND_RESET_I(25);
     vlSelf->x_out_noMask = VL_RAND_RESET_I(25);
     for (int __Vi0 = 0; __Vi0 < 5; ++__Vi0) {

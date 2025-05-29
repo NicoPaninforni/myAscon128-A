@@ -35,11 +35,11 @@ Il modulo è progettato per garantire robustezza contro attacchi di tipo DPA e f
 risultando adatto a implementazioni ASIC o FPGA dove la sicurezza fisica è cruciale. (DPA) è critica.
 */
 module ascon_top #(
-    parameter int d = 2,
+    parameter int d = 10,
     parameter int WORD_SIZE = 64,
     parameter int COL_SIZE = 5,
     parameter int STATE_WIDTH = 320,
-    parameter int PAR = 22,
+    parameter int PAR = 6,
 
     parameter int SHIFT_PAR_D_PLUS_1 = (((d+1)*PAR) > 64) ? 64 : ((d+1)*PAR),
     parameter int NUMBER_BIT_MASK = ((64+PAR-1)/PAR) + 1

@@ -15,6 +15,7 @@ class alignas(VL_CACHE_LINE_BYTES) Vascon_top_ascon_sbox_d2__D4_N5 final : publi
 
     // DESIGN SPECIFIC STATE
     VL_IN8(clk,0,0);
+    VL_IN8(sel_masked_round,0,0);
     CData/*4:0*/ __PVT__unnamedblk1__DOT__unnamedblk2__DOT__unnamedblk3__DOT__xi;
     CData/*4:0*/ __PVT__unnamedblk1__DOT__unnamedblk2__DOT__unnamedblk3__DOT__xiprox1;
     CData/*4:0*/ __PVT__unnamedblk1__DOT__unnamedblk2__DOT__unnamedblk3__DOT__xiprox2;

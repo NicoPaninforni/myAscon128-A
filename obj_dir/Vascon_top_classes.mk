@@ -30,14 +30,14 @@ VM_CLASSES_FAST += \
 	Vascon_top___024root__DepSet_h24606f98__0 \
 	Vascon_top___024root__DepSet_h24606f98__1 \
 	Vascon_top___024root__DepSet_h24606f98__2 \
-	Vascon_top_ascon_sbox_d2__DepSet_h9a7e00ea__0 \
-	Vascon_top_ascon_sbox_d2__DepSet_h9a7e00ea__1 \
-	Vascon_top_ascon_sbox_d2__DepSet_h6abb0522__0 \
-	Vascon_top_ascon_sbox_d2__DepSet_h6abb0522__1 \
-	Vascon_top_ascon_sbox_d2__DepSet_h6abb0522__2 \
-	Vascon_top_ascon_sbox_d2__DepSet_h6abb0522__3 \
-	Vascon_top_ascon_sbox_d2__DepSet_h6abb0522__4 \
-	Vascon_top_ascon_sbox_d2__DepSet_h6abb0522__5 \
+	Vascon_top___024root__DepSet_h24606f98__3 \
+	Vascon_top___024root__DepSet_h24606f98__4 \
+	Vascon_top___024root__DepSet_h24606f98__5 \
+	Vascon_top___024root__DepSet_h24606f98__6 \
+	Vascon_top___024root__DepSet_h24606f98__7 \
+	Vascon_top___024root__DepSet_h24606f98__8 \
+	Vascon_top___024root__DepSet_h24606f98__9 \
+	Vascon_top___024root__DepSet_h24606f98__10 \
 
 # Generated module classes, non-fast-path, compile with low/medium optimization
 VM_CLASSES_SLOW += \
@@ -45,16 +45,10 @@ VM_CLASSES_SLOW += \
 	Vascon_top___024root__DepSet_hd5d89e7c__0__Slow \
 	Vascon_top___024root__DepSet_h24606f98__0__Slow \
 	Vascon_top___024root__DepSet_h24606f98__1__Slow \
-	Vascon_top_ascon_sbox_d2__Slow \
-	Vascon_top_ascon_sbox_d2__DepSet_h9a7e00ea__0__Slow \
-	Vascon_top_ascon_sbox_d2__DepSet_h9a7e00ea__1__Slow \
-	Vascon_top_ascon_sbox_d2__DepSet_h9a7e00ea__2__Slow \
-	Vascon_top_ascon_sbox_d2__DepSet_h9a7e00ea__3__Slow \
-	Vascon_top_ascon_sbox_d2__DepSet_h9a7e00ea__4__Slow \
-	Vascon_top_ascon_sbox_d2__DepSet_h9a7e00ea__5__Slow \
-	Vascon_top_ascon_sbox_d2__DepSet_h9a7e00ea__6__Slow \
-	Vascon_top_ascon_sbox_d2__DepSet_h9a7e00ea__7__Slow \
-	Vascon_top_ascon_sbox_d2__DepSet_h6abb0522__0__Slow \
+	Vascon_top___024root__DepSet_h24606f98__2__Slow \
+	Vascon_top___024root__DepSet_h24606f98__3__Slow \
+	Vascon_top___024root__DepSet_h24606f98__4__Slow \
+	Vascon_top___024root__DepSet_h24606f98__5__Slow \
 
 # Generated support classes, fast-path, compile with highest optimization
 VM_SUPPORT_FAST += \
