@@ -2124,7 +2124,7 @@ void Vascon_top___024root___eval_debug_assertions(Vascon_top___024root* vlSelf) 
         Verilated::overWidthError("valid_data_in");}
     if (VL_UNLIKELY(((vlSelfRef.last_block & 0xfeU)))) {
         Verilated::overWidthError("last_block");}
-    if (VL_UNLIKELY(((vlSelfRef.valid_bytes & 0xf0U)))) {
+    if (VL_UNLIKELY(((vlSelfRef.valid_bytes & 0xe0U)))) {
         Verilated::overWidthError("valid_bytes");}
     if (VL_UNLIKELY(((vlSelfRef.EOT & 0xfeU)))) {
         Verilated::overWidthError("EOT");}

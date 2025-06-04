@@ -22,7 +22,7 @@ class alignas(VL_CACHE_LINE_BYTES) Vascon_top___024root final : public Verilated
         VL_IN8(key_valid,0,0);
         VL_IN8(valid_data_in,0,0);
         VL_IN8(last_block,0,0);
-        VL_IN8(valid_bytes,3,0);
+        VL_IN8(valid_bytes,4,0);
         VL_IN8(EOT,0,0);
         VL_OUT8(ciphertext_valid,0,0);
         VL_OUT8(done,0,0);

@@ -31,7 +31,7 @@ module fsm #(
     input logic key_valid,
     input logic valid_data_in,
     input logic last_block,
-    input logic [$clog2(WORD_SIZE/8):0] valid_bytes,
+    input logic [$clog2(2*WORD_SIZE/8):0] valid_bytes,
     input logic EOT,
 
     output logic done, //se il processo è finito

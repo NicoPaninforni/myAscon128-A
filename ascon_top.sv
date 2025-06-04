@@ -61,7 +61,7 @@ module ascon_top #(
     input  logic [2*WORD_SIZE-1:0] data_in, //input del messaggio
     input  logic valid_data_in, //se il messaggio in input è valido
     input logic last_block,
-    input logic [$clog2(WORD_SIZE/8):0] valid_bytes,
+    input logic [$clog2(2*WORD_SIZE/8):0] valid_bytes,
     input  logic EOT, //fine del messaggio in input
     //In Hardware ascon-sca c'è anche bdi_pad_loc e bdi_valid_bytes per gestire il padding
     input  logic [d*COL_SIZE*PAR-1:0] random_masks, //per la creazione delle shares poi vedremo bene come crearle

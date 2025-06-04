@@ -168,7 +168,7 @@ int main(int argc, char** argv) {
 
     // === Dati random
     int aad_len = generate_random_length(32);
-    int msg_len =  generate_random_length(128);
+    int msg_len = generate_random_length(128);
 
     unsigned int seed_aad = std::chrono::system_clock::now().time_since_epoch().count();
     unsigned int seed_msg = std::random_device{}();

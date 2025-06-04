@@ -947,7 +947,7 @@ VL_ATTR_COLD void Vascon_top___024root___ctor_var_reset(Vascon_top___024root* vl
     VL_RAND_RESET_W(128, vlSelf->data_in);
     vlSelf->valid_data_in = VL_RAND_RESET_I(1);
     vlSelf->last_block = VL_RAND_RESET_I(1);
-    vlSelf->valid_bytes = VL_RAND_RESET_I(4);
+    vlSelf->valid_bytes = VL_RAND_RESET_I(5);
     vlSelf->EOT = VL_RAND_RESET_I(1);
     VL_RAND_RESET_W(300, vlSelf->random_masks);
     vlSelf->random_masks_sbox = VL_RAND_RESET_Q(55);

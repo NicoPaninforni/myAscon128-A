@@ -3242,7 +3242,7 @@ void Vascon_top___024root__trace_chg_0_sub_0(Vascon_top___024root* vlSelf, Veril
     bufp->chgWData(oldp+1222,(vlSelfRef.data_in),128);
     bufp->chgBit(oldp+1226,(vlSelfRef.valid_data_in));
     bufp->chgBit(oldp+1227,(vlSelfRef.last_block));
-    bufp->chgCData(oldp+1228,(vlSelfRef.valid_bytes),4);
+    bufp->chgCData(oldp+1228,(vlSelfRef.valid_bytes),5);
     bufp->chgBit(oldp+1229,(vlSelfRef.EOT));
     bufp->chgWData(oldp+1230,(vlSelfRef.random_masks),300);
     bufp->chgQData(oldp+1240,(vlSelfRef.random_masks_sbox),55);
