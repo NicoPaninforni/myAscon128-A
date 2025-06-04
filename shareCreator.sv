@@ -30,11 +30,9 @@
 //
 //   Utilizzato tipicamente come fase iniziale nel mascheramento di dati sensibili.
 // ============================================================================
-module shareCreator #(
-    parameter int d = 2,
-    parameter int COL_SIZE = 5,
-    parameter int PAR = 1
-)
+import ascon_params::*;
+
+module shareCreator 
 (
     input  logic [COL_SIZE*PAR-1:0] data_in,
     input  logic [d*COL_SIZE*PAR-1:0] random_masks,  // d maschere

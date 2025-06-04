@@ -13,17 +13,9 @@
 //
 // Author: [Nico]
 // ============================================================================
-module fsm #(
-    parameter int d = 2,
-    parameter int WORD_SIZE = 64,
-    parameter int PAR = 22,
-    parameter int NUMBER_BIT_MASK = ((64+PAR-1)/PAR) + 1,
-    //NOTA: qua non c'era il caso con il ?
-    parameter int NUMBER_BIT_NOMASK = (64 % PAR*(d+1) == 0) ? 
-                                ((64 + PAR*(d+1)) / (PAR*(d+1)) - 1) :
-                                ((64 + PAR*(d+1)) / (PAR*(d+1))) 
+import ascon_params::*;
 
-)(
+module fsm (
     input  logic clk,
     input  logic reset_n,
     input  logic start,
@@ -31,7 +23,7 @@ module fsm #(
     input logic key_valid,
     input logic valid_data_in,
     input logic last_block,
-    input logic [$clog2(WORD_SIZE/8):0] valid_bytes,
+    input logic [$clog2(2*WORD_SIZE/8):0] valid_bytes,
     input logic EOT,
 
     output logic done, //se il processo è finito
@@ -49,23 +41,19 @@ module fsm #(
     output logic sel_init_load,  // a 1 se devo fare il load di inizializzazione
     output logic sel_masked_round, // a 1 se devo fare una permutazione mascherata
     output logic sel_padding, // a 1 se devo fare l'absorb di dati padded
-    output logic extra_padding,
     output logic sel_xor_signal,
     output logic sel_absorb_data,
 
     output logic ciphertext_valid,
     output logic ready_for_data,
-
-    //DEBUG:
     output logic extra_padding_ff,
-    output logic [4:0]  debug_state,
+
     output logic [$clog2(NUMBER_BIT_MASK+1)-1:0] bit_counter, //conta il numero di blocchi di bit processati 
-    output logic [3:0] round_counter, //conta i round da 0 a 12
-    output logic shift_enable_sipo,
-    output logic last_cycle_sipo
+    output logic [3:0] round_counter //conta i round da 0 a 12
 );
 
-assign debug_state = current_state;
+logic extra_padding; //se ho fatto il padding extra
+
 
 typedef enum logic [4:0] {
     IDLE, //0
@@ -271,7 +259,7 @@ always_comb begin
     endcase
 end
 
-localparam int BYTE_W = 2*WORD_SIZE / 8;
+localparam logic [$clog2(WORD_SIZE)+1:0] BYTE_W = 2*WORD_SIZE / 8;
 
 // Rete combinatoria di calcolo delle uscite
 always_comb begin
@@ -281,8 +269,6 @@ always_comb begin
     ready_for_data = 0;
     
     round_counter_enable = 0;
-    shift_enable_sipo = 0; //segnale per DEBUG
-    last_cycle_sipo = 0; //segnale per DEBUG 
 
     //segnali di controllo per la gestione della transizione degli stati:
     extra_padding = 0;
@@ -336,18 +322,18 @@ always_comb begin
 
             shift_en = 1; //abilito lo shift di state_reg
             shift_type = 1; // shift di PAR bit
-            shift_enable_sipo = 1;  //abilito gli shift per i registri di DEBUG
-            if (bit_counter == (NUMBER_BIT_MASK[$clog2(NUMBER_BIT_MASK+1)-1:0] - 2)) begin
-                last_cycle_sipo = 1; //Se ho effettuato il numero totale di shift, ossia uguali ai blocchi di bit sono a l'ultimo ciclo per i sipo debug
+            //shift_enable_sipo = 1;  //abilito gli shift per i registri di DEBUG
+            //if (bit_counter == (NUMBER_BIT_MASK[$clog2(NUMBER_BIT_MASK+1)-1:0] - 2)) begin
+            //    last_cycle_sipo = 1; //Se ho effettuato il numero totale di shift, ossia uguali ai blocchi di bit sono a l'ultimo ciclo per i sipo debug
                                      //Nota: per completare gli shift dello state_reg mi mancano 2 shift (2 stadi di FF)
-            end
+            //end
         end
 
         INIT_ROUND_SHIFT_LAST: begin
             number_bits = NUMBER_BIT_MASK[$clog2(NUMBER_BIT_MASK+1)-1:0] ;
             last_cycle = 1;  //sono all'ultimo ciclo di shift
             shift_en = 1;  
-            shift_enable_sipo = 1;  //abilito lo shift del sipo
+            //shift_enable_sipo = 1;  //abilito lo shift del sipo
             shift_type = 1; // shift di PAR bit
         end
 
@@ -397,17 +383,17 @@ always_comb begin
 
         PROCESS_AD_SHIFT: begin
             sel_masked_round = 0;
-            shift_enable_sipo = 1;
+            //shift_enable_sipo = 1;
             number_bits = NUMBER_BIT_NOMASK[$clog2(NUMBER_BIT_MASK+1)-1:0]; // numero shift per processare tutti i bit
             shift_en = 1; //ad ogni ciclo processo PAR*(d+1) bit (shift_type = 0)
-            if (bit_counter == (NUMBER_BIT_NOMASK[$clog2(NUMBER_BIT_MASK+1)-1:0] - 1)) begin
-                last_cycle_sipo = 1; //se sono all'ultimo ciclo di shift
-            end
+            //if (bit_counter == (NUMBER_BIT_NOMASK[$clog2(NUMBER_BIT_MASK+1)-1:0] - 1)) begin
+            //    last_cycle_sipo = 1; //se sono all'ultimo ciclo di shift
+            //end
         end
 
         PROCESS_AD_SHIFT_LAST: begin
             sel_masked_round = 0;
-            shift_enable_sipo = 1;
+            //shift_enable_sipo = 1;
             number_bits =  NUMBER_BIT_NOMASK[$clog2(NUMBER_BIT_MASK+1)-1:0] ; // numero shift per processare tutti i bit
             last_cycle = 1;
             shift_en = 1; //ad ogni ciclo processo PAR*(d+1) bit (shift_type = 0)
@@ -472,17 +458,17 @@ always_comb begin
             sel_masked_round = 0;
             number_bits = NUMBER_BIT_NOMASK[$clog2(NUMBER_BIT_MASK+1)-1:0] ; // numero shift per processare tutti i bit
             shift_en = 1; //ad ogni ciclo processo PAR*(d+1) bit (shift_type = 0)
-            shift_enable_sipo = 1;
-            if (bit_counter == (NUMBER_BIT_NOMASK[$clog2(NUMBER_BIT_MASK+1)-1:0] -1)) begin
-                last_cycle_sipo = 1; //se sono all'ultimo ciclo di shift
-            end
+            //shift_enable_sipo = 1;
+            //if (bit_counter == (NUMBER_BIT_NOMASK[$clog2(NUMBER_BIT_MASK+1)-1:0] -1)) begin
+            //    last_cycle_sipo = 1; //se sono all'ultimo ciclo di shift
+            //end
         end
 
         PROCESS_MSG_SHIFT_LAST: begin
             sel_masked_round = 0;
             number_bits =  NUMBER_BIT_NOMASK[$clog2(NUMBER_BIT_MASK+1)-1:0] ; // numero shift per processare tutti i bit
             last_cycle = 1;
-            shift_enable_sipo = 1;
+            //shift_enable_sipo = 1;
             shift_en = 1; //ad ogni ciclo processo PAR*(d+1) bit (shift_type = 0)
         end
 
@@ -508,10 +494,10 @@ always_comb begin
             number_bits = NUMBER_BIT_MASK[$clog2(NUMBER_BIT_MASK+1)-1:0];
             shift_en = 1;
             shift_type = 1; // shift 1
-            shift_enable_sipo = 1;
-            if (bit_counter == (NUMBER_BIT_MASK[$clog2(NUMBER_BIT_MASK+1)-1:0] - 2)) begin
-                last_cycle_sipo = 1; //se sono all'ultimo ciclo di shift
-            end
+            //shift_enable_sipo = 1;
+            //if (bit_counter == (NUMBER_BIT_MASK[$clog2(NUMBER_BIT_MASK+1)-1:0] - 2)) begin
+            //    last_cycle_sipo = 1; //se sono all'ultimo ciclo di shift
+            //end
         end
 
         FINALIZATION_SHIFT_LAST: begin
@@ -519,7 +505,7 @@ always_comb begin
             last_cycle = 1;
             shift_en = 1;
             shift_type = 1; // shift 1
-            shift_enable_sipo = 1;
+            //shift_enable_sipo = 1;
 
             sel_mux_linear_diffusion_out_x3 = 1;
             sel_mux_linear_diffusion_out_x4 = 1;

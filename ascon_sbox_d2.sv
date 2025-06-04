@@ -18,12 +18,9 @@
 //     - num_shares: numero di condivisioni (tipicamente d+1).
 //
 // ============================================================================
-module ascon_sbox_d2 
-#(
-    parameter int d = 2,  // ordine di mascheramento
-    parameter int num_shares = 3 // numero di shares
-)
-(
+import ascon_params::*;
+
+module ascon_sbox_d2 (
     input  logic clk,
     input  logic [((d+1)*5)-1:0] x_in, // 5 bit × (d+1) share
     input  logic [((d+1)*(d)/2)-1:0] fresh_r, // 3 bit di fresh per ogni AND
@@ -44,17 +41,20 @@ module ascon_sbox_d2
 
     // === Fase 1: Calcolo DOM-AND combinatoriale ===
     always_comb begin
-        int fresh_idx = 0;
-        foreach (y_noMask[i]) begin
-            y_noMask[i] = '0;
-        end
-
+        int fresh_idx;
+        
         for (int i = 0; i < 5; i++) begin
-            logic [(d+1)-1:0] xi        = x[i]; //xi contiene xi con tutti i bit delle shares
-            logic [(d+1)-1:0] xiprox1   = x[(i+1)%5];
-            logic [(d+1)-1:0] xiprox2   = x[(i+2)%5];
+            //questi segnali prima erano con anche "logic [(d+1)-1:] xi [0:4] ma in sintesi dava problemi:
+            logic [(d+1)-1:0] xi;
+            logic [(d+1)-1:0] xiprox1;
+            logic [(d+1)-1:0] xiprox2;
+            logic [(d+1)-1:0] not_xiprox1; // Negazione della prima share
+
+            xi        = x[i]; //xi contiene xi con tutti i bit delle shares
+            xiprox1   = x[(i+1)%5];
+            xiprox2   = x[(i+2)%5];
             //logic [(d+1)-1:0] not_xiprox1 = ~xiprox1;
-            logic [(d+1)-1:0] not_xiprox1;
+            
             if (( d % 2 == 1 ) && (sel_masked_round == 1)) begin
                 // Se d è pari, non nego la prima share
                 not_xiprox1 = xiprox1;
@@ -71,7 +71,7 @@ module ascon_sbox_d2
             for (int j = 0; j < (d+1); j++) begin //cicla sui domini A,B e C etc.
                 for (int k = 0; k < (d+1); k++) begin //cicla sulla and di ogni dominio
                     if (j == k) begin
-                        and_result_bank[i][j][k] = not_xiprox1[j] & xiprox2[k] ^ xi[j];
+                        and_result_bank[i][j][k] = (not_xiprox1[j] & xiprox2[k]) ^ xi[j];
                         y_noMask[i][j] = and_result_bank[i][j][k]; // output non mascherato
                     end else if (j < k) begin
                         and_result_bank[i][j][k] = not_xiprox1[j] & xiprox2[k] ^ fresh_r[fresh_idx];

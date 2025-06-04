@@ -1,14 +1,14 @@
-module register #(
-    parameter int WIDTH = 64
-)(
+import ascon_params::*;
+
+module register (
     input  logic clk,
     input  logic reset_n,
     input  logic load,
-    input  logic [WIDTH-1:0] data_in,
-    output logic [WIDTH-1:0] data_out
+    input  logic [WORD_SIZE-1:0] data_in,
+    output logic [WORD_SIZE-1:0] data_out
 );
 
-    logic [WIDTH-1:0] reg_q;
+    logic [WORD_SIZE-1:0] reg_q;
 
     always_ff @(posedge clk or negedge reset_n) begin
         if (!reset_n)

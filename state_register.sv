@@ -16,7 +16,7 @@
 //   anche l’ultimo ciclo di shift con quantità inferiore di bit tramite `last_cycle`.
 //
 //   Parametri:
-//     - WORDS: numero di parole (default: 5),
+//     - COL_SIZE: numero di parole (default: 5),
 //     - WORD_SIZE: dimensione in bit di ogni parola (default: 64),
 //     - PAR: grado di parallelismo,
 //     - d: ordine del mascheramento,
@@ -27,39 +27,31 @@
 //     - `out_shifted_dplus1`: porzione di bit destinata allo shift mascherato.
 //
 // ============================================================================
-module state_register 
-#(
-    parameter int WORDS = 5,
-    parameter int PAR = 1,
-    parameter int d = 2,
-    parameter int WORD_SIZE = 64,
-    parameter int SHIFT_PAR = PAR,
-    parameter int SHIFT_PAR_D_PLUS_1 = (((d+1)*PAR) > 64) ? 64 : ((d+1)*PAR),
-    parameter int SHIFT_PAR_LAST = (64 % SHIFT_PAR == 0) ? SHIFT_PAR : (64 % SHIFT_PAR),
-    parameter int SHIFT_PAR_D_PLUS_1_LAST = (64 % SHIFT_PAR_D_PLUS_1 == 0) ? SHIFT_PAR_D_PLUS_1 : (64 % SHIFT_PAR_D_PLUS_1)
+import ascon_params::*;
 
-)(
+module state_register 
+(
     input  logic clk,
     input  logic write_en,
     input  logic shift_en,
     input  logic shift_type, // 1 = shift 1, 0 = shift d+1
     input  logic last_cycle, 
 
-    input  logic [WORDS*WORD_SIZE-1:0] data_in,
-    input  logic [WORDS*SHIFT_PAR_D_PLUS_1-1:0] in_shifted_dplus1,
-    input  logic [WORDS*SHIFT_PAR-1:0]          in_shifted_1bit,
+    input  logic [COL_SIZE*WORD_SIZE-1:0] data_in,
+    input  logic [COL_SIZE*SHIFT_PAR_D_PLUS_1-1:0] in_shifted_dplus1,
+    input  logic [COL_SIZE*SHIFT_PAR-1:0]          in_shifted_1bit,
     
-    output logic [WORDS*SHIFT_PAR_D_PLUS_1-1:0] out_shifted_dplus1,
-    output logic [WORDS*WORD_SIZE-1:0] data_out
+    output logic [COL_SIZE*SHIFT_PAR_D_PLUS_1-1:0] out_shifted_dplus1,
+    output logic [COL_SIZE*WORD_SIZE-1:0] data_out
 );
 
-    logic [WORD_SIZE-1:0] state [0:WORDS-1];
-    logic [WORD_SIZE-1:0] next_state [0:WORDS-1];
+    logic [WORD_SIZE-1:0] state [0:COL_SIZE-1];
+    (* keep = "true" *) logic [WORD_SIZE-1:0] next_state [0:COL_SIZE-1];
 
     generate 
     if (SHIFT_PAR_D_PLUS_1_LAST < WORD_SIZE) begin : gen_case1
         always_comb begin
-            for (int i = 0; i < WORDS; i++) begin
+            for (int i = 0; i < COL_SIZE; i++) begin
                 next_state[i] = state[i]; // Default
 
                 if (shift_en) begin
@@ -86,7 +78,7 @@ module state_register
 
     end else begin : gen_case2
         always_comb begin
-            for (int i = 0; i < WORDS; i++) begin
+            for (int i = 0; i < COL_SIZE; i++) begin
                 next_state[i] = state[i]; // Default
 
                 if (shift_en) begin
@@ -112,7 +104,7 @@ module state_register
 
     // === Blocco sequenziale
     always_ff @(posedge clk) begin
-        for (int i = 0; i < WORDS; i++) begin
+        for (int i = 0; i < COL_SIZE; i++) begin
             state[i] <= next_state[i];
         end
     end
@@ -121,7 +113,7 @@ module state_register
     generate
     if (SHIFT_PAR_D_PLUS_1_LAST < WORD_SIZE) begin : gen_caseNoPArMAx
         always_comb begin
-            for (int i = 0; i < WORDS; i++) begin
+            for (int i = 0; i < COL_SIZE; i++) begin
                 out_shifted_dplus1[i*SHIFT_PAR_D_PLUS_1 +: SHIFT_PAR_D_PLUS_1] =
                 state[i][SHIFT_PAR_D_PLUS_1-1:0];
                 data_out[i*WORD_SIZE +: WORD_SIZE] = state[i];
@@ -130,7 +122,7 @@ module state_register
     end
     else begin : gen_caseNoPArMAx
         always_comb begin
-            for (int i = 0; i < WORDS; i++) begin
+            for (int i = 0; i < COL_SIZE; i++) begin
                 out_shifted_dplus1[i*WORD_SIZE +: WORD_SIZE] =
                 state[i][WORD_SIZE-1:0];
                 data_out[i*WORD_SIZE +: WORD_SIZE] = state[i];

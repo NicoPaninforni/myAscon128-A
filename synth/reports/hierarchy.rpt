@@ -1,0 +1,35 @@
+ 
+****************************************
+Report : hierarchy
+Design : ascon_top
+Version: R-2020.09-SP2
+Date   : Wed Jun  4 11:26:10 2025
+****************************************
+
+Information: This design contains unmapped logic. (RPT-7)
+
+ascon_top
+    GTECH_AND2                         gtech
+    GTECH_BUF                          gtech
+    GTECH_NOT                          gtech
+    GTECH_OR2                          gtech
+    GTECH_XOR2                         gtech
+    ascon_sbox_d2
+        GTECH_AND2                     gtech
+        GTECH_NOT                      gtech
+        GTECH_XOR2                     gtech
+    fsm
+        GTECH_AND2                     gtech
+        GTECH_BUF                      gtech
+        GTECH_NOT                      gtech
+        GTECH_OR2                      gtech
+    register
+        GTECH_NOT                      gtech
+    shareCreator
+        GTECH_XOR2                     gtech
+    state_register
+        GTECH_AND2                     gtech
+        GTECH_BUF                      gtech
+        GTECH_NOT                      gtech
+        GTECH_OR2                      gtech
+1

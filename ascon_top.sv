@@ -34,16 +34,9 @@ particolarmente utili in fase di test SCA.
 Il modulo è progettato per garantire robustezza contro attacchi di tipo DPA e flessibilità hardware,
 risultando adatto a implementazioni ASIC o FPGA dove la sicurezza fisica è cruciale. (DPA) è critica.
 */
-module ascon_top #(
-    parameter int d = 10,
-    parameter int WORD_SIZE = 64,
-    parameter int COL_SIZE = 5,
-    parameter int STATE_WIDTH = 320,
-    parameter int PAR = 6,
+import ascon_params::*;
 
-    parameter int SHIFT_PAR_D_PLUS_1 = (((d+1)*PAR) > 64) ? 64 : ((d+1)*PAR),
-    parameter int NUMBER_BIT_MASK = ((64+PAR-1)/PAR) + 1
-)(
+module ascon_top (
     input  logic clk,
     input  logic reset_n,
     input  logic start,
@@ -61,7 +54,7 @@ module ascon_top #(
     input  logic [2*WORD_SIZE-1:0] data_in, //input del messaggio
     input  logic valid_data_in, //se il messaggio in input è valido
     input logic last_block,
-    input logic [$clog2(WORD_SIZE/8):0] valid_bytes,
+    input logic [$clog2(2*WORD_SIZE/8):0] valid_bytes,
     input  logic EOT, //fine del messaggio in input
     //In Hardware ascon-sca c'è anche bdi_pad_loc e bdi_valid_bytes per gestire il padding
     input  logic [d*COL_SIZE*PAR-1:0] random_masks, //per la creazione delle shares poi vedremo bene come crearle
@@ -75,40 +68,8 @@ module ascon_top #(
     output logic [WORD_SIZE-1:0] tag1,
     output logic [WORD_SIZE-1:0] tag2,
     output logic ready_for_data,
-
-    //DEBUG SIGNAL:
-    output logic debug_extra_padding_ff,
-    output logic [$clog2(NUMBER_BIT_MASK+1)-1:0] debug_bitcounter,
-    output logic [3:0] debug_roundcounter,
-    output logic [4:0] debug_state,
-    output logic [63:0] debug_state_0,
-    output logic [63:0] debug_state_1,
-    output logic [63:0] debug_state_2,
-    output logic [63:0] debug_state_3,
-    output logic [63:0] debug_state_4,
-    output logic [63:0] debug_round_state_0,
-    output logic [63:0] debug_round_state_1,
-    output logic [63:0] debug_round_state_2,
-    output logic [63:0] debug_round_state_3,
-    output logic [63:0] debug_round_state_4,
-    output logic [63:0] debug_linear_diffusion_state3,
-    output logic [63:0] debug_linear_diffusion_state4
+    output logic extra_padding_ff //se c'è un padding extra
 );
-    //Associazione segnali di debug:
-    assign debug_bitcounter = bit_counter;
-    assign debug_state_0 = state_reg_out[0*64 +: 64];
-    assign debug_state_1 = state_reg_out[1*64 +: 64];
-    assign debug_state_2 = state_reg_out[2*64 +: 64];
-    assign debug_state_3 = state_reg_out[3*64 +: 64];
-    assign debug_state_4 = state_reg_out[4*64 +: 64];
-    assign debug_roundcounter = round_counter;
-    assign debug_round_state_0 = round_x0_debug;
-    assign debug_round_state_1 = round_x1_debug;
-    assign debug_round_state_2 = round_x2_debug;
-    assign debug_round_state_3 = round_x3_debug;
-    assign debug_round_state_4 = round_x4_debug;
-    assign debug_linear_diffusion_state3 = linear_diffusion_debug[3];
-    assign debug_linear_diffusion_state4 = linear_diffusion_debug[4]; 
 
     //segnali per fsm:
     logic shift_en, shift_type, write_en;
@@ -116,19 +77,12 @@ module ascon_top #(
     logic reg_key1_load, reg_key2_load;
     logic sel_mux_linear_diffusion_out_x3, sel_mux_linear_diffusion_out_x4;
     logic sel_init_load, sel_masked_round, sel_padding, sel_xor_signal, sel_absorb_data;
-    /* verilator lint_off UNUSEDSIGNAL */
-    logic extra_padding;
-    /* verilator lint_on UNUSEDSIGNAL */
     logic shift_enable_sipo, last_cycle_sipo;
     logic [3:0] round_counter;
-    logic [$clog2(NUMBER_BIT_MASK+1)-1:0] bit_counter;
+    logic unsigned [$clog2(NUMBER_BIT_MASK+1)-1:0] bit_counter;
     
     //Istanzio fsm:
-    fsm #(
-        .PAR(PAR),
-        .d(d),
-        .WORD_SIZE(WORD_SIZE)
-    ) mealy_fsm (
+    fsm mealy_fsm (
         //Input:
         .clk(clk),
         .reset_n(reset_n),
@@ -154,7 +108,6 @@ module ascon_top #(
         .reg_key1_load(reg_key1_load),
         .reg_key2_load(reg_key2_load),
 
-        .extra_padding(extra_padding),
         .sel_mux_linear_diffusion_out_x3(sel_mux_linear_diffusion_out_x3),
         .sel_mux_linear_diffusion_out_x4(sel_mux_linear_diffusion_out_x4),
         .sel_init_load(sel_init_load),
@@ -162,14 +115,9 @@ module ascon_top #(
         .sel_padding(sel_padding),
         .sel_xor_signal(sel_xor_signal),
         .sel_absorb_data(sel_absorb_data),
-
-        //DEBUG SIGNAL:
-        .extra_padding_ff(debug_extra_padding_ff),
-        .debug_state(debug_state),
+        .extra_padding_ff(extra_padding_ff),
         .round_counter(round_counter),
-        .bit_counter(bit_counter),
-        .shift_enable_sipo(shift_enable_sipo),    
-        .last_cycle_sipo(last_cycle_sipo)
+        .bit_counter(bit_counter)
     );
     
     //Segnali per lo state_register:
@@ -179,12 +127,7 @@ module ascon_top #(
     logic [SHIFT_PAR_D_PLUS_1*COL_SIZE-1:0] state_reg_in_shiftdplus1;
     logic [PAR*COL_SIZE-1:0] state_reg_in_shift1;
 
-    state_register #(
-        .WORDS(COL_SIZE),
-        .PAR(PAR),
-        .d(d),
-        .WORD_SIZE(WORD_SIZE)
-    ) state_reg (
+    state_register state_reg (
         .clk(clk),
         .write_en(write_en),
         .shift_en(shift_en),
@@ -200,9 +143,7 @@ module ascon_top #(
     //Register per la chiave (key1):
     logic [WORD_SIZE-1:0] reg_key1_out;
 
-    register #(
-        .WIDTH(WORD_SIZE)
-    ) key1_reg (
+    register key1_reg (
         .clk(clk),
         .reset_n(reset_n),
         .load(reg_key1_load),
@@ -212,94 +153,12 @@ module ascon_top #(
 
     //Register per la chiave (key2):
     logic [WORD_SIZE-1:0] reg_key2_out;
-    register #(
-        .WIDTH(WORD_SIZE)
-    ) key2_reg (
+    register key2_reg (
         .clk(clk),
         .reset_n(reset_n),
         .load(reg_key2_load),
         .data_in(key2),
         .data_out(reg_key2_out)
-    );
-
-/* verilator lint_off UNUSEDSIGNAL */
-    logic [WORD_SIZE-1:0] round_x0_debug, round_x1_debug, round_x2_debug, round_x3_debug, round_x4_debug;
-/* verilator lint_on UNUSEDSIGNAL */
-
-    //5 shift register d'uscita per leggere i dati in maniera comoda (solo per DEBUG):
-    sipo_debug #(
-        .WORD_SIZE(WORD_SIZE),
-        .d(d),
-        .PAR(PAR)
-    ) sipo_reg_x0_debug (
-        .clk(clk),
-        .reset_n(reset_n),
-        .shift_en(shift_enable_sipo),
-        .in_shifted_dplus1(mux_1st_x0),
-        .in_shifted_1bit(mux_1st_x0[0+:PAR]),
-        .shift_type(shift_type),
-        .last_cycle(last_cycle_sipo),
-        .data_out(round_x0_debug)
-    );
-
-    sipo_debug #(
-        .WORD_SIZE(WORD_SIZE),
-        .d(d),
-        .PAR(PAR)
-    ) sipo_reg_x1_debug (
-        .clk(clk),
-        .reset_n(reset_n),
-        .shift_en(shift_enable_sipo),
-        .in_shifted_dplus1(mux_1st_x1),
-        .in_shifted_1bit(mux_1st_x1[0+:PAR]),
-        .last_cycle(last_cycle_sipo),
-        .shift_type(shift_type),
-        .data_out(round_x1_debug)
-    );
-    
-    sipo_debug #(
-        .WORD_SIZE(WORD_SIZE),
-        .d(d),
-        .PAR(PAR)
-    ) sipo_reg_x2_debug (
-        .clk(clk),
-        .reset_n(reset_n),
-        .shift_en(shift_enable_sipo),
-        .in_shifted_dplus1(mux_1st_x2),
-        .in_shifted_1bit(mux_1st_x2[0+:PAR]),
-        .last_cycle(last_cycle_sipo),
-        .shift_type(shift_type),
-        .data_out(round_x2_debug)
-    );
-
-    sipo_debug #(
-        .WORD_SIZE(WORD_SIZE),
-        .d(d),
-        .PAR(PAR)
-    ) sipo_reg_x3_debug (
-        .clk(clk),
-        .reset_n(reset_n),
-        .shift_en(shift_enable_sipo),
-        .in_shifted_dplus1(mux_1st_x3),
-        .in_shifted_1bit(mux_1st_x3[0+:PAR]),
-        .last_cycle(last_cycle_sipo),
-        .shift_type(shift_type),
-        .data_out(round_x3_debug)
-    );
-
-    sipo_debug #(
-        .WORD_SIZE(WORD_SIZE),
-        .d(d),
-        .PAR(PAR)
-    ) sipo_reg_x4_debug (
-        .clk(clk),
-        .reset_n(reset_n),
-        .shift_en(shift_enable_sipo),
-        .in_shifted_dplus1(mux_1st_x4),
-        .in_shifted_1bit(mux_1st_x4[0+:PAR]),
-        .last_cycle(last_cycle_sipo),
-        .shift_type(shift_type),
-        .data_out(round_x4_debug)
     );
 
     // Input Network : divido i segnali nelle 5 componenti: x0,x1,x2,x3,x4
@@ -339,8 +198,8 @@ module ascon_top #(
     for (i_input_net = 0; i_input_net < d+1; i_input_net++) begin : mux_logic
 
         assign rc_block[i_input_net] = (sel_masked_round) 
-        ? round_constant_padded[bit_counter*PAR +: PAR]
-        : round_constant_padded[((d+1)*bit_counter*PAR + i_input_net*PAR )+:PAR];
+        ? round_constant_padded[unsigned'((bit_counter * PAR)) +: PAR]
+        : round_constant_padded[unsigned'((unsigned'((d+1)) * unsigned'(bit_counter) * PAR) + unsigned'((i_input_net * PAR))) +: PAR];
 
         if (PAR*(d+1) <= 64) begin : gen_normal
             assign mux_1st_x0[i_input_net*PAR+:PAR] = state_reg_out_x0[i_input_net*PAR+:PAR];
@@ -372,11 +231,7 @@ module ascon_top #(
     logic [PAR*COL_SIZE-1:0] shares_in; 
     //Ho bisogno di selezionare i 5*PAR bit della prima input network, quindi i primi PAR di ogni componente:
     assign shares_in = {mux_1st_x4[0+:PAR], mux_1st_x3[0+:PAR], mux_1st_x2[0+:PAR], mux_1st_x1[0+:PAR], mux_1st_x0[0+:PAR]}; //concateno i segnali che vanno mascherati
-    shareCreator #(
-        .d(d),
-        .COL_SIZE(COL_SIZE),
-        .PAR(PAR)
-    )share_creator(
+    shareCreator share_creator(
         .data_in(shares_in),
         .random_masks(random_masks),
         .shares_out(shares_out)
@@ -448,18 +303,16 @@ module ascon_top #(
 
     //collego gli input alla s-box, vorrei usare il changing of the guards:
     //NOTA IL CHANGING OF THE GUARDS E' SUPPORTATO SOLO PER IL GRADO 2 (in questo codice)
-    logic [(d+1)*d/2-1:0] fresh_r;
+    
     genvar p;
     generate
         if (d == 2) begin : gen_cog
             
             for (p = 0; p < PAR; p++) begin : gen_sbox
                 //Funziona perchè ad ogni nuova permutazione i bit sono già shiftati dentro lo state_reg
+                logic [(d+1)*d/2-1:0] fresh_r;
                 assign fresh_r = { state_reg_out[(35+p)%64], state_reg_out[(37+p)%64], state_reg_out[(11+p)%64]  };
-                ascon_sbox_d2 #(
-                    .d(d),
-                    .num_shares(d+1)
-                ) u_sbox (
+                ascon_sbox_d2 u_sbox (
                     .clk(clk),
                     .x_in(sbox_input[p]),
                     .fresh_r(fresh_r),
@@ -470,12 +323,10 @@ module ascon_top #(
             end
         end else begin : gen_unsupported
             for (p = 0; p < PAR; p++) begin : gen_sbox
+                logic [(d+1)*d/2-1:0] fresh_r;
                 //Funziona perchè ad ogni nuova permutazione i bit sono già shiftati dentro lo state_reg
                 assign fresh_r = random_masks_sbox;
-                ascon_sbox_d2 #(
-                    .d(d),
-                    .num_shares(d+1)
-                ) u_sbox (
+                ascon_sbox_d2 u_sbox (
                     .clk(clk),
                     .x_in(sbox_input[p]),
                     .fresh_r(fresh_r),
@@ -629,16 +480,17 @@ module ascon_top #(
 
     //Gestione del padding:
     always_comb begin
-        if (debug_extra_padding_ff) begin
+        if (extra_padding_ff)  begin//se c'è un padding extra) begin
             data_in_padded = '0;
             data_in_padded = {8'h01, {(2*WORD_SIZE-8){1'b0}}};
         end
         else if (sel_padding) begin
             data_in_padded = '0;
             // Copia i byte validi nei primi byte:
-            for (int i = 0; i < valid_bytes; i++) begin
-                data_in_padded[(127 - i*8) -: 8] = data_in[(127 - i*8) -: 8];
+            for (int unsigned i = 0; i < valid_bytes; i++) begin
+                data_in_padded[127 - i*8 -: 8] = data_in[127 - i*8 -: 8];
             end
+
             // Inserisci il padding (0x01) subito dopo l'ultimo byte valido
             data_in_padded[(127 - valid_bytes*8) -: 8] = 8'h01;
         end else begin
@@ -675,6 +527,8 @@ module ascon_top #(
 
     //Assegnazione del ciphertext:
     assign ciphertext = {state_reg_in_absorb[1], state_reg_in_absorb[0]};
+
+    logic [STATE_WIDTH-1:0] input_state;
 
     always_comb begin //questo devo modificarlo per ottenere solo 2 MUX a 64 e poi 2 MUX a 320 bit guarda pag 14 Generalizzazione metodo matematico tablet!
         unique case ({sel_absorb_data, sel_init_load})
@@ -728,7 +582,7 @@ module ascon_top #(
                                         : linear_diffusion_debug[3];
 
 
-    logic [STATE_WIDTH-1:0] input_state;
+    
     assign input_state = {
         mux_linear_diffusion_out_x4,               // MSB
         mux_linear_diffusion_out_x3,
