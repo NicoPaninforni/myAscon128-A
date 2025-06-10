@@ -524,7 +524,7 @@ if __name__ == "__main__":
     nonce = bytes.fromhex("0f0e0d0c0b0a09080706050403020100")
 
 # Lettura del plaintext (già fatto prima)
-aad, plaintext = read_data_from_file("/mnt/d/Tesi/Ascon128/ascon128a_PAR/data.txt")
+aad, plaintext = read_data_from_file("./build/myascon_ascon_top_1.0.0_0/simulation-verilator/data.txt")
 
 #-----------------STAMPA DI BEBUG-----------------
 #print("🟦 Associated Data (AAD):")

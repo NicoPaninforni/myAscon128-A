@@ -2,33 +2,31 @@
 ****************************************
 check_design summary:
 Version:     R-2020.09-SP2
-Date:        Wed Jun  4 17:37:25 2025
+Date:        Fri Jun  6 15:03:34 2025
 ****************************************
 
                    Name                                            Total
 --------------------------------------------------------------------------------
-Inputs/Outputs                                                    625
-    Unconnected ports (LINT-28)                                     5
+Inputs/Outputs                                                    621
+    Unconnected ports (LINT-28)                                     1
     Feedthrough (LINT-29)                                         300
     Shorted outputs (LINT-31)                                     320
 
-Cells                                                               9
-    Cells do not drive (LINT-1)                                     9
+Cells                                                              11
+    Cells do not drive (LINT-1)                                    11
 --------------------------------------------------------------------------------
 
 Warning: In design 'ascon_top', cell 'C6966' does not drive any nets. (LINT-1)
 Warning: In design 'ascon_top', cell 'C7002' does not drive any nets. (LINT-1)
-Warning: In design 'fsm', cell 'C953' does not drive any nets. (LINT-1)
-Warning: In design 'fsm', cell 'C962' does not drive any nets. (LINT-1)
-Warning: In design 'fsm', cell 'C967' does not drive any nets. (LINT-1)
+Warning: In design 'fsm', cell 'C952' does not drive any nets. (LINT-1)
+Warning: In design 'fsm', cell 'C961' does not drive any nets. (LINT-1)
+Warning: In design 'fsm', cell 'C966' does not drive any nets. (LINT-1)
 Warning: In design 'fsm', cell 'B_65' does not drive any nets. (LINT-1)
 Warning: In design 'fsm', cell 'B_66' does not drive any nets. (LINT-1)
 Warning: In design 'fsm', cell 'B_67' does not drive any nets. (LINT-1)
 Warning: In design 'fsm', cell 'B_68' does not drive any nets. (LINT-1)
-Warning: In design 'fsm', port 'valid_bytes[3]' is not connected to any nets. (LINT-28)
-Warning: In design 'fsm', port 'valid_bytes[2]' is not connected to any nets. (LINT-28)
-Warning: In design 'fsm', port 'valid_bytes[1]' is not connected to any nets. (LINT-28)
-Warning: In design 'fsm', port 'valid_bytes[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'fsm', cell 'C1192' does not drive any nets. (LINT-1)
+Warning: In design 'fsm', cell 'C1210' does not drive any nets. (LINT-1)
 Warning: In design 'ascon_sbox_d2', port 'sel_masked_round' is not connected to any nets. (LINT-28)
 Warning: In design 'shareCreator', input port 'random_masks[299]' is connected directly to output port 'shares_out[329]'. (LINT-29)
 Warning: In design 'shareCreator', input port 'random_masks[298]' is connected directly to output port 'shares_out[328]'. (LINT-29)

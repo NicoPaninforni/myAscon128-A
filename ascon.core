@@ -1,0 +1,121 @@
+CAPI=2:
+
+name: "myascon:ascon_top:1.0.0"
+description: "ASCON hardware implementation - myAscon128-A"
+
+filesets:
+  rtl:
+    files:
+      - rtl/ascon_params.sv
+      - rtl/ascon_top.sv
+      - rtl/circular_shift_register.sv
+      - rtl/fsm.sv
+      - rtl/shift_register.sv
+      - rtl/state_register.sv
+      - rtl/sipo_debug.sv
+      - rtl/register.sv
+      - rtl/ascon_sbox_d2.sv
+      - rtl/shareCreator.sv
+    file_type: "systemVerilogSource"
+
+  tb_cpp:
+    files:
+      - tb/tb_auto.cpp
+      - tb/tb_utils.cpp
+    file_type: "cppSource"
+
+  tb_hdr:
+    files:
+      - tb/tb_utils.h
+    file_type: "user"
+
+  gatelevel_netlist:
+    files:
+      - netlist/ascon_top_syn.v
+    file_type: "verilogSource"
+
+  tb_postsynth_sv:
+    files:
+      - sim_post_synth/tb_ascon_top.sv
+    file_type: "systemVerilogSource"
+
+  lib_cells:
+    files:
+      - /software/dk/tsmc65/digital/Front_End/verilog/tcbn65lplvt_200a/tcbn65lplvt.v
+    file_type: "verilogSource"
+
+
+
+targets:
+  default: &default
+    filesets: [ rtl ]
+    toplevel: "ascon_top"
+
+  simulation:
+    <<: *default
+    description: "Simulation with Verilator + C++ testbench"
+    default_tool: verilator
+    filesets: [ rtl, tb_cpp, tb_hdr ]
+    tools:
+      verilator:
+        verilator_options:
+          - "-Wall"
+          - "--trace"
+          - "--trace-structs"
+          - "--cc"
+          - "--exe"
+          - "-DDEBUG"
+        extra_files:
+          - tb/tb_auto.cpp
+          - tb/tb_utils.cpp
+          - tb/tb_utils.h
+        extra_include_dirs:
+          - "${ROOT}/tb"
+
+# ASIC synthesis
+  synthesis:
+    <<: *default
+    default_tool: design_compiler
+    description: Design Compiler synthesis
+    toplevel: [ascon_top]
+    tools:
+      design_compiler:
+        script_dir: ../../../synth
+        report_dir: report
+        dc_script: synth.tcl
+
+  postsynth_simulation:
+    <<: *default
+    description: Post-synthesis gate-level simulation
+    default_tool: modelsim
+    filesets: [ tb_postsynth_sv, gatelevel_netlist, lib_cells]
+    tools:
+      modelsim:
+        vlog_options:
+          - "-sv"
+          - "-timescale 1ns/1ps"
+          - "+define+POST_SYNTH"
+        vsim_options:
+          - "-t ps"
+          - "-voptargs=+acc"
+          - "-do \"vcd file ../../../sim_post_synth/dump.vcd; vcd add -r /*; run -all; quit\""
+
+
+parameters:
+  d:
+    datatype: int
+    paramtype: vlogparam
+    description: "Parameter d"
+    default: 10
+
+  PAR:
+    datatype: int
+    paramtype: vlogparam
+    description: "Parameter PAR"
+    default: 6
+
+  DEBUG:
+    datatype: bool
+    paramtype: vlogdefine
+    description: "Enable debug mode"
+    default: true

@@ -1,0 +1,78 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : ascon_top
+Version: R-2020.09-SP2
+Date   : Mon Jun  9 18:24:53 2025
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: NCCOM   Library: tcbn65lplvttc
+Wire Load Model Mode: segmented
+
+  Startpoint: gen_unsupported.gen_sbox[4].u_sbox/and_result_reg_reg[1][3][6]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: state_reg/state_reg[1][62]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  register_0         ZeroWireload          tcbn65lplvttc
+  ascon_sbox_d2_4    ZeroWireload          tcbn65lplvttc
+  ascon_sbox_d2_3    ZeroWireload          tcbn65lplvttc
+  ascon_sbox_d2_2    ZeroWireload          tcbn65lplvttc
+  ascon_sbox_d2_1    ZeroWireload          tcbn65lplvttc
+  ascon_sbox_d2_0    ZeroWireload          tcbn65lplvttc
+  ascon_sbox_d2_5    ZeroWireload          tcbn65lplvttc
+  register_1         ZeroWireload          tcbn65lplvttc
+  state_register     ZeroWireload          tcbn65lplvttc
+  ascon_top          ZeroWireload          tcbn65lplvttc
+  fsm                ZeroWireload          tcbn65lplvttc
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  gen_unsupported.gen_sbox[4].u_sbox/and_result_reg_reg[1][3][6]/CP (DFXQD1LVT)
+                                                          0.00 #     0.00 r
+  gen_unsupported.gen_sbox[4].u_sbox/and_result_reg_reg[1][3][6]/Q (DFXQD1LVT)
+                                                          0.08       0.08 r
+  gen_unsupported.gen_sbox[4].u_sbox/U665/ZN (XNR4D1LVT)
+                                                          0.14       0.22 r
+  gen_unsupported.gen_sbox[4].u_sbox/U666/ZN (XNR4D1LVT)
+                                                          0.11       0.33 f
+  gen_unsupported.gen_sbox[4].u_sbox/U667/ZN (XNR3D1LVT)
+                                                          0.07       0.41 r
+  gen_unsupported.gen_sbox[4].u_sbox/U23/ZN (XNR3D0LVT)
+                                                          0.08       0.48 f
+  gen_unsupported.gen_sbox[4].u_sbox/x_out[14] (ascon_sbox_d2_1)
+                                                          0.00       0.48 f
+  U6331/Z (MUX2D0LVT)                                     0.07       0.55 f
+  U6333/ZN (XNR3D1LVT)                                    0.13       0.69 r
+  U6334/ZN (XNR3D1LVT)                                    0.08       0.77 f
+  U4006/ZN (XNR3D0LVT)                                    0.13       0.89 r
+  state_reg/in_shifted_1bit[10] (state_register)          0.00       0.89 r
+  state_reg/U25/Z (CKAN2D0LVT)                            0.05       0.94 r
+  state_reg/U789/ZN (IIND4D1LVT)                          0.04       0.98 r
+  state_reg/state_reg[1][62]/D (DFQD1LVT)                 0.00       0.98 r
+  data arrival time                                                  0.98
+
+  clock clk (rise edge)                                   1.00       1.00
+  clock network delay (ideal)                             0.00       1.00
+  state_reg/state_reg[1][62]/CP (DFQD1LVT)                0.00       1.00 r
+  library setup time                                     -0.02       0.98
+  data required time                                                 0.98
+  --------------------------------------------------------------------------
+  data required time                                                 0.98
+  data arrival time                                                 -0.98
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1

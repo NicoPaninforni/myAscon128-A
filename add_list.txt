@@ -1,5 +1,0 @@
-./ascon_top.sv
-./test_ascon.py
-./tb_auto.cpp
-./tb_utils.cpp
-./run.sh

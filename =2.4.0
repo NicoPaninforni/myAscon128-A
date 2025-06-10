@@ -1,0 +1,33 @@
+Requirement already satisfied: fusesoc in /home/thesis/nico.paninforni/.local/lib/python3.8/site-packages (2.4.3)
+Collecting edalize
+  Downloading edalize-0.6.1-py3-none-any.whl.metadata (8.0 kB)
+Collecting pyparsing>=2.3.1 (from fusesoc)
+  Downloading pyparsing-3.1.4-py3-none-any.whl.metadata (5.1 kB)
+Collecting pyyaml>=6.0 (from fusesoc)
+  Downloading PyYAML-6.0.2-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
+Requirement already satisfied: simplesat>=0.9.1 in /home/thesis/nico.paninforni/.local/lib/python3.8/site-packages (from fusesoc) (0.9.2)
+Requirement already satisfied: fastjsonschema in /home/thesis/nico.paninforni/.local/lib/python3.8/site-packages (from fusesoc) (2.21.1)
+Requirement already satisfied: jsonschema2md in /home/thesis/nico.paninforni/.local/lib/python3.8/site-packages (from fusesoc) (0.9.0)
+Requirement already satisfied: argcomplete in /home/thesis/nico.paninforni/.local/lib/python3.8/site-packages (from fusesoc) (3.6.2)
+Collecting Jinja2>=3 (from edalize)
+  Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting MarkupSafe>=2.0 (from Jinja2>=3->edalize)
+  Downloading MarkupSafe-2.1.5-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (3.0 kB)
+Collecting attrs>=17.4.0 (from simplesat>=0.9.1->fusesoc)
+  Downloading attrs-25.3.0-py3-none-any.whl.metadata (10 kB)
+Collecting okonomiyaki>=0.16.6 (from simplesat>=0.9.1->fusesoc)
+  Downloading okonomiyaki-3.0.0-py2.py3-none-any.whl.metadata (16 kB)
+Collecting six>=1.10.0 (from simplesat>=0.9.1->fusesoc)
+  Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Downloading edalize-0.6.1-py3-none-any.whl (170 kB)
+Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+Downloading pyparsing-3.1.4-py3-none-any.whl (104 kB)
+Downloading PyYAML-6.0.2-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (746 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 746.5/746.5 kB 6.7 MB/s eta 0:00:00
+Downloading attrs-25.3.0-py3-none-any.whl (63 kB)
+Downloading MarkupSafe-2.1.5-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (26 kB)
+Downloading okonomiyaki-3.0.0-py2.py3-none-any.whl (8.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.4/8.4 MB 6.5 MB/s eta 0:00:00
+Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+Installing collected packages: six, pyyaml, pyparsing, okonomiyaki, MarkupSafe, attrs, Jinja2, edalize
+Successfully installed Jinja2-3.1.6 MarkupSafe-2.1.5 attrs-25.3.0 edalize-0.6.1 okonomiyaki-3.0.0 pyparsing-3.1.4 pyyaml-6.0.2 six-1.17.0
