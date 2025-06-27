@@ -5,6 +5,7 @@ analyze -format sverilog -define { } -work work src/myascon_ascon_top_1.0.0_0/rt
 analyze -format sverilog -define { } -work work src/myascon_ascon_top_1.0.0_0/rtl/ascon_top.sv
 analyze -format sverilog -define { } -work work src/myascon_ascon_top_1.0.0_0/rtl/circular_shift_register.sv
 analyze -format sverilog -define { } -work work src/myascon_ascon_top_1.0.0_0/rtl/fsm.sv
+analyze -format sverilog -define { } -work work src/myascon_ascon_top_1.0.0_0/rtl/lfsr.sv
 analyze -format sverilog -define { } -work work src/myascon_ascon_top_1.0.0_0/rtl/shift_register.sv
 analyze -format sverilog -define { } -work work src/myascon_ascon_top_1.0.0_0/rtl/state_register.sv
 analyze -format sverilog -define { } -work work src/myascon_ascon_top_1.0.0_0/rtl/sipo_debug.sv

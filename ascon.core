@@ -10,6 +10,7 @@ filesets:
       - rtl/ascon_top.sv
       - rtl/circular_shift_register.sv
       - rtl/fsm.sv
+      - rtl/lfsr.sv
       - rtl/shift_register.sv
       - rtl/state_register.sv
       - rtl/sipo_debug.sv
@@ -44,7 +45,24 @@ filesets:
       - /software/dk/tsmc65/digital/Front_End/verilog/tcbn65lplvt_200a/tcbn65lplvt.v
     file_type: "verilogSource"
 
+  rtl-fpga-common:
+    files:
+    - fpga/cdc_pulse.v
+    - fpga/clocks.v
+    - fpga/cw305_usb_reg_fe.v
+    file_type: verilogSource
 
+  rtl-fpga-ascon:
+    files:
+    - fpga/cw305_ascon_defines.v
+    - fpga/cw305_reg_ascon.v
+    - fpga/cw305_top.v
+    file_type: verilogSource
+
+  xdc-fpga-cw305:
+    files:
+    - fpga/cw305.xdc
+    file_type: xdc
 
 targets:
   default: &default
@@ -100,6 +118,30 @@ targets:
           - "-voptargs=+acc"
           - "-do \"vcd file ../../../sim_post_synth/dump.vcd; vcd add -r /*; run -all; quit\""
 
+# ASCON FPGA synthesis on CW305 board
+  cw305-ascon:
+    <<: *default
+    default_tool: vivado
+    filesets_append:
+    - rtl-fpga-common
+    - rtl-fpga-ascon
+    - xdc-fpga-cw305
+    parameters:
+    - asip_impl ? (ASIP_IMPL=true)
+    - ascon_init ? (ASCON_INIT=true)
+    - ascon_lut ? (ASCON_LUT=true)
+    - ascon_comb ? (ASCON_HW=true)
+    - sbox_standard ? (SBOX_ASCON=true)
+    - sbox_bilgin ? (SBOX_BILGIN=true)
+    - sbox_allouzi ? (SBOX_ALLOUZI=true)
+    - sbox_lu_4 ? (SBOX_LU_4=true)
+    - sbox_lu_5 ? (SBOX_LU_5=true)
+    - sbox_lu_6 ? (SBOX_LU_6=true)
+    - sbox_lu_7 ? (SBOX_LU_7=true)
+    tools:
+      vivado:
+        part: xc7a100tftg256-2
+    toplevel: [cw305_top]
 
 parameters:
   d:
@@ -119,3 +161,59 @@ parameters:
     paramtype: vlogdefine
     description: "Enable debug mode"
     default: true
+
+  ASIP_IMPL:
+    datatype: bool
+    paramtype: vlogdefine
+    description: Select ASIP implementation of crypto target
+    default: false
+  ASCON_INIT:
+    datatype: bool
+    paramtype: vlogdefine
+    description: Select implementation of only intial round of ASCON
+    default: false
+  ASCON_LUT:
+    datatype: bool
+    paramtype: vlogdefine
+    description: Select LUT implementation of ASCON SBOX
+    default: false
+  ASCON_HW:
+    datatype: bool
+    paramtype: vlogdefine
+    description: Select hardware implementation of ASCON SBOX
+    default: false
+  SBOX_ASCON:
+    datatype: bool
+    paramtype: vlogdefine
+    description: Select standard SBOX implementation of ASCON
+    default: false
+  SBOX_BILGIN:
+    datatype: bool
+    paramtype: vlogdefine
+    description: Select Bilgin's SBOX implementation
+    default: false
+  SBOX_ALLOUZI:
+    datatype: bool
+    paramtype: vlogdefine
+    description: Select Allouzi's SBOX implementation
+    default: false
+  SBOX_LU_4:
+    datatype: bool
+    paramtype: vlogdefine
+    description: Select LU 4 LUT implementation of SBOX
+    default: false
+  SBOX_LU_5:
+    datatype: bool
+    paramtype: vlogdefine
+    description: Select LU 5 LUT implementation of SBOX
+    default: false
+  SBOX_LU_6:
+    datatype: bool
+    paramtype: vlogdefine
+    description: Select LU 6 LUT implementation of SBOX
+    default: false
+  SBOX_LU_7:
+    datatype: bool
+    paramtype: vlogdefine
+    description: Select LU 7 LUT implementation of SBOX
+    default: false

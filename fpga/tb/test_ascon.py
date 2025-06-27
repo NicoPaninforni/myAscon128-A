@@ -270,8 +270,8 @@ def ascon_process_associated_data(S, b, rate, associateddata):
         a_padded = associateddata + a_padding
 
         # 👇 DEBUG print
-        #print("AD original :", associateddata.hex())
-        #print("AD + padding:", a_padded.hex())
+        print("AD original :", associateddata.hex())
+        print("AD + padding:", a_padded.hex())
 
         for block in range(0, len(a_padded), rate):
             aad_block0 = bytes_to_int(a_padded[block:block+8])

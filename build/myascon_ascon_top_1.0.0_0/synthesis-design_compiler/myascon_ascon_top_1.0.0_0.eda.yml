@@ -30,6 +30,9 @@ files:
   name: src/myascon_ascon_top_1.0.0_0/rtl/fsm.sv
   core: myascon:ascon_top:1.0.0:0
 - file_type: systemVerilogSource
+  name: src/myascon_ascon_top_1.0.0_0/rtl/lfsr.sv
+  core: myascon:ascon_top:1.0.0:0
+- file_type: systemVerilogSource
   name: src/myascon_ascon_top_1.0.0_0/rtl/shift_register.sv
   core: myascon:ascon_top:1.0.0:0
 - file_type: systemVerilogSource

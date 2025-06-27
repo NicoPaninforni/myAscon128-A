@@ -10,6 +10,9 @@ export PATH=/software/x-heep/verilator/4.210/bin:$PATH
 # init design compiler:
 source /eda/scripts/init_design_vision
 
+# init di vivado:
+source /eda/scripts/init_vivado_2022.2
+
 #init questa_sim
 export MODEL_TECH=/eda/Siemens/2024-25/RHELx86/QUESTA-CORE-PRIME_2024.3/questasim/linux_x86_64
 source /eda/scripts/init_questa_2024.3

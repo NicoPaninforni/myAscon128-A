@@ -1,0 +1,72 @@
+version: 0.2.1
+name: myascon_ascon_top_1.0.0_0
+toplevel: ascon_top
+dependencies:
+  myascon:ascon_top:1.0.0:0: []
+cores:
+  myascon:ascon_top:1.0.0:0:
+    core_file: ../../../ascon.core
+    dependencies: []
+parameters: {}
+tool_options:
+  verilator:
+    verilator_options:
+    - -Wall
+    - --trace
+    - --trace-structs
+    - --cc
+    - --exe
+    - -DDEBUG
+    extra_files:
+    - tb/tb_auto.cpp
+    - tb/tb_utils.cpp
+    - tb/tb_utils.h
+    extra_include_dirs:
+    - ${ROOT}/tb
+filters: []
+flow_options: {}
+hooks: {}
+files:
+- file_type: systemVerilogSource
+  name: src/myascon_ascon_top_1.0.0_0/rtl/ascon_params.sv
+  core: myascon:ascon_top:1.0.0:0
+- file_type: systemVerilogSource
+  name: src/myascon_ascon_top_1.0.0_0/rtl/ascon_top.sv
+  core: myascon:ascon_top:1.0.0:0
+- file_type: systemVerilogSource
+  name: src/myascon_ascon_top_1.0.0_0/rtl/circular_shift_register.sv
+  core: myascon:ascon_top:1.0.0:0
+- file_type: systemVerilogSource
+  name: src/myascon_ascon_top_1.0.0_0/rtl/fsm.sv
+  core: myascon:ascon_top:1.0.0:0
+- file_type: systemVerilogSource
+  name: src/myascon_ascon_top_1.0.0_0/rtl/lfsr.sv
+  core: myascon:ascon_top:1.0.0:0
+- file_type: systemVerilogSource
+  name: src/myascon_ascon_top_1.0.0_0/rtl/shift_register.sv
+  core: myascon:ascon_top:1.0.0:0
+- file_type: systemVerilogSource
+  name: src/myascon_ascon_top_1.0.0_0/rtl/state_register.sv
+  core: myascon:ascon_top:1.0.0:0
+- file_type: systemVerilogSource
+  name: src/myascon_ascon_top_1.0.0_0/rtl/sipo_debug.sv
+  core: myascon:ascon_top:1.0.0:0
+- file_type: systemVerilogSource
+  name: src/myascon_ascon_top_1.0.0_0/rtl/register.sv
+  core: myascon:ascon_top:1.0.0:0
+- file_type: systemVerilogSource
+  name: src/myascon_ascon_top_1.0.0_0/rtl/ascon_sbox_d2.sv
+  core: myascon:ascon_top:1.0.0:0
+- file_type: systemVerilogSource
+  name: src/myascon_ascon_top_1.0.0_0/rtl/shareCreator.sv
+  core: myascon:ascon_top:1.0.0:0
+- file_type: cppSource
+  name: src/myascon_ascon_top_1.0.0_0/tb/tb_auto.cpp
+  core: myascon:ascon_top:1.0.0:0
+- file_type: cppSource
+  name: src/myascon_ascon_top_1.0.0_0/tb/tb_utils.cpp
+  core: myascon:ascon_top:1.0.0:0
+- file_type: user
+  name: src/myascon_ascon_top_1.0.0_0/tb/tb_utils.h
+  core: myascon:ascon_top:1.0.0:0
+vpi: []

@@ -1,6 +1,6 @@
 #@ # 
 #@ # Running dc_shell Version R-2020.09-SP2 for linux64 -- Dec 03, 2020
-#@ # Date:   Mon Jun  9 18:22:05 2025
+#@ # Date:   Thu Jun 12 20:56:29 2025
 #@ # Run by: nico.paninforni@lugdush
 #@ 
 
@@ -6742,6 +6742,7 @@ source -echo -verbose /home/thesis/nico.paninforni/progetti_hdl/myAscon128-A/bui
 #@ analyze -format sverilog -define { } -work work src/myascon_ascon_top_1.0.0_0/rtl/ascon_top.sv
 #@ analyze -format sverilog -define { } -work work src/myascon_ascon_top_1.0.0_0/rtl/circular_shift_register.sv
 #@ analyze -format sverilog -define { } -work work src/myascon_ascon_top_1.0.0_0/rtl/fsm.sv
+#@ analyze -format sverilog -define { } -work work src/myascon_ascon_top_1.0.0_0/rtl/lfsr.sv
 #@ analyze -format sverilog -define { } -work work src/myascon_ascon_top_1.0.0_0/rtl/shift_register.sv
 #@ analyze -format sverilog -define { } -work work src/myascon_ascon_top_1.0.0_0/rtl/state_register.sv
 #@ analyze -format sverilog -define { } -work work src/myascon_ascon_top_1.0.0_0/rtl/sipo_debug.sv

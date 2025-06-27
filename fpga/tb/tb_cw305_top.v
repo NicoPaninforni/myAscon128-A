@@ -78,10 +78,13 @@ module tb();
 
    int cycle;
    int total_time;
+   bit already_written = 0;
 
    reg [127:0] read_data;
    reg [127:0] expected_cipher = 128'h8a278bf8fa2812bc39e52c76205af377;
    reg [8*25-1:0] dumpfile = "results/tb_half_pipe.fst";
+
+   reg [7:0] status;
 
    `include "tb_cw305_reg_tasks.v"
 
@@ -120,13 +123,41 @@ module tb();
 
       //write_bytes(0, 1, `REG_CRYPT_PRE_EXPAND_KEY, 8'h00);
 
-      write_bytes(0, 16, `REG_CRYPT_TEXTIN, {32'h12345678, 32'habcdef01, 32'h87654321, 32'hdeadbeef});
+      //Invio i dati in big-endian il modulo li converte:
+      write_bytes(0, 16, `REG_CRYPT_TEXTIN, {
+         32'h12345678,    // byte 0..3
+         32'habcdef01,    // byte 4..7
+         32'h87654321,    // byte 8..11
+         32'hdeadbeef     // byte 12..15
+      });
+
+      write_bytes(0, 16, `REG_CRYPT_TEXTIN_BUFFER_MSG, {32'hf1023000, 32'habcd1234, 32'haabbcc11, 32'h12345678});
       write_bytes(0, 1, `REG_CONTROL, 8'h00);
       write_bytes(0, 16, `REG_CRYPT_NONCEIN, {32'h00010203, 32'h04050607, 32'h08090a0b, 32'h0c0d0e0f});
       write_bytes(0, 16, `REG_CRYPT_KEY, {32'h0f0e0d0c, 32'h0b0a0908, 32'h07060504, 32'h03020100});
-      write_bytes(0, 1,  `REG_VALID_BYTES, 8'h10); // Ascon-128
-      write_bytes(0, 1, `REG_CONTROL, 8'h08); //setto key_valid a 1 dopo aver scritto la chiave
+      write_bytes(0, 1,  `REG_VALID_BYTES_AD, 8'h10); 
+      write_bytes(0, 1, `REG_VALID_BYTES_MSG, 8'h10); 
+      write_bytes(0, 1, `REG_CONTROL, 8'h0b); //setto key_valid a 1 dopo aver scritto la chiave
+      write_bytes(0, 1, `REG_CRYPT_GO, 8'h01); // Start a 1
       repeat (50) @(posedge usb_clk);
+
+      // msg_valid = control[0]; // bit 0 del control register indica se i dati sono validi
+      // msg_last = control[1]; // bit 1 del control register indica se il blocco è l'ultimo
+      // msg_eot = control[2]; // bit 2 del control register indica se è l'ultimo blocco
+      // key_valid = control[3]; // bit 3 del control register indica se la chiave è valida
+      // msg_select = control[4]; // bit 4 del control register indica se i dati sono da cifrare o da autenticare
+
+      do begin
+         read_bytes(0, 1, `REG_CRYPT_GO, status);
+         if (status[1] == 1 && !already_written) begin
+            write_bytes(0, 1, `REG_CONTROL, 8'h1F);
+            already_written = 1;
+         end else if (status[1] == 0) begin
+            already_written = 0; // resetto il flag
+         end
+      end while (status[0]);
+
+      
 
       $display("Encrypting via register...");
       write_byte(0, `REG_CRYPT_GO, 0, 1);

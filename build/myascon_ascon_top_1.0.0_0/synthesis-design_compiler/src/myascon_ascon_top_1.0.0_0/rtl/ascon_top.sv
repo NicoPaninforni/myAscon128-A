@@ -42,6 +42,8 @@ import ascon_params::STATE_WIDTH;
 import ascon_params::STATE_WIDTH;
 import ascon_params::SHIFT_PAR_D_PLUS_1;
 import ascon_params::NUMBER_BIT_MASK;
+import ascon_params::RAND_WIDTH;
+import ascon_params::LFSR_WIDTH;
 
 module ascon_top (
     input  logic clk,
@@ -64,9 +66,9 @@ module ascon_top (
     input logic [$clog2(2*WORD_SIZE/8):0] valid_bytes,
     input  logic EOT, //fine del messaggio in input
     //In Hardware ascon-sca c'è anche bdi_pad_loc e bdi_valid_bytes per gestire il padding
-    input  logic [d*COL_SIZE*PAR-1:0] random_masks, //per la creazione delle shares poi vedremo bene come crearle
+    //input  logic [d*COL_SIZE*PAR-1:0] random_masks, //per la creazione delle shares poi vedremo bene come crearle
     /* verilator lint_off UNUSED */
-    input  logic [(d+1)*d/2-1:0] random_masks_sbox, //per la s-box
+    //input  logic [(d+1)*d/2-1:0] random_masks_sbox, //per la s-box
     /* verilator lint_on UNUSED */
     output logic ciphertext_valid, //se il messaggio in output è valido
     output logic [2*WORD_SIZE-1:0] ciphertext,
@@ -74,8 +76,7 @@ module ascon_top (
     output logic ready_tag,
     output logic [WORD_SIZE-1:0] tag1,
     output logic [WORD_SIZE-1:0] tag2,
-    output logic ready_for_data,
-    output logic extra_padding_ff //se c'è un padding extra
+    output logic ready_for_data
     `ifdef DEBUG
         , //se c'è il debug
         output logic debug_extra_padding_ff,
@@ -116,7 +117,39 @@ module ascon_top (
         assign debug_linear_diffusion_state4 = linear_diffusion_debug[4]; 
     `endif
 
+    //istanzio lfsr: --------------------------------------------
+    //segnali per lfsr:
+    logic [RAND_WIDTH-1:0] lfsr_out; //output dell'LFSR
+    logic [LFSR_WIDTH-1:0] lfsr_state_in;
+    logic [LFSR_WIDTH-1:0] lfsr_state_out;
+
+    lfsr lfst_inst (
+        .data_in ({RAND_WIDTH{1'b0}}),
+        .state_in    (lfsr_state_in),
+        .state_out   (lfsr_state_out),
+        .data_out    (lfsr_out)
+    );
+
+    //segnali di randomicità:
+    logic [d*COL_SIZE*PAR-1:0] random_masks; //maschere casuali per la creazione delle shares
+    logic [(d+1)*d/2-1:0] random_masks_sbox; //maschere casuali per la s-box
+
+    assign random_masks = lfsr_out[0+:d*COL_SIZE*PAR]; //prendo i primi d*COL_SIZE*PAR bit dell'LFSR
+    assign random_masks_sbox = lfsr_out[d*COL_SIZE*PAR+:((d+1)*d/2)]; //prendo i successivi (d+1)*d/2 bit dell'LFSR
+
+    always_ff @(posedge clk or negedge reset_n) begin
+    if (!reset_n)
+        lfsr_state_in <= 31'h1234567;  // tipo 32'hCAFEBABE
+    else
+        lfsr_state_in <= lfsr_state_out;
+    end
+
+
+
+
+
     //segnali per fsm:
+    logic extra_padding_ff; //se devo fare il padding extra
     logic shift_en, shift_type, write_en;
     logic last_cycle;
     logic reg_key1_load, reg_key2_load;

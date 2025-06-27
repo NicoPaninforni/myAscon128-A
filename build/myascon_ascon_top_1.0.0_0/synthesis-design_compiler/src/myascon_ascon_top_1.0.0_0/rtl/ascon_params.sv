@@ -26,5 +26,25 @@ package ascon_params;
     parameter int SHIFT_WIDTH = num_shares * PAR;
     /* verilator lint_off UNUSED */
     parameter int PADDED_WIDTH = ((WORD_SIZE + SHIFT_WIDTH - 1) / SHIFT_WIDTH) * SHIFT_WIDTH;
+    parameter int RAND_WIDTH = d*COL_SIZE*PAR + (d+1)*d/2;
     /* verilator lint_on UNUSED */
+    parameter int DATA_WIDTH       = RAND_WIDTH;
+    parameter bit REVERSE          = 0;
+
+    parameter int LFSR_WIDTH        = 31;
+    parameter     LFSR_POLY         = 31'h10000001;
+    parameter     LFSR_FEED_FORWARD = 0;
+
+    // Configuration enums
+    parameter int STYLE_AUTO      = 0;
+    parameter int STYLE_LOOP      = 1;
+    parameter int STYLE_REDUCTION = 2;
+
+    parameter int CFG_FIBONACCI   = 0;
+    parameter int CFG_GALOIS      = 1;
+
+    // Scegli stile e configurazione
+    parameter int STYLE = STYLE_LOOP;
+    parameter int LFSR_CONFIG = CFG_FIBONACCI;
+
 endpackage

@@ -2,7 +2,7 @@
 # ** Warning: (vlib-34) Library already exists at "work".
 # Errors: 0, Warnings: 1
 # QuestaSim-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
-# Start time: 16:27:38 on Jun 26,2025
+# Start time: 15:27:44 on Jun 27,2025
 # vlog -sv "+incdir+.." "+define+TB" tb_cw305_top.v ../cw305_top.v ../cw305_reg_ascon.v ../cw305_usb_reg_fe.v ../cdc_pulse.v ../clocks.v xilinx_primitives_stub.v ../../rtl/ascon_params.sv ../../rtl/ascon_sbox_d2.sv ../../rtl/fsm.sv ../../rtl/lfsr.sv ../../rtl/register.sv ../../rtl/shareCreator.sv ../../rtl/sipo_debug.sv ../../rtl/state_register.sv ../../rtl/ascon_top.sv ../cw305_ascon_defines.v 
 # -- Compiling module tb
 # -- Compiling module cw305_top
@@ -37,10 +37,10 @@
 # Top level modules:
 # 	tb
 # 	sipo_debug
-# End time: 16:27:38 on Jun 26,2025, Elapsed time: 0:00:00
+# End time: 15:27:44 on Jun 27,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim -voptargs="+acc" work.tb 
-# Start time: 16:27:38 on Jun 26,2025
+# Start time: 15:27:44 on Jun 27,2025
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
 # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
@@ -86,18 +86,9 @@
 # Loading work.ascon_sbox_d2_sv_unit(fast)
 # Loading work.ascon_sbox_d2(fast)
 # Running with seed=1
-# Encrypting via register...
-# ERROR: expected 8a278bf8fa2812bc39e52c76205af377
-#             got xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-# Encrypting via register...
-# ERROR: expected 0efee0bff4cf170752994fb45bd45934
-#             got xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-# Pushing the same word in again 20x:
-# ERROR: expected 0efee0bff4cf170752994fb45bd45934
-#             got xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 # ERROR: global timeout
-# SIMULATION FAILED (4 errors).
-# ** Note: $finish    : tb_cw305_top.v(276)
+# SIMULATION FAILED (1 errors).
+# ** Note: $finish    : tb_cw305_top.v(307)
 #    Time: 10 us  Iteration: 0  Instance: /tb
-# End time: 16:28:26 on Jun 26,2025, Elapsed time: 0:00:48
+# End time: 15:28:31 on Jun 27,2025, Elapsed time: 0:00:47
 # Errors: 0, Warnings: 1
