@@ -1,0 +1,103 @@
+# do vsim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# QuestaSim-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 16:27:38 on Jun 26,2025
+# vlog -sv "+incdir+.." "+define+TB" tb_cw305_top.v ../cw305_top.v ../cw305_reg_ascon.v ../cw305_usb_reg_fe.v ../cdc_pulse.v ../clocks.v xilinx_primitives_stub.v ../../rtl/ascon_params.sv ../../rtl/ascon_sbox_d2.sv ../../rtl/fsm.sv ../../rtl/lfsr.sv ../../rtl/register.sv ../../rtl/shareCreator.sv ../../rtl/sipo_debug.sv ../../rtl/state_register.sv ../../rtl/ascon_top.sv ../cw305_ascon_defines.v 
+# -- Compiling module tb
+# -- Compiling module cw305_top
+# -- Compiling module cw305_reg_ascon
+# -- Compiling module cw305_usb_reg_fe
+# -- Compiling module cdc_pulse
+# -- Compiling module clocks
+# -- Compiling module USR_ACCESSE2
+# -- Compiling module BUFGMUX_CTRL
+# -- Compiling module ODDR
+# -- Compiling module IBUFG
+# -- Compiling module BUFG
+# -- Compiling package ascon_params
+# -- Compiling package ascon_sbox_d2_sv_unit
+# -- Importing package ascon_params
+# -- Compiling module ascon_sbox_d2
+# -- Compiling package fsm_sv_unit
+# -- Compiling module fsm
+# -- Compiling package lfsr_sv_unit
+# -- Compiling module lfsr
+# -- Compiling package register_sv_unit
+# -- Compiling module register
+# -- Compiling package shareCreator_sv_unit
+# -- Compiling module shareCreator
+# -- Compiling package sipo_debug_sv_unit
+# -- Compiling module sipo_debug
+# -- Compiling package state_register_sv_unit
+# -- Compiling module state_register
+# -- Compiling package ascon_top_sv_unit
+# -- Compiling module ascon_top
+# 
+# Top level modules:
+# 	tb
+# 	sipo_debug
+# End time: 16:27:38 on Jun 26,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb 
+# Start time: 16:27:38 on Jun 26,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# //  Questa Sim-64
+# //  Version 2024.3 linux_x86_64 Sep 10 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading sv_std.std
+# Loading work.tb(fast)
+# Loading work.cw305_top(fast)
+# Loading work.cw305_usb_reg_fe(fast)
+# Loading work.cw305_reg_ascon(fast)
+# Loading work.cdc_pulse(fast)
+# Loading work.USR_ACCESSE2(fast)
+# Loading work.clocks(fast)
+# Loading work.BUFGMUX_CTRL(fast)
+# Loading work.ODDR(fast)
+# Loading work.IBUFG(fast)
+# Loading work.BUFG(fast)
+# Loading work.ascon_params(fast)
+# Loading work.ascon_top_sv_unit(fast)
+# Loading work.ascon_top(fast)
+# Loading work.lfsr_sv_unit(fast)
+# Loading work.lfsr(fast)
+# Loading work.fsm_sv_unit(fast)
+# Loading work.fsm(fast)
+# Loading work.state_register_sv_unit(fast)
+# Loading work.state_register(fast)
+# Loading work.register_sv_unit(fast)
+# Loading work.register(fast)
+# Loading work.shareCreator_sv_unit(fast)
+# Loading work.shareCreator(fast)
+# Loading work.ascon_sbox_d2_sv_unit(fast)
+# Loading work.ascon_sbox_d2(fast)
+# Running with seed=1
+# Encrypting via register...
+# ERROR: expected 8a278bf8fa2812bc39e52c76205af377
+#             got xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+# Encrypting via register...
+# ERROR: expected 0efee0bff4cf170752994fb45bd45934
+#             got xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+# Pushing the same word in again 20x:
+# ERROR: expected 0efee0bff4cf170752994fb45bd45934
+#             got xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+# ERROR: global timeout
+# SIMULATION FAILED (4 errors).
+# ** Note: $finish    : tb_cw305_top.v(276)
+#    Time: 10 us  Iteration: 0  Instance: /tb
+# End time: 16:28:26 on Jun 26,2025, Elapsed time: 0:00:48
+# Errors: 0, Warnings: 1
