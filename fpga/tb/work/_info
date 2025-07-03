@@ -29,6 +29,8 @@ R0
 R1
 R0
 R1
+R0
+R1
 !s11f MIXED_VERSIONS
 13
 !s112 1.1
@@ -38,23 +40,23 @@ R1
 cModel Technology
 Z2 d/home/thesis/nico.paninforni/progetti_hdl/myAscon128-A/fpga/tb
 T_opt1
-!s110 1751030865
-Vn`4T4?XR<45nXUhdl]Uz03
+Z3 !s110 1751530204
+VOQ5BTI627HTzoUB_m:6f:3
 04 2 4 work tb fast 0
-=1-00163e987b81-685e9c50-ef62e-16416
+=1-00163e987b81-68663adc-60442-49e32
 R1
 !s12f OEM100
 !s12b OEM100
 !s124 OEM100
 !s135 nogc
 o-quiet -auto_acc_if_foreign -work work +acc
-Z3 tCvgOpt 0
+Z4 tCvgOpt 0
 n@_opt1
 OL;O;2024.3;79
 Xascon_params
-Z4 2tb_cw305_top.v|../cw305_top.v|../cw305_reg_ascon.v|../cw305_usb_reg_fe.v|../cdc_pulse.v|../clocks.v|xilinx_primitives_stub.v|../../rtl/ascon_params.sv|../../rtl/ascon_sbox_d2.sv|../../rtl/fsm.sv|../../rtl/lfsr.sv|../../rtl/register.sv|../../rtl/shareCreator.sv|../../rtl/sipo_debug.sv|../../rtl/state_register.sv|../../rtl/ascon_top.sv|../cw305_ascon_defines.v
-Z5 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z6 !s110 1751030864
+Z5 2tb_cw305_top.v|../cw305_top.v|../cw305_reg_ascon.v|../cw305_usb_reg_fe.v|../cdc_pulse.v|../clocks.v|xilinx_primitives_stub.v|../../rtl/ascon_params.sv|../../rtl/ascon_sbox_d2.sv|../../rtl/fsm.sv|../../rtl/lfsr.sv|../../rtl/register.sv|../../rtl/shareCreator.sv|../../rtl/sipo_debug.sv|../../rtl/state_register.sv|../../rtl/ascon_top.sv|../cw305_ascon_defines.v
+Z6 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+R3
 !i10b 1
 !s100 7jX26Fm7eZdLT;[da2g8P1
 IUkT4hmPC3Mn>7iYZ`>Jb`1
@@ -63,26 +65,26 @@ R2
 w1749754791
 8../../rtl/ascon_params.sv
 F../../rtl/ascon_params.sv
-!i122 44
+!i122 45
 L0 2 0
 VUkT4hmPC3Mn>7iYZ`>Jb`1
 Z7 OL;L;2024.3;79
 r1
 !s85 0
 31
-Z8 !s108 1751030864.000000
+Z8 !s108 1751530204.000000
 Z9 !s107 tb_cw305_reg_tasks.v|../cw305_ascon_defines.v|../../rtl/ascon_top.sv|../../rtl/state_register.sv|../../rtl/sipo_debug.sv|../../rtl/shareCreator.sv|../../rtl/register.sv|../../rtl/lfsr.sv|../../rtl/fsm.sv|../../rtl/ascon_sbox_d2.sv|../../rtl/ascon_params.sv|xilinx_primitives_stub.v|../clocks.v|../cdc_pulse.v|../cw305_usb_reg_fe.v|../cw305_reg_ascon.v|../cw305_top.v|tb_cw305_top.v|
 Z10 !s90 -sv|+incdir+..|+define+TB|tb_cw305_top.v|../cw305_top.v|../cw305_reg_ascon.v|../cw305_usb_reg_fe.v|../cdc_pulse.v|../clocks.v|xilinx_primitives_stub.v|../../rtl/ascon_params.sv|../../rtl/ascon_sbox_d2.sv|../../rtl/fsm.sv|../../rtl/lfsr.sv|../../rtl/register.sv|../../rtl/shareCreator.sv|../../rtl/sipo_debug.sv|../../rtl/state_register.sv|../../rtl/ascon_top.sv|../cw305_ascon_defines.v|
 !i113 0
 Z11 o-sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 Z12 !s92 -sv +incdir+.. +define+TB -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R3
-vascon_sbox_d2
 R4
+vascon_sbox_d2
 R5
+R6
 Z13 DXx4 work 12 ascon_params 0 22 UkT4hmPC3Mn>7iYZ`>Jb`1
 DXx4 work 21 ascon_sbox_d2_sv_unit 0 22 <^IiVj79I0f;27C89LWHT2
-R6
+R3
 Z14 VDg1SIo80bB@j0V0VzS_@n1
 r1
 !s85 0
@@ -95,7 +97,7 @@ R2
 Z15 w1749130529
 Z16 8../../rtl/ascon_sbox_d2.sv
 Z17 F../../rtl/ascon_sbox_d2.sv
-!i122 44
+!i122 45
 L0 24 127
 R7
 31
@@ -105,12 +107,12 @@ R10
 !i113 0
 R11
 R12
-R3
-Xascon_sbox_d2_sv_unit
 R4
+Xascon_sbox_d2_sv_unit
 R5
-R13
 R6
+R13
+R3
 V<^IiVj79I0f;27C89LWHT2
 r1
 !s85 0
@@ -123,7 +125,7 @@ R2
 R15
 R16
 R17
-!i122 44
+!i122 45
 L0 21 0
 R7
 31
@@ -133,13 +135,13 @@ R10
 !i113 0
 R11
 R12
-R3
-vascon_top
 R4
+vascon_top
 R5
+R6
 R13
 DXx4 work 17 ascon_top_sv_unit 0 22 NcglH2I_Yj95T]IU]o:^a2
-R6
+R3
 R14
 r1
 !s85 0
@@ -152,7 +154,7 @@ R2
 Z18 w1751027639
 Z19 8../../rtl/ascon_top.sv
 Z20 F../../rtl/ascon_top.sv
-!i122 44
+!i122 45
 L0 48 706
 R7
 31
@@ -162,12 +164,12 @@ R10
 !i113 0
 R11
 R12
-R3
-Xascon_top_sv_unit
 R4
+Xascon_top_sv_unit
 R5
-R13
 R6
+R13
+R3
 VNcglH2I_Yj95T]IU]o:^a2
 r1
 !s85 0
@@ -180,7 +182,7 @@ R2
 R18
 R19
 R20
-!i122 44
+!i122 45
 L0 37 0
 R7
 31
@@ -190,20 +192,20 @@ R10
 !i113 0
 R11
 R12
-R3
-vBUFG
 R4
+vBUFG
 R5
 R6
+R3
 !i10b 1
 !s100 VhWWSX:714S:]9K@zU@Zd0
 I]<7LLazWF9_@9Za3Jm=mo0
 S1
 R2
-Z21 w1750931968
+Z21 w1751530192
 Z22 8xilinx_primitives_stub.v
 Z23 Fxilinx_primitives_stub.v
-!i122 44
+!i122 45
 L0 24 3
 R14
 R7
@@ -216,12 +218,12 @@ R10
 !i113 0
 R11
 R12
-R3
+R4
 n@b@u@f@g
 vBUFGMUX_CTRL
-R4
 R5
 R6
+R3
 !i10b 1
 !s100 76_7o7=ED7N9XQP63T4nB0
 IY8?QC?V7j6oS3G`L1DBTJ1
@@ -230,7 +232,7 @@ R2
 R21
 R22
 R23
-!i122 44
+!i122 45
 L0 12 3
 R14
 R7
@@ -243,21 +245,21 @@ R10
 !i113 0
 R11
 R12
-R3
+R4
 n@b@u@f@g@m@u@x_@c@t@r@l
 vcdc_pulse
-R4
 R5
 R6
+R3
 !i10b 1
 !s100 Em@Gcf1VFH^L=VFFeMLIc2
 Ic[2nR?bDT<2JG=39IRTVI1
 S1
 R2
-Z24 w1749834926
+R21
 8../cdc_pulse.v
 F../cdc_pulse.v
-!i122 44
+!i122 45
 L0 23 45
 R14
 R7
@@ -270,20 +272,20 @@ R10
 !i113 0
 R11
 R12
-R3
-vclocks
 R4
+vclocks
 R5
 R6
+R3
 !i10b 1
 !s100 oOKG`ePN:ZHf;bmNXknj12
 IK>Qfjmo=mMzK6JWC`lEo;1
 S1
 R2
-R24
+R21
 8../clocks.v
 F../clocks.v
-!i122 44
+!i122 45
 L0 31 65
 R14
 R7
@@ -296,21 +298,21 @@ R10
 !i113 0
 R11
 R12
-R3
-vcw305_reg_ascon
 R4
+vcw305_reg_ascon
 R5
 R6
+R3
 !i10b 1
-!s100 fINEJc59FR@J0K??g:gN;0
-IR7k@4;l4Ki?HTR]@ffRUj0
+!s100 HOg8^4E_fRiGJ6Z^WPbiS3
+I[VN3J06h6PomMoNS<SFno3
 S1
 R2
-w1751028635
+R21
 8../cw305_reg_ascon.v
 F../cw305_reg_ascon.v
-!i122 44
-L0 32 280
+!i122 45
+Z24 L0 32 289
 R14
 R7
 r1
@@ -322,21 +324,21 @@ R10
 !i113 0
 R11
 R12
-R3
-vcw305_top
 R4
+vcw305_top
 R5
 R6
+R3
 !i10b 1
-!s100 [il6aYhS;_eKUFNh^dJoE1
-I:3@D:bj9AWKXMaz;ic9m33
+!s100 Uj1oMoV5Vm`EzWnPX7bE:1
+ImaFHV5bZ4zZJmjBN88JjS1
 S1
 R2
-w1751028970
+R21
 8../cw305_top.v
 F../cw305_top.v
-!i122 44
-L0 32 289
+!i122 45
+R24
 R14
 R7
 r1
@@ -348,20 +350,20 @@ R10
 !i113 0
 R11
 R12
-R3
-vcw305_usb_reg_fe
 R4
+vcw305_usb_reg_fe
 R5
 R6
+R3
 !i10b 1
 !s100 1jlzTbAAl@OIg2J7AAhkG2
 I_g22ff99IX[lBQkc>^j4G2
 S1
 R2
-R24
+R21
 8../cw305_usb_reg_fe.v
 F../cw305_usb_reg_fe.v
-!i122 44
+!i122 45
 L0 30 77
 R14
 R7
@@ -374,13 +376,13 @@ R10
 !i113 0
 R11
 R12
-R3
-vfsm
 R4
+vfsm
 R5
+R6
 R13
 DXx4 work 11 fsm_sv_unit 0 22 WUOZ1obCX4TB92KF[YkIP0
-R6
+R3
 R14
 r1
 !s85 0
@@ -393,7 +395,7 @@ R2
 Z25 w1751027128
 Z26 8../../rtl/fsm.sv
 Z27 F../../rtl/fsm.sv
-!i122 44
+!i122 45
 L0 22 556
 R7
 31
@@ -403,12 +405,12 @@ R10
 !i113 0
 R11
 R12
-R3
-Xfsm_sv_unit
 R4
+Xfsm_sv_unit
 R5
-R13
 R6
+R13
+R3
 VWUOZ1obCX4TB92KF[YkIP0
 r1
 !s85 0
@@ -421,7 +423,7 @@ R2
 R25
 R26
 R27
-!i122 44
+!i122 45
 L0 16 0
 R7
 31
@@ -431,11 +433,11 @@ R10
 !i113 0
 R11
 R12
-R3
-vIBUFG
 R4
+vIBUFG
 R5
 R6
+R3
 !i10b 1
 !s100 AM^X2;NWZDC9X;FQie60c3
 IXLjakeLY7D=_Ic8_]:lFe3
@@ -444,7 +446,7 @@ R2
 R21
 R22
 R23
-!i122 44
+!i122 45
 L0 20 3
 R14
 R7
@@ -457,14 +459,14 @@ R10
 !i113 0
 R11
 R12
-R3
+R4
 n@i@b@u@f@g
 vlfsr
-R4
 R5
+R6
 R13
 DXx4 work 12 lfsr_sv_unit 0 22 @DLF?BIXgXF<[;iT[>EiD0
-R6
+R3
 R14
 r1
 !s85 0
@@ -477,7 +479,7 @@ R2
 Z28 w1749750950
 Z29 8../../rtl/lfsr.sv
 Z30 F../../rtl/lfsr.sv
-!i122 44
+!i122 45
 L0 47 408
 R7
 31
@@ -487,12 +489,12 @@ R10
 !i113 0
 R11
 R12
-R3
-Xlfsr_sv_unit
 R4
+Xlfsr_sv_unit
 R5
-R13
 R6
+R13
+R3
 V@DLF?BIXgXF<[;iT[>EiD0
 r1
 !s85 0
@@ -505,7 +507,7 @@ R2
 R28
 R29
 R30
-!i122 44
+!i122 45
 L0 34 0
 R7
 31
@@ -515,11 +517,11 @@ R10
 !i113 0
 R11
 R12
-R3
-vODDR
 R4
+vODDR
 R5
 R6
+R3
 !i10b 1
 !s100 CJ=Roz`eRI=aJV4l3lVF01
 IS`j_jNOAeGk7jDQAk9F3[1
@@ -528,7 +530,7 @@ R2
 R21
 R22
 R23
-!i122 44
+!i122 45
 L0 16 3
 R14
 R7
@@ -541,14 +543,14 @@ R10
 !i113 0
 R11
 R12
-R3
+R4
 n@o@d@d@r
 vregister
-R4
 R5
+R6
 R13
 DXx4 work 16 register_sv_unit 0 22 =bYA4YV7Y6:1Ei816j2?Y3
-R6
+R3
 R14
 r1
 !s85 0
@@ -561,7 +563,7 @@ R2
 Z31 w1749130475
 Z32 8../../rtl/register.sv
 Z33 F../../rtl/register.sv
-!i122 44
+!i122 45
 L0 3 20
 R7
 31
@@ -571,12 +573,12 @@ R10
 !i113 0
 R11
 R12
-R3
-Xregister_sv_unit
 R4
+Xregister_sv_unit
 R5
-R13
 R6
+R13
+R3
 V=bYA4YV7Y6:1Ei816j2?Y3
 r1
 !s85 0
@@ -589,7 +591,7 @@ R2
 R31
 R32
 R33
-!i122 44
+!i122 45
 Z34 L0 1 0
 R7
 31
@@ -599,13 +601,13 @@ R10
 !i113 0
 R11
 R12
-R3
-vshareCreator
 R4
+vshareCreator
 R5
+R6
 R13
 DXx4 work 20 shareCreator_sv_unit 0 22 5NPW2=4bN6j=bWaolmbcX3
-R6
+R3
 R14
 r1
 !s85 0
@@ -618,7 +620,7 @@ R2
 Z35 w1749130586
 Z36 8../../rtl/shareCreator.sv
 Z37 F../../rtl/shareCreator.sv
-!i122 44
+!i122 45
 L0 37 17
 R7
 31
@@ -628,13 +630,13 @@ R10
 !i113 0
 R11
 R12
-R3
+R4
 nshare@creator
 XshareCreator_sv_unit
-R4
 R5
-R13
 R6
+R13
+R3
 V5NPW2=4bN6j=bWaolmbcX3
 r1
 !s85 0
@@ -647,7 +649,7 @@ R2
 R35
 R36
 R37
-!i122 44
+!i122 45
 L0 33 0
 R7
 31
@@ -657,10 +659,10 @@ R10
 !i113 0
 R11
 R12
-R3
+R4
 nshare@creator_sv_unit
 Xshift_register_sv_unit
-R5
+R6
 R13
 !s110 1750931684
 VGhSf1G6jIkfS0UEcmK3E32
@@ -685,13 +687,13 @@ R7
 !i113 0
 R11
 R12
-R3
-vsipo_debug
 R4
+vsipo_debug
 R5
+R6
 R13
 DXx4 work 18 sipo_debug_sv_unit 0 22 hLM?mFV][6[`PFz2YP;Ue0
-R6
+R3
 R14
 r1
 !s85 0
@@ -704,7 +706,7 @@ R2
 Z38 w1749130432
 Z39 8../../rtl/sipo_debug.sv
 Z40 F../../rtl/sipo_debug.sv
-!i122 44
+!i122 45
 L0 33 67
 R7
 31
@@ -714,12 +716,12 @@ R10
 !i113 0
 R11
 R12
-R3
-Xsipo_debug_sv_unit
 R4
+Xsipo_debug_sv_unit
 R5
-R13
 R6
+R13
+R3
 VhLM?mFV][6[`PFz2YP;Ue0
 r1
 !s85 0
@@ -732,7 +734,7 @@ R2
 R38
 R39
 R40
-!i122 44
+!i122 45
 L0 25 0
 R7
 31
@@ -742,13 +744,13 @@ R10
 !i113 0
 R11
 R12
-R3
-vstate_register
 R4
+vstate_register
 R5
+R6
 R13
 DXx4 work 22 state_register_sv_unit 0 22 8zig>jcFKNcN?2MYn[6SG0
-R6
+R3
 R14
 r1
 !s85 0
@@ -761,7 +763,7 @@ R2
 Z41 w1749130329
 Z42 8../../rtl/state_register.sv
 Z43 F../../rtl/state_register.sv
-!i122 44
+!i122 45
 L0 39 103
 R7
 31
@@ -771,12 +773,12 @@ R10
 !i113 0
 R11
 R12
-R3
-Xstate_register_sv_unit
 R4
+Xstate_register_sv_unit
 R5
-R13
 R6
+R13
+R3
 V8zig>jcFKNcN?2MYn[6SG0
 r1
 !s85 0
@@ -789,7 +791,7 @@ R2
 R41
 R42
 R43
-!i122 44
+!i122 45
 L0 30 0
 R7
 31
@@ -799,22 +801,22 @@ R10
 !i113 0
 R11
 R12
-R3
-vtb
 R4
+vtb
 R5
 R6
+R3
 !i10b 1
-!s100 fLW;9MWHG]Y0R0Y=anMFV0
-I?fZ>6kBYDk5A`_c;Vl9RU3
+!s100 QCdCLd29gdlR[:ZojVM5G3
+I8d3[NW2[2kA8]0d>TSQz13
 S1
 R2
-w1751030859
+R21
 8tb_cw305_top.v
 Ftb_cw305_top.v
 Ftb_cw305_reg_tasks.v
-!i122 44
-L0 33 399
+!i122 45
+L0 33 408
 R14
 R7
 r1
@@ -826,11 +828,11 @@ R10
 !i113 0
 R11
 R12
-R3
-vUSR_ACCESSE2
 R4
+vUSR_ACCESSE2
 R5
 R6
+R3
 !i10b 1
 !s100 i2o:46=Nj=;;3gW02leiK0
 ImAGKjCFWHgbXWl[;fci]l0
@@ -839,7 +841,7 @@ R2
 R21
 R22
 R23
-!i122 44
+!i122 45
 L0 1 9
 R14
 R7
@@ -852,5 +854,5 @@ R10
 !i113 0
 R11
 R12
-R3
+R4
 n@u@s@r_@a@c@c@e@s@s@e2

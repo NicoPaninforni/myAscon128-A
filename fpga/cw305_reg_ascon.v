@@ -103,7 +103,8 @@ module cw305_reg_ascon #(
   reg [7:0]               reg_control;  
   reg [15:0]               reg_valid_bytes_ad;
   reg [15:0]               reg_valid_bytes_msg;
- 
+   reg                     busy_usb;
+
   wire                    reg_crypt_go_pulse_crypt;
   wire [7:0]              status_reg;
   assign status_reg[0] = busy_usb;
@@ -113,7 +114,7 @@ module cw305_reg_ascon #(
   assign status_reg[4] = I_done;
   assign status_reg[7:5] = 3'b000;
 
-  reg                     busy_usb;
+
   reg                     done_r;
   wire                    done_pulse;
   wire                    crypt_go_pulse;
