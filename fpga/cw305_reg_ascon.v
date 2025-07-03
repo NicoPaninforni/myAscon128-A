@@ -193,7 +193,7 @@ module cw305_reg_ascon #(
         `REG_CRYPT_TYPE:      reg_read_data = pCRYPT_TYPE;
         `REG_CRYPT_REV:       reg_read_data = pCRYPT_REV;
         `REG_IDENTIFY:        reg_read_data = pIDENTIFY;
-        `REG_CRYPT_GO: reg_read_data = {6'b0, I_read_data_core, busy_usb}; 
+        `REG_CRYPT_GO: reg_read_data = {3'b0, I_done, I_ready_tag, I_cipherout_valid, I_read_data_core, busy_usb}; 
         `REG_CRYPT_KEY:       reg_read_data = reg_crypt_key[reg_bytecnt*8+:8];
         `REG_CRYPT_TEXTIN:    reg_read_data = reg_crypt_textin[reg_bytecnt*8+:8];
         `REG_CRYPT_TEXTIN_BUFFER_MSG: reg_read_data = reg_crypt_textin_buffer_msg[reg_bytecnt*8+:8]; // Buffer for textin

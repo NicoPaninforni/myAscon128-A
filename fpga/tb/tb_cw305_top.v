@@ -140,12 +140,21 @@ module tb();
       write_bytes(0, 1, `REG_CONTROL, 8'h0b); //setto key_valid a 1 dopo aver scritto la chiave
       write_bytes(0, 1, `REG_CRYPT_GO, 8'h01); // Start a 1
       repeat (50) @(posedge usb_clk);
-
+      //REG CONTROL:
       // msg_valid = control[0]; // bit 0 del control register indica se i dati sono validi
       // msg_last = control[1]; // bit 1 del control register indica se il blocco è l'ultimo
       // msg_eot = control[2]; // bit 2 del control register indica se è l'ultimo blocco
       // key_valid = control[3]; // bit 3 del control register indica se la chiave è valida
-      // msg_select = control[4]; // bit 4 del control register indica se i dati sono da cifrare o da autenticare
+      // msg_select = control[4]; // bit 4 del control register indica se i dati sono ad o msg
+
+      //REG CRYPT GO(status):
+      // REG_CRYPT_GO:
+      // bit 0: busy (core impegnato non può ricevere i dati)
+      // bit 1: read_data_core (il core a letto i nuovi dati)
+      // bit 2: ciphertext_valid 
+      // bit 3: ready_tag
+      // bit 4: done
+      // bits 5-7: reserved
 
       do begin
          read_bytes(0, 1, `REG_CRYPT_GO, status);

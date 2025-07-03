@@ -520,8 +520,8 @@ if __name__ == "__main__":
     debug = True
     debugpermutation = True
 
-    key = bytes.fromhex("000102030405060708090a0b0c0d0e0f")
-    nonce = bytes.fromhex("0f0e0d0c0b0a09080706050403020100")
+    nonce = bytes.fromhex("000102030405060708090a0b0c0d0e0f")
+    key = bytes.fromhex("0f0e0d0c0b0a09080706050403020100")
 
 # Lettura del plaintext (già fatto prima)
 aad, plaintext = read_data_from_file("data.txt")
@@ -537,7 +537,7 @@ aad, plaintext = read_data_from_file("data.txt")
 #print("  Dati:     ", ' '.join(f"{byte:02x}" for byte in plaintext))
 # ------------------------------------------------
 
-ciphertext = ascon_encrypt(key, nonce, aad, plaintext, variant="Ascon-AEAD128")
+ciphertext = ascon_encrypt(nonce, key, aad, plaintext, variant="Ascon-AEAD128")
 
 # Estrai il tag (ultimi 16 byte)
 tag = ciphertext[-16:]

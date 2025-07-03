@@ -312,7 +312,7 @@ ascon_top u_ascon_top (
 assign crypt_busy     = ~ready_for_data;
 assign crypt_stateout = 320'b0; // da leggere via USB
 assign tio_trigger    = ascon_done;
-
+assign crypt_done = ascon_done;
 assign crypt_cipherout = ciphertext;
 
 `endif
