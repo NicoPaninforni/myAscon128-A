@@ -147,8 +147,8 @@ module tb();
       // key_valid = control[3]; // bit 3 del control register indica se la chiave è valida
       // msg_select = control[4]; // bit 4 del control register indica se i dati sono ad o msg
 
-      //REG CRYPT GO(status):
-      // REG_CRYPT_GO:
+      //REG CRYPT STATUS(status):
+      // REG_CRYPT_STATUS:
       // bit 0: busy (core impegnato non può ricevere i dati)
       // bit 1: read_data_core (il core a letto i nuovi dati)
       // bit 2: ciphertext_valid 
@@ -157,7 +157,7 @@ module tb();
       // bits 5-7: reserved
 
       do begin
-         read_bytes(0, 1, `REG_CRYPT_GO, status);
+         read_bytes(0, 1, `REG_CRYPT_STATUS, status);
          if (status[1] == 1 && !already_written) begin
             write_bytes(0, 1, `REG_CONTROL, 8'h1F);
             already_written = 1;
@@ -370,7 +370,7 @@ module tb();
       busy = 1;
       while (busy == 1) begin
          //$display("checking busy...");
-         read_byte(0, `REG_CRYPT_GO, 0, busy);
+         read_byte(0, `REG_CRYPT_STATUS, 0, busy);
       end
    endtask
 

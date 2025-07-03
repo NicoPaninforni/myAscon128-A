@@ -103,7 +103,15 @@ module cw305_reg_ascon #(
   reg [7:0]               reg_control;  
   reg [15:0]               reg_valid_bytes_ad;
   reg [15:0]               reg_valid_bytes_msg;
+ 
   wire                    reg_crypt_go_pulse_crypt;
+  wire [7:0]              status_reg;
+  assign status_reg[0] = busy_usb;
+  assign status_reg[1] = I_read_data_core;
+  assign status_reg[2] = I_cipherout_valid;
+  assign status_reg[3] = I_ready_tag;
+  assign status_reg[4] = I_done;
+  assign status_reg[7:5] = 3'b000;
 
   reg                     busy_usb;
   reg                     done_r;
@@ -193,7 +201,7 @@ module cw305_reg_ascon #(
         `REG_CRYPT_TYPE:      reg_read_data = pCRYPT_TYPE;
         `REG_CRYPT_REV:       reg_read_data = pCRYPT_REV;
         `REG_IDENTIFY:        reg_read_data = pIDENTIFY;
-        `REG_CRYPT_GO: reg_read_data = {3'b0, I_done, I_ready_tag, I_cipherout_valid, I_read_data_core, busy_usb}; 
+        `REG_CRYPT_STATUS: reg_read_data = status_reg; 
         `REG_CRYPT_KEY:       reg_read_data = reg_crypt_key[reg_bytecnt*8+:8];
         `REG_CRYPT_TEXTIN:    reg_read_data = reg_crypt_textin[reg_bytecnt*8+:8];
         `REG_CRYPT_TEXTIN_BUFFER_MSG: reg_read_data = reg_crypt_textin_buffer_msg[reg_bytecnt*8+:8]; // Buffer for textin
