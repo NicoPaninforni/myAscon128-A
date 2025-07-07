@@ -308,6 +308,8 @@ always_comb begin
     //Load per i registri che contengono la chiave:
     reg_key1_load = 0;
     reg_key2_load = 0;
+    read_data = 0;
+    //segnale per leggere i dati dall'interfaccia esterna read_data = 0; 
 
     number_round = 12;          //Potevano essere definito come parameters avrebbe avuto senso, ma per ora li lascio qui
     number_bits = 0;

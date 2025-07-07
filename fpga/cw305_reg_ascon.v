@@ -107,13 +107,59 @@ module cw305_reg_ascon #(
 
   wire                    reg_crypt_go_pulse_crypt;
   wire [7:0]              status_reg;
-  assign status_reg[0] = busy_usb;
-  assign status_reg[1] = I_read_data_core;
-  assign status_reg[2] = I_cipherout_valid;
-  assign status_reg[3] = I_ready_tag;
-  assign status_reg[4] = I_done;
-  assign status_reg[7:5] = 3'b000;
 
+  reg done_latched, ready_tag_latched, cipherout_valid_latched, read_data_core_latched, busy_usb_latched;
+  reg status_read_ack;
+  //Generazione del segnale stato_read_ack:
+  always @(posedge usb_clk or posedge reset_i) begin
+  if (reset_i)
+    status_read_ack <= 1'b0;
+  else
+    status_read_ack <= (reg_read && reg_addrvalid && reg_address == `REG_CRYPT_STATUS);
+  end
+
+  // Latch the status signals to avoid glitches on the USB interface
+  always @(posedge crypto_clk or posedge reset_i) begin
+    if (reset_i) begin
+      done_latched <= 1'b0;
+      ready_tag_latched <= 1'b0;
+      cipherout_valid_latched <= 1'b0;
+      read_data_core_latched <= 1'b0;
+      busy_usb_latched <= 1'b0;
+    end else begin
+      if (busy_usb)
+        busy_usb_latched <= 1'b1;
+      else if (status_read_ack)
+        busy_usb_latched <= 1'b0;
+      
+      if (I_done)
+        done_latched <= 1'b1;
+      else if (status_read_ack)
+        done_latched <= 1'b0;
+
+      if (I_ready_tag)
+        ready_tag_latched <= 1'b1;
+      else if (status_read_ack)
+        ready_tag_latched <= 1'b0;
+
+      if (I_cipherout_valid)
+        cipherout_valid_latched <= 1'b1;
+      else if (status_read_ack)
+        cipherout_valid_latched <= 1'b0;
+
+      if (I_read_data_core)
+        read_data_core_latched <= 1'b1;
+      else if (status_read_ack)
+        read_data_core_latched <= 1'b0;
+    end
+  end
+
+  assign status_reg[0] = busy_usb_latched;
+  assign status_reg[1] = read_data_core_latched;
+  assign status_reg[2] = cipherout_valid_latched;
+  assign status_reg[3] = ready_tag_latched;
+  assign status_reg[4] = done_latched;
+  assign status_reg[7:5] = 3'b000;
 
   reg                     done_r;
   wire                    done_pulse;

@@ -1,4 +1,4 @@
-s#Lo script di setup_env.sh deve essere lanciato con:
+#Lo script di setup_env.sh deve essere lanciato con:
 # source setup_env.sh (non con: ./setup_env.sh)
 
 # Activate conda env
