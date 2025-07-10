@@ -41,6 +41,7 @@ class Vascon_top VL_NOT_FINAL {
     VL_IN8(&last_block,0,0);
     VL_IN8(&valid_bytes,4,0);
     VL_IN8(&EOT,0,0);
+    VL_OUTW((&state_reg_out),319,0,10);
     VL_OUT8(&ciphertext_valid,0,0);
     VL_OUTW((&ciphertext),127,0,4);
     VL_OUT8(&done,0,0);
@@ -48,6 +49,7 @@ class Vascon_top VL_NOT_FINAL {
     VL_OUT64(&tag1,63,0);
     VL_OUT64(&tag2,63,0);
     VL_OUT8(&ready_for_data,0,0);
+    VL_OUT8(&read_data,0,0);
     VL_OUT8(&debug_extra_padding_ff,0,0);
     VL_OUT8(&debug_bitcounter,3,0);
     VL_OUT8(&debug_roundcounter,3,0);

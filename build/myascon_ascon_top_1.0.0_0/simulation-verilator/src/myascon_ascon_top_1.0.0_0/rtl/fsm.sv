@@ -50,6 +50,7 @@ module fsm (
 
     output logic ciphertext_valid,
     output logic ready_for_data,
+    output logic read_data,
     output logic extra_padding_ff,
 
     output logic [$clog2(NUMBER_BIT_MASK+1)-1:0] bit_counter, //conta il numero di blocchi di bit processati 
@@ -97,7 +98,8 @@ typedef enum logic [4:0] {
     DONE
 } state_t;
 
-state_t current_state, next_state;
+(* mark_debug = "true" *) state_t current_state;
+state_t next_state;
 
 
 logic [$clog2(NUMBER_BIT_MASK+1)-1:0] number_bits;
@@ -152,7 +154,9 @@ always_comb begin
 
     case (current_state)
         IDLE: begin
-            if (start) next_state = INIT_LOAD;
+            if (start) begin
+                next_state = INIT_LOAD;
+            end
         end
 
         INIT_LOAD: begin
@@ -305,6 +309,8 @@ always_comb begin
     //Load per i registri che contengono la chiave:
     reg_key1_load = 0;
     reg_key2_load = 0;
+    read_data = 0;
+    //segnale per leggere i dati dall'interfaccia esterna read_data = 0; 
 
     number_round = 12;          //Potevano essere definito come parameters avrebbe avuto senso, ma per ora li lascio qui
     number_bits = 0;
@@ -378,6 +384,7 @@ always_comb begin
 
         ABSORB_AD_DATA: begin
             number_bits =  NUMBER_BIT_NOMASK[$clog2(NUMBER_BIT_MASK+1)-1:0]; // numero shift per processare tutti i bit
+            read_data = 1; //segnalo all'esterno che sto legendo i dati
             if (valid_data_in == 0 && extra_padding_ff == 0 ) begin
                 ready_for_data = 1;
             end else if (extra_padding_ff == 1) begin
@@ -444,13 +451,14 @@ always_comb begin
         end
 
         ABSORB_MSG_DATA: begin
+            read_data = 1; //segnalo all'esterno che sto leggendo i dati
             sel_masked_round = 0;
             number_bits =  NUMBER_BIT_NOMASK[$clog2(NUMBER_BIT_MASK+1)-1:0] ; // numero shift per processare tutti i bit
             sel_absorb_data = 1;
             if (valid_data_in == 0 && extra_padding_ff == 0) begin
                 ready_for_data = 1;
             end else if (extra_padding_ff == 1) begin 
-                ciphertext_valid = 1;
+                //ciphertext_valid = 1;
                 write_en = 1;
                 sel_absorb_data = 1;
 

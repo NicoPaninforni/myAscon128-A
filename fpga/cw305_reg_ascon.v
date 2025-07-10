@@ -37,6 +37,7 @@ module cw305_reg_ascon #(
   parameter pCT_WIDTH = 128,
   parameter pKEY_WIDTH = 128,
   parameter pTAG_WIDTH = 128,
+  parameter pPT_LENGTH = 2, //quanti blocchi ha il ciphertext
   parameter pNONCE_WIDTH = 128,
   parameter pSTATE_WIDTH = 320,
   parameter pCRYPT_TYPE = 2,
@@ -74,7 +75,7 @@ module cw305_reg_ascon #(
   input wire I_busy,  /* Crypto busy. */
 
   // register outputs:
-  output wire [7:0] O_control,  // Control register output
+  //output wire [7:0] O_control,  // Control register output
   output wire [4:0] O_valid_bytes_ad,  // Number of valid bytes in textin/cipherin/tagin/noncein
   output wire [4:0] O_valid_bytes_msg,  // Number of valid bytes in textin/cipherin/tagin/noncein
   output reg [4:0] O_clksettings,
@@ -100,13 +101,48 @@ module cw305_reg_ascon #(
   reg  [pNONCE_WIDTH-1:0] reg_crypt_noncein;
   reg  [pSTATE_WIDTH-1:0] reg_crypt_stateout;
   reg                     reg_crypt_go_pulse;
-  reg [7:0]               reg_control;  
+  //reg [7:0]               reg_control;  
   reg [15:0]               reg_valid_bytes_ad;
   reg [15:0]               reg_valid_bytes_msg;
    reg                     busy_usb;
 
   wire                    reg_crypt_go_pulse_crypt;
   wire [7:0]              status_reg;
+
+  // Aggiunta di segnali per FIFO
+  reg [pCT_WIDTH-1:0] cipher_fifo [0:pPT_LENGTH-1];
+  reg [$clog2(pPT_LENGTH):0] fifo_wr_ptr = 0;
+  reg [$clog2(pPT_LENGTH):0] fifo_rd_ptr = 0;
+  reg [pCT_WIDTH-1:0] fifo_out_reg;
+  wire [pCT_WIDTH-1:0] debug_fifo_0 = cipher_fifo[0];
+  wire [pCT_WIDTH-1:0] debug_fifo_1 = cipher_fifo[1];
+
+
+  wire [$clog2(pPT_LENGTH+1)-1:0] fifo_count;
+  assign fifo_count = fifo_wr_ptr - fifo_rd_ptr;
+
+  // Scrittura nella FIFO (clock crypto)
+  always @(posedge crypto_clk or posedge reset_i) begin
+    if (reset_i) begin
+      fifo_wr_ptr <= 0;
+    end else if (I_cipherout_valid && fifo_count < pPT_LENGTH) begin
+      cipher_fifo[fifo_wr_ptr] <= I_cipherout;
+      fifo_wr_ptr <= fifo_wr_ptr + 1;
+    end
+  end
+
+  // Lettura dalla FIFO (clock usb)
+  always @(posedge usb_clk or posedge reset_i) begin
+    if (reset_i) begin
+      fifo_rd_ptr <= 0;
+    end else if (reg_read && reg_addrvalid && reg_address == `REG_CRYPT_FIFO_DATA && fifo_count > 0) begin
+      fifo_out_reg <= cipher_fifo[fifo_rd_ptr];
+      fifo_rd_ptr <= fifo_rd_ptr + 1;
+    end
+  end
+
+
+
 
   reg done_latched, ready_tag_latched, cipherout_valid_latched, read_data_core_latched, busy_usb_latched;
   reg status_read_ack;
@@ -186,10 +222,12 @@ module cw305_reg_ascon #(
   always @(posedge crypto_clk) begin
     if (I_cipherout_valid) begin
       reg_crypt_cipherout <= I_cipherout;
+      
     end
+    reg_crypt_stateout  <= I_stateout;
+
     if (done_pulse) begin
       reg_crypt_textout   <= I_textout;
-      reg_crypt_stateout  <= I_stateout;
     end
   end
 
@@ -233,7 +271,7 @@ module cw305_reg_ascon #(
   assign O_key     = reg_crypt_key_crypt;
   assign O_noncein = reg_crypt_noncein_crypt;
   assign O_start   = crypt_go_pulse || reg_crypt_go_pulse_crypt;
-  assign O_control = reg_control;
+  //assign O_control = reg_control;
   assign O_valid_bytes_ad = reg_valid_bytes_ad;
   assign O_valid_bytes_msg = reg_valid_bytes_msg;
   //////////////////////////////////
@@ -258,6 +296,11 @@ module cw305_reg_ascon #(
         `REG_CRYPT_TEXTOUT:   reg_read_data = reg_crypt_textout_usb[reg_bytecnt*8+:8];
         `REG_CRYPT_CIPHEROUT: reg_read_data = reg_crypt_cipherout_usb[reg_bytecnt*8+:8];
         `REG_CRYPT_STATEOUT:  reg_read_data = reg_crypt_stateout_usb[reg_bytecnt*8+:8];
+        //`REG_CONTROL:         reg_read_data = reg_control;
+        `REG_CRYPT_FIFO_DATA: reg_read_data = fifo_out_reg[reg_bytecnt*8 +: 8];
+        `REG_CRYPT_FIFO_CNT:  reg_read_data = fifo_count;
+        `REG_VALID_BYTES_AD:  reg_read_data = reg_valid_bytes_ad[reg_bytecnt*8+:8];
+        `REG_VALID_BYTES_MSG: reg_read_data = reg_valid_bytes_msg[reg_bytecnt*8+:8];
         `REG_BUILDTIME:       reg_read_data = buildtime[reg_bytecnt*8+:8];
         default:              reg_read_data = 0;
       endcase
@@ -286,7 +329,7 @@ module cw305_reg_ascon #(
           `REG_CRYPT_CIPHERIN: reg_crypt_cipherin[reg_bytecnt*8+:8] <= write_data;
           `REG_CRYPT_KEY:      reg_crypt_key[reg_bytecnt*8+:8] <= write_data;
           `REG_CRYPT_NONCEIN:  reg_crypt_noncein[reg_bytecnt*8+:8] <= write_data;
-          `REG_CONTROL:        reg_control <= write_data;
+          //`REG_CONTROL:        reg_control <= write_data;
           `REG_VALID_BYTES_AD:    reg_valid_bytes_ad[reg_bytecnt*8+:8] <= write_data;
           `REG_VALID_BYTES_MSG:   reg_valid_bytes_msg[reg_bytecnt*8+:8] <= write_data;
         endcase

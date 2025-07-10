@@ -2,7 +2,7 @@
 package ascon_params;
 
     // === Main parameters ===
-    parameter int d          = 10;
+    parameter int d          = 3;
     parameter int PAR        = 6;
     parameter int COL_SIZE   = 5;
     parameter int WORD_SIZE  = 64;
@@ -44,7 +44,7 @@ package ascon_params;
     parameter int CFG_GALOIS      = 1;
 
     // Scegli stile e configurazione
-    parameter int STYLE = STYLE_AUTO;
+    parameter int STYLE = STYLE_LOOP;
     parameter int LFSR_CONFIG = CFG_FIBONACCI;
 
 endpackage

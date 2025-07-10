@@ -32,14 +32,10 @@ VM_CLASSES_FAST += \
 	Vascon_top___024root__3 \
 	Vascon_top___024root__4 \
 	Vascon_top___024root__5 \
-	Vascon_top___024root__6 \
-	Vascon_top___024root__7 \
-	Vascon_top___024root__8 \
 	Vascon_top___024unit \
 
 # Generated module classes, non-fast-path, compile with low/medium optimization
 VM_CLASSES_SLOW += \
-	Vascon_top__ConstPool_0 \
 	Vascon_top___024root__Slow \
 	Vascon_top___024root__1__Slow \
 	Vascon_top___024root__2__Slow \
@@ -56,25 +52,6 @@ VM_CLASSES_SLOW += \
 	Vascon_top___024root__13__Slow \
 	Vascon_top___024root__14__Slow \
 	Vascon_top___024root__15__Slow \
-	Vascon_top___024root__16__Slow \
-	Vascon_top___024root__17__Slow \
-	Vascon_top___024root__18__Slow \
-	Vascon_top___024root__19__Slow \
-	Vascon_top___024root__20__Slow \
-	Vascon_top___024root__21__Slow \
-	Vascon_top___024root__22__Slow \
-	Vascon_top___024root__23__Slow \
-	Vascon_top___024root__24__Slow \
-	Vascon_top___024root__25__Slow \
-	Vascon_top___024root__26__Slow \
-	Vascon_top___024root__27__Slow \
-	Vascon_top___024root__28__Slow \
-	Vascon_top___024root__29__Slow \
-	Vascon_top___024root__30__Slow \
-	Vascon_top___024root__31__Slow \
-	Vascon_top___024root__32__Slow \
-	Vascon_top___024root__33__Slow \
-	Vascon_top___024root__34__Slow \
 	Vascon_top___024unit__Slow \
 
 # Generated support classes, fast-path, compile with highest optimization

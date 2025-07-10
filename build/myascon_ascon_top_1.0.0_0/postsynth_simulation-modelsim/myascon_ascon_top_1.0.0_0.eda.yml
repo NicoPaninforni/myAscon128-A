@@ -1,0 +1,34 @@
+version: 0.2.1
+name: myascon_ascon_top_1.0.0_0
+toplevel: ascon_top
+dependencies:
+  myascon:ascon_top:1.0.0:0: []
+cores:
+  myascon:ascon_top:1.0.0:0:
+    core_file: ../../../ascon.core
+    dependencies: []
+parameters: {}
+tool_options:
+  modelsim:
+    vlog_options:
+    - -sv
+    - -timescale 1ns/1ps
+    - +define+POST_SYNTH
+    vsim_options:
+    - -t ps
+    - -voptargs=+acc
+    - -do "vcd file ../../../sim_post_synth/dump.vcd; vcd add -r /*; run -all; quit"
+filters: []
+flow_options: {}
+hooks: {}
+files:
+- file_type: systemVerilogSource
+  name: src/myascon_ascon_top_1.0.0_0/sim_post_synth/tb_ascon_top.sv
+  core: myascon:ascon_top:1.0.0:0
+- file_type: verilogSource
+  name: src/myascon_ascon_top_1.0.0_0/netlist/ascon_top_syn.v
+  core: myascon:ascon_top:1.0.0:0
+- file_type: verilogSource
+  name: /software/dk/tsmc65/digital/Front_End/verilog/tcbn65lplvt_200a/tcbn65lplvt.v
+  core: myascon:ascon_top:1.0.0:0
+vpi: []

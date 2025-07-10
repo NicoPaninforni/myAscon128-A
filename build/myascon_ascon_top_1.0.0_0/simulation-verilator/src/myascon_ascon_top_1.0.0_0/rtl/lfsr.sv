@@ -300,8 +300,10 @@ function [LFSR_WIDTH+DATA_WIDTH-1:0] lfsr_mask(input [31:0] index);
                 end
             end
         end else begin
+            /*
             $error("Error: unknown configuration setting!");
             $finish;
+            */
         end
 
         // reverse bits if selected
@@ -433,11 +435,11 @@ end else if (STYLE_INT == STYLE_LOOP) begin
 
 end else begin
 
-    initial begin
+    /*initial begin
         $error("Error: unknown style setting!");
         $finish;
     end
-
+    */
 end
 
 endgenerate

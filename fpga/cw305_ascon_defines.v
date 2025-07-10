@@ -47,7 +47,8 @@ either expressed or implied, of NewAE Technology Inc.
 `define REG_VALID_BYTES_MSG 'h11 // 1 byte, numero di byte validi in input 
 `define REG_CRYPT_TEXTIN_BUFFER_MSG 'h12
 `define REG_CRYPT_STATUS 'h13
-
+`define REG_CRYPT_FIFO_DATA 'h14
+`define REG_CRYPT_FIFO_CNT 'h15
 
 
 

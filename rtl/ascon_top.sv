@@ -70,6 +70,7 @@ module ascon_top (
     /* verilator lint_off UNUSED */
     //input  logic [(d+1)*d/2-1:0] random_masks_sbox, //per la s-box
     /* verilator lint_on UNUSED */
+    output logic [STATE_WIDTH-1:0] state_reg_out, //stato del registro di stato
     output logic ciphertext_valid, //se il messaggio in output è valido
     output logic [2*WORD_SIZE-1:0] ciphertext,
     output logic done, //se il processo è finito
@@ -210,7 +211,7 @@ module ascon_top (
     );
     
     //Segnali per lo state_register:
-    logic [STATE_WIDTH-1:0] state_reg_out; //uscita del registro di stato
+
     logic [STATE_WIDTH-1:0] state_reg_in; //input del registro di stato
     logic [SHIFT_PAR_D_PLUS_1*COL_SIZE-1:0] state_reg_out_shiftdplus1;  //uscita shift = parallelismo*(d+1)
     logic [SHIFT_PAR_D_PLUS_1*COL_SIZE-1:0] state_reg_in_shiftdplus1;
@@ -641,8 +642,9 @@ module ascon_top (
         else if (sel_padding) begin
             data_in_padded = '0;
             // Copia i byte validi nei primi byte:
-            for (int unsigned i = 0; i < valid_bytes; i++) begin
-                data_in_padded[127 - i*8 -: 8] = data_in[127 - i*8 -: 8];
+            for (int unsigned i = 0; i < 16; i++) begin
+                if (i < valid_bytes)
+                    data_in_padded[127 - i*8 -: 8] = data_in[127 - i*8 -: 8];
             end
 
             // Inserisci il padding (0x01) subito dopo l'ultimo byte valido

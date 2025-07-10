@@ -84,6 +84,9 @@ module tb();
    reg [127:0] expected_cipher = 128'h8a278bf8fa2812bc39e52c76205af377;
    reg [8*25-1:0] dumpfile = "results/tb_half_pipe.fst";
 
+   reg [127:0] fifo_block;
+   reg [7:0] fifo_cnt;
+
    reg [7:0] status;
 
    `include "tb_cw305_reg_tasks.v"
@@ -158,20 +161,25 @@ module tb();
 
       do begin
          read_bytes(0, 1, `REG_CRYPT_STATUS, status);
-         if (status[1] == 1 && !already_written) begin
-            write_bytes(0, 1, `REG_CONTROL, 8'h1F);
-            already_written = 1;
-         end else if (status[1] == 0) begin
-            already_written = 0; // resetto il flag
-         end
-      end while (status[0]);
+      end while (!status[4]); // Aspetta finché 'done' non è attivo
 
-      
+      // Solo ora leggi la FIFO
+      read_bytes(0, 1, `REG_CRYPT_FIFO_CNT, fifo_cnt);
+      $display("📦 FIFO contiene %0d blocchi", fifo_cnt);
+
+      for (int j = 0; j < fifo_cnt; j++) begin
+         read_bytes(0, 16, `REG_CRYPT_FIFO_DATA, fifo_block);
+         $display("📥 FIFO block #%0d: %h", j, fifo_block);
+      end
+
+
 
       $display("Encrypting via register...");
       write_byte(0, `REG_CRYPT_GO, 0, 1);
       repeat (5) @(posedge usb_clk);
       wait_done();
+
+
       write_bytes(0, 1, `REG_CRYPT_CIPHEROUT, 8'h00);
       read_bytes(0, 16, `REG_CRYPT_CIPHEROUT, read_data);
       if (read_data == expected_cipher) begin

@@ -4,7 +4,7 @@ Report : power
         -analysis_effort low
 Design : ascon_top
 Version: R-2020.09-SP2
-Date   : Fri Jun 13 00:51:15 2025
+Date   : Thu Jul 10 18:19:03 2025
 ****************************************
 
 
@@ -42,12 +42,12 @@ Power-specific unit information :
     Leakage Power Units = 1nW
 
 
-  Cell Internal Power  =  60.6609 mW   (90%)
-  Net Switching Power  =   6.6267 mW   (10%)
+  Cell Internal Power  =  14.5030 mW   (89%)
+  Net Switching Power  =   1.7784 mW   (11%)
                          ---------
-Total Dynamic Power    =  67.2877 mW  (100%)
+Total Dynamic Power    =  16.2814 mW  (100%)
 
-Cell Leakage Power     =  34.5418 uW
+Cell Leakage Power     =   9.5577 uW
 
 
                  Internal         Switching           Leakage            Total
@@ -57,9 +57,9 @@ io_pad             0.0000            0.0000            0.0000            0.0000 
 memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
 clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
-register          51.7297            1.7913        1.5101e+04           53.5361  (  79.52%)
+register          12.3705            0.4836        3.7102e+03           12.8578  (  78.93%)
 sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
-combinational      8.9312            4.8355        1.9441e+04           13.7860  (  20.48%)
+combinational      2.1325            1.2948        5.8475e+03            3.4332  (  21.07%)
 --------------------------------------------------------------------------------------------------
-Total             60.6609 mW         6.6267 mW     3.4542e+04 nW        67.3222 mW
+Total             14.5030 mW         1.7784 mW     9.5577e+03 nW        16.2910 mW
 1

@@ -4,7 +4,7 @@ Report : power
         -analysis_effort low
 Design : ascon_top
 Version: R-2020.09-SP2
-Date   : Mon Jun  9 18:24:53 2025
+Date   : Thu Jul 10 18:19:03 2025
 ****************************************
 
 
@@ -19,6 +19,7 @@ Wire Load Model Mode: segmented
 Design        Wire Load Model            Library
 ------------------------------------------------
 ascon_top              ZeroWireload      tcbn65lplvttc
+lfsr                   ZeroWireload      tcbn65lplvttc
 fsm                    ZeroWireload      tcbn65lplvttc
 state_register         ZeroWireload      tcbn65lplvttc
 register_1             ZeroWireload      tcbn65lplvttc
@@ -41,12 +42,12 @@ Power-specific unit information :
     Leakage Power Units = 1nW
 
 
-  Cell Internal Power  =  57.3123 mW   (93%)
-  Net Switching Power  =   4.3770 mW    (7%)
+  Cell Internal Power  =  14.5030 mW   (89%)
+  Net Switching Power  =   1.7784 mW   (11%)
                          ---------
-Total Dynamic Power    =  61.6894 mW  (100%)
+Total Dynamic Power    =  16.2814 mW  (100%)
 
-Cell Leakage Power     =  33.6534 uW
+Cell Leakage Power     =   9.5577 uW
 
 
                  Internal         Switching           Leakage            Total
@@ -56,9 +57,9 @@ io_pad             0.0000            0.0000            0.0000            0.0000 
 memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
 clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
-register          49.3620            1.3388        1.7891e+04           50.7188  (  82.17%)
+register          12.3705            0.4836        3.7102e+03           12.8578  (  78.93%)
 sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
-combinational      7.9503            3.0382        1.5763e+04           11.0043  (  17.83%)
+combinational      2.1325            1.2948        5.8475e+03            3.4332  (  21.07%)
 --------------------------------------------------------------------------------------------------
-Total             57.3123 mW         4.3770 mW     3.3653e+04 nW        61.7231 mW
+Total             14.5030 mW         1.7784 mW     9.5577e+03 nW        16.2910 mW
 1

@@ -98,7 +98,8 @@ typedef enum logic [4:0] {
     DONE
 } state_t;
 
-state_t current_state, next_state;
+(* mark_debug = "true" *) state_t current_state;
+state_t next_state;
 
 
 logic [$clog2(NUMBER_BIT_MASK+1)-1:0] number_bits;
@@ -457,7 +458,7 @@ always_comb begin
             if (valid_data_in == 0 && extra_padding_ff == 0) begin
                 ready_for_data = 1;
             end else if (extra_padding_ff == 1) begin 
-                ciphertext_valid = 1;
+                //ciphertext_valid = 1;
                 write_en = 1;
                 sel_absorb_data = 1;
 

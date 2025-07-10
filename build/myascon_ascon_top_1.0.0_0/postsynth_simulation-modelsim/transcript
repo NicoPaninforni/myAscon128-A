@@ -1,0 +1,129 @@
+# vsim -c -t ps -voptargs="+acc" -do "vcd file ../../../sim_post_synth/dump.vcd; vcd add -r /*; run -all; quit" -do "run -all; quit -code [expr [coverage attribute -name TESTSTATUS -concise] >= 2 ? [coverage attribute -name TESTSTATUS -concise] : 0]; exit" ascon_top 
+# Start time: 18:26:21 on Jul 10,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# //  Questa Sim-64
+# //  Version 2024.3 linux_x86_64 Sep 10 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading sv_std.std
+# Loading work.ascon_top(fast)
+# Loading work.lfsr(fast)
+# Loading work.AOI22D0LVT(fast)
+# Loading work.CKND1LVT(fast)
+# Loading work.AOI22D1LVT(fast)
+# Loading work.INVD0LVT(fast)
+# Loading work.MUX2ND0LVT(fast)
+# Loading work.fsm(fast)
+# Loading work.DFCNQD1LVT(fast)
+# Loading work.EDFCNQD1LVT(fast)
+# Loading work.DFCNQD4LVT(fast)
+# Loading work.EDFCND1LVT(fast)
+# Loading work.DFCNQD2LVT(fast)
+# Loading work.OAI211D0LVT(fast)
+# Loading work.INVD1LVT(fast)
+# Loading work.ND3D0LVT(fast)
+# Loading work.ND2D0LVT(fast)
+# Loading work.CKND2D2LVT(fast)
+# Loading work.NR2D1LVT(fast)
+# Loading work.NR2XD0LVT(fast)
+# Loading work.INR2XD0LVT(fast)
+# Loading work.INR2D2LVT(fast)
+# Loading work.AOI211D0LVT(fast)
+# Loading work.OAI21D0LVT(fast)
+# Loading work.OR2D0LVT(fast)
+# Loading work.ND4D0LVT(fast)
+# Loading work.AOI21D0LVT(fast)
+# Loading work.OAI31D0LVT(fast)
+# Loading work.IAO21D0LVT(fast)
+# Loading work.ND3D1LVT(fast)
+# Loading work.IND2D0LVT(fast)
+# Loading work.OA21D0LVT(fast)
+# Loading work.AN3D0LVT(fast)
+# Loading work.OAI22D0LVT(fast)
+# Loading work.AOI21D1LVT(fast)
+# Loading work.INR2XD1LVT(fast)
+# Loading work.ND2D1LVT(fast)
+# Loading work.OAI21D1LVT(fast)
+# Loading work.MAOI22D1LVT(fast)
+# Loading work.OAI211D1LVT(fast)
+# Loading work.INVD2LVT(fast)
+# Loading work.IND2D2LVT(fast)
+# Loading work.MUX2D0LVT(fast)
+# Loading work.XNR2D0LVT(fast)
+# Loading work.AO211D0LVT(fast)
+# Loading work.CKAN2D0LVT(fast)
+# Loading work.IOA21D0LVT(fast)
+# Loading work.OAI221D0LVT(fast)
+# Loading work.MOAI22D0LVT(fast)
+# Loading work.OAI22D1LVT(fast)
+# Loading work.CKXOR2D0LVT(fast)
+# Loading work.AO21D0LVT(fast)
+# Loading work.AO22D0LVT(fast)
+# Loading work.state_register(fast)
+# Loading work.DFQD1LVT(fast)
+# Loading work.CKND6LVT(fast)
+# Loading work.BUFFD2LVT(fast)
+# Loading work.CKBD3LVT(fast)
+# Loading work.CKBD1LVT(fast)
+# Loading work.CKBD0LVT(fast)
+# Loading work.NR2D2LVT(fast)
+# Loading work.BUFFD4LVT(fast)
+# Loading work.BUFFD6LVT(fast)
+# Loading work.CKBD4LVT(fast)
+# Loading work.NR2D4LVT(fast)
+# Loading work.IND2D1LVT(fast)
+# Loading work.IND3D0LVT(fast)
+# Loading work.NR2D3LVT(fast)
+# Loading work.register_1(fast)
+# Loading work.register_0(fast)
+# Loading work.BUFFD1LVT(fast)
+# Loading work.shareCreator(fast)
+# Loading work.XOR4D0LVT(fast)
+# Loading work.ascon_sbox_d2_5(fast)
+# Loading work.CKXOR2D1LVT(fast)
+# Loading work.ascon_sbox_d2_4(fast)
+# Loading work.ascon_sbox_d2_3(fast)
+# Loading work.BUFFD8LVT(fast)
+# Loading work.XOR2D0LVT(fast)
+# Loading work.ascon_sbox_d2_2(fast)
+# Loading work.ascon_sbox_d2_1(fast)
+# Loading work.ascon_sbox_d2_0(fast)
+# Loading work.DFSNQD1LVT(fast)
+# Loading work.CKND2LVT(fast)
+# Loading work.MAOI22D0LVT(fast)
+# Loading work.BUFFD12LVT(fast)
+# Loading work.INVD3LVT(fast)
+# Loading work.AN2D2LVT(fast)
+# Loading work.OAI21D2LVT(fast)
+# Loading work.AOI221D0LVT(fast)
+# Loading work.AO222D0LVT(fast)
+# Loading work.XNR4D0LVT(fast)
+# Loading work.TIELLVT(fast)
+# Loading work.XNR2D1LVT(fast)
+# Loading work.NR3D0LVT(fast)
+# Loading work.CKMUX2D1LVT(fast)
+# Loading work.INR3D0LVT(fast)
+# Loading work.AOI32D1LVT(fast)
+# Loading work.OAI31D1LVT(fast)
+# Loading work.AO222D1LVT(fast)
+# Loading work.XOR3D1LVT(fast)
+# Loading work.XNR3D0LVT(fast)
+# Loading work.OAI222D0LVT(fast)
+# vcd file ../../../sim_post_synth/dump.vcd
+#  vcd add -r /*
+#  run -all
+#  quit
+# End time: 18:26:22 on Jul 10,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 1

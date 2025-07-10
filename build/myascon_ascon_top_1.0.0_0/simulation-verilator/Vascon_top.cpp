@@ -24,6 +24,7 @@ Vascon_top::Vascon_top(VerilatedContext* _vcontextp__, const char* _vcname__)
     , last_block{vlSymsp->TOP.last_block}
     , valid_bytes{vlSymsp->TOP.valid_bytes}
     , EOT{vlSymsp->TOP.EOT}
+    , state_reg_out{vlSymsp->TOP.state_reg_out}
     , ciphertext_valid{vlSymsp->TOP.ciphertext_valid}
     , ciphertext{vlSymsp->TOP.ciphertext}
     , done{vlSymsp->TOP.done}
@@ -31,6 +32,7 @@ Vascon_top::Vascon_top(VerilatedContext* _vcontextp__, const char* _vcname__)
     , tag1{vlSymsp->TOP.tag1}
     , tag2{vlSymsp->TOP.tag2}
     , ready_for_data{vlSymsp->TOP.ready_for_data}
+    , read_data{vlSymsp->TOP.read_data}
     , debug_extra_padding_ff{vlSymsp->TOP.debug_extra_padding_ff}
     , debug_bitcounter{vlSymsp->TOP.debug_bitcounter}
     , debug_roundcounter{vlSymsp->TOP.debug_roundcounter}
