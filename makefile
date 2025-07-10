@@ -27,6 +27,7 @@ print_targets:
 	@echo "  make update_netlist          → copia netlist"
 	@echo "  make update_synth_reports    → copia reports"
 	@echo "  make post_synth_sim          → simulazione post-sintesi"
+	@echo "  make fpga_bitstream          → generazione bitstream con Vivado (target cw305)"
 	@echo "  make all                     → flow completo"
 	@echo "  make clean                   → pulizia"
 	@echo ""
@@ -106,6 +107,13 @@ clean:
 	rm -f output.txt
 	@echo "✅ Pulizia completata."
 
+# Target 5 - Generazione bitstream FPGA
+.PHONY: fpga_bitstream
+fpga_bitstream: .check-fusesoc
+	@echo "👉 Setup progetto FPGA (Vivado)..."
+	fusesoc run --target=cw305-ascon $(CORE_NAME)
+	
+
 .PHONY: all
 all: synthesis post_synth_sim
 	@echo "Flow completo terminato con successo!"
@@ -126,3 +134,4 @@ all: synthesis post_synth_sim
 		echo "### ERROR: 'dc_shell' non trovato! È nel PATH? Hai attivato l'ambiente Design Compiler?"; \
 		exit 1; \
 	fi
+	

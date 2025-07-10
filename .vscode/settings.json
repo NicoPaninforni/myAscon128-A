@@ -1,5 +1,8 @@
 {
     "files.associations": {
         "chrono": "cpp"
-    }
+    },
+    "python.analysis.extraPaths": [
+        "./sw/sca_python"
+    ]
 }

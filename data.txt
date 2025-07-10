@@ -1,4 +1,0 @@
-aad_len 2
-af5f
-msg_len 13
-838e6d8c4c6a1c40816c87d1aeaa0d7fa493ce

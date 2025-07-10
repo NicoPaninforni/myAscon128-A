@@ -1,17 +1,17 @@
 --Mdir .
 --cc
-src/myascon_ascon_top_1.0.0_0/rtl/ascon_params.sv
-src/myascon_ascon_top_1.0.0_0/rtl/ascon_top.sv
-src/myascon_ascon_top_1.0.0_0/rtl/circular_shift_register.sv
-src/myascon_ascon_top_1.0.0_0/rtl/fsm.sv
-src/myascon_ascon_top_1.0.0_0/rtl/lfsr.sv
-src/myascon_ascon_top_1.0.0_0/rtl/shift_register.sv
-src/myascon_ascon_top_1.0.0_0/rtl/state_register.sv
-src/myascon_ascon_top_1.0.0_0/rtl/sipo_debug.sv
-src/myascon_ascon_top_1.0.0_0/rtl/register.sv
-src/myascon_ascon_top_1.0.0_0/rtl/ascon_sbox_d2.sv
-src/myascon_ascon_top_1.0.0_0/rtl/shareCreator.sv
+../src/myascon_ascon_top_1.0.0_0/rtl/ascon_params.sv
+../src/myascon_ascon_top_1.0.0_0/rtl/ascon_top.sv
+../src/myascon_ascon_top_1.0.0_0/rtl/circular_shift_register.sv
+../src/myascon_ascon_top_1.0.0_0/rtl/fsm.sv
+../src/myascon_ascon_top_1.0.0_0/rtl/lfsr.sv
+../src/myascon_ascon_top_1.0.0_0/rtl/shift_register.sv
+../src/myascon_ascon_top_1.0.0_0/rtl/state_register.sv
+../src/myascon_ascon_top_1.0.0_0/rtl/sipo_debug.sv
+../src/myascon_ascon_top_1.0.0_0/rtl/register.sv
+../src/myascon_ascon_top_1.0.0_0/rtl/ascon_sbox_d2.sv
+../src/myascon_ascon_top_1.0.0_0/rtl/shareCreator.sv
 --top-module ascon_top
 --exe
-src/myascon_ascon_top_1.0.0_0/tb/tb_auto.cpp
-src/myascon_ascon_top_1.0.0_0/tb/tb_utils.cpp
+../src/myascon_ascon_top_1.0.0_0/tb/tb_auto.cpp
+../src/myascon_ascon_top_1.0.0_0/tb/tb_utils.cpp

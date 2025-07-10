@@ -113,7 +113,6 @@ module cw305_top #(
     wire reg_write;
     wire [4:0] clk_settings;
     wire crypt_clk;
-    wire [7:0] control; // Control register, used to set the type of crypto operation
 
     wire resetn = pushbutton;
     wire reset = !resetn;
@@ -161,13 +160,25 @@ module cw305_top #(
     // dati da USB (da aggiungere nel regfile poi)
     wire [127:0] ad_in; //dichiarazione implicita nel modulo
     wire [127:0] ptx_in;
-    wire         msg_valid = control[0]; // bit 0 del control register indica se i dati sono validi
-    wire         msg_last = control[1]; // bit 1 del control register indica se il blocco è l'ultimo
-    wire         msg_eot = control[2]; // bit 2 del control register indica se è l'ultimo blocco
-    wire         key_valid = control[3]; // bit 3 del control register indica se la chiave è valida
-    wire         msg_select = control[4]; // bit 4 del control register indica se i dati sono da cifrare o da autenticare
+    wire         msg_valid;
+    wire         msg_last;
+    wire         msg_eot;
+    wire        key_valid;
+    wire         msg_select;
     wire [4:0]   valid_bytes_ad;
     wire [4:0]   valid_bytes_ptx; 
+
+    reg fsm_msg_valid;
+    reg fsm_msg_last;
+    reg fsm_msg_eot;
+    reg fsm_key_valid;
+    reg fsm_msg_select;
+
+    assign msg_valid = fsm_msg_valid;
+    assign msg_last = fsm_msg_last;
+    assign msg_eot = fsm_msg_eot;
+    assign key_valid = fsm_key_valid;
+    assign msg_select = fsm_msg_select;
 
     // output
     wire [127:0] ciphertext;
@@ -212,7 +223,7 @@ module cw305_top #(
 
        .O_valid_bytes_ad           (valid_bytes_ad),
        .O_valid_bytes_msg          (valid_bytes_ptx), // 1 byte, numero di byte validi in input
-       .O_control               (control),          
+       //.O_control               (control),          
        .O_clksettings           (clk_settings),
        .O_user_led              (led3),
        .O_key                   (crypt_key),
@@ -281,7 +292,7 @@ wire [63:0] iv     = 64'h00001000808c0001;
 
 ascon_top u_ascon_top (
     .clk                (crypt_clk),
-    .reset_n            (~reset),
+    .reset_n            (resetn),
     .start              (crypt_start),
 
     .key1               (key1),
@@ -298,6 +309,7 @@ ascon_top u_ascon_top (
     .valid_bytes        (msg_select ? valid_bytes_ptx : valid_bytes_ad),
     .EOT                (msg_eot),
 
+    .state_reg_out      (ascon_state), // stato del registro di stato, non usato in questo esempio
     .ciphertext_valid   (ciphertext_valid),
     .ciphertext         (ciphertext),
     .done               (ascon_done),
@@ -310,14 +322,82 @@ ascon_top u_ascon_top (
 
 // Segnali di stato per CW305
 assign crypt_busy     = ~ready_for_data;
-assign crypt_stateout = 320'b0; // da leggere via USB
+assign crypt_stateout = ascon_state; // da leggere via USB
 assign tio_trigger    = ascon_done;
-
+assign crypt_done = ascon_done;
 assign crypt_cipherout = ciphertext;
 
 `endif
 
+    //FSM per inviare i controlli al core:
+
+    parameter IDLE = 3'd0, PROCESS_AD = 3'd1, PROCESS_MSG = 3'd2, DONE = 3'd3;
+    reg [2:0] state, next_state;
+
+
+    always @(posedge crypt_clk or negedge resetn) begin
+        if (!resetn)
+            state <= IDLE;
+        else
+            state <= next_state;
+    end
+
+    always @(*) begin
+        next_state = state;
+        case (state)
+            IDLE:
+                if (crypt_start)
+                    next_state = PROCESS_AD;
+
+            PROCESS_AD:
+                if (read_data_core)
+                    next_state = PROCESS_MSG;
+
+            PROCESS_MSG:
+                if (ready_tag)
+                    next_state = DONE;
+
+            DONE:
+                if (!ready_tag)
+                    next_state = IDLE;
+
+            default: next_state = IDLE;
+        endcase
+    end
+
+    always @(*) begin
+        fsm_msg_valid = 0;
+        fsm_msg_last = 0;
+        fsm_msg_eot = 0; 
+        fsm_key_valid = 0; 
+        fsm_msg_select = 0;
+        case (state)
+            IDLE: begin
+                //niente
+            end
+
+            PROCESS_AD: begin
+                fsm_msg_valid = 1; // dati validi
+                fsm_msg_last = 1; // ultimo blocco se non ci sono byte validi
+                fsm_msg_eot = 0; // EOT se non ci sono byte validi
+                fsm_key_valid = 1; // chiave non valida
+                fsm_msg_select = 0; // dati di autenticazione
+            end
+
+            PROCESS_MSG: begin
+                fsm_msg_valid = 1; // dati validi
+                fsm_msg_last = 1; // ultimo blocco se non ci sono byte validi
+                fsm_msg_eot = 1; // EOT se non ci sono byte validi
+                fsm_key_valid = 1; // chiave valida
+                fsm_msg_select = 1; // dati di cifratura
+            end
+
+            DONE: begin
+                //niente
+            end
+        endcase
+    end
+
 endmodule
 
 `default_nettype wire
-

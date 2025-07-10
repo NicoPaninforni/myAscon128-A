@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="nico-paniforni" Host="radagast" Pid="454602" HostCore="12" HostMemory="32116224">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="nico-paniforni" Host="radagast" Pid="522143" HostCore="12" HostMemory="32116224">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="nico-paniforni" Host="radagast" Pid="679918" HostCore="12" HostMemory="32116224">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="nico-paniforni" Host="radagast" Pid="747305" HostCore="12" HostMemory="32116224">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="nico-paniforni" Host="radagast" Pid="1064959" HostCore="12" HostMemory="32116224">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="nico-paniforni" Host="radagast" Pid="1131085" HostCore="12" HostMemory="32116224">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="nico-paniforni" Host="radagast" Pid="1298736" HostCore="12" HostMemory="32116224">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="nico-paniforni" Host="radagast" Pid="1364975" HostCore="12" HostMemory="32116224">
+    </Process>
+</ProcessHandle>

@@ -1,0 +1,546 @@
+
+*** Running vivado
+    with args -log cw305_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source cw305_top.tcl
+
+
+****** Vivado v2023.2 (64-bit)
+  **** SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source cw305_top.tcl -notrace
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1535.816 ; gain = 17.840 ; free physical = 4418 ; free virtual = 14894
+Command: read_checkpoint -auto_incremental -incremental /home/nico-paniforni/myAscon128-A/vivado/cw305_top/cw305_top.srcs/utils_1/imports/synth_1/cw305_top.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from /home/nico-paniforni/myAscon128-A/vivado/cw305_top/cw305_top.srcs/utils_1/imports/synth_1/cw305_top.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top cw305_top -part xc7a100tftg256-2
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tftg256-2
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 1284344
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2291.422 ; gain = 149.691 ; free physical = 3373 ; free virtual = 13850
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-11067] parameter 'd' declared inside package 'ascon_params' shall be treated as localparam [/home/nico-paniforni/myAscon128-A/rtl/ascon_params.sv:5]
+WARNING: [Synth 8-11067] parameter 'PAR' declared inside package 'ascon_params' shall be treated as localparam [/home/nico-paniforni/myAscon128-A/rtl/ascon_params.sv:6]
+WARNING: [Synth 8-11067] parameter 'COL_SIZE' declared inside package 'ascon_params' shall be treated as localparam [/home/nico-paniforni/myAscon128-A/rtl/ascon_params.sv:7]
+WARNING: [Synth 8-11067] parameter 'WORD_SIZE' declared inside package 'ascon_params' shall be treated as localparam [/home/nico-paniforni/myAscon128-A/rtl/ascon_params.sv:8]
+WARNING: [Synth 8-11067] parameter 'STATE_WIDTH' declared inside package 'ascon_params' shall be treated as localparam [/home/nico-paniforni/myAscon128-A/rtl/ascon_params.sv:9]
+WARNING: [Synth 8-11067] parameter 'num_shares' declared inside package 'ascon_params' shall be treated as localparam [/home/nico-paniforni/myAscon128-A/rtl/ascon_params.sv:12]
+WARNING: [Synth 8-11067] parameter 'SHIFT_PAR' declared inside package 'ascon_params' shall be treated as localparam [/home/nico-paniforni/myAscon128-A/rtl/ascon_params.sv:13]
+WARNING: [Synth 8-11067] parameter 'SHIFT_PAR_D_PLUS_1' declared inside package 'ascon_params' shall be treated as localparam [/home/nico-paniforni/myAscon128-A/rtl/ascon_params.sv:14]
+WARNING: [Synth 8-11067] parameter 'SHIFT_PAR_LAST' declared inside package 'ascon_params' shall be treated as localparam [/home/nico-paniforni/myAscon128-A/rtl/ascon_params.sv:16]
+WARNING: [Synth 8-11067] parameter 'SHIFT_PAR_D_PLUS_1_LAST' declared inside package 'ascon_params' shall be treated as localparam [/home/nico-paniforni/myAscon128-A/rtl/ascon_params.sv:17]
+WARNING: [Synth 8-11067] parameter 'NUMBER_BIT_MASK' declared inside package 'ascon_params' shall be treated as localparam [/home/nico-paniforni/myAscon128-A/rtl/ascon_params.sv:19]
+WARNING: [Synth 8-11067] parameter 'NUMBER_BIT_NOMASK' declared inside package 'ascon_params' shall be treated as localparam [/home/nico-paniforni/myAscon128-A/rtl/ascon_params.sv:22]
+WARNING: [Synth 8-11067] parameter 'SHIFT_WIDTH' declared inside package 'ascon_params' shall be treated as localparam [/home/nico-paniforni/myAscon128-A/rtl/ascon_params.sv:26]
+WARNING: [Synth 8-11067] parameter 'PADDED_WIDTH' declared inside package 'ascon_params' shall be treated as localparam [/home/nico-paniforni/myAscon128-A/rtl/ascon_params.sv:28]
+WARNING: [Synth 8-11067] parameter 'RAND_WIDTH' declared inside package 'ascon_params' shall be treated as localparam [/home/nico-paniforni/myAscon128-A/rtl/ascon_params.sv:29]
+WARNING: [Synth 8-11067] parameter 'DATA_WIDTH' declared inside package 'ascon_params' shall be treated as localparam [/home/nico-paniforni/myAscon128-A/rtl/ascon_params.sv:31]
+WARNING: [Synth 8-11067] parameter 'REVERSE' declared inside package 'ascon_params' shall be treated as localparam [/home/nico-paniforni/myAscon128-A/rtl/ascon_params.sv:32]
+WARNING: [Synth 8-11067] parameter 'LFSR_WIDTH' declared inside package 'ascon_params' shall be treated as localparam [/home/nico-paniforni/myAscon128-A/rtl/ascon_params.sv:34]
+WARNING: [Synth 8-11067] parameter 'LFSR_POLY' declared inside package 'ascon_params' shall be treated as localparam [/home/nico-paniforni/myAscon128-A/rtl/ascon_params.sv:35]
+WARNING: [Synth 8-11067] parameter 'LFSR_FEED_FORWARD' declared inside package 'ascon_params' shall be treated as localparam [/home/nico-paniforni/myAscon128-A/rtl/ascon_params.sv:36]
+WARNING: [Synth 8-11067] parameter 'STYLE_AUTO' declared inside package 'ascon_params' shall be treated as localparam [/home/nico-paniforni/myAscon128-A/rtl/ascon_params.sv:39]
+WARNING: [Synth 8-11067] parameter 'STYLE_LOOP' declared inside package 'ascon_params' shall be treated as localparam [/home/nico-paniforni/myAscon128-A/rtl/ascon_params.sv:40]
+WARNING: [Synth 8-11067] parameter 'STYLE_REDUCTION' declared inside package 'ascon_params' shall be treated as localparam [/home/nico-paniforni/myAscon128-A/rtl/ascon_params.sv:41]
+WARNING: [Synth 8-11067] parameter 'CFG_FIBONACCI' declared inside package 'ascon_params' shall be treated as localparam [/home/nico-paniforni/myAscon128-A/rtl/ascon_params.sv:43]
+WARNING: [Synth 8-11067] parameter 'CFG_GALOIS' declared inside package 'ascon_params' shall be treated as localparam [/home/nico-paniforni/myAscon128-A/rtl/ascon_params.sv:44]
+WARNING: [Synth 8-11067] parameter 'STYLE' declared inside package 'ascon_params' shall be treated as localparam [/home/nico-paniforni/myAscon128-A/rtl/ascon_params.sv:47]
+WARNING: [Synth 8-11067] parameter 'LFSR_CONFIG' declared inside package 'ascon_params' shall be treated as localparam [/home/nico-paniforni/myAscon128-A/rtl/ascon_params.sv:48]
+CRITICAL WARNING: [Synth 8-9873] overwriting previous definition of module 'USR_ACCESSE2' [/home/nico-paniforni/myAscon128-A/fpga/tb/xilinx_primitives_stub.v:9]
+INFO: [Synth 8-9937] previous definition of design element 'USR_ACCESSE2' is here [/tools/Xilinx/Vivado/2023.2/scripts/rt/data/unisim_comp.v:137391]
+CRITICAL WARNING: [Synth 8-9873] overwriting previous definition of module 'BUFGMUX_CTRL' [/home/nico-paniforni/myAscon128-A/fpga/tb/xilinx_primitives_stub.v:14]
+INFO: [Synth 8-9937] previous definition of design element 'BUFGMUX_CTRL' is here [/tools/Xilinx/Vivado/2023.2/scripts/rt/data/unisim_comp.v:2090]
+CRITICAL WARNING: [Synth 8-9873] overwriting previous definition of module 'ODDR' [/home/nico-paniforni/myAscon128-A/fpga/tb/xilinx_primitives_stub.v:18]
+INFO: [Synth 8-9937] previous definition of design element 'ODDR' is here [/tools/Xilinx/Vivado/2023.2/scripts/rt/data/unisim_comp.v:96726]
+CRITICAL WARNING: [Synth 8-9873] overwriting previous definition of module 'IBUFG' [/home/nico-paniforni/myAscon128-A/fpga/tb/xilinx_primitives_stub.v:22]
+INFO: [Synth 8-9937] previous definition of design element 'IBUFG' is here [/tools/Xilinx/Vivado/2023.2/scripts/rt/data/unisim_comp.v:74126]
+CRITICAL WARNING: [Synth 8-9873] overwriting previous definition of module 'BUFG' [/home/nico-paniforni/myAscon128-A/fpga/tb/xilinx_primitives_stub.v:26]
+INFO: [Synth 8-9937] previous definition of design element 'BUFG' is here [/tools/Xilinx/Vivado/2023.2/scripts/rt/data/unisim_comp.v:1958]
+WARNING: [Synth 8-11065] parameter 'IDLE' becomes localparam in 'cw305_top' with formal parameter declaration list [/home/nico-paniforni/myAscon128-A/fpga/cw305_top.v:334]
+WARNING: [Synth 8-11065] parameter 'PROCESS_AD' becomes localparam in 'cw305_top' with formal parameter declaration list [/home/nico-paniforni/myAscon128-A/fpga/cw305_top.v:334]
+WARNING: [Synth 8-11065] parameter 'PROCESS_MSG' becomes localparam in 'cw305_top' with formal parameter declaration list [/home/nico-paniforni/myAscon128-A/fpga/cw305_top.v:334]
+WARNING: [Synth 8-11065] parameter 'DONE' becomes localparam in 'cw305_top' with formal parameter declaration list [/home/nico-paniforni/myAscon128-A/fpga/cw305_top.v:334]
+INFO: [Synth 8-6157] synthesizing module 'cw305_top' [/home/nico-paniforni/myAscon128-A/fpga/cw305_top.v:32]
+INFO: [Synth 8-6157] synthesizing module 'cw305_usb_reg_fe' [/home/nico-paniforni/myAscon128-A/fpga/cw305_usb_reg_fe.v:30]
+	Parameter pADDR_WIDTH bound to: 21 - type: integer 
+	Parameter pBYTECNT_SIZE bound to: 7 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'cw305_usb_reg_fe' (0#1) [/home/nico-paniforni/myAscon128-A/fpga/cw305_usb_reg_fe.v:30]
+INFO: [Synth 8-6157] synthesizing module 'cw305_reg_ascon' [/home/nico-paniforni/myAscon128-A/fpga/cw305_reg_ascon.v:32]
+	Parameter pADDR_WIDTH bound to: 21 - type: integer 
+	Parameter pBYTECNT_SIZE bound to: 7 - type: integer 
+	Parameter pPT_WIDTH bound to: 128 - type: integer 
+	Parameter pCT_WIDTH bound to: 128 - type: integer 
+	Parameter pKEY_WIDTH bound to: 128 - type: integer 
+	Parameter pTAG_WIDTH bound to: 128 - type: integer 
+	Parameter pNONCE_WIDTH bound to: 128 - type: integer 
+	Parameter pSTATE_WIDTH bound to: 320 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [/home/nico-paniforni/myAscon128-A/fpga/cw305_reg_ascon.v:324]
+INFO: [Synth 8-6157] synthesizing module 'cdc_pulse' [/home/nico-paniforni/myAscon128-A/fpga/cdc_pulse.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'cdc_pulse' (0#1) [/home/nico-paniforni/myAscon128-A/fpga/cdc_pulse.v:23]
+INFO: [Synth 8-6157] synthesizing module 'USR_ACCESSE2' [/home/nico-paniforni/myAscon128-A/fpga/tb/xilinx_primitives_stub.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'USR_ACCESSE2' (0#1) [/home/nico-paniforni/myAscon128-A/fpga/tb/xilinx_primitives_stub.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'cw305_reg_ascon' (0#1) [/home/nico-paniforni/myAscon128-A/fpga/cw305_reg_ascon.v:32]
+INFO: [Synth 8-6157] synthesizing module 'clocks' [/home/nico-paniforni/myAscon128-A/fpga/clocks.v:31]
+INFO: [Synth 8-6157] synthesizing module 'BUFGMUX_CTRL' [/home/nico-paniforni/myAscon128-A/fpga/tb/xilinx_primitives_stub.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'BUFGMUX_CTRL' (0#1) [/home/nico-paniforni/myAscon128-A/fpga/tb/xilinx_primitives_stub.v:12]
+INFO: [Synth 8-6157] synthesizing module 'ODDR' [/home/nico-paniforni/myAscon128-A/fpga/tb/xilinx_primitives_stub.v:16]
+INFO: [Synth 8-6155] done synthesizing module 'ODDR' (0#1) [/home/nico-paniforni/myAscon128-A/fpga/tb/xilinx_primitives_stub.v:16]
+INFO: [Synth 8-6157] synthesizing module 'IBUFG' [/home/nico-paniforni/myAscon128-A/fpga/tb/xilinx_primitives_stub.v:20]
+INFO: [Synth 8-6155] done synthesizing module 'IBUFG' (0#1) [/home/nico-paniforni/myAscon128-A/fpga/tb/xilinx_primitives_stub.v:20]
+INFO: [Synth 8-6157] synthesizing module 'BUFG' [/home/nico-paniforni/myAscon128-A/fpga/tb/xilinx_primitives_stub.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'BUFG' (0#1) [/home/nico-paniforni/myAscon128-A/fpga/tb/xilinx_primitives_stub.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'clocks' (0#1) [/home/nico-paniforni/myAscon128-A/fpga/clocks.v:31]
+INFO: [Synth 8-6157] synthesizing module 'ascon_top' [/home/nico-paniforni/myAscon128-A/rtl/ascon_top.sv:48]
+INFO: [Synth 8-6157] synthesizing module 'ascon_sbox_d2' [/home/nico-paniforni/myAscon128-A/rtl/ascon_sbox_d2.sv:24]
+INFO: [Synth 8-6155] done synthesizing module 'ascon_sbox_d2' (0#1) [/home/nico-paniforni/myAscon128-A/rtl/ascon_sbox_d2.sv:24]
+INFO: [Synth 8-6157] synthesizing module 'lfsr' [/home/nico-paniforni/myAscon128-A/rtl/lfsr.sv:47]
+INFO: [Synth 8-6155] done synthesizing module 'lfsr' (0#1) [/home/nico-paniforni/myAscon128-A/rtl/lfsr.sv:47]
+INFO: [Synth 8-6157] synthesizing module 'fsm' [/home/nico-paniforni/myAscon128-A/rtl/fsm.sv:22]
+INFO: [Synth 8-6155] done synthesizing module 'fsm' (0#1) [/home/nico-paniforni/myAscon128-A/rtl/fsm.sv:22]
+INFO: [Synth 8-6157] synthesizing module 'state_register' [/home/nico-paniforni/myAscon128-A/rtl/state_register.sv:39]
+INFO: [Synth 8-6155] done synthesizing module 'state_register' (0#1) [/home/nico-paniforni/myAscon128-A/rtl/state_register.sv:39]
+INFO: [Synth 8-6157] synthesizing module 'register' [/home/nico-paniforni/myAscon128-A/rtl/register.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'register' (0#1) [/home/nico-paniforni/myAscon128-A/rtl/register.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'shareCreator' [/home/nico-paniforni/myAscon128-A/rtl/shareCreator.sv:37]
+INFO: [Synth 8-6155] done synthesizing module 'shareCreator' (0#1) [/home/nico-paniforni/myAscon128-A/rtl/shareCreator.sv:37]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [/home/nico-paniforni/myAscon128-A/rtl/ascon_top.sv:690]
+INFO: [Synth 8-6155] done synthesizing module 'ascon_top' (0#1) [/home/nico-paniforni/myAscon128-A/rtl/ascon_top.sv:48]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/nico-paniforni/myAscon128-A/fpga/cw305_top.v:374]
+INFO: [Synth 8-6155] done synthesizing module 'cw305_top' (0#1) [/home/nico-paniforni/myAscon128-A/fpga/cw305_top.v:32]
+WARNING: [Synth 8-7137] Register cipher_fifo_reg[0] in module cw305_reg_ascon has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/nico-paniforni/myAscon128-A/fpga/cw305_reg_ascon.v:117]
+WARNING: [Synth 8-7137] Register cipher_fifo_reg[1] in module cw305_reg_ascon has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/nico-paniforni/myAscon128-A/fpga/cw305_reg_ascon.v:117]
+WARNING: [Synth 8-7137] Register fifo_out_reg_reg in module cw305_reg_ascon has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/nico-paniforni/myAscon128-A/fpga/cw305_reg_ascon.v:139]
+WARNING: [Synth 8-3848] Net O_cipherin in module/entity cw305_reg_ascon does not have driver. [/home/nico-paniforni/myAscon128-A/fpga/cw305_reg_ascon.v:86]
+WARNING: [Synth 8-3848] Net ascon_busy in module/entity cw305_top does not have driver. [/home/nico-paniforni/myAscon128-A/fpga/cw305_top.v:261]
+WARNING: [Synth 8-7129] Port C in module ODDR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port D2 in module ODDR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CE in module ODDR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port R in module ODDR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S in module ODDR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port I1 in module BUFGMUX_CTRL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S in module BUFGMUX_CTRL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[127] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[126] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[125] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[124] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[123] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[122] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[121] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[120] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[119] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[118] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[117] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[116] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[115] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[114] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[113] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[112] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[111] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[110] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[109] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[108] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[107] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[106] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[105] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[104] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[103] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[102] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[101] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[100] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[99] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[98] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[97] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[96] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[95] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[94] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[93] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[92] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[91] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[90] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[89] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[88] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[87] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[86] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[85] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[84] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[83] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[82] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[81] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[80] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[79] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[78] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[77] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[76] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[75] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[74] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[73] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[72] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[71] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[70] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[69] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[68] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[67] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[66] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[65] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[64] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[63] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[62] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[61] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[60] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[59] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[58] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[57] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[56] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[55] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[54] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[53] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[52] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[51] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[50] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[49] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[48] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[47] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[46] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[45] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[44] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[43] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[42] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[41] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[40] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[39] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[38] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[37] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[36] in module cw305_reg_ascon is either unconnected or has no load
+WARNING: [Synth 8-7129] Port O_cipherin[35] in module cw305_reg_ascon is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:01:34 ; elapsed = 00:01:35 . Memory (MB): peak = 4077.656 ; gain = 1935.926 ; free physical = 7909 ; free virtual = 18388
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:34 ; elapsed = 00:01:36 . Memory (MB): peak = 4077.656 ; gain = 1935.926 ; free physical = 7915 ; free virtual = 18394
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:34 ; elapsed = 00:01:36 . Memory (MB): peak = 4077.656 ; gain = 1935.926 ; free physical = 7915 ; free virtual = 18394
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.05 . Memory (MB): peak = 4083.594 ; gain = 0.000 ; free physical = 7916 ; free virtual = 18394
+INFO: [Netlist 29-17] Analyzing 3 Unisim elements for replacement
+WARNING: [Netlist 29-432] The IBUFG primitive 'U_clocks/clkibuf' has been retargeted to an IBUF primitive only. No BUFG will be added. If a global buffer is intended, please instantiate an available global clock primitive from the current architecture.
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/nico-paniforni/myAscon128-A/fpga/cw305.xdc]
+Finished Parsing XDC File [/home/nico-paniforni/myAscon128-A/fpga/cw305.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/nico-paniforni/myAscon128-A/fpga/cw305.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/cw305_top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/cw305_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/home/nico-paniforni/myAscon128-A/vivado/cw305_top/cw305_top.srcs/constrs_1/new/ila_core.xdc]
+Finished Parsing XDC File [/home/nico-paniforni/myAscon128-A/vivado/cw305_top/cw305_top.srcs/constrs_1/new/ila_core.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/nico-paniforni/myAscon128-A/vivado/cw305_top/cw305_top.srcs/constrs_1/new/ila_core.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/cw305_top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/cw305_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4212.438 ; gain = 0.000 ; free physical = 7917 ; free virtual = 18396
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 2 instances were transformed.
+  BUFGMUX_CTRL => BUFGCTRL (inverted pins: S0): 1 instance 
+  IBUFG => IBUF: 1 instance 
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 4212.473 ; gain = 0.000 ; free physical = 7919 ; free virtual = 18398
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:01:40 ; elapsed = 00:01:41 . Memory (MB): peak = 4212.473 ; gain = 2070.742 ; free physical = 7898 ; free virtual = 18377
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tftg256-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:01:40 ; elapsed = 00:01:41 . Memory (MB): peak = 4212.473 ; gain = 2070.742 ; free physical = 7898 ; free virtual = 18377
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:40 ; elapsed = 00:01:41 . Memory (MB): peak = 4212.473 ; gain = 2070.742 ; free physical = 7898 ; free virtual = 18377
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'fsm'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'cw305_top'
+INFO: [Synth 8-6159] Found Keep on FSM register 'current_state_reg' in module 'fsm', re-encoding will not be performed
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+*
+                    IDLE |                            00000 |                            00000
+               INIT_LOAD |                            00001 |                            00001
+        INIT_ROUND_SHIFT |                            00010 |                            00010
+   INIT_ROUND_SHIFT_LAST |                            00011 |                            00011
+ INIT_ROUND_DIFFUSE_LAST |                            00101 |                            00101
+          ABSORB_AD_DATA |                            00110 |                            00110
+        PROCESS_AD_SHIFT |                            00111 |                            00111
+   PROCESS_AD_SHIFT_LAST |                            01000 |                            01000
+ PROCESS_AD_DIFFUSE_LAST |                            01010 |                            01010
+         ABSORB_MSG_DATA |                            01011 |                            01011
+      FINALIZATION_SHIFT |                            10000 |                            10000
+ FINALIZATION_SHIFT_LAST |                            10001 |                            10001
+    FINALIZATION_DIFFUSE |                            10010 |                            10010
+             SQUEEZE_TAG |                            10011 |                            10011
+                    DONE |                            10100 |                            10100
+       PROCESS_MSG_SHIFT |                            01100 |                            01100
+  PROCESS_MSG_SHIFT_LAST |                            01101 |                            01101
+PROCESS_MSG_DIFFUSE_LAST |                            01111 |                            01111
+     PROCESS_MSG_DIFFUSE |                            01110 |                            01110
+      PROCESS_AD_DIFFUSE |                            01001 |                            01001
+      INIT_ROUND_DIFFUSE |                            00100 |                            00100
+---------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                              000 |                              000
+              PROCESS_AD |                              001 |                              001
+             PROCESS_MSG |                              010 |                              010
+                    DONE |                              011 |                              011
+                  iSTATE |                              100 |                              111
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'cw305_top'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:45 ; elapsed = 00:01:45 . Memory (MB): peak = 4212.473 ; gain = 2070.742 ; free physical = 7890 ; free virtual = 18370
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input    4 Bit       Adders := 2     
+	   2 Input    2 Bit       Adders := 2     
+	   3 Input    2 Bit       Adders := 1     
++---XORs : 
+	   2 Input     64 Bit         XORs := 7     
+	   3 Input     64 Bit         XORs := 5     
+	   4 Input     30 Bit         XORs := 1     
+	   2 Input      6 Bit         XORs := 28    
+	   2 Input      1 Bit         XORs := 1018  
+	   9 Input      1 Bit         XORs := 3     
+	   8 Input      1 Bit         XORs := 7     
+	   7 Input      1 Bit         XORs := 9     
+	   6 Input      1 Bit         XORs := 9     
+	   5 Input      1 Bit         XORs := 12    
+	   3 Input      1 Bit         XORs := 24    
+	   4 Input      1 Bit         XORs := 13    
++---Registers : 
+	              320 Bit    Registers := 2     
+	              128 Bit    Registers := 18    
+	               64 Bit    Registers := 7     
+	               31 Bit    Registers := 1     
+	               21 Bit    Registers := 1     
+	               20 Bit    Registers := 6     
+	               16 Bit    Registers := 2     
+	                8 Bit    Registers := 2     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 122   
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 6     
+	                1 Bit    Registers := 23    
++---Muxes : 
+	   4 Input  320 Bit        Muxes := 1     
+	   2 Input  128 Bit        Muxes := 15    
+	  10 Input  128 Bit        Muxes := 1     
+	   2 Input   64 Bit        Muxes := 28    
+	   2 Input   30 Bit        Muxes := 4     
+	   2 Input   20 Bit        Muxes := 6     
+	   2 Input   16 Bit        Muxes := 6     
+	  10 Input   16 Bit        Muxes := 2     
+	   2 Input    8 Bit        Muxes := 16    
+	   2 Input    6 Bit        Muxes := 7     
+	  22 Input    5 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 13    
+	   2 Input    4 Bit        Muxes := 36    
+	   2 Input    3 Bit        Muxes := 3     
+	   5 Input    3 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 17    
+	  10 Input    1 Bit        Muxes := 2     
+	   3 Input    1 Bit        Muxes := 1     
+	  22 Input    1 Bit        Muxes := 20    
+	  23 Input    1 Bit        Muxes := 1     
+	   5 Input    1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-3917] design cw305_top has port tio_clkout driven by constant 1
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:55 ; elapsed = 00:01:56 . Memory (MB): peak = 4212.473 ; gain = 2070.742 ; free physical = 7892 ; free virtual = 18382
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++------------+----------------------+---------------+----------------+
+|Module Name | RTL Object           | Depth x Width | Implemented As | 
++------------+----------------------+---------------+----------------+
+|fsm         | shift_en             | 32x1          | LUT            | 
+|fsm         | number_bits          | 32x2          | LUT            | 
+|fsm         | round_counter_enable | 32x1          | LUT            | 
+|fsm         | shift_en             | 32x1          | LUT            | 
+|fsm         | number_bits          | 32x2          | LUT            | 
+|fsm         | round_counter_enable | 32x1          | LUT            | 
++------------+----------------------+---------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-3321] create_clock attempting to set clock on an unknown port/pin for constraint at line 77 of /home/nico-paniforni/myAscon128-A/fpga/cw305.xdc. [/home/nico-paniforni/myAscon128-A/fpga/cw305.xdc:77]
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:59 ; elapsed = 00:02:00 . Memory (MB): peak = 4212.473 ; gain = 2070.742 ; free physical = 7890 ; free virtual = 18380
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:02:05 ; elapsed = 00:02:06 . Memory (MB): peak = 4212.473 ; gain = 2070.742 ; free physical = 7877 ; free virtual = 18368
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (FSM_sequential_state_reg[2]) is unused and will be removed from module cw305_top.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:02:07 ; elapsed = 00:02:08 . Memory (MB): peak = 4212.473 ; gain = 2070.742 ; free physical = 7885 ; free virtual = 18375
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:02:10 ; elapsed = 00:02:11 . Memory (MB): peak = 4212.473 ; gain = 2070.742 ; free physical = 7876 ; free virtual = 18367
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:10 ; elapsed = 00:02:11 . Memory (MB): peak = 4212.473 ; gain = 2070.742 ; free physical = 7876 ; free virtual = 18367
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:11 ; elapsed = 00:02:12 . Memory (MB): peak = 4212.473 ; gain = 2070.742 ; free physical = 7884 ; free virtual = 18374
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:11 ; elapsed = 00:02:12 . Memory (MB): peak = 4212.473 ; gain = 2070.742 ; free physical = 7883 ; free virtual = 18374
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:11 ; elapsed = 00:02:12 . Memory (MB): peak = 4212.473 ; gain = 2070.742 ; free physical = 7885 ; free virtual = 18375
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:11 ; elapsed = 00:02:12 . Memory (MB): peak = 4212.473 ; gain = 2070.742 ; free physical = 7892 ; free virtual = 18382
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     2|
+|2     |CARRY4 |    13|
+|3     |LUT1   |   133|
+|4     |LUT2   |   100|
+|5     |LUT3   |   332|
+|6     |LUT4   |   775|
+|7     |LUT5   |  1036|
+|8     |LUT6   |  1447|
+|9     |MUXF7  |   439|
+|10    |MUXF8  |    74|
+|11    |FDCE   |   174|
+|12    |FDPE   |    12|
+|13    |FDRE   |  3885|
+|14    |IBUF   |    28|
+|15    |IOBUF  |     8|
+|16    |OBUF   |     5|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:11 ; elapsed = 00:02:12 . Memory (MB): peak = 4212.473 ; gain = 2070.742 ; free physical = 7895 ; free virtual = 18385
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 1 critical warnings and 135 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:09 ; elapsed = 00:02:10 . Memory (MB): peak = 4212.473 ; gain = 1935.926 ; free physical = 7895 ; free virtual = 18385
+Synthesis Optimization Complete : Time (s): cpu = 00:02:11 ; elapsed = 00:02:12 . Memory (MB): peak = 4212.473 ; gain = 2070.742 ; free physical = 7895 ; free virtual = 18385
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.05 . Memory (MB): peak = 4212.473 ; gain = 0.000 ; free physical = 8177 ; free virtual = 18668
+INFO: [Netlist 29-17] Analyzing 534 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 4212.473 ; gain = 0.000 ; free physical = 8177 ; free virtual = 18667
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 8 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 8 instances
+
+Synth Design complete | Checksum: 317412ac
+INFO: [Common 17-83] Releasing license: Synthesis
+71 Infos, 140 Warnings, 6 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:02:17 ; elapsed = 00:02:16 . Memory (MB): peak = 4212.473 ; gain = 2672.688 ; free physical = 8177 ; free virtual = 18667
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 3777.522; main = 3445.911; forked = 377.659
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 5171.172; main = 4212.441; forked = 990.746
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00 . Memory (MB): peak = 4236.449 ; gain = 0.000 ; free physical = 8168 ; free virtual = 18659
+INFO: [Common 17-1381] The checkpoint '/home/nico-paniforni/myAscon128-A/vivado/cw305_top/cw305_top.runs/synth_1/cw305_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file cw305_top_utilization_synth.rpt -pb cw305_top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Jul 10 16:34:20 2025...

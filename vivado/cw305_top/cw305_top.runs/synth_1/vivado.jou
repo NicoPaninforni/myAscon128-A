@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Thu Jul 10 16:31:56 2025
+# Process ID: 1283386
+# Current directory: /home/nico-paniforni/myAscon128-A/vivado/cw305_top/cw305_top.runs/synth_1
+# Command line: vivado -log cw305_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source cw305_top.tcl
+# Log file: /home/nico-paniforni/myAscon128-A/vivado/cw305_top/cw305_top.runs/synth_1/cw305_top.vds
+# Journal file: /home/nico-paniforni/myAscon128-A/vivado/cw305_top/cw305_top.runs/synth_1/vivado.jou
+# Running On: radagast, OS: Linux, CPU Frequency: 4400.280 MHz, CPU Physical cores: 6, Host memory: 32887 MB
+#-----------------------------------------------------------
+source cw305_top.tcl -notrace

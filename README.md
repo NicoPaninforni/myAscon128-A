@@ -1,14 +1,82 @@
-Per lanciare la simulazione basta lanciare i seguenti comandi:
+# 🛡️ MyASCON128-A – Progetto RTL + ASIC Flow
 
-1. Fornire i permessi di eseguzione allo script:
-   >> chmod +x run.sh
+🚨 **IMPORTANTE**:  
+Tutti i comandi del Makefile devono essere eseguiti sul server **Saruman** (non su Radagast).  
+Per la generazione del bitstream FPGA invece, si utilizzerà **Radagast** (vedi sezione dedicata).
 
-Lo script run.sh gestite la compilazione del modulo ascon_top.sv e del tb_auto.cpp, quest'ultimo crea un file con dei dati di lunghezza e contenuto randomici, che vengono cambiati ad ogni simulazione e sono salvati nel file "data.txt". Dopo di che crea i risultati del modulo e vengono salvati in "debug_output.txt" e viene fatto il diff con il file "output.txt" generato dal golden model python test_ascon.py.
+---
 
-NOTA: prima di eseguire lo script verificare che il percorso assoluto (con i percorsi relativi mi dava problemi) del file "data.txt" a riga 527 del file test_ascon.py sia opportunamente aggiornato!
+Questo repository contiene l'implementazione RTL di **ASCON-128**, con supporto a:
+- ✅ Simulazione RTL
+- ✅ Sintesi ASIC tramite **Design Compiler**
+- ✅ Verifica automatica contro un **golden model Python**
+- ✅ Simulazione post-sintesi
+- ⚙️ Supporto a simulazione wrapper FPGA
 
-NOTA: è possibile testare l'architettura con i diversi tipi di parallelismo (PAR), a partire da 1 fino a PAR_MAX che è (64/(d+1) + 1), bisogna cambiare solo il parametro PAR sia in ascon_top.sv e in tb_auto.cpp
+---
 
-2. Per eseguire lo script lanciare:
-    >> ./run.sh
+## 📁 Struttura principale
+
+| Cartella/File               | Descrizione                                       |
+|----------------------------|---------------------------------------------------|
+| `rtl/`                     | Codice RTL Verilog/SystemVerilog                 |
+| `build/`                   | Directory generata automaticamente               |
+| `netlist/`                 | Netlist sintetizzata (output Design Compiler)    |
+| `synth/report/`            | Report di sintesi generati da Design Compiler    |
+| `test_ascon.py`            | Golden model Python                              |
+| `tb/`                      | Testbench C++ via Verilator                      |
+| `Makefile`                 | Automazione completa del flow                    |
+
+---
+
+## ⚙️ Setup iniziale
+
+> Prima di eseguire **qualsiasi comando**, attiva l’ambiente corretto (Questasim, DC, ecc.) con:
+
+```bash
+source setup_env.sh
+
+## 🧵 `make fpga_bitstream`
+
+Genera il bitstream del core per il target FPGA (CW305) utilizzando Vivado.
+
+📦 Il file risultante viene salvato automaticamente in:
+
+build/myascon_ascon_top_1.0.0_0/cw305-ascon-vivado/myascon_ascon_top_1.0.0_0.bit
+
+
+🔁 Per comodità e chiarezza, copiarlo nella directory `fpga/bitstream`:
+
+```bash
+cp build/myascon_ascon_top_1.0.0_0/cw305-ascon-vivado/myascon_ascon_top_1.0.0_0.bit \
+   fpga/bitstream/myascon_ascon_top_1.0.0_0.bit
+
+⚙️ Esecuzione esperimenti Side-Channel
+Per programmare l'FPGA ed eseguire test con il framework Side-Channel Dojo:
+
+Spostarsi nella cartella notebook:
+
+```bash
+cd ../Side-Channel-Dojo/sw/notebook/
+
+Copiare il bitstream nella directory corretta:
+
+bash
+Copia
+Modifica
+cp ../../../myAscon128-A/fpga/bitstream/myascon_ascon_top_1.0.0_0.bit \
+   ../../hw/fpga/bitstream/cw305_top.bit
+
+Lanciare il notebook di test:
+
+code sca_test.ipynb
+
+🧠 Nota importante:
+Se si riscontrano problemi nella sezione: ## Picoscope and CW305 initialization
+verificare che:   -> La board CW305 sia correttamente collegata via USB
+                  -> I driver siano liberi e non occupati
+                  -> In caso di errore, riavviare il kernel del notebook per liberare eventuali risorse bloccate
+
+✅ A questo punto, l'FPGA può essere programmato e il core testato per esperimenti di side-channel analysis.
+
 

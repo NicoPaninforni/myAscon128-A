@@ -84,6 +84,9 @@ module tb();
    reg [127:0] expected_cipher = 128'h8a278bf8fa2812bc39e52c76205af377;
    reg [8*25-1:0] dumpfile = "results/tb_half_pipe.fst";
 
+   reg [127:0] fifo_block;
+   reg [7:0] fifo_cnt;
+
    reg [7:0] status;
 
    `include "tb_cw305_reg_tasks.v"
@@ -140,29 +143,43 @@ module tb();
       write_bytes(0, 1, `REG_CONTROL, 8'h0b); //setto key_valid a 1 dopo aver scritto la chiave
       write_bytes(0, 1, `REG_CRYPT_GO, 8'h01); // Start a 1
       repeat (50) @(posedge usb_clk);
-
+      //REG CONTROL:
       // msg_valid = control[0]; // bit 0 del control register indica se i dati sono validi
       // msg_last = control[1]; // bit 1 del control register indica se il blocco è l'ultimo
       // msg_eot = control[2]; // bit 2 del control register indica se è l'ultimo blocco
       // key_valid = control[3]; // bit 3 del control register indica se la chiave è valida
-      // msg_select = control[4]; // bit 4 del control register indica se i dati sono da cifrare o da autenticare
+      // msg_select = control[4]; // bit 4 del control register indica se i dati sono ad o msg
+
+      //REG CRYPT STATUS(status):
+      // REG_CRYPT_STATUS:
+      // bit 0: busy (core impegnato non può ricevere i dati)
+      // bit 1: read_data_core (il core a letto i nuovi dati)
+      // bit 2: ciphertext_valid 
+      // bit 3: ready_tag
+      // bit 4: done
+      // bits 5-7: reserved
 
       do begin
-         read_bytes(0, 1, `REG_CRYPT_GO, status);
-         if (status[1] == 1 && !already_written) begin
-            write_bytes(0, 1, `REG_CONTROL, 8'h1F);
-            already_written = 1;
-         end else if (status[1] == 0) begin
-            already_written = 0; // resetto il flag
-         end
-      end while (status[0]);
+         read_bytes(0, 1, `REG_CRYPT_STATUS, status);
+      end while (!status[4]); // Aspetta finché 'done' non è attivo
 
-      
+      // Solo ora leggi la FIFO
+      read_bytes(0, 1, `REG_CRYPT_FIFO_CNT, fifo_cnt);
+      $display("📦 FIFO contiene %0d blocchi", fifo_cnt);
+
+      for (int j = 0; j < fifo_cnt; j++) begin
+         read_bytes(0, 16, `REG_CRYPT_FIFO_DATA, fifo_block);
+         $display("📥 FIFO block #%0d: %h", j, fifo_block);
+      end
+
+
 
       $display("Encrypting via register...");
       write_byte(0, `REG_CRYPT_GO, 0, 1);
       repeat (5) @(posedge usb_clk);
       wait_done();
+
+
       write_bytes(0, 1, `REG_CRYPT_CIPHEROUT, 8'h00);
       read_bytes(0, 16, `REG_CRYPT_CIPHEROUT, read_data);
       if (read_data == expected_cipher) begin
@@ -361,7 +378,7 @@ module tb();
       busy = 1;
       while (busy == 1) begin
          //$display("checking busy...");
-         read_byte(0, `REG_CRYPT_GO, 0, busy);
+         read_byte(0, `REG_CRYPT_STATUS, 0, busy);
       end
    endtask
 
