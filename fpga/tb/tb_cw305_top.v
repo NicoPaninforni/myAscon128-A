@@ -135,20 +135,29 @@ module tb();
       });
 
       write_bytes(0, 16, `REG_CRYPT_TEXTIN_BUFFER_MSG, {32'hf1023000, 32'habcd1234, 32'haabbcc11, 32'h12345678});
-      write_bytes(0, 1, `REG_CONTROL, 8'h00);
+      write_bytes(0, 1, `REG_CONTROL, 8'h01);
       write_bytes(0, 16, `REG_CRYPT_NONCEIN, {32'h00010203, 32'h04050607, 32'h08090a0b, 32'h0c0d0e0f});
       write_bytes(0, 16, `REG_CRYPT_KEY, {32'h0f0e0d0c, 32'h0b0a0908, 32'h07060504, 32'h03020100});
       write_bytes(0, 1,  `REG_VALID_BYTES_AD, 8'h10); 
       write_bytes(0, 1, `REG_VALID_BYTES_MSG, 8'h10); 
-      write_bytes(0, 1, `REG_CONTROL, 8'h0b); //setto key_valid a 1 dopo aver scritto la chiave
+      write_bytes(0, 1, `REG_CONTROL, 8'h00); //setto key_valid a 1 dopo aver scritto la chiave
       write_bytes(0, 1, `REG_CRYPT_GO, 8'h01); // Start a 1
-      repeat (50) @(posedge usb_clk);
+
+      for (int i = 0; i < 10; i++) begin
+         if (i < 5) begin
+            
+         end else begin
+            // esempio banale: nonce incrementale
+            write_bytes(0, 16, `REG_CRYPT_NONCEIN, {32'h0, 32'h0, 32'h0, i});
+         end
+         repeat (100) @(posedge usb_clk);
+         write_bytes(0, 1, `REG_CONTROL, 8'h01); // resetto il controllo
+
+         write_bytes(0, 1, `REG_CONTROL, 8'h00); // setto il controllo
+         write_bytes(0, 1, `REG_CRYPT_GO, 8'h01); // Start a 1
+      end
       //REG CONTROL:
-      // msg_valid = control[0]; // bit 0 del control register indica se i dati sono validi
-      // msg_last = control[1]; // bit 1 del control register indica se il blocco è l'ultimo
-      // msg_eot = control[2]; // bit 2 del control register indica se è l'ultimo blocco
-      // key_valid = control[3]; // bit 3 del control register indica se la chiave è valida
-      // msg_select = control[4]; // bit 4 del control register indica se i dati sono ad o msg
+      // resetn_sw = not(control[0]); // bit 0 del control register indica se i dati sono validi
 
       //REG CRYPT STATUS(status):
       // REG_CRYPT_STATUS:

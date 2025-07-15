@@ -85,6 +85,18 @@ R0
 R1
 R0
 R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
 !s11f MIXED_VERSIONS
 13
 !s112 1.1
@@ -94,23 +106,23 @@ R1
 cModel Technology
 Z2 d/home/thesis/nico.paninforni/progetti_hdl/myAscon128-A/fpga/tb
 T_opt1
-!s110 1752152558
-V5^2PmzeS]QDI`Vi8@8am02
+Z3 !s110 1752576062
+V8Q4cJ>nJ1oFeNXDaOOznB3
 04 2 4 work tb fast 0
-=1-00163e987b81-686fb9ee-2446d-1b31d7
+=1-00163e987b81-6876303e-9e3c5-1e30b
 R1
 !s12f OEM100
 !s12b OEM100
 !s124 OEM100
 !s135 nogc
 o-quiet -auto_acc_if_foreign -work work +acc
-Z3 tCvgOpt 0
+Z4 tCvgOpt 0
 n@_opt1
 OL;O;2024.3;79
 Xascon_params
-Z4 2tb_cw305_top.v|../cw305_top.v|../cw305_reg_ascon.v|../cw305_usb_reg_fe.v|../cdc_pulse.v|../clocks.v|xilinx_primitives_stub.v|../../rtl/ascon_params.sv|../../rtl/ascon_sbox_d2.sv|../../rtl/fsm.sv|../../rtl/lfsr.sv|../../rtl/register.sv|../../rtl/shareCreator.sv|../../rtl/sipo_debug.sv|../../rtl/state_register.sv|../../rtl/ascon_top.sv|../cw305_ascon_defines.v
-Z5 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z6 !s110 1752152557
+Z5 2tb_cw305_top.v|../cw305_top.v|../cw305_reg_ascon.v|../cw305_usb_reg_fe.v|../cdc_pulse.v|../clocks.v|xilinx_primitives_stub.v|../../rtl/ascon_params.sv|../../rtl/ascon_sbox_d2.sv|../../rtl/fsm.sv|../../rtl/lfsr.sv|../../rtl/register.sv|../../rtl/shareCreator.sv|../../rtl/sipo_debug.sv|../../rtl/state_register.sv|../../rtl/ascon_top.sv|../cw305_ascon_defines.v
+Z6 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+R3
 !i10b 1
 !s100 ekWReO9;iREHPO=z0>;QA1
 I3khDUBhHVkHlACi8oL@Om1
@@ -119,26 +131,26 @@ R2
 w1751959642
 8../../rtl/ascon_params.sv
 F../../rtl/ascon_params.sv
-!i122 85
+!i122 92
 L0 2 0
 V3khDUBhHVkHlACi8oL@Om1
 Z7 OL;L;2024.3;79
 r1
 !s85 0
 31
-Z8 !s108 1752152557.000000
+Z8 !s108 1752576062.000000
 Z9 !s107 tb_cw305_reg_tasks.v|../cw305_ascon_defines.v|../../rtl/ascon_top.sv|../../rtl/state_register.sv|../../rtl/sipo_debug.sv|../../rtl/shareCreator.sv|../../rtl/register.sv|../../rtl/lfsr.sv|../../rtl/fsm.sv|../../rtl/ascon_sbox_d2.sv|../../rtl/ascon_params.sv|xilinx_primitives_stub.v|../clocks.v|../cdc_pulse.v|../cw305_usb_reg_fe.v|../cw305_reg_ascon.v|../cw305_top.v|tb_cw305_top.v|
 Z10 !s90 -sv|+incdir+..|+define+TB|tb_cw305_top.v|../cw305_top.v|../cw305_reg_ascon.v|../cw305_usb_reg_fe.v|../cdc_pulse.v|../clocks.v|xilinx_primitives_stub.v|../../rtl/ascon_params.sv|../../rtl/ascon_sbox_d2.sv|../../rtl/fsm.sv|../../rtl/lfsr.sv|../../rtl/register.sv|../../rtl/shareCreator.sv|../../rtl/sipo_debug.sv|../../rtl/state_register.sv|../../rtl/ascon_top.sv|../cw305_ascon_defines.v|
 !i113 0
 Z11 o-sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 Z12 !s92 -sv +incdir+.. +define+TB -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R3
-vascon_sbox_d2
 R4
+vascon_sbox_d2
 R5
+R6
 Z13 DXx4 work 12 ascon_params 0 22 3khDUBhHVkHlACi8oL@Om1
 DXx4 work 21 ascon_sbox_d2_sv_unit 0 22 <^IiVj79I0f;27C89LWHT2
-R6
+R3
 Z14 VDg1SIo80bB@j0V0VzS_@n1
 r1
 !s85 0
@@ -151,7 +163,7 @@ R2
 Z15 w1751634608
 Z16 8../../rtl/ascon_sbox_d2.sv
 Z17 F../../rtl/ascon_sbox_d2.sv
-!i122 85
+!i122 92
 L0 24 127
 R7
 31
@@ -161,12 +173,12 @@ R10
 !i113 0
 R11
 R12
-R3
-Xascon_sbox_d2_sv_unit
 R4
+Xascon_sbox_d2_sv_unit
 R5
-R13
 R6
+R13
+R3
 V<^IiVj79I0f;27C89LWHT2
 r1
 !s85 0
@@ -179,7 +191,7 @@ R2
 R15
 R16
 R17
-!i122 85
+!i122 92
 L0 21 0
 R7
 31
@@ -189,13 +201,13 @@ R10
 !i113 0
 R11
 R12
-R3
-vascon_top
 R4
+vascon_top
 R5
+R6
 R13
 DXx4 work 17 ascon_top_sv_unit 0 22 @bCEQgSk4N7`WTLWcG`I;3
-R6
+R3
 R14
 r1
 !s85 0
@@ -208,7 +220,7 @@ R2
 Z18 w1752065832
 Z19 8../../rtl/ascon_top.sv
 Z20 F../../rtl/ascon_top.sv
-!i122 85
+!i122 92
 L0 48 708
 R7
 31
@@ -218,12 +230,12 @@ R10
 !i113 0
 R11
 R12
-R3
-Xascon_top_sv_unit
 R4
+Xascon_top_sv_unit
 R5
-R13
 R6
+R13
+R3
 V@bCEQgSk4N7`WTLWcG`I;3
 r1
 !s85 0
@@ -236,7 +248,7 @@ R2
 R18
 R19
 R20
-!i122 85
+!i122 92
 L0 37 0
 R7
 31
@@ -246,11 +258,11 @@ R10
 !i113 0
 R11
 R12
-R3
-vBUFG
 R4
+vBUFG
 R5
 R6
+R3
 !i10b 1
 !s100 VhWWSX:714S:]9K@zU@Zd0
 I]<7LLazWF9_@9Za3Jm=mo0
@@ -259,7 +271,7 @@ R2
 Z21 w1751041217
 Z22 8xilinx_primitives_stub.v
 Z23 Fxilinx_primitives_stub.v
-!i122 85
+!i122 92
 L0 24 3
 R14
 R7
@@ -272,12 +284,12 @@ R10
 !i113 0
 R11
 R12
-R3
+R4
 n@b@u@f@g
 vBUFGMUX_CTRL
-R4
 R5
 R6
+R3
 !i10b 1
 !s100 76_7o7=ED7N9XQP63T4nB0
 IY8?QC?V7j6oS3G`L1DBTJ1
@@ -286,7 +298,7 @@ R2
 R21
 R22
 R23
-!i122 85
+!i122 92
 L0 12 3
 R14
 R7
@@ -299,12 +311,12 @@ R10
 !i113 0
 R11
 R12
-R3
+R4
 n@b@u@f@g@m@u@x_@c@t@r@l
 vcdc_pulse
-R4
 R5
 R6
+R3
 !i10b 1
 !s100 Em@Gcf1VFH^L=VFFeMLIc2
 Ic[2nR?bDT<2JG=39IRTVI1
@@ -313,7 +325,7 @@ R2
 R21
 8../cdc_pulse.v
 F../cdc_pulse.v
-!i122 85
+!i122 92
 L0 23 45
 R14
 R7
@@ -326,11 +338,11 @@ R10
 !i113 0
 R11
 R12
-R3
-vclocks
 R4
+vclocks
 R5
 R6
+R3
 !i10b 1
 !s100 oOKG`ePN:ZHf;bmNXknj12
 IK>Qfjmo=mMzK6JWC`lEo;1
@@ -339,7 +351,7 @@ R2
 R21
 8../clocks.v
 F../clocks.v
-!i122 85
+!i122 92
 L0 31 65
 R14
 R7
@@ -352,20 +364,20 @@ R10
 !i113 0
 R11
 R12
-R3
-vcw305_reg_ascon
 R4
+vcw305_reg_ascon
 R5
 R6
+R3
 !i10b 1
-!s100 3Kc@oe9>MeUagVPRUg@AK2
-Igh>33JYkNf^eRzNVGXLfI0
+!s100 WSOoUGlVUhHPFT[1U=;MS3
+I0CBHWlB4;IRzW`zJ8m5CK2
 S1
 R2
-w1752150628
+w1752507299
 8../cw305_reg_ascon.v
 F../cw305_reg_ascon.v
-!i122 85
+!i122 92
 L0 32 378
 R14
 R7
@@ -378,21 +390,21 @@ R10
 !i113 0
 R11
 R12
-R3
-vcw305_top
 R4
+vcw305_top
 R5
 R6
+R3
 !i10b 1
-!s100 9;m3F3_F23U_GTzDX[CCf1
-I]Jk?CUcD8ZVd`RPOajkZX2
+!s100 B:;8:mXJUo;YK3F4oQ0Hn1
+I];5F;I]^mWzSg6?aONh0f0
 S1
 R2
-w1752141643
+w1752573720
 8../cw305_top.v
 F../cw305_top.v
-!i122 85
-L0 32 370
+!i122 92
+L0 32 372
 R14
 R7
 r1
@@ -404,11 +416,11 @@ R10
 !i113 0
 R11
 R12
-R3
-vcw305_usb_reg_fe
 R4
+vcw305_usb_reg_fe
 R5
 R6
+R3
 !i10b 1
 !s100 1jlzTbAAl@OIg2J7AAhkG2
 I_g22ff99IX[lBQkc>^j4G2
@@ -417,7 +429,7 @@ R2
 R21
 8../cw305_usb_reg_fe.v
 F../cw305_usb_reg_fe.v
-!i122 85
+!i122 92
 L0 30 77
 R14
 R7
@@ -430,27 +442,27 @@ R10
 !i113 0
 R11
 R12
-R3
-vfsm
 R4
+vfsm
 R5
-R13
-DXx4 work 11 fsm_sv_unit 0 22 OJCJ]nfGZKCZk:o[<JMVP3
 R6
+R13
+DXx4 work 11 fsm_sv_unit 0 22 lGo;ae1PDjIZF:HFb3R@20
+R3
 R14
 r1
 !s85 0
 !i10b 1
-!s100 ]^RF6Ja]4KzX`N==bjTJH1
-I5fe=?cKP@[inhm7bg2IW]0
+!s100 nRKPBiI9XOfh<gMkS^:jM3
+IGm43LSME^cRa0dBKFR>D02
 !s105 fsm_sv_unit
 S1
 R2
-Z24 w1752148037
+Z24 w1752154803
 Z25 8../../rtl/fsm.sv
 Z26 F../../rtl/fsm.sv
-!i122 85
-L0 22 558
+!i122 92
+L0 22 559
 R7
 31
 R8
@@ -459,25 +471,25 @@ R10
 !i113 0
 R11
 R12
-R3
-Xfsm_sv_unit
 R4
+Xfsm_sv_unit
 R5
-R13
 R6
-VOJCJ]nfGZKCZk:o[<JMVP3
+R13
+R3
+VlGo;ae1PDjIZF:HFb3R@20
 r1
 !s85 0
 !i10b 1
-!s100 ;gk2_]B3SaD>ZQ`0GQWHd3
-IOJCJ]nfGZKCZk:o[<JMVP3
+!s100 9MKRVblg>oS8^J;S@H]8Y0
+IlGo;ae1PDjIZF:HFb3R@20
 !i103 1
 S1
 R2
 R24
 R25
 R26
-!i122 85
+!i122 92
 L0 16 0
 R7
 31
@@ -487,11 +499,11 @@ R10
 !i113 0
 R11
 R12
-R3
-vIBUFG
 R4
+vIBUFG
 R5
 R6
+R3
 !i10b 1
 !s100 AM^X2;NWZDC9X;FQie60c3
 IXLjakeLY7D=_Ic8_]:lFe3
@@ -500,7 +512,7 @@ R2
 R21
 R22
 R23
-!i122 85
+!i122 92
 L0 20 3
 R14
 R7
@@ -513,14 +525,14 @@ R10
 !i113 0
 R11
 R12
-R3
+R4
 n@i@b@u@f@g
 vlfsr
-R4
 R5
+R6
 R13
 DXx4 work 12 lfsr_sv_unit 0 22 @DLF?BIXgXF<[;iT[>EiD0
-R6
+R3
 R14
 r1
 !s85 0
@@ -533,7 +545,7 @@ R2
 Z27 w1751041218
 Z28 8../../rtl/lfsr.sv
 Z29 F../../rtl/lfsr.sv
-!i122 85
+!i122 92
 L0 47 408
 R7
 31
@@ -543,12 +555,12 @@ R10
 !i113 0
 R11
 R12
-R3
-Xlfsr_sv_unit
 R4
+Xlfsr_sv_unit
 R5
-R13
 R6
+R13
+R3
 V@DLF?BIXgXF<[;iT[>EiD0
 r1
 !s85 0
@@ -561,7 +573,7 @@ R2
 R27
 R28
 R29
-!i122 85
+!i122 92
 L0 34 0
 R7
 31
@@ -571,11 +583,11 @@ R10
 !i113 0
 R11
 R12
-R3
-vODDR
 R4
+vODDR
 R5
 R6
+R3
 !i10b 1
 !s100 CJ=Roz`eRI=aJV4l3lVF01
 IS`j_jNOAeGk7jDQAk9F3[1
@@ -584,7 +596,7 @@ R2
 R21
 R22
 R23
-!i122 85
+!i122 92
 L0 16 3
 R14
 R7
@@ -597,14 +609,14 @@ R10
 !i113 0
 R11
 R12
-R3
+R4
 n@o@d@d@r
 vregister
-R4
 R5
+R6
 R13
 DXx4 work 16 register_sv_unit 0 22 =bYA4YV7Y6:1Ei816j2?Y3
-R6
+R3
 R14
 r1
 !s85 0
@@ -617,7 +629,7 @@ R2
 R27
 Z30 8../../rtl/register.sv
 Z31 F../../rtl/register.sv
-!i122 85
+!i122 92
 L0 3 20
 R7
 31
@@ -627,12 +639,12 @@ R10
 !i113 0
 R11
 R12
-R3
-Xregister_sv_unit
 R4
+Xregister_sv_unit
 R5
-R13
 R6
+R13
+R3
 V=bYA4YV7Y6:1Ei816j2?Y3
 r1
 !s85 0
@@ -645,7 +657,7 @@ R2
 R27
 R30
 R31
-!i122 85
+!i122 92
 Z32 L0 1 0
 R7
 31
@@ -655,13 +667,13 @@ R10
 !i113 0
 R11
 R12
-R3
-vshareCreator
 R4
+vshareCreator
 R5
+R6
 R13
 DXx4 work 20 shareCreator_sv_unit 0 22 5NPW2=4bN6j=bWaolmbcX3
-R6
+R3
 R14
 r1
 !s85 0
@@ -674,7 +686,7 @@ R2
 R27
 Z33 8../../rtl/shareCreator.sv
 Z34 F../../rtl/shareCreator.sv
-!i122 85
+!i122 92
 L0 37 17
 R7
 31
@@ -684,13 +696,13 @@ R10
 !i113 0
 R11
 R12
-R3
+R4
 nshare@creator
 XshareCreator_sv_unit
-R4
 R5
-R13
 R6
+R13
+R3
 V5NPW2=4bN6j=bWaolmbcX3
 r1
 !s85 0
@@ -703,7 +715,7 @@ R2
 R27
 R33
 R34
-!i122 85
+!i122 92
 L0 33 0
 R7
 31
@@ -713,10 +725,10 @@ R10
 !i113 0
 R11
 R12
-R3
+R4
 nshare@creator_sv_unit
 Xshift_register_sv_unit
-R5
+R6
 DXx4 work 12 ascon_params 0 22 UkT4hmPC3Mn>7iYZ`>Jb`1
 !s110 1750931684
 VGhSf1G6jIkfS0UEcmK3E32
@@ -741,13 +753,13 @@ R7
 !i113 0
 R11
 R12
-R3
-vsipo_debug
 R4
+vsipo_debug
 R5
+R6
 R13
 DXx4 work 18 sipo_debug_sv_unit 0 22 hLM?mFV][6[`PFz2YP;Ue0
-R6
+R3
 R14
 r1
 !s85 0
@@ -760,7 +772,7 @@ R2
 R27
 Z35 8../../rtl/sipo_debug.sv
 Z36 F../../rtl/sipo_debug.sv
-!i122 85
+!i122 92
 L0 33 67
 R7
 31
@@ -770,12 +782,12 @@ R10
 !i113 0
 R11
 R12
-R3
-Xsipo_debug_sv_unit
 R4
+Xsipo_debug_sv_unit
 R5
-R13
 R6
+R13
+R3
 VhLM?mFV][6[`PFz2YP;Ue0
 r1
 !s85 0
@@ -788,7 +800,7 @@ R2
 R27
 R35
 R36
-!i122 85
+!i122 92
 L0 25 0
 R7
 31
@@ -798,13 +810,13 @@ R10
 !i113 0
 R11
 R12
-R3
-vstate_register
 R4
+vstate_register
 R5
+R6
 R13
 DXx4 work 22 state_register_sv_unit 0 22 8zig>jcFKNcN?2MYn[6SG0
-R6
+R3
 R14
 r1
 !s85 0
@@ -817,7 +829,7 @@ R2
 R27
 Z37 8../../rtl/state_register.sv
 Z38 F../../rtl/state_register.sv
-!i122 85
+!i122 92
 L0 39 103
 R7
 31
@@ -827,12 +839,12 @@ R10
 !i113 0
 R11
 R12
-R3
-Xstate_register_sv_unit
 R4
+Xstate_register_sv_unit
 R5
-R13
 R6
+R13
+R3
 V8zig>jcFKNcN?2MYn[6SG0
 r1
 !s85 0
@@ -845,7 +857,7 @@ R2
 R27
 R37
 R38
-!i122 85
+!i122 92
 L0 30 0
 R7
 31
@@ -855,22 +867,22 @@ R10
 !i113 0
 R11
 R12
-R3
-vtb
 R4
+vtb
 R5
 R6
+R3
 !i10b 1
-!s100 YKQ2CGB]oW0aaJ0RBnaS31
-I[kOa2A>YHS1:lRaaNc0zh1
+!s100 H<?`N]7Hl06;FRnD][gcY2
+ILK4KJ<0RajooWUS:A<V@Y0
 S1
 R2
-w1752152551
+w1752576056
 8tb_cw305_top.v
 Ftb_cw305_top.v
 Ftb_cw305_reg_tasks.v
-!i122 85
-L0 33 416
+!i122 92
+L0 33 425
 R14
 R7
 r1
@@ -882,11 +894,11 @@ R10
 !i113 0
 R11
 R12
-R3
-vUSR_ACCESSE2
 R4
+vUSR_ACCESSE2
 R5
 R6
+R3
 !i10b 1
 !s100 i2o:46=Nj=;;3gW02leiK0
 ImAGKjCFWHgbXWl[;fci]l0
@@ -895,7 +907,7 @@ R2
 R21
 R22
 R23
-!i122 85
+!i122 92
 L0 1 9
 R14
 R7
@@ -908,5 +920,5 @@ R10
 !i113 0
 R11
 R12
-R3
+R4
 n@u@s@r_@a@c@c@e@s@s@e2
