@@ -29,10 +29,11 @@ class Vascon_top VL_NOT_FINAL {
     // propagate new values into/out from the Verilated model.
     VL_IN8(&clk,0,0);
     VL_IN8(&reset_n,0,0);
+    VL_IN8(&reset_n_lfsr,0,0);
     VL_IN8(&start,0,0);
     VL_IN64(&key1,63,0);
     VL_IN64(&key2,63,0);
-    VL_IN8(&key_valid,0,0);
+    VL_IN8(&load_data,0,0);
     VL_IN64(&nonce1,63,0);
     VL_IN64(&nonce2,63,0);
     VL_IN64(&initialVector,63,0);
@@ -51,7 +52,7 @@ class Vascon_top VL_NOT_FINAL {
     VL_OUT8(&ready_for_data,0,0);
     VL_OUT8(&read_data,0,0);
     VL_OUT8(&debug_extra_padding_ff,0,0);
-    VL_OUT8(&debug_bitcounter,3,0);
+    VL_OUT8(&debug_bitcounter,6,0);
     VL_OUT8(&debug_roundcounter,3,0);
     VL_OUT8(&debug_state,4,0);
     VL_OUT64(&debug_state_0,63,0);
@@ -64,6 +65,11 @@ class Vascon_top VL_NOT_FINAL {
     VL_OUT64(&debug_round_state_2,63,0);
     VL_OUT64(&debug_round_state_3,63,0);
     VL_OUT64(&debug_round_state_4,63,0);
+    VL_OUT64(&debug_sbox_nomasked_0,63,0);
+    VL_OUT64(&debug_sbox_nomasked_1,63,0);
+    VL_OUT64(&debug_sbox_nomasked_2,63,0);
+    VL_OUT64(&debug_sbox_nomasked_3,63,0);
+    VL_OUT64(&debug_sbox_nomasked_4,63,0);
     VL_OUT64(&debug_linear_diffusion_state3,63,0);
     VL_OUT64(&debug_linear_diffusion_state4,63,0);
 

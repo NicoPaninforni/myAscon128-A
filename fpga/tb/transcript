@@ -2,7 +2,7 @@
 # ** Warning: (vlib-34) Library already exists at "work".
 # Errors: 0, Warnings: 1
 # QuestaSim-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
-# Start time: 12:41:02 on Jul 15,2025
+# Start time: 13:01:39 on Jul 22,2025
 # vlog -sv "+incdir+.." "+define+TB" tb_cw305_top.v ../cw305_top.v ../cw305_reg_ascon.v ../cw305_usb_reg_fe.v ../cdc_pulse.v ../clocks.v xilinx_primitives_stub.v ../../rtl/ascon_params.sv ../../rtl/ascon_sbox_d2.sv ../../rtl/fsm.sv ../../rtl/lfsr.sv ../../rtl/register.sv ../../rtl/shareCreator.sv ../../rtl/sipo_debug.sv ../../rtl/state_register.sv ../../rtl/ascon_top.sv ../cw305_ascon_defines.v 
 # -- Compiling module tb
 # -- Compiling module cw305_top
@@ -37,12 +37,13 @@
 # Top level modules:
 # 	tb
 # 	sipo_debug
-# End time: 12:41:02 on Jul 15,2025, Elapsed time: 0:00:00
+# End time: 13:01:39 on Jul 22,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim -voptargs="+acc" work.tb 
-# Start time: 12:41:02 on Jul 15,2025
+# Start time: 13:01:39 on Jul 22,2025
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-143) Recognized 1 FSM in module "cw305_top(fast)".
 # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
 # //  Questa Sim-64
 # //  Version 2024.3 linux_x86_64 Sep 10 2024
@@ -86,9 +87,12 @@
 # Loading work.ascon_sbox_d2_sv_unit(fast)
 # Loading work.ascon_sbox_d2(fast)
 # Running with seed=1
+# 📦 FIFO contiene 1 blocchi
+# 📥 FIFO block #0: 9d0dfe351ed04279d7704cfed6fa74xx
+# Encrypting via register...
 # ERROR: global timeout
 # SIMULATION FAILED (1 errors).
-# ** Note: $finish    : tb_cw305_top.v(333)
-#    Time: 10 us  Iteration: 0  Instance: /tb
-# End time: 12:41:06 on Jul 15,2025, Elapsed time: 0:00:04
+# ** Note: $finish    : tb_cw305_top.v(339)
+#    Time: 100 us  Iteration: 0  Instance: /tb
+# End time: 13:01:51 on Jul 22,2025, Elapsed time: 0:00:12
 # Errors: 0, Warnings: 1

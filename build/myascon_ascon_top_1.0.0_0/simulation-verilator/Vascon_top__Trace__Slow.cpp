@@ -22,1177 +22,1871 @@ void Vascon_top___024root__traceInitSub0(Vascon_top___024root* vlSelf, Verilated
     if (false && tracep && c) {}  // Prevent unused
     // Body
     {
-        tracep->declBit(c+1419,"clk", false,-1);
-        tracep->declBit(c+1420,"reset_n", false,-1);
-        tracep->declBit(c+1421,"start", false,-1);
-        tracep->declQuad(c+1422,"key1", false,-1, 63,0);
-        tracep->declQuad(c+1424,"key2", false,-1, 63,0);
-        tracep->declBit(c+1426,"key_valid", false,-1);
-        tracep->declQuad(c+1427,"nonce1", false,-1, 63,0);
-        tracep->declQuad(c+1429,"nonce2", false,-1, 63,0);
-        tracep->declQuad(c+1431,"initialVector", false,-1, 63,0);
-        tracep->declArray(c+1433,"data_in", false,-1, 127,0);
-        tracep->declBit(c+1437,"valid_data_in", false,-1);
-        tracep->declBit(c+1438,"last_block", false,-1);
-        tracep->declBus(c+1439,"valid_bytes", false,-1, 4,0);
-        tracep->declBit(c+1440,"EOT", false,-1);
-        tracep->declArray(c+1441,"state_reg_out", false,-1, 319,0);
-        tracep->declBit(c+1451,"ciphertext_valid", false,-1);
-        tracep->declArray(c+1452,"ciphertext", false,-1, 127,0);
-        tracep->declBit(c+1456,"done", false,-1);
-        tracep->declBit(c+1457,"ready_tag", false,-1);
-        tracep->declQuad(c+1458,"tag1", false,-1, 63,0);
-        tracep->declQuad(c+1460,"tag2", false,-1, 63,0);
-        tracep->declBit(c+1462,"ready_for_data", false,-1);
-        tracep->declBit(c+1463,"read_data", false,-1);
-        tracep->declBit(c+1464,"debug_extra_padding_ff", false,-1);
-        tracep->declBus(c+1465,"debug_bitcounter", false,-1, 3,0);
-        tracep->declBus(c+1466,"debug_roundcounter", false,-1, 3,0);
-        tracep->declBus(c+1467,"debug_state", false,-1, 4,0);
-        tracep->declQuad(c+1468,"debug_state_0", false,-1, 63,0);
-        tracep->declQuad(c+1470,"debug_state_1", false,-1, 63,0);
-        tracep->declQuad(c+1472,"debug_state_2", false,-1, 63,0);
-        tracep->declQuad(c+1474,"debug_state_3", false,-1, 63,0);
-        tracep->declQuad(c+1476,"debug_state_4", false,-1, 63,0);
-        tracep->declQuad(c+1478,"debug_round_state_0", false,-1, 63,0);
-        tracep->declQuad(c+1480,"debug_round_state_1", false,-1, 63,0);
-        tracep->declQuad(c+1482,"debug_round_state_2", false,-1, 63,0);
-        tracep->declQuad(c+1484,"debug_round_state_3", false,-1, 63,0);
-        tracep->declQuad(c+1486,"debug_round_state_4", false,-1, 63,0);
-        tracep->declQuad(c+1488,"debug_linear_diffusion_state3", false,-1, 63,0);
-        tracep->declQuad(c+1490,"debug_linear_diffusion_state4", false,-1, 63,0);
-        tracep->declBit(c+1419,"ascon_top clk", false,-1);
-        tracep->declBit(c+1420,"ascon_top reset_n", false,-1);
-        tracep->declBit(c+1421,"ascon_top start", false,-1);
-        tracep->declQuad(c+1422,"ascon_top key1", false,-1, 63,0);
-        tracep->declQuad(c+1424,"ascon_top key2", false,-1, 63,0);
-        tracep->declBit(c+1426,"ascon_top key_valid", false,-1);
-        tracep->declQuad(c+1427,"ascon_top nonce1", false,-1, 63,0);
-        tracep->declQuad(c+1429,"ascon_top nonce2", false,-1, 63,0);
-        tracep->declQuad(c+1431,"ascon_top initialVector", false,-1, 63,0);
-        tracep->declArray(c+1433,"ascon_top data_in", false,-1, 127,0);
-        tracep->declBit(c+1437,"ascon_top valid_data_in", false,-1);
-        tracep->declBit(c+1438,"ascon_top last_block", false,-1);
-        tracep->declBus(c+1439,"ascon_top valid_bytes", false,-1, 4,0);
-        tracep->declBit(c+1440,"ascon_top EOT", false,-1);
-        tracep->declArray(c+1441,"ascon_top state_reg_out", false,-1, 319,0);
-        tracep->declBit(c+1451,"ascon_top ciphertext_valid", false,-1);
-        tracep->declArray(c+1452,"ascon_top ciphertext", false,-1, 127,0);
-        tracep->declBit(c+1456,"ascon_top done", false,-1);
-        tracep->declBit(c+1457,"ascon_top ready_tag", false,-1);
-        tracep->declQuad(c+1458,"ascon_top tag1", false,-1, 63,0);
-        tracep->declQuad(c+1460,"ascon_top tag2", false,-1, 63,0);
-        tracep->declBit(c+1462,"ascon_top ready_for_data", false,-1);
-        tracep->declBit(c+1463,"ascon_top read_data", false,-1);
-        tracep->declBit(c+1464,"ascon_top debug_extra_padding_ff", false,-1);
-        tracep->declBus(c+1465,"ascon_top debug_bitcounter", false,-1, 3,0);
-        tracep->declBus(c+1466,"ascon_top debug_roundcounter", false,-1, 3,0);
-        tracep->declBus(c+1467,"ascon_top debug_state", false,-1, 4,0);
-        tracep->declQuad(c+1468,"ascon_top debug_state_0", false,-1, 63,0);
-        tracep->declQuad(c+1470,"ascon_top debug_state_1", false,-1, 63,0);
-        tracep->declQuad(c+1472,"ascon_top debug_state_2", false,-1, 63,0);
-        tracep->declQuad(c+1474,"ascon_top debug_state_3", false,-1, 63,0);
-        tracep->declQuad(c+1476,"ascon_top debug_state_4", false,-1, 63,0);
-        tracep->declQuad(c+1478,"ascon_top debug_round_state_0", false,-1, 63,0);
-        tracep->declQuad(c+1480,"ascon_top debug_round_state_1", false,-1, 63,0);
-        tracep->declQuad(c+1482,"ascon_top debug_round_state_2", false,-1, 63,0);
-        tracep->declQuad(c+1484,"ascon_top debug_round_state_3", false,-1, 63,0);
-        tracep->declQuad(c+1486,"ascon_top debug_round_state_4", false,-1, 63,0);
-        tracep->declQuad(c+1488,"ascon_top debug_linear_diffusion_state3", false,-1, 63,0);
-        tracep->declQuad(c+1490,"ascon_top debug_linear_diffusion_state4", false,-1, 63,0);
-        tracep->declArray(c+519,"ascon_top lfsr_out", false,-1, 95,0);
-        tracep->declBus(c+522,"ascon_top lfsr_state_in", false,-1, 30,0);
-        tracep->declBus(c+523,"ascon_top lfsr_state_out", false,-1, 30,0);
-        tracep->declArray(c+524,"ascon_top random_masks", false,-1, 89,0);
-        tracep->declBus(c+527,"ascon_top random_masks_sbox", false,-1, 5,0);
-        tracep->declBit(c+528,"ascon_top extra_padding_ff", false,-1);
-        tracep->declBit(c+529,"ascon_top shift_en", false,-1);
-        tracep->declBit(c+530,"ascon_top shift_type", false,-1);
-        tracep->declBit(c+1112,"ascon_top write_en", false,-1);
-        tracep->declBit(c+531,"ascon_top last_cycle", false,-1);
-        tracep->declBit(c+532,"ascon_top reg_key1_load", false,-1);
-        tracep->declBit(c+533,"ascon_top reg_key2_load", false,-1);
-        tracep->declBit(c+534,"ascon_top sel_mux_linear_diffusion_out_x3", false,-1);
-        tracep->declBit(c+1113,"ascon_top sel_mux_linear_diffusion_out_x4", false,-1);
-        tracep->declBit(c+1114,"ascon_top sel_init_load", false,-1);
-        tracep->declBit(c+535,"ascon_top sel_masked_round", false,-1);
-        tracep->declBit(c+1115,"ascon_top sel_padding", false,-1);
-        tracep->declBit(c+536,"ascon_top sel_xor_signal", false,-1);
-        tracep->declBit(c+1116,"ascon_top sel_absorb_data", false,-1);
-        tracep->declBit(c+537,"ascon_top shift_enable_sipo", false,-1);
-        tracep->declBit(c+538,"ascon_top last_cycle_sipo", false,-1);
-        tracep->declBus(c+539,"ascon_top round_counter", false,-1, 3,0);
-        tracep->declBus(c+540,"ascon_top bit_counter", false,-1, 3,0);
-        tracep->declArray(c+1117,"ascon_top state_reg_in", false,-1, 319,0);
-        tracep->declArray(c+837,"ascon_top state_reg_out_shiftdplus1", false,-1, 119,0);
-        tracep->declArray(c+1152,"ascon_top state_reg_in_shiftdplus1", false,-1, 119,0);
-        tracep->declBus(c+1156,"ascon_top state_reg_in_shift1", false,-1, 29,0);
-        tracep->declQuad(c+541,"ascon_top reg_key1_out", false,-1, 63,0);
-        tracep->declQuad(c+543,"ascon_top reg_key2_out", false,-1, 63,0);
-        tracep->declQuad(c+545,"ascon_top round_x0_debug", false,-1, 63,0);
-        tracep->declQuad(c+547,"ascon_top round_x1_debug", false,-1, 63,0);
-        tracep->declQuad(c+549,"ascon_top round_x2_debug", false,-1, 63,0);
-        tracep->declQuad(c+551,"ascon_top round_x3_debug", false,-1, 63,0);
-        tracep->declQuad(c+553,"ascon_top round_x4_debug", false,-1, 63,0);
-        tracep->declBus(c+841,"ascon_top state_reg_out_x0", false,-1, 23,0);
-        tracep->declBus(c+842,"ascon_top state_reg_out_x1", false,-1, 23,0);
-        tracep->declBus(c+843,"ascon_top state_reg_out_x2", false,-1, 23,0);
-        tracep->declBus(c+844,"ascon_top state_reg_out_x3", false,-1, 23,0);
-        tracep->declBus(c+845,"ascon_top state_reg_out_x4", false,-1, 23,0);
-        tracep->declBus(c+846,"ascon_top mux_1st_x0", false,-1, 23,0);
-        tracep->declBus(c+847,"ascon_top mux_1st_x1", false,-1, 23,0);
-        tracep->declBus(c+1157,"ascon_top mux_1st_x2", false,-1, 23,0);
-        tracep->declBus(c+848,"ascon_top mux_1st_x3", false,-1, 23,0);
-        tracep->declBus(c+849,"ascon_top mux_1st_x4", false,-1, 23,0);
-        tracep->declQuad(c+555,"ascon_top round_constant_full", false,-1, 63,0);
-        tracep->declBus(c+1508,"ascon_top RC_PADDED_WIDTH", false,-1, 31,0);
-        tracep->declArray(c+557,"ascon_top round_constant_padded", false,-1, 65,0);
-        {int i; for (i=0; i<4; i++) {
-                tracep->declBus(c+560+i*1,"ascon_top rc_block", true,(i+0), 5,0);}}
-        tracep->declArray(c+1158,"ascon_top shares_out", false,-1, 119,0);
-        tracep->declBus(c+1492,"ascon_top shares_in", false,-1, 29,0);
-        {int i; for (i=0; i<4; i++) {
-                tracep->declBus(c+1162+i*1,"ascon_top affine_layer_in", true,(i+0), 29,0);}}
-        {int i; for (i=0; i<4; i++) {
-                tracep->declBus(c+1166+i*1,"ascon_top affine_layer_out", true,(i+0), 29,0);}}
-        {int i; for (i=0; i<6; i++) {
-                tracep->declBus(c+1170+i*1,"ascon_top next_sbox_input", true,(i+0), 19,0);}}
-        {int i; for (i=0; i<6; i++) {
-                tracep->declBus(c+850+i*1,"ascon_top sbox_input", true,(i+0), 19,0);}}
-        {int i; for (i=0; i<6; i++) {
-                tracep->declBus(c+856+i*1,"ascon_top sbox_output", true,(i+0), 19,0);}}
-        {int i; for (i=0; i<6; i++) {
-                tracep->declBus(c+1176+i*1,"ascon_top sbox_output_unmasked", true,(i+0), 19,0);}}
-        {int i; for (i=0; i<6; i++) {
-                tracep->declBus(c+1182+i*1,"ascon_top mux_sbox_out", true,(i+0), 19,0);}}
-        {int i; for (i=0; i<4; i++) {
-                tracep->declBus(c+1188+i*1,"ascon_top affine_layer2nd_in", true,(i+0), 29,0);}}
-        {int i; for (i=0; i<4; i++) {
-                tracep->declBus(c+1192+i*1,"ascon_top affine_layer2nd_out", true,(i+0), 29,0);}}
-        tracep->declBus(c+1156,"ascon_top recombine_shares", false,-1, 29,0);
+        tracep->declBit(c+1219,"clk", false,-1);
+        tracep->declBit(c+1220,"reset_n", false,-1);
+        tracep->declBit(c+1221,"reset_n_lfsr", false,-1);
+        tracep->declBit(c+1222,"start", false,-1);
+        tracep->declQuad(c+1223,"key1", false,-1, 63,0);
+        tracep->declQuad(c+1225,"key2", false,-1, 63,0);
+        tracep->declBit(c+1227,"load_data", false,-1);
+        tracep->declQuad(c+1228,"nonce1", false,-1, 63,0);
+        tracep->declQuad(c+1230,"nonce2", false,-1, 63,0);
+        tracep->declQuad(c+1232,"initialVector", false,-1, 63,0);
+        tracep->declArray(c+1234,"data_in", false,-1, 127,0);
+        tracep->declBit(c+1238,"valid_data_in", false,-1);
+        tracep->declBit(c+1239,"last_block", false,-1);
+        tracep->declBus(c+1240,"valid_bytes", false,-1, 4,0);
+        tracep->declBit(c+1241,"EOT", false,-1);
+        tracep->declArray(c+1242,"state_reg_out", false,-1, 319,0);
+        tracep->declBit(c+1252,"ciphertext_valid", false,-1);
+        tracep->declArray(c+1253,"ciphertext", false,-1, 127,0);
+        tracep->declBit(c+1257,"done", false,-1);
+        tracep->declBit(c+1258,"ready_tag", false,-1);
+        tracep->declQuad(c+1259,"tag1", false,-1, 63,0);
+        tracep->declQuad(c+1261,"tag2", false,-1, 63,0);
+        tracep->declBit(c+1263,"ready_for_data", false,-1);
+        tracep->declBit(c+1264,"read_data", false,-1);
+        tracep->declBit(c+1265,"debug_extra_padding_ff", false,-1);
+        tracep->declBus(c+1266,"debug_bitcounter", false,-1, 6,0);
+        tracep->declBus(c+1267,"debug_roundcounter", false,-1, 3,0);
+        tracep->declBus(c+1268,"debug_state", false,-1, 4,0);
+        tracep->declQuad(c+1269,"debug_state_0", false,-1, 63,0);
+        tracep->declQuad(c+1271,"debug_state_1", false,-1, 63,0);
+        tracep->declQuad(c+1273,"debug_state_2", false,-1, 63,0);
+        tracep->declQuad(c+1275,"debug_state_3", false,-1, 63,0);
+        tracep->declQuad(c+1277,"debug_state_4", false,-1, 63,0);
+        tracep->declQuad(c+1279,"debug_round_state_0", false,-1, 63,0);
+        tracep->declQuad(c+1281,"debug_round_state_1", false,-1, 63,0);
+        tracep->declQuad(c+1283,"debug_round_state_2", false,-1, 63,0);
+        tracep->declQuad(c+1285,"debug_round_state_3", false,-1, 63,0);
+        tracep->declQuad(c+1287,"debug_round_state_4", false,-1, 63,0);
+        tracep->declQuad(c+1289,"debug_sbox_nomasked_0", false,-1, 63,0);
+        tracep->declQuad(c+1291,"debug_sbox_nomasked_1", false,-1, 63,0);
+        tracep->declQuad(c+1293,"debug_sbox_nomasked_2", false,-1, 63,0);
+        tracep->declQuad(c+1295,"debug_sbox_nomasked_3", false,-1, 63,0);
+        tracep->declQuad(c+1297,"debug_sbox_nomasked_4", false,-1, 63,0);
+        tracep->declQuad(c+1299,"debug_linear_diffusion_state3", false,-1, 63,0);
+        tracep->declQuad(c+1301,"debug_linear_diffusion_state4", false,-1, 63,0);
+        tracep->declBit(c+1219,"ascon_top clk", false,-1);
+        tracep->declBit(c+1220,"ascon_top reset_n", false,-1);
+        tracep->declBit(c+1221,"ascon_top reset_n_lfsr", false,-1);
+        tracep->declBit(c+1222,"ascon_top start", false,-1);
+        tracep->declQuad(c+1223,"ascon_top key1", false,-1, 63,0);
+        tracep->declQuad(c+1225,"ascon_top key2", false,-1, 63,0);
+        tracep->declBit(c+1227,"ascon_top load_data", false,-1);
+        tracep->declQuad(c+1228,"ascon_top nonce1", false,-1, 63,0);
+        tracep->declQuad(c+1230,"ascon_top nonce2", false,-1, 63,0);
+        tracep->declQuad(c+1232,"ascon_top initialVector", false,-1, 63,0);
+        tracep->declArray(c+1234,"ascon_top data_in", false,-1, 127,0);
+        tracep->declBit(c+1238,"ascon_top valid_data_in", false,-1);
+        tracep->declBit(c+1239,"ascon_top last_block", false,-1);
+        tracep->declBus(c+1240,"ascon_top valid_bytes", false,-1, 4,0);
+        tracep->declBit(c+1241,"ascon_top EOT", false,-1);
+        tracep->declArray(c+1242,"ascon_top state_reg_out", false,-1, 319,0);
+        tracep->declBit(c+1252,"ascon_top ciphertext_valid", false,-1);
+        tracep->declArray(c+1253,"ascon_top ciphertext", false,-1, 127,0);
+        tracep->declBit(c+1257,"ascon_top done", false,-1);
+        tracep->declBit(c+1258,"ascon_top ready_tag", false,-1);
+        tracep->declQuad(c+1259,"ascon_top tag1", false,-1, 63,0);
+        tracep->declQuad(c+1261,"ascon_top tag2", false,-1, 63,0);
+        tracep->declBit(c+1263,"ascon_top ready_for_data", false,-1);
+        tracep->declBit(c+1264,"ascon_top read_data", false,-1);
+        tracep->declBit(c+1265,"ascon_top debug_extra_padding_ff", false,-1);
+        tracep->declBus(c+1266,"ascon_top debug_bitcounter", false,-1, 6,0);
+        tracep->declBus(c+1267,"ascon_top debug_roundcounter", false,-1, 3,0);
+        tracep->declBus(c+1268,"ascon_top debug_state", false,-1, 4,0);
+        tracep->declQuad(c+1269,"ascon_top debug_state_0", false,-1, 63,0);
+        tracep->declQuad(c+1271,"ascon_top debug_state_1", false,-1, 63,0);
+        tracep->declQuad(c+1273,"ascon_top debug_state_2", false,-1, 63,0);
+        tracep->declQuad(c+1275,"ascon_top debug_state_3", false,-1, 63,0);
+        tracep->declQuad(c+1277,"ascon_top debug_state_4", false,-1, 63,0);
+        tracep->declQuad(c+1279,"ascon_top debug_round_state_0", false,-1, 63,0);
+        tracep->declQuad(c+1281,"ascon_top debug_round_state_1", false,-1, 63,0);
+        tracep->declQuad(c+1283,"ascon_top debug_round_state_2", false,-1, 63,0);
+        tracep->declQuad(c+1285,"ascon_top debug_round_state_3", false,-1, 63,0);
+        tracep->declQuad(c+1287,"ascon_top debug_round_state_4", false,-1, 63,0);
+        tracep->declQuad(c+1289,"ascon_top debug_sbox_nomasked_0", false,-1, 63,0);
+        tracep->declQuad(c+1291,"ascon_top debug_sbox_nomasked_1", false,-1, 63,0);
+        tracep->declQuad(c+1293,"ascon_top debug_sbox_nomasked_2", false,-1, 63,0);
+        tracep->declQuad(c+1295,"ascon_top debug_sbox_nomasked_3", false,-1, 63,0);
+        tracep->declQuad(c+1297,"ascon_top debug_sbox_nomasked_4", false,-1, 63,0);
+        tracep->declQuad(c+1299,"ascon_top debug_linear_diffusion_state3", false,-1, 63,0);
+        tracep->declQuad(c+1301,"ascon_top debug_linear_diffusion_state4", false,-1, 63,0);
+        tracep->declBus(c+1003,"ascon_top lfsr_out", false,-1, 12,0);
+        tracep->declBus(c+1004,"ascon_top lfsr_state_in", false,-1, 30,0);
+        tracep->declBus(c+1005,"ascon_top lfsr_state_out", false,-1, 30,0);
+        tracep->declBus(c+1006,"ascon_top random_masks", false,-1, 9,0);
+        tracep->declBus(c+1007,"ascon_top random_masks_sbox", false,-1, 2,0);
+        tracep->declBit(c+99,"ascon_top extra_padding_ff", false,-1);
+        tracep->declBit(c+100,"ascon_top shift_en", false,-1);
+        tracep->declBit(c+101,"ascon_top shift_type", false,-1);
+        tracep->declBit(c+1078,"ascon_top write_en", false,-1);
+        tracep->declBit(c+102,"ascon_top last_cycle", false,-1);
+        tracep->declBit(c+103,"ascon_top reg_key1_load", false,-1);
+        tracep->declBit(c+104,"ascon_top reg_key2_load", false,-1);
+        tracep->declBit(c+105,"ascon_top sel_mux_linear_diffusion_out_x3", false,-1);
+        tracep->declBit(c+1079,"ascon_top sel_mux_linear_diffusion_out_x4", false,-1);
+        tracep->declBit(c+1080,"ascon_top sel_init_load", false,-1);
+        tracep->declBit(c+106,"ascon_top sel_masked_round", false,-1);
+        tracep->declBit(c+1081,"ascon_top sel_padding", false,-1);
+        tracep->declBit(c+107,"ascon_top sel_xor_signal", false,-1);
+        tracep->declBit(c+1082,"ascon_top sel_absorb_data", false,-1);
+        tracep->declBus(c+108,"ascon_top round_counter", false,-1, 3,0);
+        tracep->declBus(c+109,"ascon_top bit_counter", false,-1, 6,0);
+        tracep->declBit(c+110,"ascon_top shift_enable_sipo", false,-1);
+        tracep->declBit(c+111,"ascon_top last_cycle_sipo", false,-1);
+        {int i; for (i=0; i<3; i++) {
+                tracep->declArray(c+1083+i*10,"ascon_top state_reg_in_shares", true,(i+0), 319,0);}}
+        {int i; for (i=0; i<3; i++) {
+                tracep->declBus(c+112+i*1,"ascon_top state_reg_out_shiftdplus1_shares", true,(i+0), 14,0);}}
+        {int i; for (i=0; i<3; i++) {
+                tracep->declBus(c+1168+i*1,"ascon_top state_reg_in_shiftdplus1_shares", true,(i+0), 14,0);}}
+        {int i; for (i=0; i<3; i++) {
+                tracep->declBus(c+1171+i*1,"ascon_top state_reg_in_shift1_shares", true,(i+0), 4,0);}}
+        {int i; for (i=0; i<3; i++) {
+                tracep->declArray(c+115+i*10,"ascon_top state_reg_out_shares", true,(i+0), 319,0);}}
+        tracep->declQuad(c+145,"ascon_top reg_key1_out", false,-1, 63,0);
+        tracep->declQuad(c+147,"ascon_top reg_key2_out", false,-1, 63,0);
+        tracep->declQuad(c+149,"ascon_top round_x0_debug", false,-1, 63,0);
+        tracep->declQuad(c+151,"ascon_top round_x1_debug", false,-1, 63,0);
+        tracep->declQuad(c+153,"ascon_top round_x2_debug", false,-1, 63,0);
+        tracep->declQuad(c+155,"ascon_top round_x3_debug", false,-1, 63,0);
+        tracep->declQuad(c+157,"ascon_top round_x4_debug", false,-1, 63,0);
+        tracep->declBus(c+159,"ascon_top state_reg_out_x0", false,-1, 2,0);
+        tracep->declBus(c+160,"ascon_top state_reg_out_x1", false,-1, 2,0);
+        tracep->declBus(c+161,"ascon_top state_reg_out_x2", false,-1, 2,0);
+        tracep->declBus(c+162,"ascon_top state_reg_out_x3", false,-1, 2,0);
+        tracep->declBus(c+163,"ascon_top state_reg_out_x4", false,-1, 2,0);
+        tracep->declBus(c+164,"ascon_top mux_1st_x0", false,-1, 2,0);
+        tracep->declBus(c+165,"ascon_top mux_1st_x1", false,-1, 2,0);
+        tracep->declBus(c+166,"ascon_top mux_1st_x2", false,-1, 2,0);
+        tracep->declBus(c+167,"ascon_top mux_1st_x3", false,-1, 2,0);
+        tracep->declBus(c+168,"ascon_top mux_1st_x4", false,-1, 2,0);
+        tracep->declQuad(c+169,"ascon_top round_constant_full", false,-1, 63,0);
+        tracep->declBus(c+1313,"ascon_top RC_PADDED_WIDTH", false,-1, 31,0);
+        tracep->declQuad(c+169,"ascon_top round_constant_padded", false,-1, 63,0);
+        {int i; for (i=0; i<3; i++) {
+                tracep->declBus(c+171+i*1,"ascon_top rc_block", true,(i+0), 0,0);}}
+        tracep->declBus(c+1174,"ascon_top shares_out", false,-1, 14,0);
+        tracep->declBus(c+174,"ascon_top shares_in", false,-1, 4,0);
+        {int i; for (i=0; i<3; i++) {
+                tracep->declBus(c+1175+i*1,"ascon_top affine_layer_in", true,(i+0), 4,0);}}
+        {int i; for (i=0; i<3; i++) {
+                tracep->declBus(c+1178+i*1,"ascon_top affine_layer_out", true,(i+0), 4,0);}}
+        {int i; for (i=0; i<1; i++) {
+                tracep->declBus(c+1181+i*1,"ascon_top next_sbox_input", true,(i+0), 14,0);}}
+        {int i; for (i=0; i<1; i++) {
+                tracep->declBus(c+971+i*1,"ascon_top sbox_input", true,(i+0), 14,0);}}
+        {int i; for (i=0; i<1; i++) {
+                tracep->declBus(c+972+i*1,"ascon_top sbox_output", true,(i+0), 14,0);}}
+        {int i; for (i=0; i<1; i++) {
+                tracep->declBus(c+1008+i*1,"ascon_top sbox_output_unmasked", true,(i+0), 14,0);}}
+        {int i; for (i=0; i<1; i++) {
+                tracep->declBus(c+1182+i*1,"ascon_top mux_sbox_out", true,(i+0), 14,0);}}
+        {int i; for (i=0; i<3; i++) {
+                tracep->declBus(c+1183+i*1,"ascon_top affine_layer2nd_in", true,(i+0), 4,0);}}
+        {int i; for (i=0; i<3; i++) {
+                tracep->declBus(c+1186+i*1,"ascon_top affine_layer2nd_out", true,(i+0), 4,0);}}
+        tracep->declArray(c+175,"ascon_top recombine_shares_sbox", false,-1, 319,0);
         {int i; for (i=0; i<5; i++) {
-                tracep->declQuad(c+1102+i*2,"ascon_top state_reg_in_absorb", true,(i+0), 63,0);}}
-        tracep->declArray(c+1493,"ascon_top init_data", false,-1, 319,0);
-        tracep->declArray(c+862,"ascon_top linear_diffusion_out", false,-1, 319,0);
-        tracep->declArray(c+1127,"ascon_top data_in_padded", false,-1, 127,0);
-        tracep->declArray(c+1131,"ascon_top reverse_reg_data_out", false,-1, 127,0);
-        tracep->declArray(c+825,"ascon_top input_state", false,-1, 319,0);
+                tracep->declQuad(c+949+i*2,"ascon_top state_reg_in_absorb", true,(i+0), 63,0);}}
+        tracep->declArray(c+1303,"ascon_top init_data", false,-1, 319,0);
+        tracep->declArray(c+185,"ascon_top linear_diffusion_out", false,-1, 319,0);
+        tracep->declArray(c+1113,"ascon_top data_in_padded", false,-1, 127,0);
+        tracep->declArray(c+1117,"ascon_top reverse_reg_data_out", false,-1, 127,0);
+        tracep->declArray(c+959,"ascon_top input_state", false,-1, 319,0);
         {int i; for (i=0; i<5; i++) {
                 tracep->declBus(c+1+i*1,"ascon_top rotations_a", true,(i+0), 31,0);}}
         {int i; for (i=0; i<5; i++) {
                 tracep->declBus(c+6+i*1,"ascon_top rotations_b", true,(i+0), 31,0);}}
         {int i; for (i=0; i<5; i++) {
-                tracep->declQuad(c+872+i*2,"ascon_top linear_diffusion_debug", true,(i+0), 63,0);}}
-        tracep->declQuad(c+835,"ascon_top mux_linear_diffusion_out_x4", false,-1, 63,0);
-        tracep->declQuad(c+1503,"ascon_top mux_linear_diffusion_out_x3", false,-1, 63,0);
-        tracep->declQuad(c+564,"ascon_top xor_signal", false,-1, 63,0);
-        tracep->declBus(c+882,"ascon_top unnamedblk1 p", false,-1, 31,0);
-        tracep->declBus(c+527,"ascon_top gen_unsupported gen_sbox[0] fresh_r", false,-1, 5,0);
-        tracep->declBus(c+527,"ascon_top gen_unsupported gen_sbox[1] fresh_r", false,-1, 5,0);
-        tracep->declBus(c+527,"ascon_top gen_unsupported gen_sbox[2] fresh_r", false,-1, 5,0);
-        tracep->declBus(c+527,"ascon_top gen_unsupported gen_sbox[3] fresh_r", false,-1, 5,0);
-        tracep->declBus(c+527,"ascon_top gen_unsupported gen_sbox[4] fresh_r", false,-1, 5,0);
-        tracep->declBus(c+527,"ascon_top gen_unsupported gen_sbox[5] fresh_r", false,-1, 5,0);
-        tracep->declBus(c+1196,"ascon_top affine_layer[0] affine_layer2nd_in_temp", false,-1, 5,0);
-        tracep->declBus(c+1505,"ascon_top affine_layer[1] affine_layer2nd_in_temp", false,-1, 5,0);
-        tracep->declBus(c+1506,"ascon_top affine_layer[2] affine_layer2nd_in_temp", false,-1, 5,0);
-        tracep->declBus(c+1507,"ascon_top affine_layer[3] affine_layer2nd_in_temp", false,-1, 5,0);
-        tracep->declBus(c+1197,"ascon_top recombine[0] temp_bits", false,-1, 3,0);
-        tracep->declBus(c+1509,"ascon_top recombine[0] unnamedblk4 s", false,-1, 31,0);
-        tracep->declBus(c+1198,"ascon_top recombine[1] temp_bits", false,-1, 3,0);
-        tracep->declBus(c+1509,"ascon_top recombine[1] unnamedblk4 s", false,-1, 31,0);
-        tracep->declBus(c+1199,"ascon_top recombine[2] temp_bits", false,-1, 3,0);
-        tracep->declBus(c+1509,"ascon_top recombine[2] unnamedblk4 s", false,-1, 31,0);
-        tracep->declBus(c+1200,"ascon_top recombine[3] temp_bits", false,-1, 3,0);
-        tracep->declBus(c+1509,"ascon_top recombine[3] unnamedblk4 s", false,-1, 31,0);
-        tracep->declBus(c+1201,"ascon_top recombine[4] temp_bits", false,-1, 3,0);
-        tracep->declBus(c+1509,"ascon_top recombine[4] unnamedblk4 s", false,-1, 31,0);
-        tracep->declBus(c+1202,"ascon_top recombine[5] temp_bits", false,-1, 3,0);
-        tracep->declBus(c+1509,"ascon_top recombine[5] unnamedblk4 s", false,-1, 31,0);
-        tracep->declBus(c+1203,"ascon_top recombine[6] temp_bits", false,-1, 3,0);
-        tracep->declBus(c+1509,"ascon_top recombine[6] unnamedblk4 s", false,-1, 31,0);
-        tracep->declBus(c+1204,"ascon_top recombine[7] temp_bits", false,-1, 3,0);
-        tracep->declBus(c+1509,"ascon_top recombine[7] unnamedblk4 s", false,-1, 31,0);
-        tracep->declBus(c+1205,"ascon_top recombine[8] temp_bits", false,-1, 3,0);
-        tracep->declBus(c+1509,"ascon_top recombine[8] unnamedblk4 s", false,-1, 31,0);
-        tracep->declBus(c+1206,"ascon_top recombine[9] temp_bits", false,-1, 3,0);
-        tracep->declBus(c+1509,"ascon_top recombine[9] unnamedblk4 s", false,-1, 31,0);
-        tracep->declBus(c+1207,"ascon_top recombine[10] temp_bits", false,-1, 3,0);
-        tracep->declBus(c+1509,"ascon_top recombine[10] unnamedblk4 s", false,-1, 31,0);
-        tracep->declBus(c+1208,"ascon_top recombine[11] temp_bits", false,-1, 3,0);
-        tracep->declBus(c+1509,"ascon_top recombine[11] unnamedblk4 s", false,-1, 31,0);
-        tracep->declBus(c+1209,"ascon_top recombine[12] temp_bits", false,-1, 3,0);
-        tracep->declBus(c+1509,"ascon_top recombine[12] unnamedblk4 s", false,-1, 31,0);
-        tracep->declBus(c+1210,"ascon_top recombine[13] temp_bits", false,-1, 3,0);
-        tracep->declBus(c+1509,"ascon_top recombine[13] unnamedblk4 s", false,-1, 31,0);
-        tracep->declBus(c+1211,"ascon_top recombine[14] temp_bits", false,-1, 3,0);
-        tracep->declBus(c+1509,"ascon_top recombine[14] unnamedblk4 s", false,-1, 31,0);
-        tracep->declBus(c+1212,"ascon_top recombine[15] temp_bits", false,-1, 3,0);
-        tracep->declBus(c+1509,"ascon_top recombine[15] unnamedblk4 s", false,-1, 31,0);
-        tracep->declBus(c+1213,"ascon_top recombine[16] temp_bits", false,-1, 3,0);
-        tracep->declBus(c+1509,"ascon_top recombine[16] unnamedblk4 s", false,-1, 31,0);
-        tracep->declBus(c+1214,"ascon_top recombine[17] temp_bits", false,-1, 3,0);
-        tracep->declBus(c+1509,"ascon_top recombine[17] unnamedblk4 s", false,-1, 31,0);
-        tracep->declBus(c+1215,"ascon_top recombine[18] temp_bits", false,-1, 3,0);
-        tracep->declBus(c+1509,"ascon_top recombine[18] unnamedblk4 s", false,-1, 31,0);
-        tracep->declBus(c+1216,"ascon_top recombine[19] temp_bits", false,-1, 3,0);
-        tracep->declBus(c+1509,"ascon_top recombine[19] unnamedblk4 s", false,-1, 31,0);
-        tracep->declBus(c+1217,"ascon_top recombine[20] temp_bits", false,-1, 3,0);
-        tracep->declBus(c+1509,"ascon_top recombine[20] unnamedblk4 s", false,-1, 31,0);
-        tracep->declBus(c+1218,"ascon_top recombine[21] temp_bits", false,-1, 3,0);
-        tracep->declBus(c+1509,"ascon_top recombine[21] unnamedblk4 s", false,-1, 31,0);
-        tracep->declBus(c+1219,"ascon_top recombine[22] temp_bits", false,-1, 3,0);
-        tracep->declBus(c+1509,"ascon_top recombine[22] unnamedblk4 s", false,-1, 31,0);
-        tracep->declBus(c+1220,"ascon_top recombine[23] temp_bits", false,-1, 3,0);
-        tracep->declBus(c+1509,"ascon_top recombine[23] unnamedblk4 s", false,-1, 31,0);
-        tracep->declBus(c+1221,"ascon_top recombine[24] temp_bits", false,-1, 3,0);
-        tracep->declBus(c+1509,"ascon_top recombine[24] unnamedblk4 s", false,-1, 31,0);
-        tracep->declBus(c+1222,"ascon_top recombine[25] temp_bits", false,-1, 3,0);
-        tracep->declBus(c+1509,"ascon_top recombine[25] unnamedblk4 s", false,-1, 31,0);
-        tracep->declBus(c+1223,"ascon_top recombine[26] temp_bits", false,-1, 3,0);
-        tracep->declBus(c+1509,"ascon_top recombine[26] unnamedblk4 s", false,-1, 31,0);
-        tracep->declBus(c+1224,"ascon_top recombine[27] temp_bits", false,-1, 3,0);
-        tracep->declBus(c+1509,"ascon_top recombine[27] unnamedblk4 s", false,-1, 31,0);
-        tracep->declBus(c+1225,"ascon_top recombine[28] temp_bits", false,-1, 3,0);
-        tracep->declBus(c+1509,"ascon_top recombine[28] unnamedblk4 s", false,-1, 31,0);
-        tracep->declBus(c+1226,"ascon_top recombine[29] temp_bits", false,-1, 3,0);
-        tracep->declBus(c+1509,"ascon_top recombine[29] unnamedblk4 s", false,-1, 31,0);
-        tracep->declBus(c+1135,"ascon_top unnamedblk5 i", false,-1, 31,0);
-        tracep->declArray(c+1510,"ascon_top lfst_inst data_in", false,-1, 95,0);
-        tracep->declBus(c+522,"ascon_top lfst_inst state_in", false,-1, 30,0);
-        tracep->declArray(c+519,"ascon_top lfst_inst data_out", false,-1, 95,0);
-        tracep->declBus(c+523,"ascon_top lfst_inst state_out", false,-1, 30,0);
-        tracep->declBus(c+1513,"ascon_top lfst_inst STYLE_INT", false,-1, 31,0);
-        tracep->declArray(c+11,"ascon_top lfst_inst genblk1 lfsr_state[0] mask", false,-1, 126,0);
-        tracep->declBit(c+566,"ascon_top lfst_inst genblk1 lfsr_state[0] state_reg", false,-1);
-        tracep->declBus(c+567,"ascon_top lfst_inst genblk1 lfsr_state[0] i", false,-1, 31,0);
-        tracep->declArray(c+15,"ascon_top lfst_inst genblk1 lfsr_state[1] mask", false,-1, 126,0);
-        tracep->declBit(c+568,"ascon_top lfst_inst genblk1 lfsr_state[1] state_reg", false,-1);
-        tracep->declBus(c+569,"ascon_top lfst_inst genblk1 lfsr_state[1] i", false,-1, 31,0);
-        tracep->declArray(c+19,"ascon_top lfst_inst genblk1 lfsr_state[2] mask", false,-1, 126,0);
-        tracep->declBit(c+570,"ascon_top lfst_inst genblk1 lfsr_state[2] state_reg", false,-1);
-        tracep->declBus(c+571,"ascon_top lfst_inst genblk1 lfsr_state[2] i", false,-1, 31,0);
-        tracep->declArray(c+23,"ascon_top lfst_inst genblk1 lfsr_state[3] mask", false,-1, 126,0);
-        tracep->declBit(c+572,"ascon_top lfst_inst genblk1 lfsr_state[3] state_reg", false,-1);
-        tracep->declBus(c+573,"ascon_top lfst_inst genblk1 lfsr_state[3] i", false,-1, 31,0);
-        tracep->declArray(c+27,"ascon_top lfst_inst genblk1 lfsr_state[4] mask", false,-1, 126,0);
-        tracep->declBit(c+574,"ascon_top lfst_inst genblk1 lfsr_state[4] state_reg", false,-1);
-        tracep->declBus(c+575,"ascon_top lfst_inst genblk1 lfsr_state[4] i", false,-1, 31,0);
-        tracep->declArray(c+31,"ascon_top lfst_inst genblk1 lfsr_state[5] mask", false,-1, 126,0);
-        tracep->declBit(c+576,"ascon_top lfst_inst genblk1 lfsr_state[5] state_reg", false,-1);
-        tracep->declBus(c+577,"ascon_top lfst_inst genblk1 lfsr_state[5] i", false,-1, 31,0);
-        tracep->declArray(c+35,"ascon_top lfst_inst genblk1 lfsr_state[6] mask", false,-1, 126,0);
-        tracep->declBit(c+578,"ascon_top lfst_inst genblk1 lfsr_state[6] state_reg", false,-1);
-        tracep->declBus(c+579,"ascon_top lfst_inst genblk1 lfsr_state[6] i", false,-1, 31,0);
-        tracep->declArray(c+39,"ascon_top lfst_inst genblk1 lfsr_state[7] mask", false,-1, 126,0);
-        tracep->declBit(c+580,"ascon_top lfst_inst genblk1 lfsr_state[7] state_reg", false,-1);
-        tracep->declBus(c+581,"ascon_top lfst_inst genblk1 lfsr_state[7] i", false,-1, 31,0);
-        tracep->declArray(c+43,"ascon_top lfst_inst genblk1 lfsr_state[8] mask", false,-1, 126,0);
-        tracep->declBit(c+582,"ascon_top lfst_inst genblk1 lfsr_state[8] state_reg", false,-1);
-        tracep->declBus(c+583,"ascon_top lfst_inst genblk1 lfsr_state[8] i", false,-1, 31,0);
-        tracep->declArray(c+47,"ascon_top lfst_inst genblk1 lfsr_state[9] mask", false,-1, 126,0);
-        tracep->declBit(c+584,"ascon_top lfst_inst genblk1 lfsr_state[9] state_reg", false,-1);
-        tracep->declBus(c+585,"ascon_top lfst_inst genblk1 lfsr_state[9] i", false,-1, 31,0);
-        tracep->declArray(c+51,"ascon_top lfst_inst genblk1 lfsr_state[10] mask", false,-1, 126,0);
-        tracep->declBit(c+586,"ascon_top lfst_inst genblk1 lfsr_state[10] state_reg", false,-1);
-        tracep->declBus(c+587,"ascon_top lfst_inst genblk1 lfsr_state[10] i", false,-1, 31,0);
-        tracep->declArray(c+55,"ascon_top lfst_inst genblk1 lfsr_state[11] mask", false,-1, 126,0);
-        tracep->declBit(c+588,"ascon_top lfst_inst genblk1 lfsr_state[11] state_reg", false,-1);
-        tracep->declBus(c+589,"ascon_top lfst_inst genblk1 lfsr_state[11] i", false,-1, 31,0);
-        tracep->declArray(c+59,"ascon_top lfst_inst genblk1 lfsr_state[12] mask", false,-1, 126,0);
-        tracep->declBit(c+590,"ascon_top lfst_inst genblk1 lfsr_state[12] state_reg", false,-1);
-        tracep->declBus(c+591,"ascon_top lfst_inst genblk1 lfsr_state[12] i", false,-1, 31,0);
-        tracep->declArray(c+63,"ascon_top lfst_inst genblk1 lfsr_state[13] mask", false,-1, 126,0);
-        tracep->declBit(c+592,"ascon_top lfst_inst genblk1 lfsr_state[13] state_reg", false,-1);
-        tracep->declBus(c+593,"ascon_top lfst_inst genblk1 lfsr_state[13] i", false,-1, 31,0);
-        tracep->declArray(c+67,"ascon_top lfst_inst genblk1 lfsr_state[14] mask", false,-1, 126,0);
-        tracep->declBit(c+594,"ascon_top lfst_inst genblk1 lfsr_state[14] state_reg", false,-1);
-        tracep->declBus(c+595,"ascon_top lfst_inst genblk1 lfsr_state[14] i", false,-1, 31,0);
-        tracep->declArray(c+71,"ascon_top lfst_inst genblk1 lfsr_state[15] mask", false,-1, 126,0);
-        tracep->declBit(c+596,"ascon_top lfst_inst genblk1 lfsr_state[15] state_reg", false,-1);
-        tracep->declBus(c+597,"ascon_top lfst_inst genblk1 lfsr_state[15] i", false,-1, 31,0);
-        tracep->declArray(c+75,"ascon_top lfst_inst genblk1 lfsr_state[16] mask", false,-1, 126,0);
-        tracep->declBit(c+598,"ascon_top lfst_inst genblk1 lfsr_state[16] state_reg", false,-1);
-        tracep->declBus(c+599,"ascon_top lfst_inst genblk1 lfsr_state[16] i", false,-1, 31,0);
-        tracep->declArray(c+79,"ascon_top lfst_inst genblk1 lfsr_state[17] mask", false,-1, 126,0);
-        tracep->declBit(c+600,"ascon_top lfst_inst genblk1 lfsr_state[17] state_reg", false,-1);
-        tracep->declBus(c+601,"ascon_top lfst_inst genblk1 lfsr_state[17] i", false,-1, 31,0);
-        tracep->declArray(c+83,"ascon_top lfst_inst genblk1 lfsr_state[18] mask", false,-1, 126,0);
-        tracep->declBit(c+602,"ascon_top lfst_inst genblk1 lfsr_state[18] state_reg", false,-1);
-        tracep->declBus(c+603,"ascon_top lfst_inst genblk1 lfsr_state[18] i", false,-1, 31,0);
-        tracep->declArray(c+87,"ascon_top lfst_inst genblk1 lfsr_state[19] mask", false,-1, 126,0);
-        tracep->declBit(c+604,"ascon_top lfst_inst genblk1 lfsr_state[19] state_reg", false,-1);
-        tracep->declBus(c+605,"ascon_top lfst_inst genblk1 lfsr_state[19] i", false,-1, 31,0);
-        tracep->declArray(c+91,"ascon_top lfst_inst genblk1 lfsr_state[20] mask", false,-1, 126,0);
-        tracep->declBit(c+606,"ascon_top lfst_inst genblk1 lfsr_state[20] state_reg", false,-1);
-        tracep->declBus(c+607,"ascon_top lfst_inst genblk1 lfsr_state[20] i", false,-1, 31,0);
-        tracep->declArray(c+95,"ascon_top lfst_inst genblk1 lfsr_state[21] mask", false,-1, 126,0);
-        tracep->declBit(c+608,"ascon_top lfst_inst genblk1 lfsr_state[21] state_reg", false,-1);
-        tracep->declBus(c+609,"ascon_top lfst_inst genblk1 lfsr_state[21] i", false,-1, 31,0);
-        tracep->declArray(c+99,"ascon_top lfst_inst genblk1 lfsr_state[22] mask", false,-1, 126,0);
-        tracep->declBit(c+610,"ascon_top lfst_inst genblk1 lfsr_state[22] state_reg", false,-1);
-        tracep->declBus(c+611,"ascon_top lfst_inst genblk1 lfsr_state[22] i", false,-1, 31,0);
-        tracep->declArray(c+103,"ascon_top lfst_inst genblk1 lfsr_state[23] mask", false,-1, 126,0);
-        tracep->declBit(c+612,"ascon_top lfst_inst genblk1 lfsr_state[23] state_reg", false,-1);
-        tracep->declBus(c+613,"ascon_top lfst_inst genblk1 lfsr_state[23] i", false,-1, 31,0);
-        tracep->declArray(c+107,"ascon_top lfst_inst genblk1 lfsr_state[24] mask", false,-1, 126,0);
-        tracep->declBit(c+614,"ascon_top lfst_inst genblk1 lfsr_state[24] state_reg", false,-1);
-        tracep->declBus(c+615,"ascon_top lfst_inst genblk1 lfsr_state[24] i", false,-1, 31,0);
-        tracep->declArray(c+111,"ascon_top lfst_inst genblk1 lfsr_state[25] mask", false,-1, 126,0);
-        tracep->declBit(c+616,"ascon_top lfst_inst genblk1 lfsr_state[25] state_reg", false,-1);
-        tracep->declBus(c+617,"ascon_top lfst_inst genblk1 lfsr_state[25] i", false,-1, 31,0);
-        tracep->declArray(c+115,"ascon_top lfst_inst genblk1 lfsr_state[26] mask", false,-1, 126,0);
-        tracep->declBit(c+618,"ascon_top lfst_inst genblk1 lfsr_state[26] state_reg", false,-1);
-        tracep->declBus(c+619,"ascon_top lfst_inst genblk1 lfsr_state[26] i", false,-1, 31,0);
-        tracep->declArray(c+119,"ascon_top lfst_inst genblk1 lfsr_state[27] mask", false,-1, 126,0);
-        tracep->declBit(c+620,"ascon_top lfst_inst genblk1 lfsr_state[27] state_reg", false,-1);
-        tracep->declBus(c+621,"ascon_top lfst_inst genblk1 lfsr_state[27] i", false,-1, 31,0);
-        tracep->declArray(c+123,"ascon_top lfst_inst genblk1 lfsr_state[28] mask", false,-1, 126,0);
-        tracep->declBit(c+622,"ascon_top lfst_inst genblk1 lfsr_state[28] state_reg", false,-1);
-        tracep->declBus(c+623,"ascon_top lfst_inst genblk1 lfsr_state[28] i", false,-1, 31,0);
-        tracep->declArray(c+127,"ascon_top lfst_inst genblk1 lfsr_state[29] mask", false,-1, 126,0);
-        tracep->declBit(c+624,"ascon_top lfst_inst genblk1 lfsr_state[29] state_reg", false,-1);
-        tracep->declBus(c+625,"ascon_top lfst_inst genblk1 lfsr_state[29] i", false,-1, 31,0);
-        tracep->declArray(c+131,"ascon_top lfst_inst genblk1 lfsr_state[30] mask", false,-1, 126,0);
-        tracep->declBit(c+626,"ascon_top lfst_inst genblk1 lfsr_state[30] state_reg", false,-1);
-        tracep->declBus(c+627,"ascon_top lfst_inst genblk1 lfsr_state[30] i", false,-1, 31,0);
-        tracep->declArray(c+135,"ascon_top lfst_inst genblk1 lfsr_data[0] mask", false,-1, 126,0);
-        tracep->declBit(c+628,"ascon_top lfst_inst genblk1 lfsr_data[0] data_reg", false,-1);
-        tracep->declBus(c+629,"ascon_top lfst_inst genblk1 lfsr_data[0] i", false,-1, 31,0);
-        tracep->declArray(c+139,"ascon_top lfst_inst genblk1 lfsr_data[1] mask", false,-1, 126,0);
-        tracep->declBit(c+630,"ascon_top lfst_inst genblk1 lfsr_data[1] data_reg", false,-1);
-        tracep->declBus(c+631,"ascon_top lfst_inst genblk1 lfsr_data[1] i", false,-1, 31,0);
-        tracep->declArray(c+143,"ascon_top lfst_inst genblk1 lfsr_data[2] mask", false,-1, 126,0);
-        tracep->declBit(c+632,"ascon_top lfst_inst genblk1 lfsr_data[2] data_reg", false,-1);
-        tracep->declBus(c+633,"ascon_top lfst_inst genblk1 lfsr_data[2] i", false,-1, 31,0);
-        tracep->declArray(c+147,"ascon_top lfst_inst genblk1 lfsr_data[3] mask", false,-1, 126,0);
-        tracep->declBit(c+634,"ascon_top lfst_inst genblk1 lfsr_data[3] data_reg", false,-1);
-        tracep->declBus(c+635,"ascon_top lfst_inst genblk1 lfsr_data[3] i", false,-1, 31,0);
-        tracep->declArray(c+151,"ascon_top lfst_inst genblk1 lfsr_data[4] mask", false,-1, 126,0);
-        tracep->declBit(c+636,"ascon_top lfst_inst genblk1 lfsr_data[4] data_reg", false,-1);
-        tracep->declBus(c+637,"ascon_top lfst_inst genblk1 lfsr_data[4] i", false,-1, 31,0);
-        tracep->declArray(c+155,"ascon_top lfst_inst genblk1 lfsr_data[5] mask", false,-1, 126,0);
-        tracep->declBit(c+638,"ascon_top lfst_inst genblk1 lfsr_data[5] data_reg", false,-1);
-        tracep->declBus(c+639,"ascon_top lfst_inst genblk1 lfsr_data[5] i", false,-1, 31,0);
-        tracep->declArray(c+159,"ascon_top lfst_inst genblk1 lfsr_data[6] mask", false,-1, 126,0);
-        tracep->declBit(c+640,"ascon_top lfst_inst genblk1 lfsr_data[6] data_reg", false,-1);
-        tracep->declBus(c+641,"ascon_top lfst_inst genblk1 lfsr_data[6] i", false,-1, 31,0);
-        tracep->declArray(c+163,"ascon_top lfst_inst genblk1 lfsr_data[7] mask", false,-1, 126,0);
-        tracep->declBit(c+642,"ascon_top lfst_inst genblk1 lfsr_data[7] data_reg", false,-1);
-        tracep->declBus(c+643,"ascon_top lfst_inst genblk1 lfsr_data[7] i", false,-1, 31,0);
-        tracep->declArray(c+167,"ascon_top lfst_inst genblk1 lfsr_data[8] mask", false,-1, 126,0);
-        tracep->declBit(c+644,"ascon_top lfst_inst genblk1 lfsr_data[8] data_reg", false,-1);
-        tracep->declBus(c+645,"ascon_top lfst_inst genblk1 lfsr_data[8] i", false,-1, 31,0);
-        tracep->declArray(c+171,"ascon_top lfst_inst genblk1 lfsr_data[9] mask", false,-1, 126,0);
-        tracep->declBit(c+646,"ascon_top lfst_inst genblk1 lfsr_data[9] data_reg", false,-1);
-        tracep->declBus(c+647,"ascon_top lfst_inst genblk1 lfsr_data[9] i", false,-1, 31,0);
-        tracep->declArray(c+175,"ascon_top lfst_inst genblk1 lfsr_data[10] mask", false,-1, 126,0);
-        tracep->declBit(c+648,"ascon_top lfst_inst genblk1 lfsr_data[10] data_reg", false,-1);
-        tracep->declBus(c+649,"ascon_top lfst_inst genblk1 lfsr_data[10] i", false,-1, 31,0);
-        tracep->declArray(c+179,"ascon_top lfst_inst genblk1 lfsr_data[11] mask", false,-1, 126,0);
-        tracep->declBit(c+650,"ascon_top lfst_inst genblk1 lfsr_data[11] data_reg", false,-1);
-        tracep->declBus(c+651,"ascon_top lfst_inst genblk1 lfsr_data[11] i", false,-1, 31,0);
-        tracep->declArray(c+183,"ascon_top lfst_inst genblk1 lfsr_data[12] mask", false,-1, 126,0);
-        tracep->declBit(c+652,"ascon_top lfst_inst genblk1 lfsr_data[12] data_reg", false,-1);
-        tracep->declBus(c+653,"ascon_top lfst_inst genblk1 lfsr_data[12] i", false,-1, 31,0);
-        tracep->declArray(c+187,"ascon_top lfst_inst genblk1 lfsr_data[13] mask", false,-1, 126,0);
-        tracep->declBit(c+654,"ascon_top lfst_inst genblk1 lfsr_data[13] data_reg", false,-1);
-        tracep->declBus(c+655,"ascon_top lfst_inst genblk1 lfsr_data[13] i", false,-1, 31,0);
-        tracep->declArray(c+191,"ascon_top lfst_inst genblk1 lfsr_data[14] mask", false,-1, 126,0);
-        tracep->declBit(c+656,"ascon_top lfst_inst genblk1 lfsr_data[14] data_reg", false,-1);
-        tracep->declBus(c+657,"ascon_top lfst_inst genblk1 lfsr_data[14] i", false,-1, 31,0);
-        tracep->declArray(c+195,"ascon_top lfst_inst genblk1 lfsr_data[15] mask", false,-1, 126,0);
-        tracep->declBit(c+658,"ascon_top lfst_inst genblk1 lfsr_data[15] data_reg", false,-1);
-        tracep->declBus(c+659,"ascon_top lfst_inst genblk1 lfsr_data[15] i", false,-1, 31,0);
-        tracep->declArray(c+199,"ascon_top lfst_inst genblk1 lfsr_data[16] mask", false,-1, 126,0);
-        tracep->declBit(c+660,"ascon_top lfst_inst genblk1 lfsr_data[16] data_reg", false,-1);
-        tracep->declBus(c+661,"ascon_top lfst_inst genblk1 lfsr_data[16] i", false,-1, 31,0);
-        tracep->declArray(c+203,"ascon_top lfst_inst genblk1 lfsr_data[17] mask", false,-1, 126,0);
-        tracep->declBit(c+662,"ascon_top lfst_inst genblk1 lfsr_data[17] data_reg", false,-1);
-        tracep->declBus(c+663,"ascon_top lfst_inst genblk1 lfsr_data[17] i", false,-1, 31,0);
-        tracep->declArray(c+207,"ascon_top lfst_inst genblk1 lfsr_data[18] mask", false,-1, 126,0);
-        tracep->declBit(c+664,"ascon_top lfst_inst genblk1 lfsr_data[18] data_reg", false,-1);
-        tracep->declBus(c+665,"ascon_top lfst_inst genblk1 lfsr_data[18] i", false,-1, 31,0);
-        tracep->declArray(c+211,"ascon_top lfst_inst genblk1 lfsr_data[19] mask", false,-1, 126,0);
-        tracep->declBit(c+666,"ascon_top lfst_inst genblk1 lfsr_data[19] data_reg", false,-1);
-        tracep->declBus(c+667,"ascon_top lfst_inst genblk1 lfsr_data[19] i", false,-1, 31,0);
-        tracep->declArray(c+215,"ascon_top lfst_inst genblk1 lfsr_data[20] mask", false,-1, 126,0);
-        tracep->declBit(c+668,"ascon_top lfst_inst genblk1 lfsr_data[20] data_reg", false,-1);
-        tracep->declBus(c+669,"ascon_top lfst_inst genblk1 lfsr_data[20] i", false,-1, 31,0);
-        tracep->declArray(c+219,"ascon_top lfst_inst genblk1 lfsr_data[21] mask", false,-1, 126,0);
-        tracep->declBit(c+670,"ascon_top lfst_inst genblk1 lfsr_data[21] data_reg", false,-1);
-        tracep->declBus(c+671,"ascon_top lfst_inst genblk1 lfsr_data[21] i", false,-1, 31,0);
-        tracep->declArray(c+223,"ascon_top lfst_inst genblk1 lfsr_data[22] mask", false,-1, 126,0);
-        tracep->declBit(c+672,"ascon_top lfst_inst genblk1 lfsr_data[22] data_reg", false,-1);
-        tracep->declBus(c+673,"ascon_top lfst_inst genblk1 lfsr_data[22] i", false,-1, 31,0);
-        tracep->declArray(c+227,"ascon_top lfst_inst genblk1 lfsr_data[23] mask", false,-1, 126,0);
-        tracep->declBit(c+674,"ascon_top lfst_inst genblk1 lfsr_data[23] data_reg", false,-1);
-        tracep->declBus(c+675,"ascon_top lfst_inst genblk1 lfsr_data[23] i", false,-1, 31,0);
-        tracep->declArray(c+231,"ascon_top lfst_inst genblk1 lfsr_data[24] mask", false,-1, 126,0);
-        tracep->declBit(c+676,"ascon_top lfst_inst genblk1 lfsr_data[24] data_reg", false,-1);
-        tracep->declBus(c+677,"ascon_top lfst_inst genblk1 lfsr_data[24] i", false,-1, 31,0);
-        tracep->declArray(c+235,"ascon_top lfst_inst genblk1 lfsr_data[25] mask", false,-1, 126,0);
-        tracep->declBit(c+678,"ascon_top lfst_inst genblk1 lfsr_data[25] data_reg", false,-1);
-        tracep->declBus(c+679,"ascon_top lfst_inst genblk1 lfsr_data[25] i", false,-1, 31,0);
-        tracep->declArray(c+239,"ascon_top lfst_inst genblk1 lfsr_data[26] mask", false,-1, 126,0);
-        tracep->declBit(c+680,"ascon_top lfst_inst genblk1 lfsr_data[26] data_reg", false,-1);
-        tracep->declBus(c+681,"ascon_top lfst_inst genblk1 lfsr_data[26] i", false,-1, 31,0);
-        tracep->declArray(c+243,"ascon_top lfst_inst genblk1 lfsr_data[27] mask", false,-1, 126,0);
-        tracep->declBit(c+682,"ascon_top lfst_inst genblk1 lfsr_data[27] data_reg", false,-1);
-        tracep->declBus(c+683,"ascon_top lfst_inst genblk1 lfsr_data[27] i", false,-1, 31,0);
-        tracep->declArray(c+247,"ascon_top lfst_inst genblk1 lfsr_data[28] mask", false,-1, 126,0);
-        tracep->declBit(c+684,"ascon_top lfst_inst genblk1 lfsr_data[28] data_reg", false,-1);
-        tracep->declBus(c+685,"ascon_top lfst_inst genblk1 lfsr_data[28] i", false,-1, 31,0);
-        tracep->declArray(c+251,"ascon_top lfst_inst genblk1 lfsr_data[29] mask", false,-1, 126,0);
-        tracep->declBit(c+686,"ascon_top lfst_inst genblk1 lfsr_data[29] data_reg", false,-1);
-        tracep->declBus(c+687,"ascon_top lfst_inst genblk1 lfsr_data[29] i", false,-1, 31,0);
-        tracep->declArray(c+255,"ascon_top lfst_inst genblk1 lfsr_data[30] mask", false,-1, 126,0);
-        tracep->declBit(c+688,"ascon_top lfst_inst genblk1 lfsr_data[30] data_reg", false,-1);
-        tracep->declBus(c+689,"ascon_top lfst_inst genblk1 lfsr_data[30] i", false,-1, 31,0);
-        tracep->declArray(c+259,"ascon_top lfst_inst genblk1 lfsr_data[31] mask", false,-1, 126,0);
-        tracep->declBit(c+690,"ascon_top lfst_inst genblk1 lfsr_data[31] data_reg", false,-1);
-        tracep->declBus(c+691,"ascon_top lfst_inst genblk1 lfsr_data[31] i", false,-1, 31,0);
-        tracep->declArray(c+263,"ascon_top lfst_inst genblk1 lfsr_data[32] mask", false,-1, 126,0);
-        tracep->declBit(c+692,"ascon_top lfst_inst genblk1 lfsr_data[32] data_reg", false,-1);
-        tracep->declBus(c+693,"ascon_top lfst_inst genblk1 lfsr_data[32] i", false,-1, 31,0);
-        tracep->declArray(c+267,"ascon_top lfst_inst genblk1 lfsr_data[33] mask", false,-1, 126,0);
-        tracep->declBit(c+694,"ascon_top lfst_inst genblk1 lfsr_data[33] data_reg", false,-1);
-        tracep->declBus(c+695,"ascon_top lfst_inst genblk1 lfsr_data[33] i", false,-1, 31,0);
-        tracep->declArray(c+271,"ascon_top lfst_inst genblk1 lfsr_data[34] mask", false,-1, 126,0);
-        tracep->declBit(c+696,"ascon_top lfst_inst genblk1 lfsr_data[34] data_reg", false,-1);
-        tracep->declBus(c+697,"ascon_top lfst_inst genblk1 lfsr_data[34] i", false,-1, 31,0);
-        tracep->declArray(c+275,"ascon_top lfst_inst genblk1 lfsr_data[35] mask", false,-1, 126,0);
-        tracep->declBit(c+698,"ascon_top lfst_inst genblk1 lfsr_data[35] data_reg", false,-1);
-        tracep->declBus(c+699,"ascon_top lfst_inst genblk1 lfsr_data[35] i", false,-1, 31,0);
-        tracep->declArray(c+279,"ascon_top lfst_inst genblk1 lfsr_data[36] mask", false,-1, 126,0);
-        tracep->declBit(c+700,"ascon_top lfst_inst genblk1 lfsr_data[36] data_reg", false,-1);
-        tracep->declBus(c+701,"ascon_top lfst_inst genblk1 lfsr_data[36] i", false,-1, 31,0);
-        tracep->declArray(c+283,"ascon_top lfst_inst genblk1 lfsr_data[37] mask", false,-1, 126,0);
-        tracep->declBit(c+702,"ascon_top lfst_inst genblk1 lfsr_data[37] data_reg", false,-1);
-        tracep->declBus(c+703,"ascon_top lfst_inst genblk1 lfsr_data[37] i", false,-1, 31,0);
-        tracep->declArray(c+287,"ascon_top lfst_inst genblk1 lfsr_data[38] mask", false,-1, 126,0);
-        tracep->declBit(c+704,"ascon_top lfst_inst genblk1 lfsr_data[38] data_reg", false,-1);
-        tracep->declBus(c+705,"ascon_top lfst_inst genblk1 lfsr_data[38] i", false,-1, 31,0);
-        tracep->declArray(c+291,"ascon_top lfst_inst genblk1 lfsr_data[39] mask", false,-1, 126,0);
-        tracep->declBit(c+706,"ascon_top lfst_inst genblk1 lfsr_data[39] data_reg", false,-1);
-        tracep->declBus(c+707,"ascon_top lfst_inst genblk1 lfsr_data[39] i", false,-1, 31,0);
-        tracep->declArray(c+295,"ascon_top lfst_inst genblk1 lfsr_data[40] mask", false,-1, 126,0);
-        tracep->declBit(c+708,"ascon_top lfst_inst genblk1 lfsr_data[40] data_reg", false,-1);
-        tracep->declBus(c+709,"ascon_top lfst_inst genblk1 lfsr_data[40] i", false,-1, 31,0);
-        tracep->declArray(c+299,"ascon_top lfst_inst genblk1 lfsr_data[41] mask", false,-1, 126,0);
-        tracep->declBit(c+710,"ascon_top lfst_inst genblk1 lfsr_data[41] data_reg", false,-1);
-        tracep->declBus(c+711,"ascon_top lfst_inst genblk1 lfsr_data[41] i", false,-1, 31,0);
-        tracep->declArray(c+303,"ascon_top lfst_inst genblk1 lfsr_data[42] mask", false,-1, 126,0);
-        tracep->declBit(c+712,"ascon_top lfst_inst genblk1 lfsr_data[42] data_reg", false,-1);
-        tracep->declBus(c+713,"ascon_top lfst_inst genblk1 lfsr_data[42] i", false,-1, 31,0);
-        tracep->declArray(c+307,"ascon_top lfst_inst genblk1 lfsr_data[43] mask", false,-1, 126,0);
-        tracep->declBit(c+714,"ascon_top lfst_inst genblk1 lfsr_data[43] data_reg", false,-1);
-        tracep->declBus(c+715,"ascon_top lfst_inst genblk1 lfsr_data[43] i", false,-1, 31,0);
-        tracep->declArray(c+311,"ascon_top lfst_inst genblk1 lfsr_data[44] mask", false,-1, 126,0);
-        tracep->declBit(c+716,"ascon_top lfst_inst genblk1 lfsr_data[44] data_reg", false,-1);
-        tracep->declBus(c+717,"ascon_top lfst_inst genblk1 lfsr_data[44] i", false,-1, 31,0);
-        tracep->declArray(c+315,"ascon_top lfst_inst genblk1 lfsr_data[45] mask", false,-1, 126,0);
-        tracep->declBit(c+718,"ascon_top lfst_inst genblk1 lfsr_data[45] data_reg", false,-1);
-        tracep->declBus(c+719,"ascon_top lfst_inst genblk1 lfsr_data[45] i", false,-1, 31,0);
-        tracep->declArray(c+319,"ascon_top lfst_inst genblk1 lfsr_data[46] mask", false,-1, 126,0);
-        tracep->declBit(c+720,"ascon_top lfst_inst genblk1 lfsr_data[46] data_reg", false,-1);
-        tracep->declBus(c+721,"ascon_top lfst_inst genblk1 lfsr_data[46] i", false,-1, 31,0);
-        tracep->declArray(c+323,"ascon_top lfst_inst genblk1 lfsr_data[47] mask", false,-1, 126,0);
-        tracep->declBit(c+722,"ascon_top lfst_inst genblk1 lfsr_data[47] data_reg", false,-1);
-        tracep->declBus(c+723,"ascon_top lfst_inst genblk1 lfsr_data[47] i", false,-1, 31,0);
-        tracep->declArray(c+327,"ascon_top lfst_inst genblk1 lfsr_data[48] mask", false,-1, 126,0);
-        tracep->declBit(c+724,"ascon_top lfst_inst genblk1 lfsr_data[48] data_reg", false,-1);
-        tracep->declBus(c+725,"ascon_top lfst_inst genblk1 lfsr_data[48] i", false,-1, 31,0);
-        tracep->declArray(c+331,"ascon_top lfst_inst genblk1 lfsr_data[49] mask", false,-1, 126,0);
-        tracep->declBit(c+726,"ascon_top lfst_inst genblk1 lfsr_data[49] data_reg", false,-1);
-        tracep->declBus(c+727,"ascon_top lfst_inst genblk1 lfsr_data[49] i", false,-1, 31,0);
-        tracep->declArray(c+335,"ascon_top lfst_inst genblk1 lfsr_data[50] mask", false,-1, 126,0);
-        tracep->declBit(c+728,"ascon_top lfst_inst genblk1 lfsr_data[50] data_reg", false,-1);
-        tracep->declBus(c+729,"ascon_top lfst_inst genblk1 lfsr_data[50] i", false,-1, 31,0);
-        tracep->declArray(c+339,"ascon_top lfst_inst genblk1 lfsr_data[51] mask", false,-1, 126,0);
-        tracep->declBit(c+730,"ascon_top lfst_inst genblk1 lfsr_data[51] data_reg", false,-1);
-        tracep->declBus(c+731,"ascon_top lfst_inst genblk1 lfsr_data[51] i", false,-1, 31,0);
-        tracep->declArray(c+343,"ascon_top lfst_inst genblk1 lfsr_data[52] mask", false,-1, 126,0);
-        tracep->declBit(c+732,"ascon_top lfst_inst genblk1 lfsr_data[52] data_reg", false,-1);
-        tracep->declBus(c+733,"ascon_top lfst_inst genblk1 lfsr_data[52] i", false,-1, 31,0);
-        tracep->declArray(c+347,"ascon_top lfst_inst genblk1 lfsr_data[53] mask", false,-1, 126,0);
-        tracep->declBit(c+734,"ascon_top lfst_inst genblk1 lfsr_data[53] data_reg", false,-1);
-        tracep->declBus(c+735,"ascon_top lfst_inst genblk1 lfsr_data[53] i", false,-1, 31,0);
-        tracep->declArray(c+351,"ascon_top lfst_inst genblk1 lfsr_data[54] mask", false,-1, 126,0);
-        tracep->declBit(c+736,"ascon_top lfst_inst genblk1 lfsr_data[54] data_reg", false,-1);
-        tracep->declBus(c+737,"ascon_top lfst_inst genblk1 lfsr_data[54] i", false,-1, 31,0);
-        tracep->declArray(c+355,"ascon_top lfst_inst genblk1 lfsr_data[55] mask", false,-1, 126,0);
-        tracep->declBit(c+738,"ascon_top lfst_inst genblk1 lfsr_data[55] data_reg", false,-1);
-        tracep->declBus(c+739,"ascon_top lfst_inst genblk1 lfsr_data[55] i", false,-1, 31,0);
-        tracep->declArray(c+359,"ascon_top lfst_inst genblk1 lfsr_data[56] mask", false,-1, 126,0);
-        tracep->declBit(c+740,"ascon_top lfst_inst genblk1 lfsr_data[56] data_reg", false,-1);
-        tracep->declBus(c+741,"ascon_top lfst_inst genblk1 lfsr_data[56] i", false,-1, 31,0);
-        tracep->declArray(c+363,"ascon_top lfst_inst genblk1 lfsr_data[57] mask", false,-1, 126,0);
-        tracep->declBit(c+742,"ascon_top lfst_inst genblk1 lfsr_data[57] data_reg", false,-1);
-        tracep->declBus(c+743,"ascon_top lfst_inst genblk1 lfsr_data[57] i", false,-1, 31,0);
-        tracep->declArray(c+367,"ascon_top lfst_inst genblk1 lfsr_data[58] mask", false,-1, 126,0);
-        tracep->declBit(c+744,"ascon_top lfst_inst genblk1 lfsr_data[58] data_reg", false,-1);
-        tracep->declBus(c+745,"ascon_top lfst_inst genblk1 lfsr_data[58] i", false,-1, 31,0);
-        tracep->declArray(c+371,"ascon_top lfst_inst genblk1 lfsr_data[59] mask", false,-1, 126,0);
-        tracep->declBit(c+746,"ascon_top lfst_inst genblk1 lfsr_data[59] data_reg", false,-1);
-        tracep->declBus(c+747,"ascon_top lfst_inst genblk1 lfsr_data[59] i", false,-1, 31,0);
-        tracep->declArray(c+375,"ascon_top lfst_inst genblk1 lfsr_data[60] mask", false,-1, 126,0);
-        tracep->declBit(c+748,"ascon_top lfst_inst genblk1 lfsr_data[60] data_reg", false,-1);
-        tracep->declBus(c+749,"ascon_top lfst_inst genblk1 lfsr_data[60] i", false,-1, 31,0);
-        tracep->declArray(c+379,"ascon_top lfst_inst genblk1 lfsr_data[61] mask", false,-1, 126,0);
-        tracep->declBit(c+750,"ascon_top lfst_inst genblk1 lfsr_data[61] data_reg", false,-1);
-        tracep->declBus(c+751,"ascon_top lfst_inst genblk1 lfsr_data[61] i", false,-1, 31,0);
-        tracep->declArray(c+383,"ascon_top lfst_inst genblk1 lfsr_data[62] mask", false,-1, 126,0);
-        tracep->declBit(c+752,"ascon_top lfst_inst genblk1 lfsr_data[62] data_reg", false,-1);
-        tracep->declBus(c+753,"ascon_top lfst_inst genblk1 lfsr_data[62] i", false,-1, 31,0);
-        tracep->declArray(c+387,"ascon_top lfst_inst genblk1 lfsr_data[63] mask", false,-1, 126,0);
-        tracep->declBit(c+754,"ascon_top lfst_inst genblk1 lfsr_data[63] data_reg", false,-1);
-        tracep->declBus(c+755,"ascon_top lfst_inst genblk1 lfsr_data[63] i", false,-1, 31,0);
-        tracep->declArray(c+391,"ascon_top lfst_inst genblk1 lfsr_data[64] mask", false,-1, 126,0);
-        tracep->declBit(c+756,"ascon_top lfst_inst genblk1 lfsr_data[64] data_reg", false,-1);
-        tracep->declBus(c+757,"ascon_top lfst_inst genblk1 lfsr_data[64] i", false,-1, 31,0);
-        tracep->declArray(c+395,"ascon_top lfst_inst genblk1 lfsr_data[65] mask", false,-1, 126,0);
-        tracep->declBit(c+758,"ascon_top lfst_inst genblk1 lfsr_data[65] data_reg", false,-1);
-        tracep->declBus(c+759,"ascon_top lfst_inst genblk1 lfsr_data[65] i", false,-1, 31,0);
-        tracep->declArray(c+399,"ascon_top lfst_inst genblk1 lfsr_data[66] mask", false,-1, 126,0);
-        tracep->declBit(c+760,"ascon_top lfst_inst genblk1 lfsr_data[66] data_reg", false,-1);
-        tracep->declBus(c+761,"ascon_top lfst_inst genblk1 lfsr_data[66] i", false,-1, 31,0);
-        tracep->declArray(c+403,"ascon_top lfst_inst genblk1 lfsr_data[67] mask", false,-1, 126,0);
-        tracep->declBit(c+762,"ascon_top lfst_inst genblk1 lfsr_data[67] data_reg", false,-1);
-        tracep->declBus(c+763,"ascon_top lfst_inst genblk1 lfsr_data[67] i", false,-1, 31,0);
-        tracep->declArray(c+407,"ascon_top lfst_inst genblk1 lfsr_data[68] mask", false,-1, 126,0);
-        tracep->declBit(c+764,"ascon_top lfst_inst genblk1 lfsr_data[68] data_reg", false,-1);
-        tracep->declBus(c+765,"ascon_top lfst_inst genblk1 lfsr_data[68] i", false,-1, 31,0);
-        tracep->declArray(c+411,"ascon_top lfst_inst genblk1 lfsr_data[69] mask", false,-1, 126,0);
-        tracep->declBit(c+766,"ascon_top lfst_inst genblk1 lfsr_data[69] data_reg", false,-1);
-        tracep->declBus(c+767,"ascon_top lfst_inst genblk1 lfsr_data[69] i", false,-1, 31,0);
-        tracep->declArray(c+415,"ascon_top lfst_inst genblk1 lfsr_data[70] mask", false,-1, 126,0);
-        tracep->declBit(c+768,"ascon_top lfst_inst genblk1 lfsr_data[70] data_reg", false,-1);
-        tracep->declBus(c+769,"ascon_top lfst_inst genblk1 lfsr_data[70] i", false,-1, 31,0);
-        tracep->declArray(c+419,"ascon_top lfst_inst genblk1 lfsr_data[71] mask", false,-1, 126,0);
-        tracep->declBit(c+770,"ascon_top lfst_inst genblk1 lfsr_data[71] data_reg", false,-1);
-        tracep->declBus(c+771,"ascon_top lfst_inst genblk1 lfsr_data[71] i", false,-1, 31,0);
-        tracep->declArray(c+423,"ascon_top lfst_inst genblk1 lfsr_data[72] mask", false,-1, 126,0);
-        tracep->declBit(c+772,"ascon_top lfst_inst genblk1 lfsr_data[72] data_reg", false,-1);
-        tracep->declBus(c+773,"ascon_top lfst_inst genblk1 lfsr_data[72] i", false,-1, 31,0);
-        tracep->declArray(c+427,"ascon_top lfst_inst genblk1 lfsr_data[73] mask", false,-1, 126,0);
-        tracep->declBit(c+774,"ascon_top lfst_inst genblk1 lfsr_data[73] data_reg", false,-1);
-        tracep->declBus(c+775,"ascon_top lfst_inst genblk1 lfsr_data[73] i", false,-1, 31,0);
-        tracep->declArray(c+431,"ascon_top lfst_inst genblk1 lfsr_data[74] mask", false,-1, 126,0);
-        tracep->declBit(c+776,"ascon_top lfst_inst genblk1 lfsr_data[74] data_reg", false,-1);
-        tracep->declBus(c+777,"ascon_top lfst_inst genblk1 lfsr_data[74] i", false,-1, 31,0);
-        tracep->declArray(c+435,"ascon_top lfst_inst genblk1 lfsr_data[75] mask", false,-1, 126,0);
-        tracep->declBit(c+778,"ascon_top lfst_inst genblk1 lfsr_data[75] data_reg", false,-1);
-        tracep->declBus(c+779,"ascon_top lfst_inst genblk1 lfsr_data[75] i", false,-1, 31,0);
-        tracep->declArray(c+439,"ascon_top lfst_inst genblk1 lfsr_data[76] mask", false,-1, 126,0);
-        tracep->declBit(c+780,"ascon_top lfst_inst genblk1 lfsr_data[76] data_reg", false,-1);
-        tracep->declBus(c+781,"ascon_top lfst_inst genblk1 lfsr_data[76] i", false,-1, 31,0);
-        tracep->declArray(c+443,"ascon_top lfst_inst genblk1 lfsr_data[77] mask", false,-1, 126,0);
-        tracep->declBit(c+782,"ascon_top lfst_inst genblk1 lfsr_data[77] data_reg", false,-1);
-        tracep->declBus(c+783,"ascon_top lfst_inst genblk1 lfsr_data[77] i", false,-1, 31,0);
-        tracep->declArray(c+447,"ascon_top lfst_inst genblk1 lfsr_data[78] mask", false,-1, 126,0);
-        tracep->declBit(c+784,"ascon_top lfst_inst genblk1 lfsr_data[78] data_reg", false,-1);
-        tracep->declBus(c+785,"ascon_top lfst_inst genblk1 lfsr_data[78] i", false,-1, 31,0);
-        tracep->declArray(c+451,"ascon_top lfst_inst genblk1 lfsr_data[79] mask", false,-1, 126,0);
-        tracep->declBit(c+786,"ascon_top lfst_inst genblk1 lfsr_data[79] data_reg", false,-1);
-        tracep->declBus(c+787,"ascon_top lfst_inst genblk1 lfsr_data[79] i", false,-1, 31,0);
-        tracep->declArray(c+455,"ascon_top lfst_inst genblk1 lfsr_data[80] mask", false,-1, 126,0);
-        tracep->declBit(c+788,"ascon_top lfst_inst genblk1 lfsr_data[80] data_reg", false,-1);
-        tracep->declBus(c+789,"ascon_top lfst_inst genblk1 lfsr_data[80] i", false,-1, 31,0);
-        tracep->declArray(c+459,"ascon_top lfst_inst genblk1 lfsr_data[81] mask", false,-1, 126,0);
-        tracep->declBit(c+790,"ascon_top lfst_inst genblk1 lfsr_data[81] data_reg", false,-1);
-        tracep->declBus(c+791,"ascon_top lfst_inst genblk1 lfsr_data[81] i", false,-1, 31,0);
-        tracep->declArray(c+463,"ascon_top lfst_inst genblk1 lfsr_data[82] mask", false,-1, 126,0);
-        tracep->declBit(c+792,"ascon_top lfst_inst genblk1 lfsr_data[82] data_reg", false,-1);
-        tracep->declBus(c+793,"ascon_top lfst_inst genblk1 lfsr_data[82] i", false,-1, 31,0);
-        tracep->declArray(c+467,"ascon_top lfst_inst genblk1 lfsr_data[83] mask", false,-1, 126,0);
-        tracep->declBit(c+794,"ascon_top lfst_inst genblk1 lfsr_data[83] data_reg", false,-1);
-        tracep->declBus(c+795,"ascon_top lfst_inst genblk1 lfsr_data[83] i", false,-1, 31,0);
-        tracep->declArray(c+471,"ascon_top lfst_inst genblk1 lfsr_data[84] mask", false,-1, 126,0);
-        tracep->declBit(c+796,"ascon_top lfst_inst genblk1 lfsr_data[84] data_reg", false,-1);
-        tracep->declBus(c+797,"ascon_top lfst_inst genblk1 lfsr_data[84] i", false,-1, 31,0);
-        tracep->declArray(c+475,"ascon_top lfst_inst genblk1 lfsr_data[85] mask", false,-1, 126,0);
-        tracep->declBit(c+798,"ascon_top lfst_inst genblk1 lfsr_data[85] data_reg", false,-1);
-        tracep->declBus(c+799,"ascon_top lfst_inst genblk1 lfsr_data[85] i", false,-1, 31,0);
-        tracep->declArray(c+479,"ascon_top lfst_inst genblk1 lfsr_data[86] mask", false,-1, 126,0);
-        tracep->declBit(c+800,"ascon_top lfst_inst genblk1 lfsr_data[86] data_reg", false,-1);
-        tracep->declBus(c+801,"ascon_top lfst_inst genblk1 lfsr_data[86] i", false,-1, 31,0);
-        tracep->declArray(c+483,"ascon_top lfst_inst genblk1 lfsr_data[87] mask", false,-1, 126,0);
-        tracep->declBit(c+802,"ascon_top lfst_inst genblk1 lfsr_data[87] data_reg", false,-1);
-        tracep->declBus(c+803,"ascon_top lfst_inst genblk1 lfsr_data[87] i", false,-1, 31,0);
-        tracep->declArray(c+487,"ascon_top lfst_inst genblk1 lfsr_data[88] mask", false,-1, 126,0);
-        tracep->declBit(c+804,"ascon_top lfst_inst genblk1 lfsr_data[88] data_reg", false,-1);
-        tracep->declBus(c+805,"ascon_top lfst_inst genblk1 lfsr_data[88] i", false,-1, 31,0);
-        tracep->declArray(c+491,"ascon_top lfst_inst genblk1 lfsr_data[89] mask", false,-1, 126,0);
-        tracep->declBit(c+806,"ascon_top lfst_inst genblk1 lfsr_data[89] data_reg", false,-1);
-        tracep->declBus(c+807,"ascon_top lfst_inst genblk1 lfsr_data[89] i", false,-1, 31,0);
-        tracep->declArray(c+495,"ascon_top lfst_inst genblk1 lfsr_data[90] mask", false,-1, 126,0);
-        tracep->declBit(c+808,"ascon_top lfst_inst genblk1 lfsr_data[90] data_reg", false,-1);
-        tracep->declBus(c+809,"ascon_top lfst_inst genblk1 lfsr_data[90] i", false,-1, 31,0);
-        tracep->declArray(c+499,"ascon_top lfst_inst genblk1 lfsr_data[91] mask", false,-1, 126,0);
-        tracep->declBit(c+810,"ascon_top lfst_inst genblk1 lfsr_data[91] data_reg", false,-1);
-        tracep->declBus(c+811,"ascon_top lfst_inst genblk1 lfsr_data[91] i", false,-1, 31,0);
-        tracep->declArray(c+503,"ascon_top lfst_inst genblk1 lfsr_data[92] mask", false,-1, 126,0);
-        tracep->declBit(c+812,"ascon_top lfst_inst genblk1 lfsr_data[92] data_reg", false,-1);
-        tracep->declBus(c+813,"ascon_top lfst_inst genblk1 lfsr_data[92] i", false,-1, 31,0);
-        tracep->declArray(c+507,"ascon_top lfst_inst genblk1 lfsr_data[93] mask", false,-1, 126,0);
-        tracep->declBit(c+814,"ascon_top lfst_inst genblk1 lfsr_data[93] data_reg", false,-1);
-        tracep->declBus(c+815,"ascon_top lfst_inst genblk1 lfsr_data[93] i", false,-1, 31,0);
-        tracep->declArray(c+511,"ascon_top lfst_inst genblk1 lfsr_data[94] mask", false,-1, 126,0);
-        tracep->declBit(c+816,"ascon_top lfst_inst genblk1 lfsr_data[94] data_reg", false,-1);
-        tracep->declBus(c+817,"ascon_top lfst_inst genblk1 lfsr_data[94] i", false,-1, 31,0);
-        tracep->declArray(c+515,"ascon_top lfst_inst genblk1 lfsr_data[95] mask", false,-1, 126,0);
-        tracep->declBit(c+818,"ascon_top lfst_inst genblk1 lfsr_data[95] data_reg", false,-1);
-        tracep->declBus(c+819,"ascon_top lfst_inst genblk1 lfsr_data[95] i", false,-1, 31,0);
-        tracep->declBit(c+1419,"ascon_top mealy_fsm clk", false,-1);
-        tracep->declBit(c+1420,"ascon_top mealy_fsm reset_n", false,-1);
-        tracep->declBit(c+1421,"ascon_top mealy_fsm start", false,-1);
-        tracep->declBit(c+1426,"ascon_top mealy_fsm key_valid", false,-1);
-        tracep->declBit(c+1437,"ascon_top mealy_fsm valid_data_in", false,-1);
-        tracep->declBit(c+1438,"ascon_top mealy_fsm last_block", false,-1);
-        tracep->declBus(c+1439,"ascon_top mealy_fsm valid_bytes", false,-1, 4,0);
-        tracep->declBit(c+1440,"ascon_top mealy_fsm EOT", false,-1);
-        tracep->declBit(c+1456,"ascon_top mealy_fsm done", false,-1);
-        tracep->declBit(c+1457,"ascon_top mealy_fsm tag_valid", false,-1);
-        tracep->declBit(c+529,"ascon_top mealy_fsm shift_en", false,-1);
-        tracep->declBit(c+1112,"ascon_top mealy_fsm write_en", false,-1);
-        tracep->declBit(c+530,"ascon_top mealy_fsm shift_type", false,-1);
-        tracep->declBit(c+531,"ascon_top mealy_fsm last_cycle", false,-1);
-        tracep->declBit(c+532,"ascon_top mealy_fsm reg_key1_load", false,-1);
-        tracep->declBit(c+533,"ascon_top mealy_fsm reg_key2_load", false,-1);
-        tracep->declBit(c+534,"ascon_top mealy_fsm sel_mux_linear_diffusion_out_x3", false,-1);
-        tracep->declBit(c+1113,"ascon_top mealy_fsm sel_mux_linear_diffusion_out_x4", false,-1);
-        tracep->declBit(c+1114,"ascon_top mealy_fsm sel_init_load", false,-1);
-        tracep->declBit(c+535,"ascon_top mealy_fsm sel_masked_round", false,-1);
-        tracep->declBit(c+1115,"ascon_top mealy_fsm sel_padding", false,-1);
-        tracep->declBit(c+536,"ascon_top mealy_fsm sel_xor_signal", false,-1);
-        tracep->declBit(c+1116,"ascon_top mealy_fsm sel_absorb_data", false,-1);
-        tracep->declBit(c+1451,"ascon_top mealy_fsm ciphertext_valid", false,-1);
-        tracep->declBit(c+1462,"ascon_top mealy_fsm ready_for_data", false,-1);
-        tracep->declBit(c+1463,"ascon_top mealy_fsm read_data", false,-1);
-        tracep->declBit(c+528,"ascon_top mealy_fsm extra_padding_ff", false,-1);
-        tracep->declBus(c+540,"ascon_top mealy_fsm bit_counter", false,-1, 3,0);
-        tracep->declBus(c+539,"ascon_top mealy_fsm round_counter", false,-1, 3,0);
-        tracep->declBus(c+1467,"ascon_top mealy_fsm debug_state", false,-1, 4,0);
-        tracep->declBit(c+537,"ascon_top mealy_fsm shift_enable_sipo", false,-1);
-        tracep->declBit(c+538,"ascon_top mealy_fsm last_cycle_sipo", false,-1);
-        tracep->declBit(c+1136,"ascon_top mealy_fsm extra_padding", false,-1);
-        tracep->declBus(c+820,"ascon_top mealy_fsm current_state", false,-1, 4,0);
-        tracep->declBus(c+1137,"ascon_top mealy_fsm next_state", false,-1, 4,0);
-        tracep->declBus(c+821,"ascon_top mealy_fsm number_bits", false,-1, 3,0);
-        tracep->declBus(c+822,"ascon_top mealy_fsm number_round", false,-1, 3,0);
-        tracep->declBit(c+1138,"ascon_top mealy_fsm last_block_process", false,-1);
-        tracep->declBit(c+823,"ascon_top mealy_fsm last_block_process_ff", false,-1);
-        tracep->declBit(c+1139,"ascon_top mealy_fsm last_block_process_load", false,-1);
-        tracep->declBit(c+1140,"ascon_top mealy_fsm extra_padding_load", false,-1);
-        tracep->declBit(c+824,"ascon_top mealy_fsm round_counter_enable", false,-1);
-        tracep->declBit(c+1141,"ascon_top mealy_fsm rst_counter_round", false,-1);
-        tracep->declBus(c+1514,"ascon_top mealy_fsm BYTE_W", false,-1, 31,0);
-        tracep->declBus(c+1515,"ascon_top mealy_fsm unnamedblk1 BIT_COUNTER_MAX_FULL", false,-1, 31,0);
-        tracep->declBus(c+1516,"ascon_top mealy_fsm unnamedblk1 BIT_COUNTER_MAX", false,-1, 3,0);
-        tracep->declBus(c+1515,"ascon_top mealy_fsm unnamedblk2 BIT_COUNTER_MAX_FULL", false,-1, 31,0);
-        tracep->declBus(c+1516,"ascon_top mealy_fsm unnamedblk2 BIT_COUNTER_MAX", false,-1, 3,0);
-        tracep->declBit(c+1419,"ascon_top state_reg clk", false,-1);
-        tracep->declBit(c+1112,"ascon_top state_reg write_en", false,-1);
-        tracep->declBit(c+529,"ascon_top state_reg shift_en", false,-1);
-        tracep->declBit(c+530,"ascon_top state_reg shift_type", false,-1);
-        tracep->declBit(c+531,"ascon_top state_reg last_cycle", false,-1);
-        tracep->declArray(c+1117,"ascon_top state_reg data_in", false,-1, 319,0);
-        tracep->declArray(c+1152,"ascon_top state_reg in_shifted_dplus1", false,-1, 119,0);
-        tracep->declBus(c+1156,"ascon_top state_reg in_shifted_1bit", false,-1, 29,0);
-        tracep->declArray(c+837,"ascon_top state_reg out_shifted_dplus1", false,-1, 119,0);
-        tracep->declArray(c+1441,"ascon_top state_reg data_out", false,-1, 319,0);
+                tracep->declQuad(c+195+i*2,"ascon_top linear_diffusion_debug", true,(i+0), 63,0);}}
+        tracep->declArray(c+205,"ascon_top recombine_shares", false,-1, 319,0);
+        tracep->declQuad(c+969,"ascon_top mux_linear_diffusion_out_x4", false,-1, 63,0);
+        tracep->declQuad(c+215,"ascon_top mux_linear_diffusion_out_x3", false,-1, 63,0);
+        tracep->declQuad(c+217,"ascon_top xor_signal", false,-1, 63,0);
+        tracep->declBit(c+1314,"ascon_top gen_state_regs[0] write_en_i", false,-1);
+        tracep->declBit(c+1315,"ascon_top gen_state_regs[1] write_en_i", false,-1);
+        tracep->declBit(c+1315,"ascon_top gen_state_regs[2] write_en_i", false,-1);
+        tracep->declBus(c+973,"ascon_top unnamedblk1 p", false,-1, 31,0);
+        tracep->declBus(c+1007,"ascon_top gen_no_changing gen_sbox[0] fresh_r", false,-1, 2,0);
+        tracep->declBus(c+1189,"ascon_top affine_layer[0] affine_layer2nd_in_temp", false,-1, 0,0);
+        tracep->declBus(c+1190,"ascon_top affine_layer[1] affine_layer2nd_in_temp", false,-1, 0,0);
+        tracep->declBus(c+1191,"ascon_top affine_layer[2] affine_layer2nd_in_temp", false,-1, 0,0);
+        tracep->declBus(c+219,"ascon_top recombine[0] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[0] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+220,"ascon_top recombine[1] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[1] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+221,"ascon_top recombine[2] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[2] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+222,"ascon_top recombine[3] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[3] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+223,"ascon_top recombine[4] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[4] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+224,"ascon_top recombine[5] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[5] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+225,"ascon_top recombine[6] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[6] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+226,"ascon_top recombine[7] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[7] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+227,"ascon_top recombine[8] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[8] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+228,"ascon_top recombine[9] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[9] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+229,"ascon_top recombine[10] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[10] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+230,"ascon_top recombine[11] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[11] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+231,"ascon_top recombine[12] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[12] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+232,"ascon_top recombine[13] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[13] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+233,"ascon_top recombine[14] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[14] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+234,"ascon_top recombine[15] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[15] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+235,"ascon_top recombine[16] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[16] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+236,"ascon_top recombine[17] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[17] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+237,"ascon_top recombine[18] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[18] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+238,"ascon_top recombine[19] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[19] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+239,"ascon_top recombine[20] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[20] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+240,"ascon_top recombine[21] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[21] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+241,"ascon_top recombine[22] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[22] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+242,"ascon_top recombine[23] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[23] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+243,"ascon_top recombine[24] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[24] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+244,"ascon_top recombine[25] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[25] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+245,"ascon_top recombine[26] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[26] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+246,"ascon_top recombine[27] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[27] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+247,"ascon_top recombine[28] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[28] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+248,"ascon_top recombine[29] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[29] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+249,"ascon_top recombine[30] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[30] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+250,"ascon_top recombine[31] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[31] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+251,"ascon_top recombine[32] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[32] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+252,"ascon_top recombine[33] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[33] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+253,"ascon_top recombine[34] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[34] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+254,"ascon_top recombine[35] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[35] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+255,"ascon_top recombine[36] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[36] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+256,"ascon_top recombine[37] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[37] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+257,"ascon_top recombine[38] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[38] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+258,"ascon_top recombine[39] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[39] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+259,"ascon_top recombine[40] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[40] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+260,"ascon_top recombine[41] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[41] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+261,"ascon_top recombine[42] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[42] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+262,"ascon_top recombine[43] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[43] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+263,"ascon_top recombine[44] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[44] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+264,"ascon_top recombine[45] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[45] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+265,"ascon_top recombine[46] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[46] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+266,"ascon_top recombine[47] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[47] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+267,"ascon_top recombine[48] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[48] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+268,"ascon_top recombine[49] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[49] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+269,"ascon_top recombine[50] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[50] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+270,"ascon_top recombine[51] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[51] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+271,"ascon_top recombine[52] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[52] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+272,"ascon_top recombine[53] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[53] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+273,"ascon_top recombine[54] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[54] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+274,"ascon_top recombine[55] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[55] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+275,"ascon_top recombine[56] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[56] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+276,"ascon_top recombine[57] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[57] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+277,"ascon_top recombine[58] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[58] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+278,"ascon_top recombine[59] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[59] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+279,"ascon_top recombine[60] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[60] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+280,"ascon_top recombine[61] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[61] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+281,"ascon_top recombine[62] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[62] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+282,"ascon_top recombine[63] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[63] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+283,"ascon_top recombine[64] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[64] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+284,"ascon_top recombine[65] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[65] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+285,"ascon_top recombine[66] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[66] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+286,"ascon_top recombine[67] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[67] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+287,"ascon_top recombine[68] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[68] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+288,"ascon_top recombine[69] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[69] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+289,"ascon_top recombine[70] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[70] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+290,"ascon_top recombine[71] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[71] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+291,"ascon_top recombine[72] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[72] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+292,"ascon_top recombine[73] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[73] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+293,"ascon_top recombine[74] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[74] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+294,"ascon_top recombine[75] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[75] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+295,"ascon_top recombine[76] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[76] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+296,"ascon_top recombine[77] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[77] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+297,"ascon_top recombine[78] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[78] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+298,"ascon_top recombine[79] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[79] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+299,"ascon_top recombine[80] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[80] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+300,"ascon_top recombine[81] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[81] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+301,"ascon_top recombine[82] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[82] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+302,"ascon_top recombine[83] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[83] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+303,"ascon_top recombine[84] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[84] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+304,"ascon_top recombine[85] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[85] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+305,"ascon_top recombine[86] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[86] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+306,"ascon_top recombine[87] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[87] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+307,"ascon_top recombine[88] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[88] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+308,"ascon_top recombine[89] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[89] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+309,"ascon_top recombine[90] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[90] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+310,"ascon_top recombine[91] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[91] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+311,"ascon_top recombine[92] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[92] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+312,"ascon_top recombine[93] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[93] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+313,"ascon_top recombine[94] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[94] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+314,"ascon_top recombine[95] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[95] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+315,"ascon_top recombine[96] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[96] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+316,"ascon_top recombine[97] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[97] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+317,"ascon_top recombine[98] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[98] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+318,"ascon_top recombine[99] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[99] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+319,"ascon_top recombine[100] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[100] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+320,"ascon_top recombine[101] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[101] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+321,"ascon_top recombine[102] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[102] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+322,"ascon_top recombine[103] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[103] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+323,"ascon_top recombine[104] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[104] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+324,"ascon_top recombine[105] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[105] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+325,"ascon_top recombine[106] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[106] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+326,"ascon_top recombine[107] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[107] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+327,"ascon_top recombine[108] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[108] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+328,"ascon_top recombine[109] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[109] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+329,"ascon_top recombine[110] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[110] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+330,"ascon_top recombine[111] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[111] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+331,"ascon_top recombine[112] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[112] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+332,"ascon_top recombine[113] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[113] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+333,"ascon_top recombine[114] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[114] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+334,"ascon_top recombine[115] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[115] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+335,"ascon_top recombine[116] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[116] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+336,"ascon_top recombine[117] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[117] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+337,"ascon_top recombine[118] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[118] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+338,"ascon_top recombine[119] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[119] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+339,"ascon_top recombine[120] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[120] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+340,"ascon_top recombine[121] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[121] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+341,"ascon_top recombine[122] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[122] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+342,"ascon_top recombine[123] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[123] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+343,"ascon_top recombine[124] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[124] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+344,"ascon_top recombine[125] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[125] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+345,"ascon_top recombine[126] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[126] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+346,"ascon_top recombine[127] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[127] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+347,"ascon_top recombine[128] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[128] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+348,"ascon_top recombine[129] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[129] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+349,"ascon_top recombine[130] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[130] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+350,"ascon_top recombine[131] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[131] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+351,"ascon_top recombine[132] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[132] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+352,"ascon_top recombine[133] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[133] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+353,"ascon_top recombine[134] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[134] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+354,"ascon_top recombine[135] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[135] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+355,"ascon_top recombine[136] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[136] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+356,"ascon_top recombine[137] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[137] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+357,"ascon_top recombine[138] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[138] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+358,"ascon_top recombine[139] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[139] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+359,"ascon_top recombine[140] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[140] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+360,"ascon_top recombine[141] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[141] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+361,"ascon_top recombine[142] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[142] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+362,"ascon_top recombine[143] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[143] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+363,"ascon_top recombine[144] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[144] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+364,"ascon_top recombine[145] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[145] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+365,"ascon_top recombine[146] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[146] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+366,"ascon_top recombine[147] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[147] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+367,"ascon_top recombine[148] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[148] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+368,"ascon_top recombine[149] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[149] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+369,"ascon_top recombine[150] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[150] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+370,"ascon_top recombine[151] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[151] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+371,"ascon_top recombine[152] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[152] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+372,"ascon_top recombine[153] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[153] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+373,"ascon_top recombine[154] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[154] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+374,"ascon_top recombine[155] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[155] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+375,"ascon_top recombine[156] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[156] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+376,"ascon_top recombine[157] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[157] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+377,"ascon_top recombine[158] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[158] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+378,"ascon_top recombine[159] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[159] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+379,"ascon_top recombine[160] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[160] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+380,"ascon_top recombine[161] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[161] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+381,"ascon_top recombine[162] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[162] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+382,"ascon_top recombine[163] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[163] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+383,"ascon_top recombine[164] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[164] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+384,"ascon_top recombine[165] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[165] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+385,"ascon_top recombine[166] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[166] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+386,"ascon_top recombine[167] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[167] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+387,"ascon_top recombine[168] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[168] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+388,"ascon_top recombine[169] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[169] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+389,"ascon_top recombine[170] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[170] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+390,"ascon_top recombine[171] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[171] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+391,"ascon_top recombine[172] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[172] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+392,"ascon_top recombine[173] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[173] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+393,"ascon_top recombine[174] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[174] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+394,"ascon_top recombine[175] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[175] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+395,"ascon_top recombine[176] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[176] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+396,"ascon_top recombine[177] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[177] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+397,"ascon_top recombine[178] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[178] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+398,"ascon_top recombine[179] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[179] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+399,"ascon_top recombine[180] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[180] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+400,"ascon_top recombine[181] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[181] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+401,"ascon_top recombine[182] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[182] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+402,"ascon_top recombine[183] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[183] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+403,"ascon_top recombine[184] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[184] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+404,"ascon_top recombine[185] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[185] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+405,"ascon_top recombine[186] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[186] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+406,"ascon_top recombine[187] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[187] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+407,"ascon_top recombine[188] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[188] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+408,"ascon_top recombine[189] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[189] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+409,"ascon_top recombine[190] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[190] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+410,"ascon_top recombine[191] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[191] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+411,"ascon_top recombine[192] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[192] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+412,"ascon_top recombine[193] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[193] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+413,"ascon_top recombine[194] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[194] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+414,"ascon_top recombine[195] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[195] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+415,"ascon_top recombine[196] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[196] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+416,"ascon_top recombine[197] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[197] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+417,"ascon_top recombine[198] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[198] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+418,"ascon_top recombine[199] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[199] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+419,"ascon_top recombine[200] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[200] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+420,"ascon_top recombine[201] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[201] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+421,"ascon_top recombine[202] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[202] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+422,"ascon_top recombine[203] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[203] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+423,"ascon_top recombine[204] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[204] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+424,"ascon_top recombine[205] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[205] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+425,"ascon_top recombine[206] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[206] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+426,"ascon_top recombine[207] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[207] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+427,"ascon_top recombine[208] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[208] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+428,"ascon_top recombine[209] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[209] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+429,"ascon_top recombine[210] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[210] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+430,"ascon_top recombine[211] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[211] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+431,"ascon_top recombine[212] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[212] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+432,"ascon_top recombine[213] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[213] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+433,"ascon_top recombine[214] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[214] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+434,"ascon_top recombine[215] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[215] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+435,"ascon_top recombine[216] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[216] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+436,"ascon_top recombine[217] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[217] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+437,"ascon_top recombine[218] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[218] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+438,"ascon_top recombine[219] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[219] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+439,"ascon_top recombine[220] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[220] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+440,"ascon_top recombine[221] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[221] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+441,"ascon_top recombine[222] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[222] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+442,"ascon_top recombine[223] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[223] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+443,"ascon_top recombine[224] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[224] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+444,"ascon_top recombine[225] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[225] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+445,"ascon_top recombine[226] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[226] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+446,"ascon_top recombine[227] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[227] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+447,"ascon_top recombine[228] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[228] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+448,"ascon_top recombine[229] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[229] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+449,"ascon_top recombine[230] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[230] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+450,"ascon_top recombine[231] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[231] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+451,"ascon_top recombine[232] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[232] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+452,"ascon_top recombine[233] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[233] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+453,"ascon_top recombine[234] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[234] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+454,"ascon_top recombine[235] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[235] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+455,"ascon_top recombine[236] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[236] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+456,"ascon_top recombine[237] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[237] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+457,"ascon_top recombine[238] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[238] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+458,"ascon_top recombine[239] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[239] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+459,"ascon_top recombine[240] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[240] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+460,"ascon_top recombine[241] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[241] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+461,"ascon_top recombine[242] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[242] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+462,"ascon_top recombine[243] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[243] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+463,"ascon_top recombine[244] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[244] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+464,"ascon_top recombine[245] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[245] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+465,"ascon_top recombine[246] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[246] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+466,"ascon_top recombine[247] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[247] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+467,"ascon_top recombine[248] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[248] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+468,"ascon_top recombine[249] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[249] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+469,"ascon_top recombine[250] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[250] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+470,"ascon_top recombine[251] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[251] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+471,"ascon_top recombine[252] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[252] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+472,"ascon_top recombine[253] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[253] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+473,"ascon_top recombine[254] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[254] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+474,"ascon_top recombine[255] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[255] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+475,"ascon_top recombine[256] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[256] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+476,"ascon_top recombine[257] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[257] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+477,"ascon_top recombine[258] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[258] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+478,"ascon_top recombine[259] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[259] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+479,"ascon_top recombine[260] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[260] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+480,"ascon_top recombine[261] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[261] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+481,"ascon_top recombine[262] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[262] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+482,"ascon_top recombine[263] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[263] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+483,"ascon_top recombine[264] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[264] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+484,"ascon_top recombine[265] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[265] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+485,"ascon_top recombine[266] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[266] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+486,"ascon_top recombine[267] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[267] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+487,"ascon_top recombine[268] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[268] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+488,"ascon_top recombine[269] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[269] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+489,"ascon_top recombine[270] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[270] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+490,"ascon_top recombine[271] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[271] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+491,"ascon_top recombine[272] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[272] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+492,"ascon_top recombine[273] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[273] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+493,"ascon_top recombine[274] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[274] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+494,"ascon_top recombine[275] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[275] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+495,"ascon_top recombine[276] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[276] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+496,"ascon_top recombine[277] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[277] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+497,"ascon_top recombine[278] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[278] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+498,"ascon_top recombine[279] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[279] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+499,"ascon_top recombine[280] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[280] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+500,"ascon_top recombine[281] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[281] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+501,"ascon_top recombine[282] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[282] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+502,"ascon_top recombine[283] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[283] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+503,"ascon_top recombine[284] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[284] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+504,"ascon_top recombine[285] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[285] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+505,"ascon_top recombine[286] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[286] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+506,"ascon_top recombine[287] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[287] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+507,"ascon_top recombine[288] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[288] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+508,"ascon_top recombine[289] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[289] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+509,"ascon_top recombine[290] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[290] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+510,"ascon_top recombine[291] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[291] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+511,"ascon_top recombine[292] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[292] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+512,"ascon_top recombine[293] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[293] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+513,"ascon_top recombine[294] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[294] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+514,"ascon_top recombine[295] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[295] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+515,"ascon_top recombine[296] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[296] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+516,"ascon_top recombine[297] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[297] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+517,"ascon_top recombine[298] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[298] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+518,"ascon_top recombine[299] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[299] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+519,"ascon_top recombine[300] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[300] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+520,"ascon_top recombine[301] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[301] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+521,"ascon_top recombine[302] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[302] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+522,"ascon_top recombine[303] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[303] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+523,"ascon_top recombine[304] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[304] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+524,"ascon_top recombine[305] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[305] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+525,"ascon_top recombine[306] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[306] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+526,"ascon_top recombine[307] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[307] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+527,"ascon_top recombine[308] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[308] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+528,"ascon_top recombine[309] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[309] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+529,"ascon_top recombine[310] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[310] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+530,"ascon_top recombine[311] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[311] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+531,"ascon_top recombine[312] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[312] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+532,"ascon_top recombine[313] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[313] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+533,"ascon_top recombine[314] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[314] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+534,"ascon_top recombine[315] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[315] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+535,"ascon_top recombine[316] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[316] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+536,"ascon_top recombine[317] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[317] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+537,"ascon_top recombine[318] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[318] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+538,"ascon_top recombine[319] temp_bits_sbox", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[319] unnamedblk2 st_reg_sbox", false,-1, 31,0);
+        tracep->declBus(c+1316,"ascon_top unnamedblk3 st", false,-1, 31,0);
+        tracep->declBus(c+1121,"ascon_top unnamedblk4 i", false,-1, 31,0);
+        tracep->declBus(c+539,"ascon_top recombine[0] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[0] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+540,"ascon_top recombine[1] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[1] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+541,"ascon_top recombine[2] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[2] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+542,"ascon_top recombine[3] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[3] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+543,"ascon_top recombine[4] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[4] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+544,"ascon_top recombine[5] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[5] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+545,"ascon_top recombine[6] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[6] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+546,"ascon_top recombine[7] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[7] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+547,"ascon_top recombine[8] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[8] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+548,"ascon_top recombine[9] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[9] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+549,"ascon_top recombine[10] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[10] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+550,"ascon_top recombine[11] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[11] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+551,"ascon_top recombine[12] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[12] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+552,"ascon_top recombine[13] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[13] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+553,"ascon_top recombine[14] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[14] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+554,"ascon_top recombine[15] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[15] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+555,"ascon_top recombine[16] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[16] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+556,"ascon_top recombine[17] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[17] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+557,"ascon_top recombine[18] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[18] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+558,"ascon_top recombine[19] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[19] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+559,"ascon_top recombine[20] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[20] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+560,"ascon_top recombine[21] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[21] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+561,"ascon_top recombine[22] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[22] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+562,"ascon_top recombine[23] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[23] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+563,"ascon_top recombine[24] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[24] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+564,"ascon_top recombine[25] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[25] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+565,"ascon_top recombine[26] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[26] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+566,"ascon_top recombine[27] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[27] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+567,"ascon_top recombine[28] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[28] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+568,"ascon_top recombine[29] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[29] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+569,"ascon_top recombine[30] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[30] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+570,"ascon_top recombine[31] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[31] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+571,"ascon_top recombine[32] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[32] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+572,"ascon_top recombine[33] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[33] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+573,"ascon_top recombine[34] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[34] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+574,"ascon_top recombine[35] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[35] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+575,"ascon_top recombine[36] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[36] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+576,"ascon_top recombine[37] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[37] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+577,"ascon_top recombine[38] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[38] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+578,"ascon_top recombine[39] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[39] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+579,"ascon_top recombine[40] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[40] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+580,"ascon_top recombine[41] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[41] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+581,"ascon_top recombine[42] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[42] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+582,"ascon_top recombine[43] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[43] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+583,"ascon_top recombine[44] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[44] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+584,"ascon_top recombine[45] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[45] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+585,"ascon_top recombine[46] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[46] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+586,"ascon_top recombine[47] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[47] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+587,"ascon_top recombine[48] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[48] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+588,"ascon_top recombine[49] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[49] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+589,"ascon_top recombine[50] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[50] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+590,"ascon_top recombine[51] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[51] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+591,"ascon_top recombine[52] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[52] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+592,"ascon_top recombine[53] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[53] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+593,"ascon_top recombine[54] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[54] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+594,"ascon_top recombine[55] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[55] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+595,"ascon_top recombine[56] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[56] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+596,"ascon_top recombine[57] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[57] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+597,"ascon_top recombine[58] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[58] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+598,"ascon_top recombine[59] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[59] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+599,"ascon_top recombine[60] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[60] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+600,"ascon_top recombine[61] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[61] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+601,"ascon_top recombine[62] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[62] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+602,"ascon_top recombine[63] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[63] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+603,"ascon_top recombine[64] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[64] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+604,"ascon_top recombine[65] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[65] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+605,"ascon_top recombine[66] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[66] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+606,"ascon_top recombine[67] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[67] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+607,"ascon_top recombine[68] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[68] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+608,"ascon_top recombine[69] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[69] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+609,"ascon_top recombine[70] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[70] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+610,"ascon_top recombine[71] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[71] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+611,"ascon_top recombine[72] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[72] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+612,"ascon_top recombine[73] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[73] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+613,"ascon_top recombine[74] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[74] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+614,"ascon_top recombine[75] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[75] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+615,"ascon_top recombine[76] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[76] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+616,"ascon_top recombine[77] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[77] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+617,"ascon_top recombine[78] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[78] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+618,"ascon_top recombine[79] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[79] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+619,"ascon_top recombine[80] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[80] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+620,"ascon_top recombine[81] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[81] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+621,"ascon_top recombine[82] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[82] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+622,"ascon_top recombine[83] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[83] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+623,"ascon_top recombine[84] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[84] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+624,"ascon_top recombine[85] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[85] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+625,"ascon_top recombine[86] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[86] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+626,"ascon_top recombine[87] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[87] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+627,"ascon_top recombine[88] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[88] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+628,"ascon_top recombine[89] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[89] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+629,"ascon_top recombine[90] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[90] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+630,"ascon_top recombine[91] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[91] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+631,"ascon_top recombine[92] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[92] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+632,"ascon_top recombine[93] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[93] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+633,"ascon_top recombine[94] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[94] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+634,"ascon_top recombine[95] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[95] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+635,"ascon_top recombine[96] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[96] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+636,"ascon_top recombine[97] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[97] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+637,"ascon_top recombine[98] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[98] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+638,"ascon_top recombine[99] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[99] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+639,"ascon_top recombine[100] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[100] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+640,"ascon_top recombine[101] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[101] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+641,"ascon_top recombine[102] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[102] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+642,"ascon_top recombine[103] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[103] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+643,"ascon_top recombine[104] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[104] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+644,"ascon_top recombine[105] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[105] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+645,"ascon_top recombine[106] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[106] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+646,"ascon_top recombine[107] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[107] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+647,"ascon_top recombine[108] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[108] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+648,"ascon_top recombine[109] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[109] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+649,"ascon_top recombine[110] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[110] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+650,"ascon_top recombine[111] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[111] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+651,"ascon_top recombine[112] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[112] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+652,"ascon_top recombine[113] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[113] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+653,"ascon_top recombine[114] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[114] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+654,"ascon_top recombine[115] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[115] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+655,"ascon_top recombine[116] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[116] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+656,"ascon_top recombine[117] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[117] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+657,"ascon_top recombine[118] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[118] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+658,"ascon_top recombine[119] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[119] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+659,"ascon_top recombine[120] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[120] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+660,"ascon_top recombine[121] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[121] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+661,"ascon_top recombine[122] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[122] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+662,"ascon_top recombine[123] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[123] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+663,"ascon_top recombine[124] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[124] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+664,"ascon_top recombine[125] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[125] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+665,"ascon_top recombine[126] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[126] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+666,"ascon_top recombine[127] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[127] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+667,"ascon_top recombine[128] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[128] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+668,"ascon_top recombine[129] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[129] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+669,"ascon_top recombine[130] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[130] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+670,"ascon_top recombine[131] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[131] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+671,"ascon_top recombine[132] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[132] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+672,"ascon_top recombine[133] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[133] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+673,"ascon_top recombine[134] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[134] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+674,"ascon_top recombine[135] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[135] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+675,"ascon_top recombine[136] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[136] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+676,"ascon_top recombine[137] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[137] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+677,"ascon_top recombine[138] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[138] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+678,"ascon_top recombine[139] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[139] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+679,"ascon_top recombine[140] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[140] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+680,"ascon_top recombine[141] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[141] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+681,"ascon_top recombine[142] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[142] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+682,"ascon_top recombine[143] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[143] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+683,"ascon_top recombine[144] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[144] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+684,"ascon_top recombine[145] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[145] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+685,"ascon_top recombine[146] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[146] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+686,"ascon_top recombine[147] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[147] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+687,"ascon_top recombine[148] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[148] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+688,"ascon_top recombine[149] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[149] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+689,"ascon_top recombine[150] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[150] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+690,"ascon_top recombine[151] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[151] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+691,"ascon_top recombine[152] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[152] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+692,"ascon_top recombine[153] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[153] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+693,"ascon_top recombine[154] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[154] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+694,"ascon_top recombine[155] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[155] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+695,"ascon_top recombine[156] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[156] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+696,"ascon_top recombine[157] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[157] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+697,"ascon_top recombine[158] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[158] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+698,"ascon_top recombine[159] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[159] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+699,"ascon_top recombine[160] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[160] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+700,"ascon_top recombine[161] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[161] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+701,"ascon_top recombine[162] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[162] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+702,"ascon_top recombine[163] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[163] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+703,"ascon_top recombine[164] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[164] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+704,"ascon_top recombine[165] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[165] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+705,"ascon_top recombine[166] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[166] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+706,"ascon_top recombine[167] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[167] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+707,"ascon_top recombine[168] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[168] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+708,"ascon_top recombine[169] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[169] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+709,"ascon_top recombine[170] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[170] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+710,"ascon_top recombine[171] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[171] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+711,"ascon_top recombine[172] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[172] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+712,"ascon_top recombine[173] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[173] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+713,"ascon_top recombine[174] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[174] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+714,"ascon_top recombine[175] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[175] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+715,"ascon_top recombine[176] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[176] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+716,"ascon_top recombine[177] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[177] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+717,"ascon_top recombine[178] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[178] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+718,"ascon_top recombine[179] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[179] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+719,"ascon_top recombine[180] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[180] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+720,"ascon_top recombine[181] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[181] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+721,"ascon_top recombine[182] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[182] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+722,"ascon_top recombine[183] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[183] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+723,"ascon_top recombine[184] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[184] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+724,"ascon_top recombine[185] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[185] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+725,"ascon_top recombine[186] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[186] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+726,"ascon_top recombine[187] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[187] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+727,"ascon_top recombine[188] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[188] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+728,"ascon_top recombine[189] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[189] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+729,"ascon_top recombine[190] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[190] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+730,"ascon_top recombine[191] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[191] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+731,"ascon_top recombine[192] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[192] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+732,"ascon_top recombine[193] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[193] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+733,"ascon_top recombine[194] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[194] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+734,"ascon_top recombine[195] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[195] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+735,"ascon_top recombine[196] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[196] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+736,"ascon_top recombine[197] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[197] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+737,"ascon_top recombine[198] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[198] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+738,"ascon_top recombine[199] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[199] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+739,"ascon_top recombine[200] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[200] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+740,"ascon_top recombine[201] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[201] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+741,"ascon_top recombine[202] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[202] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+742,"ascon_top recombine[203] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[203] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+743,"ascon_top recombine[204] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[204] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+744,"ascon_top recombine[205] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[205] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+745,"ascon_top recombine[206] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[206] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+746,"ascon_top recombine[207] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[207] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+747,"ascon_top recombine[208] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[208] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+748,"ascon_top recombine[209] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[209] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+749,"ascon_top recombine[210] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[210] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+750,"ascon_top recombine[211] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[211] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+751,"ascon_top recombine[212] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[212] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+752,"ascon_top recombine[213] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[213] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+753,"ascon_top recombine[214] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[214] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+754,"ascon_top recombine[215] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[215] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+755,"ascon_top recombine[216] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[216] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+756,"ascon_top recombine[217] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[217] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+757,"ascon_top recombine[218] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[218] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+758,"ascon_top recombine[219] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[219] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+759,"ascon_top recombine[220] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[220] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+760,"ascon_top recombine[221] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[221] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+761,"ascon_top recombine[222] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[222] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+762,"ascon_top recombine[223] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[223] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+763,"ascon_top recombine[224] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[224] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+764,"ascon_top recombine[225] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[225] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+765,"ascon_top recombine[226] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[226] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+766,"ascon_top recombine[227] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[227] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+767,"ascon_top recombine[228] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[228] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+768,"ascon_top recombine[229] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[229] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+769,"ascon_top recombine[230] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[230] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+770,"ascon_top recombine[231] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[231] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+771,"ascon_top recombine[232] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[232] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+772,"ascon_top recombine[233] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[233] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+773,"ascon_top recombine[234] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[234] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+774,"ascon_top recombine[235] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[235] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+775,"ascon_top recombine[236] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[236] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+776,"ascon_top recombine[237] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[237] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+777,"ascon_top recombine[238] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[238] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+778,"ascon_top recombine[239] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[239] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+779,"ascon_top recombine[240] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[240] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+780,"ascon_top recombine[241] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[241] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+781,"ascon_top recombine[242] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[242] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+782,"ascon_top recombine[243] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[243] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+783,"ascon_top recombine[244] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[244] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+784,"ascon_top recombine[245] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[245] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+785,"ascon_top recombine[246] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[246] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+786,"ascon_top recombine[247] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[247] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+787,"ascon_top recombine[248] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[248] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+788,"ascon_top recombine[249] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[249] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+789,"ascon_top recombine[250] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[250] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+790,"ascon_top recombine[251] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[251] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+791,"ascon_top recombine[252] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[252] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+792,"ascon_top recombine[253] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[253] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+793,"ascon_top recombine[254] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[254] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+794,"ascon_top recombine[255] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[255] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+795,"ascon_top recombine[256] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[256] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+796,"ascon_top recombine[257] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[257] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+797,"ascon_top recombine[258] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[258] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+798,"ascon_top recombine[259] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[259] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+799,"ascon_top recombine[260] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[260] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+800,"ascon_top recombine[261] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[261] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+801,"ascon_top recombine[262] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[262] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+802,"ascon_top recombine[263] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[263] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+803,"ascon_top recombine[264] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[264] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+804,"ascon_top recombine[265] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[265] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+805,"ascon_top recombine[266] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[266] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+806,"ascon_top recombine[267] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[267] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+807,"ascon_top recombine[268] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[268] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+808,"ascon_top recombine[269] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[269] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+809,"ascon_top recombine[270] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[270] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+810,"ascon_top recombine[271] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[271] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+811,"ascon_top recombine[272] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[272] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+812,"ascon_top recombine[273] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[273] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+813,"ascon_top recombine[274] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[274] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+814,"ascon_top recombine[275] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[275] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+815,"ascon_top recombine[276] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[276] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+816,"ascon_top recombine[277] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[277] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+817,"ascon_top recombine[278] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[278] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+818,"ascon_top recombine[279] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[279] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+819,"ascon_top recombine[280] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[280] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+820,"ascon_top recombine[281] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[281] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+821,"ascon_top recombine[282] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[282] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+822,"ascon_top recombine[283] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[283] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+823,"ascon_top recombine[284] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[284] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+824,"ascon_top recombine[285] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[285] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+825,"ascon_top recombine[286] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[286] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+826,"ascon_top recombine[287] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[287] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+827,"ascon_top recombine[288] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[288] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+828,"ascon_top recombine[289] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[289] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+829,"ascon_top recombine[290] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[290] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+830,"ascon_top recombine[291] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[291] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+831,"ascon_top recombine[292] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[292] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+832,"ascon_top recombine[293] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[293] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+833,"ascon_top recombine[294] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[294] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+834,"ascon_top recombine[295] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[295] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+835,"ascon_top recombine[296] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[296] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+836,"ascon_top recombine[297] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[297] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+837,"ascon_top recombine[298] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[298] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+838,"ascon_top recombine[299] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[299] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+839,"ascon_top recombine[300] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[300] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+840,"ascon_top recombine[301] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[301] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+841,"ascon_top recombine[302] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[302] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+842,"ascon_top recombine[303] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[303] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+843,"ascon_top recombine[304] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[304] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+844,"ascon_top recombine[305] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[305] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+845,"ascon_top recombine[306] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[306] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+846,"ascon_top recombine[307] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[307] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+847,"ascon_top recombine[308] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[308] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+848,"ascon_top recombine[309] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[309] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+849,"ascon_top recombine[310] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[310] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+850,"ascon_top recombine[311] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[311] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+851,"ascon_top recombine[312] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[312] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+852,"ascon_top recombine[313] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[313] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+853,"ascon_top recombine[314] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[314] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+854,"ascon_top recombine[315] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[315] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+855,"ascon_top recombine[316] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[316] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+856,"ascon_top recombine[317] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[317] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+857,"ascon_top recombine[318] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[318] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+858,"ascon_top recombine[319] temp_bits", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top recombine[319] unnamedblk8 st_reg", false,-1, 31,0);
+        tracep->declBus(c+1317,"ascon_top lfst_inst data_in", false,-1, 12,0);
+        tracep->declBus(c+1004,"ascon_top lfst_inst state_in", false,-1, 30,0);
+        tracep->declBus(c+1003,"ascon_top lfst_inst data_out", false,-1, 12,0);
+        tracep->declBus(c+1005,"ascon_top lfst_inst state_out", false,-1, 30,0);
+        tracep->declBus(c+1318,"ascon_top lfst_inst STYLE_INT", false,-1, 31,0);
+        tracep->declQuad(c+11,"ascon_top lfst_inst genblk1 lfsr_state[0] mask", false,-1, 43,0);
+        tracep->declBit(c+1009,"ascon_top lfst_inst genblk1 lfsr_state[0] state_reg", false,-1);
+        tracep->declBus(c+1319,"ascon_top lfst_inst genblk1 lfsr_state[0] i", false,-1, 31,0);
+        tracep->declQuad(c+13,"ascon_top lfst_inst genblk1 lfsr_state[1] mask", false,-1, 43,0);
+        tracep->declBit(c+1010,"ascon_top lfst_inst genblk1 lfsr_state[1] state_reg", false,-1);
+        tracep->declBus(c+1319,"ascon_top lfst_inst genblk1 lfsr_state[1] i", false,-1, 31,0);
+        tracep->declQuad(c+15,"ascon_top lfst_inst genblk1 lfsr_state[2] mask", false,-1, 43,0);
+        tracep->declBit(c+1011,"ascon_top lfst_inst genblk1 lfsr_state[2] state_reg", false,-1);
+        tracep->declBus(c+1319,"ascon_top lfst_inst genblk1 lfsr_state[2] i", false,-1, 31,0);
+        tracep->declQuad(c+17,"ascon_top lfst_inst genblk1 lfsr_state[3] mask", false,-1, 43,0);
+        tracep->declBit(c+1012,"ascon_top lfst_inst genblk1 lfsr_state[3] state_reg", false,-1);
+        tracep->declBus(c+1319,"ascon_top lfst_inst genblk1 lfsr_state[3] i", false,-1, 31,0);
+        tracep->declQuad(c+19,"ascon_top lfst_inst genblk1 lfsr_state[4] mask", false,-1, 43,0);
+        tracep->declBit(c+1013,"ascon_top lfst_inst genblk1 lfsr_state[4] state_reg", false,-1);
+        tracep->declBus(c+1319,"ascon_top lfst_inst genblk1 lfsr_state[4] i", false,-1, 31,0);
+        tracep->declQuad(c+21,"ascon_top lfst_inst genblk1 lfsr_state[5] mask", false,-1, 43,0);
+        tracep->declBit(c+1014,"ascon_top lfst_inst genblk1 lfsr_state[5] state_reg", false,-1);
+        tracep->declBus(c+1319,"ascon_top lfst_inst genblk1 lfsr_state[5] i", false,-1, 31,0);
+        tracep->declQuad(c+23,"ascon_top lfst_inst genblk1 lfsr_state[6] mask", false,-1, 43,0);
+        tracep->declBit(c+1015,"ascon_top lfst_inst genblk1 lfsr_state[6] state_reg", false,-1);
+        tracep->declBus(c+1319,"ascon_top lfst_inst genblk1 lfsr_state[6] i", false,-1, 31,0);
+        tracep->declQuad(c+25,"ascon_top lfst_inst genblk1 lfsr_state[7] mask", false,-1, 43,0);
+        tracep->declBit(c+1016,"ascon_top lfst_inst genblk1 lfsr_state[7] state_reg", false,-1);
+        tracep->declBus(c+1319,"ascon_top lfst_inst genblk1 lfsr_state[7] i", false,-1, 31,0);
+        tracep->declQuad(c+27,"ascon_top lfst_inst genblk1 lfsr_state[8] mask", false,-1, 43,0);
+        tracep->declBit(c+1017,"ascon_top lfst_inst genblk1 lfsr_state[8] state_reg", false,-1);
+        tracep->declBus(c+1319,"ascon_top lfst_inst genblk1 lfsr_state[8] i", false,-1, 31,0);
+        tracep->declQuad(c+29,"ascon_top lfst_inst genblk1 lfsr_state[9] mask", false,-1, 43,0);
+        tracep->declBit(c+1018,"ascon_top lfst_inst genblk1 lfsr_state[9] state_reg", false,-1);
+        tracep->declBus(c+1319,"ascon_top lfst_inst genblk1 lfsr_state[9] i", false,-1, 31,0);
+        tracep->declQuad(c+31,"ascon_top lfst_inst genblk1 lfsr_state[10] mask", false,-1, 43,0);
+        tracep->declBit(c+1019,"ascon_top lfst_inst genblk1 lfsr_state[10] state_reg", false,-1);
+        tracep->declBus(c+1319,"ascon_top lfst_inst genblk1 lfsr_state[10] i", false,-1, 31,0);
+        tracep->declQuad(c+33,"ascon_top lfst_inst genblk1 lfsr_state[11] mask", false,-1, 43,0);
+        tracep->declBit(c+1020,"ascon_top lfst_inst genblk1 lfsr_state[11] state_reg", false,-1);
+        tracep->declBus(c+1319,"ascon_top lfst_inst genblk1 lfsr_state[11] i", false,-1, 31,0);
+        tracep->declQuad(c+35,"ascon_top lfst_inst genblk1 lfsr_state[12] mask", false,-1, 43,0);
+        tracep->declBit(c+1021,"ascon_top lfst_inst genblk1 lfsr_state[12] state_reg", false,-1);
+        tracep->declBus(c+1319,"ascon_top lfst_inst genblk1 lfsr_state[12] i", false,-1, 31,0);
+        tracep->declQuad(c+37,"ascon_top lfst_inst genblk1 lfsr_state[13] mask", false,-1, 43,0);
+        tracep->declBit(c+1022,"ascon_top lfst_inst genblk1 lfsr_state[13] state_reg", false,-1);
+        tracep->declBus(c+1319,"ascon_top lfst_inst genblk1 lfsr_state[13] i", false,-1, 31,0);
+        tracep->declQuad(c+39,"ascon_top lfst_inst genblk1 lfsr_state[14] mask", false,-1, 43,0);
+        tracep->declBit(c+1023,"ascon_top lfst_inst genblk1 lfsr_state[14] state_reg", false,-1);
+        tracep->declBus(c+1319,"ascon_top lfst_inst genblk1 lfsr_state[14] i", false,-1, 31,0);
+        tracep->declQuad(c+41,"ascon_top lfst_inst genblk1 lfsr_state[15] mask", false,-1, 43,0);
+        tracep->declBit(c+1024,"ascon_top lfst_inst genblk1 lfsr_state[15] state_reg", false,-1);
+        tracep->declBus(c+1319,"ascon_top lfst_inst genblk1 lfsr_state[15] i", false,-1, 31,0);
+        tracep->declQuad(c+43,"ascon_top lfst_inst genblk1 lfsr_state[16] mask", false,-1, 43,0);
+        tracep->declBit(c+1025,"ascon_top lfst_inst genblk1 lfsr_state[16] state_reg", false,-1);
+        tracep->declBus(c+1319,"ascon_top lfst_inst genblk1 lfsr_state[16] i", false,-1, 31,0);
+        tracep->declQuad(c+45,"ascon_top lfst_inst genblk1 lfsr_state[17] mask", false,-1, 43,0);
+        tracep->declBit(c+1026,"ascon_top lfst_inst genblk1 lfsr_state[17] state_reg", false,-1);
+        tracep->declBus(c+1319,"ascon_top lfst_inst genblk1 lfsr_state[17] i", false,-1, 31,0);
+        tracep->declQuad(c+47,"ascon_top lfst_inst genblk1 lfsr_state[18] mask", false,-1, 43,0);
+        tracep->declBit(c+1027,"ascon_top lfst_inst genblk1 lfsr_state[18] state_reg", false,-1);
+        tracep->declBus(c+1319,"ascon_top lfst_inst genblk1 lfsr_state[18] i", false,-1, 31,0);
+        tracep->declQuad(c+49,"ascon_top lfst_inst genblk1 lfsr_state[19] mask", false,-1, 43,0);
+        tracep->declBit(c+1028,"ascon_top lfst_inst genblk1 lfsr_state[19] state_reg", false,-1);
+        tracep->declBus(c+1319,"ascon_top lfst_inst genblk1 lfsr_state[19] i", false,-1, 31,0);
+        tracep->declQuad(c+51,"ascon_top lfst_inst genblk1 lfsr_state[20] mask", false,-1, 43,0);
+        tracep->declBit(c+1029,"ascon_top lfst_inst genblk1 lfsr_state[20] state_reg", false,-1);
+        tracep->declBus(c+1319,"ascon_top lfst_inst genblk1 lfsr_state[20] i", false,-1, 31,0);
+        tracep->declQuad(c+53,"ascon_top lfst_inst genblk1 lfsr_state[21] mask", false,-1, 43,0);
+        tracep->declBit(c+1030,"ascon_top lfst_inst genblk1 lfsr_state[21] state_reg", false,-1);
+        tracep->declBus(c+1319,"ascon_top lfst_inst genblk1 lfsr_state[21] i", false,-1, 31,0);
+        tracep->declQuad(c+55,"ascon_top lfst_inst genblk1 lfsr_state[22] mask", false,-1, 43,0);
+        tracep->declBit(c+1031,"ascon_top lfst_inst genblk1 lfsr_state[22] state_reg", false,-1);
+        tracep->declBus(c+1319,"ascon_top lfst_inst genblk1 lfsr_state[22] i", false,-1, 31,0);
+        tracep->declQuad(c+57,"ascon_top lfst_inst genblk1 lfsr_state[23] mask", false,-1, 43,0);
+        tracep->declBit(c+1032,"ascon_top lfst_inst genblk1 lfsr_state[23] state_reg", false,-1);
+        tracep->declBus(c+1319,"ascon_top lfst_inst genblk1 lfsr_state[23] i", false,-1, 31,0);
+        tracep->declQuad(c+59,"ascon_top lfst_inst genblk1 lfsr_state[24] mask", false,-1, 43,0);
+        tracep->declBit(c+1033,"ascon_top lfst_inst genblk1 lfsr_state[24] state_reg", false,-1);
+        tracep->declBus(c+1319,"ascon_top lfst_inst genblk1 lfsr_state[24] i", false,-1, 31,0);
+        tracep->declQuad(c+61,"ascon_top lfst_inst genblk1 lfsr_state[25] mask", false,-1, 43,0);
+        tracep->declBit(c+1034,"ascon_top lfst_inst genblk1 lfsr_state[25] state_reg", false,-1);
+        tracep->declBus(c+1319,"ascon_top lfst_inst genblk1 lfsr_state[25] i", false,-1, 31,0);
+        tracep->declQuad(c+63,"ascon_top lfst_inst genblk1 lfsr_state[26] mask", false,-1, 43,0);
+        tracep->declBit(c+1035,"ascon_top lfst_inst genblk1 lfsr_state[26] state_reg", false,-1);
+        tracep->declBus(c+1319,"ascon_top lfst_inst genblk1 lfsr_state[26] i", false,-1, 31,0);
+        tracep->declQuad(c+65,"ascon_top lfst_inst genblk1 lfsr_state[27] mask", false,-1, 43,0);
+        tracep->declBit(c+1036,"ascon_top lfst_inst genblk1 lfsr_state[27] state_reg", false,-1);
+        tracep->declBus(c+1319,"ascon_top lfst_inst genblk1 lfsr_state[27] i", false,-1, 31,0);
+        tracep->declQuad(c+67,"ascon_top lfst_inst genblk1 lfsr_state[28] mask", false,-1, 43,0);
+        tracep->declBit(c+1037,"ascon_top lfst_inst genblk1 lfsr_state[28] state_reg", false,-1);
+        tracep->declBus(c+1319,"ascon_top lfst_inst genblk1 lfsr_state[28] i", false,-1, 31,0);
+        tracep->declQuad(c+69,"ascon_top lfst_inst genblk1 lfsr_state[29] mask", false,-1, 43,0);
+        tracep->declBit(c+1038,"ascon_top lfst_inst genblk1 lfsr_state[29] state_reg", false,-1);
+        tracep->declBus(c+1319,"ascon_top lfst_inst genblk1 lfsr_state[29] i", false,-1, 31,0);
+        tracep->declQuad(c+71,"ascon_top lfst_inst genblk1 lfsr_state[30] mask", false,-1, 43,0);
+        tracep->declBit(c+1039,"ascon_top lfst_inst genblk1 lfsr_state[30] state_reg", false,-1);
+        tracep->declBus(c+1319,"ascon_top lfst_inst genblk1 lfsr_state[30] i", false,-1, 31,0);
+        tracep->declQuad(c+73,"ascon_top lfst_inst genblk1 lfsr_data[0] mask", false,-1, 43,0);
+        tracep->declBit(c+1040,"ascon_top lfst_inst genblk1 lfsr_data[0] data_reg", false,-1);
+        tracep->declBus(c+1319,"ascon_top lfst_inst genblk1 lfsr_data[0] i", false,-1, 31,0);
+        tracep->declQuad(c+75,"ascon_top lfst_inst genblk1 lfsr_data[1] mask", false,-1, 43,0);
+        tracep->declBit(c+1041,"ascon_top lfst_inst genblk1 lfsr_data[1] data_reg", false,-1);
+        tracep->declBus(c+1319,"ascon_top lfst_inst genblk1 lfsr_data[1] i", false,-1, 31,0);
+        tracep->declQuad(c+77,"ascon_top lfst_inst genblk1 lfsr_data[2] mask", false,-1, 43,0);
+        tracep->declBit(c+1042,"ascon_top lfst_inst genblk1 lfsr_data[2] data_reg", false,-1);
+        tracep->declBus(c+1319,"ascon_top lfst_inst genblk1 lfsr_data[2] i", false,-1, 31,0);
+        tracep->declQuad(c+79,"ascon_top lfst_inst genblk1 lfsr_data[3] mask", false,-1, 43,0);
+        tracep->declBit(c+1043,"ascon_top lfst_inst genblk1 lfsr_data[3] data_reg", false,-1);
+        tracep->declBus(c+1319,"ascon_top lfst_inst genblk1 lfsr_data[3] i", false,-1, 31,0);
+        tracep->declQuad(c+81,"ascon_top lfst_inst genblk1 lfsr_data[4] mask", false,-1, 43,0);
+        tracep->declBit(c+1044,"ascon_top lfst_inst genblk1 lfsr_data[4] data_reg", false,-1);
+        tracep->declBus(c+1319,"ascon_top lfst_inst genblk1 lfsr_data[4] i", false,-1, 31,0);
+        tracep->declQuad(c+83,"ascon_top lfst_inst genblk1 lfsr_data[5] mask", false,-1, 43,0);
+        tracep->declBit(c+1045,"ascon_top lfst_inst genblk1 lfsr_data[5] data_reg", false,-1);
+        tracep->declBus(c+1319,"ascon_top lfst_inst genblk1 lfsr_data[5] i", false,-1, 31,0);
+        tracep->declQuad(c+85,"ascon_top lfst_inst genblk1 lfsr_data[6] mask", false,-1, 43,0);
+        tracep->declBit(c+1046,"ascon_top lfst_inst genblk1 lfsr_data[6] data_reg", false,-1);
+        tracep->declBus(c+1319,"ascon_top lfst_inst genblk1 lfsr_data[6] i", false,-1, 31,0);
+        tracep->declQuad(c+87,"ascon_top lfst_inst genblk1 lfsr_data[7] mask", false,-1, 43,0);
+        tracep->declBit(c+1047,"ascon_top lfst_inst genblk1 lfsr_data[7] data_reg", false,-1);
+        tracep->declBus(c+1319,"ascon_top lfst_inst genblk1 lfsr_data[7] i", false,-1, 31,0);
+        tracep->declQuad(c+89,"ascon_top lfst_inst genblk1 lfsr_data[8] mask", false,-1, 43,0);
+        tracep->declBit(c+1048,"ascon_top lfst_inst genblk1 lfsr_data[8] data_reg", false,-1);
+        tracep->declBus(c+1319,"ascon_top lfst_inst genblk1 lfsr_data[8] i", false,-1, 31,0);
+        tracep->declQuad(c+91,"ascon_top lfst_inst genblk1 lfsr_data[9] mask", false,-1, 43,0);
+        tracep->declBit(c+1049,"ascon_top lfst_inst genblk1 lfsr_data[9] data_reg", false,-1);
+        tracep->declBus(c+1319,"ascon_top lfst_inst genblk1 lfsr_data[9] i", false,-1, 31,0);
+        tracep->declQuad(c+93,"ascon_top lfst_inst genblk1 lfsr_data[10] mask", false,-1, 43,0);
+        tracep->declBit(c+1050,"ascon_top lfst_inst genblk1 lfsr_data[10] data_reg", false,-1);
+        tracep->declBus(c+1319,"ascon_top lfst_inst genblk1 lfsr_data[10] i", false,-1, 31,0);
+        tracep->declQuad(c+95,"ascon_top lfst_inst genblk1 lfsr_data[11] mask", false,-1, 43,0);
+        tracep->declBit(c+1051,"ascon_top lfst_inst genblk1 lfsr_data[11] data_reg", false,-1);
+        tracep->declBus(c+1319,"ascon_top lfst_inst genblk1 lfsr_data[11] i", false,-1, 31,0);
+        tracep->declQuad(c+97,"ascon_top lfst_inst genblk1 lfsr_data[12] mask", false,-1, 43,0);
+        tracep->declBit(c+1052,"ascon_top lfst_inst genblk1 lfsr_data[12] data_reg", false,-1);
+        tracep->declBus(c+1319,"ascon_top lfst_inst genblk1 lfsr_data[12] i", false,-1, 31,0);
+        tracep->declBit(c+1219,"ascon_top mealy_fsm clk", false,-1);
+        tracep->declBit(c+1220,"ascon_top mealy_fsm reset_n", false,-1);
+        tracep->declBit(c+1222,"ascon_top mealy_fsm start", false,-1);
+        tracep->declBit(c+1227,"ascon_top mealy_fsm load_data", false,-1);
+        tracep->declBit(c+1238,"ascon_top mealy_fsm valid_data_in", false,-1);
+        tracep->declBit(c+1239,"ascon_top mealy_fsm last_block", false,-1);
+        tracep->declBus(c+1240,"ascon_top mealy_fsm valid_bytes", false,-1, 4,0);
+        tracep->declBit(c+1241,"ascon_top mealy_fsm EOT", false,-1);
+        tracep->declBit(c+1257,"ascon_top mealy_fsm done", false,-1);
+        tracep->declBit(c+1258,"ascon_top mealy_fsm tag_valid", false,-1);
+        tracep->declBit(c+100,"ascon_top mealy_fsm shift_en", false,-1);
+        tracep->declBit(c+1078,"ascon_top mealy_fsm write_en", false,-1);
+        tracep->declBit(c+101,"ascon_top mealy_fsm shift_type", false,-1);
+        tracep->declBit(c+102,"ascon_top mealy_fsm last_cycle", false,-1);
+        tracep->declBit(c+103,"ascon_top mealy_fsm reg_key1_load", false,-1);
+        tracep->declBit(c+104,"ascon_top mealy_fsm reg_key2_load", false,-1);
+        tracep->declBit(c+105,"ascon_top mealy_fsm sel_mux_linear_diffusion_out_x3", false,-1);
+        tracep->declBit(c+1079,"ascon_top mealy_fsm sel_mux_linear_diffusion_out_x4", false,-1);
+        tracep->declBit(c+1080,"ascon_top mealy_fsm sel_init_load", false,-1);
+        tracep->declBit(c+106,"ascon_top mealy_fsm sel_masked_round", false,-1);
+        tracep->declBit(c+1081,"ascon_top mealy_fsm sel_padding", false,-1);
+        tracep->declBit(c+107,"ascon_top mealy_fsm sel_xor_signal", false,-1);
+        tracep->declBit(c+1082,"ascon_top mealy_fsm sel_absorb_data", false,-1);
+        tracep->declBit(c+1252,"ascon_top mealy_fsm ciphertext_valid", false,-1);
+        tracep->declBit(c+1263,"ascon_top mealy_fsm ready_for_data", false,-1);
+        tracep->declBit(c+1264,"ascon_top mealy_fsm read_data", false,-1);
+        tracep->declBit(c+99,"ascon_top mealy_fsm extra_padding_ff", false,-1);
+        tracep->declBus(c+109,"ascon_top mealy_fsm bit_counter", false,-1, 6,0);
+        tracep->declBus(c+108,"ascon_top mealy_fsm round_counter", false,-1, 3,0);
+        tracep->declBus(c+1268,"ascon_top mealy_fsm debug_state", false,-1, 4,0);
+        tracep->declBit(c+110,"ascon_top mealy_fsm shift_enable_sipo", false,-1);
+        tracep->declBit(c+111,"ascon_top mealy_fsm last_cycle_sipo", false,-1);
+        tracep->declBit(c+859,"ascon_top mealy_fsm rst_cnt_4", false,-1);
+        tracep->declBit(c+1122,"ascon_top mealy_fsm extra_padding", false,-1);
+        tracep->declBus(c+860,"ascon_top mealy_fsm current_state", false,-1, 4,0);
+        tracep->declBus(c+1123,"ascon_top mealy_fsm next_state", false,-1, 4,0);
+        tracep->declBus(c+861,"ascon_top mealy_fsm number_bits", false,-1, 6,0);
+        tracep->declBus(c+862,"ascon_top mealy_fsm number_round", false,-1, 3,0);
+        tracep->declBit(c+1124,"ascon_top mealy_fsm last_block_process", false,-1);
+        tracep->declBit(c+863,"ascon_top mealy_fsm last_block_process_ff", false,-1);
+        tracep->declBit(c+1125,"ascon_top mealy_fsm last_block_process_load", false,-1);
+        tracep->declBit(c+1126,"ascon_top mealy_fsm extra_padding_load", false,-1);
+        tracep->declBit(c+864,"ascon_top mealy_fsm round_counter_enable", false,-1);
+        tracep->declBit(c+1127,"ascon_top mealy_fsm rst_counter_round", false,-1);
+        tracep->declBus(c+1320,"ascon_top mealy_fsm BYTE_W", false,-1, 31,0);
+        tracep->declBus(c+1313,"ascon_top mealy_fsm unnamedblk1 BIT_COUNTER_MAX_FULL", false,-1, 31,0);
+        tracep->declBus(c+1321,"ascon_top mealy_fsm unnamedblk1 BIT_COUNTER_MAX", false,-1, 6,0);
+        tracep->declBus(c+1313,"ascon_top mealy_fsm unnamedblk2 BIT_COUNTER_MAX_FULL", false,-1, 31,0);
+        tracep->declBus(c+1321,"ascon_top mealy_fsm unnamedblk2 BIT_COUNTER_MAX", false,-1, 6,0);
+        tracep->declBit(c+1219,"ascon_top key1_reg clk", false,-1);
+        tracep->declBit(c+1220,"ascon_top key1_reg reset_n", false,-1);
+        tracep->declBit(c+103,"ascon_top key1_reg load", false,-1);
+        tracep->declQuad(c+1223,"ascon_top key1_reg data_in", false,-1, 63,0);
+        tracep->declQuad(c+145,"ascon_top key1_reg data_out", false,-1, 63,0);
+        tracep->declQuad(c+145,"ascon_top key1_reg reg_q", false,-1, 63,0);
+        tracep->declBit(c+1219,"ascon_top key2_reg clk", false,-1);
+        tracep->declBit(c+1220,"ascon_top key2_reg reset_n", false,-1);
+        tracep->declBit(c+104,"ascon_top key2_reg load", false,-1);
+        tracep->declQuad(c+1225,"ascon_top key2_reg data_in", false,-1, 63,0);
+        tracep->declQuad(c+147,"ascon_top key2_reg data_out", false,-1, 63,0);
+        tracep->declQuad(c+147,"ascon_top key2_reg reg_q", false,-1, 63,0);
+        tracep->declBit(c+1219,"ascon_top sipo_reg_x0_debug clk", false,-1);
+        tracep->declBit(c+1220,"ascon_top sipo_reg_x0_debug reset_n", false,-1);
+        tracep->declBit(c+110,"ascon_top sipo_reg_x0_debug shift_en", false,-1);
+        tracep->declBit(c+101,"ascon_top sipo_reg_x0_debug shift_type", false,-1);
+        tracep->declBit(c+111,"ascon_top sipo_reg_x0_debug last_cycle", false,-1);
+        tracep->declBus(c+164,"ascon_top sipo_reg_x0_debug in_shifted_dplus1", false,-1, 2,0);
+        tracep->declBus(c+865,"ascon_top sipo_reg_x0_debug in_shifted_1bit", false,-1, 0,0);
+        tracep->declQuad(c+149,"ascon_top sipo_reg_x0_debug data_out", false,-1, 63,0);
+        tracep->declQuad(c+149,"ascon_top sipo_reg_x0_debug state", false,-1, 63,0);
+        tracep->declQuad(c+866,"ascon_top sipo_reg_x0_debug next_state", false,-1, 63,0);
+        tracep->declBit(c+1219,"ascon_top sipo_reg_x1_debug clk", false,-1);
+        tracep->declBit(c+1220,"ascon_top sipo_reg_x1_debug reset_n", false,-1);
+        tracep->declBit(c+110,"ascon_top sipo_reg_x1_debug shift_en", false,-1);
+        tracep->declBit(c+101,"ascon_top sipo_reg_x1_debug shift_type", false,-1);
+        tracep->declBit(c+111,"ascon_top sipo_reg_x1_debug last_cycle", false,-1);
+        tracep->declBus(c+165,"ascon_top sipo_reg_x1_debug in_shifted_dplus1", false,-1, 2,0);
+        tracep->declBus(c+868,"ascon_top sipo_reg_x1_debug in_shifted_1bit", false,-1, 0,0);
+        tracep->declQuad(c+151,"ascon_top sipo_reg_x1_debug data_out", false,-1, 63,0);
+        tracep->declQuad(c+151,"ascon_top sipo_reg_x1_debug state", false,-1, 63,0);
+        tracep->declQuad(c+869,"ascon_top sipo_reg_x1_debug next_state", false,-1, 63,0);
+        tracep->declBit(c+1219,"ascon_top sipo_reg_x2_debug clk", false,-1);
+        tracep->declBit(c+1220,"ascon_top sipo_reg_x2_debug reset_n", false,-1);
+        tracep->declBit(c+110,"ascon_top sipo_reg_x2_debug shift_en", false,-1);
+        tracep->declBit(c+101,"ascon_top sipo_reg_x2_debug shift_type", false,-1);
+        tracep->declBit(c+111,"ascon_top sipo_reg_x2_debug last_cycle", false,-1);
+        tracep->declBus(c+166,"ascon_top sipo_reg_x2_debug in_shifted_dplus1", false,-1, 2,0);
+        tracep->declBus(c+871,"ascon_top sipo_reg_x2_debug in_shifted_1bit", false,-1, 0,0);
+        tracep->declQuad(c+153,"ascon_top sipo_reg_x2_debug data_out", false,-1, 63,0);
+        tracep->declQuad(c+153,"ascon_top sipo_reg_x2_debug state", false,-1, 63,0);
+        tracep->declQuad(c+872,"ascon_top sipo_reg_x2_debug next_state", false,-1, 63,0);
+        tracep->declBit(c+1219,"ascon_top sipo_reg_x3_debug clk", false,-1);
+        tracep->declBit(c+1220,"ascon_top sipo_reg_x3_debug reset_n", false,-1);
+        tracep->declBit(c+110,"ascon_top sipo_reg_x3_debug shift_en", false,-1);
+        tracep->declBit(c+101,"ascon_top sipo_reg_x3_debug shift_type", false,-1);
+        tracep->declBit(c+111,"ascon_top sipo_reg_x3_debug last_cycle", false,-1);
+        tracep->declBus(c+167,"ascon_top sipo_reg_x3_debug in_shifted_dplus1", false,-1, 2,0);
+        tracep->declBus(c+874,"ascon_top sipo_reg_x3_debug in_shifted_1bit", false,-1, 0,0);
+        tracep->declQuad(c+155,"ascon_top sipo_reg_x3_debug data_out", false,-1, 63,0);
+        tracep->declQuad(c+155,"ascon_top sipo_reg_x3_debug state", false,-1, 63,0);
+        tracep->declQuad(c+875,"ascon_top sipo_reg_x3_debug next_state", false,-1, 63,0);
+        tracep->declBit(c+1219,"ascon_top sipo_reg_x4_debug clk", false,-1);
+        tracep->declBit(c+1220,"ascon_top sipo_reg_x4_debug reset_n", false,-1);
+        tracep->declBit(c+110,"ascon_top sipo_reg_x4_debug shift_en", false,-1);
+        tracep->declBit(c+101,"ascon_top sipo_reg_x4_debug shift_type", false,-1);
+        tracep->declBit(c+111,"ascon_top sipo_reg_x4_debug last_cycle", false,-1);
+        tracep->declBus(c+168,"ascon_top sipo_reg_x4_debug in_shifted_dplus1", false,-1, 2,0);
+        tracep->declBus(c+877,"ascon_top sipo_reg_x4_debug in_shifted_1bit", false,-1, 0,0);
+        tracep->declQuad(c+157,"ascon_top sipo_reg_x4_debug data_out", false,-1, 63,0);
+        tracep->declQuad(c+157,"ascon_top sipo_reg_x4_debug state", false,-1, 63,0);
+        tracep->declQuad(c+878,"ascon_top sipo_reg_x4_debug next_state", false,-1, 63,0);
+        tracep->declBus(c+174,"ascon_top share_creator data_in", false,-1, 4,0);
+        tracep->declBus(c+1006,"ascon_top share_creator random_masks", false,-1, 9,0);
+        tracep->declBus(c+1174,"ascon_top share_creator shares_out", false,-1, 14,0);
+        tracep->declBus(c+1192,"ascon_top share_creator temp", false,-1, 4,0);
+        tracep->declBus(c+1322,"ascon_top share_creator unnamedblk1 i", false,-1, 31,0);
+        tracep->declBit(c+1219,"ascon_top gen_state_regs[0] state_reg_share clk", false,-1);
+        tracep->declBit(c+1220,"ascon_top gen_state_regs[0] state_reg_share reset_n", false,-1);
+        tracep->declBit(c+1078,"ascon_top gen_state_regs[0] state_reg_share write_en", false,-1);
+        tracep->declBit(c+100,"ascon_top gen_state_regs[0] state_reg_share shift_en", false,-1);
+        tracep->declBit(c+101,"ascon_top gen_state_regs[0] state_reg_share shift_type", false,-1);
+        tracep->declBit(c+102,"ascon_top gen_state_regs[0] state_reg_share last_cycle", false,-1);
+        tracep->declArray(c+1128,"ascon_top gen_state_regs[0] state_reg_share data_in", false,-1, 319,0);
+        tracep->declBus(c+1193,"ascon_top gen_state_regs[0] state_reg_share in_shifted_dplus1", false,-1, 14,0);
+        tracep->declBus(c+1194,"ascon_top gen_state_regs[0] state_reg_share in_shifted_1bit", false,-1, 4,0);
+        tracep->declBus(c+880,"ascon_top gen_state_regs[0] state_reg_share out_shifted_dplus1", false,-1, 14,0);
+        tracep->declArray(c+881,"ascon_top gen_state_regs[0] state_reg_share data_out", false,-1, 319,0);
         {int i; for (i=0; i<5; i++) {
-                tracep->declQuad(c+883+i*2,"ascon_top state_reg state", true,(i+0), 63,0);}}
+                tracep->declQuad(c+891+i*2,"ascon_top gen_state_regs[0] state_reg_share state", true,(i+0), 63,0);}}
         {int i; for (i=0; i<5; i++) {
-                tracep->declQuad(c+1142+i*2,"ascon_top state_reg next_state", true,(i+0), 63,0);}}
-        tracep->declBus(c+1517,"ascon_top state_reg gen_case1 unnamedblk1 i", false,-1, 31,0);
-        tracep->declBus(c+893,"ascon_top state_reg unnamedblk3 i", false,-1, 31,0);
-        tracep->declBus(c+1517,"ascon_top state_reg gen_caseNoPArMAx unnamedblk4 i", false,-1, 31,0);
-        tracep->declBit(c+1419,"ascon_top key1_reg clk", false,-1);
-        tracep->declBit(c+1420,"ascon_top key1_reg reset_n", false,-1);
-        tracep->declBit(c+532,"ascon_top key1_reg load", false,-1);
-        tracep->declQuad(c+1422,"ascon_top key1_reg data_in", false,-1, 63,0);
-        tracep->declQuad(c+541,"ascon_top key1_reg data_out", false,-1, 63,0);
-        tracep->declQuad(c+541,"ascon_top key1_reg reg_q", false,-1, 63,0);
-        tracep->declBit(c+1419,"ascon_top key2_reg clk", false,-1);
-        tracep->declBit(c+1420,"ascon_top key2_reg reset_n", false,-1);
-        tracep->declBit(c+533,"ascon_top key2_reg load", false,-1);
-        tracep->declQuad(c+1424,"ascon_top key2_reg data_in", false,-1, 63,0);
-        tracep->declQuad(c+543,"ascon_top key2_reg data_out", false,-1, 63,0);
-        tracep->declQuad(c+543,"ascon_top key2_reg reg_q", false,-1, 63,0);
-        tracep->declBit(c+1419,"ascon_top sipo_reg_x0_debug clk", false,-1);
-        tracep->declBit(c+1420,"ascon_top sipo_reg_x0_debug reset_n", false,-1);
-        tracep->declBit(c+537,"ascon_top sipo_reg_x0_debug shift_en", false,-1);
-        tracep->declBit(c+530,"ascon_top sipo_reg_x0_debug shift_type", false,-1);
-        tracep->declBit(c+538,"ascon_top sipo_reg_x0_debug last_cycle", false,-1);
-        tracep->declBus(c+846,"ascon_top sipo_reg_x0_debug in_shifted_dplus1", false,-1, 23,0);
-        tracep->declBus(c+894,"ascon_top sipo_reg_x0_debug in_shifted_1bit", false,-1, 5,0);
-        tracep->declQuad(c+545,"ascon_top sipo_reg_x0_debug data_out", false,-1, 63,0);
-        tracep->declQuad(c+545,"ascon_top sipo_reg_x0_debug state", false,-1, 63,0);
-        tracep->declQuad(c+1227,"ascon_top sipo_reg_x0_debug next_state", false,-1, 63,0);
-        tracep->declBit(c+1419,"ascon_top sipo_reg_x1_debug clk", false,-1);
-        tracep->declBit(c+1420,"ascon_top sipo_reg_x1_debug reset_n", false,-1);
-        tracep->declBit(c+537,"ascon_top sipo_reg_x1_debug shift_en", false,-1);
-        tracep->declBit(c+530,"ascon_top sipo_reg_x1_debug shift_type", false,-1);
-        tracep->declBit(c+538,"ascon_top sipo_reg_x1_debug last_cycle", false,-1);
-        tracep->declBus(c+847,"ascon_top sipo_reg_x1_debug in_shifted_dplus1", false,-1, 23,0);
-        tracep->declBus(c+895,"ascon_top sipo_reg_x1_debug in_shifted_1bit", false,-1, 5,0);
-        tracep->declQuad(c+547,"ascon_top sipo_reg_x1_debug data_out", false,-1, 63,0);
-        tracep->declQuad(c+547,"ascon_top sipo_reg_x1_debug state", false,-1, 63,0);
-        tracep->declQuad(c+1229,"ascon_top sipo_reg_x1_debug next_state", false,-1, 63,0);
-        tracep->declBit(c+1419,"ascon_top sipo_reg_x2_debug clk", false,-1);
-        tracep->declBit(c+1420,"ascon_top sipo_reg_x2_debug reset_n", false,-1);
-        tracep->declBit(c+537,"ascon_top sipo_reg_x2_debug shift_en", false,-1);
-        tracep->declBit(c+530,"ascon_top sipo_reg_x2_debug shift_type", false,-1);
-        tracep->declBit(c+538,"ascon_top sipo_reg_x2_debug last_cycle", false,-1);
-        tracep->declBus(c+1157,"ascon_top sipo_reg_x2_debug in_shifted_dplus1", false,-1, 23,0);
-        tracep->declBus(c+1231,"ascon_top sipo_reg_x2_debug in_shifted_1bit", false,-1, 5,0);
-        tracep->declQuad(c+549,"ascon_top sipo_reg_x2_debug data_out", false,-1, 63,0);
-        tracep->declQuad(c+549,"ascon_top sipo_reg_x2_debug state", false,-1, 63,0);
-        tracep->declQuad(c+1232,"ascon_top sipo_reg_x2_debug next_state", false,-1, 63,0);
-        tracep->declBit(c+1419,"ascon_top sipo_reg_x3_debug clk", false,-1);
-        tracep->declBit(c+1420,"ascon_top sipo_reg_x3_debug reset_n", false,-1);
-        tracep->declBit(c+537,"ascon_top sipo_reg_x3_debug shift_en", false,-1);
-        tracep->declBit(c+530,"ascon_top sipo_reg_x3_debug shift_type", false,-1);
-        tracep->declBit(c+538,"ascon_top sipo_reg_x3_debug last_cycle", false,-1);
-        tracep->declBus(c+848,"ascon_top sipo_reg_x3_debug in_shifted_dplus1", false,-1, 23,0);
-        tracep->declBus(c+896,"ascon_top sipo_reg_x3_debug in_shifted_1bit", false,-1, 5,0);
-        tracep->declQuad(c+551,"ascon_top sipo_reg_x3_debug data_out", false,-1, 63,0);
-        tracep->declQuad(c+551,"ascon_top sipo_reg_x3_debug state", false,-1, 63,0);
-        tracep->declQuad(c+1234,"ascon_top sipo_reg_x3_debug next_state", false,-1, 63,0);
-        tracep->declBit(c+1419,"ascon_top sipo_reg_x4_debug clk", false,-1);
-        tracep->declBit(c+1420,"ascon_top sipo_reg_x4_debug reset_n", false,-1);
-        tracep->declBit(c+537,"ascon_top sipo_reg_x4_debug shift_en", false,-1);
-        tracep->declBit(c+530,"ascon_top sipo_reg_x4_debug shift_type", false,-1);
-        tracep->declBit(c+538,"ascon_top sipo_reg_x4_debug last_cycle", false,-1);
-        tracep->declBus(c+849,"ascon_top sipo_reg_x4_debug in_shifted_dplus1", false,-1, 23,0);
-        tracep->declBus(c+897,"ascon_top sipo_reg_x4_debug in_shifted_1bit", false,-1, 5,0);
-        tracep->declQuad(c+553,"ascon_top sipo_reg_x4_debug data_out", false,-1, 63,0);
-        tracep->declQuad(c+553,"ascon_top sipo_reg_x4_debug state", false,-1, 63,0);
-        tracep->declQuad(c+1236,"ascon_top sipo_reg_x4_debug next_state", false,-1, 63,0);
-        tracep->declBus(c+1492,"ascon_top share_creator data_in", false,-1, 29,0);
-        tracep->declArray(c+524,"ascon_top share_creator random_masks", false,-1, 89,0);
-        tracep->declArray(c+1158,"ascon_top share_creator shares_out", false,-1, 119,0);
-        tracep->declBus(c+1238,"ascon_top share_creator temp", false,-1, 29,0);
-        tracep->declBus(c+1518,"ascon_top share_creator unnamedblk1 i", false,-1, 31,0);
-        tracep->declBit(c+1419,"ascon_top gen_unsupported gen_sbox[0] u_sbox clk", false,-1);
-        tracep->declBus(c+898,"ascon_top gen_unsupported gen_sbox[0] u_sbox x_in", false,-1, 19,0);
-        tracep->declBus(c+527,"ascon_top gen_unsupported gen_sbox[0] u_sbox fresh_r", false,-1, 5,0);
-        tracep->declBit(c+535,"ascon_top gen_unsupported gen_sbox[0] u_sbox sel_masked_round", false,-1);
-        tracep->declBus(c+899,"ascon_top gen_unsupported gen_sbox[0] u_sbox x_out", false,-1, 19,0);
-        tracep->declBus(c+1239,"ascon_top gen_unsupported gen_sbox[0] u_sbox x_out_noMask", false,-1, 19,0);
+                tracep->declQuad(c+1138+i*2,"ascon_top gen_state_regs[0] state_reg_share next_state", true,(i+0), 63,0);}}
+        tracep->declBus(c+1323,"ascon_top gen_state_regs[0] state_reg_share gen_case1 unnamedblk1 i", false,-1, 31,0);
+        tracep->declBus(c+901,"ascon_top gen_state_regs[0] state_reg_share unnamedblk4 i", false,-1, 31,0);
+        tracep->declBus(c+902,"ascon_top gen_state_regs[0] state_reg_share unnamedblk3 i", false,-1, 31,0);
+        tracep->declBus(c+1323,"ascon_top gen_state_regs[0] state_reg_share gen_caseNoPArMAx unnamedblk5 i", false,-1, 31,0);
+        tracep->declBit(c+1219,"ascon_top gen_state_regs[1] state_reg_share clk", false,-1);
+        tracep->declBit(c+1220,"ascon_top gen_state_regs[1] state_reg_share reset_n", false,-1);
+        tracep->declBit(c+1315,"ascon_top gen_state_regs[1] state_reg_share write_en", false,-1);
+        tracep->declBit(c+100,"ascon_top gen_state_regs[1] state_reg_share shift_en", false,-1);
+        tracep->declBit(c+101,"ascon_top gen_state_regs[1] state_reg_share shift_type", false,-1);
+        tracep->declBit(c+102,"ascon_top gen_state_regs[1] state_reg_share last_cycle", false,-1);
+        tracep->declArray(c+1148,"ascon_top gen_state_regs[1] state_reg_share data_in", false,-1, 319,0);
+        tracep->declBus(c+1195,"ascon_top gen_state_regs[1] state_reg_share in_shifted_dplus1", false,-1, 14,0);
+        tracep->declBus(c+1196,"ascon_top gen_state_regs[1] state_reg_share in_shifted_1bit", false,-1, 4,0);
+        tracep->declBus(c+903,"ascon_top gen_state_regs[1] state_reg_share out_shifted_dplus1", false,-1, 14,0);
+        tracep->declArray(c+904,"ascon_top gen_state_regs[1] state_reg_share data_out", false,-1, 319,0);
         {int i; for (i=0; i<5; i++) {
-                tracep->declBus(c+900+i*1,"ascon_top gen_unsupported gen_sbox[0] u_sbox x", true,(i+0), 3,0);}}
-        tracep->declBus(c+1240,"ascon_top gen_unsupported gen_sbox[0] u_sbox and_result_bank(0)(0)", false,-1, 3,0);
-        tracep->declBus(c+1241,"ascon_top gen_unsupported gen_sbox[0] u_sbox and_result_bank(0)(1)", false,-1, 3,0);
-        tracep->declBus(c+1242,"ascon_top gen_unsupported gen_sbox[0] u_sbox and_result_bank(0)(2)", false,-1, 3,0);
-        tracep->declBus(c+1243,"ascon_top gen_unsupported gen_sbox[0] u_sbox and_result_bank(0)(3)", false,-1, 3,0);
-        tracep->declBus(c+1244,"ascon_top gen_unsupported gen_sbox[0] u_sbox and_result_bank(1)(0)", false,-1, 3,0);
-        tracep->declBus(c+1245,"ascon_top gen_unsupported gen_sbox[0] u_sbox and_result_bank(1)(1)", false,-1, 3,0);
-        tracep->declBus(c+1246,"ascon_top gen_unsupported gen_sbox[0] u_sbox and_result_bank(1)(2)", false,-1, 3,0);
-        tracep->declBus(c+1247,"ascon_top gen_unsupported gen_sbox[0] u_sbox and_result_bank(1)(3)", false,-1, 3,0);
-        tracep->declBus(c+1248,"ascon_top gen_unsupported gen_sbox[0] u_sbox and_result_bank(2)(0)", false,-1, 3,0);
-        tracep->declBus(c+1249,"ascon_top gen_unsupported gen_sbox[0] u_sbox and_result_bank(2)(1)", false,-1, 3,0);
-        tracep->declBus(c+1250,"ascon_top gen_unsupported gen_sbox[0] u_sbox and_result_bank(2)(2)", false,-1, 3,0);
-        tracep->declBus(c+1251,"ascon_top gen_unsupported gen_sbox[0] u_sbox and_result_bank(2)(3)", false,-1, 3,0);
-        tracep->declBus(c+1252,"ascon_top gen_unsupported gen_sbox[0] u_sbox and_result_bank(3)(0)", false,-1, 3,0);
-        tracep->declBus(c+1253,"ascon_top gen_unsupported gen_sbox[0] u_sbox and_result_bank(3)(1)", false,-1, 3,0);
-        tracep->declBus(c+1254,"ascon_top gen_unsupported gen_sbox[0] u_sbox and_result_bank(3)(2)", false,-1, 3,0);
-        tracep->declBus(c+1255,"ascon_top gen_unsupported gen_sbox[0] u_sbox and_result_bank(3)(3)", false,-1, 3,0);
-        tracep->declBus(c+1256,"ascon_top gen_unsupported gen_sbox[0] u_sbox and_result_bank(4)(0)", false,-1, 3,0);
-        tracep->declBus(c+1257,"ascon_top gen_unsupported gen_sbox[0] u_sbox and_result_bank(4)(1)", false,-1, 3,0);
-        tracep->declBus(c+1258,"ascon_top gen_unsupported gen_sbox[0] u_sbox and_result_bank(4)(2)", false,-1, 3,0);
-        tracep->declBus(c+1259,"ascon_top gen_unsupported gen_sbox[0] u_sbox and_result_bank(4)(3)", false,-1, 3,0);
-        tracep->declBus(c+905,"ascon_top gen_unsupported gen_sbox[0] u_sbox and_result_reg(0)(0)", false,-1, 3,0);
-        tracep->declBus(c+906,"ascon_top gen_unsupported gen_sbox[0] u_sbox and_result_reg(0)(1)", false,-1, 3,0);
-        tracep->declBus(c+907,"ascon_top gen_unsupported gen_sbox[0] u_sbox and_result_reg(0)(2)", false,-1, 3,0);
-        tracep->declBus(c+908,"ascon_top gen_unsupported gen_sbox[0] u_sbox and_result_reg(0)(3)", false,-1, 3,0);
-        tracep->declBus(c+909,"ascon_top gen_unsupported gen_sbox[0] u_sbox and_result_reg(1)(0)", false,-1, 3,0);
-        tracep->declBus(c+910,"ascon_top gen_unsupported gen_sbox[0] u_sbox and_result_reg(1)(1)", false,-1, 3,0);
-        tracep->declBus(c+911,"ascon_top gen_unsupported gen_sbox[0] u_sbox and_result_reg(1)(2)", false,-1, 3,0);
-        tracep->declBus(c+912,"ascon_top gen_unsupported gen_sbox[0] u_sbox and_result_reg(1)(3)", false,-1, 3,0);
-        tracep->declBus(c+913,"ascon_top gen_unsupported gen_sbox[0] u_sbox and_result_reg(2)(0)", false,-1, 3,0);
-        tracep->declBus(c+914,"ascon_top gen_unsupported gen_sbox[0] u_sbox and_result_reg(2)(1)", false,-1, 3,0);
-        tracep->declBus(c+915,"ascon_top gen_unsupported gen_sbox[0] u_sbox and_result_reg(2)(2)", false,-1, 3,0);
-        tracep->declBus(c+916,"ascon_top gen_unsupported gen_sbox[0] u_sbox and_result_reg(2)(3)", false,-1, 3,0);
-        tracep->declBus(c+917,"ascon_top gen_unsupported gen_sbox[0] u_sbox and_result_reg(3)(0)", false,-1, 3,0);
-        tracep->declBus(c+918,"ascon_top gen_unsupported gen_sbox[0] u_sbox and_result_reg(3)(1)", false,-1, 3,0);
-        tracep->declBus(c+919,"ascon_top gen_unsupported gen_sbox[0] u_sbox and_result_reg(3)(2)", false,-1, 3,0);
-        tracep->declBus(c+920,"ascon_top gen_unsupported gen_sbox[0] u_sbox and_result_reg(3)(3)", false,-1, 3,0);
-        tracep->declBus(c+921,"ascon_top gen_unsupported gen_sbox[0] u_sbox and_result_reg(4)(0)", false,-1, 3,0);
-        tracep->declBus(c+922,"ascon_top gen_unsupported gen_sbox[0] u_sbox and_result_reg(4)(1)", false,-1, 3,0);
-        tracep->declBus(c+923,"ascon_top gen_unsupported gen_sbox[0] u_sbox and_result_reg(4)(2)", false,-1, 3,0);
-        tracep->declBus(c+924,"ascon_top gen_unsupported gen_sbox[0] u_sbox and_result_reg(4)(3)", false,-1, 3,0);
+                tracep->declQuad(c+914+i*2,"ascon_top gen_state_regs[1] state_reg_share state", true,(i+0), 63,0);}}
         {int i; for (i=0; i<5; i++) {
-                tracep->declBus(c+925+i*1,"ascon_top gen_unsupported gen_sbox[0] u_sbox y", true,(i+0), 3,0);}}
+                tracep->declQuad(c+1197+i*2,"ascon_top gen_state_regs[1] state_reg_share next_state", true,(i+0), 63,0);}}
+        tracep->declBus(c+1323,"ascon_top gen_state_regs[1] state_reg_share gen_case1 unnamedblk1 i", false,-1, 31,0);
+        tracep->declBus(c+924,"ascon_top gen_state_regs[1] state_reg_share unnamedblk4 i", false,-1, 31,0);
+        tracep->declBus(c+925,"ascon_top gen_state_regs[1] state_reg_share unnamedblk3 i", false,-1, 31,0);
+        tracep->declBus(c+1323,"ascon_top gen_state_regs[1] state_reg_share gen_caseNoPArMAx unnamedblk5 i", false,-1, 31,0);
+        tracep->declBit(c+1219,"ascon_top gen_state_regs[2] state_reg_share clk", false,-1);
+        tracep->declBit(c+1220,"ascon_top gen_state_regs[2] state_reg_share reset_n", false,-1);
+        tracep->declBit(c+1315,"ascon_top gen_state_regs[2] state_reg_share write_en", false,-1);
+        tracep->declBit(c+100,"ascon_top gen_state_regs[2] state_reg_share shift_en", false,-1);
+        tracep->declBit(c+101,"ascon_top gen_state_regs[2] state_reg_share shift_type", false,-1);
+        tracep->declBit(c+102,"ascon_top gen_state_regs[2] state_reg_share last_cycle", false,-1);
+        tracep->declArray(c+1158,"ascon_top gen_state_regs[2] state_reg_share data_in", false,-1, 319,0);
+        tracep->declBus(c+1207,"ascon_top gen_state_regs[2] state_reg_share in_shifted_dplus1", false,-1, 14,0);
+        tracep->declBus(c+1208,"ascon_top gen_state_regs[2] state_reg_share in_shifted_1bit", false,-1, 4,0);
+        tracep->declBus(c+926,"ascon_top gen_state_regs[2] state_reg_share out_shifted_dplus1", false,-1, 14,0);
+        tracep->declArray(c+927,"ascon_top gen_state_regs[2] state_reg_share data_out", false,-1, 319,0);
         {int i; for (i=0; i<5; i++) {
-                tracep->declBus(c+1260+i*1,"ascon_top gen_unsupported gen_sbox[0] u_sbox y_noMask", true,(i+0), 3,0);}}
-        tracep->declBus(c+1519,"ascon_top gen_unsupported gen_sbox[0] u_sbox unnamedblk1 fresh_idx", false,-1, 31,0);
-        tracep->declBus(c+1517,"ascon_top gen_unsupported gen_sbox[0] u_sbox unnamedblk1 unnamedblk2 i", false,-1, 31,0);
-        tracep->declBus(c+1265,"ascon_top gen_unsupported gen_sbox[0] u_sbox unnamedblk1 unnamedblk2 unnamedblk3 xi", false,-1, 3,0);
-        tracep->declBus(c+1266,"ascon_top gen_unsupported gen_sbox[0] u_sbox unnamedblk1 unnamedblk2 unnamedblk3 xiprox1", false,-1, 3,0);
-        tracep->declBus(c+1267,"ascon_top gen_unsupported gen_sbox[0] u_sbox unnamedblk1 unnamedblk2 unnamedblk3 xiprox2", false,-1, 3,0);
-        tracep->declBus(c+1268,"ascon_top gen_unsupported gen_sbox[0] u_sbox unnamedblk1 unnamedblk2 unnamedblk3 not_xiprox1", false,-1, 3,0);
-        tracep->declBus(c+1509,"ascon_top gen_unsupported gen_sbox[0] u_sbox unnamedblk1 unnamedblk2 unnamedblk3 unnamedblk4 j", false,-1, 31,0);
-        tracep->declBus(c+1509,"ascon_top gen_unsupported gen_sbox[0] u_sbox unnamedblk1 unnamedblk2 unnamedblk3 unnamedblk4 unnamedblk5 k", false,-1, 31,0);
-        tracep->declBus(c+930,"ascon_top gen_unsupported gen_sbox[0] u_sbox unnamedblk6 i", false,-1, 31,0);
-        tracep->declBus(c+1517,"ascon_top gen_unsupported gen_sbox[0] u_sbox unnamedblk9 i", false,-1, 31,0);
-        tracep->declBus(c+1509,"ascon_top gen_unsupported gen_sbox[0] u_sbox unnamedblk9 unnamedblk10 j", false,-1, 31,0);
-        tracep->declBus(c+931,"ascon_top gen_unsupported gen_sbox[0] u_sbox unnamedblk9 unnamedblk10 unnamedblk11 temp", false,-1, 3,0);
-        tracep->declBus(c+1509,"ascon_top gen_unsupported gen_sbox[0] u_sbox unnamedblk9 unnamedblk10 unnamedblk11 unnamedblk12 k", false,-1, 31,0);
-        tracep->declBit(c+1419,"ascon_top gen_unsupported gen_sbox[1] u_sbox clk", false,-1);
-        tracep->declBus(c+932,"ascon_top gen_unsupported gen_sbox[1] u_sbox x_in", false,-1, 19,0);
-        tracep->declBus(c+527,"ascon_top gen_unsupported gen_sbox[1] u_sbox fresh_r", false,-1, 5,0);
-        tracep->declBit(c+535,"ascon_top gen_unsupported gen_sbox[1] u_sbox sel_masked_round", false,-1);
-        tracep->declBus(c+933,"ascon_top gen_unsupported gen_sbox[1] u_sbox x_out", false,-1, 19,0);
-        tracep->declBus(c+1269,"ascon_top gen_unsupported gen_sbox[1] u_sbox x_out_noMask", false,-1, 19,0);
+                tracep->declQuad(c+937+i*2,"ascon_top gen_state_regs[2] state_reg_share state", true,(i+0), 63,0);}}
         {int i; for (i=0; i<5; i++) {
-                tracep->declBus(c+934+i*1,"ascon_top gen_unsupported gen_sbox[1] u_sbox x", true,(i+0), 3,0);}}
-        tracep->declBus(c+1270,"ascon_top gen_unsupported gen_sbox[1] u_sbox and_result_bank(0)(0)", false,-1, 3,0);
-        tracep->declBus(c+1271,"ascon_top gen_unsupported gen_sbox[1] u_sbox and_result_bank(0)(1)", false,-1, 3,0);
-        tracep->declBus(c+1272,"ascon_top gen_unsupported gen_sbox[1] u_sbox and_result_bank(0)(2)", false,-1, 3,0);
-        tracep->declBus(c+1273,"ascon_top gen_unsupported gen_sbox[1] u_sbox and_result_bank(0)(3)", false,-1, 3,0);
-        tracep->declBus(c+1274,"ascon_top gen_unsupported gen_sbox[1] u_sbox and_result_bank(1)(0)", false,-1, 3,0);
-        tracep->declBus(c+1275,"ascon_top gen_unsupported gen_sbox[1] u_sbox and_result_bank(1)(1)", false,-1, 3,0);
-        tracep->declBus(c+1276,"ascon_top gen_unsupported gen_sbox[1] u_sbox and_result_bank(1)(2)", false,-1, 3,0);
-        tracep->declBus(c+1277,"ascon_top gen_unsupported gen_sbox[1] u_sbox and_result_bank(1)(3)", false,-1, 3,0);
-        tracep->declBus(c+1278,"ascon_top gen_unsupported gen_sbox[1] u_sbox and_result_bank(2)(0)", false,-1, 3,0);
-        tracep->declBus(c+1279,"ascon_top gen_unsupported gen_sbox[1] u_sbox and_result_bank(2)(1)", false,-1, 3,0);
-        tracep->declBus(c+1280,"ascon_top gen_unsupported gen_sbox[1] u_sbox and_result_bank(2)(2)", false,-1, 3,0);
-        tracep->declBus(c+1281,"ascon_top gen_unsupported gen_sbox[1] u_sbox and_result_bank(2)(3)", false,-1, 3,0);
-        tracep->declBus(c+1282,"ascon_top gen_unsupported gen_sbox[1] u_sbox and_result_bank(3)(0)", false,-1, 3,0);
-        tracep->declBus(c+1283,"ascon_top gen_unsupported gen_sbox[1] u_sbox and_result_bank(3)(1)", false,-1, 3,0);
-        tracep->declBus(c+1284,"ascon_top gen_unsupported gen_sbox[1] u_sbox and_result_bank(3)(2)", false,-1, 3,0);
-        tracep->declBus(c+1285,"ascon_top gen_unsupported gen_sbox[1] u_sbox and_result_bank(3)(3)", false,-1, 3,0);
-        tracep->declBus(c+1286,"ascon_top gen_unsupported gen_sbox[1] u_sbox and_result_bank(4)(0)", false,-1, 3,0);
-        tracep->declBus(c+1287,"ascon_top gen_unsupported gen_sbox[1] u_sbox and_result_bank(4)(1)", false,-1, 3,0);
-        tracep->declBus(c+1288,"ascon_top gen_unsupported gen_sbox[1] u_sbox and_result_bank(4)(2)", false,-1, 3,0);
-        tracep->declBus(c+1289,"ascon_top gen_unsupported gen_sbox[1] u_sbox and_result_bank(4)(3)", false,-1, 3,0);
-        tracep->declBus(c+939,"ascon_top gen_unsupported gen_sbox[1] u_sbox and_result_reg(0)(0)", false,-1, 3,0);
-        tracep->declBus(c+940,"ascon_top gen_unsupported gen_sbox[1] u_sbox and_result_reg(0)(1)", false,-1, 3,0);
-        tracep->declBus(c+941,"ascon_top gen_unsupported gen_sbox[1] u_sbox and_result_reg(0)(2)", false,-1, 3,0);
-        tracep->declBus(c+942,"ascon_top gen_unsupported gen_sbox[1] u_sbox and_result_reg(0)(3)", false,-1, 3,0);
-        tracep->declBus(c+943,"ascon_top gen_unsupported gen_sbox[1] u_sbox and_result_reg(1)(0)", false,-1, 3,0);
-        tracep->declBus(c+944,"ascon_top gen_unsupported gen_sbox[1] u_sbox and_result_reg(1)(1)", false,-1, 3,0);
-        tracep->declBus(c+945,"ascon_top gen_unsupported gen_sbox[1] u_sbox and_result_reg(1)(2)", false,-1, 3,0);
-        tracep->declBus(c+946,"ascon_top gen_unsupported gen_sbox[1] u_sbox and_result_reg(1)(3)", false,-1, 3,0);
-        tracep->declBus(c+947,"ascon_top gen_unsupported gen_sbox[1] u_sbox and_result_reg(2)(0)", false,-1, 3,0);
-        tracep->declBus(c+948,"ascon_top gen_unsupported gen_sbox[1] u_sbox and_result_reg(2)(1)", false,-1, 3,0);
-        tracep->declBus(c+949,"ascon_top gen_unsupported gen_sbox[1] u_sbox and_result_reg(2)(2)", false,-1, 3,0);
-        tracep->declBus(c+950,"ascon_top gen_unsupported gen_sbox[1] u_sbox and_result_reg(2)(3)", false,-1, 3,0);
-        tracep->declBus(c+951,"ascon_top gen_unsupported gen_sbox[1] u_sbox and_result_reg(3)(0)", false,-1, 3,0);
-        tracep->declBus(c+952,"ascon_top gen_unsupported gen_sbox[1] u_sbox and_result_reg(3)(1)", false,-1, 3,0);
-        tracep->declBus(c+953,"ascon_top gen_unsupported gen_sbox[1] u_sbox and_result_reg(3)(2)", false,-1, 3,0);
-        tracep->declBus(c+954,"ascon_top gen_unsupported gen_sbox[1] u_sbox and_result_reg(3)(3)", false,-1, 3,0);
-        tracep->declBus(c+955,"ascon_top gen_unsupported gen_sbox[1] u_sbox and_result_reg(4)(0)", false,-1, 3,0);
-        tracep->declBus(c+956,"ascon_top gen_unsupported gen_sbox[1] u_sbox and_result_reg(4)(1)", false,-1, 3,0);
-        tracep->declBus(c+957,"ascon_top gen_unsupported gen_sbox[1] u_sbox and_result_reg(4)(2)", false,-1, 3,0);
-        tracep->declBus(c+958,"ascon_top gen_unsupported gen_sbox[1] u_sbox and_result_reg(4)(3)", false,-1, 3,0);
+                tracep->declQuad(c+1209+i*2,"ascon_top gen_state_regs[2] state_reg_share next_state", true,(i+0), 63,0);}}
+        tracep->declBus(c+1323,"ascon_top gen_state_regs[2] state_reg_share gen_case1 unnamedblk1 i", false,-1, 31,0);
+        tracep->declBus(c+947,"ascon_top gen_state_regs[2] state_reg_share unnamedblk4 i", false,-1, 31,0);
+        tracep->declBus(c+948,"ascon_top gen_state_regs[2] state_reg_share unnamedblk3 i", false,-1, 31,0);
+        tracep->declBus(c+1323,"ascon_top gen_state_regs[2] state_reg_share gen_caseNoPArMAx unnamedblk5 i", false,-1, 31,0);
+        tracep->declBit(c+1219,"ascon_top gen_no_changing gen_sbox[0] u_sbox clk", false,-1);
+        tracep->declBus(c+974,"ascon_top gen_no_changing gen_sbox[0] u_sbox x_in", false,-1, 14,0);
+        tracep->declBus(c+1007,"ascon_top gen_no_changing gen_sbox[0] u_sbox fresh_r", false,-1, 2,0);
+        tracep->declBit(c+106,"ascon_top gen_no_changing gen_sbox[0] u_sbox sel_masked_round", false,-1);
+        tracep->declBus(c+975,"ascon_top gen_no_changing gen_sbox[0] u_sbox x_out", false,-1, 14,0);
+        tracep->declBus(c+1053,"ascon_top gen_no_changing gen_sbox[0] u_sbox x_out_noMask", false,-1, 14,0);
         {int i; for (i=0; i<5; i++) {
-                tracep->declBus(c+959+i*1,"ascon_top gen_unsupported gen_sbox[1] u_sbox y", true,(i+0), 3,0);}}
+                tracep->declBus(c+976+i*1,"ascon_top gen_no_changing gen_sbox[0] u_sbox x", true,(i+0), 2,0);}}
+        tracep->declBus(c+1054,"ascon_top gen_no_changing gen_sbox[0] u_sbox and_result_bank(0)(0)", false,-1, 2,0);
+        tracep->declBus(c+1055,"ascon_top gen_no_changing gen_sbox[0] u_sbox and_result_bank(0)(1)", false,-1, 2,0);
+        tracep->declBus(c+1056,"ascon_top gen_no_changing gen_sbox[0] u_sbox and_result_bank(0)(2)", false,-1, 2,0);
+        tracep->declBus(c+1057,"ascon_top gen_no_changing gen_sbox[0] u_sbox and_result_bank(1)(0)", false,-1, 2,0);
+        tracep->declBus(c+1058,"ascon_top gen_no_changing gen_sbox[0] u_sbox and_result_bank(1)(1)", false,-1, 2,0);
+        tracep->declBus(c+1059,"ascon_top gen_no_changing gen_sbox[0] u_sbox and_result_bank(1)(2)", false,-1, 2,0);
+        tracep->declBus(c+1060,"ascon_top gen_no_changing gen_sbox[0] u_sbox and_result_bank(2)(0)", false,-1, 2,0);
+        tracep->declBus(c+1061,"ascon_top gen_no_changing gen_sbox[0] u_sbox and_result_bank(2)(1)", false,-1, 2,0);
+        tracep->declBus(c+1062,"ascon_top gen_no_changing gen_sbox[0] u_sbox and_result_bank(2)(2)", false,-1, 2,0);
+        tracep->declBus(c+1063,"ascon_top gen_no_changing gen_sbox[0] u_sbox and_result_bank(3)(0)", false,-1, 2,0);
+        tracep->declBus(c+1064,"ascon_top gen_no_changing gen_sbox[0] u_sbox and_result_bank(3)(1)", false,-1, 2,0);
+        tracep->declBus(c+1065,"ascon_top gen_no_changing gen_sbox[0] u_sbox and_result_bank(3)(2)", false,-1, 2,0);
+        tracep->declBus(c+1066,"ascon_top gen_no_changing gen_sbox[0] u_sbox and_result_bank(4)(0)", false,-1, 2,0);
+        tracep->declBus(c+1067,"ascon_top gen_no_changing gen_sbox[0] u_sbox and_result_bank(4)(1)", false,-1, 2,0);
+        tracep->declBus(c+1068,"ascon_top gen_no_changing gen_sbox[0] u_sbox and_result_bank(4)(2)", false,-1, 2,0);
+        tracep->declBus(c+981,"ascon_top gen_no_changing gen_sbox[0] u_sbox and_result_reg(0)(0)", false,-1, 2,0);
+        tracep->declBus(c+982,"ascon_top gen_no_changing gen_sbox[0] u_sbox and_result_reg(0)(1)", false,-1, 2,0);
+        tracep->declBus(c+983,"ascon_top gen_no_changing gen_sbox[0] u_sbox and_result_reg(0)(2)", false,-1, 2,0);
+        tracep->declBus(c+984,"ascon_top gen_no_changing gen_sbox[0] u_sbox and_result_reg(1)(0)", false,-1, 2,0);
+        tracep->declBus(c+985,"ascon_top gen_no_changing gen_sbox[0] u_sbox and_result_reg(1)(1)", false,-1, 2,0);
+        tracep->declBus(c+986,"ascon_top gen_no_changing gen_sbox[0] u_sbox and_result_reg(1)(2)", false,-1, 2,0);
+        tracep->declBus(c+987,"ascon_top gen_no_changing gen_sbox[0] u_sbox and_result_reg(2)(0)", false,-1, 2,0);
+        tracep->declBus(c+988,"ascon_top gen_no_changing gen_sbox[0] u_sbox and_result_reg(2)(1)", false,-1, 2,0);
+        tracep->declBus(c+989,"ascon_top gen_no_changing gen_sbox[0] u_sbox and_result_reg(2)(2)", false,-1, 2,0);
+        tracep->declBus(c+990,"ascon_top gen_no_changing gen_sbox[0] u_sbox and_result_reg(3)(0)", false,-1, 2,0);
+        tracep->declBus(c+991,"ascon_top gen_no_changing gen_sbox[0] u_sbox and_result_reg(3)(1)", false,-1, 2,0);
+        tracep->declBus(c+992,"ascon_top gen_no_changing gen_sbox[0] u_sbox and_result_reg(3)(2)", false,-1, 2,0);
+        tracep->declBus(c+993,"ascon_top gen_no_changing gen_sbox[0] u_sbox and_result_reg(4)(0)", false,-1, 2,0);
+        tracep->declBus(c+994,"ascon_top gen_no_changing gen_sbox[0] u_sbox and_result_reg(4)(1)", false,-1, 2,0);
+        tracep->declBus(c+995,"ascon_top gen_no_changing gen_sbox[0] u_sbox and_result_reg(4)(2)", false,-1, 2,0);
         {int i; for (i=0; i<5; i++) {
-                tracep->declBus(c+1290+i*1,"ascon_top gen_unsupported gen_sbox[1] u_sbox y_noMask", true,(i+0), 3,0);}}
-        tracep->declBus(c+1519,"ascon_top gen_unsupported gen_sbox[1] u_sbox unnamedblk1 fresh_idx", false,-1, 31,0);
-        tracep->declBus(c+1517,"ascon_top gen_unsupported gen_sbox[1] u_sbox unnamedblk1 unnamedblk2 i", false,-1, 31,0);
-        tracep->declBus(c+1295,"ascon_top gen_unsupported gen_sbox[1] u_sbox unnamedblk1 unnamedblk2 unnamedblk3 xi", false,-1, 3,0);
-        tracep->declBus(c+1296,"ascon_top gen_unsupported gen_sbox[1] u_sbox unnamedblk1 unnamedblk2 unnamedblk3 xiprox1", false,-1, 3,0);
-        tracep->declBus(c+1297,"ascon_top gen_unsupported gen_sbox[1] u_sbox unnamedblk1 unnamedblk2 unnamedblk3 xiprox2", false,-1, 3,0);
-        tracep->declBus(c+1298,"ascon_top gen_unsupported gen_sbox[1] u_sbox unnamedblk1 unnamedblk2 unnamedblk3 not_xiprox1", false,-1, 3,0);
-        tracep->declBus(c+1509,"ascon_top gen_unsupported gen_sbox[1] u_sbox unnamedblk1 unnamedblk2 unnamedblk3 unnamedblk4 j", false,-1, 31,0);
-        tracep->declBus(c+1509,"ascon_top gen_unsupported gen_sbox[1] u_sbox unnamedblk1 unnamedblk2 unnamedblk3 unnamedblk4 unnamedblk5 k", false,-1, 31,0);
-        tracep->declBus(c+964,"ascon_top gen_unsupported gen_sbox[1] u_sbox unnamedblk6 i", false,-1, 31,0);
-        tracep->declBus(c+1517,"ascon_top gen_unsupported gen_sbox[1] u_sbox unnamedblk9 i", false,-1, 31,0);
-        tracep->declBus(c+1509,"ascon_top gen_unsupported gen_sbox[1] u_sbox unnamedblk9 unnamedblk10 j", false,-1, 31,0);
-        tracep->declBus(c+965,"ascon_top gen_unsupported gen_sbox[1] u_sbox unnamedblk9 unnamedblk10 unnamedblk11 temp", false,-1, 3,0);
-        tracep->declBus(c+1509,"ascon_top gen_unsupported gen_sbox[1] u_sbox unnamedblk9 unnamedblk10 unnamedblk11 unnamedblk12 k", false,-1, 31,0);
-        tracep->declBit(c+1419,"ascon_top gen_unsupported gen_sbox[2] u_sbox clk", false,-1);
-        tracep->declBus(c+966,"ascon_top gen_unsupported gen_sbox[2] u_sbox x_in", false,-1, 19,0);
-        tracep->declBus(c+527,"ascon_top gen_unsupported gen_sbox[2] u_sbox fresh_r", false,-1, 5,0);
-        tracep->declBit(c+535,"ascon_top gen_unsupported gen_sbox[2] u_sbox sel_masked_round", false,-1);
-        tracep->declBus(c+967,"ascon_top gen_unsupported gen_sbox[2] u_sbox x_out", false,-1, 19,0);
-        tracep->declBus(c+1299,"ascon_top gen_unsupported gen_sbox[2] u_sbox x_out_noMask", false,-1, 19,0);
+                tracep->declBus(c+996+i*1,"ascon_top gen_no_changing gen_sbox[0] u_sbox y", true,(i+0), 2,0);}}
         {int i; for (i=0; i<5; i++) {
-                tracep->declBus(c+968+i*1,"ascon_top gen_unsupported gen_sbox[2] u_sbox x", true,(i+0), 3,0);}}
-        tracep->declBus(c+1300,"ascon_top gen_unsupported gen_sbox[2] u_sbox and_result_bank(0)(0)", false,-1, 3,0);
-        tracep->declBus(c+1301,"ascon_top gen_unsupported gen_sbox[2] u_sbox and_result_bank(0)(1)", false,-1, 3,0);
-        tracep->declBus(c+1302,"ascon_top gen_unsupported gen_sbox[2] u_sbox and_result_bank(0)(2)", false,-1, 3,0);
-        tracep->declBus(c+1303,"ascon_top gen_unsupported gen_sbox[2] u_sbox and_result_bank(0)(3)", false,-1, 3,0);
-        tracep->declBus(c+1304,"ascon_top gen_unsupported gen_sbox[2] u_sbox and_result_bank(1)(0)", false,-1, 3,0);
-        tracep->declBus(c+1305,"ascon_top gen_unsupported gen_sbox[2] u_sbox and_result_bank(1)(1)", false,-1, 3,0);
-        tracep->declBus(c+1306,"ascon_top gen_unsupported gen_sbox[2] u_sbox and_result_bank(1)(2)", false,-1, 3,0);
-        tracep->declBus(c+1307,"ascon_top gen_unsupported gen_sbox[2] u_sbox and_result_bank(1)(3)", false,-1, 3,0);
-        tracep->declBus(c+1308,"ascon_top gen_unsupported gen_sbox[2] u_sbox and_result_bank(2)(0)", false,-1, 3,0);
-        tracep->declBus(c+1309,"ascon_top gen_unsupported gen_sbox[2] u_sbox and_result_bank(2)(1)", false,-1, 3,0);
-        tracep->declBus(c+1310,"ascon_top gen_unsupported gen_sbox[2] u_sbox and_result_bank(2)(2)", false,-1, 3,0);
-        tracep->declBus(c+1311,"ascon_top gen_unsupported gen_sbox[2] u_sbox and_result_bank(2)(3)", false,-1, 3,0);
-        tracep->declBus(c+1312,"ascon_top gen_unsupported gen_sbox[2] u_sbox and_result_bank(3)(0)", false,-1, 3,0);
-        tracep->declBus(c+1313,"ascon_top gen_unsupported gen_sbox[2] u_sbox and_result_bank(3)(1)", false,-1, 3,0);
-        tracep->declBus(c+1314,"ascon_top gen_unsupported gen_sbox[2] u_sbox and_result_bank(3)(2)", false,-1, 3,0);
-        tracep->declBus(c+1315,"ascon_top gen_unsupported gen_sbox[2] u_sbox and_result_bank(3)(3)", false,-1, 3,0);
-        tracep->declBus(c+1316,"ascon_top gen_unsupported gen_sbox[2] u_sbox and_result_bank(4)(0)", false,-1, 3,0);
-        tracep->declBus(c+1317,"ascon_top gen_unsupported gen_sbox[2] u_sbox and_result_bank(4)(1)", false,-1, 3,0);
-        tracep->declBus(c+1318,"ascon_top gen_unsupported gen_sbox[2] u_sbox and_result_bank(4)(2)", false,-1, 3,0);
-        tracep->declBus(c+1319,"ascon_top gen_unsupported gen_sbox[2] u_sbox and_result_bank(4)(3)", false,-1, 3,0);
-        tracep->declBus(c+973,"ascon_top gen_unsupported gen_sbox[2] u_sbox and_result_reg(0)(0)", false,-1, 3,0);
-        tracep->declBus(c+974,"ascon_top gen_unsupported gen_sbox[2] u_sbox and_result_reg(0)(1)", false,-1, 3,0);
-        tracep->declBus(c+975,"ascon_top gen_unsupported gen_sbox[2] u_sbox and_result_reg(0)(2)", false,-1, 3,0);
-        tracep->declBus(c+976,"ascon_top gen_unsupported gen_sbox[2] u_sbox and_result_reg(0)(3)", false,-1, 3,0);
-        tracep->declBus(c+977,"ascon_top gen_unsupported gen_sbox[2] u_sbox and_result_reg(1)(0)", false,-1, 3,0);
-        tracep->declBus(c+978,"ascon_top gen_unsupported gen_sbox[2] u_sbox and_result_reg(1)(1)", false,-1, 3,0);
-        tracep->declBus(c+979,"ascon_top gen_unsupported gen_sbox[2] u_sbox and_result_reg(1)(2)", false,-1, 3,0);
-        tracep->declBus(c+980,"ascon_top gen_unsupported gen_sbox[2] u_sbox and_result_reg(1)(3)", false,-1, 3,0);
-        tracep->declBus(c+981,"ascon_top gen_unsupported gen_sbox[2] u_sbox and_result_reg(2)(0)", false,-1, 3,0);
-        tracep->declBus(c+982,"ascon_top gen_unsupported gen_sbox[2] u_sbox and_result_reg(2)(1)", false,-1, 3,0);
-        tracep->declBus(c+983,"ascon_top gen_unsupported gen_sbox[2] u_sbox and_result_reg(2)(2)", false,-1, 3,0);
-        tracep->declBus(c+984,"ascon_top gen_unsupported gen_sbox[2] u_sbox and_result_reg(2)(3)", false,-1, 3,0);
-        tracep->declBus(c+985,"ascon_top gen_unsupported gen_sbox[2] u_sbox and_result_reg(3)(0)", false,-1, 3,0);
-        tracep->declBus(c+986,"ascon_top gen_unsupported gen_sbox[2] u_sbox and_result_reg(3)(1)", false,-1, 3,0);
-        tracep->declBus(c+987,"ascon_top gen_unsupported gen_sbox[2] u_sbox and_result_reg(3)(2)", false,-1, 3,0);
-        tracep->declBus(c+988,"ascon_top gen_unsupported gen_sbox[2] u_sbox and_result_reg(3)(3)", false,-1, 3,0);
-        tracep->declBus(c+989,"ascon_top gen_unsupported gen_sbox[2] u_sbox and_result_reg(4)(0)", false,-1, 3,0);
-        tracep->declBus(c+990,"ascon_top gen_unsupported gen_sbox[2] u_sbox and_result_reg(4)(1)", false,-1, 3,0);
-        tracep->declBus(c+991,"ascon_top gen_unsupported gen_sbox[2] u_sbox and_result_reg(4)(2)", false,-1, 3,0);
-        tracep->declBus(c+992,"ascon_top gen_unsupported gen_sbox[2] u_sbox and_result_reg(4)(3)", false,-1, 3,0);
-        {int i; for (i=0; i<5; i++) {
-                tracep->declBus(c+993+i*1,"ascon_top gen_unsupported gen_sbox[2] u_sbox y", true,(i+0), 3,0);}}
-        {int i; for (i=0; i<5; i++) {
-                tracep->declBus(c+1320+i*1,"ascon_top gen_unsupported gen_sbox[2] u_sbox y_noMask", true,(i+0), 3,0);}}
-        tracep->declBus(c+1519,"ascon_top gen_unsupported gen_sbox[2] u_sbox unnamedblk1 fresh_idx", false,-1, 31,0);
-        tracep->declBus(c+1517,"ascon_top gen_unsupported gen_sbox[2] u_sbox unnamedblk1 unnamedblk2 i", false,-1, 31,0);
-        tracep->declBus(c+1325,"ascon_top gen_unsupported gen_sbox[2] u_sbox unnamedblk1 unnamedblk2 unnamedblk3 xi", false,-1, 3,0);
-        tracep->declBus(c+1326,"ascon_top gen_unsupported gen_sbox[2] u_sbox unnamedblk1 unnamedblk2 unnamedblk3 xiprox1", false,-1, 3,0);
-        tracep->declBus(c+1327,"ascon_top gen_unsupported gen_sbox[2] u_sbox unnamedblk1 unnamedblk2 unnamedblk3 xiprox2", false,-1, 3,0);
-        tracep->declBus(c+1328,"ascon_top gen_unsupported gen_sbox[2] u_sbox unnamedblk1 unnamedblk2 unnamedblk3 not_xiprox1", false,-1, 3,0);
-        tracep->declBus(c+1509,"ascon_top gen_unsupported gen_sbox[2] u_sbox unnamedblk1 unnamedblk2 unnamedblk3 unnamedblk4 j", false,-1, 31,0);
-        tracep->declBus(c+1509,"ascon_top gen_unsupported gen_sbox[2] u_sbox unnamedblk1 unnamedblk2 unnamedblk3 unnamedblk4 unnamedblk5 k", false,-1, 31,0);
-        tracep->declBus(c+998,"ascon_top gen_unsupported gen_sbox[2] u_sbox unnamedblk6 i", false,-1, 31,0);
-        tracep->declBus(c+1517,"ascon_top gen_unsupported gen_sbox[2] u_sbox unnamedblk9 i", false,-1, 31,0);
-        tracep->declBus(c+1509,"ascon_top gen_unsupported gen_sbox[2] u_sbox unnamedblk9 unnamedblk10 j", false,-1, 31,0);
-        tracep->declBus(c+999,"ascon_top gen_unsupported gen_sbox[2] u_sbox unnamedblk9 unnamedblk10 unnamedblk11 temp", false,-1, 3,0);
-        tracep->declBus(c+1509,"ascon_top gen_unsupported gen_sbox[2] u_sbox unnamedblk9 unnamedblk10 unnamedblk11 unnamedblk12 k", false,-1, 31,0);
-        tracep->declBit(c+1419,"ascon_top gen_unsupported gen_sbox[3] u_sbox clk", false,-1);
-        tracep->declBus(c+1000,"ascon_top gen_unsupported gen_sbox[3] u_sbox x_in", false,-1, 19,0);
-        tracep->declBus(c+527,"ascon_top gen_unsupported gen_sbox[3] u_sbox fresh_r", false,-1, 5,0);
-        tracep->declBit(c+535,"ascon_top gen_unsupported gen_sbox[3] u_sbox sel_masked_round", false,-1);
-        tracep->declBus(c+1001,"ascon_top gen_unsupported gen_sbox[3] u_sbox x_out", false,-1, 19,0);
-        tracep->declBus(c+1329,"ascon_top gen_unsupported gen_sbox[3] u_sbox x_out_noMask", false,-1, 19,0);
-        {int i; for (i=0; i<5; i++) {
-                tracep->declBus(c+1002+i*1,"ascon_top gen_unsupported gen_sbox[3] u_sbox x", true,(i+0), 3,0);}}
-        tracep->declBus(c+1330,"ascon_top gen_unsupported gen_sbox[3] u_sbox and_result_bank(0)(0)", false,-1, 3,0);
-        tracep->declBus(c+1331,"ascon_top gen_unsupported gen_sbox[3] u_sbox and_result_bank(0)(1)", false,-1, 3,0);
-        tracep->declBus(c+1332,"ascon_top gen_unsupported gen_sbox[3] u_sbox and_result_bank(0)(2)", false,-1, 3,0);
-        tracep->declBus(c+1333,"ascon_top gen_unsupported gen_sbox[3] u_sbox and_result_bank(0)(3)", false,-1, 3,0);
-        tracep->declBus(c+1334,"ascon_top gen_unsupported gen_sbox[3] u_sbox and_result_bank(1)(0)", false,-1, 3,0);
-        tracep->declBus(c+1335,"ascon_top gen_unsupported gen_sbox[3] u_sbox and_result_bank(1)(1)", false,-1, 3,0);
-        tracep->declBus(c+1336,"ascon_top gen_unsupported gen_sbox[3] u_sbox and_result_bank(1)(2)", false,-1, 3,0);
-        tracep->declBus(c+1337,"ascon_top gen_unsupported gen_sbox[3] u_sbox and_result_bank(1)(3)", false,-1, 3,0);
-        tracep->declBus(c+1338,"ascon_top gen_unsupported gen_sbox[3] u_sbox and_result_bank(2)(0)", false,-1, 3,0);
-        tracep->declBus(c+1339,"ascon_top gen_unsupported gen_sbox[3] u_sbox and_result_bank(2)(1)", false,-1, 3,0);
-        tracep->declBus(c+1340,"ascon_top gen_unsupported gen_sbox[3] u_sbox and_result_bank(2)(2)", false,-1, 3,0);
-        tracep->declBus(c+1341,"ascon_top gen_unsupported gen_sbox[3] u_sbox and_result_bank(2)(3)", false,-1, 3,0);
-        tracep->declBus(c+1342,"ascon_top gen_unsupported gen_sbox[3] u_sbox and_result_bank(3)(0)", false,-1, 3,0);
-        tracep->declBus(c+1343,"ascon_top gen_unsupported gen_sbox[3] u_sbox and_result_bank(3)(1)", false,-1, 3,0);
-        tracep->declBus(c+1344,"ascon_top gen_unsupported gen_sbox[3] u_sbox and_result_bank(3)(2)", false,-1, 3,0);
-        tracep->declBus(c+1345,"ascon_top gen_unsupported gen_sbox[3] u_sbox and_result_bank(3)(3)", false,-1, 3,0);
-        tracep->declBus(c+1346,"ascon_top gen_unsupported gen_sbox[3] u_sbox and_result_bank(4)(0)", false,-1, 3,0);
-        tracep->declBus(c+1347,"ascon_top gen_unsupported gen_sbox[3] u_sbox and_result_bank(4)(1)", false,-1, 3,0);
-        tracep->declBus(c+1348,"ascon_top gen_unsupported gen_sbox[3] u_sbox and_result_bank(4)(2)", false,-1, 3,0);
-        tracep->declBus(c+1349,"ascon_top gen_unsupported gen_sbox[3] u_sbox and_result_bank(4)(3)", false,-1, 3,0);
-        tracep->declBus(c+1007,"ascon_top gen_unsupported gen_sbox[3] u_sbox and_result_reg(0)(0)", false,-1, 3,0);
-        tracep->declBus(c+1008,"ascon_top gen_unsupported gen_sbox[3] u_sbox and_result_reg(0)(1)", false,-1, 3,0);
-        tracep->declBus(c+1009,"ascon_top gen_unsupported gen_sbox[3] u_sbox and_result_reg(0)(2)", false,-1, 3,0);
-        tracep->declBus(c+1010,"ascon_top gen_unsupported gen_sbox[3] u_sbox and_result_reg(0)(3)", false,-1, 3,0);
-        tracep->declBus(c+1011,"ascon_top gen_unsupported gen_sbox[3] u_sbox and_result_reg(1)(0)", false,-1, 3,0);
-        tracep->declBus(c+1012,"ascon_top gen_unsupported gen_sbox[3] u_sbox and_result_reg(1)(1)", false,-1, 3,0);
-        tracep->declBus(c+1013,"ascon_top gen_unsupported gen_sbox[3] u_sbox and_result_reg(1)(2)", false,-1, 3,0);
-        tracep->declBus(c+1014,"ascon_top gen_unsupported gen_sbox[3] u_sbox and_result_reg(1)(3)", false,-1, 3,0);
-        tracep->declBus(c+1015,"ascon_top gen_unsupported gen_sbox[3] u_sbox and_result_reg(2)(0)", false,-1, 3,0);
-        tracep->declBus(c+1016,"ascon_top gen_unsupported gen_sbox[3] u_sbox and_result_reg(2)(1)", false,-1, 3,0);
-        tracep->declBus(c+1017,"ascon_top gen_unsupported gen_sbox[3] u_sbox and_result_reg(2)(2)", false,-1, 3,0);
-        tracep->declBus(c+1018,"ascon_top gen_unsupported gen_sbox[3] u_sbox and_result_reg(2)(3)", false,-1, 3,0);
-        tracep->declBus(c+1019,"ascon_top gen_unsupported gen_sbox[3] u_sbox and_result_reg(3)(0)", false,-1, 3,0);
-        tracep->declBus(c+1020,"ascon_top gen_unsupported gen_sbox[3] u_sbox and_result_reg(3)(1)", false,-1, 3,0);
-        tracep->declBus(c+1021,"ascon_top gen_unsupported gen_sbox[3] u_sbox and_result_reg(3)(2)", false,-1, 3,0);
-        tracep->declBus(c+1022,"ascon_top gen_unsupported gen_sbox[3] u_sbox and_result_reg(3)(3)", false,-1, 3,0);
-        tracep->declBus(c+1023,"ascon_top gen_unsupported gen_sbox[3] u_sbox and_result_reg(4)(0)", false,-1, 3,0);
-        tracep->declBus(c+1024,"ascon_top gen_unsupported gen_sbox[3] u_sbox and_result_reg(4)(1)", false,-1, 3,0);
-        tracep->declBus(c+1025,"ascon_top gen_unsupported gen_sbox[3] u_sbox and_result_reg(4)(2)", false,-1, 3,0);
-        tracep->declBus(c+1026,"ascon_top gen_unsupported gen_sbox[3] u_sbox and_result_reg(4)(3)", false,-1, 3,0);
-        {int i; for (i=0; i<5; i++) {
-                tracep->declBus(c+1027+i*1,"ascon_top gen_unsupported gen_sbox[3] u_sbox y", true,(i+0), 3,0);}}
-        {int i; for (i=0; i<5; i++) {
-                tracep->declBus(c+1350+i*1,"ascon_top gen_unsupported gen_sbox[3] u_sbox y_noMask", true,(i+0), 3,0);}}
-        tracep->declBus(c+1519,"ascon_top gen_unsupported gen_sbox[3] u_sbox unnamedblk1 fresh_idx", false,-1, 31,0);
-        tracep->declBus(c+1517,"ascon_top gen_unsupported gen_sbox[3] u_sbox unnamedblk1 unnamedblk2 i", false,-1, 31,0);
-        tracep->declBus(c+1355,"ascon_top gen_unsupported gen_sbox[3] u_sbox unnamedblk1 unnamedblk2 unnamedblk3 xi", false,-1, 3,0);
-        tracep->declBus(c+1356,"ascon_top gen_unsupported gen_sbox[3] u_sbox unnamedblk1 unnamedblk2 unnamedblk3 xiprox1", false,-1, 3,0);
-        tracep->declBus(c+1357,"ascon_top gen_unsupported gen_sbox[3] u_sbox unnamedblk1 unnamedblk2 unnamedblk3 xiprox2", false,-1, 3,0);
-        tracep->declBus(c+1358,"ascon_top gen_unsupported gen_sbox[3] u_sbox unnamedblk1 unnamedblk2 unnamedblk3 not_xiprox1", false,-1, 3,0);
-        tracep->declBus(c+1509,"ascon_top gen_unsupported gen_sbox[3] u_sbox unnamedblk1 unnamedblk2 unnamedblk3 unnamedblk4 j", false,-1, 31,0);
-        tracep->declBus(c+1509,"ascon_top gen_unsupported gen_sbox[3] u_sbox unnamedblk1 unnamedblk2 unnamedblk3 unnamedblk4 unnamedblk5 k", false,-1, 31,0);
-        tracep->declBus(c+1032,"ascon_top gen_unsupported gen_sbox[3] u_sbox unnamedblk6 i", false,-1, 31,0);
-        tracep->declBus(c+1517,"ascon_top gen_unsupported gen_sbox[3] u_sbox unnamedblk9 i", false,-1, 31,0);
-        tracep->declBus(c+1509,"ascon_top gen_unsupported gen_sbox[3] u_sbox unnamedblk9 unnamedblk10 j", false,-1, 31,0);
-        tracep->declBus(c+1033,"ascon_top gen_unsupported gen_sbox[3] u_sbox unnamedblk9 unnamedblk10 unnamedblk11 temp", false,-1, 3,0);
-        tracep->declBus(c+1509,"ascon_top gen_unsupported gen_sbox[3] u_sbox unnamedblk9 unnamedblk10 unnamedblk11 unnamedblk12 k", false,-1, 31,0);
-        tracep->declBit(c+1419,"ascon_top gen_unsupported gen_sbox[4] u_sbox clk", false,-1);
-        tracep->declBus(c+1034,"ascon_top gen_unsupported gen_sbox[4] u_sbox x_in", false,-1, 19,0);
-        tracep->declBus(c+527,"ascon_top gen_unsupported gen_sbox[4] u_sbox fresh_r", false,-1, 5,0);
-        tracep->declBit(c+535,"ascon_top gen_unsupported gen_sbox[4] u_sbox sel_masked_round", false,-1);
-        tracep->declBus(c+1035,"ascon_top gen_unsupported gen_sbox[4] u_sbox x_out", false,-1, 19,0);
-        tracep->declBus(c+1359,"ascon_top gen_unsupported gen_sbox[4] u_sbox x_out_noMask", false,-1, 19,0);
-        {int i; for (i=0; i<5; i++) {
-                tracep->declBus(c+1036+i*1,"ascon_top gen_unsupported gen_sbox[4] u_sbox x", true,(i+0), 3,0);}}
-        tracep->declBus(c+1360,"ascon_top gen_unsupported gen_sbox[4] u_sbox and_result_bank(0)(0)", false,-1, 3,0);
-        tracep->declBus(c+1361,"ascon_top gen_unsupported gen_sbox[4] u_sbox and_result_bank(0)(1)", false,-1, 3,0);
-        tracep->declBus(c+1362,"ascon_top gen_unsupported gen_sbox[4] u_sbox and_result_bank(0)(2)", false,-1, 3,0);
-        tracep->declBus(c+1363,"ascon_top gen_unsupported gen_sbox[4] u_sbox and_result_bank(0)(3)", false,-1, 3,0);
-        tracep->declBus(c+1364,"ascon_top gen_unsupported gen_sbox[4] u_sbox and_result_bank(1)(0)", false,-1, 3,0);
-        tracep->declBus(c+1365,"ascon_top gen_unsupported gen_sbox[4] u_sbox and_result_bank(1)(1)", false,-1, 3,0);
-        tracep->declBus(c+1366,"ascon_top gen_unsupported gen_sbox[4] u_sbox and_result_bank(1)(2)", false,-1, 3,0);
-        tracep->declBus(c+1367,"ascon_top gen_unsupported gen_sbox[4] u_sbox and_result_bank(1)(3)", false,-1, 3,0);
-        tracep->declBus(c+1368,"ascon_top gen_unsupported gen_sbox[4] u_sbox and_result_bank(2)(0)", false,-1, 3,0);
-        tracep->declBus(c+1369,"ascon_top gen_unsupported gen_sbox[4] u_sbox and_result_bank(2)(1)", false,-1, 3,0);
-        tracep->declBus(c+1370,"ascon_top gen_unsupported gen_sbox[4] u_sbox and_result_bank(2)(2)", false,-1, 3,0);
-        tracep->declBus(c+1371,"ascon_top gen_unsupported gen_sbox[4] u_sbox and_result_bank(2)(3)", false,-1, 3,0);
-        tracep->declBus(c+1372,"ascon_top gen_unsupported gen_sbox[4] u_sbox and_result_bank(3)(0)", false,-1, 3,0);
-        tracep->declBus(c+1373,"ascon_top gen_unsupported gen_sbox[4] u_sbox and_result_bank(3)(1)", false,-1, 3,0);
-        tracep->declBus(c+1374,"ascon_top gen_unsupported gen_sbox[4] u_sbox and_result_bank(3)(2)", false,-1, 3,0);
-        tracep->declBus(c+1375,"ascon_top gen_unsupported gen_sbox[4] u_sbox and_result_bank(3)(3)", false,-1, 3,0);
-        tracep->declBus(c+1376,"ascon_top gen_unsupported gen_sbox[4] u_sbox and_result_bank(4)(0)", false,-1, 3,0);
-        tracep->declBus(c+1377,"ascon_top gen_unsupported gen_sbox[4] u_sbox and_result_bank(4)(1)", false,-1, 3,0);
-        tracep->declBus(c+1378,"ascon_top gen_unsupported gen_sbox[4] u_sbox and_result_bank(4)(2)", false,-1, 3,0);
-        tracep->declBus(c+1379,"ascon_top gen_unsupported gen_sbox[4] u_sbox and_result_bank(4)(3)", false,-1, 3,0);
-        tracep->declBus(c+1041,"ascon_top gen_unsupported gen_sbox[4] u_sbox and_result_reg(0)(0)", false,-1, 3,0);
-        tracep->declBus(c+1042,"ascon_top gen_unsupported gen_sbox[4] u_sbox and_result_reg(0)(1)", false,-1, 3,0);
-        tracep->declBus(c+1043,"ascon_top gen_unsupported gen_sbox[4] u_sbox and_result_reg(0)(2)", false,-1, 3,0);
-        tracep->declBus(c+1044,"ascon_top gen_unsupported gen_sbox[4] u_sbox and_result_reg(0)(3)", false,-1, 3,0);
-        tracep->declBus(c+1045,"ascon_top gen_unsupported gen_sbox[4] u_sbox and_result_reg(1)(0)", false,-1, 3,0);
-        tracep->declBus(c+1046,"ascon_top gen_unsupported gen_sbox[4] u_sbox and_result_reg(1)(1)", false,-1, 3,0);
-        tracep->declBus(c+1047,"ascon_top gen_unsupported gen_sbox[4] u_sbox and_result_reg(1)(2)", false,-1, 3,0);
-        tracep->declBus(c+1048,"ascon_top gen_unsupported gen_sbox[4] u_sbox and_result_reg(1)(3)", false,-1, 3,0);
-        tracep->declBus(c+1049,"ascon_top gen_unsupported gen_sbox[4] u_sbox and_result_reg(2)(0)", false,-1, 3,0);
-        tracep->declBus(c+1050,"ascon_top gen_unsupported gen_sbox[4] u_sbox and_result_reg(2)(1)", false,-1, 3,0);
-        tracep->declBus(c+1051,"ascon_top gen_unsupported gen_sbox[4] u_sbox and_result_reg(2)(2)", false,-1, 3,0);
-        tracep->declBus(c+1052,"ascon_top gen_unsupported gen_sbox[4] u_sbox and_result_reg(2)(3)", false,-1, 3,0);
-        tracep->declBus(c+1053,"ascon_top gen_unsupported gen_sbox[4] u_sbox and_result_reg(3)(0)", false,-1, 3,0);
-        tracep->declBus(c+1054,"ascon_top gen_unsupported gen_sbox[4] u_sbox and_result_reg(3)(1)", false,-1, 3,0);
-        tracep->declBus(c+1055,"ascon_top gen_unsupported gen_sbox[4] u_sbox and_result_reg(3)(2)", false,-1, 3,0);
-        tracep->declBus(c+1056,"ascon_top gen_unsupported gen_sbox[4] u_sbox and_result_reg(3)(3)", false,-1, 3,0);
-        tracep->declBus(c+1057,"ascon_top gen_unsupported gen_sbox[4] u_sbox and_result_reg(4)(0)", false,-1, 3,0);
-        tracep->declBus(c+1058,"ascon_top gen_unsupported gen_sbox[4] u_sbox and_result_reg(4)(1)", false,-1, 3,0);
-        tracep->declBus(c+1059,"ascon_top gen_unsupported gen_sbox[4] u_sbox and_result_reg(4)(2)", false,-1, 3,0);
-        tracep->declBus(c+1060,"ascon_top gen_unsupported gen_sbox[4] u_sbox and_result_reg(4)(3)", false,-1, 3,0);
-        {int i; for (i=0; i<5; i++) {
-                tracep->declBus(c+1061+i*1,"ascon_top gen_unsupported gen_sbox[4] u_sbox y", true,(i+0), 3,0);}}
-        {int i; for (i=0; i<5; i++) {
-                tracep->declBus(c+1380+i*1,"ascon_top gen_unsupported gen_sbox[4] u_sbox y_noMask", true,(i+0), 3,0);}}
-        tracep->declBus(c+1519,"ascon_top gen_unsupported gen_sbox[4] u_sbox unnamedblk1 fresh_idx", false,-1, 31,0);
-        tracep->declBus(c+1517,"ascon_top gen_unsupported gen_sbox[4] u_sbox unnamedblk1 unnamedblk2 i", false,-1, 31,0);
-        tracep->declBus(c+1385,"ascon_top gen_unsupported gen_sbox[4] u_sbox unnamedblk1 unnamedblk2 unnamedblk3 xi", false,-1, 3,0);
-        tracep->declBus(c+1386,"ascon_top gen_unsupported gen_sbox[4] u_sbox unnamedblk1 unnamedblk2 unnamedblk3 xiprox1", false,-1, 3,0);
-        tracep->declBus(c+1387,"ascon_top gen_unsupported gen_sbox[4] u_sbox unnamedblk1 unnamedblk2 unnamedblk3 xiprox2", false,-1, 3,0);
-        tracep->declBus(c+1388,"ascon_top gen_unsupported gen_sbox[4] u_sbox unnamedblk1 unnamedblk2 unnamedblk3 not_xiprox1", false,-1, 3,0);
-        tracep->declBus(c+1509,"ascon_top gen_unsupported gen_sbox[4] u_sbox unnamedblk1 unnamedblk2 unnamedblk3 unnamedblk4 j", false,-1, 31,0);
-        tracep->declBus(c+1509,"ascon_top gen_unsupported gen_sbox[4] u_sbox unnamedblk1 unnamedblk2 unnamedblk3 unnamedblk4 unnamedblk5 k", false,-1, 31,0);
-        tracep->declBus(c+1066,"ascon_top gen_unsupported gen_sbox[4] u_sbox unnamedblk6 i", false,-1, 31,0);
-        tracep->declBus(c+1517,"ascon_top gen_unsupported gen_sbox[4] u_sbox unnamedblk9 i", false,-1, 31,0);
-        tracep->declBus(c+1509,"ascon_top gen_unsupported gen_sbox[4] u_sbox unnamedblk9 unnamedblk10 j", false,-1, 31,0);
-        tracep->declBus(c+1067,"ascon_top gen_unsupported gen_sbox[4] u_sbox unnamedblk9 unnamedblk10 unnamedblk11 temp", false,-1, 3,0);
-        tracep->declBus(c+1509,"ascon_top gen_unsupported gen_sbox[4] u_sbox unnamedblk9 unnamedblk10 unnamedblk11 unnamedblk12 k", false,-1, 31,0);
-        tracep->declBit(c+1419,"ascon_top gen_unsupported gen_sbox[5] u_sbox clk", false,-1);
-        tracep->declBus(c+1068,"ascon_top gen_unsupported gen_sbox[5] u_sbox x_in", false,-1, 19,0);
-        tracep->declBus(c+527,"ascon_top gen_unsupported gen_sbox[5] u_sbox fresh_r", false,-1, 5,0);
-        tracep->declBit(c+535,"ascon_top gen_unsupported gen_sbox[5] u_sbox sel_masked_round", false,-1);
-        tracep->declBus(c+1069,"ascon_top gen_unsupported gen_sbox[5] u_sbox x_out", false,-1, 19,0);
-        tracep->declBus(c+1389,"ascon_top gen_unsupported gen_sbox[5] u_sbox x_out_noMask", false,-1, 19,0);
-        {int i; for (i=0; i<5; i++) {
-                tracep->declBus(c+1070+i*1,"ascon_top gen_unsupported gen_sbox[5] u_sbox x", true,(i+0), 3,0);}}
-        tracep->declBus(c+1390,"ascon_top gen_unsupported gen_sbox[5] u_sbox and_result_bank(0)(0)", false,-1, 3,0);
-        tracep->declBus(c+1391,"ascon_top gen_unsupported gen_sbox[5] u_sbox and_result_bank(0)(1)", false,-1, 3,0);
-        tracep->declBus(c+1392,"ascon_top gen_unsupported gen_sbox[5] u_sbox and_result_bank(0)(2)", false,-1, 3,0);
-        tracep->declBus(c+1393,"ascon_top gen_unsupported gen_sbox[5] u_sbox and_result_bank(0)(3)", false,-1, 3,0);
-        tracep->declBus(c+1394,"ascon_top gen_unsupported gen_sbox[5] u_sbox and_result_bank(1)(0)", false,-1, 3,0);
-        tracep->declBus(c+1395,"ascon_top gen_unsupported gen_sbox[5] u_sbox and_result_bank(1)(1)", false,-1, 3,0);
-        tracep->declBus(c+1396,"ascon_top gen_unsupported gen_sbox[5] u_sbox and_result_bank(1)(2)", false,-1, 3,0);
-        tracep->declBus(c+1397,"ascon_top gen_unsupported gen_sbox[5] u_sbox and_result_bank(1)(3)", false,-1, 3,0);
-        tracep->declBus(c+1398,"ascon_top gen_unsupported gen_sbox[5] u_sbox and_result_bank(2)(0)", false,-1, 3,0);
-        tracep->declBus(c+1399,"ascon_top gen_unsupported gen_sbox[5] u_sbox and_result_bank(2)(1)", false,-1, 3,0);
-        tracep->declBus(c+1400,"ascon_top gen_unsupported gen_sbox[5] u_sbox and_result_bank(2)(2)", false,-1, 3,0);
-        tracep->declBus(c+1401,"ascon_top gen_unsupported gen_sbox[5] u_sbox and_result_bank(2)(3)", false,-1, 3,0);
-        tracep->declBus(c+1402,"ascon_top gen_unsupported gen_sbox[5] u_sbox and_result_bank(3)(0)", false,-1, 3,0);
-        tracep->declBus(c+1403,"ascon_top gen_unsupported gen_sbox[5] u_sbox and_result_bank(3)(1)", false,-1, 3,0);
-        tracep->declBus(c+1404,"ascon_top gen_unsupported gen_sbox[5] u_sbox and_result_bank(3)(2)", false,-1, 3,0);
-        tracep->declBus(c+1405,"ascon_top gen_unsupported gen_sbox[5] u_sbox and_result_bank(3)(3)", false,-1, 3,0);
-        tracep->declBus(c+1406,"ascon_top gen_unsupported gen_sbox[5] u_sbox and_result_bank(4)(0)", false,-1, 3,0);
-        tracep->declBus(c+1407,"ascon_top gen_unsupported gen_sbox[5] u_sbox and_result_bank(4)(1)", false,-1, 3,0);
-        tracep->declBus(c+1408,"ascon_top gen_unsupported gen_sbox[5] u_sbox and_result_bank(4)(2)", false,-1, 3,0);
-        tracep->declBus(c+1409,"ascon_top gen_unsupported gen_sbox[5] u_sbox and_result_bank(4)(3)", false,-1, 3,0);
-        tracep->declBus(c+1075,"ascon_top gen_unsupported gen_sbox[5] u_sbox and_result_reg(0)(0)", false,-1, 3,0);
-        tracep->declBus(c+1076,"ascon_top gen_unsupported gen_sbox[5] u_sbox and_result_reg(0)(1)", false,-1, 3,0);
-        tracep->declBus(c+1077,"ascon_top gen_unsupported gen_sbox[5] u_sbox and_result_reg(0)(2)", false,-1, 3,0);
-        tracep->declBus(c+1078,"ascon_top gen_unsupported gen_sbox[5] u_sbox and_result_reg(0)(3)", false,-1, 3,0);
-        tracep->declBus(c+1079,"ascon_top gen_unsupported gen_sbox[5] u_sbox and_result_reg(1)(0)", false,-1, 3,0);
-        tracep->declBus(c+1080,"ascon_top gen_unsupported gen_sbox[5] u_sbox and_result_reg(1)(1)", false,-1, 3,0);
-        tracep->declBus(c+1081,"ascon_top gen_unsupported gen_sbox[5] u_sbox and_result_reg(1)(2)", false,-1, 3,0);
-        tracep->declBus(c+1082,"ascon_top gen_unsupported gen_sbox[5] u_sbox and_result_reg(1)(3)", false,-1, 3,0);
-        tracep->declBus(c+1083,"ascon_top gen_unsupported gen_sbox[5] u_sbox and_result_reg(2)(0)", false,-1, 3,0);
-        tracep->declBus(c+1084,"ascon_top gen_unsupported gen_sbox[5] u_sbox and_result_reg(2)(1)", false,-1, 3,0);
-        tracep->declBus(c+1085,"ascon_top gen_unsupported gen_sbox[5] u_sbox and_result_reg(2)(2)", false,-1, 3,0);
-        tracep->declBus(c+1086,"ascon_top gen_unsupported gen_sbox[5] u_sbox and_result_reg(2)(3)", false,-1, 3,0);
-        tracep->declBus(c+1087,"ascon_top gen_unsupported gen_sbox[5] u_sbox and_result_reg(3)(0)", false,-1, 3,0);
-        tracep->declBus(c+1088,"ascon_top gen_unsupported gen_sbox[5] u_sbox and_result_reg(3)(1)", false,-1, 3,0);
-        tracep->declBus(c+1089,"ascon_top gen_unsupported gen_sbox[5] u_sbox and_result_reg(3)(2)", false,-1, 3,0);
-        tracep->declBus(c+1090,"ascon_top gen_unsupported gen_sbox[5] u_sbox and_result_reg(3)(3)", false,-1, 3,0);
-        tracep->declBus(c+1091,"ascon_top gen_unsupported gen_sbox[5] u_sbox and_result_reg(4)(0)", false,-1, 3,0);
-        tracep->declBus(c+1092,"ascon_top gen_unsupported gen_sbox[5] u_sbox and_result_reg(4)(1)", false,-1, 3,0);
-        tracep->declBus(c+1093,"ascon_top gen_unsupported gen_sbox[5] u_sbox and_result_reg(4)(2)", false,-1, 3,0);
-        tracep->declBus(c+1094,"ascon_top gen_unsupported gen_sbox[5] u_sbox and_result_reg(4)(3)", false,-1, 3,0);
-        {int i; for (i=0; i<5; i++) {
-                tracep->declBus(c+1095+i*1,"ascon_top gen_unsupported gen_sbox[5] u_sbox y", true,(i+0), 3,0);}}
-        {int i; for (i=0; i<5; i++) {
-                tracep->declBus(c+1410+i*1,"ascon_top gen_unsupported gen_sbox[5] u_sbox y_noMask", true,(i+0), 3,0);}}
-        tracep->declBus(c+1519,"ascon_top gen_unsupported gen_sbox[5] u_sbox unnamedblk1 fresh_idx", false,-1, 31,0);
-        tracep->declBus(c+1517,"ascon_top gen_unsupported gen_sbox[5] u_sbox unnamedblk1 unnamedblk2 i", false,-1, 31,0);
-        tracep->declBus(c+1415,"ascon_top gen_unsupported gen_sbox[5] u_sbox unnamedblk1 unnamedblk2 unnamedblk3 xi", false,-1, 3,0);
-        tracep->declBus(c+1416,"ascon_top gen_unsupported gen_sbox[5] u_sbox unnamedblk1 unnamedblk2 unnamedblk3 xiprox1", false,-1, 3,0);
-        tracep->declBus(c+1417,"ascon_top gen_unsupported gen_sbox[5] u_sbox unnamedblk1 unnamedblk2 unnamedblk3 xiprox2", false,-1, 3,0);
-        tracep->declBus(c+1418,"ascon_top gen_unsupported gen_sbox[5] u_sbox unnamedblk1 unnamedblk2 unnamedblk3 not_xiprox1", false,-1, 3,0);
-        tracep->declBus(c+1509,"ascon_top gen_unsupported gen_sbox[5] u_sbox unnamedblk1 unnamedblk2 unnamedblk3 unnamedblk4 j", false,-1, 31,0);
-        tracep->declBus(c+1509,"ascon_top gen_unsupported gen_sbox[5] u_sbox unnamedblk1 unnamedblk2 unnamedblk3 unnamedblk4 unnamedblk5 k", false,-1, 31,0);
-        tracep->declBus(c+1100,"ascon_top gen_unsupported gen_sbox[5] u_sbox unnamedblk6 i", false,-1, 31,0);
-        tracep->declBus(c+1517,"ascon_top gen_unsupported gen_sbox[5] u_sbox unnamedblk9 i", false,-1, 31,0);
-        tracep->declBus(c+1509,"ascon_top gen_unsupported gen_sbox[5] u_sbox unnamedblk9 unnamedblk10 j", false,-1, 31,0);
-        tracep->declBus(c+1101,"ascon_top gen_unsupported gen_sbox[5] u_sbox unnamedblk9 unnamedblk10 unnamedblk11 temp", false,-1, 3,0);
-        tracep->declBus(c+1509,"ascon_top gen_unsupported gen_sbox[5] u_sbox unnamedblk9 unnamedblk10 unnamedblk11 unnamedblk12 k", false,-1, 31,0);
-        tracep->declBus(c+1520,"ascon_params d", false,-1, 31,0);
-        tracep->declBus(c+1521,"ascon_params PAR", false,-1, 31,0);
-        tracep->declBus(c+1522,"ascon_params COL_SIZE", false,-1, 31,0);
-        tracep->declBus(c+1523,"ascon_params WORD_SIZE", false,-1, 31,0);
-        tracep->declBus(c+1524,"ascon_params STATE_WIDTH", false,-1, 31,0);
-        tracep->declBus(c+1525,"ascon_params num_shares", false,-1, 31,0);
-        tracep->declBus(c+1521,"ascon_params SHIFT_PAR", false,-1, 31,0);
-        tracep->declBus(c+1526,"ascon_params SHIFT_PAR_D_PLUS_1", false,-1, 31,0);
-        tracep->declBus(c+1525,"ascon_params SHIFT_PAR_LAST", false,-1, 31,0);
-        tracep->declBus(c+1514,"ascon_params SHIFT_PAR_D_PLUS_1_LAST", false,-1, 31,0);
-        tracep->declBus(c+1527,"ascon_params NUMBER_BIT_MASK", false,-1, 31,0);
-        tracep->declBus(c+1520,"ascon_params NUMBER_BIT_NOMASK", false,-1, 31,0);
-        tracep->declBus(c+1526,"ascon_params SHIFT_WIDTH", false,-1, 31,0);
-        tracep->declBus(c+1528,"ascon_params PADDED_WIDTH", false,-1, 31,0);
-        tracep->declBus(c+1529,"ascon_params RAND_WIDTH", false,-1, 31,0);
-        tracep->declBus(c+1529,"ascon_params DATA_WIDTH", false,-1, 31,0);
-        tracep->declBit(c+1530,"ascon_params REVERSE", false,-1);
-        tracep->declBus(c+1531,"ascon_params LFSR_WIDTH", false,-1, 31,0);
-        tracep->declBus(c+1532,"ascon_params LFSR_POLY", false,-1, 30,0);
-        tracep->declBus(c+1533,"ascon_params LFSR_FEED_FORWARD", false,-1, 31,0);
-        tracep->declBus(c+1534,"ascon_params STYLE_AUTO", false,-1, 31,0);
-        tracep->declBus(c+1535,"ascon_params STYLE_LOOP", false,-1, 31,0);
-        tracep->declBus(c+1536,"ascon_params STYLE_REDUCTION", false,-1, 31,0);
-        tracep->declBus(c+1534,"ascon_params CFG_FIBONACCI", false,-1, 31,0);
-        tracep->declBus(c+1535,"ascon_params CFG_GALOIS", false,-1, 31,0);
-        tracep->declBus(c+1535,"ascon_params STYLE", false,-1, 31,0);
-        tracep->declBus(c+1534,"ascon_params LFSR_CONFIG", false,-1, 31,0);
+                tracep->declBus(c+1069+i*1,"ascon_top gen_no_changing gen_sbox[0] u_sbox y_noMask", true,(i+0), 2,0);}}
+        tracep->declBus(c+1316,"ascon_top gen_no_changing gen_sbox[0] u_sbox unnamedblk1 fresh_idx", false,-1, 31,0);
+        tracep->declBus(c+1323,"ascon_top gen_no_changing gen_sbox[0] u_sbox unnamedblk1 unnamedblk2 i", false,-1, 31,0);
+        tracep->declBus(c+1074,"ascon_top gen_no_changing gen_sbox[0] u_sbox unnamedblk1 unnamedblk2 unnamedblk3 xi", false,-1, 2,0);
+        tracep->declBus(c+1075,"ascon_top gen_no_changing gen_sbox[0] u_sbox unnamedblk1 unnamedblk2 unnamedblk3 xiprox1", false,-1, 2,0);
+        tracep->declBus(c+1076,"ascon_top gen_no_changing gen_sbox[0] u_sbox unnamedblk1 unnamedblk2 unnamedblk3 xiprox2", false,-1, 2,0);
+        tracep->declBus(c+1077,"ascon_top gen_no_changing gen_sbox[0] u_sbox unnamedblk1 unnamedblk2 unnamedblk3 not_xiprox1", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top gen_no_changing gen_sbox[0] u_sbox unnamedblk1 unnamedblk2 unnamedblk3 unnamedblk4 j", false,-1, 31,0);
+        tracep->declBus(c+1316,"ascon_top gen_no_changing gen_sbox[0] u_sbox unnamedblk1 unnamedblk2 unnamedblk3 unnamedblk4 unnamedblk5 k", false,-1, 31,0);
+        tracep->declBus(c+1001,"ascon_top gen_no_changing gen_sbox[0] u_sbox unnamedblk6 i", false,-1, 31,0);
+        tracep->declBus(c+1323,"ascon_top gen_no_changing gen_sbox[0] u_sbox unnamedblk9 i", false,-1, 31,0);
+        tracep->declBus(c+1316,"ascon_top gen_no_changing gen_sbox[0] u_sbox unnamedblk9 unnamedblk10 j", false,-1, 31,0);
+        tracep->declBus(c+1002,"ascon_top gen_no_changing gen_sbox[0] u_sbox unnamedblk9 unnamedblk10 unnamedblk11 temp", false,-1, 2,0);
+        tracep->declBus(c+1316,"ascon_top gen_no_changing gen_sbox[0] u_sbox unnamedblk9 unnamedblk10 unnamedblk11 unnamedblk12 k", false,-1, 31,0);
+        tracep->declBus(c+1324,"ascon_params d", false,-1, 31,0);
+        tracep->declBus(c+1325,"ascon_params PAR", false,-1, 31,0);
+        tracep->declBus(c+1326,"ascon_params COL_SIZE", false,-1, 31,0);
+        tracep->declBus(c+1313,"ascon_params WORD_SIZE", false,-1, 31,0);
+        tracep->declBus(c+1327,"ascon_params STATE_WIDTH", false,-1, 31,0);
+        tracep->declBus(c+1328,"ascon_params num_shares", false,-1, 31,0);
+        tracep->declBus(c+1325,"ascon_params SHIFT_PAR", false,-1, 31,0);
+        tracep->declBus(c+1328,"ascon_params SHIFT_PAR_D_PLUS_1", false,-1, 31,0);
+        tracep->declBus(c+1325,"ascon_params SHIFT_PAR_LAST", false,-1, 31,0);
+        tracep->declBus(c+1325,"ascon_params SHIFT_PAR_D_PLUS_1_LAST", false,-1, 31,0);
+        tracep->declBus(c+1329,"ascon_params NUMBER_BIT_MASK", false,-1, 31,0);
+        tracep->declBus(c+1330,"ascon_params NUMBER_BIT_NOMASK", false,-1, 31,0);
+        tracep->declBus(c+1328,"ascon_params SHIFT_WIDTH", false,-1, 31,0);
+        tracep->declBus(c+1331,"ascon_params PADDED_WIDTH", false,-1, 31,0);
+        tracep->declBus(c+1332,"ascon_params RAND_WIDTH", false,-1, 31,0);
+        tracep->declBus(c+1332,"ascon_params DATA_WIDTH", false,-1, 31,0);
+        tracep->declBit(c+1333,"ascon_params REVERSE", false,-1);
+        tracep->declBus(c+1334,"ascon_params LFSR_WIDTH", false,-1, 31,0);
+        tracep->declBus(c+1335,"ascon_params LFSR_POLY", false,-1, 30,0);
+        tracep->declBus(c+1336,"ascon_params LFSR_FEED_FORWARD", false,-1, 31,0);
+        tracep->declBus(c+1337,"ascon_params STYLE_AUTO", false,-1, 31,0);
+        tracep->declBus(c+1325,"ascon_params STYLE_LOOP", false,-1, 31,0);
+        tracep->declBus(c+1324,"ascon_params STYLE_REDUCTION", false,-1, 31,0);
+        tracep->declBus(c+1337,"ascon_params CFG_FIBONACCI", false,-1, 31,0);
+        tracep->declBus(c+1325,"ascon_params CFG_GALOIS", false,-1, 31,0);
+        tracep->declBus(c+1325,"ascon_params STYLE", false,-1, 31,0);
+        tracep->declBus(c+1337,"ascon_params LFSR_CONFIG", false,-1, 31,0);
     }
 }
 
@@ -1225,11 +1919,11 @@ void Vascon_top___024root__traceFullTop0(void* voidSelf, VerilatedVcd* tracep) {
 void Vascon_top___024root__traceFullSub0(Vascon_top___024root* vlSelf, VerilatedVcd* tracep) {
     if (false && vlSelf) {}  // Prevent unused
     Vascon_top__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
-    VlWide<3>/*95:0*/ __Vtemp19862;
-    VlWide<3>/*95:0*/ __Vtemp19863;
-    VlWide<10>/*319:0*/ __Vtemp19867;
-    VlWide<10>/*319:0*/ __Vtemp19871;
-    VlWide<3>/*95:0*/ __Vtemp19872;
+    VlWide<10>/*319:0*/ __Vtemp13363;
+    VlWide<10>/*319:0*/ __Vtemp13364;
+    VlWide<10>/*319:0*/ __Vtemp13365;
+    VlWide<10>/*319:0*/ __Vtemp13366;
+    VlWide<10>/*319:0*/ __Vtemp13370;
     vluint32_t* const oldp = tracep->oldp(vlSymsp->__Vm_baseCode);
     if (false && oldp) {}  // Prevent unused
     // Body
@@ -1244,1657 +1938,1247 @@ void Vascon_top___024root__traceFullSub0(Vascon_top___024root* vlSelf, Verilated
         tracep->fullIData(oldp+8,(vlSelf->ascon_top__DOT__rotations_b[2]),32);
         tracep->fullIData(oldp+9,(vlSelf->ascon_top__DOT__rotations_b[3]),32);
         tracep->fullIData(oldp+10,(vlSelf->ascon_top__DOT__rotations_b[4]),32);
-        tracep->fullWData(oldp+11,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__0__KET____DOT__mask),127);
-        tracep->fullWData(oldp+15,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__1__KET____DOT__mask),127);
-        tracep->fullWData(oldp+19,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__2__KET____DOT__mask),127);
-        tracep->fullWData(oldp+23,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__3__KET____DOT__mask),127);
-        tracep->fullWData(oldp+27,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__4__KET____DOT__mask),127);
-        tracep->fullWData(oldp+31,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__5__KET____DOT__mask),127);
-        tracep->fullWData(oldp+35,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__6__KET____DOT__mask),127);
-        tracep->fullWData(oldp+39,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__7__KET____DOT__mask),127);
-        tracep->fullWData(oldp+43,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__8__KET____DOT__mask),127);
-        tracep->fullWData(oldp+47,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__9__KET____DOT__mask),127);
-        tracep->fullWData(oldp+51,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__10__KET____DOT__mask),127);
-        tracep->fullWData(oldp+55,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__11__KET____DOT__mask),127);
-        tracep->fullWData(oldp+59,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__12__KET____DOT__mask),127);
-        tracep->fullWData(oldp+63,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__13__KET____DOT__mask),127);
-        tracep->fullWData(oldp+67,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__14__KET____DOT__mask),127);
-        tracep->fullWData(oldp+71,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__15__KET____DOT__mask),127);
-        tracep->fullWData(oldp+75,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__16__KET____DOT__mask),127);
-        tracep->fullWData(oldp+79,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__17__KET____DOT__mask),127);
-        tracep->fullWData(oldp+83,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__18__KET____DOT__mask),127);
-        tracep->fullWData(oldp+87,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__19__KET____DOT__mask),127);
-        tracep->fullWData(oldp+91,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__20__KET____DOT__mask),127);
-        tracep->fullWData(oldp+95,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__21__KET____DOT__mask),127);
-        tracep->fullWData(oldp+99,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__22__KET____DOT__mask),127);
-        tracep->fullWData(oldp+103,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__23__KET____DOT__mask),127);
-        tracep->fullWData(oldp+107,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__24__KET____DOT__mask),127);
-        tracep->fullWData(oldp+111,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__25__KET____DOT__mask),127);
-        tracep->fullWData(oldp+115,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__26__KET____DOT__mask),127);
-        tracep->fullWData(oldp+119,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__27__KET____DOT__mask),127);
-        tracep->fullWData(oldp+123,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__28__KET____DOT__mask),127);
-        tracep->fullWData(oldp+127,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__29__KET____DOT__mask),127);
-        tracep->fullWData(oldp+131,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__30__KET____DOT__mask),127);
-        tracep->fullWData(oldp+135,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__0__KET____DOT__mask),127);
-        tracep->fullWData(oldp+139,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__1__KET____DOT__mask),127);
-        tracep->fullWData(oldp+143,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__2__KET____DOT__mask),127);
-        tracep->fullWData(oldp+147,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__3__KET____DOT__mask),127);
-        tracep->fullWData(oldp+151,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__4__KET____DOT__mask),127);
-        tracep->fullWData(oldp+155,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__5__KET____DOT__mask),127);
-        tracep->fullWData(oldp+159,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__6__KET____DOT__mask),127);
-        tracep->fullWData(oldp+163,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__7__KET____DOT__mask),127);
-        tracep->fullWData(oldp+167,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__8__KET____DOT__mask),127);
-        tracep->fullWData(oldp+171,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__9__KET____DOT__mask),127);
-        tracep->fullWData(oldp+175,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__10__KET____DOT__mask),127);
-        tracep->fullWData(oldp+179,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__11__KET____DOT__mask),127);
-        tracep->fullWData(oldp+183,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__12__KET____DOT__mask),127);
-        tracep->fullWData(oldp+187,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__13__KET____DOT__mask),127);
-        tracep->fullWData(oldp+191,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__14__KET____DOT__mask),127);
-        tracep->fullWData(oldp+195,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__15__KET____DOT__mask),127);
-        tracep->fullWData(oldp+199,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__16__KET____DOT__mask),127);
-        tracep->fullWData(oldp+203,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__17__KET____DOT__mask),127);
-        tracep->fullWData(oldp+207,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__18__KET____DOT__mask),127);
-        tracep->fullWData(oldp+211,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__19__KET____DOT__mask),127);
-        tracep->fullWData(oldp+215,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__20__KET____DOT__mask),127);
-        tracep->fullWData(oldp+219,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__21__KET____DOT__mask),127);
-        tracep->fullWData(oldp+223,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__22__KET____DOT__mask),127);
-        tracep->fullWData(oldp+227,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__23__KET____DOT__mask),127);
-        tracep->fullWData(oldp+231,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__24__KET____DOT__mask),127);
-        tracep->fullWData(oldp+235,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__25__KET____DOT__mask),127);
-        tracep->fullWData(oldp+239,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__26__KET____DOT__mask),127);
-        tracep->fullWData(oldp+243,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__27__KET____DOT__mask),127);
-        tracep->fullWData(oldp+247,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__28__KET____DOT__mask),127);
-        tracep->fullWData(oldp+251,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__29__KET____DOT__mask),127);
-        tracep->fullWData(oldp+255,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__30__KET____DOT__mask),127);
-        tracep->fullWData(oldp+259,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__31__KET____DOT__mask),127);
-        tracep->fullWData(oldp+263,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__32__KET____DOT__mask),127);
-        tracep->fullWData(oldp+267,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__33__KET____DOT__mask),127);
-        tracep->fullWData(oldp+271,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__34__KET____DOT__mask),127);
-        tracep->fullWData(oldp+275,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__35__KET____DOT__mask),127);
-        tracep->fullWData(oldp+279,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__36__KET____DOT__mask),127);
-        tracep->fullWData(oldp+283,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__37__KET____DOT__mask),127);
-        tracep->fullWData(oldp+287,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__38__KET____DOT__mask),127);
-        tracep->fullWData(oldp+291,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__39__KET____DOT__mask),127);
-        tracep->fullWData(oldp+295,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__40__KET____DOT__mask),127);
-        tracep->fullWData(oldp+299,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__41__KET____DOT__mask),127);
-        tracep->fullWData(oldp+303,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__42__KET____DOT__mask),127);
-        tracep->fullWData(oldp+307,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__43__KET____DOT__mask),127);
-        tracep->fullWData(oldp+311,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__44__KET____DOT__mask),127);
-        tracep->fullWData(oldp+315,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__45__KET____DOT__mask),127);
-        tracep->fullWData(oldp+319,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__46__KET____DOT__mask),127);
-        tracep->fullWData(oldp+323,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__47__KET____DOT__mask),127);
-        tracep->fullWData(oldp+327,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__48__KET____DOT__mask),127);
-        tracep->fullWData(oldp+331,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__49__KET____DOT__mask),127);
-        tracep->fullWData(oldp+335,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__50__KET____DOT__mask),127);
-        tracep->fullWData(oldp+339,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__51__KET____DOT__mask),127);
-        tracep->fullWData(oldp+343,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__52__KET____DOT__mask),127);
-        tracep->fullWData(oldp+347,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__53__KET____DOT__mask),127);
-        tracep->fullWData(oldp+351,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__54__KET____DOT__mask),127);
-        tracep->fullWData(oldp+355,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__55__KET____DOT__mask),127);
-        tracep->fullWData(oldp+359,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__56__KET____DOT__mask),127);
-        tracep->fullWData(oldp+363,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__57__KET____DOT__mask),127);
-        tracep->fullWData(oldp+367,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__58__KET____DOT__mask),127);
-        tracep->fullWData(oldp+371,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__59__KET____DOT__mask),127);
-        tracep->fullWData(oldp+375,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__60__KET____DOT__mask),127);
-        tracep->fullWData(oldp+379,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__61__KET____DOT__mask),127);
-        tracep->fullWData(oldp+383,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__62__KET____DOT__mask),127);
-        tracep->fullWData(oldp+387,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__63__KET____DOT__mask),127);
-        tracep->fullWData(oldp+391,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__64__KET____DOT__mask),127);
-        tracep->fullWData(oldp+395,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__65__KET____DOT__mask),127);
-        tracep->fullWData(oldp+399,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__66__KET____DOT__mask),127);
-        tracep->fullWData(oldp+403,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__67__KET____DOT__mask),127);
-        tracep->fullWData(oldp+407,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__68__KET____DOT__mask),127);
-        tracep->fullWData(oldp+411,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__69__KET____DOT__mask),127);
-        tracep->fullWData(oldp+415,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__70__KET____DOT__mask),127);
-        tracep->fullWData(oldp+419,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__71__KET____DOT__mask),127);
-        tracep->fullWData(oldp+423,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__72__KET____DOT__mask),127);
-        tracep->fullWData(oldp+427,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__73__KET____DOT__mask),127);
-        tracep->fullWData(oldp+431,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__74__KET____DOT__mask),127);
-        tracep->fullWData(oldp+435,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__75__KET____DOT__mask),127);
-        tracep->fullWData(oldp+439,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__76__KET____DOT__mask),127);
-        tracep->fullWData(oldp+443,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__77__KET____DOT__mask),127);
-        tracep->fullWData(oldp+447,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__78__KET____DOT__mask),127);
-        tracep->fullWData(oldp+451,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__79__KET____DOT__mask),127);
-        tracep->fullWData(oldp+455,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__80__KET____DOT__mask),127);
-        tracep->fullWData(oldp+459,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__81__KET____DOT__mask),127);
-        tracep->fullWData(oldp+463,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__82__KET____DOT__mask),127);
-        tracep->fullWData(oldp+467,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__83__KET____DOT__mask),127);
-        tracep->fullWData(oldp+471,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__84__KET____DOT__mask),127);
-        tracep->fullWData(oldp+475,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__85__KET____DOT__mask),127);
-        tracep->fullWData(oldp+479,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__86__KET____DOT__mask),127);
-        tracep->fullWData(oldp+483,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__87__KET____DOT__mask),127);
-        tracep->fullWData(oldp+487,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__88__KET____DOT__mask),127);
-        tracep->fullWData(oldp+491,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__89__KET____DOT__mask),127);
-        tracep->fullWData(oldp+495,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__90__KET____DOT__mask),127);
-        tracep->fullWData(oldp+499,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__91__KET____DOT__mask),127);
-        tracep->fullWData(oldp+503,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__92__KET____DOT__mask),127);
-        tracep->fullWData(oldp+507,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__93__KET____DOT__mask),127);
-        tracep->fullWData(oldp+511,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__94__KET____DOT__mask),127);
-        tracep->fullWData(oldp+515,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__95__KET____DOT__mask),127);
-        tracep->fullWData(oldp+519,(vlSelf->ascon_top__DOT__lfsr_out),96);
-        tracep->fullIData(oldp+522,(vlSelf->ascon_top__DOT__lfsr_state_in),31);
-        tracep->fullIData(oldp+523,(vlSelf->ascon_top__DOT__lfsr_state_out),31);
-        __Vtemp19862[0U] = vlSelf->ascon_top__DOT__lfsr_out[0U];
-        __Vtemp19862[1U] = vlSelf->ascon_top__DOT__lfsr_out[1U];
-        __Vtemp19862[2U] = (0x3ffffffU & vlSelf->ascon_top__DOT__lfsr_out[2U]);
-        tracep->fullWData(oldp+524,(__Vtemp19862),90);
-        tracep->fullCData(oldp+527,((vlSelf->ascon_top__DOT__lfsr_out[2U] 
-                                     >> 0x1aU)),6);
-        tracep->fullBit(oldp+528,(vlSelf->ascon_top__DOT__extra_padding_ff));
-        tracep->fullBit(oldp+529,(vlSelf->ascon_top__DOT__shift_en));
-        tracep->fullBit(oldp+530,(vlSelf->ascon_top__DOT__shift_type));
-        tracep->fullBit(oldp+531,(vlSelf->ascon_top__DOT__last_cycle));
-        tracep->fullBit(oldp+532,(vlSelf->ascon_top__DOT__reg_key1_load));
-        tracep->fullBit(oldp+533,(vlSelf->ascon_top__DOT__reg_key2_load));
-        tracep->fullBit(oldp+534,(vlSelf->ascon_top__DOT__sel_mux_linear_diffusion_out_x3));
-        tracep->fullBit(oldp+535,(vlSelf->ascon_top__DOT__sel_masked_round));
-        tracep->fullBit(oldp+536,(vlSelf->ascon_top__DOT__sel_xor_signal));
-        tracep->fullBit(oldp+537,(vlSelf->ascon_top__DOT__shift_enable_sipo));
-        tracep->fullBit(oldp+538,(vlSelf->ascon_top__DOT__last_cycle_sipo));
-        tracep->fullCData(oldp+539,(vlSelf->ascon_top__DOT__round_counter),4);
-        tracep->fullCData(oldp+540,(vlSelf->ascon_top__DOT__bit_counter),4);
-        tracep->fullQData(oldp+541,(vlSelf->ascon_top__DOT__key1_reg__DOT__reg_q),64);
-        tracep->fullQData(oldp+543,(vlSelf->ascon_top__DOT__key2_reg__DOT__reg_q),64);
-        tracep->fullQData(oldp+545,(vlSelf->ascon_top__DOT__sipo_reg_x0_debug__DOT__state),64);
-        tracep->fullQData(oldp+547,(vlSelf->ascon_top__DOT__sipo_reg_x1_debug__DOT__state),64);
-        tracep->fullQData(oldp+549,(vlSelf->ascon_top__DOT__sipo_reg_x2_debug__DOT__state),64);
-        tracep->fullQData(oldp+551,(vlSelf->ascon_top__DOT__sipo_reg_x3_debug__DOT__state),64);
-        tracep->fullQData(oldp+553,(vlSelf->ascon_top__DOT__sipo_reg_x4_debug__DOT__state),64);
-        tracep->fullQData(oldp+555,((0xf0ULL - (0xfULL 
+        tracep->fullQData(oldp+11,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__0__KET____DOT__mask),44);
+        tracep->fullQData(oldp+13,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__1__KET____DOT__mask),44);
+        tracep->fullQData(oldp+15,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__2__KET____DOT__mask),44);
+        tracep->fullQData(oldp+17,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__3__KET____DOT__mask),44);
+        tracep->fullQData(oldp+19,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__4__KET____DOT__mask),44);
+        tracep->fullQData(oldp+21,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__5__KET____DOT__mask),44);
+        tracep->fullQData(oldp+23,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__6__KET____DOT__mask),44);
+        tracep->fullQData(oldp+25,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__7__KET____DOT__mask),44);
+        tracep->fullQData(oldp+27,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__8__KET____DOT__mask),44);
+        tracep->fullQData(oldp+29,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__9__KET____DOT__mask),44);
+        tracep->fullQData(oldp+31,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__10__KET____DOT__mask),44);
+        tracep->fullQData(oldp+33,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__11__KET____DOT__mask),44);
+        tracep->fullQData(oldp+35,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__12__KET____DOT__mask),44);
+        tracep->fullQData(oldp+37,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__13__KET____DOT__mask),44);
+        tracep->fullQData(oldp+39,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__14__KET____DOT__mask),44);
+        tracep->fullQData(oldp+41,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__15__KET____DOT__mask),44);
+        tracep->fullQData(oldp+43,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__16__KET____DOT__mask),44);
+        tracep->fullQData(oldp+45,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__17__KET____DOT__mask),44);
+        tracep->fullQData(oldp+47,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__18__KET____DOT__mask),44);
+        tracep->fullQData(oldp+49,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__19__KET____DOT__mask),44);
+        tracep->fullQData(oldp+51,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__20__KET____DOT__mask),44);
+        tracep->fullQData(oldp+53,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__21__KET____DOT__mask),44);
+        tracep->fullQData(oldp+55,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__22__KET____DOT__mask),44);
+        tracep->fullQData(oldp+57,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__23__KET____DOT__mask),44);
+        tracep->fullQData(oldp+59,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__24__KET____DOT__mask),44);
+        tracep->fullQData(oldp+61,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__25__KET____DOT__mask),44);
+        tracep->fullQData(oldp+63,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__26__KET____DOT__mask),44);
+        tracep->fullQData(oldp+65,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__27__KET____DOT__mask),44);
+        tracep->fullQData(oldp+67,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__28__KET____DOT__mask),44);
+        tracep->fullQData(oldp+69,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__29__KET____DOT__mask),44);
+        tracep->fullQData(oldp+71,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__30__KET____DOT__mask),44);
+        tracep->fullQData(oldp+73,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__0__KET____DOT__mask),44);
+        tracep->fullQData(oldp+75,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__1__KET____DOT__mask),44);
+        tracep->fullQData(oldp+77,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__2__KET____DOT__mask),44);
+        tracep->fullQData(oldp+79,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__3__KET____DOT__mask),44);
+        tracep->fullQData(oldp+81,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__4__KET____DOT__mask),44);
+        tracep->fullQData(oldp+83,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__5__KET____DOT__mask),44);
+        tracep->fullQData(oldp+85,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__6__KET____DOT__mask),44);
+        tracep->fullQData(oldp+87,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__7__KET____DOT__mask),44);
+        tracep->fullQData(oldp+89,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__8__KET____DOT__mask),44);
+        tracep->fullQData(oldp+91,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__9__KET____DOT__mask),44);
+        tracep->fullQData(oldp+93,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__10__KET____DOT__mask),44);
+        tracep->fullQData(oldp+95,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__11__KET____DOT__mask),44);
+        tracep->fullQData(oldp+97,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__12__KET____DOT__mask),44);
+        tracep->fullBit(oldp+99,(vlSelf->ascon_top__DOT__extra_padding_ff));
+        tracep->fullBit(oldp+100,(vlSelf->ascon_top__DOT__shift_en));
+        tracep->fullBit(oldp+101,(vlSelf->ascon_top__DOT__shift_type));
+        tracep->fullBit(oldp+102,(vlSelf->ascon_top__DOT__last_cycle));
+        tracep->fullBit(oldp+103,(vlSelf->ascon_top__DOT__reg_key1_load));
+        tracep->fullBit(oldp+104,(vlSelf->ascon_top__DOT__reg_key2_load));
+        tracep->fullBit(oldp+105,(vlSelf->ascon_top__DOT__sel_mux_linear_diffusion_out_x3));
+        tracep->fullBit(oldp+106,(vlSelf->ascon_top__DOT__sel_masked_round));
+        tracep->fullBit(oldp+107,(vlSelf->ascon_top__DOT__sel_xor_signal));
+        tracep->fullCData(oldp+108,(vlSelf->ascon_top__DOT__round_counter),4);
+        tracep->fullCData(oldp+109,(vlSelf->ascon_top__DOT__bit_counter),7);
+        tracep->fullBit(oldp+110,(vlSelf->ascon_top__DOT__shift_enable_sipo));
+        tracep->fullBit(oldp+111,(vlSelf->ascon_top__DOT__last_cycle_sipo));
+        tracep->fullSData(oldp+112,(vlSelf->ascon_top__DOT__state_reg_out_shiftdplus1_shares[0]),15);
+        tracep->fullSData(oldp+113,(vlSelf->ascon_top__DOT__state_reg_out_shiftdplus1_shares[1]),15);
+        tracep->fullSData(oldp+114,(vlSelf->ascon_top__DOT__state_reg_out_shiftdplus1_shares[2]),15);
+        tracep->fullWData(oldp+115,(vlSelf->ascon_top__DOT__state_reg_out_shares[0]),320);
+        tracep->fullWData(oldp+125,(vlSelf->ascon_top__DOT__state_reg_out_shares[1]),320);
+        tracep->fullWData(oldp+135,(vlSelf->ascon_top__DOT__state_reg_out_shares[2]),320);
+        tracep->fullQData(oldp+145,(vlSelf->ascon_top__DOT__key1_reg__DOT__reg_q),64);
+        tracep->fullQData(oldp+147,(vlSelf->ascon_top__DOT__key2_reg__DOT__reg_q),64);
+        tracep->fullQData(oldp+149,(vlSelf->ascon_top__DOT__sipo_reg_x0_debug__DOT__state),64);
+        tracep->fullQData(oldp+151,(vlSelf->ascon_top__DOT__sipo_reg_x1_debug__DOT__state),64);
+        tracep->fullQData(oldp+153,(vlSelf->ascon_top__DOT__sipo_reg_x2_debug__DOT__state),64);
+        tracep->fullQData(oldp+155,(vlSelf->ascon_top__DOT__sipo_reg_x3_debug__DOT__state),64);
+        tracep->fullQData(oldp+157,(vlSelf->ascon_top__DOT__sipo_reg_x4_debug__DOT__state),64);
+        tracep->fullCData(oldp+159,((7U & vlSelf->ascon_top__DOT__state_reg_out_shiftdplus1_shares
+                                     [0U])),3);
+        tracep->fullCData(oldp+160,((7U & (vlSelf->ascon_top__DOT__state_reg_out_shiftdplus1_shares
+                                           [0U] >> 3U))),3);
+        tracep->fullCData(oldp+161,((7U & (vlSelf->ascon_top__DOT__state_reg_out_shiftdplus1_shares
+                                           [0U] >> 6U))),3);
+        tracep->fullCData(oldp+162,((7U & (vlSelf->ascon_top__DOT__state_reg_out_shiftdplus1_shares
+                                           [0U] >> 9U))),3);
+        tracep->fullCData(oldp+163,((7U & (vlSelf->ascon_top__DOT__state_reg_out_shiftdplus1_shares
+                                           [0U] >> 0xcU))),3);
+        tracep->fullCData(oldp+164,(vlSelf->ascon_top__DOT__mux_1st_x0),3);
+        tracep->fullCData(oldp+165,(vlSelf->ascon_top__DOT__mux_1st_x1),3);
+        tracep->fullCData(oldp+166,(vlSelf->ascon_top__DOT__mux_1st_x2),3);
+        tracep->fullCData(oldp+167,(vlSelf->ascon_top__DOT__mux_1st_x3),3);
+        tracep->fullCData(oldp+168,(vlSelf->ascon_top__DOT__mux_1st_x4),3);
+        tracep->fullQData(oldp+169,((0xf0ULL - (0xfULL 
                                                 * (QData)((IData)(vlSelf->ascon_top__DOT__round_counter))))),64);
-        VL_EXTEND_WQ(66,64, __Vtemp19863, (0xf0ULL 
-                                           - (0xfULL 
-                                              * (QData)((IData)(vlSelf->ascon_top__DOT__round_counter)))));
-        tracep->fullWData(oldp+557,(__Vtemp19863),66);
-        tracep->fullCData(oldp+560,(vlSelf->ascon_top__DOT__rc_block[0]),6);
-        tracep->fullCData(oldp+561,(vlSelf->ascon_top__DOT__rc_block[1]),6);
-        tracep->fullCData(oldp+562,(vlSelf->ascon_top__DOT__rc_block[2]),6);
-        tracep->fullCData(oldp+563,(vlSelf->ascon_top__DOT__rc_block[3]),6);
-        tracep->fullQData(oldp+564,(((IData)(vlSelf->ascon_top__DOT__sel_xor_signal)
+        tracep->fullBit(oldp+171,(vlSelf->ascon_top__DOT__rc_block[0]));
+        tracep->fullBit(oldp+172,(vlSelf->ascon_top__DOT__rc_block[1]));
+        tracep->fullBit(oldp+173,(vlSelf->ascon_top__DOT__rc_block[2]));
+        tracep->fullCData(oldp+174,(((0x10U & ((IData)(vlSelf->ascon_top__DOT__mux_1st_x4) 
+                                               << 4U)) 
+                                     | ((8U & ((IData)(vlSelf->ascon_top__DOT__mux_1st_x3) 
+                                               << 3U)) 
+                                        | ((4U & ((IData)(vlSelf->ascon_top__DOT__mux_1st_x2) 
+                                                  << 2U)) 
+                                           | ((2U & 
+                                               ((IData)(vlSelf->ascon_top__DOT__mux_1st_x1) 
+                                                << 1U)) 
+                                              | (1U 
+                                                 & (IData)(vlSelf->ascon_top__DOT__mux_1st_x0))))))),5);
+        tracep->fullWData(oldp+175,(vlSelf->ascon_top__DOT__recombine_shares_sbox),320);
+        tracep->fullWData(oldp+185,(vlSelf->ascon_top__DOT__linear_diffusion_out),320);
+        tracep->fullQData(oldp+195,(vlSelf->ascon_top__DOT__linear_diffusion_debug[0]),64);
+        tracep->fullQData(oldp+197,(vlSelf->ascon_top__DOT__linear_diffusion_debug[1]),64);
+        tracep->fullQData(oldp+199,(vlSelf->ascon_top__DOT__linear_diffusion_debug[2]),64);
+        tracep->fullQData(oldp+201,(vlSelf->ascon_top__DOT__linear_diffusion_debug[3]),64);
+        tracep->fullQData(oldp+203,(vlSelf->ascon_top__DOT__linear_diffusion_debug[4]),64);
+        tracep->fullWData(oldp+205,(vlSelf->ascon_top__DOT__recombine_shares),320);
+        tracep->fullQData(oldp+215,(((IData)(vlSelf->ascon_top__DOT__sel_mux_linear_diffusion_out_x3)
+                                      ? (vlSelf->ascon_top__DOT__linear_diffusion_debug
+                                         [3U] ^ vlSelf->ascon_top__DOT__key1_reg__DOT__reg_q)
+                                      : vlSelf->ascon_top__DOT__linear_diffusion_debug
+                                     [3U])),64);
+        tracep->fullQData(oldp+217,(((IData)(vlSelf->ascon_top__DOT__sel_xor_signal)
                                       ? vlSelf->ascon_top__DOT__key2_reg__DOT__reg_q
                                       : 0x8000000000000000ULL)),64);
-        tracep->fullBit(oldp+566,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__0__KET____DOT__state_reg));
-        tracep->fullIData(oldp+567,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__0__KET____DOT__i),32);
-        tracep->fullBit(oldp+568,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__1__KET____DOT__state_reg));
-        tracep->fullIData(oldp+569,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__1__KET____DOT__i),32);
-        tracep->fullBit(oldp+570,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__2__KET____DOT__state_reg));
-        tracep->fullIData(oldp+571,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__2__KET____DOT__i),32);
-        tracep->fullBit(oldp+572,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__3__KET____DOT__state_reg));
-        tracep->fullIData(oldp+573,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__3__KET____DOT__i),32);
-        tracep->fullBit(oldp+574,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__4__KET____DOT__state_reg));
-        tracep->fullIData(oldp+575,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__4__KET____DOT__i),32);
-        tracep->fullBit(oldp+576,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__5__KET____DOT__state_reg));
-        tracep->fullIData(oldp+577,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__5__KET____DOT__i),32);
-        tracep->fullBit(oldp+578,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__6__KET____DOT__state_reg));
-        tracep->fullIData(oldp+579,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__6__KET____DOT__i),32);
-        tracep->fullBit(oldp+580,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__7__KET____DOT__state_reg));
-        tracep->fullIData(oldp+581,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__7__KET____DOT__i),32);
-        tracep->fullBit(oldp+582,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__8__KET____DOT__state_reg));
-        tracep->fullIData(oldp+583,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__8__KET____DOT__i),32);
-        tracep->fullBit(oldp+584,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__9__KET____DOT__state_reg));
-        tracep->fullIData(oldp+585,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__9__KET____DOT__i),32);
-        tracep->fullBit(oldp+586,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__10__KET____DOT__state_reg));
-        tracep->fullIData(oldp+587,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__10__KET____DOT__i),32);
-        tracep->fullBit(oldp+588,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__11__KET____DOT__state_reg));
-        tracep->fullIData(oldp+589,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__11__KET____DOT__i),32);
-        tracep->fullBit(oldp+590,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__12__KET____DOT__state_reg));
-        tracep->fullIData(oldp+591,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__12__KET____DOT__i),32);
-        tracep->fullBit(oldp+592,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__13__KET____DOT__state_reg));
-        tracep->fullIData(oldp+593,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__13__KET____DOT__i),32);
-        tracep->fullBit(oldp+594,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__14__KET____DOT__state_reg));
-        tracep->fullIData(oldp+595,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__14__KET____DOT__i),32);
-        tracep->fullBit(oldp+596,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__15__KET____DOT__state_reg));
-        tracep->fullIData(oldp+597,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__15__KET____DOT__i),32);
-        tracep->fullBit(oldp+598,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__16__KET____DOT__state_reg));
-        tracep->fullIData(oldp+599,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__16__KET____DOT__i),32);
-        tracep->fullBit(oldp+600,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__17__KET____DOT__state_reg));
-        tracep->fullIData(oldp+601,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__17__KET____DOT__i),32);
-        tracep->fullBit(oldp+602,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__18__KET____DOT__state_reg));
-        tracep->fullIData(oldp+603,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__18__KET____DOT__i),32);
-        tracep->fullBit(oldp+604,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__19__KET____DOT__state_reg));
-        tracep->fullIData(oldp+605,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__19__KET____DOT__i),32);
-        tracep->fullBit(oldp+606,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__20__KET____DOT__state_reg));
-        tracep->fullIData(oldp+607,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__20__KET____DOT__i),32);
-        tracep->fullBit(oldp+608,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__21__KET____DOT__state_reg));
-        tracep->fullIData(oldp+609,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__21__KET____DOT__i),32);
-        tracep->fullBit(oldp+610,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__22__KET____DOT__state_reg));
-        tracep->fullIData(oldp+611,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__22__KET____DOT__i),32);
-        tracep->fullBit(oldp+612,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__23__KET____DOT__state_reg));
-        tracep->fullIData(oldp+613,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__23__KET____DOT__i),32);
-        tracep->fullBit(oldp+614,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__24__KET____DOT__state_reg));
-        tracep->fullIData(oldp+615,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__24__KET____DOT__i),32);
-        tracep->fullBit(oldp+616,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__25__KET____DOT__state_reg));
-        tracep->fullIData(oldp+617,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__25__KET____DOT__i),32);
-        tracep->fullBit(oldp+618,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__26__KET____DOT__state_reg));
-        tracep->fullIData(oldp+619,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__26__KET____DOT__i),32);
-        tracep->fullBit(oldp+620,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__27__KET____DOT__state_reg));
-        tracep->fullIData(oldp+621,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__27__KET____DOT__i),32);
-        tracep->fullBit(oldp+622,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__28__KET____DOT__state_reg));
-        tracep->fullIData(oldp+623,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__28__KET____DOT__i),32);
-        tracep->fullBit(oldp+624,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__29__KET____DOT__state_reg));
-        tracep->fullIData(oldp+625,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__29__KET____DOT__i),32);
-        tracep->fullBit(oldp+626,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__30__KET____DOT__state_reg));
-        tracep->fullIData(oldp+627,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__30__KET____DOT__i),32);
-        tracep->fullBit(oldp+628,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__0__KET____DOT__data_reg));
-        tracep->fullIData(oldp+629,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__0__KET____DOT__i),32);
-        tracep->fullBit(oldp+630,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__1__KET____DOT__data_reg));
-        tracep->fullIData(oldp+631,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__1__KET____DOT__i),32);
-        tracep->fullBit(oldp+632,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__2__KET____DOT__data_reg));
-        tracep->fullIData(oldp+633,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__2__KET____DOT__i),32);
-        tracep->fullBit(oldp+634,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__3__KET____DOT__data_reg));
-        tracep->fullIData(oldp+635,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__3__KET____DOT__i),32);
-        tracep->fullBit(oldp+636,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__4__KET____DOT__data_reg));
-        tracep->fullIData(oldp+637,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__4__KET____DOT__i),32);
-        tracep->fullBit(oldp+638,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__5__KET____DOT__data_reg));
-        tracep->fullIData(oldp+639,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__5__KET____DOT__i),32);
-        tracep->fullBit(oldp+640,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__6__KET____DOT__data_reg));
-        tracep->fullIData(oldp+641,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__6__KET____DOT__i),32);
-        tracep->fullBit(oldp+642,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__7__KET____DOT__data_reg));
-        tracep->fullIData(oldp+643,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__7__KET____DOT__i),32);
-        tracep->fullBit(oldp+644,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__8__KET____DOT__data_reg));
-        tracep->fullIData(oldp+645,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__8__KET____DOT__i),32);
-        tracep->fullBit(oldp+646,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__9__KET____DOT__data_reg));
-        tracep->fullIData(oldp+647,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__9__KET____DOT__i),32);
-        tracep->fullBit(oldp+648,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__10__KET____DOT__data_reg));
-        tracep->fullIData(oldp+649,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__10__KET____DOT__i),32);
-        tracep->fullBit(oldp+650,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__11__KET____DOT__data_reg));
-        tracep->fullIData(oldp+651,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__11__KET____DOT__i),32);
-        tracep->fullBit(oldp+652,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__12__KET____DOT__data_reg));
-        tracep->fullIData(oldp+653,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__12__KET____DOT__i),32);
-        tracep->fullBit(oldp+654,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__13__KET____DOT__data_reg));
-        tracep->fullIData(oldp+655,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__13__KET____DOT__i),32);
-        tracep->fullBit(oldp+656,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__14__KET____DOT__data_reg));
-        tracep->fullIData(oldp+657,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__14__KET____DOT__i),32);
-        tracep->fullBit(oldp+658,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__15__KET____DOT__data_reg));
-        tracep->fullIData(oldp+659,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__15__KET____DOT__i),32);
-        tracep->fullBit(oldp+660,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__16__KET____DOT__data_reg));
-        tracep->fullIData(oldp+661,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__16__KET____DOT__i),32);
-        tracep->fullBit(oldp+662,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__17__KET____DOT__data_reg));
-        tracep->fullIData(oldp+663,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__17__KET____DOT__i),32);
-        tracep->fullBit(oldp+664,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__18__KET____DOT__data_reg));
-        tracep->fullIData(oldp+665,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__18__KET____DOT__i),32);
-        tracep->fullBit(oldp+666,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__19__KET____DOT__data_reg));
-        tracep->fullIData(oldp+667,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__19__KET____DOT__i),32);
-        tracep->fullBit(oldp+668,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__20__KET____DOT__data_reg));
-        tracep->fullIData(oldp+669,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__20__KET____DOT__i),32);
-        tracep->fullBit(oldp+670,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__21__KET____DOT__data_reg));
-        tracep->fullIData(oldp+671,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__21__KET____DOT__i),32);
-        tracep->fullBit(oldp+672,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__22__KET____DOT__data_reg));
-        tracep->fullIData(oldp+673,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__22__KET____DOT__i),32);
-        tracep->fullBit(oldp+674,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__23__KET____DOT__data_reg));
-        tracep->fullIData(oldp+675,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__23__KET____DOT__i),32);
-        tracep->fullBit(oldp+676,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__24__KET____DOT__data_reg));
-        tracep->fullIData(oldp+677,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__24__KET____DOT__i),32);
-        tracep->fullBit(oldp+678,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__25__KET____DOT__data_reg));
-        tracep->fullIData(oldp+679,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__25__KET____DOT__i),32);
-        tracep->fullBit(oldp+680,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__26__KET____DOT__data_reg));
-        tracep->fullIData(oldp+681,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__26__KET____DOT__i),32);
-        tracep->fullBit(oldp+682,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__27__KET____DOT__data_reg));
-        tracep->fullIData(oldp+683,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__27__KET____DOT__i),32);
-        tracep->fullBit(oldp+684,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__28__KET____DOT__data_reg));
-        tracep->fullIData(oldp+685,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__28__KET____DOT__i),32);
-        tracep->fullBit(oldp+686,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__29__KET____DOT__data_reg));
-        tracep->fullIData(oldp+687,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__29__KET____DOT__i),32);
-        tracep->fullBit(oldp+688,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__30__KET____DOT__data_reg));
-        tracep->fullIData(oldp+689,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__30__KET____DOT__i),32);
-        tracep->fullBit(oldp+690,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__31__KET____DOT__data_reg));
-        tracep->fullIData(oldp+691,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__31__KET____DOT__i),32);
-        tracep->fullBit(oldp+692,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__32__KET____DOT__data_reg));
-        tracep->fullIData(oldp+693,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__32__KET____DOT__i),32);
-        tracep->fullBit(oldp+694,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__33__KET____DOT__data_reg));
-        tracep->fullIData(oldp+695,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__33__KET____DOT__i),32);
-        tracep->fullBit(oldp+696,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__34__KET____DOT__data_reg));
-        tracep->fullIData(oldp+697,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__34__KET____DOT__i),32);
-        tracep->fullBit(oldp+698,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__35__KET____DOT__data_reg));
-        tracep->fullIData(oldp+699,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__35__KET____DOT__i),32);
-        tracep->fullBit(oldp+700,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__36__KET____DOT__data_reg));
-        tracep->fullIData(oldp+701,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__36__KET____DOT__i),32);
-        tracep->fullBit(oldp+702,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__37__KET____DOT__data_reg));
-        tracep->fullIData(oldp+703,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__37__KET____DOT__i),32);
-        tracep->fullBit(oldp+704,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__38__KET____DOT__data_reg));
-        tracep->fullIData(oldp+705,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__38__KET____DOT__i),32);
-        tracep->fullBit(oldp+706,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__39__KET____DOT__data_reg));
-        tracep->fullIData(oldp+707,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__39__KET____DOT__i),32);
-        tracep->fullBit(oldp+708,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__40__KET____DOT__data_reg));
-        tracep->fullIData(oldp+709,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__40__KET____DOT__i),32);
-        tracep->fullBit(oldp+710,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__41__KET____DOT__data_reg));
-        tracep->fullIData(oldp+711,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__41__KET____DOT__i),32);
-        tracep->fullBit(oldp+712,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__42__KET____DOT__data_reg));
-        tracep->fullIData(oldp+713,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__42__KET____DOT__i),32);
-        tracep->fullBit(oldp+714,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__43__KET____DOT__data_reg));
-        tracep->fullIData(oldp+715,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__43__KET____DOT__i),32);
-        tracep->fullBit(oldp+716,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__44__KET____DOT__data_reg));
-        tracep->fullIData(oldp+717,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__44__KET____DOT__i),32);
-        tracep->fullBit(oldp+718,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__45__KET____DOT__data_reg));
-        tracep->fullIData(oldp+719,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__45__KET____DOT__i),32);
-        tracep->fullBit(oldp+720,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__46__KET____DOT__data_reg));
-        tracep->fullIData(oldp+721,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__46__KET____DOT__i),32);
-        tracep->fullBit(oldp+722,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__47__KET____DOT__data_reg));
-        tracep->fullIData(oldp+723,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__47__KET____DOT__i),32);
-        tracep->fullBit(oldp+724,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__48__KET____DOT__data_reg));
-        tracep->fullIData(oldp+725,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__48__KET____DOT__i),32);
-        tracep->fullBit(oldp+726,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__49__KET____DOT__data_reg));
-        tracep->fullIData(oldp+727,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__49__KET____DOT__i),32);
-        tracep->fullBit(oldp+728,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__50__KET____DOT__data_reg));
-        tracep->fullIData(oldp+729,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__50__KET____DOT__i),32);
-        tracep->fullBit(oldp+730,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__51__KET____DOT__data_reg));
-        tracep->fullIData(oldp+731,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__51__KET____DOT__i),32);
-        tracep->fullBit(oldp+732,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__52__KET____DOT__data_reg));
-        tracep->fullIData(oldp+733,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__52__KET____DOT__i),32);
-        tracep->fullBit(oldp+734,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__53__KET____DOT__data_reg));
-        tracep->fullIData(oldp+735,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__53__KET____DOT__i),32);
-        tracep->fullBit(oldp+736,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__54__KET____DOT__data_reg));
-        tracep->fullIData(oldp+737,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__54__KET____DOT__i),32);
-        tracep->fullBit(oldp+738,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__55__KET____DOT__data_reg));
-        tracep->fullIData(oldp+739,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__55__KET____DOT__i),32);
-        tracep->fullBit(oldp+740,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__56__KET____DOT__data_reg));
-        tracep->fullIData(oldp+741,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__56__KET____DOT__i),32);
-        tracep->fullBit(oldp+742,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__57__KET____DOT__data_reg));
-        tracep->fullIData(oldp+743,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__57__KET____DOT__i),32);
-        tracep->fullBit(oldp+744,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__58__KET____DOT__data_reg));
-        tracep->fullIData(oldp+745,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__58__KET____DOT__i),32);
-        tracep->fullBit(oldp+746,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__59__KET____DOT__data_reg));
-        tracep->fullIData(oldp+747,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__59__KET____DOT__i),32);
-        tracep->fullBit(oldp+748,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__60__KET____DOT__data_reg));
-        tracep->fullIData(oldp+749,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__60__KET____DOT__i),32);
-        tracep->fullBit(oldp+750,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__61__KET____DOT__data_reg));
-        tracep->fullIData(oldp+751,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__61__KET____DOT__i),32);
-        tracep->fullBit(oldp+752,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__62__KET____DOT__data_reg));
-        tracep->fullIData(oldp+753,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__62__KET____DOT__i),32);
-        tracep->fullBit(oldp+754,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__63__KET____DOT__data_reg));
-        tracep->fullIData(oldp+755,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__63__KET____DOT__i),32);
-        tracep->fullBit(oldp+756,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__64__KET____DOT__data_reg));
-        tracep->fullIData(oldp+757,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__64__KET____DOT__i),32);
-        tracep->fullBit(oldp+758,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__65__KET____DOT__data_reg));
-        tracep->fullIData(oldp+759,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__65__KET____DOT__i),32);
-        tracep->fullBit(oldp+760,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__66__KET____DOT__data_reg));
-        tracep->fullIData(oldp+761,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__66__KET____DOT__i),32);
-        tracep->fullBit(oldp+762,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__67__KET____DOT__data_reg));
-        tracep->fullIData(oldp+763,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__67__KET____DOT__i),32);
-        tracep->fullBit(oldp+764,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__68__KET____DOT__data_reg));
-        tracep->fullIData(oldp+765,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__68__KET____DOT__i),32);
-        tracep->fullBit(oldp+766,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__69__KET____DOT__data_reg));
-        tracep->fullIData(oldp+767,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__69__KET____DOT__i),32);
-        tracep->fullBit(oldp+768,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__70__KET____DOT__data_reg));
-        tracep->fullIData(oldp+769,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__70__KET____DOT__i),32);
-        tracep->fullBit(oldp+770,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__71__KET____DOT__data_reg));
-        tracep->fullIData(oldp+771,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__71__KET____DOT__i),32);
-        tracep->fullBit(oldp+772,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__72__KET____DOT__data_reg));
-        tracep->fullIData(oldp+773,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__72__KET____DOT__i),32);
-        tracep->fullBit(oldp+774,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__73__KET____DOT__data_reg));
-        tracep->fullIData(oldp+775,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__73__KET____DOT__i),32);
-        tracep->fullBit(oldp+776,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__74__KET____DOT__data_reg));
-        tracep->fullIData(oldp+777,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__74__KET____DOT__i),32);
-        tracep->fullBit(oldp+778,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__75__KET____DOT__data_reg));
-        tracep->fullIData(oldp+779,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__75__KET____DOT__i),32);
-        tracep->fullBit(oldp+780,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__76__KET____DOT__data_reg));
-        tracep->fullIData(oldp+781,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__76__KET____DOT__i),32);
-        tracep->fullBit(oldp+782,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__77__KET____DOT__data_reg));
-        tracep->fullIData(oldp+783,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__77__KET____DOT__i),32);
-        tracep->fullBit(oldp+784,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__78__KET____DOT__data_reg));
-        tracep->fullIData(oldp+785,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__78__KET____DOT__i),32);
-        tracep->fullBit(oldp+786,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__79__KET____DOT__data_reg));
-        tracep->fullIData(oldp+787,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__79__KET____DOT__i),32);
-        tracep->fullBit(oldp+788,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__80__KET____DOT__data_reg));
-        tracep->fullIData(oldp+789,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__80__KET____DOT__i),32);
-        tracep->fullBit(oldp+790,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__81__KET____DOT__data_reg));
-        tracep->fullIData(oldp+791,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__81__KET____DOT__i),32);
-        tracep->fullBit(oldp+792,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__82__KET____DOT__data_reg));
-        tracep->fullIData(oldp+793,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__82__KET____DOT__i),32);
-        tracep->fullBit(oldp+794,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__83__KET____DOT__data_reg));
-        tracep->fullIData(oldp+795,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__83__KET____DOT__i),32);
-        tracep->fullBit(oldp+796,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__84__KET____DOT__data_reg));
-        tracep->fullIData(oldp+797,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__84__KET____DOT__i),32);
-        tracep->fullBit(oldp+798,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__85__KET____DOT__data_reg));
-        tracep->fullIData(oldp+799,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__85__KET____DOT__i),32);
-        tracep->fullBit(oldp+800,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__86__KET____DOT__data_reg));
-        tracep->fullIData(oldp+801,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__86__KET____DOT__i),32);
-        tracep->fullBit(oldp+802,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__87__KET____DOT__data_reg));
-        tracep->fullIData(oldp+803,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__87__KET____DOT__i),32);
-        tracep->fullBit(oldp+804,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__88__KET____DOT__data_reg));
-        tracep->fullIData(oldp+805,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__88__KET____DOT__i),32);
-        tracep->fullBit(oldp+806,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__89__KET____DOT__data_reg));
-        tracep->fullIData(oldp+807,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__89__KET____DOT__i),32);
-        tracep->fullBit(oldp+808,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__90__KET____DOT__data_reg));
-        tracep->fullIData(oldp+809,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__90__KET____DOT__i),32);
-        tracep->fullBit(oldp+810,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__91__KET____DOT__data_reg));
-        tracep->fullIData(oldp+811,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__91__KET____DOT__i),32);
-        tracep->fullBit(oldp+812,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__92__KET____DOT__data_reg));
-        tracep->fullIData(oldp+813,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__92__KET____DOT__i),32);
-        tracep->fullBit(oldp+814,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__93__KET____DOT__data_reg));
-        tracep->fullIData(oldp+815,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__93__KET____DOT__i),32);
-        tracep->fullBit(oldp+816,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__94__KET____DOT__data_reg));
-        tracep->fullIData(oldp+817,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__94__KET____DOT__i),32);
-        tracep->fullBit(oldp+818,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__95__KET____DOT__data_reg));
-        tracep->fullIData(oldp+819,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__95__KET____DOT__i),32);
-        tracep->fullCData(oldp+820,(vlSelf->ascon_top__DOT__mealy_fsm__DOT__current_state),5);
-        tracep->fullCData(oldp+821,(vlSelf->ascon_top__DOT__mealy_fsm__DOT__number_bits),4);
-        tracep->fullCData(oldp+822,(vlSelf->ascon_top__DOT__mealy_fsm__DOT__number_round),4);
-        tracep->fullBit(oldp+823,(vlSelf->ascon_top__DOT__mealy_fsm__DOT__last_block_process_ff));
-        tracep->fullBit(oldp+824,(vlSelf->ascon_top__DOT__mealy_fsm__DOT__round_counter_enable));
-        __Vtemp19867[0U] = (IData)((((QData)((IData)(
+        tracep->fullCData(oldp+219,(vlSelf->ascon_top__DOT__recombine__BRA__0__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+220,(vlSelf->ascon_top__DOT__recombine__BRA__1__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+221,(vlSelf->ascon_top__DOT__recombine__BRA__2__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+222,(vlSelf->ascon_top__DOT__recombine__BRA__3__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+223,(vlSelf->ascon_top__DOT__recombine__BRA__4__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+224,(vlSelf->ascon_top__DOT__recombine__BRA__5__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+225,(vlSelf->ascon_top__DOT__recombine__BRA__6__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+226,(vlSelf->ascon_top__DOT__recombine__BRA__7__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+227,(vlSelf->ascon_top__DOT__recombine__BRA__8__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+228,(vlSelf->ascon_top__DOT__recombine__BRA__9__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+229,(vlSelf->ascon_top__DOT__recombine__BRA__10__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+230,(vlSelf->ascon_top__DOT__recombine__BRA__11__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+231,(vlSelf->ascon_top__DOT__recombine__BRA__12__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+232,(vlSelf->ascon_top__DOT__recombine__BRA__13__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+233,(vlSelf->ascon_top__DOT__recombine__BRA__14__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+234,(vlSelf->ascon_top__DOT__recombine__BRA__15__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+235,(vlSelf->ascon_top__DOT__recombine__BRA__16__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+236,(vlSelf->ascon_top__DOT__recombine__BRA__17__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+237,(vlSelf->ascon_top__DOT__recombine__BRA__18__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+238,(vlSelf->ascon_top__DOT__recombine__BRA__19__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+239,(vlSelf->ascon_top__DOT__recombine__BRA__20__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+240,(vlSelf->ascon_top__DOT__recombine__BRA__21__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+241,(vlSelf->ascon_top__DOT__recombine__BRA__22__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+242,(vlSelf->ascon_top__DOT__recombine__BRA__23__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+243,(vlSelf->ascon_top__DOT__recombine__BRA__24__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+244,(vlSelf->ascon_top__DOT__recombine__BRA__25__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+245,(vlSelf->ascon_top__DOT__recombine__BRA__26__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+246,(vlSelf->ascon_top__DOT__recombine__BRA__27__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+247,(vlSelf->ascon_top__DOT__recombine__BRA__28__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+248,(vlSelf->ascon_top__DOT__recombine__BRA__29__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+249,(vlSelf->ascon_top__DOT__recombine__BRA__30__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+250,(vlSelf->ascon_top__DOT__recombine__BRA__31__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+251,(vlSelf->ascon_top__DOT__recombine__BRA__32__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+252,(vlSelf->ascon_top__DOT__recombine__BRA__33__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+253,(vlSelf->ascon_top__DOT__recombine__BRA__34__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+254,(vlSelf->ascon_top__DOT__recombine__BRA__35__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+255,(vlSelf->ascon_top__DOT__recombine__BRA__36__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+256,(vlSelf->ascon_top__DOT__recombine__BRA__37__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+257,(vlSelf->ascon_top__DOT__recombine__BRA__38__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+258,(vlSelf->ascon_top__DOT__recombine__BRA__39__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+259,(vlSelf->ascon_top__DOT__recombine__BRA__40__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+260,(vlSelf->ascon_top__DOT__recombine__BRA__41__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+261,(vlSelf->ascon_top__DOT__recombine__BRA__42__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+262,(vlSelf->ascon_top__DOT__recombine__BRA__43__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+263,(vlSelf->ascon_top__DOT__recombine__BRA__44__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+264,(vlSelf->ascon_top__DOT__recombine__BRA__45__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+265,(vlSelf->ascon_top__DOT__recombine__BRA__46__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+266,(vlSelf->ascon_top__DOT__recombine__BRA__47__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+267,(vlSelf->ascon_top__DOT__recombine__BRA__48__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+268,(vlSelf->ascon_top__DOT__recombine__BRA__49__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+269,(vlSelf->ascon_top__DOT__recombine__BRA__50__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+270,(vlSelf->ascon_top__DOT__recombine__BRA__51__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+271,(vlSelf->ascon_top__DOT__recombine__BRA__52__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+272,(vlSelf->ascon_top__DOT__recombine__BRA__53__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+273,(vlSelf->ascon_top__DOT__recombine__BRA__54__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+274,(vlSelf->ascon_top__DOT__recombine__BRA__55__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+275,(vlSelf->ascon_top__DOT__recombine__BRA__56__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+276,(vlSelf->ascon_top__DOT__recombine__BRA__57__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+277,(vlSelf->ascon_top__DOT__recombine__BRA__58__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+278,(vlSelf->ascon_top__DOT__recombine__BRA__59__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+279,(vlSelf->ascon_top__DOT__recombine__BRA__60__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+280,(vlSelf->ascon_top__DOT__recombine__BRA__61__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+281,(vlSelf->ascon_top__DOT__recombine__BRA__62__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+282,(vlSelf->ascon_top__DOT__recombine__BRA__63__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+283,(vlSelf->ascon_top__DOT__recombine__BRA__64__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+284,(vlSelf->ascon_top__DOT__recombine__BRA__65__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+285,(vlSelf->ascon_top__DOT__recombine__BRA__66__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+286,(vlSelf->ascon_top__DOT__recombine__BRA__67__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+287,(vlSelf->ascon_top__DOT__recombine__BRA__68__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+288,(vlSelf->ascon_top__DOT__recombine__BRA__69__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+289,(vlSelf->ascon_top__DOT__recombine__BRA__70__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+290,(vlSelf->ascon_top__DOT__recombine__BRA__71__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+291,(vlSelf->ascon_top__DOT__recombine__BRA__72__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+292,(vlSelf->ascon_top__DOT__recombine__BRA__73__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+293,(vlSelf->ascon_top__DOT__recombine__BRA__74__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+294,(vlSelf->ascon_top__DOT__recombine__BRA__75__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+295,(vlSelf->ascon_top__DOT__recombine__BRA__76__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+296,(vlSelf->ascon_top__DOT__recombine__BRA__77__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+297,(vlSelf->ascon_top__DOT__recombine__BRA__78__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+298,(vlSelf->ascon_top__DOT__recombine__BRA__79__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+299,(vlSelf->ascon_top__DOT__recombine__BRA__80__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+300,(vlSelf->ascon_top__DOT__recombine__BRA__81__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+301,(vlSelf->ascon_top__DOT__recombine__BRA__82__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+302,(vlSelf->ascon_top__DOT__recombine__BRA__83__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+303,(vlSelf->ascon_top__DOT__recombine__BRA__84__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+304,(vlSelf->ascon_top__DOT__recombine__BRA__85__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+305,(vlSelf->ascon_top__DOT__recombine__BRA__86__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+306,(vlSelf->ascon_top__DOT__recombine__BRA__87__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+307,(vlSelf->ascon_top__DOT__recombine__BRA__88__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+308,(vlSelf->ascon_top__DOT__recombine__BRA__89__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+309,(vlSelf->ascon_top__DOT__recombine__BRA__90__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+310,(vlSelf->ascon_top__DOT__recombine__BRA__91__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+311,(vlSelf->ascon_top__DOT__recombine__BRA__92__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+312,(vlSelf->ascon_top__DOT__recombine__BRA__93__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+313,(vlSelf->ascon_top__DOT__recombine__BRA__94__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+314,(vlSelf->ascon_top__DOT__recombine__BRA__95__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+315,(vlSelf->ascon_top__DOT__recombine__BRA__96__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+316,(vlSelf->ascon_top__DOT__recombine__BRA__97__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+317,(vlSelf->ascon_top__DOT__recombine__BRA__98__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+318,(vlSelf->ascon_top__DOT__recombine__BRA__99__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+319,(vlSelf->ascon_top__DOT__recombine__BRA__100__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+320,(vlSelf->ascon_top__DOT__recombine__BRA__101__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+321,(vlSelf->ascon_top__DOT__recombine__BRA__102__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+322,(vlSelf->ascon_top__DOT__recombine__BRA__103__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+323,(vlSelf->ascon_top__DOT__recombine__BRA__104__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+324,(vlSelf->ascon_top__DOT__recombine__BRA__105__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+325,(vlSelf->ascon_top__DOT__recombine__BRA__106__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+326,(vlSelf->ascon_top__DOT__recombine__BRA__107__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+327,(vlSelf->ascon_top__DOT__recombine__BRA__108__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+328,(vlSelf->ascon_top__DOT__recombine__BRA__109__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+329,(vlSelf->ascon_top__DOT__recombine__BRA__110__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+330,(vlSelf->ascon_top__DOT__recombine__BRA__111__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+331,(vlSelf->ascon_top__DOT__recombine__BRA__112__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+332,(vlSelf->ascon_top__DOT__recombine__BRA__113__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+333,(vlSelf->ascon_top__DOT__recombine__BRA__114__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+334,(vlSelf->ascon_top__DOT__recombine__BRA__115__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+335,(vlSelf->ascon_top__DOT__recombine__BRA__116__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+336,(vlSelf->ascon_top__DOT__recombine__BRA__117__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+337,(vlSelf->ascon_top__DOT__recombine__BRA__118__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+338,(vlSelf->ascon_top__DOT__recombine__BRA__119__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+339,(vlSelf->ascon_top__DOT__recombine__BRA__120__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+340,(vlSelf->ascon_top__DOT__recombine__BRA__121__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+341,(vlSelf->ascon_top__DOT__recombine__BRA__122__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+342,(vlSelf->ascon_top__DOT__recombine__BRA__123__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+343,(vlSelf->ascon_top__DOT__recombine__BRA__124__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+344,(vlSelf->ascon_top__DOT__recombine__BRA__125__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+345,(vlSelf->ascon_top__DOT__recombine__BRA__126__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+346,(vlSelf->ascon_top__DOT__recombine__BRA__127__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+347,(vlSelf->ascon_top__DOT__recombine__BRA__128__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+348,(vlSelf->ascon_top__DOT__recombine__BRA__129__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+349,(vlSelf->ascon_top__DOT__recombine__BRA__130__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+350,(vlSelf->ascon_top__DOT__recombine__BRA__131__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+351,(vlSelf->ascon_top__DOT__recombine__BRA__132__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+352,(vlSelf->ascon_top__DOT__recombine__BRA__133__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+353,(vlSelf->ascon_top__DOT__recombine__BRA__134__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+354,(vlSelf->ascon_top__DOT__recombine__BRA__135__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+355,(vlSelf->ascon_top__DOT__recombine__BRA__136__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+356,(vlSelf->ascon_top__DOT__recombine__BRA__137__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+357,(vlSelf->ascon_top__DOT__recombine__BRA__138__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+358,(vlSelf->ascon_top__DOT__recombine__BRA__139__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+359,(vlSelf->ascon_top__DOT__recombine__BRA__140__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+360,(vlSelf->ascon_top__DOT__recombine__BRA__141__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+361,(vlSelf->ascon_top__DOT__recombine__BRA__142__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+362,(vlSelf->ascon_top__DOT__recombine__BRA__143__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+363,(vlSelf->ascon_top__DOT__recombine__BRA__144__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+364,(vlSelf->ascon_top__DOT__recombine__BRA__145__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+365,(vlSelf->ascon_top__DOT__recombine__BRA__146__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+366,(vlSelf->ascon_top__DOT__recombine__BRA__147__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+367,(vlSelf->ascon_top__DOT__recombine__BRA__148__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+368,(vlSelf->ascon_top__DOT__recombine__BRA__149__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+369,(vlSelf->ascon_top__DOT__recombine__BRA__150__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+370,(vlSelf->ascon_top__DOT__recombine__BRA__151__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+371,(vlSelf->ascon_top__DOT__recombine__BRA__152__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+372,(vlSelf->ascon_top__DOT__recombine__BRA__153__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+373,(vlSelf->ascon_top__DOT__recombine__BRA__154__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+374,(vlSelf->ascon_top__DOT__recombine__BRA__155__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+375,(vlSelf->ascon_top__DOT__recombine__BRA__156__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+376,(vlSelf->ascon_top__DOT__recombine__BRA__157__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+377,(vlSelf->ascon_top__DOT__recombine__BRA__158__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+378,(vlSelf->ascon_top__DOT__recombine__BRA__159__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+379,(vlSelf->ascon_top__DOT__recombine__BRA__160__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+380,(vlSelf->ascon_top__DOT__recombine__BRA__161__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+381,(vlSelf->ascon_top__DOT__recombine__BRA__162__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+382,(vlSelf->ascon_top__DOT__recombine__BRA__163__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+383,(vlSelf->ascon_top__DOT__recombine__BRA__164__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+384,(vlSelf->ascon_top__DOT__recombine__BRA__165__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+385,(vlSelf->ascon_top__DOT__recombine__BRA__166__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+386,(vlSelf->ascon_top__DOT__recombine__BRA__167__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+387,(vlSelf->ascon_top__DOT__recombine__BRA__168__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+388,(vlSelf->ascon_top__DOT__recombine__BRA__169__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+389,(vlSelf->ascon_top__DOT__recombine__BRA__170__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+390,(vlSelf->ascon_top__DOT__recombine__BRA__171__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+391,(vlSelf->ascon_top__DOT__recombine__BRA__172__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+392,(vlSelf->ascon_top__DOT__recombine__BRA__173__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+393,(vlSelf->ascon_top__DOT__recombine__BRA__174__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+394,(vlSelf->ascon_top__DOT__recombine__BRA__175__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+395,(vlSelf->ascon_top__DOT__recombine__BRA__176__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+396,(vlSelf->ascon_top__DOT__recombine__BRA__177__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+397,(vlSelf->ascon_top__DOT__recombine__BRA__178__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+398,(vlSelf->ascon_top__DOT__recombine__BRA__179__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+399,(vlSelf->ascon_top__DOT__recombine__BRA__180__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+400,(vlSelf->ascon_top__DOT__recombine__BRA__181__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+401,(vlSelf->ascon_top__DOT__recombine__BRA__182__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+402,(vlSelf->ascon_top__DOT__recombine__BRA__183__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+403,(vlSelf->ascon_top__DOT__recombine__BRA__184__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+404,(vlSelf->ascon_top__DOT__recombine__BRA__185__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+405,(vlSelf->ascon_top__DOT__recombine__BRA__186__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+406,(vlSelf->ascon_top__DOT__recombine__BRA__187__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+407,(vlSelf->ascon_top__DOT__recombine__BRA__188__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+408,(vlSelf->ascon_top__DOT__recombine__BRA__189__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+409,(vlSelf->ascon_top__DOT__recombine__BRA__190__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+410,(vlSelf->ascon_top__DOT__recombine__BRA__191__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+411,(vlSelf->ascon_top__DOT__recombine__BRA__192__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+412,(vlSelf->ascon_top__DOT__recombine__BRA__193__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+413,(vlSelf->ascon_top__DOT__recombine__BRA__194__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+414,(vlSelf->ascon_top__DOT__recombine__BRA__195__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+415,(vlSelf->ascon_top__DOT__recombine__BRA__196__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+416,(vlSelf->ascon_top__DOT__recombine__BRA__197__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+417,(vlSelf->ascon_top__DOT__recombine__BRA__198__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+418,(vlSelf->ascon_top__DOT__recombine__BRA__199__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+419,(vlSelf->ascon_top__DOT__recombine__BRA__200__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+420,(vlSelf->ascon_top__DOT__recombine__BRA__201__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+421,(vlSelf->ascon_top__DOT__recombine__BRA__202__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+422,(vlSelf->ascon_top__DOT__recombine__BRA__203__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+423,(vlSelf->ascon_top__DOT__recombine__BRA__204__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+424,(vlSelf->ascon_top__DOT__recombine__BRA__205__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+425,(vlSelf->ascon_top__DOT__recombine__BRA__206__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+426,(vlSelf->ascon_top__DOT__recombine__BRA__207__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+427,(vlSelf->ascon_top__DOT__recombine__BRA__208__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+428,(vlSelf->ascon_top__DOT__recombine__BRA__209__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+429,(vlSelf->ascon_top__DOT__recombine__BRA__210__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+430,(vlSelf->ascon_top__DOT__recombine__BRA__211__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+431,(vlSelf->ascon_top__DOT__recombine__BRA__212__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+432,(vlSelf->ascon_top__DOT__recombine__BRA__213__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+433,(vlSelf->ascon_top__DOT__recombine__BRA__214__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+434,(vlSelf->ascon_top__DOT__recombine__BRA__215__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+435,(vlSelf->ascon_top__DOT__recombine__BRA__216__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+436,(vlSelf->ascon_top__DOT__recombine__BRA__217__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+437,(vlSelf->ascon_top__DOT__recombine__BRA__218__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+438,(vlSelf->ascon_top__DOT__recombine__BRA__219__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+439,(vlSelf->ascon_top__DOT__recombine__BRA__220__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+440,(vlSelf->ascon_top__DOT__recombine__BRA__221__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+441,(vlSelf->ascon_top__DOT__recombine__BRA__222__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+442,(vlSelf->ascon_top__DOT__recombine__BRA__223__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+443,(vlSelf->ascon_top__DOT__recombine__BRA__224__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+444,(vlSelf->ascon_top__DOT__recombine__BRA__225__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+445,(vlSelf->ascon_top__DOT__recombine__BRA__226__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+446,(vlSelf->ascon_top__DOT__recombine__BRA__227__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+447,(vlSelf->ascon_top__DOT__recombine__BRA__228__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+448,(vlSelf->ascon_top__DOT__recombine__BRA__229__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+449,(vlSelf->ascon_top__DOT__recombine__BRA__230__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+450,(vlSelf->ascon_top__DOT__recombine__BRA__231__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+451,(vlSelf->ascon_top__DOT__recombine__BRA__232__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+452,(vlSelf->ascon_top__DOT__recombine__BRA__233__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+453,(vlSelf->ascon_top__DOT__recombine__BRA__234__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+454,(vlSelf->ascon_top__DOT__recombine__BRA__235__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+455,(vlSelf->ascon_top__DOT__recombine__BRA__236__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+456,(vlSelf->ascon_top__DOT__recombine__BRA__237__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+457,(vlSelf->ascon_top__DOT__recombine__BRA__238__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+458,(vlSelf->ascon_top__DOT__recombine__BRA__239__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+459,(vlSelf->ascon_top__DOT__recombine__BRA__240__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+460,(vlSelf->ascon_top__DOT__recombine__BRA__241__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+461,(vlSelf->ascon_top__DOT__recombine__BRA__242__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+462,(vlSelf->ascon_top__DOT__recombine__BRA__243__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+463,(vlSelf->ascon_top__DOT__recombine__BRA__244__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+464,(vlSelf->ascon_top__DOT__recombine__BRA__245__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+465,(vlSelf->ascon_top__DOT__recombine__BRA__246__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+466,(vlSelf->ascon_top__DOT__recombine__BRA__247__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+467,(vlSelf->ascon_top__DOT__recombine__BRA__248__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+468,(vlSelf->ascon_top__DOT__recombine__BRA__249__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+469,(vlSelf->ascon_top__DOT__recombine__BRA__250__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+470,(vlSelf->ascon_top__DOT__recombine__BRA__251__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+471,(vlSelf->ascon_top__DOT__recombine__BRA__252__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+472,(vlSelf->ascon_top__DOT__recombine__BRA__253__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+473,(vlSelf->ascon_top__DOT__recombine__BRA__254__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+474,(vlSelf->ascon_top__DOT__recombine__BRA__255__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+475,(vlSelf->ascon_top__DOT__recombine__BRA__256__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+476,(vlSelf->ascon_top__DOT__recombine__BRA__257__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+477,(vlSelf->ascon_top__DOT__recombine__BRA__258__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+478,(vlSelf->ascon_top__DOT__recombine__BRA__259__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+479,(vlSelf->ascon_top__DOT__recombine__BRA__260__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+480,(vlSelf->ascon_top__DOT__recombine__BRA__261__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+481,(vlSelf->ascon_top__DOT__recombine__BRA__262__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+482,(vlSelf->ascon_top__DOT__recombine__BRA__263__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+483,(vlSelf->ascon_top__DOT__recombine__BRA__264__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+484,(vlSelf->ascon_top__DOT__recombine__BRA__265__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+485,(vlSelf->ascon_top__DOT__recombine__BRA__266__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+486,(vlSelf->ascon_top__DOT__recombine__BRA__267__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+487,(vlSelf->ascon_top__DOT__recombine__BRA__268__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+488,(vlSelf->ascon_top__DOT__recombine__BRA__269__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+489,(vlSelf->ascon_top__DOT__recombine__BRA__270__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+490,(vlSelf->ascon_top__DOT__recombine__BRA__271__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+491,(vlSelf->ascon_top__DOT__recombine__BRA__272__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+492,(vlSelf->ascon_top__DOT__recombine__BRA__273__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+493,(vlSelf->ascon_top__DOT__recombine__BRA__274__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+494,(vlSelf->ascon_top__DOT__recombine__BRA__275__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+495,(vlSelf->ascon_top__DOT__recombine__BRA__276__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+496,(vlSelf->ascon_top__DOT__recombine__BRA__277__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+497,(vlSelf->ascon_top__DOT__recombine__BRA__278__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+498,(vlSelf->ascon_top__DOT__recombine__BRA__279__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+499,(vlSelf->ascon_top__DOT__recombine__BRA__280__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+500,(vlSelf->ascon_top__DOT__recombine__BRA__281__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+501,(vlSelf->ascon_top__DOT__recombine__BRA__282__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+502,(vlSelf->ascon_top__DOT__recombine__BRA__283__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+503,(vlSelf->ascon_top__DOT__recombine__BRA__284__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+504,(vlSelf->ascon_top__DOT__recombine__BRA__285__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+505,(vlSelf->ascon_top__DOT__recombine__BRA__286__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+506,(vlSelf->ascon_top__DOT__recombine__BRA__287__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+507,(vlSelf->ascon_top__DOT__recombine__BRA__288__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+508,(vlSelf->ascon_top__DOT__recombine__BRA__289__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+509,(vlSelf->ascon_top__DOT__recombine__BRA__290__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+510,(vlSelf->ascon_top__DOT__recombine__BRA__291__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+511,(vlSelf->ascon_top__DOT__recombine__BRA__292__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+512,(vlSelf->ascon_top__DOT__recombine__BRA__293__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+513,(vlSelf->ascon_top__DOT__recombine__BRA__294__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+514,(vlSelf->ascon_top__DOT__recombine__BRA__295__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+515,(vlSelf->ascon_top__DOT__recombine__BRA__296__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+516,(vlSelf->ascon_top__DOT__recombine__BRA__297__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+517,(vlSelf->ascon_top__DOT__recombine__BRA__298__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+518,(vlSelf->ascon_top__DOT__recombine__BRA__299__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+519,(vlSelf->ascon_top__DOT__recombine__BRA__300__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+520,(vlSelf->ascon_top__DOT__recombine__BRA__301__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+521,(vlSelf->ascon_top__DOT__recombine__BRA__302__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+522,(vlSelf->ascon_top__DOT__recombine__BRA__303__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+523,(vlSelf->ascon_top__DOT__recombine__BRA__304__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+524,(vlSelf->ascon_top__DOT__recombine__BRA__305__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+525,(vlSelf->ascon_top__DOT__recombine__BRA__306__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+526,(vlSelf->ascon_top__DOT__recombine__BRA__307__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+527,(vlSelf->ascon_top__DOT__recombine__BRA__308__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+528,(vlSelf->ascon_top__DOT__recombine__BRA__309__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+529,(vlSelf->ascon_top__DOT__recombine__BRA__310__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+530,(vlSelf->ascon_top__DOT__recombine__BRA__311__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+531,(vlSelf->ascon_top__DOT__recombine__BRA__312__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+532,(vlSelf->ascon_top__DOT__recombine__BRA__313__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+533,(vlSelf->ascon_top__DOT__recombine__BRA__314__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+534,(vlSelf->ascon_top__DOT__recombine__BRA__315__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+535,(vlSelf->ascon_top__DOT__recombine__BRA__316__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+536,(vlSelf->ascon_top__DOT__recombine__BRA__317__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+537,(vlSelf->ascon_top__DOT__recombine__BRA__318__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+538,(vlSelf->ascon_top__DOT__recombine__BRA__319__KET____DOT__temp_bits_sbox),3);
+        tracep->fullCData(oldp+539,(vlSelf->ascon_top__DOT__recombine__BRA__0__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+540,(vlSelf->ascon_top__DOT__recombine__BRA__1__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+541,(vlSelf->ascon_top__DOT__recombine__BRA__2__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+542,(vlSelf->ascon_top__DOT__recombine__BRA__3__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+543,(vlSelf->ascon_top__DOT__recombine__BRA__4__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+544,(vlSelf->ascon_top__DOT__recombine__BRA__5__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+545,(vlSelf->ascon_top__DOT__recombine__BRA__6__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+546,(vlSelf->ascon_top__DOT__recombine__BRA__7__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+547,(vlSelf->ascon_top__DOT__recombine__BRA__8__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+548,(vlSelf->ascon_top__DOT__recombine__BRA__9__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+549,(vlSelf->ascon_top__DOT__recombine__BRA__10__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+550,(vlSelf->ascon_top__DOT__recombine__BRA__11__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+551,(vlSelf->ascon_top__DOT__recombine__BRA__12__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+552,(vlSelf->ascon_top__DOT__recombine__BRA__13__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+553,(vlSelf->ascon_top__DOT__recombine__BRA__14__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+554,(vlSelf->ascon_top__DOT__recombine__BRA__15__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+555,(vlSelf->ascon_top__DOT__recombine__BRA__16__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+556,(vlSelf->ascon_top__DOT__recombine__BRA__17__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+557,(vlSelf->ascon_top__DOT__recombine__BRA__18__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+558,(vlSelf->ascon_top__DOT__recombine__BRA__19__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+559,(vlSelf->ascon_top__DOT__recombine__BRA__20__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+560,(vlSelf->ascon_top__DOT__recombine__BRA__21__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+561,(vlSelf->ascon_top__DOT__recombine__BRA__22__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+562,(vlSelf->ascon_top__DOT__recombine__BRA__23__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+563,(vlSelf->ascon_top__DOT__recombine__BRA__24__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+564,(vlSelf->ascon_top__DOT__recombine__BRA__25__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+565,(vlSelf->ascon_top__DOT__recombine__BRA__26__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+566,(vlSelf->ascon_top__DOT__recombine__BRA__27__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+567,(vlSelf->ascon_top__DOT__recombine__BRA__28__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+568,(vlSelf->ascon_top__DOT__recombine__BRA__29__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+569,(vlSelf->ascon_top__DOT__recombine__BRA__30__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+570,(vlSelf->ascon_top__DOT__recombine__BRA__31__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+571,(vlSelf->ascon_top__DOT__recombine__BRA__32__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+572,(vlSelf->ascon_top__DOT__recombine__BRA__33__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+573,(vlSelf->ascon_top__DOT__recombine__BRA__34__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+574,(vlSelf->ascon_top__DOT__recombine__BRA__35__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+575,(vlSelf->ascon_top__DOT__recombine__BRA__36__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+576,(vlSelf->ascon_top__DOT__recombine__BRA__37__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+577,(vlSelf->ascon_top__DOT__recombine__BRA__38__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+578,(vlSelf->ascon_top__DOT__recombine__BRA__39__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+579,(vlSelf->ascon_top__DOT__recombine__BRA__40__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+580,(vlSelf->ascon_top__DOT__recombine__BRA__41__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+581,(vlSelf->ascon_top__DOT__recombine__BRA__42__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+582,(vlSelf->ascon_top__DOT__recombine__BRA__43__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+583,(vlSelf->ascon_top__DOT__recombine__BRA__44__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+584,(vlSelf->ascon_top__DOT__recombine__BRA__45__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+585,(vlSelf->ascon_top__DOT__recombine__BRA__46__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+586,(vlSelf->ascon_top__DOT__recombine__BRA__47__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+587,(vlSelf->ascon_top__DOT__recombine__BRA__48__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+588,(vlSelf->ascon_top__DOT__recombine__BRA__49__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+589,(vlSelf->ascon_top__DOT__recombine__BRA__50__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+590,(vlSelf->ascon_top__DOT__recombine__BRA__51__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+591,(vlSelf->ascon_top__DOT__recombine__BRA__52__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+592,(vlSelf->ascon_top__DOT__recombine__BRA__53__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+593,(vlSelf->ascon_top__DOT__recombine__BRA__54__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+594,(vlSelf->ascon_top__DOT__recombine__BRA__55__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+595,(vlSelf->ascon_top__DOT__recombine__BRA__56__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+596,(vlSelf->ascon_top__DOT__recombine__BRA__57__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+597,(vlSelf->ascon_top__DOT__recombine__BRA__58__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+598,(vlSelf->ascon_top__DOT__recombine__BRA__59__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+599,(vlSelf->ascon_top__DOT__recombine__BRA__60__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+600,(vlSelf->ascon_top__DOT__recombine__BRA__61__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+601,(vlSelf->ascon_top__DOT__recombine__BRA__62__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+602,(vlSelf->ascon_top__DOT__recombine__BRA__63__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+603,(vlSelf->ascon_top__DOT__recombine__BRA__64__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+604,(vlSelf->ascon_top__DOT__recombine__BRA__65__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+605,(vlSelf->ascon_top__DOT__recombine__BRA__66__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+606,(vlSelf->ascon_top__DOT__recombine__BRA__67__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+607,(vlSelf->ascon_top__DOT__recombine__BRA__68__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+608,(vlSelf->ascon_top__DOT__recombine__BRA__69__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+609,(vlSelf->ascon_top__DOT__recombine__BRA__70__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+610,(vlSelf->ascon_top__DOT__recombine__BRA__71__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+611,(vlSelf->ascon_top__DOT__recombine__BRA__72__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+612,(vlSelf->ascon_top__DOT__recombine__BRA__73__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+613,(vlSelf->ascon_top__DOT__recombine__BRA__74__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+614,(vlSelf->ascon_top__DOT__recombine__BRA__75__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+615,(vlSelf->ascon_top__DOT__recombine__BRA__76__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+616,(vlSelf->ascon_top__DOT__recombine__BRA__77__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+617,(vlSelf->ascon_top__DOT__recombine__BRA__78__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+618,(vlSelf->ascon_top__DOT__recombine__BRA__79__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+619,(vlSelf->ascon_top__DOT__recombine__BRA__80__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+620,(vlSelf->ascon_top__DOT__recombine__BRA__81__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+621,(vlSelf->ascon_top__DOT__recombine__BRA__82__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+622,(vlSelf->ascon_top__DOT__recombine__BRA__83__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+623,(vlSelf->ascon_top__DOT__recombine__BRA__84__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+624,(vlSelf->ascon_top__DOT__recombine__BRA__85__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+625,(vlSelf->ascon_top__DOT__recombine__BRA__86__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+626,(vlSelf->ascon_top__DOT__recombine__BRA__87__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+627,(vlSelf->ascon_top__DOT__recombine__BRA__88__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+628,(vlSelf->ascon_top__DOT__recombine__BRA__89__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+629,(vlSelf->ascon_top__DOT__recombine__BRA__90__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+630,(vlSelf->ascon_top__DOT__recombine__BRA__91__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+631,(vlSelf->ascon_top__DOT__recombine__BRA__92__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+632,(vlSelf->ascon_top__DOT__recombine__BRA__93__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+633,(vlSelf->ascon_top__DOT__recombine__BRA__94__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+634,(vlSelf->ascon_top__DOT__recombine__BRA__95__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+635,(vlSelf->ascon_top__DOT__recombine__BRA__96__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+636,(vlSelf->ascon_top__DOT__recombine__BRA__97__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+637,(vlSelf->ascon_top__DOT__recombine__BRA__98__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+638,(vlSelf->ascon_top__DOT__recombine__BRA__99__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+639,(vlSelf->ascon_top__DOT__recombine__BRA__100__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+640,(vlSelf->ascon_top__DOT__recombine__BRA__101__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+641,(vlSelf->ascon_top__DOT__recombine__BRA__102__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+642,(vlSelf->ascon_top__DOT__recombine__BRA__103__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+643,(vlSelf->ascon_top__DOT__recombine__BRA__104__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+644,(vlSelf->ascon_top__DOT__recombine__BRA__105__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+645,(vlSelf->ascon_top__DOT__recombine__BRA__106__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+646,(vlSelf->ascon_top__DOT__recombine__BRA__107__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+647,(vlSelf->ascon_top__DOT__recombine__BRA__108__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+648,(vlSelf->ascon_top__DOT__recombine__BRA__109__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+649,(vlSelf->ascon_top__DOT__recombine__BRA__110__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+650,(vlSelf->ascon_top__DOT__recombine__BRA__111__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+651,(vlSelf->ascon_top__DOT__recombine__BRA__112__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+652,(vlSelf->ascon_top__DOT__recombine__BRA__113__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+653,(vlSelf->ascon_top__DOT__recombine__BRA__114__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+654,(vlSelf->ascon_top__DOT__recombine__BRA__115__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+655,(vlSelf->ascon_top__DOT__recombine__BRA__116__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+656,(vlSelf->ascon_top__DOT__recombine__BRA__117__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+657,(vlSelf->ascon_top__DOT__recombine__BRA__118__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+658,(vlSelf->ascon_top__DOT__recombine__BRA__119__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+659,(vlSelf->ascon_top__DOT__recombine__BRA__120__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+660,(vlSelf->ascon_top__DOT__recombine__BRA__121__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+661,(vlSelf->ascon_top__DOT__recombine__BRA__122__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+662,(vlSelf->ascon_top__DOT__recombine__BRA__123__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+663,(vlSelf->ascon_top__DOT__recombine__BRA__124__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+664,(vlSelf->ascon_top__DOT__recombine__BRA__125__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+665,(vlSelf->ascon_top__DOT__recombine__BRA__126__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+666,(vlSelf->ascon_top__DOT__recombine__BRA__127__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+667,(vlSelf->ascon_top__DOT__recombine__BRA__128__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+668,(vlSelf->ascon_top__DOT__recombine__BRA__129__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+669,(vlSelf->ascon_top__DOT__recombine__BRA__130__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+670,(vlSelf->ascon_top__DOT__recombine__BRA__131__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+671,(vlSelf->ascon_top__DOT__recombine__BRA__132__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+672,(vlSelf->ascon_top__DOT__recombine__BRA__133__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+673,(vlSelf->ascon_top__DOT__recombine__BRA__134__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+674,(vlSelf->ascon_top__DOT__recombine__BRA__135__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+675,(vlSelf->ascon_top__DOT__recombine__BRA__136__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+676,(vlSelf->ascon_top__DOT__recombine__BRA__137__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+677,(vlSelf->ascon_top__DOT__recombine__BRA__138__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+678,(vlSelf->ascon_top__DOT__recombine__BRA__139__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+679,(vlSelf->ascon_top__DOT__recombine__BRA__140__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+680,(vlSelf->ascon_top__DOT__recombine__BRA__141__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+681,(vlSelf->ascon_top__DOT__recombine__BRA__142__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+682,(vlSelf->ascon_top__DOT__recombine__BRA__143__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+683,(vlSelf->ascon_top__DOT__recombine__BRA__144__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+684,(vlSelf->ascon_top__DOT__recombine__BRA__145__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+685,(vlSelf->ascon_top__DOT__recombine__BRA__146__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+686,(vlSelf->ascon_top__DOT__recombine__BRA__147__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+687,(vlSelf->ascon_top__DOT__recombine__BRA__148__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+688,(vlSelf->ascon_top__DOT__recombine__BRA__149__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+689,(vlSelf->ascon_top__DOT__recombine__BRA__150__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+690,(vlSelf->ascon_top__DOT__recombine__BRA__151__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+691,(vlSelf->ascon_top__DOT__recombine__BRA__152__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+692,(vlSelf->ascon_top__DOT__recombine__BRA__153__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+693,(vlSelf->ascon_top__DOT__recombine__BRA__154__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+694,(vlSelf->ascon_top__DOT__recombine__BRA__155__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+695,(vlSelf->ascon_top__DOT__recombine__BRA__156__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+696,(vlSelf->ascon_top__DOT__recombine__BRA__157__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+697,(vlSelf->ascon_top__DOT__recombine__BRA__158__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+698,(vlSelf->ascon_top__DOT__recombine__BRA__159__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+699,(vlSelf->ascon_top__DOT__recombine__BRA__160__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+700,(vlSelf->ascon_top__DOT__recombine__BRA__161__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+701,(vlSelf->ascon_top__DOT__recombine__BRA__162__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+702,(vlSelf->ascon_top__DOT__recombine__BRA__163__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+703,(vlSelf->ascon_top__DOT__recombine__BRA__164__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+704,(vlSelf->ascon_top__DOT__recombine__BRA__165__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+705,(vlSelf->ascon_top__DOT__recombine__BRA__166__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+706,(vlSelf->ascon_top__DOT__recombine__BRA__167__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+707,(vlSelf->ascon_top__DOT__recombine__BRA__168__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+708,(vlSelf->ascon_top__DOT__recombine__BRA__169__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+709,(vlSelf->ascon_top__DOT__recombine__BRA__170__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+710,(vlSelf->ascon_top__DOT__recombine__BRA__171__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+711,(vlSelf->ascon_top__DOT__recombine__BRA__172__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+712,(vlSelf->ascon_top__DOT__recombine__BRA__173__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+713,(vlSelf->ascon_top__DOT__recombine__BRA__174__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+714,(vlSelf->ascon_top__DOT__recombine__BRA__175__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+715,(vlSelf->ascon_top__DOT__recombine__BRA__176__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+716,(vlSelf->ascon_top__DOT__recombine__BRA__177__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+717,(vlSelf->ascon_top__DOT__recombine__BRA__178__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+718,(vlSelf->ascon_top__DOT__recombine__BRA__179__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+719,(vlSelf->ascon_top__DOT__recombine__BRA__180__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+720,(vlSelf->ascon_top__DOT__recombine__BRA__181__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+721,(vlSelf->ascon_top__DOT__recombine__BRA__182__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+722,(vlSelf->ascon_top__DOT__recombine__BRA__183__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+723,(vlSelf->ascon_top__DOT__recombine__BRA__184__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+724,(vlSelf->ascon_top__DOT__recombine__BRA__185__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+725,(vlSelf->ascon_top__DOT__recombine__BRA__186__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+726,(vlSelf->ascon_top__DOT__recombine__BRA__187__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+727,(vlSelf->ascon_top__DOT__recombine__BRA__188__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+728,(vlSelf->ascon_top__DOT__recombine__BRA__189__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+729,(vlSelf->ascon_top__DOT__recombine__BRA__190__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+730,(vlSelf->ascon_top__DOT__recombine__BRA__191__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+731,(vlSelf->ascon_top__DOT__recombine__BRA__192__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+732,(vlSelf->ascon_top__DOT__recombine__BRA__193__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+733,(vlSelf->ascon_top__DOT__recombine__BRA__194__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+734,(vlSelf->ascon_top__DOT__recombine__BRA__195__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+735,(vlSelf->ascon_top__DOT__recombine__BRA__196__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+736,(vlSelf->ascon_top__DOT__recombine__BRA__197__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+737,(vlSelf->ascon_top__DOT__recombine__BRA__198__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+738,(vlSelf->ascon_top__DOT__recombine__BRA__199__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+739,(vlSelf->ascon_top__DOT__recombine__BRA__200__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+740,(vlSelf->ascon_top__DOT__recombine__BRA__201__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+741,(vlSelf->ascon_top__DOT__recombine__BRA__202__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+742,(vlSelf->ascon_top__DOT__recombine__BRA__203__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+743,(vlSelf->ascon_top__DOT__recombine__BRA__204__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+744,(vlSelf->ascon_top__DOT__recombine__BRA__205__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+745,(vlSelf->ascon_top__DOT__recombine__BRA__206__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+746,(vlSelf->ascon_top__DOT__recombine__BRA__207__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+747,(vlSelf->ascon_top__DOT__recombine__BRA__208__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+748,(vlSelf->ascon_top__DOT__recombine__BRA__209__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+749,(vlSelf->ascon_top__DOT__recombine__BRA__210__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+750,(vlSelf->ascon_top__DOT__recombine__BRA__211__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+751,(vlSelf->ascon_top__DOT__recombine__BRA__212__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+752,(vlSelf->ascon_top__DOT__recombine__BRA__213__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+753,(vlSelf->ascon_top__DOT__recombine__BRA__214__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+754,(vlSelf->ascon_top__DOT__recombine__BRA__215__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+755,(vlSelf->ascon_top__DOT__recombine__BRA__216__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+756,(vlSelf->ascon_top__DOT__recombine__BRA__217__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+757,(vlSelf->ascon_top__DOT__recombine__BRA__218__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+758,(vlSelf->ascon_top__DOT__recombine__BRA__219__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+759,(vlSelf->ascon_top__DOT__recombine__BRA__220__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+760,(vlSelf->ascon_top__DOT__recombine__BRA__221__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+761,(vlSelf->ascon_top__DOT__recombine__BRA__222__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+762,(vlSelf->ascon_top__DOT__recombine__BRA__223__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+763,(vlSelf->ascon_top__DOT__recombine__BRA__224__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+764,(vlSelf->ascon_top__DOT__recombine__BRA__225__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+765,(vlSelf->ascon_top__DOT__recombine__BRA__226__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+766,(vlSelf->ascon_top__DOT__recombine__BRA__227__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+767,(vlSelf->ascon_top__DOT__recombine__BRA__228__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+768,(vlSelf->ascon_top__DOT__recombine__BRA__229__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+769,(vlSelf->ascon_top__DOT__recombine__BRA__230__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+770,(vlSelf->ascon_top__DOT__recombine__BRA__231__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+771,(vlSelf->ascon_top__DOT__recombine__BRA__232__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+772,(vlSelf->ascon_top__DOT__recombine__BRA__233__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+773,(vlSelf->ascon_top__DOT__recombine__BRA__234__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+774,(vlSelf->ascon_top__DOT__recombine__BRA__235__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+775,(vlSelf->ascon_top__DOT__recombine__BRA__236__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+776,(vlSelf->ascon_top__DOT__recombine__BRA__237__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+777,(vlSelf->ascon_top__DOT__recombine__BRA__238__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+778,(vlSelf->ascon_top__DOT__recombine__BRA__239__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+779,(vlSelf->ascon_top__DOT__recombine__BRA__240__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+780,(vlSelf->ascon_top__DOT__recombine__BRA__241__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+781,(vlSelf->ascon_top__DOT__recombine__BRA__242__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+782,(vlSelf->ascon_top__DOT__recombine__BRA__243__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+783,(vlSelf->ascon_top__DOT__recombine__BRA__244__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+784,(vlSelf->ascon_top__DOT__recombine__BRA__245__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+785,(vlSelf->ascon_top__DOT__recombine__BRA__246__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+786,(vlSelf->ascon_top__DOT__recombine__BRA__247__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+787,(vlSelf->ascon_top__DOT__recombine__BRA__248__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+788,(vlSelf->ascon_top__DOT__recombine__BRA__249__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+789,(vlSelf->ascon_top__DOT__recombine__BRA__250__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+790,(vlSelf->ascon_top__DOT__recombine__BRA__251__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+791,(vlSelf->ascon_top__DOT__recombine__BRA__252__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+792,(vlSelf->ascon_top__DOT__recombine__BRA__253__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+793,(vlSelf->ascon_top__DOT__recombine__BRA__254__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+794,(vlSelf->ascon_top__DOT__recombine__BRA__255__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+795,(vlSelf->ascon_top__DOT__recombine__BRA__256__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+796,(vlSelf->ascon_top__DOT__recombine__BRA__257__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+797,(vlSelf->ascon_top__DOT__recombine__BRA__258__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+798,(vlSelf->ascon_top__DOT__recombine__BRA__259__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+799,(vlSelf->ascon_top__DOT__recombine__BRA__260__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+800,(vlSelf->ascon_top__DOT__recombine__BRA__261__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+801,(vlSelf->ascon_top__DOT__recombine__BRA__262__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+802,(vlSelf->ascon_top__DOT__recombine__BRA__263__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+803,(vlSelf->ascon_top__DOT__recombine__BRA__264__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+804,(vlSelf->ascon_top__DOT__recombine__BRA__265__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+805,(vlSelf->ascon_top__DOT__recombine__BRA__266__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+806,(vlSelf->ascon_top__DOT__recombine__BRA__267__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+807,(vlSelf->ascon_top__DOT__recombine__BRA__268__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+808,(vlSelf->ascon_top__DOT__recombine__BRA__269__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+809,(vlSelf->ascon_top__DOT__recombine__BRA__270__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+810,(vlSelf->ascon_top__DOT__recombine__BRA__271__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+811,(vlSelf->ascon_top__DOT__recombine__BRA__272__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+812,(vlSelf->ascon_top__DOT__recombine__BRA__273__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+813,(vlSelf->ascon_top__DOT__recombine__BRA__274__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+814,(vlSelf->ascon_top__DOT__recombine__BRA__275__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+815,(vlSelf->ascon_top__DOT__recombine__BRA__276__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+816,(vlSelf->ascon_top__DOT__recombine__BRA__277__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+817,(vlSelf->ascon_top__DOT__recombine__BRA__278__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+818,(vlSelf->ascon_top__DOT__recombine__BRA__279__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+819,(vlSelf->ascon_top__DOT__recombine__BRA__280__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+820,(vlSelf->ascon_top__DOT__recombine__BRA__281__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+821,(vlSelf->ascon_top__DOT__recombine__BRA__282__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+822,(vlSelf->ascon_top__DOT__recombine__BRA__283__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+823,(vlSelf->ascon_top__DOT__recombine__BRA__284__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+824,(vlSelf->ascon_top__DOT__recombine__BRA__285__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+825,(vlSelf->ascon_top__DOT__recombine__BRA__286__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+826,(vlSelf->ascon_top__DOT__recombine__BRA__287__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+827,(vlSelf->ascon_top__DOT__recombine__BRA__288__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+828,(vlSelf->ascon_top__DOT__recombine__BRA__289__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+829,(vlSelf->ascon_top__DOT__recombine__BRA__290__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+830,(vlSelf->ascon_top__DOT__recombine__BRA__291__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+831,(vlSelf->ascon_top__DOT__recombine__BRA__292__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+832,(vlSelf->ascon_top__DOT__recombine__BRA__293__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+833,(vlSelf->ascon_top__DOT__recombine__BRA__294__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+834,(vlSelf->ascon_top__DOT__recombine__BRA__295__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+835,(vlSelf->ascon_top__DOT__recombine__BRA__296__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+836,(vlSelf->ascon_top__DOT__recombine__BRA__297__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+837,(vlSelf->ascon_top__DOT__recombine__BRA__298__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+838,(vlSelf->ascon_top__DOT__recombine__BRA__299__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+839,(vlSelf->ascon_top__DOT__recombine__BRA__300__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+840,(vlSelf->ascon_top__DOT__recombine__BRA__301__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+841,(vlSelf->ascon_top__DOT__recombine__BRA__302__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+842,(vlSelf->ascon_top__DOT__recombine__BRA__303__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+843,(vlSelf->ascon_top__DOT__recombine__BRA__304__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+844,(vlSelf->ascon_top__DOT__recombine__BRA__305__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+845,(vlSelf->ascon_top__DOT__recombine__BRA__306__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+846,(vlSelf->ascon_top__DOT__recombine__BRA__307__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+847,(vlSelf->ascon_top__DOT__recombine__BRA__308__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+848,(vlSelf->ascon_top__DOT__recombine__BRA__309__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+849,(vlSelf->ascon_top__DOT__recombine__BRA__310__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+850,(vlSelf->ascon_top__DOT__recombine__BRA__311__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+851,(vlSelf->ascon_top__DOT__recombine__BRA__312__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+852,(vlSelf->ascon_top__DOT__recombine__BRA__313__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+853,(vlSelf->ascon_top__DOT__recombine__BRA__314__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+854,(vlSelf->ascon_top__DOT__recombine__BRA__315__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+855,(vlSelf->ascon_top__DOT__recombine__BRA__316__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+856,(vlSelf->ascon_top__DOT__recombine__BRA__317__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+857,(vlSelf->ascon_top__DOT__recombine__BRA__318__KET____DOT__temp_bits),3);
+        tracep->fullCData(oldp+858,(vlSelf->ascon_top__DOT__recombine__BRA__319__KET____DOT__temp_bits),3);
+        tracep->fullBit(oldp+859,(vlSelf->ascon_top__DOT__mealy_fsm__DOT__rst_cnt_4));
+        tracep->fullCData(oldp+860,(vlSelf->ascon_top__DOT__mealy_fsm__DOT__current_state),5);
+        tracep->fullCData(oldp+861,(vlSelf->ascon_top__DOT__mealy_fsm__DOT__number_bits),7);
+        tracep->fullCData(oldp+862,(vlSelf->ascon_top__DOT__mealy_fsm__DOT__number_round),4);
+        tracep->fullBit(oldp+863,(vlSelf->ascon_top__DOT__mealy_fsm__DOT__last_block_process_ff));
+        tracep->fullBit(oldp+864,(vlSelf->ascon_top__DOT__mealy_fsm__DOT__round_counter_enable));
+        tracep->fullBit(oldp+865,((1U & (IData)(vlSelf->ascon_top__DOT__mux_1st_x0))));
+        tracep->fullQData(oldp+866,(vlSelf->ascon_top__DOT__sipo_reg_x0_debug__DOT__next_state),64);
+        tracep->fullBit(oldp+868,((1U & (IData)(vlSelf->ascon_top__DOT__mux_1st_x1))));
+        tracep->fullQData(oldp+869,(vlSelf->ascon_top__DOT__sipo_reg_x1_debug__DOT__next_state),64);
+        tracep->fullBit(oldp+871,((1U & (IData)(vlSelf->ascon_top__DOT__mux_1st_x2))));
+        tracep->fullQData(oldp+872,(vlSelf->ascon_top__DOT__sipo_reg_x2_debug__DOT__next_state),64);
+        tracep->fullBit(oldp+874,((1U & (IData)(vlSelf->ascon_top__DOT__mux_1st_x3))));
+        tracep->fullQData(oldp+875,(vlSelf->ascon_top__DOT__sipo_reg_x3_debug__DOT__next_state),64);
+        tracep->fullBit(oldp+877,((1U & (IData)(vlSelf->ascon_top__DOT__mux_1st_x4))));
+        tracep->fullQData(oldp+878,(vlSelf->ascon_top__DOT__sipo_reg_x4_debug__DOT__next_state),64);
+        tracep->fullSData(oldp+880,(vlSelf->ascon_top__DOT____Vcellout__gen_state_regs__BRA__0__KET____DOT__state_reg_share__out_shifted_dplus1),15);
+        tracep->fullWData(oldp+881,(vlSelf->ascon_top__DOT____Vcellout__gen_state_regs__BRA__0__KET____DOT__state_reg_share__data_out),320);
+        tracep->fullQData(oldp+891,(vlSelf->ascon_top__DOT__gen_state_regs__BRA__0__KET____DOT__state_reg_share__DOT__state[0]),64);
+        tracep->fullQData(oldp+893,(vlSelf->ascon_top__DOT__gen_state_regs__BRA__0__KET____DOT__state_reg_share__DOT__state[1]),64);
+        tracep->fullQData(oldp+895,(vlSelf->ascon_top__DOT__gen_state_regs__BRA__0__KET____DOT__state_reg_share__DOT__state[2]),64);
+        tracep->fullQData(oldp+897,(vlSelf->ascon_top__DOT__gen_state_regs__BRA__0__KET____DOT__state_reg_share__DOT__state[3]),64);
+        tracep->fullQData(oldp+899,(vlSelf->ascon_top__DOT__gen_state_regs__BRA__0__KET____DOT__state_reg_share__DOT__state[4]),64);
+        tracep->fullIData(oldp+901,(vlSelf->ascon_top__DOT__gen_state_regs__BRA__0__KET____DOT__state_reg_share__DOT__unnamedblk4__DOT__i),32);
+        tracep->fullIData(oldp+902,(vlSelf->ascon_top__DOT__gen_state_regs__BRA__0__KET____DOT__state_reg_share__DOT__unnamedblk3__DOT__i),32);
+        tracep->fullSData(oldp+903,(vlSelf->ascon_top__DOT____Vcellout__gen_state_regs__BRA__1__KET____DOT__state_reg_share__out_shifted_dplus1),15);
+        tracep->fullWData(oldp+904,(vlSelf->ascon_top__DOT____Vcellout__gen_state_regs__BRA__1__KET____DOT__state_reg_share__data_out),320);
+        tracep->fullQData(oldp+914,(vlSelf->ascon_top__DOT__gen_state_regs__BRA__1__KET____DOT__state_reg_share__DOT__state[0]),64);
+        tracep->fullQData(oldp+916,(vlSelf->ascon_top__DOT__gen_state_regs__BRA__1__KET____DOT__state_reg_share__DOT__state[1]),64);
+        tracep->fullQData(oldp+918,(vlSelf->ascon_top__DOT__gen_state_regs__BRA__1__KET____DOT__state_reg_share__DOT__state[2]),64);
+        tracep->fullQData(oldp+920,(vlSelf->ascon_top__DOT__gen_state_regs__BRA__1__KET____DOT__state_reg_share__DOT__state[3]),64);
+        tracep->fullQData(oldp+922,(vlSelf->ascon_top__DOT__gen_state_regs__BRA__1__KET____DOT__state_reg_share__DOT__state[4]),64);
+        tracep->fullIData(oldp+924,(vlSelf->ascon_top__DOT__gen_state_regs__BRA__1__KET____DOT__state_reg_share__DOT__unnamedblk4__DOT__i),32);
+        tracep->fullIData(oldp+925,(vlSelf->ascon_top__DOT__gen_state_regs__BRA__1__KET____DOT__state_reg_share__DOT__unnamedblk3__DOT__i),32);
+        tracep->fullSData(oldp+926,(vlSelf->ascon_top__DOT____Vcellout__gen_state_regs__BRA__2__KET____DOT__state_reg_share__out_shifted_dplus1),15);
+        tracep->fullWData(oldp+927,(vlSelf->ascon_top__DOT____Vcellout__gen_state_regs__BRA__2__KET____DOT__state_reg_share__data_out),320);
+        tracep->fullQData(oldp+937,(vlSelf->ascon_top__DOT__gen_state_regs__BRA__2__KET____DOT__state_reg_share__DOT__state[0]),64);
+        tracep->fullQData(oldp+939,(vlSelf->ascon_top__DOT__gen_state_regs__BRA__2__KET____DOT__state_reg_share__DOT__state[1]),64);
+        tracep->fullQData(oldp+941,(vlSelf->ascon_top__DOT__gen_state_regs__BRA__2__KET____DOT__state_reg_share__DOT__state[2]),64);
+        tracep->fullQData(oldp+943,(vlSelf->ascon_top__DOT__gen_state_regs__BRA__2__KET____DOT__state_reg_share__DOT__state[3]),64);
+        tracep->fullQData(oldp+945,(vlSelf->ascon_top__DOT__gen_state_regs__BRA__2__KET____DOT__state_reg_share__DOT__state[4]),64);
+        tracep->fullIData(oldp+947,(vlSelf->ascon_top__DOT__gen_state_regs__BRA__2__KET____DOT__state_reg_share__DOT__unnamedblk4__DOT__i),32);
+        tracep->fullIData(oldp+948,(vlSelf->ascon_top__DOT__gen_state_regs__BRA__2__KET____DOT__state_reg_share__DOT__unnamedblk3__DOT__i),32);
+        tracep->fullQData(oldp+949,(vlSelf->ascon_top__DOT__state_reg_in_absorb[0]),64);
+        tracep->fullQData(oldp+951,(vlSelf->ascon_top__DOT__state_reg_in_absorb[1]),64);
+        tracep->fullQData(oldp+953,(vlSelf->ascon_top__DOT__state_reg_in_absorb[2]),64);
+        tracep->fullQData(oldp+955,(vlSelf->ascon_top__DOT__state_reg_in_absorb[3]),64);
+        tracep->fullQData(oldp+957,(vlSelf->ascon_top__DOT__state_reg_in_absorb[4]),64);
+        __Vtemp13363[0U] = (IData)((((QData)((IData)(
                                                      vlSelf->ascon_top__DOT__linear_diffusion_out[1U])) 
                                      << 0x20U) | (QData)((IData)(
                                                                  vlSelf->ascon_top__DOT__linear_diffusion_out[0U]))));
-        __Vtemp19867[1U] = (IData)(((((QData)((IData)(
+        __Vtemp13363[1U] = (IData)(((((QData)((IData)(
                                                       vlSelf->ascon_top__DOT__linear_diffusion_out[1U])) 
                                       << 0x20U) | (QData)((IData)(
                                                                   vlSelf->ascon_top__DOT__linear_diffusion_out[0U]))) 
                                     >> 0x20U));
-        __Vtemp19867[2U] = (IData)((((QData)((IData)(
+        __Vtemp13363[2U] = (IData)((((QData)((IData)(
                                                      vlSelf->ascon_top__DOT__linear_diffusion_out[3U])) 
                                      << 0x20U) | (QData)((IData)(
                                                                  vlSelf->ascon_top__DOT__linear_diffusion_out[2U]))));
-        __Vtemp19867[3U] = (IData)(((((QData)((IData)(
+        __Vtemp13363[3U] = (IData)(((((QData)((IData)(
                                                       vlSelf->ascon_top__DOT__linear_diffusion_out[3U])) 
                                       << 0x20U) | (QData)((IData)(
                                                                   vlSelf->ascon_top__DOT__linear_diffusion_out[2U]))) 
                                     >> 0x20U));
-        __Vtemp19867[4U] = (IData)((((QData)((IData)(
+        __Vtemp13363[4U] = (IData)((((QData)((IData)(
                                                      vlSelf->ascon_top__DOT__linear_diffusion_out[5U])) 
                                      << 0x20U) | (QData)((IData)(
                                                                  vlSelf->ascon_top__DOT__linear_diffusion_out[4U]))));
-        __Vtemp19867[5U] = (IData)(((((QData)((IData)(
+        __Vtemp13363[5U] = (IData)(((((QData)((IData)(
                                                       vlSelf->ascon_top__DOT__linear_diffusion_out[5U])) 
                                       << 0x20U) | (QData)((IData)(
                                                                   vlSelf->ascon_top__DOT__linear_diffusion_out[4U]))) 
                                     >> 0x20U));
-        __Vtemp19867[6U] = (IData)(((IData)(vlSelf->ascon_top__DOT__sel_mux_linear_diffusion_out_x3)
+        __Vtemp13363[6U] = (IData)(((IData)(vlSelf->ascon_top__DOT__sel_mux_linear_diffusion_out_x3)
                                      ? (vlSelf->ascon_top__DOT__linear_diffusion_debug
                                         [3U] ^ vlSelf->ascon_top__DOT__key1_reg__DOT__reg_q)
                                      : vlSelf->ascon_top__DOT__linear_diffusion_debug
                                     [3U]));
-        __Vtemp19867[7U] = (IData)((((IData)(vlSelf->ascon_top__DOT__sel_mux_linear_diffusion_out_x3)
+        __Vtemp13363[7U] = (IData)((((IData)(vlSelf->ascon_top__DOT__sel_mux_linear_diffusion_out_x3)
                                       ? (vlSelf->ascon_top__DOT__linear_diffusion_debug
                                          [3U] ^ vlSelf->ascon_top__DOT__key1_reg__DOT__reg_q)
                                       : vlSelf->ascon_top__DOT__linear_diffusion_debug
                                      [3U]) >> 0x20U));
-        __Vtemp19867[8U] = (IData)(((IData)(vlSelf->ascon_top__DOT__sel_mux_linear_diffusion_out_x4)
+        __Vtemp13363[8U] = (IData)(((IData)(vlSelf->ascon_top__DOT__sel_mux_linear_diffusion_out_x4)
                                      ? (vlSelf->ascon_top__DOT__linear_diffusion_debug
                                         [4U] ^ ((IData)(vlSelf->ascon_top__DOT__sel_xor_signal)
                                                  ? vlSelf->ascon_top__DOT__key2_reg__DOT__reg_q
                                                  : 0x8000000000000000ULL))
                                      : vlSelf->ascon_top__DOT__linear_diffusion_debug
                                     [4U]));
-        __Vtemp19867[9U] = (IData)((((IData)(vlSelf->ascon_top__DOT__sel_mux_linear_diffusion_out_x4)
+        __Vtemp13363[9U] = (IData)((((IData)(vlSelf->ascon_top__DOT__sel_mux_linear_diffusion_out_x4)
                                       ? (vlSelf->ascon_top__DOT__linear_diffusion_debug
                                          [4U] ^ ((IData)(vlSelf->ascon_top__DOT__sel_xor_signal)
                                                   ? vlSelf->ascon_top__DOT__key2_reg__DOT__reg_q
                                                   : 0x8000000000000000ULL))
                                       : vlSelf->ascon_top__DOT__linear_diffusion_debug
                                      [4U]) >> 0x20U));
-        tracep->fullWData(oldp+825,(__Vtemp19867),320);
-        tracep->fullQData(oldp+835,(((IData)(vlSelf->ascon_top__DOT__sel_mux_linear_diffusion_out_x4)
+        tracep->fullWData(oldp+959,(__Vtemp13363),320);
+        tracep->fullQData(oldp+969,(((IData)(vlSelf->ascon_top__DOT__sel_mux_linear_diffusion_out_x4)
                                       ? (vlSelf->ascon_top__DOT__linear_diffusion_debug
                                          [4U] ^ ((IData)(vlSelf->ascon_top__DOT__sel_xor_signal)
                                                   ? vlSelf->ascon_top__DOT__key2_reg__DOT__reg_q
                                                   : 0x8000000000000000ULL))
                                       : vlSelf->ascon_top__DOT__linear_diffusion_debug
                                      [4U])),64);
-        tracep->fullWData(oldp+837,(vlSelf->ascon_top__DOT__state_reg_out_shiftdplus1),120);
-        tracep->fullIData(oldp+841,((0xffffffU & vlSelf->ascon_top__DOT__state_reg_out_shiftdplus1[0U])),24);
-        tracep->fullIData(oldp+842,((0xffffffU & ((
-                                                   vlSelf->ascon_top__DOT__state_reg_out_shiftdplus1[1U] 
-                                                   << 8U) 
-                                                  | (vlSelf->ascon_top__DOT__state_reg_out_shiftdplus1[0U] 
-                                                     >> 0x18U)))),24);
-        tracep->fullIData(oldp+843,((0xffffffU & ((
-                                                   vlSelf->ascon_top__DOT__state_reg_out_shiftdplus1[2U] 
-                                                   << 0x10U) 
-                                                  | (vlSelf->ascon_top__DOT__state_reg_out_shiftdplus1[1U] 
-                                                     >> 0x10U)))),24);
-        tracep->fullIData(oldp+844,((vlSelf->ascon_top__DOT__state_reg_out_shiftdplus1[2U] 
-                                     >> 8U)),24);
-        tracep->fullIData(oldp+845,((0xffffffU & vlSelf->ascon_top__DOT__state_reg_out_shiftdplus1[3U])),24);
-        tracep->fullIData(oldp+846,(vlSelf->ascon_top__DOT__mux_1st_x0),24);
-        tracep->fullIData(oldp+847,(vlSelf->ascon_top__DOT__mux_1st_x1),24);
-        tracep->fullIData(oldp+848,(vlSelf->ascon_top__DOT__mux_1st_x3),24);
-        tracep->fullIData(oldp+849,(vlSelf->ascon_top__DOT__mux_1st_x4),24);
-        tracep->fullIData(oldp+850,(vlSelf->ascon_top__DOT__sbox_input[0]),20);
-        tracep->fullIData(oldp+851,(vlSelf->ascon_top__DOT__sbox_input[1]),20);
-        tracep->fullIData(oldp+852,(vlSelf->ascon_top__DOT__sbox_input[2]),20);
-        tracep->fullIData(oldp+853,(vlSelf->ascon_top__DOT__sbox_input[3]),20);
-        tracep->fullIData(oldp+854,(vlSelf->ascon_top__DOT__sbox_input[4]),20);
-        tracep->fullIData(oldp+855,(vlSelf->ascon_top__DOT__sbox_input[5]),20);
-        tracep->fullIData(oldp+856,(vlSelf->ascon_top__DOT__sbox_output[0]),20);
-        tracep->fullIData(oldp+857,(vlSelf->ascon_top__DOT__sbox_output[1]),20);
-        tracep->fullIData(oldp+858,(vlSelf->ascon_top__DOT__sbox_output[2]),20);
-        tracep->fullIData(oldp+859,(vlSelf->ascon_top__DOT__sbox_output[3]),20);
-        tracep->fullIData(oldp+860,(vlSelf->ascon_top__DOT__sbox_output[4]),20);
-        tracep->fullIData(oldp+861,(vlSelf->ascon_top__DOT__sbox_output[5]),20);
-        tracep->fullWData(oldp+862,(vlSelf->ascon_top__DOT__linear_diffusion_out),320);
-        tracep->fullQData(oldp+872,(vlSelf->ascon_top__DOT__linear_diffusion_debug[0]),64);
-        tracep->fullQData(oldp+874,(vlSelf->ascon_top__DOT__linear_diffusion_debug[1]),64);
-        tracep->fullQData(oldp+876,(vlSelf->ascon_top__DOT__linear_diffusion_debug[2]),64);
-        tracep->fullQData(oldp+878,(vlSelf->ascon_top__DOT__linear_diffusion_debug[3]),64);
-        tracep->fullQData(oldp+880,(vlSelf->ascon_top__DOT__linear_diffusion_debug[4]),64);
-        tracep->fullIData(oldp+882,(vlSelf->ascon_top__DOT__unnamedblk1__DOT__p),32);
-        tracep->fullQData(oldp+883,(vlSelf->ascon_top__DOT__state_reg__DOT__state[0]),64);
-        tracep->fullQData(oldp+885,(vlSelf->ascon_top__DOT__state_reg__DOT__state[1]),64);
-        tracep->fullQData(oldp+887,(vlSelf->ascon_top__DOT__state_reg__DOT__state[2]),64);
-        tracep->fullQData(oldp+889,(vlSelf->ascon_top__DOT__state_reg__DOT__state[3]),64);
-        tracep->fullQData(oldp+891,(vlSelf->ascon_top__DOT__state_reg__DOT__state[4]),64);
-        tracep->fullIData(oldp+893,(vlSelf->ascon_top__DOT__state_reg__DOT__unnamedblk3__DOT__i),32);
-        tracep->fullCData(oldp+894,((0x3fU & vlSelf->ascon_top__DOT__mux_1st_x0)),6);
-        tracep->fullCData(oldp+895,((0x3fU & vlSelf->ascon_top__DOT__mux_1st_x1)),6);
-        tracep->fullCData(oldp+896,((0x3fU & vlSelf->ascon_top__DOT__mux_1st_x3)),6);
-        tracep->fullCData(oldp+897,((0x3fU & vlSelf->ascon_top__DOT__mux_1st_x4)),6);
-        tracep->fullIData(oldp+898,(vlSelf->ascon_top__DOT__sbox_input
-                                    [0U]),20);
-        tracep->fullIData(oldp+899,(((vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__y
-                                      [4U] << 0x10U) 
-                                     | ((vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__y
-                                         [3U] << 0xcU) 
-                                        | ((vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__y
-                                            [2U] << 8U) 
-                                           | ((vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__y
+        tracep->fullSData(oldp+971,(vlSelf->ascon_top__DOT__sbox_input[0]),15);
+        tracep->fullSData(oldp+972,(vlSelf->ascon_top__DOT__sbox_output[0]),15);
+        tracep->fullIData(oldp+973,(vlSelf->ascon_top__DOT__unnamedblk1__DOT__p),32);
+        tracep->fullSData(oldp+974,(vlSelf->ascon_top__DOT__sbox_input
+                                    [0U]),15);
+        tracep->fullSData(oldp+975,(((vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__y
+                                      [4U] << 0xcU) 
+                                     | ((vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__y
+                                         [3U] << 9U) 
+                                        | ((vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__y
+                                            [2U] << 6U) 
+                                           | ((vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__y
                                                [1U] 
-                                               << 4U) 
-                                              | vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__y
-                                              [0U]))))),20);
-        tracep->fullCData(oldp+900,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__x[0]),4);
-        tracep->fullCData(oldp+901,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__x[1]),4);
-        tracep->fullCData(oldp+902,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__x[2]),4);
-        tracep->fullCData(oldp+903,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__x[3]),4);
-        tracep->fullCData(oldp+904,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__x[4]),4);
-        tracep->fullCData(oldp+905,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_reg
-                                     [0U])),4);
-        tracep->fullCData(oldp+906,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_reg
-                                             [0U] >> 4U))),4);
-        tracep->fullCData(oldp+907,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_reg
-                                             [0U] >> 8U))),4);
-        tracep->fullCData(oldp+908,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_reg
-                                             [0U] >> 0xcU))),4);
-        tracep->fullCData(oldp+909,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_reg
-                                     [1U])),4);
-        tracep->fullCData(oldp+910,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_reg
-                                             [1U] >> 4U))),4);
-        tracep->fullCData(oldp+911,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_reg
-                                             [1U] >> 8U))),4);
-        tracep->fullCData(oldp+912,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_reg
-                                             [1U] >> 0xcU))),4);
-        tracep->fullCData(oldp+913,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_reg
-                                     [2U])),4);
-        tracep->fullCData(oldp+914,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_reg
-                                             [2U] >> 4U))),4);
-        tracep->fullCData(oldp+915,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_reg
-                                             [2U] >> 8U))),4);
-        tracep->fullCData(oldp+916,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_reg
-                                             [2U] >> 0xcU))),4);
-        tracep->fullCData(oldp+917,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_reg
-                                     [3U])),4);
-        tracep->fullCData(oldp+918,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_reg
-                                             [3U] >> 4U))),4);
-        tracep->fullCData(oldp+919,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_reg
-                                             [3U] >> 8U))),4);
-        tracep->fullCData(oldp+920,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_reg
-                                             [3U] >> 0xcU))),4);
-        tracep->fullCData(oldp+921,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_reg
-                                     [4U])),4);
-        tracep->fullCData(oldp+922,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_reg
-                                             [4U] >> 4U))),4);
-        tracep->fullCData(oldp+923,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_reg
-                                             [4U] >> 8U))),4);
-        tracep->fullCData(oldp+924,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_reg
-                                             [4U] >> 0xcU))),4);
-        tracep->fullCData(oldp+925,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__y[0]),4);
-        tracep->fullCData(oldp+926,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__y[1]),4);
-        tracep->fullCData(oldp+927,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__y[2]),4);
-        tracep->fullCData(oldp+928,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__y[3]),4);
-        tracep->fullCData(oldp+929,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__y[4]),4);
-        tracep->fullIData(oldp+930,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__unnamedblk6__DOT__i),32);
-        tracep->fullCData(oldp+931,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__unnamedblk9__DOT__unnamedblk10__DOT__unnamedblk11__DOT__temp),4);
-        tracep->fullIData(oldp+932,(vlSelf->ascon_top__DOT__sbox_input
-                                    [1U]),20);
-        tracep->fullIData(oldp+933,(((vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__y
-                                      [4U] << 0x10U) 
-                                     | ((vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__y
-                                         [3U] << 0xcU) 
-                                        | ((vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__y
-                                            [2U] << 8U) 
-                                           | ((vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__y
-                                               [1U] 
-                                               << 4U) 
-                                              | vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__y
-                                              [0U]))))),20);
-        tracep->fullCData(oldp+934,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__x[0]),4);
-        tracep->fullCData(oldp+935,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__x[1]),4);
-        tracep->fullCData(oldp+936,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__x[2]),4);
-        tracep->fullCData(oldp+937,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__x[3]),4);
-        tracep->fullCData(oldp+938,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__x[4]),4);
-        tracep->fullCData(oldp+939,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__and_result_reg
-                                     [0U])),4);
-        tracep->fullCData(oldp+940,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__and_result_reg
-                                             [0U] >> 4U))),4);
-        tracep->fullCData(oldp+941,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__and_result_reg
-                                             [0U] >> 8U))),4);
-        tracep->fullCData(oldp+942,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__and_result_reg
-                                             [0U] >> 0xcU))),4);
-        tracep->fullCData(oldp+943,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__and_result_reg
-                                     [1U])),4);
-        tracep->fullCData(oldp+944,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__and_result_reg
-                                             [1U] >> 4U))),4);
-        tracep->fullCData(oldp+945,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__and_result_reg
-                                             [1U] >> 8U))),4);
-        tracep->fullCData(oldp+946,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__and_result_reg
-                                             [1U] >> 0xcU))),4);
-        tracep->fullCData(oldp+947,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__and_result_reg
-                                     [2U])),4);
-        tracep->fullCData(oldp+948,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__and_result_reg
-                                             [2U] >> 4U))),4);
-        tracep->fullCData(oldp+949,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__and_result_reg
-                                             [2U] >> 8U))),4);
-        tracep->fullCData(oldp+950,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__and_result_reg
-                                             [2U] >> 0xcU))),4);
-        tracep->fullCData(oldp+951,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__and_result_reg
-                                     [3U])),4);
-        tracep->fullCData(oldp+952,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__and_result_reg
-                                             [3U] >> 4U))),4);
-        tracep->fullCData(oldp+953,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__and_result_reg
-                                             [3U] >> 8U))),4);
-        tracep->fullCData(oldp+954,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__and_result_reg
-                                             [3U] >> 0xcU))),4);
-        tracep->fullCData(oldp+955,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__and_result_reg
-                                     [4U])),4);
-        tracep->fullCData(oldp+956,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__and_result_reg
-                                             [4U] >> 4U))),4);
-        tracep->fullCData(oldp+957,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__and_result_reg
-                                             [4U] >> 8U))),4);
-        tracep->fullCData(oldp+958,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__and_result_reg
-                                             [4U] >> 0xcU))),4);
-        tracep->fullCData(oldp+959,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__y[0]),4);
-        tracep->fullCData(oldp+960,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__y[1]),4);
-        tracep->fullCData(oldp+961,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__y[2]),4);
-        tracep->fullCData(oldp+962,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__y[3]),4);
-        tracep->fullCData(oldp+963,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__y[4]),4);
-        tracep->fullIData(oldp+964,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__unnamedblk6__DOT__i),32);
-        tracep->fullCData(oldp+965,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__unnamedblk9__DOT__unnamedblk10__DOT__unnamedblk11__DOT__temp),4);
-        tracep->fullIData(oldp+966,(vlSelf->ascon_top__DOT__sbox_input
-                                    [2U]),20);
-        tracep->fullIData(oldp+967,(((vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__y
-                                      [4U] << 0x10U) 
-                                     | ((vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__y
-                                         [3U] << 0xcU) 
-                                        | ((vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__y
-                                            [2U] << 8U) 
-                                           | ((vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__y
-                                               [1U] 
-                                               << 4U) 
-                                              | vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__y
-                                              [0U]))))),20);
-        tracep->fullCData(oldp+968,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__x[0]),4);
-        tracep->fullCData(oldp+969,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__x[1]),4);
-        tracep->fullCData(oldp+970,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__x[2]),4);
-        tracep->fullCData(oldp+971,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__x[3]),4);
-        tracep->fullCData(oldp+972,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__x[4]),4);
-        tracep->fullCData(oldp+973,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__and_result_reg
-                                     [0U])),4);
-        tracep->fullCData(oldp+974,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__and_result_reg
-                                             [0U] >> 4U))),4);
-        tracep->fullCData(oldp+975,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__and_result_reg
-                                             [0U] >> 8U))),4);
-        tracep->fullCData(oldp+976,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__and_result_reg
-                                             [0U] >> 0xcU))),4);
-        tracep->fullCData(oldp+977,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__and_result_reg
-                                     [1U])),4);
-        tracep->fullCData(oldp+978,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__and_result_reg
-                                             [1U] >> 4U))),4);
-        tracep->fullCData(oldp+979,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__and_result_reg
-                                             [1U] >> 8U))),4);
-        tracep->fullCData(oldp+980,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__and_result_reg
-                                             [1U] >> 0xcU))),4);
-        tracep->fullCData(oldp+981,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__and_result_reg
-                                     [2U])),4);
-        tracep->fullCData(oldp+982,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__and_result_reg
-                                             [2U] >> 4U))),4);
-        tracep->fullCData(oldp+983,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__and_result_reg
-                                             [2U] >> 8U))),4);
-        tracep->fullCData(oldp+984,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__and_result_reg
-                                             [2U] >> 0xcU))),4);
-        tracep->fullCData(oldp+985,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__and_result_reg
-                                     [3U])),4);
-        tracep->fullCData(oldp+986,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__and_result_reg
-                                             [3U] >> 4U))),4);
-        tracep->fullCData(oldp+987,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__and_result_reg
-                                             [3U] >> 8U))),4);
-        tracep->fullCData(oldp+988,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__and_result_reg
-                                             [3U] >> 0xcU))),4);
-        tracep->fullCData(oldp+989,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__and_result_reg
-                                     [4U])),4);
-        tracep->fullCData(oldp+990,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__and_result_reg
-                                             [4U] >> 4U))),4);
-        tracep->fullCData(oldp+991,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__and_result_reg
-                                             [4U] >> 8U))),4);
-        tracep->fullCData(oldp+992,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__and_result_reg
-                                             [4U] >> 0xcU))),4);
-        tracep->fullCData(oldp+993,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__y[0]),4);
-        tracep->fullCData(oldp+994,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__y[1]),4);
-        tracep->fullCData(oldp+995,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__y[2]),4);
-        tracep->fullCData(oldp+996,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__y[3]),4);
-        tracep->fullCData(oldp+997,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__y[4]),4);
-        tracep->fullIData(oldp+998,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__unnamedblk6__DOT__i),32);
-        tracep->fullCData(oldp+999,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__unnamedblk9__DOT__unnamedblk10__DOT__unnamedblk11__DOT__temp),4);
-        tracep->fullIData(oldp+1000,(vlSelf->ascon_top__DOT__sbox_input
-                                     [3U]),20);
-        tracep->fullIData(oldp+1001,(((vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__y
-                                       [4U] << 0x10U) 
-                                      | ((vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__y
-                                          [3U] << 0xcU) 
-                                         | ((vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__y
-                                             [2U] << 8U) 
-                                            | ((vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__y
+                                               << 3U) 
+                                              | vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__y
+                                              [0U]))))),15);
+        tracep->fullCData(oldp+976,(vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__x[0]),3);
+        tracep->fullCData(oldp+977,(vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__x[1]),3);
+        tracep->fullCData(oldp+978,(vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__x[2]),3);
+        tracep->fullCData(oldp+979,(vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__x[3]),3);
+        tracep->fullCData(oldp+980,(vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__x[4]),3);
+        tracep->fullCData(oldp+981,((7U & vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_reg
+                                     [0U])),3);
+        tracep->fullCData(oldp+982,((7U & (vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_reg
+                                           [0U] >> 3U))),3);
+        tracep->fullCData(oldp+983,((7U & (vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_reg
+                                           [0U] >> 6U))),3);
+        tracep->fullCData(oldp+984,((7U & vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_reg
+                                     [1U])),3);
+        tracep->fullCData(oldp+985,((7U & (vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_reg
+                                           [1U] >> 3U))),3);
+        tracep->fullCData(oldp+986,((7U & (vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_reg
+                                           [1U] >> 6U))),3);
+        tracep->fullCData(oldp+987,((7U & vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_reg
+                                     [2U])),3);
+        tracep->fullCData(oldp+988,((7U & (vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_reg
+                                           [2U] >> 3U))),3);
+        tracep->fullCData(oldp+989,((7U & (vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_reg
+                                           [2U] >> 6U))),3);
+        tracep->fullCData(oldp+990,((7U & vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_reg
+                                     [3U])),3);
+        tracep->fullCData(oldp+991,((7U & (vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_reg
+                                           [3U] >> 3U))),3);
+        tracep->fullCData(oldp+992,((7U & (vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_reg
+                                           [3U] >> 6U))),3);
+        tracep->fullCData(oldp+993,((7U & vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_reg
+                                     [4U])),3);
+        tracep->fullCData(oldp+994,((7U & (vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_reg
+                                           [4U] >> 3U))),3);
+        tracep->fullCData(oldp+995,((7U & (vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_reg
+                                           [4U] >> 6U))),3);
+        tracep->fullCData(oldp+996,(vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__y[0]),3);
+        tracep->fullCData(oldp+997,(vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__y[1]),3);
+        tracep->fullCData(oldp+998,(vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__y[2]),3);
+        tracep->fullCData(oldp+999,(vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__y[3]),3);
+        tracep->fullCData(oldp+1000,(vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__y[4]),3);
+        tracep->fullIData(oldp+1001,(vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__unnamedblk6__DOT__i),32);
+        tracep->fullCData(oldp+1002,(vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__unnamedblk9__DOT__unnamedblk10__DOT__unnamedblk11__DOT__temp),3);
+        tracep->fullSData(oldp+1003,(vlSelf->ascon_top__DOT__lfsr_out),13);
+        tracep->fullIData(oldp+1004,(vlSelf->ascon_top__DOT__lfsr_state_in),31);
+        tracep->fullIData(oldp+1005,(vlSelf->ascon_top__DOT__lfsr_state_out),31);
+        tracep->fullSData(oldp+1006,((0x3ffU & (IData)(vlSelf->ascon_top__DOT__lfsr_out))),10);
+        tracep->fullCData(oldp+1007,((7U & ((IData)(vlSelf->ascon_top__DOT__lfsr_out) 
+                                            >> 0xaU))),3);
+        tracep->fullSData(oldp+1008,(vlSelf->ascon_top__DOT__sbox_output_unmasked[0]),15);
+        tracep->fullBit(oldp+1009,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__0__KET____DOT__state_reg));
+        tracep->fullBit(oldp+1010,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__1__KET____DOT__state_reg));
+        tracep->fullBit(oldp+1011,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__2__KET____DOT__state_reg));
+        tracep->fullBit(oldp+1012,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__3__KET____DOT__state_reg));
+        tracep->fullBit(oldp+1013,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__4__KET____DOT__state_reg));
+        tracep->fullBit(oldp+1014,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__5__KET____DOT__state_reg));
+        tracep->fullBit(oldp+1015,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__6__KET____DOT__state_reg));
+        tracep->fullBit(oldp+1016,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__7__KET____DOT__state_reg));
+        tracep->fullBit(oldp+1017,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__8__KET____DOT__state_reg));
+        tracep->fullBit(oldp+1018,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__9__KET____DOT__state_reg));
+        tracep->fullBit(oldp+1019,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__10__KET____DOT__state_reg));
+        tracep->fullBit(oldp+1020,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__11__KET____DOT__state_reg));
+        tracep->fullBit(oldp+1021,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__12__KET____DOT__state_reg));
+        tracep->fullBit(oldp+1022,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__13__KET____DOT__state_reg));
+        tracep->fullBit(oldp+1023,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__14__KET____DOT__state_reg));
+        tracep->fullBit(oldp+1024,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__15__KET____DOT__state_reg));
+        tracep->fullBit(oldp+1025,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__16__KET____DOT__state_reg));
+        tracep->fullBit(oldp+1026,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__17__KET____DOT__state_reg));
+        tracep->fullBit(oldp+1027,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__18__KET____DOT__state_reg));
+        tracep->fullBit(oldp+1028,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__19__KET____DOT__state_reg));
+        tracep->fullBit(oldp+1029,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__20__KET____DOT__state_reg));
+        tracep->fullBit(oldp+1030,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__21__KET____DOT__state_reg));
+        tracep->fullBit(oldp+1031,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__22__KET____DOT__state_reg));
+        tracep->fullBit(oldp+1032,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__23__KET____DOT__state_reg));
+        tracep->fullBit(oldp+1033,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__24__KET____DOT__state_reg));
+        tracep->fullBit(oldp+1034,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__25__KET____DOT__state_reg));
+        tracep->fullBit(oldp+1035,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__26__KET____DOT__state_reg));
+        tracep->fullBit(oldp+1036,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__27__KET____DOT__state_reg));
+        tracep->fullBit(oldp+1037,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__28__KET____DOT__state_reg));
+        tracep->fullBit(oldp+1038,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__29__KET____DOT__state_reg));
+        tracep->fullBit(oldp+1039,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_state__BRA__30__KET____DOT__state_reg));
+        tracep->fullBit(oldp+1040,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__0__KET____DOT__data_reg));
+        tracep->fullBit(oldp+1041,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__1__KET____DOT__data_reg));
+        tracep->fullBit(oldp+1042,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__2__KET____DOT__data_reg));
+        tracep->fullBit(oldp+1043,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__3__KET____DOT__data_reg));
+        tracep->fullBit(oldp+1044,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__4__KET____DOT__data_reg));
+        tracep->fullBit(oldp+1045,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__5__KET____DOT__data_reg));
+        tracep->fullBit(oldp+1046,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__6__KET____DOT__data_reg));
+        tracep->fullBit(oldp+1047,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__7__KET____DOT__data_reg));
+        tracep->fullBit(oldp+1048,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__8__KET____DOT__data_reg));
+        tracep->fullBit(oldp+1049,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__9__KET____DOT__data_reg));
+        tracep->fullBit(oldp+1050,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__10__KET____DOT__data_reg));
+        tracep->fullBit(oldp+1051,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__11__KET____DOT__data_reg));
+        tracep->fullBit(oldp+1052,(vlSelf->ascon_top__DOT__lfst_inst__DOT__genblk1__DOT__lfsr_data__BRA__12__KET____DOT__data_reg));
+        tracep->fullSData(oldp+1053,(((vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__y_noMask
+                                       [4U] << 0xcU) 
+                                      | ((vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__y_noMask
+                                          [3U] << 9U) 
+                                         | ((vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__y_noMask
+                                             [2U] << 6U) 
+                                            | ((vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__y_noMask
                                                 [1U] 
-                                                << 4U) 
-                                               | vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__y
-                                               [0U]))))),20);
-        tracep->fullCData(oldp+1002,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__x[0]),4);
-        tracep->fullCData(oldp+1003,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__x[1]),4);
-        tracep->fullCData(oldp+1004,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__x[2]),4);
-        tracep->fullCData(oldp+1005,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__x[3]),4);
-        tracep->fullCData(oldp+1006,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__x[4]),4);
-        tracep->fullCData(oldp+1007,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__and_result_reg
-                                      [0U])),4);
-        tracep->fullCData(oldp+1008,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__and_result_reg
-                                              [0U] 
-                                              >> 4U))),4);
-        tracep->fullCData(oldp+1009,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__and_result_reg
-                                              [0U] 
-                                              >> 8U))),4);
-        tracep->fullCData(oldp+1010,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__and_result_reg
-                                              [0U] 
-                                              >> 0xcU))),4);
-        tracep->fullCData(oldp+1011,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__and_result_reg
-                                      [1U])),4);
-        tracep->fullCData(oldp+1012,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__and_result_reg
-                                              [1U] 
-                                              >> 4U))),4);
-        tracep->fullCData(oldp+1013,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__and_result_reg
-                                              [1U] 
-                                              >> 8U))),4);
-        tracep->fullCData(oldp+1014,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__and_result_reg
-                                              [1U] 
-                                              >> 0xcU))),4);
-        tracep->fullCData(oldp+1015,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__and_result_reg
-                                      [2U])),4);
-        tracep->fullCData(oldp+1016,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__and_result_reg
-                                              [2U] 
-                                              >> 4U))),4);
-        tracep->fullCData(oldp+1017,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__and_result_reg
-                                              [2U] 
-                                              >> 8U))),4);
-        tracep->fullCData(oldp+1018,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__and_result_reg
-                                              [2U] 
-                                              >> 0xcU))),4);
-        tracep->fullCData(oldp+1019,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__and_result_reg
-                                      [3U])),4);
-        tracep->fullCData(oldp+1020,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__and_result_reg
-                                              [3U] 
-                                              >> 4U))),4);
-        tracep->fullCData(oldp+1021,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__and_result_reg
-                                              [3U] 
-                                              >> 8U))),4);
-        tracep->fullCData(oldp+1022,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__and_result_reg
-                                              [3U] 
-                                              >> 0xcU))),4);
-        tracep->fullCData(oldp+1023,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__and_result_reg
-                                      [4U])),4);
-        tracep->fullCData(oldp+1024,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__and_result_reg
-                                              [4U] 
-                                              >> 4U))),4);
-        tracep->fullCData(oldp+1025,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__and_result_reg
-                                              [4U] 
-                                              >> 8U))),4);
-        tracep->fullCData(oldp+1026,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__and_result_reg
-                                              [4U] 
-                                              >> 0xcU))),4);
-        tracep->fullCData(oldp+1027,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__y[0]),4);
-        tracep->fullCData(oldp+1028,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__y[1]),4);
-        tracep->fullCData(oldp+1029,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__y[2]),4);
-        tracep->fullCData(oldp+1030,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__y[3]),4);
-        tracep->fullCData(oldp+1031,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__y[4]),4);
-        tracep->fullIData(oldp+1032,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__unnamedblk6__DOT__i),32);
-        tracep->fullCData(oldp+1033,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__unnamedblk9__DOT__unnamedblk10__DOT__unnamedblk11__DOT__temp),4);
-        tracep->fullIData(oldp+1034,(vlSelf->ascon_top__DOT__sbox_input
-                                     [4U]),20);
-        tracep->fullIData(oldp+1035,(((vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__y
-                                       [4U] << 0x10U) 
-                                      | ((vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__y
-                                          [3U] << 0xcU) 
-                                         | ((vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__y
-                                             [2U] << 8U) 
-                                            | ((vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__y
-                                                [1U] 
-                                                << 4U) 
-                                               | vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__y
-                                               [0U]))))),20);
-        tracep->fullCData(oldp+1036,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__x[0]),4);
-        tracep->fullCData(oldp+1037,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__x[1]),4);
-        tracep->fullCData(oldp+1038,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__x[2]),4);
-        tracep->fullCData(oldp+1039,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__x[3]),4);
-        tracep->fullCData(oldp+1040,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__x[4]),4);
-        tracep->fullCData(oldp+1041,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__and_result_reg
-                                      [0U])),4);
-        tracep->fullCData(oldp+1042,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__and_result_reg
-                                              [0U] 
-                                              >> 4U))),4);
-        tracep->fullCData(oldp+1043,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__and_result_reg
-                                              [0U] 
-                                              >> 8U))),4);
-        tracep->fullCData(oldp+1044,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__and_result_reg
-                                              [0U] 
-                                              >> 0xcU))),4);
-        tracep->fullCData(oldp+1045,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__and_result_reg
-                                      [1U])),4);
-        tracep->fullCData(oldp+1046,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__and_result_reg
-                                              [1U] 
-                                              >> 4U))),4);
-        tracep->fullCData(oldp+1047,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__and_result_reg
-                                              [1U] 
-                                              >> 8U))),4);
-        tracep->fullCData(oldp+1048,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__and_result_reg
-                                              [1U] 
-                                              >> 0xcU))),4);
-        tracep->fullCData(oldp+1049,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__and_result_reg
-                                      [2U])),4);
-        tracep->fullCData(oldp+1050,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__and_result_reg
-                                              [2U] 
-                                              >> 4U))),4);
-        tracep->fullCData(oldp+1051,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__and_result_reg
-                                              [2U] 
-                                              >> 8U))),4);
-        tracep->fullCData(oldp+1052,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__and_result_reg
-                                              [2U] 
-                                              >> 0xcU))),4);
-        tracep->fullCData(oldp+1053,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__and_result_reg
-                                      [3U])),4);
-        tracep->fullCData(oldp+1054,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__and_result_reg
-                                              [3U] 
-                                              >> 4U))),4);
-        tracep->fullCData(oldp+1055,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__and_result_reg
-                                              [3U] 
-                                              >> 8U))),4);
-        tracep->fullCData(oldp+1056,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__and_result_reg
-                                              [3U] 
-                                              >> 0xcU))),4);
-        tracep->fullCData(oldp+1057,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__and_result_reg
-                                      [4U])),4);
-        tracep->fullCData(oldp+1058,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__and_result_reg
-                                              [4U] 
-                                              >> 4U))),4);
-        tracep->fullCData(oldp+1059,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__and_result_reg
-                                              [4U] 
-                                              >> 8U))),4);
-        tracep->fullCData(oldp+1060,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__and_result_reg
-                                              [4U] 
-                                              >> 0xcU))),4);
-        tracep->fullCData(oldp+1061,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__y[0]),4);
-        tracep->fullCData(oldp+1062,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__y[1]),4);
-        tracep->fullCData(oldp+1063,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__y[2]),4);
-        tracep->fullCData(oldp+1064,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__y[3]),4);
-        tracep->fullCData(oldp+1065,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__y[4]),4);
-        tracep->fullIData(oldp+1066,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__unnamedblk6__DOT__i),32);
-        tracep->fullCData(oldp+1067,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__unnamedblk9__DOT__unnamedblk10__DOT__unnamedblk11__DOT__temp),4);
-        tracep->fullIData(oldp+1068,(vlSelf->ascon_top__DOT__sbox_input
-                                     [5U]),20);
-        tracep->fullIData(oldp+1069,(((vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__y
-                                       [4U] << 0x10U) 
-                                      | ((vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__y
-                                          [3U] << 0xcU) 
-                                         | ((vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__y
-                                             [2U] << 8U) 
-                                            | ((vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__y
-                                                [1U] 
-                                                << 4U) 
-                                               | vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__y
-                                               [0U]))))),20);
-        tracep->fullCData(oldp+1070,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__x[0]),4);
-        tracep->fullCData(oldp+1071,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__x[1]),4);
-        tracep->fullCData(oldp+1072,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__x[2]),4);
-        tracep->fullCData(oldp+1073,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__x[3]),4);
-        tracep->fullCData(oldp+1074,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__x[4]),4);
-        tracep->fullCData(oldp+1075,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__and_result_reg
-                                      [0U])),4);
-        tracep->fullCData(oldp+1076,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__and_result_reg
-                                              [0U] 
-                                              >> 4U))),4);
-        tracep->fullCData(oldp+1077,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__and_result_reg
-                                              [0U] 
-                                              >> 8U))),4);
-        tracep->fullCData(oldp+1078,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__and_result_reg
-                                              [0U] 
-                                              >> 0xcU))),4);
-        tracep->fullCData(oldp+1079,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__and_result_reg
-                                      [1U])),4);
-        tracep->fullCData(oldp+1080,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__and_result_reg
-                                              [1U] 
-                                              >> 4U))),4);
-        tracep->fullCData(oldp+1081,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__and_result_reg
-                                              [1U] 
-                                              >> 8U))),4);
-        tracep->fullCData(oldp+1082,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__and_result_reg
-                                              [1U] 
-                                              >> 0xcU))),4);
-        tracep->fullCData(oldp+1083,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__and_result_reg
-                                      [2U])),4);
-        tracep->fullCData(oldp+1084,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__and_result_reg
-                                              [2U] 
-                                              >> 4U))),4);
-        tracep->fullCData(oldp+1085,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__and_result_reg
-                                              [2U] 
-                                              >> 8U))),4);
-        tracep->fullCData(oldp+1086,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__and_result_reg
-                                              [2U] 
-                                              >> 0xcU))),4);
-        tracep->fullCData(oldp+1087,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__and_result_reg
-                                      [3U])),4);
-        tracep->fullCData(oldp+1088,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__and_result_reg
-                                              [3U] 
-                                              >> 4U))),4);
-        tracep->fullCData(oldp+1089,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__and_result_reg
-                                              [3U] 
-                                              >> 8U))),4);
-        tracep->fullCData(oldp+1090,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__and_result_reg
-                                              [3U] 
-                                              >> 0xcU))),4);
-        tracep->fullCData(oldp+1091,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__and_result_reg
-                                      [4U])),4);
-        tracep->fullCData(oldp+1092,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__and_result_reg
-                                              [4U] 
-                                              >> 4U))),4);
-        tracep->fullCData(oldp+1093,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__and_result_reg
-                                              [4U] 
-                                              >> 8U))),4);
-        tracep->fullCData(oldp+1094,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__and_result_reg
-                                              [4U] 
-                                              >> 0xcU))),4);
-        tracep->fullCData(oldp+1095,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__y[0]),4);
-        tracep->fullCData(oldp+1096,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__y[1]),4);
-        tracep->fullCData(oldp+1097,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__y[2]),4);
-        tracep->fullCData(oldp+1098,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__y[3]),4);
-        tracep->fullCData(oldp+1099,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__y[4]),4);
-        tracep->fullIData(oldp+1100,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__unnamedblk6__DOT__i),32);
-        tracep->fullCData(oldp+1101,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__unnamedblk9__DOT__unnamedblk10__DOT__unnamedblk11__DOT__temp),4);
-        tracep->fullQData(oldp+1102,(vlSelf->ascon_top__DOT__state_reg_in_absorb[0]),64);
-        tracep->fullQData(oldp+1104,(vlSelf->ascon_top__DOT__state_reg_in_absorb[1]),64);
-        tracep->fullQData(oldp+1106,(vlSelf->ascon_top__DOT__state_reg_in_absorb[2]),64);
-        tracep->fullQData(oldp+1108,(vlSelf->ascon_top__DOT__state_reg_in_absorb[3]),64);
-        tracep->fullQData(oldp+1110,(vlSelf->ascon_top__DOT__state_reg_in_absorb[4]),64);
-        tracep->fullBit(oldp+1112,(vlSelf->ascon_top__DOT__write_en));
-        tracep->fullBit(oldp+1113,(vlSelf->ascon_top__DOT__sel_mux_linear_diffusion_out_x4));
-        tracep->fullBit(oldp+1114,(vlSelf->ascon_top__DOT__sel_init_load));
-        tracep->fullBit(oldp+1115,(vlSelf->ascon_top__DOT__sel_padding));
-        tracep->fullBit(oldp+1116,(vlSelf->ascon_top__DOT__sel_absorb_data));
-        tracep->fullWData(oldp+1117,(vlSelf->ascon_top__DOT__state_reg_in),320);
-        tracep->fullWData(oldp+1127,(vlSelf->ascon_top__DOT__data_in_padded),128);
-        tracep->fullWData(oldp+1131,(vlSelf->ascon_top__DOT__reverse_reg_data_out),128);
-        tracep->fullIData(oldp+1135,(vlSelf->ascon_top__DOT__unnamedblk5__DOT__i),32);
-        tracep->fullBit(oldp+1136,(vlSelf->ascon_top__DOT__mealy_fsm__DOT__extra_padding));
-        tracep->fullCData(oldp+1137,(vlSelf->ascon_top__DOT__mealy_fsm__DOT__next_state),5);
-        tracep->fullBit(oldp+1138,(vlSelf->ascon_top__DOT__mealy_fsm__DOT__last_block_process));
-        tracep->fullBit(oldp+1139,(vlSelf->ascon_top__DOT__mealy_fsm__DOT__last_block_process_load));
-        tracep->fullBit(oldp+1140,(vlSelf->ascon_top__DOT__mealy_fsm__DOT__extra_padding_load));
-        tracep->fullBit(oldp+1141,(vlSelf->ascon_top__DOT__mealy_fsm__DOT__rst_counter_round));
-        tracep->fullQData(oldp+1142,(vlSelf->ascon_top__DOT__state_reg__DOT__next_state[0]),64);
-        tracep->fullQData(oldp+1144,(vlSelf->ascon_top__DOT__state_reg__DOT__next_state[1]),64);
-        tracep->fullQData(oldp+1146,(vlSelf->ascon_top__DOT__state_reg__DOT__next_state[2]),64);
-        tracep->fullQData(oldp+1148,(vlSelf->ascon_top__DOT__state_reg__DOT__next_state[3]),64);
-        tracep->fullQData(oldp+1150,(vlSelf->ascon_top__DOT__state_reg__DOT__next_state[4]),64);
-        tracep->fullWData(oldp+1152,(vlSelf->ascon_top__DOT__state_reg_in_shiftdplus1),120);
-        tracep->fullIData(oldp+1156,(vlSelf->ascon_top__DOT__recombine_shares),30);
-        tracep->fullIData(oldp+1157,(vlSelf->ascon_top__DOT__mux_1st_x2),24);
-        tracep->fullWData(oldp+1158,(vlSelf->ascon_top__DOT__shares_out),120);
-        tracep->fullIData(oldp+1162,(vlSelf->ascon_top__DOT__affine_layer_in[0]),30);
-        tracep->fullIData(oldp+1163,(vlSelf->ascon_top__DOT__affine_layer_in[1]),30);
-        tracep->fullIData(oldp+1164,(vlSelf->ascon_top__DOT__affine_layer_in[2]),30);
-        tracep->fullIData(oldp+1165,(vlSelf->ascon_top__DOT__affine_layer_in[3]),30);
-        tracep->fullIData(oldp+1166,(vlSelf->ascon_top__DOT__affine_layer_out[0]),30);
-        tracep->fullIData(oldp+1167,(vlSelf->ascon_top__DOT__affine_layer_out[1]),30);
-        tracep->fullIData(oldp+1168,(vlSelf->ascon_top__DOT__affine_layer_out[2]),30);
-        tracep->fullIData(oldp+1169,(vlSelf->ascon_top__DOT__affine_layer_out[3]),30);
-        tracep->fullIData(oldp+1170,(vlSelf->ascon_top__DOT__next_sbox_input[0]),20);
-        tracep->fullIData(oldp+1171,(vlSelf->ascon_top__DOT__next_sbox_input[1]),20);
-        tracep->fullIData(oldp+1172,(vlSelf->ascon_top__DOT__next_sbox_input[2]),20);
-        tracep->fullIData(oldp+1173,(vlSelf->ascon_top__DOT__next_sbox_input[3]),20);
-        tracep->fullIData(oldp+1174,(vlSelf->ascon_top__DOT__next_sbox_input[4]),20);
-        tracep->fullIData(oldp+1175,(vlSelf->ascon_top__DOT__next_sbox_input[5]),20);
-        tracep->fullIData(oldp+1176,(vlSelf->ascon_top__DOT__sbox_output_unmasked[0]),20);
-        tracep->fullIData(oldp+1177,(vlSelf->ascon_top__DOT__sbox_output_unmasked[1]),20);
-        tracep->fullIData(oldp+1178,(vlSelf->ascon_top__DOT__sbox_output_unmasked[2]),20);
-        tracep->fullIData(oldp+1179,(vlSelf->ascon_top__DOT__sbox_output_unmasked[3]),20);
-        tracep->fullIData(oldp+1180,(vlSelf->ascon_top__DOT__sbox_output_unmasked[4]),20);
-        tracep->fullIData(oldp+1181,(vlSelf->ascon_top__DOT__sbox_output_unmasked[5]),20);
-        tracep->fullIData(oldp+1182,(vlSelf->ascon_top__DOT__mux_sbox_out[0]),20);
-        tracep->fullIData(oldp+1183,(vlSelf->ascon_top__DOT__mux_sbox_out[1]),20);
-        tracep->fullIData(oldp+1184,(vlSelf->ascon_top__DOT__mux_sbox_out[2]),20);
-        tracep->fullIData(oldp+1185,(vlSelf->ascon_top__DOT__mux_sbox_out[3]),20);
-        tracep->fullIData(oldp+1186,(vlSelf->ascon_top__DOT__mux_sbox_out[4]),20);
-        tracep->fullIData(oldp+1187,(vlSelf->ascon_top__DOT__mux_sbox_out[5]),20);
-        tracep->fullIData(oldp+1188,(vlSelf->ascon_top__DOT__affine_layer2nd_in[0]),30);
-        tracep->fullIData(oldp+1189,(vlSelf->ascon_top__DOT__affine_layer2nd_in[1]),30);
-        tracep->fullIData(oldp+1190,(vlSelf->ascon_top__DOT__affine_layer2nd_in[2]),30);
-        tracep->fullIData(oldp+1191,(vlSelf->ascon_top__DOT__affine_layer2nd_in[3]),30);
-        tracep->fullIData(oldp+1192,(vlSelf->ascon_top__DOT__affine_layer2nd_out[0]),30);
-        tracep->fullIData(oldp+1193,(vlSelf->ascon_top__DOT__affine_layer2nd_out[1]),30);
-        tracep->fullIData(oldp+1194,(vlSelf->ascon_top__DOT__affine_layer2nd_out[2]),30);
-        tracep->fullIData(oldp+1195,(vlSelf->ascon_top__DOT__affine_layer2nd_out[3]),30);
-        tracep->fullCData(oldp+1196,((0x3fU & (~ (vlSelf->ascon_top__DOT__affine_layer2nd_in
-                                                  [0U] 
-                                                  >> 0xcU)))),6);
-        tracep->fullCData(oldp+1197,(vlSelf->ascon_top__DOT__recombine__BRA__0__KET____DOT__temp_bits),4);
-        tracep->fullCData(oldp+1198,(vlSelf->ascon_top__DOT__recombine__BRA__1__KET____DOT__temp_bits),4);
-        tracep->fullCData(oldp+1199,(vlSelf->ascon_top__DOT__recombine__BRA__2__KET____DOT__temp_bits),4);
-        tracep->fullCData(oldp+1200,(vlSelf->ascon_top__DOT__recombine__BRA__3__KET____DOT__temp_bits),4);
-        tracep->fullCData(oldp+1201,(vlSelf->ascon_top__DOT__recombine__BRA__4__KET____DOT__temp_bits),4);
-        tracep->fullCData(oldp+1202,(vlSelf->ascon_top__DOT__recombine__BRA__5__KET____DOT__temp_bits),4);
-        tracep->fullCData(oldp+1203,(vlSelf->ascon_top__DOT__recombine__BRA__6__KET____DOT__temp_bits),4);
-        tracep->fullCData(oldp+1204,(vlSelf->ascon_top__DOT__recombine__BRA__7__KET____DOT__temp_bits),4);
-        tracep->fullCData(oldp+1205,(vlSelf->ascon_top__DOT__recombine__BRA__8__KET____DOT__temp_bits),4);
-        tracep->fullCData(oldp+1206,(vlSelf->ascon_top__DOT__recombine__BRA__9__KET____DOT__temp_bits),4);
-        tracep->fullCData(oldp+1207,(vlSelf->ascon_top__DOT__recombine__BRA__10__KET____DOT__temp_bits),4);
-        tracep->fullCData(oldp+1208,(vlSelf->ascon_top__DOT__recombine__BRA__11__KET____DOT__temp_bits),4);
-        tracep->fullCData(oldp+1209,(vlSelf->ascon_top__DOT__recombine__BRA__12__KET____DOT__temp_bits),4);
-        tracep->fullCData(oldp+1210,(vlSelf->ascon_top__DOT__recombine__BRA__13__KET____DOT__temp_bits),4);
-        tracep->fullCData(oldp+1211,(vlSelf->ascon_top__DOT__recombine__BRA__14__KET____DOT__temp_bits),4);
-        tracep->fullCData(oldp+1212,(vlSelf->ascon_top__DOT__recombine__BRA__15__KET____DOT__temp_bits),4);
-        tracep->fullCData(oldp+1213,(vlSelf->ascon_top__DOT__recombine__BRA__16__KET____DOT__temp_bits),4);
-        tracep->fullCData(oldp+1214,(vlSelf->ascon_top__DOT__recombine__BRA__17__KET____DOT__temp_bits),4);
-        tracep->fullCData(oldp+1215,(vlSelf->ascon_top__DOT__recombine__BRA__18__KET____DOT__temp_bits),4);
-        tracep->fullCData(oldp+1216,(vlSelf->ascon_top__DOT__recombine__BRA__19__KET____DOT__temp_bits),4);
-        tracep->fullCData(oldp+1217,(vlSelf->ascon_top__DOT__recombine__BRA__20__KET____DOT__temp_bits),4);
-        tracep->fullCData(oldp+1218,(vlSelf->ascon_top__DOT__recombine__BRA__21__KET____DOT__temp_bits),4);
-        tracep->fullCData(oldp+1219,(vlSelf->ascon_top__DOT__recombine__BRA__22__KET____DOT__temp_bits),4);
-        tracep->fullCData(oldp+1220,(vlSelf->ascon_top__DOT__recombine__BRA__23__KET____DOT__temp_bits),4);
-        tracep->fullCData(oldp+1221,(vlSelf->ascon_top__DOT__recombine__BRA__24__KET____DOT__temp_bits),4);
-        tracep->fullCData(oldp+1222,(vlSelf->ascon_top__DOT__recombine__BRA__25__KET____DOT__temp_bits),4);
-        tracep->fullCData(oldp+1223,(vlSelf->ascon_top__DOT__recombine__BRA__26__KET____DOT__temp_bits),4);
-        tracep->fullCData(oldp+1224,(vlSelf->ascon_top__DOT__recombine__BRA__27__KET____DOT__temp_bits),4);
-        tracep->fullCData(oldp+1225,(vlSelf->ascon_top__DOT__recombine__BRA__28__KET____DOT__temp_bits),4);
-        tracep->fullCData(oldp+1226,(vlSelf->ascon_top__DOT__recombine__BRA__29__KET____DOT__temp_bits),4);
-        tracep->fullQData(oldp+1227,(vlSelf->ascon_top__DOT__sipo_reg_x0_debug__DOT__next_state),64);
-        tracep->fullQData(oldp+1229,(vlSelf->ascon_top__DOT__sipo_reg_x1_debug__DOT__next_state),64);
-        tracep->fullCData(oldp+1231,((0x3fU & vlSelf->ascon_top__DOT__mux_1st_x2)),6);
-        tracep->fullQData(oldp+1232,(vlSelf->ascon_top__DOT__sipo_reg_x2_debug__DOT__next_state),64);
-        tracep->fullQData(oldp+1234,(vlSelf->ascon_top__DOT__sipo_reg_x3_debug__DOT__next_state),64);
-        tracep->fullQData(oldp+1236,(vlSelf->ascon_top__DOT__sipo_reg_x4_debug__DOT__next_state),64);
-        tracep->fullIData(oldp+1238,(vlSelf->ascon_top__DOT__share_creator__DOT__temp),30);
-        tracep->fullIData(oldp+1239,(((vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__y_noMask
-                                       [4U] << 0x10U) 
-                                      | ((vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__y_noMask
-                                          [3U] << 0xcU) 
-                                         | ((vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__y_noMask
-                                             [2U] << 8U) 
-                                            | ((vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__y_noMask
-                                                [1U] 
-                                                << 4U) 
-                                               | vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__y_noMask
-                                               [0U]))))),20);
-        tracep->fullCData(oldp+1240,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_bank
-                                      [0U])),4);
-        tracep->fullCData(oldp+1241,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [0U] 
-                                              >> 4U))),4);
-        tracep->fullCData(oldp+1242,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [0U] 
-                                              >> 8U))),4);
-        tracep->fullCData(oldp+1243,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [0U] 
-                                              >> 0xcU))),4);
-        tracep->fullCData(oldp+1244,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_bank
-                                      [1U])),4);
-        tracep->fullCData(oldp+1245,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [1U] 
-                                              >> 4U))),4);
-        tracep->fullCData(oldp+1246,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [1U] 
-                                              >> 8U))),4);
-        tracep->fullCData(oldp+1247,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [1U] 
-                                              >> 0xcU))),4);
-        tracep->fullCData(oldp+1248,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_bank
-                                      [2U])),4);
-        tracep->fullCData(oldp+1249,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [2U] 
-                                              >> 4U))),4);
-        tracep->fullCData(oldp+1250,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [2U] 
-                                              >> 8U))),4);
-        tracep->fullCData(oldp+1251,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [2U] 
-                                              >> 0xcU))),4);
-        tracep->fullCData(oldp+1252,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_bank
-                                      [3U])),4);
-        tracep->fullCData(oldp+1253,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [3U] 
-                                              >> 4U))),4);
-        tracep->fullCData(oldp+1254,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [3U] 
-                                              >> 8U))),4);
-        tracep->fullCData(oldp+1255,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [3U] 
-                                              >> 0xcU))),4);
-        tracep->fullCData(oldp+1256,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_bank
-                                      [4U])),4);
-        tracep->fullCData(oldp+1257,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [4U] 
-                                              >> 4U))),4);
-        tracep->fullCData(oldp+1258,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [4U] 
-                                              >> 8U))),4);
-        tracep->fullCData(oldp+1259,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [4U] 
-                                              >> 0xcU))),4);
-        tracep->fullCData(oldp+1260,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__y_noMask[0]),4);
-        tracep->fullCData(oldp+1261,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__y_noMask[1]),4);
-        tracep->fullCData(oldp+1262,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__y_noMask[2]),4);
-        tracep->fullCData(oldp+1263,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__y_noMask[3]),4);
-        tracep->fullCData(oldp+1264,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__y_noMask[4]),4);
-        tracep->fullCData(oldp+1265,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__unnamedblk1__DOT__unnamedblk2__DOT__unnamedblk3__DOT__xi),4);
-        tracep->fullCData(oldp+1266,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__unnamedblk1__DOT__unnamedblk2__DOT__unnamedblk3__DOT__xiprox1),4);
-        tracep->fullCData(oldp+1267,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__unnamedblk1__DOT__unnamedblk2__DOT__unnamedblk3__DOT__xiprox2),4);
-        tracep->fullCData(oldp+1268,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__unnamedblk1__DOT__unnamedblk2__DOT__unnamedblk3__DOT__not_xiprox1),4);
-        tracep->fullIData(oldp+1269,(((vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__y_noMask
-                                       [4U] << 0x10U) 
-                                      | ((vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__y_noMask
-                                          [3U] << 0xcU) 
-                                         | ((vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__y_noMask
-                                             [2U] << 8U) 
-                                            | ((vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__y_noMask
-                                                [1U] 
-                                                << 4U) 
-                                               | vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__y_noMask
-                                               [0U]))))),20);
-        tracep->fullCData(oldp+1270,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__and_result_bank
-                                      [0U])),4);
-        tracep->fullCData(oldp+1271,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [0U] 
-                                              >> 4U))),4);
-        tracep->fullCData(oldp+1272,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [0U] 
-                                              >> 8U))),4);
-        tracep->fullCData(oldp+1273,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [0U] 
-                                              >> 0xcU))),4);
-        tracep->fullCData(oldp+1274,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__and_result_bank
-                                      [1U])),4);
-        tracep->fullCData(oldp+1275,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [1U] 
-                                              >> 4U))),4);
-        tracep->fullCData(oldp+1276,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [1U] 
-                                              >> 8U))),4);
-        tracep->fullCData(oldp+1277,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [1U] 
-                                              >> 0xcU))),4);
-        tracep->fullCData(oldp+1278,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__and_result_bank
-                                      [2U])),4);
-        tracep->fullCData(oldp+1279,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [2U] 
-                                              >> 4U))),4);
-        tracep->fullCData(oldp+1280,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [2U] 
-                                              >> 8U))),4);
-        tracep->fullCData(oldp+1281,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [2U] 
-                                              >> 0xcU))),4);
-        tracep->fullCData(oldp+1282,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__and_result_bank
-                                      [3U])),4);
-        tracep->fullCData(oldp+1283,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [3U] 
-                                              >> 4U))),4);
-        tracep->fullCData(oldp+1284,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [3U] 
-                                              >> 8U))),4);
-        tracep->fullCData(oldp+1285,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [3U] 
-                                              >> 0xcU))),4);
-        tracep->fullCData(oldp+1286,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__and_result_bank
-                                      [4U])),4);
-        tracep->fullCData(oldp+1287,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [4U] 
-                                              >> 4U))),4);
-        tracep->fullCData(oldp+1288,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [4U] 
-                                              >> 8U))),4);
-        tracep->fullCData(oldp+1289,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [4U] 
-                                              >> 0xcU))),4);
-        tracep->fullCData(oldp+1290,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__y_noMask[0]),4);
-        tracep->fullCData(oldp+1291,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__y_noMask[1]),4);
-        tracep->fullCData(oldp+1292,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__y_noMask[2]),4);
-        tracep->fullCData(oldp+1293,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__y_noMask[3]),4);
-        tracep->fullCData(oldp+1294,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__y_noMask[4]),4);
-        tracep->fullCData(oldp+1295,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__unnamedblk1__DOT__unnamedblk2__DOT__unnamedblk3__DOT__xi),4);
-        tracep->fullCData(oldp+1296,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__unnamedblk1__DOT__unnamedblk2__DOT__unnamedblk3__DOT__xiprox1),4);
-        tracep->fullCData(oldp+1297,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__unnamedblk1__DOT__unnamedblk2__DOT__unnamedblk3__DOT__xiprox2),4);
-        tracep->fullCData(oldp+1298,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__1__KET____DOT__u_sbox__DOT__unnamedblk1__DOT__unnamedblk2__DOT__unnamedblk3__DOT__not_xiprox1),4);
-        tracep->fullIData(oldp+1299,(((vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__y_noMask
-                                       [4U] << 0x10U) 
-                                      | ((vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__y_noMask
-                                          [3U] << 0xcU) 
-                                         | ((vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__y_noMask
-                                             [2U] << 8U) 
-                                            | ((vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__y_noMask
-                                                [1U] 
-                                                << 4U) 
-                                               | vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__y_noMask
-                                               [0U]))))),20);
-        tracep->fullCData(oldp+1300,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__and_result_bank
-                                      [0U])),4);
-        tracep->fullCData(oldp+1301,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [0U] 
-                                              >> 4U))),4);
-        tracep->fullCData(oldp+1302,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [0U] 
-                                              >> 8U))),4);
-        tracep->fullCData(oldp+1303,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [0U] 
-                                              >> 0xcU))),4);
-        tracep->fullCData(oldp+1304,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__and_result_bank
-                                      [1U])),4);
-        tracep->fullCData(oldp+1305,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [1U] 
-                                              >> 4U))),4);
-        tracep->fullCData(oldp+1306,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [1U] 
-                                              >> 8U))),4);
-        tracep->fullCData(oldp+1307,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [1U] 
-                                              >> 0xcU))),4);
-        tracep->fullCData(oldp+1308,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__and_result_bank
-                                      [2U])),4);
-        tracep->fullCData(oldp+1309,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [2U] 
-                                              >> 4U))),4);
-        tracep->fullCData(oldp+1310,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [2U] 
-                                              >> 8U))),4);
-        tracep->fullCData(oldp+1311,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [2U] 
-                                              >> 0xcU))),4);
-        tracep->fullCData(oldp+1312,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__and_result_bank
-                                      [3U])),4);
-        tracep->fullCData(oldp+1313,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [3U] 
-                                              >> 4U))),4);
-        tracep->fullCData(oldp+1314,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [3U] 
-                                              >> 8U))),4);
-        tracep->fullCData(oldp+1315,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [3U] 
-                                              >> 0xcU))),4);
-        tracep->fullCData(oldp+1316,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__and_result_bank
-                                      [4U])),4);
-        tracep->fullCData(oldp+1317,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [4U] 
-                                              >> 4U))),4);
-        tracep->fullCData(oldp+1318,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [4U] 
-                                              >> 8U))),4);
-        tracep->fullCData(oldp+1319,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [4U] 
-                                              >> 0xcU))),4);
-        tracep->fullCData(oldp+1320,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__y_noMask[0]),4);
-        tracep->fullCData(oldp+1321,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__y_noMask[1]),4);
-        tracep->fullCData(oldp+1322,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__y_noMask[2]),4);
-        tracep->fullCData(oldp+1323,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__y_noMask[3]),4);
-        tracep->fullCData(oldp+1324,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__y_noMask[4]),4);
-        tracep->fullCData(oldp+1325,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__unnamedblk1__DOT__unnamedblk2__DOT__unnamedblk3__DOT__xi),4);
-        tracep->fullCData(oldp+1326,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__unnamedblk1__DOT__unnamedblk2__DOT__unnamedblk3__DOT__xiprox1),4);
-        tracep->fullCData(oldp+1327,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__unnamedblk1__DOT__unnamedblk2__DOT__unnamedblk3__DOT__xiprox2),4);
-        tracep->fullCData(oldp+1328,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__2__KET____DOT__u_sbox__DOT__unnamedblk1__DOT__unnamedblk2__DOT__unnamedblk3__DOT__not_xiprox1),4);
-        tracep->fullIData(oldp+1329,(((vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__y_noMask
-                                       [4U] << 0x10U) 
-                                      | ((vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__y_noMask
-                                          [3U] << 0xcU) 
-                                         | ((vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__y_noMask
-                                             [2U] << 8U) 
-                                            | ((vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__y_noMask
-                                                [1U] 
-                                                << 4U) 
-                                               | vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__y_noMask
-                                               [0U]))))),20);
-        tracep->fullCData(oldp+1330,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__and_result_bank
-                                      [0U])),4);
-        tracep->fullCData(oldp+1331,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [0U] 
-                                              >> 4U))),4);
-        tracep->fullCData(oldp+1332,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [0U] 
-                                              >> 8U))),4);
-        tracep->fullCData(oldp+1333,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [0U] 
-                                              >> 0xcU))),4);
-        tracep->fullCData(oldp+1334,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__and_result_bank
-                                      [1U])),4);
-        tracep->fullCData(oldp+1335,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [1U] 
-                                              >> 4U))),4);
-        tracep->fullCData(oldp+1336,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [1U] 
-                                              >> 8U))),4);
-        tracep->fullCData(oldp+1337,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [1U] 
-                                              >> 0xcU))),4);
-        tracep->fullCData(oldp+1338,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__and_result_bank
-                                      [2U])),4);
-        tracep->fullCData(oldp+1339,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [2U] 
-                                              >> 4U))),4);
-        tracep->fullCData(oldp+1340,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [2U] 
-                                              >> 8U))),4);
-        tracep->fullCData(oldp+1341,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [2U] 
-                                              >> 0xcU))),4);
-        tracep->fullCData(oldp+1342,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__and_result_bank
-                                      [3U])),4);
-        tracep->fullCData(oldp+1343,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [3U] 
-                                              >> 4U))),4);
-        tracep->fullCData(oldp+1344,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [3U] 
-                                              >> 8U))),4);
-        tracep->fullCData(oldp+1345,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [3U] 
-                                              >> 0xcU))),4);
-        tracep->fullCData(oldp+1346,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__and_result_bank
-                                      [4U])),4);
-        tracep->fullCData(oldp+1347,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [4U] 
-                                              >> 4U))),4);
-        tracep->fullCData(oldp+1348,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [4U] 
-                                              >> 8U))),4);
-        tracep->fullCData(oldp+1349,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [4U] 
-                                              >> 0xcU))),4);
-        tracep->fullCData(oldp+1350,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__y_noMask[0]),4);
-        tracep->fullCData(oldp+1351,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__y_noMask[1]),4);
-        tracep->fullCData(oldp+1352,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__y_noMask[2]),4);
-        tracep->fullCData(oldp+1353,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__y_noMask[3]),4);
-        tracep->fullCData(oldp+1354,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__y_noMask[4]),4);
-        tracep->fullCData(oldp+1355,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__unnamedblk1__DOT__unnamedblk2__DOT__unnamedblk3__DOT__xi),4);
-        tracep->fullCData(oldp+1356,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__unnamedblk1__DOT__unnamedblk2__DOT__unnamedblk3__DOT__xiprox1),4);
-        tracep->fullCData(oldp+1357,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__unnamedblk1__DOT__unnamedblk2__DOT__unnamedblk3__DOT__xiprox2),4);
-        tracep->fullCData(oldp+1358,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__3__KET____DOT__u_sbox__DOT__unnamedblk1__DOT__unnamedblk2__DOT__unnamedblk3__DOT__not_xiprox1),4);
-        tracep->fullIData(oldp+1359,(((vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__y_noMask
-                                       [4U] << 0x10U) 
-                                      | ((vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__y_noMask
-                                          [3U] << 0xcU) 
-                                         | ((vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__y_noMask
-                                             [2U] << 8U) 
-                                            | ((vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__y_noMask
-                                                [1U] 
-                                                << 4U) 
-                                               | vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__y_noMask
-                                               [0U]))))),20);
-        tracep->fullCData(oldp+1360,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__and_result_bank
-                                      [0U])),4);
-        tracep->fullCData(oldp+1361,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [0U] 
-                                              >> 4U))),4);
-        tracep->fullCData(oldp+1362,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [0U] 
-                                              >> 8U))),4);
-        tracep->fullCData(oldp+1363,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [0U] 
-                                              >> 0xcU))),4);
-        tracep->fullCData(oldp+1364,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__and_result_bank
-                                      [1U])),4);
-        tracep->fullCData(oldp+1365,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [1U] 
-                                              >> 4U))),4);
-        tracep->fullCData(oldp+1366,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [1U] 
-                                              >> 8U))),4);
-        tracep->fullCData(oldp+1367,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [1U] 
-                                              >> 0xcU))),4);
-        tracep->fullCData(oldp+1368,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__and_result_bank
-                                      [2U])),4);
-        tracep->fullCData(oldp+1369,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [2U] 
-                                              >> 4U))),4);
-        tracep->fullCData(oldp+1370,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [2U] 
-                                              >> 8U))),4);
-        tracep->fullCData(oldp+1371,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [2U] 
-                                              >> 0xcU))),4);
-        tracep->fullCData(oldp+1372,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__and_result_bank
-                                      [3U])),4);
-        tracep->fullCData(oldp+1373,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [3U] 
-                                              >> 4U))),4);
-        tracep->fullCData(oldp+1374,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [3U] 
-                                              >> 8U))),4);
-        tracep->fullCData(oldp+1375,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [3U] 
-                                              >> 0xcU))),4);
-        tracep->fullCData(oldp+1376,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__and_result_bank
-                                      [4U])),4);
-        tracep->fullCData(oldp+1377,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [4U] 
-                                              >> 4U))),4);
-        tracep->fullCData(oldp+1378,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [4U] 
-                                              >> 8U))),4);
-        tracep->fullCData(oldp+1379,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [4U] 
-                                              >> 0xcU))),4);
-        tracep->fullCData(oldp+1380,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__y_noMask[0]),4);
-        tracep->fullCData(oldp+1381,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__y_noMask[1]),4);
-        tracep->fullCData(oldp+1382,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__y_noMask[2]),4);
-        tracep->fullCData(oldp+1383,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__y_noMask[3]),4);
-        tracep->fullCData(oldp+1384,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__y_noMask[4]),4);
-        tracep->fullCData(oldp+1385,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__unnamedblk1__DOT__unnamedblk2__DOT__unnamedblk3__DOT__xi),4);
-        tracep->fullCData(oldp+1386,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__unnamedblk1__DOT__unnamedblk2__DOT__unnamedblk3__DOT__xiprox1),4);
-        tracep->fullCData(oldp+1387,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__unnamedblk1__DOT__unnamedblk2__DOT__unnamedblk3__DOT__xiprox2),4);
-        tracep->fullCData(oldp+1388,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__4__KET____DOT__u_sbox__DOT__unnamedblk1__DOT__unnamedblk2__DOT__unnamedblk3__DOT__not_xiprox1),4);
-        tracep->fullIData(oldp+1389,(((vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__y_noMask
-                                       [4U] << 0x10U) 
-                                      | ((vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__y_noMask
-                                          [3U] << 0xcU) 
-                                         | ((vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__y_noMask
-                                             [2U] << 8U) 
-                                            | ((vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__y_noMask
-                                                [1U] 
-                                                << 4U) 
-                                               | vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__y_noMask
-                                               [0U]))))),20);
-        tracep->fullCData(oldp+1390,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__and_result_bank
-                                      [0U])),4);
-        tracep->fullCData(oldp+1391,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [0U] 
-                                              >> 4U))),4);
-        tracep->fullCData(oldp+1392,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [0U] 
-                                              >> 8U))),4);
-        tracep->fullCData(oldp+1393,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [0U] 
-                                              >> 0xcU))),4);
-        tracep->fullCData(oldp+1394,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__and_result_bank
-                                      [1U])),4);
-        tracep->fullCData(oldp+1395,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [1U] 
-                                              >> 4U))),4);
-        tracep->fullCData(oldp+1396,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [1U] 
-                                              >> 8U))),4);
-        tracep->fullCData(oldp+1397,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [1U] 
-                                              >> 0xcU))),4);
-        tracep->fullCData(oldp+1398,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__and_result_bank
-                                      [2U])),4);
-        tracep->fullCData(oldp+1399,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [2U] 
-                                              >> 4U))),4);
-        tracep->fullCData(oldp+1400,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [2U] 
-                                              >> 8U))),4);
-        tracep->fullCData(oldp+1401,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [2U] 
-                                              >> 0xcU))),4);
-        tracep->fullCData(oldp+1402,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__and_result_bank
-                                      [3U])),4);
-        tracep->fullCData(oldp+1403,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [3U] 
-                                              >> 4U))),4);
-        tracep->fullCData(oldp+1404,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [3U] 
-                                              >> 8U))),4);
-        tracep->fullCData(oldp+1405,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [3U] 
-                                              >> 0xcU))),4);
-        tracep->fullCData(oldp+1406,((0xfU & vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__and_result_bank
-                                      [4U])),4);
-        tracep->fullCData(oldp+1407,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [4U] 
-                                              >> 4U))),4);
-        tracep->fullCData(oldp+1408,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [4U] 
-                                              >> 8U))),4);
-        tracep->fullCData(oldp+1409,((0xfU & (vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__and_result_bank
-                                              [4U] 
-                                              >> 0xcU))),4);
-        tracep->fullCData(oldp+1410,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__y_noMask[0]),4);
-        tracep->fullCData(oldp+1411,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__y_noMask[1]),4);
-        tracep->fullCData(oldp+1412,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__y_noMask[2]),4);
-        tracep->fullCData(oldp+1413,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__y_noMask[3]),4);
-        tracep->fullCData(oldp+1414,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__y_noMask[4]),4);
-        tracep->fullCData(oldp+1415,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__unnamedblk1__DOT__unnamedblk2__DOT__unnamedblk3__DOT__xi),4);
-        tracep->fullCData(oldp+1416,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__unnamedblk1__DOT__unnamedblk2__DOT__unnamedblk3__DOT__xiprox1),4);
-        tracep->fullCData(oldp+1417,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__unnamedblk1__DOT__unnamedblk2__DOT__unnamedblk3__DOT__xiprox2),4);
-        tracep->fullCData(oldp+1418,(vlSelf->ascon_top__DOT__gen_unsupported__DOT__gen_sbox__BRA__5__KET____DOT__u_sbox__DOT__unnamedblk1__DOT__unnamedblk2__DOT__unnamedblk3__DOT__not_xiprox1),4);
-        tracep->fullBit(oldp+1419,(vlSelf->clk));
-        tracep->fullBit(oldp+1420,(vlSelf->reset_n));
-        tracep->fullBit(oldp+1421,(vlSelf->start));
-        tracep->fullQData(oldp+1422,(vlSelf->key1),64);
-        tracep->fullQData(oldp+1424,(vlSelf->key2),64);
-        tracep->fullBit(oldp+1426,(vlSelf->key_valid));
-        tracep->fullQData(oldp+1427,(vlSelf->nonce1),64);
-        tracep->fullQData(oldp+1429,(vlSelf->nonce2),64);
-        tracep->fullQData(oldp+1431,(vlSelf->initialVector),64);
-        tracep->fullWData(oldp+1433,(vlSelf->data_in),128);
-        tracep->fullBit(oldp+1437,(vlSelf->valid_data_in));
-        tracep->fullBit(oldp+1438,(vlSelf->last_block));
-        tracep->fullCData(oldp+1439,(vlSelf->valid_bytes),5);
-        tracep->fullBit(oldp+1440,(vlSelf->EOT));
-        tracep->fullWData(oldp+1441,(vlSelf->state_reg_out),320);
-        tracep->fullBit(oldp+1451,(vlSelf->ciphertext_valid));
-        tracep->fullWData(oldp+1452,(vlSelf->ciphertext),128);
-        tracep->fullBit(oldp+1456,(vlSelf->done));
-        tracep->fullBit(oldp+1457,(vlSelf->ready_tag));
-        tracep->fullQData(oldp+1458,(vlSelf->tag1),64);
-        tracep->fullQData(oldp+1460,(vlSelf->tag2),64);
-        tracep->fullBit(oldp+1462,(vlSelf->ready_for_data));
-        tracep->fullBit(oldp+1463,(vlSelf->read_data));
-        tracep->fullBit(oldp+1464,(vlSelf->debug_extra_padding_ff));
-        tracep->fullCData(oldp+1465,(vlSelf->debug_bitcounter),4);
-        tracep->fullCData(oldp+1466,(vlSelf->debug_roundcounter),4);
-        tracep->fullCData(oldp+1467,(vlSelf->debug_state),5);
-        tracep->fullQData(oldp+1468,(vlSelf->debug_state_0),64);
-        tracep->fullQData(oldp+1470,(vlSelf->debug_state_1),64);
-        tracep->fullQData(oldp+1472,(vlSelf->debug_state_2),64);
-        tracep->fullQData(oldp+1474,(vlSelf->debug_state_3),64);
-        tracep->fullQData(oldp+1476,(vlSelf->debug_state_4),64);
-        tracep->fullQData(oldp+1478,(vlSelf->debug_round_state_0),64);
-        tracep->fullQData(oldp+1480,(vlSelf->debug_round_state_1),64);
-        tracep->fullQData(oldp+1482,(vlSelf->debug_round_state_2),64);
-        tracep->fullQData(oldp+1484,(vlSelf->debug_round_state_3),64);
-        tracep->fullQData(oldp+1486,(vlSelf->debug_round_state_4),64);
-        tracep->fullQData(oldp+1488,(vlSelf->debug_linear_diffusion_state3),64);
-        tracep->fullQData(oldp+1490,(vlSelf->debug_linear_diffusion_state4),64);
-        tracep->fullIData(oldp+1492,(((0x3f000000U 
-                                       & (vlSelf->ascon_top__DOT__mux_1st_x4 
-                                          << 0x18U)) 
-                                      | ((0xfc0000U 
-                                          & (vlSelf->ascon_top__DOT__mux_1st_x3 
-                                             << 0x12U)) 
-                                         | ((0x3f000U 
-                                             & (vlSelf->ascon_top__DOT__mux_1st_x2 
-                                                << 0xcU)) 
-                                            | ((0xfc0U 
-                                                & (vlSelf->ascon_top__DOT__mux_1st_x1 
-                                                   << 6U)) 
-                                               | (0x3fU 
-                                                  & vlSelf->ascon_top__DOT__mux_1st_x0)))))),30);
-        __Vtemp19871[0U] = (IData)(vlSelf->initialVector);
-        __Vtemp19871[1U] = (IData)((vlSelf->initialVector 
+                                                << 3U) 
+                                               | vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__y_noMask
+                                               [0U]))))),15);
+        tracep->fullCData(oldp+1054,((7U & vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_bank
+                                      [0U])),3);
+        tracep->fullCData(oldp+1055,((7U & (vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_bank
+                                            [0U] >> 3U))),3);
+        tracep->fullCData(oldp+1056,((7U & (vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_bank
+                                            [0U] >> 6U))),3);
+        tracep->fullCData(oldp+1057,((7U & vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_bank
+                                      [1U])),3);
+        tracep->fullCData(oldp+1058,((7U & (vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_bank
+                                            [1U] >> 3U))),3);
+        tracep->fullCData(oldp+1059,((7U & (vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_bank
+                                            [1U] >> 6U))),3);
+        tracep->fullCData(oldp+1060,((7U & vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_bank
+                                      [2U])),3);
+        tracep->fullCData(oldp+1061,((7U & (vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_bank
+                                            [2U] >> 3U))),3);
+        tracep->fullCData(oldp+1062,((7U & (vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_bank
+                                            [2U] >> 6U))),3);
+        tracep->fullCData(oldp+1063,((7U & vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_bank
+                                      [3U])),3);
+        tracep->fullCData(oldp+1064,((7U & (vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_bank
+                                            [3U] >> 3U))),3);
+        tracep->fullCData(oldp+1065,((7U & (vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_bank
+                                            [3U] >> 6U))),3);
+        tracep->fullCData(oldp+1066,((7U & vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_bank
+                                      [4U])),3);
+        tracep->fullCData(oldp+1067,((7U & (vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_bank
+                                            [4U] >> 3U))),3);
+        tracep->fullCData(oldp+1068,((7U & (vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__and_result_bank
+                                            [4U] >> 6U))),3);
+        tracep->fullCData(oldp+1069,(vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__y_noMask[0]),3);
+        tracep->fullCData(oldp+1070,(vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__y_noMask[1]),3);
+        tracep->fullCData(oldp+1071,(vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__y_noMask[2]),3);
+        tracep->fullCData(oldp+1072,(vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__y_noMask[3]),3);
+        tracep->fullCData(oldp+1073,(vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__y_noMask[4]),3);
+        tracep->fullCData(oldp+1074,(vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__unnamedblk1__DOT__unnamedblk2__DOT__unnamedblk3__DOT__xi),3);
+        tracep->fullCData(oldp+1075,(vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__unnamedblk1__DOT__unnamedblk2__DOT__unnamedblk3__DOT__xiprox1),3);
+        tracep->fullCData(oldp+1076,(vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__unnamedblk1__DOT__unnamedblk2__DOT__unnamedblk3__DOT__xiprox2),3);
+        tracep->fullCData(oldp+1077,(vlSelf->ascon_top__DOT__gen_no_changing__DOT__gen_sbox__BRA__0__KET____DOT__u_sbox__DOT__unnamedblk1__DOT__unnamedblk2__DOT__unnamedblk3__DOT__not_xiprox1),3);
+        tracep->fullBit(oldp+1078,(vlSelf->ascon_top__DOT__write_en));
+        tracep->fullBit(oldp+1079,(vlSelf->ascon_top__DOT__sel_mux_linear_diffusion_out_x4));
+        tracep->fullBit(oldp+1080,(vlSelf->ascon_top__DOT__sel_init_load));
+        tracep->fullBit(oldp+1081,(vlSelf->ascon_top__DOT__sel_padding));
+        tracep->fullBit(oldp+1082,(vlSelf->ascon_top__DOT__sel_absorb_data));
+        tracep->fullWData(oldp+1083,(vlSelf->ascon_top__DOT__state_reg_in_shares[0]),320);
+        tracep->fullWData(oldp+1093,(vlSelf->ascon_top__DOT__state_reg_in_shares[1]),320);
+        tracep->fullWData(oldp+1103,(vlSelf->ascon_top__DOT__state_reg_in_shares[2]),320);
+        tracep->fullWData(oldp+1113,(vlSelf->ascon_top__DOT__data_in_padded),128);
+        tracep->fullWData(oldp+1117,(vlSelf->ascon_top__DOT__reverse_reg_data_out),128);
+        tracep->fullIData(oldp+1121,(vlSelf->ascon_top__DOT__unnamedblk4__DOT__i),32);
+        tracep->fullBit(oldp+1122,(vlSelf->ascon_top__DOT__mealy_fsm__DOT__extra_padding));
+        tracep->fullCData(oldp+1123,(vlSelf->ascon_top__DOT__mealy_fsm__DOT__next_state),5);
+        tracep->fullBit(oldp+1124,(vlSelf->ascon_top__DOT__mealy_fsm__DOT__last_block_process));
+        tracep->fullBit(oldp+1125,(vlSelf->ascon_top__DOT__mealy_fsm__DOT__last_block_process_load));
+        tracep->fullBit(oldp+1126,(vlSelf->ascon_top__DOT__mealy_fsm__DOT__extra_padding_load));
+        tracep->fullBit(oldp+1127,(vlSelf->ascon_top__DOT__mealy_fsm__DOT__rst_counter_round));
+        __Vtemp13364[0U] = vlSelf->ascon_top__DOT__state_reg_in_shares
+            [0U][0U];
+        __Vtemp13364[1U] = vlSelf->ascon_top__DOT__state_reg_in_shares
+            [0U][1U];
+        __Vtemp13364[2U] = vlSelf->ascon_top__DOT__state_reg_in_shares
+            [0U][2U];
+        __Vtemp13364[3U] = vlSelf->ascon_top__DOT__state_reg_in_shares
+            [0U][3U];
+        __Vtemp13364[4U] = vlSelf->ascon_top__DOT__state_reg_in_shares
+            [0U][4U];
+        __Vtemp13364[5U] = vlSelf->ascon_top__DOT__state_reg_in_shares
+            [0U][5U];
+        __Vtemp13364[6U] = vlSelf->ascon_top__DOT__state_reg_in_shares
+            [0U][6U];
+        __Vtemp13364[7U] = vlSelf->ascon_top__DOT__state_reg_in_shares
+            [0U][7U];
+        __Vtemp13364[8U] = vlSelf->ascon_top__DOT__state_reg_in_shares
+            [0U][8U];
+        __Vtemp13364[9U] = vlSelf->ascon_top__DOT__state_reg_in_shares
+            [0U][9U];
+        tracep->fullWData(oldp+1128,(__Vtemp13364),320);
+        tracep->fullQData(oldp+1138,(vlSelf->ascon_top__DOT__gen_state_regs__BRA__0__KET____DOT__state_reg_share__DOT__next_state[0]),64);
+        tracep->fullQData(oldp+1140,(vlSelf->ascon_top__DOT__gen_state_regs__BRA__0__KET____DOT__state_reg_share__DOT__next_state[1]),64);
+        tracep->fullQData(oldp+1142,(vlSelf->ascon_top__DOT__gen_state_regs__BRA__0__KET____DOT__state_reg_share__DOT__next_state[2]),64);
+        tracep->fullQData(oldp+1144,(vlSelf->ascon_top__DOT__gen_state_regs__BRA__0__KET____DOT__state_reg_share__DOT__next_state[3]),64);
+        tracep->fullQData(oldp+1146,(vlSelf->ascon_top__DOT__gen_state_regs__BRA__0__KET____DOT__state_reg_share__DOT__next_state[4]),64);
+        __Vtemp13365[0U] = vlSelf->ascon_top__DOT__state_reg_in_shares
+            [1U][0U];
+        __Vtemp13365[1U] = vlSelf->ascon_top__DOT__state_reg_in_shares
+            [1U][1U];
+        __Vtemp13365[2U] = vlSelf->ascon_top__DOT__state_reg_in_shares
+            [1U][2U];
+        __Vtemp13365[3U] = vlSelf->ascon_top__DOT__state_reg_in_shares
+            [1U][3U];
+        __Vtemp13365[4U] = vlSelf->ascon_top__DOT__state_reg_in_shares
+            [1U][4U];
+        __Vtemp13365[5U] = vlSelf->ascon_top__DOT__state_reg_in_shares
+            [1U][5U];
+        __Vtemp13365[6U] = vlSelf->ascon_top__DOT__state_reg_in_shares
+            [1U][6U];
+        __Vtemp13365[7U] = vlSelf->ascon_top__DOT__state_reg_in_shares
+            [1U][7U];
+        __Vtemp13365[8U] = vlSelf->ascon_top__DOT__state_reg_in_shares
+            [1U][8U];
+        __Vtemp13365[9U] = vlSelf->ascon_top__DOT__state_reg_in_shares
+            [1U][9U];
+        tracep->fullWData(oldp+1148,(__Vtemp13365),320);
+        __Vtemp13366[0U] = vlSelf->ascon_top__DOT__state_reg_in_shares
+            [2U][0U];
+        __Vtemp13366[1U] = vlSelf->ascon_top__DOT__state_reg_in_shares
+            [2U][1U];
+        __Vtemp13366[2U] = vlSelf->ascon_top__DOT__state_reg_in_shares
+            [2U][2U];
+        __Vtemp13366[3U] = vlSelf->ascon_top__DOT__state_reg_in_shares
+            [2U][3U];
+        __Vtemp13366[4U] = vlSelf->ascon_top__DOT__state_reg_in_shares
+            [2U][4U];
+        __Vtemp13366[5U] = vlSelf->ascon_top__DOT__state_reg_in_shares
+            [2U][5U];
+        __Vtemp13366[6U] = vlSelf->ascon_top__DOT__state_reg_in_shares
+            [2U][6U];
+        __Vtemp13366[7U] = vlSelf->ascon_top__DOT__state_reg_in_shares
+            [2U][7U];
+        __Vtemp13366[8U] = vlSelf->ascon_top__DOT__state_reg_in_shares
+            [2U][8U];
+        __Vtemp13366[9U] = vlSelf->ascon_top__DOT__state_reg_in_shares
+            [2U][9U];
+        tracep->fullWData(oldp+1158,(__Vtemp13366),320);
+        tracep->fullSData(oldp+1168,(vlSelf->ascon_top__DOT__state_reg_in_shiftdplus1_shares[0]),15);
+        tracep->fullSData(oldp+1169,(vlSelf->ascon_top__DOT__state_reg_in_shiftdplus1_shares[1]),15);
+        tracep->fullSData(oldp+1170,(vlSelf->ascon_top__DOT__state_reg_in_shiftdplus1_shares[2]),15);
+        tracep->fullCData(oldp+1171,(vlSelf->ascon_top__DOT__state_reg_in_shift1_shares[0]),5);
+        tracep->fullCData(oldp+1172,(vlSelf->ascon_top__DOT__state_reg_in_shift1_shares[1]),5);
+        tracep->fullCData(oldp+1173,(vlSelf->ascon_top__DOT__state_reg_in_shift1_shares[2]),5);
+        tracep->fullSData(oldp+1174,(vlSelf->ascon_top__DOT__shares_out),15);
+        tracep->fullCData(oldp+1175,(vlSelf->ascon_top__DOT__affine_layer_in[0]),5);
+        tracep->fullCData(oldp+1176,(vlSelf->ascon_top__DOT__affine_layer_in[1]),5);
+        tracep->fullCData(oldp+1177,(vlSelf->ascon_top__DOT__affine_layer_in[2]),5);
+        tracep->fullCData(oldp+1178,(vlSelf->ascon_top__DOT__affine_layer_out[0]),5);
+        tracep->fullCData(oldp+1179,(vlSelf->ascon_top__DOT__affine_layer_out[1]),5);
+        tracep->fullCData(oldp+1180,(vlSelf->ascon_top__DOT__affine_layer_out[2]),5);
+        tracep->fullSData(oldp+1181,(vlSelf->ascon_top__DOT__next_sbox_input[0]),15);
+        tracep->fullSData(oldp+1182,(vlSelf->ascon_top__DOT__mux_sbox_out[0]),15);
+        tracep->fullCData(oldp+1183,(vlSelf->ascon_top__DOT__affine_layer2nd_in[0]),5);
+        tracep->fullCData(oldp+1184,(vlSelf->ascon_top__DOT__affine_layer2nd_in[1]),5);
+        tracep->fullCData(oldp+1185,(vlSelf->ascon_top__DOT__affine_layer2nd_in[2]),5);
+        tracep->fullCData(oldp+1186,(vlSelf->ascon_top__DOT__affine_layer2nd_out[0]),5);
+        tracep->fullCData(oldp+1187,(vlSelf->ascon_top__DOT__affine_layer2nd_out[1]),5);
+        tracep->fullCData(oldp+1188,(vlSelf->ascon_top__DOT__affine_layer2nd_out[2]),5);
+        tracep->fullBit(oldp+1189,((1U & (~ (vlSelf->ascon_top__DOT__affine_layer2nd_in
+                                             [0U] >> 2U)))));
+        tracep->fullBit(oldp+1190,((1U & (~ (vlSelf->ascon_top__DOT__affine_layer2nd_in
+                                             [1U] >> 2U)))));
+        tracep->fullBit(oldp+1191,((1U & (~ (vlSelf->ascon_top__DOT__affine_layer2nd_in
+                                             [2U] >> 2U)))));
+        tracep->fullCData(oldp+1192,(vlSelf->ascon_top__DOT__share_creator__DOT__temp),5);
+        tracep->fullSData(oldp+1193,(vlSelf->ascon_top__DOT__state_reg_in_shiftdplus1_shares
+                                     [0U]),15);
+        tracep->fullCData(oldp+1194,(vlSelf->ascon_top__DOT__state_reg_in_shift1_shares
+                                     [0U]),5);
+        tracep->fullSData(oldp+1195,(vlSelf->ascon_top__DOT__state_reg_in_shiftdplus1_shares
+                                     [1U]),15);
+        tracep->fullCData(oldp+1196,(vlSelf->ascon_top__DOT__state_reg_in_shift1_shares
+                                     [1U]),5);
+        tracep->fullQData(oldp+1197,(vlSelf->ascon_top__DOT__gen_state_regs__BRA__1__KET____DOT__state_reg_share__DOT__next_state[0]),64);
+        tracep->fullQData(oldp+1199,(vlSelf->ascon_top__DOT__gen_state_regs__BRA__1__KET____DOT__state_reg_share__DOT__next_state[1]),64);
+        tracep->fullQData(oldp+1201,(vlSelf->ascon_top__DOT__gen_state_regs__BRA__1__KET____DOT__state_reg_share__DOT__next_state[2]),64);
+        tracep->fullQData(oldp+1203,(vlSelf->ascon_top__DOT__gen_state_regs__BRA__1__KET____DOT__state_reg_share__DOT__next_state[3]),64);
+        tracep->fullQData(oldp+1205,(vlSelf->ascon_top__DOT__gen_state_regs__BRA__1__KET____DOT__state_reg_share__DOT__next_state[4]),64);
+        tracep->fullSData(oldp+1207,(vlSelf->ascon_top__DOT__state_reg_in_shiftdplus1_shares
+                                     [2U]),15);
+        tracep->fullCData(oldp+1208,(vlSelf->ascon_top__DOT__state_reg_in_shift1_shares
+                                     [2U]),5);
+        tracep->fullQData(oldp+1209,(vlSelf->ascon_top__DOT__gen_state_regs__BRA__2__KET____DOT__state_reg_share__DOT__next_state[0]),64);
+        tracep->fullQData(oldp+1211,(vlSelf->ascon_top__DOT__gen_state_regs__BRA__2__KET____DOT__state_reg_share__DOT__next_state[1]),64);
+        tracep->fullQData(oldp+1213,(vlSelf->ascon_top__DOT__gen_state_regs__BRA__2__KET____DOT__state_reg_share__DOT__next_state[2]),64);
+        tracep->fullQData(oldp+1215,(vlSelf->ascon_top__DOT__gen_state_regs__BRA__2__KET____DOT__state_reg_share__DOT__next_state[3]),64);
+        tracep->fullQData(oldp+1217,(vlSelf->ascon_top__DOT__gen_state_regs__BRA__2__KET____DOT__state_reg_share__DOT__next_state[4]),64);
+        tracep->fullBit(oldp+1219,(vlSelf->clk));
+        tracep->fullBit(oldp+1220,(vlSelf->reset_n));
+        tracep->fullBit(oldp+1221,(vlSelf->reset_n_lfsr));
+        tracep->fullBit(oldp+1222,(vlSelf->start));
+        tracep->fullQData(oldp+1223,(vlSelf->key1),64);
+        tracep->fullQData(oldp+1225,(vlSelf->key2),64);
+        tracep->fullBit(oldp+1227,(vlSelf->load_data));
+        tracep->fullQData(oldp+1228,(vlSelf->nonce1),64);
+        tracep->fullQData(oldp+1230,(vlSelf->nonce2),64);
+        tracep->fullQData(oldp+1232,(vlSelf->initialVector),64);
+        tracep->fullWData(oldp+1234,(vlSelf->data_in),128);
+        tracep->fullBit(oldp+1238,(vlSelf->valid_data_in));
+        tracep->fullBit(oldp+1239,(vlSelf->last_block));
+        tracep->fullCData(oldp+1240,(vlSelf->valid_bytes),5);
+        tracep->fullBit(oldp+1241,(vlSelf->EOT));
+        tracep->fullWData(oldp+1242,(vlSelf->state_reg_out),320);
+        tracep->fullBit(oldp+1252,(vlSelf->ciphertext_valid));
+        tracep->fullWData(oldp+1253,(vlSelf->ciphertext),128);
+        tracep->fullBit(oldp+1257,(vlSelf->done));
+        tracep->fullBit(oldp+1258,(vlSelf->ready_tag));
+        tracep->fullQData(oldp+1259,(vlSelf->tag1),64);
+        tracep->fullQData(oldp+1261,(vlSelf->tag2),64);
+        tracep->fullBit(oldp+1263,(vlSelf->ready_for_data));
+        tracep->fullBit(oldp+1264,(vlSelf->read_data));
+        tracep->fullBit(oldp+1265,(vlSelf->debug_extra_padding_ff));
+        tracep->fullCData(oldp+1266,(vlSelf->debug_bitcounter),7);
+        tracep->fullCData(oldp+1267,(vlSelf->debug_roundcounter),4);
+        tracep->fullCData(oldp+1268,(vlSelf->debug_state),5);
+        tracep->fullQData(oldp+1269,(vlSelf->debug_state_0),64);
+        tracep->fullQData(oldp+1271,(vlSelf->debug_state_1),64);
+        tracep->fullQData(oldp+1273,(vlSelf->debug_state_2),64);
+        tracep->fullQData(oldp+1275,(vlSelf->debug_state_3),64);
+        tracep->fullQData(oldp+1277,(vlSelf->debug_state_4),64);
+        tracep->fullQData(oldp+1279,(vlSelf->debug_round_state_0),64);
+        tracep->fullQData(oldp+1281,(vlSelf->debug_round_state_1),64);
+        tracep->fullQData(oldp+1283,(vlSelf->debug_round_state_2),64);
+        tracep->fullQData(oldp+1285,(vlSelf->debug_round_state_3),64);
+        tracep->fullQData(oldp+1287,(vlSelf->debug_round_state_4),64);
+        tracep->fullQData(oldp+1289,(vlSelf->debug_sbox_nomasked_0),64);
+        tracep->fullQData(oldp+1291,(vlSelf->debug_sbox_nomasked_1),64);
+        tracep->fullQData(oldp+1293,(vlSelf->debug_sbox_nomasked_2),64);
+        tracep->fullQData(oldp+1295,(vlSelf->debug_sbox_nomasked_3),64);
+        tracep->fullQData(oldp+1297,(vlSelf->debug_sbox_nomasked_4),64);
+        tracep->fullQData(oldp+1299,(vlSelf->debug_linear_diffusion_state3),64);
+        tracep->fullQData(oldp+1301,(vlSelf->debug_linear_diffusion_state4),64);
+        __Vtemp13370[0U] = (IData)(vlSelf->initialVector);
+        __Vtemp13370[1U] = (IData)((vlSelf->initialVector 
                                     >> 0x20U));
-        __Vtemp19871[2U] = (IData)(vlSelf->key1);
-        __Vtemp19871[3U] = (IData)((vlSelf->key1 >> 0x20U));
-        __Vtemp19871[4U] = (IData)(vlSelf->key2);
-        __Vtemp19871[5U] = (IData)((vlSelf->key2 >> 0x20U));
-        __Vtemp19871[6U] = (IData)(vlSelf->nonce1);
-        __Vtemp19871[7U] = (IData)((vlSelf->nonce1 
+        __Vtemp13370[2U] = (IData)(vlSelf->key1);
+        __Vtemp13370[3U] = (IData)((vlSelf->key1 >> 0x20U));
+        __Vtemp13370[4U] = (IData)(vlSelf->key2);
+        __Vtemp13370[5U] = (IData)((vlSelf->key2 >> 0x20U));
+        __Vtemp13370[6U] = (IData)(vlSelf->nonce1);
+        __Vtemp13370[7U] = (IData)((vlSelf->nonce1 
                                     >> 0x20U));
-        __Vtemp19871[8U] = (IData)(vlSelf->nonce2);
-        __Vtemp19871[9U] = (IData)((vlSelf->nonce2 
+        __Vtemp13370[8U] = (IData)(vlSelf->nonce2);
+        __Vtemp13370[9U] = (IData)((vlSelf->nonce2 
                                     >> 0x20U));
-        tracep->fullWData(oldp+1493,(__Vtemp19871),320);
-        tracep->fullQData(oldp+1503,(((IData)(vlSelf->ascon_top__DOT__sel_mux_linear_diffusion_out_x3)
-                                       ? (vlSelf->ascon_top__DOT__linear_diffusion_debug
-                                          [3U] ^ vlSelf->ascon_top__DOT__key1_reg__DOT__reg_q)
-                                       : vlSelf->ascon_top__DOT__linear_diffusion_debug
-                                      [3U])),64);
-        tracep->fullCData(oldp+1505,((0x3fU & ((IData)(vlSelf->ascon_top__DOT__sel_masked_round)
-                                                ? (
-                                                   vlSelf->ascon_top__DOT__affine_layer2nd_in
-                                                   [1U] 
-                                                   >> 0xcU)
-                                                : (~ 
-                                                   (vlSelf->ascon_top__DOT__affine_layer2nd_in
-                                                    [1U] 
-                                                    >> 0xcU))))),6);
-        tracep->fullCData(oldp+1506,((0x3fU & ((IData)(vlSelf->ascon_top__DOT__sel_masked_round)
-                                                ? (
-                                                   vlSelf->ascon_top__DOT__affine_layer2nd_in
-                                                   [2U] 
-                                                   >> 0xcU)
-                                                : (~ 
-                                                   (vlSelf->ascon_top__DOT__affine_layer2nd_in
-                                                    [2U] 
-                                                    >> 0xcU))))),6);
-        tracep->fullCData(oldp+1507,((0x3fU & ((IData)(vlSelf->ascon_top__DOT__sel_masked_round)
-                                                ? (
-                                                   vlSelf->ascon_top__DOT__affine_layer2nd_in
-                                                   [3U] 
-                                                   >> 0xcU)
-                                                : (~ 
-                                                   (vlSelf->ascon_top__DOT__affine_layer2nd_in
-                                                    [3U] 
-                                                    >> 0xcU))))),6);
-        tracep->fullIData(oldp+1508,(0x42U),32);
-        tracep->fullIData(oldp+1509,(4U),32);
-        __Vtemp19872[0U] = 0U;
-        __Vtemp19872[1U] = 0U;
-        __Vtemp19872[2U] = 0U;
-        tracep->fullWData(oldp+1510,(__Vtemp19872),96);
-        tracep->fullIData(oldp+1513,(1U),32);
-        tracep->fullIData(oldp+1514,(0x10U),32);
-        tracep->fullIData(oldp+1515,(0xbU),32);
-        tracep->fullCData(oldp+1516,(0xbU),4);
-        tracep->fullIData(oldp+1517,(5U),32);
-        tracep->fullIData(oldp+1518,(3U),32);
-        tracep->fullIData(oldp+1519,(6U),32);
-        tracep->fullIData(oldp+1520,(3U),32);
-        tracep->fullIData(oldp+1521,(6U),32);
-        tracep->fullIData(oldp+1522,(5U),32);
-        tracep->fullIData(oldp+1523,(0x40U),32);
-        tracep->fullIData(oldp+1524,(0x140U),32);
-        tracep->fullIData(oldp+1525,(4U),32);
-        tracep->fullIData(oldp+1526,(0x18U),32);
-        tracep->fullIData(oldp+1527,(0xcU),32);
-        tracep->fullIData(oldp+1528,(0x48U),32);
-        tracep->fullIData(oldp+1529,(0x60U),32);
-        tracep->fullBit(oldp+1530,(0U));
-        tracep->fullIData(oldp+1531,(0x1fU),32);
-        tracep->fullIData(oldp+1532,(0x10000001U),31);
-        tracep->fullIData(oldp+1533,(0U),32);
-        tracep->fullIData(oldp+1534,(0U),32);
-        tracep->fullIData(oldp+1535,(1U),32);
-        tracep->fullIData(oldp+1536,(2U),32);
+        tracep->fullWData(oldp+1303,(__Vtemp13370),320);
+        tracep->fullIData(oldp+1313,(0x40U),32);
+        tracep->fullBit(oldp+1314,(1U));
+        tracep->fullBit(oldp+1315,(0U));
+        tracep->fullIData(oldp+1316,(3U),32);
+        tracep->fullSData(oldp+1317,(0U),13);
+        tracep->fullIData(oldp+1318,(1U),32);
+        tracep->fullIData(oldp+1319,(0xdU),32);
+        tracep->fullIData(oldp+1320,(0x10U),32);
+        tracep->fullCData(oldp+1321,(0x40U),7);
+        tracep->fullIData(oldp+1322,(2U),32);
+        tracep->fullIData(oldp+1323,(5U),32);
+        tracep->fullIData(oldp+1324,(2U),32);
+        tracep->fullIData(oldp+1325,(1U),32);
+        tracep->fullIData(oldp+1326,(5U),32);
+        tracep->fullIData(oldp+1327,(0x140U),32);
+        tracep->fullIData(oldp+1328,(3U),32);
+        tracep->fullIData(oldp+1329,(0x41U),32);
+        tracep->fullIData(oldp+1330,(0x16U),32);
+        tracep->fullIData(oldp+1331,(0x42U),32);
+        tracep->fullIData(oldp+1332,(0xdU),32);
+        tracep->fullBit(oldp+1333,(0U));
+        tracep->fullIData(oldp+1334,(0x1fU),32);
+        tracep->fullIData(oldp+1335,(0x10000001U),31);
+        tracep->fullIData(oldp+1336,(0U),32);
+        tracep->fullIData(oldp+1337,(0U),32);
     }
 }

@@ -11,9 +11,9 @@
 #include "tb_utils.h"
 
 //definizione dei parameter:
-#define d 3
+#define d 2
 #define COL_SIZE 5
-#define PAR 6
+#define PAR 1
 #define WIDTH_RAND (d * COL_SIZE * PAR)  // 110
 #define WIDTH_RAND_SBOX (d*(d+1)/2)
 
@@ -153,7 +153,7 @@ int main(int argc, char** argv) {
     
     // === Inizializza input ===
     top->start = 1;
-    top->key_valid = 1;
+    top->load_data = 1;
 
     // Chiave: 0x000102030405060708090a0b0c0d0e0f
     top->key1 = 0x0706050403020100;
@@ -304,11 +304,11 @@ int main(int argc, char** argv) {
         if ((top->debug_bitcounter == 0) && (top->debug_state == 0x04 || top->debug_state == 0x05)){
             logfile << " substitution layer:" << std::endl;
             logfile << std::hex << std::setfill('0');
-            logfile << "  x0=" << std::setw(16) << top->debug_state_0 << std::endl;
-            logfile << "  x1=" << std::setw(16) << top->debug_state_1 << std::endl;
-            logfile << "  x2=" << std::setw(16) << top->debug_state_2 << std::endl;
-            logfile << "  x3=" << std::setw(16) << top->debug_state_3 << std::endl;
-            logfile << "  x4=" << std::setw(16) << top->debug_state_4 << std::endl;
+            logfile << "  x0=" << std::setw(16) << top->debug_sbox_nomasked_0 << std::endl;
+            logfile << "  x1=" << std::setw(16) << top->debug_sbox_nomasked_1 << std::endl;
+            logfile << "  x2=" << std::setw(16) << top->debug_sbox_nomasked_2 << std::endl;
+            logfile << "  x3=" << std::setw(16) << top->debug_sbox_nomasked_3 << std::endl;
+            logfile << "  x4=" << std::setw(16) << top->debug_sbox_nomasked_4 << std::endl;
         }
 
         if (top->debug_state == 0x04){
@@ -375,11 +375,11 @@ int main(int argc, char** argv) {
         if ((top->debug_bitcounter == 0) && (top->debug_state == 0x09 || top->debug_state == 0x0A)){
             logfile << " substitution layer:" << std::endl;
             logfile << std::hex << std::setfill('0');
-            logfile << "  x0=" << std::setw(16) << top->debug_state_0 << std::endl;
-            logfile << "  x1=" << std::setw(16) << top->debug_state_1 << std::endl;
-            logfile << "  x2=" << std::setw(16) << top->debug_state_2 << std::endl;
-            logfile << "  x3=" << std::setw(16) << top->debug_state_3 << std::endl;
-            logfile << "  x4=" << std::setw(16) << top->debug_state_4 << std::endl;
+            logfile << "  x0=" << std::setw(16) << top->debug_sbox_nomasked_0 << std::endl;
+            logfile << "  x1=" << std::setw(16) << top->debug_sbox_nomasked_1 << std::endl;
+            logfile << "  x2=" << std::setw(16) << top->debug_sbox_nomasked_2 << std::endl;
+            logfile << "  x3=" << std::setw(16) << top->debug_sbox_nomasked_3 << std::endl;
+            logfile << "  x4=" << std::setw(16) << top->debug_sbox_nomasked_4 << std::endl;
         }
 
         if (top->debug_state == 0x09){
@@ -462,11 +462,11 @@ int main(int argc, char** argv) {
         if ((top->debug_bitcounter == 0) && (top->debug_state == 0x0E || top->debug_state == 0x0F)){
             logfile << " substitution layer:" << std::endl;
             logfile << std::hex << std::setfill('0');
-            logfile << "  x0=" << std::setw(16) << top->debug_state_0 << std::endl;
-            logfile << "  x1=" << std::setw(16) << top->debug_state_1 << std::endl;
-            logfile << "  x2=" << std::setw(16) << top->debug_state_2 << std::endl;
-            logfile << "  x3=" << std::setw(16) << top->debug_state_3 << std::endl;
-            logfile << "  x4=" << std::setw(16) << top->debug_state_4 << std::endl;
+            logfile << "  x0=" << std::setw(16) << top->debug_sbox_nomasked_0 << std::endl;
+            logfile << "  x1=" << std::setw(16) << top->debug_sbox_nomasked_1 << std::endl;
+            logfile << "  x2=" << std::setw(16) << top->debug_sbox_nomasked_2 << std::endl;
+            logfile << "  x3=" << std::setw(16) << top->debug_sbox_nomasked_3 << std::endl;
+            logfile << "  x4=" << std::setw(16) << top->debug_sbox_nomasked_4 << std::endl;
         }
 
         if (top->debug_state == 0x0E){
@@ -511,11 +511,11 @@ int main(int argc, char** argv) {
         if ((top->debug_bitcounter == 0) && (top->debug_state == 0x12)){
             logfile << " substitution layer:" << std::endl;
             logfile << std::hex << std::setfill('0');
-            logfile << "  x0=" << std::setw(16) << top->debug_state_0 << std::endl;
-            logfile << "  x1=" << std::setw(16) << top->debug_state_1 << std::endl;
-            logfile << "  x2=" << std::setw(16) << top->debug_state_2 << std::endl;
-            logfile << "  x3=" << std::setw(16) << top->debug_state_3 << std::endl;
-            logfile << "  x4=" << std::setw(16) << top->debug_state_4 << std::endl;
+            logfile << "  x0=" << std::setw(16) << top->debug_sbox_nomasked_0 << std::endl;
+            logfile << "  x1=" << std::setw(16) << top->debug_sbox_nomasked_1 << std::endl;
+            logfile << "  x2=" << std::setw(16) << top->debug_sbox_nomasked_2 << std::endl;
+            logfile << "  x3=" << std::setw(16) << top->debug_sbox_nomasked_3 << std::endl;
+            logfile << "  x4=" << std::setw(16) << top->debug_sbox_nomasked_4 << std::endl;
         }
 
         if (top->debug_state == 0x12){
@@ -571,7 +571,7 @@ int main(int argc, char** argv) {
 
         if (cycle == 2) {
             top->start = 0;
-            top->key_valid = 0;
+            top->load_data = 0;
         }
 
         if (top->done) {

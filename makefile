@@ -49,14 +49,17 @@ simulation_run: .check-fusesoc
 	@echo "✅ Simulazione completata."
 
 .PHONY: simulation_verify
+.PHONY: simulation_verify
 simulation_verify:
 	@echo "👉 Verifica rispetto al golden model..."
 	python3 test_ascon.py > output.txt
 	@echo "👉 Confronto risultati:"
-	@if diff output.txt $(BUILD_DIR)/myascon_ascon_top_1.0.0_0/simulation-verilator/debug_output.txt; then \
-		echo "✅ Perfetto, test superato con successo!"; \
+	@diff output.txt $(BUILD_DIR)/myascon_ascon_top_1.0.0_0/simulation-verilator/debug_output.txt > diff_output.txt || true
+	@if [ -s diff_output.txt ]; then \
+		echo "❌ Differenze trovate! Vedi ./diff_output.txt"; \
+		echo "Hai cambiato i parametri nel file ./tb/tb_auto.cpp? -> PAR e d devono essere uguali al file ./rtl/ascon_params.sv"; \
 	else \
-		echo "❌ Differenze trovate!"; \
+		echo "✅ Perfetto, test superato con successo!"; \
 	fi
 
 .PHONY: simulation

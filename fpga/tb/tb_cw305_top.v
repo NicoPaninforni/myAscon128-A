@@ -36,7 +36,7 @@ module tb();
     parameter pUSB_CLOCK_PERIOD = 10;
     parameter pPLL_CLOCK_PERIOD = 6;
     parameter pSEED = 1;
-    parameter pTIMEOUT = 1000;
+    parameter pTIMEOUT = 10000;
     parameter pVERBOSE = 0;
     parameter pDUMP = 0;
 
@@ -120,6 +120,7 @@ module tb();
       pushbutton = 1;
       pll_clk1 = 0;
 
+      // Reset the DUT
       #(pUSB_CLOCK_PERIOD*2) pushbutton = 0;
       #(pUSB_CLOCK_PERIOD*2) pushbutton = 1;
       #(pUSB_CLOCK_PERIOD*10);
@@ -127,6 +128,12 @@ module tb();
       //write_bytes(0, 1, `REG_CRYPT_PRE_EXPAND_KEY, 8'h00);
 
       //Invio i dati in big-endian il modulo li converte:
+      
+      write_bytes(0, 1, `REG_CONTROL, 8'h01); //resetto il modulo;
+      #(pUSB_CLOCK_PERIOD*2)
+      write_bytes(0, 1, `REG_CONTROL, 8'h00); //setto il controllo
+
+      //Passo i valori fissati:
       write_bytes(0, 16, `REG_CRYPT_TEXTIN, {
          32'h12345678,    // byte 0..3
          32'habcdef01,    // byte 4..7
@@ -135,12 +142,11 @@ module tb();
       });
 
       write_bytes(0, 16, `REG_CRYPT_TEXTIN_BUFFER_MSG, {32'hf1023000, 32'habcd1234, 32'haabbcc11, 32'h12345678});
-      write_bytes(0, 1, `REG_CONTROL, 8'h01);
+      
       write_bytes(0, 16, `REG_CRYPT_NONCEIN, {32'h00010203, 32'h04050607, 32'h08090a0b, 32'h0c0d0e0f});
       write_bytes(0, 16, `REG_CRYPT_KEY, {32'h0f0e0d0c, 32'h0b0a0908, 32'h07060504, 32'h03020100});
       write_bytes(0, 1,  `REG_VALID_BYTES_AD, 8'h10); 
       write_bytes(0, 1, `REG_VALID_BYTES_MSG, 8'h10); 
-      write_bytes(0, 1, `REG_CONTROL, 8'h00); //setto key_valid a 1 dopo aver scritto la chiave
       write_bytes(0, 1, `REG_CRYPT_GO, 8'h01); // Start a 1
 
       for (int i = 0; i < 10; i++) begin
@@ -151,9 +157,9 @@ module tb();
             write_bytes(0, 16, `REG_CRYPT_NONCEIN, {32'h0, 32'h0, 32'h0, i});
          end
          repeat (100) @(posedge usb_clk);
-         write_bytes(0, 1, `REG_CONTROL, 8'h01); // resetto il controllo
-
-         write_bytes(0, 1, `REG_CONTROL, 8'h00); // setto il controllo
+         write_bytes(0, 1, `REG_CONTROL, 8'h01); // resetto il controllo (non lfsr)
+         #(pUSB_CLOCK_PERIOD*2)
+         write_bytes(0, 1, `REG_CONTROL, 8'h00); // tolgo il reset
          write_bytes(0, 1, `REG_CRYPT_GO, 8'h01); // Start a 1
       end
       //REG CONTROL:

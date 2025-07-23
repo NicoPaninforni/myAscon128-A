@@ -49,6 +49,7 @@ module cw305_reg_ascon #(
   input wire usb_clk,
   input wire crypto_clk,
   input wire reset_i,
+  input wire reset_sw_i,  // Reset signal from the software interface
   input wire [pADDR_WIDTH-pBYTECNT_SIZE-1:0] reg_address,  // Address of register
   input wire [pBYTECNT_SIZE-1:0] reg_bytecnt,  // Current byte count
   output reg [7:0] read_data,  //
@@ -75,7 +76,7 @@ module cw305_reg_ascon #(
   input wire I_busy,  /* Crypto busy. */
 
   // register outputs:
-  //output wire [7:0] O_control,  // Control register output
+  output wire [7:0] O_control,  // Control register output
   output wire [4:0] O_valid_bytes_ad,  // Number of valid bytes in textin/cipherin/tagin/noncein
   output wire [4:0] O_valid_bytes_msg,  // Number of valid bytes in textin/cipherin/tagin/noncein
   output reg [4:0] O_clksettings,
@@ -101,7 +102,7 @@ module cw305_reg_ascon #(
   reg  [pNONCE_WIDTH-1:0] reg_crypt_noncein;
   reg  [pSTATE_WIDTH-1:0] reg_crypt_stateout;
   reg                     reg_crypt_go_pulse;
-  //reg [7:0]               reg_control;  
+  reg [7:0]               reg_control;  
   reg [15:0]               reg_valid_bytes_ad;
   reg [15:0]               reg_valid_bytes_msg;
    reg                     busy_usb;
@@ -121,6 +122,7 @@ module cw305_reg_ascon #(
   wire [$clog2(pPT_LENGTH+1)-1:0] fifo_count;
   assign fifo_count = fifo_wr_ptr - fifo_rd_ptr;
 
+  /*
   // Scrittura nella FIFO (clock crypto)
   always @(posedge crypto_clk or posedge reset_i) begin
     if (reset_i) begin
@@ -139,7 +141,7 @@ module cw305_reg_ascon #(
       fifo_out_reg <= cipher_fifo[fifo_rd_ptr];
       fifo_rd_ptr <= fifo_rd_ptr + 1;
     end
-  end
+  end */
 
 
 
@@ -155,8 +157,8 @@ module cw305_reg_ascon #(
   end
 
   // Latch the status signals to avoid glitches on the USB interface
-  always @(posedge crypto_clk or posedge reset_i) begin
-    if (reset_i) begin
+  always @(posedge crypto_clk or posedge reset_i or posedge reset_sw_i) begin
+    if (reset_i || reset_sw_i) begin
       done_latched <= 1'b0;
       ready_tag_latched <= 1'b0;
       cipherout_valid_latched <= 1'b0;
@@ -271,7 +273,7 @@ module cw305_reg_ascon #(
   assign O_key     = reg_crypt_key_crypt;
   assign O_noncein = reg_crypt_noncein_crypt;
   assign O_start   = crypt_go_pulse || reg_crypt_go_pulse_crypt;
-  //assign O_control = reg_control;
+  assign O_control = reg_control;
   assign O_valid_bytes_ad = reg_valid_bytes_ad;
   assign O_valid_bytes_msg = reg_valid_bytes_msg;
   //////////////////////////////////
@@ -296,7 +298,7 @@ module cw305_reg_ascon #(
         `REG_CRYPT_TEXTOUT:   reg_read_data = reg_crypt_textout_usb[reg_bytecnt*8+:8];
         `REG_CRYPT_CIPHEROUT: reg_read_data = reg_crypt_cipherout_usb[reg_bytecnt*8+:8];
         `REG_CRYPT_STATEOUT:  reg_read_data = reg_crypt_stateout_usb[reg_bytecnt*8+:8];
-        //`REG_CONTROL:         reg_read_data = reg_control;
+        `REG_CONTROL:         reg_read_data = reg_control;
         `REG_CRYPT_FIFO_DATA: reg_read_data = fifo_out_reg[reg_bytecnt*8 +: 8];
         `REG_CRYPT_FIFO_CNT:  reg_read_data = fifo_count;
         `REG_VALID_BYTES_AD:  reg_read_data = reg_valid_bytes_ad[reg_bytecnt*8+:8];
@@ -316,9 +318,21 @@ module cw305_reg_ascon #(
   //////////////////////////////////
   always @(posedge usb_clk) begin
     if (reset_i) begin
-      O_clksettings      <= 0;
-      O_user_led         <= 0;
-      reg_crypt_go_pulse <= 1'b0;
+      O_clksettings       <= 0;
+      O_user_led          <= 0;
+      reg_crypt_go_pulse  <= 1'b0;
+      reg_control         <= 0;
+      reg_crypt_textin    <= 0;
+      reg_crypt_textin_buffer_msg <= 0; // Buffer for textin
+      reg_crypt_cipherin  <= 0;
+      reg_crypt_key       <= 0;
+      reg_crypt_noncein   <= 0;
+      reg_valid_bytes_ad  <= 0;
+      reg_valid_bytes_msg <= 0;
+      reg_crypt_cipherout <= 0;
+      reg_crypt_textout   <= 0;
+      reg_crypt_stateout  <= 0;
+      reg_crypt_tagout    <= 0;
     end else begin
       if (reg_addrvalid && reg_write) begin
         case (reg_address)
@@ -329,7 +343,7 @@ module cw305_reg_ascon #(
           `REG_CRYPT_CIPHERIN: reg_crypt_cipherin[reg_bytecnt*8+:8] <= write_data;
           `REG_CRYPT_KEY:      reg_crypt_key[reg_bytecnt*8+:8] <= write_data;
           `REG_CRYPT_NONCEIN:  reg_crypt_noncein[reg_bytecnt*8+:8] <= write_data;
-          //`REG_CONTROL:        reg_control <= write_data;
+          `REG_CONTROL:        reg_control <= write_data;
           `REG_VALID_BYTES_AD:    reg_valid_bytes_ad[reg_bytecnt*8+:8] <= write_data;
           `REG_VALID_BYTES_MSG:   reg_valid_bytes_msg[reg_bytecnt*8+:8] <= write_data;
         endcase

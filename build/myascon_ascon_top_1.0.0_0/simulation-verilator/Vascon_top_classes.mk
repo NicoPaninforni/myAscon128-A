@@ -32,6 +32,13 @@ VM_CLASSES_FAST += \
 	Vascon_top___024root__3 \
 	Vascon_top___024root__4 \
 	Vascon_top___024root__5 \
+	Vascon_top___024root__6 \
+	Vascon_top___024root__7 \
+	Vascon_top___024root__8 \
+	Vascon_top___024root__9 \
+	Vascon_top___024root__10 \
+	Vascon_top___024root__11 \
+	Vascon_top___024root__12 \
 	Vascon_top___024unit \
 
 # Generated module classes, non-fast-path, compile with low/medium optimization
@@ -52,6 +59,7 @@ VM_CLASSES_SLOW += \
 	Vascon_top___024root__13__Slow \
 	Vascon_top___024root__14__Slow \
 	Vascon_top___024root__15__Slow \
+	Vascon_top___024root__16__Slow \
 	Vascon_top___024unit__Slow \
 
 # Generated support classes, fast-path, compile with highest optimization

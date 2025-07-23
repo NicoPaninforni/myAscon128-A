@@ -34,51 +34,49 @@ particolarmente utili in fase di test SCA.
 Il modulo è progettato per garantire robustezza contro attacchi di tipo DPA e flessibilità hardware,
 risultando adatto a implementazioni ASIC o FPGA dove la sicurezza fisica è cruciale.
 */
-import ascon_params::d;
-import ascon_params::PAR;
-import ascon_params::WORD_SIZE;
-import ascon_params::COL_SIZE;
-import ascon_params::STATE_WIDTH;
-import ascon_params::STATE_WIDTH;
-import ascon_params::SHIFT_PAR_D_PLUS_1;
-import ascon_params::NUMBER_BIT_MASK;
-import ascon_params::RAND_WIDTH;
-import ascon_params::LFSR_WIDTH;
+
+// Import dei parametri ASCON
+import ascon_params::d; // d : grado del mascheramento
+import ascon_params::PAR; // PAR : parallelismo bit-level (numero S-BOX istanziato in parallelo)
+import ascon_params::WORD_SIZE; // WORD_SIZE : dimensione della parola (64 bit)
+import ascon_params::COL_SIZE; // COL_SIZE : dimensione della colonna (5 -> x0, x1, x2, x3, x4)
+import ascon_params::STATE_WIDTH; // STATE_WIDTH : larghezza dello stato (320 bit) 
+import ascon_params::SHIFT_PAR_D_PLUS_1; // SHIFT_PAR_D_PLUS_1 : shift per il parallelismo (d+1)*PAR -> numero shift per esecuzione non mascherata
+import ascon_params::NUMBER_BIT_MASK;  // NUMBER_BIT_MASK : numero di bit da processare per round mascherato (64 bit /PAR bit) (estremo superiore)
+import ascon_params::RAND_WIDTH; // RAND_WIDTH : numero di bit di casualità richiesti
+import ascon_params::LFSR_WIDTH; // LFSR_WIDTH : larghezza dell'LFSR (31 bit)
 
 module ascon_top (
     input  logic clk,
     input  logic reset_n,
-    input  logic start,
+    input  logic reset_n_lfsr, // serve per il TVLA (lfsr non viene resettato se do solo il software reset) -> se no ogni volta le maschere non cambierebbero
+    input  logic start, 
 
     input  logic [WORD_SIZE-1:0] key1,
     input  logic [WORD_SIZE-1:0] key2,
-    input  logic key_valid, //se la chiave è valida 
-
-    //in hardware ascon-sca c'è anche key_ready e key_update
+    input  logic load_data, // settato a 1 una volta che ho i dati validi sugli input 
 
     input  logic [WORD_SIZE-1:0] nonce1,
     input  logic [WORD_SIZE-1:0] nonce2,
     input  logic [WORD_SIZE-1:0] initialVector,
 
-    input  logic [2*WORD_SIZE-1:0] data_in, //input del messaggio
-    input  logic valid_data_in, //se il messaggio in input è valido
-    input logic last_block,
-    input logic [$clog2(2*WORD_SIZE/8):0] valid_bytes,
-    input  logic EOT, //fine del messaggio in input
-    //In Hardware ascon-sca c'è anche bdi_pad_loc e bdi_valid_bytes per gestire il padding
-    //input  logic [d*COL_SIZE*PAR-1:0] random_masks, //per la creazione delle shares poi vedremo bene come crearle
-    /* verilator lint_off UNUSED */
-    //input  logic [(d+1)*d/2-1:0] random_masks_sbox, //per la s-box
-    /* verilator lint_on UNUSED */
-    output logic [STATE_WIDTH-1:0] state_reg_out, //stato del registro di stato
-    output logic ciphertext_valid, //se il messaggio in output è valido
+    input  logic [2*WORD_SIZE-1:0] data_in, //input da 128 bit per blocchi di plaintext o associated data
+    input  logic valid_data_in, // 1 se data_in è valido, 0 altrimenti
+    input logic last_block,     // 1 segnale che sto ricevendo l'ultimo blocco di aad
+    input logic [$clog2(2*WORD_SIZE/8):0] valid_bytes,  // numero di byte validi in data_in (0-16)
+    input  logic EOT, //fine del messaggio in input (ultimo blocco di plaintext) -> posso iniziare la finalizzazione
+
+    output logic [STATE_WIDTH-1:0] state_reg_out, //stato dello status register (320 bit)
+    output logic ciphertext_valid, // 1 se il ciphertext di uscita è valido
     output logic [2*WORD_SIZE-1:0] ciphertext,
     output logic done, //se il processo è finito
-    output logic ready_tag,
+    output logic ready_tag, // se il tag è pronto
     output logic [WORD_SIZE-1:0] tag1,
     output logic [WORD_SIZE-1:0] tag2,
-    output logic ready_for_data,
-    output logic read_data
+    output logic ready_for_data, // se sono pronto a ricevere nuovi dati in input
+    output logic read_data // ho letto i dati puoi iniziare a prepare i prossimi (su FPGA puoi salvare nei registri di input quelli nuovi)
+
+    // Segnali di debug per ottenere il file debug_output.txt simile (uguale hopefully) a quello del golden model python:
     `ifdef DEBUG
         , //se c'è il debug
         output logic debug_extra_padding_ff,
@@ -95,13 +93,18 @@ module ascon_top (
         output logic [63:0] debug_round_state_2,
         output logic [63:0] debug_round_state_3,
         output logic [63:0] debug_round_state_4,
+        output logic [63:0] debug_sbox_nomasked_0,
+        output logic [63:0] debug_sbox_nomasked_1,
+        output logic [63:0] debug_sbox_nomasked_2,
+        output logic [63:0] debug_sbox_nomasked_3,
+        output logic [63:0] debug_sbox_nomasked_4,
         output logic [63:0] debug_linear_diffusion_state3,
         output logic [63:0] debug_linear_diffusion_state4
     `endif
 );
 
+    //Associazione segnali di debug:
     `ifdef DEBUG
-        //Associazione segnali di debug:
         assign debug_extra_padding_ff = extra_padding_ff;
         assign debug_bitcounter = bit_counter;
         assign debug_state_0 = state_reg_out[0*64 +: 64];
@@ -119,12 +122,13 @@ module ascon_top (
         assign debug_linear_diffusion_state4 = linear_diffusion_debug[4]; 
     `endif
 
-    //istanzio lfsr: --------------------------------------------
-    //segnali per lfsr:
+    
+    //segnali per LFSR:
     logic [RAND_WIDTH-1:0] lfsr_out; //output dell'LFSR
     logic [LFSR_WIDTH-1:0] lfsr_state_in;
     logic [LFSR_WIDTH-1:0] lfsr_state_out;
 
+    // == istanzio LFSR (PRNG) ==
     lfsr lfst_inst (
         .data_in ({RAND_WIDTH{1'b0}}),
         .state_in    (lfsr_state_in),
@@ -132,45 +136,46 @@ module ascon_top (
         .data_out    (lfsr_out)
     );
 
-    //segnali di randomicità:
+    //segnali di randomicità :
     logic [d*COL_SIZE*PAR-1:0] random_masks; //maschere casuali per la creazione delle shares
     logic [(d+1)*d/2-1:0] random_masks_sbox; //maschere casuali per la s-box
 
-    assign random_masks = lfsr_out[0+:d*COL_SIZE*PAR]; //prendo i primi d*COL_SIZE*PAR bit dell'LFSR
-    assign random_masks_sbox = lfsr_out[d*COL_SIZE*PAR+:((d+1)*d/2)]; //prendo i successivi (d+1)*d/2 bit dell'LFSR
+    assign random_masks = lfsr_out[0+:d*COL_SIZE*PAR]; //prendo i primi d*COL_SIZE*PAR bit dell'LFSR per lo share-creator
+    assign random_masks_sbox = lfsr_out[d*COL_SIZE*PAR+:((d+1)*d/2)]; //prendo i successivi (d+1)*d/2 bit dell'LFSR per s-box
 
-    always_ff @(posedge clk or negedge reset_n) begin
-    if (!reset_n)
-        lfsr_state_in <= 31'h1234567;  // tipo 32'hCAFEBABE
+    // reset dell'LFSR: NOTA BENE -> ha un reset diverso per svolgere il TVLA (se usiamo il reset software l'LFSR non viene resettato)
+    // un'altra possibilità sarebbe stata quella di resettare anche LFSR, ma caricare un seed casuale dall'esterno, ogni volta (dovevo cambiare più cose)
+    always_ff @(posedge clk or negedge reset_n_lfsr) begin
+    if (!reset_n_lfsr) 
+        lfsr_state_in <= 31'h1234567;  // seed fisso
     else
         lfsr_state_in <= lfsr_state_out;
     end
 
-
-
-
-
-    //segnali per fsm:
-    logic extra_padding_ff; //se devo fare il padding extra
-    logic shift_en, shift_type, write_en;
-    logic last_cycle;
+    //segnali per FSM:
+    logic extra_padding_ff; //se devo fare il padding extra (ossia l'ultimo blocco di msg (aad o plaintext) è di dimensione 16 byte esatti)
+    logic shift_en, shift_type, write_en; // shift_type mi dice se devo shiftare di PAR bit o di (d+1)*PAR bit
+    logic last_cycle; // se sono all'ultimo ciclo di shift (posso shiftare un numero diverso di bit a secondo di quando fa 64 % shift_pos)
     logic reg_key1_load, reg_key2_load;
-    logic sel_mux_linear_diffusion_out_x3, sel_mux_linear_diffusion_out_x4;
-    logic sel_init_load, sel_masked_round, sel_padding, sel_xor_signal, sel_absorb_data;
-    /* verilator lint_off UNUSED */
-    logic shift_enable_sipo, last_cycle_sipo;
-    /* verilator lint_on UNUSED */
-    logic [3:0] round_counter;
-    logic unsigned [$clog2(NUMBER_BIT_MASK+1)-1:0] bit_counter;
+    logic sel_mux_linear_diffusion_out_x3, sel_mux_linear_diffusion_out_x4;  // prima di iniziare la finalizzazione devo fare l'xor fra l'output del LDL e la chiave
+    logic sel_init_load, sel_masked_round, sel_padding, sel_xor_signal, sel_absorb_data; // segnali per i mux di selezione (caricare input in status_reg)
+    logic [3:0] round_counter; // contatore dei round di permutazione masked :(0-12), unmasked : (4-12) -> NOTA: non (0-8) se no la RC  
+    logic unsigned [$clog2(NUMBER_BIT_MASK+1)-1:0] bit_counter; // contatore dei bit da processare per round mascherato masked: ((64 / PAR)  + 2) estremo superiore {2 stadi di FF}; unmasked : (64 / PAR + 1) estremo superiore
+
+    `ifdef DEBUG
+        logic shift_enable_sipo, last_cycle_sipo;  // segnali per il sipo debug
+    `endif
+
+
     
-    //Istanzio fsm:
+    // === Istanzio fsm === (Zamboni non sarebbe contento)
     fsm mealy_fsm (
         //Input:
         .clk(clk),
         .reset_n(reset_n),
         .start(start),
 
-        .key_valid(key_valid),
+        .load_data(load_data),
         .valid_data_in(valid_data_in),
         .last_block(last_block),
         .valid_bytes(valid_bytes),
@@ -210,25 +215,38 @@ module ascon_top (
         `endif
     );
     
-    //Segnali per lo state_register:
+    //Segnali per lo state_register: 
+    logic [STATE_WIDTH-1:0] state_reg_in_shares [d:0]; //input del registro di stato
+    logic [SHIFT_PAR_D_PLUS_1*COL_SIZE-1:0] state_reg_out_shiftdplus1_shares [d:0];  //uscita shift = parallelismo*(d+1)
+    logic [SHIFT_PAR_D_PLUS_1*COL_SIZE-1:0] state_reg_in_shiftdplus1_shares [d:0];  //input shift = parallelismo*(d+1)
+    logic [PAR*COL_SIZE-1:0] state_reg_in_shift1_shares [d:0]; //input shift = PAR bit 
+    logic [STATE_WIDTH-1:0]  state_reg_out_shares [d:0]; //output del registro di stato
 
-    logic [STATE_WIDTH-1:0] state_reg_in; //input del registro di stato
-    logic [SHIFT_PAR_D_PLUS_1*COL_SIZE-1:0] state_reg_out_shiftdplus1;  //uscita shift = parallelismo*(d+1)
-    logic [SHIFT_PAR_D_PLUS_1*COL_SIZE-1:0] state_reg_in_shiftdplus1;
-    logic [PAR*COL_SIZE-1:0] state_reg_in_shift1;
+    // == Istanzio state_register == NOTA BENE: ne servono più di uno perchè devo ricombinare le shares dopo averle salvate se no sarei vulnerabili ad attacchi sul contenuto dello state register
+    genvar s;
 
-    state_register state_reg (
-        .clk(clk),
-        .write_en(write_en),
-        .shift_en(shift_en),
-        .shift_type(shift_type),
-        .last_cycle(last_cycle),
-        .data_in(state_reg_in),
-        .in_shifted_dplus1(state_reg_in_shiftdplus1),
-        .in_shifted_1bit(state_reg_in_shift1),
-        .out_shifted_dplus1(state_reg_out_shiftdplus1),
-        .data_out(state_reg_out)
-    );
+    generate
+        for (s = 0; s <= d; s++) begin : gen_state_regs
+
+            localparam logic write_en_i = (s == 1 || s == 2) ? 1'b0 : 1'b1;
+
+            state_register state_reg_share (
+                .clk(clk),
+                .reset_n(reset_n),
+                .write_en(write_en & write_en_i), //Il parallel load è attivo solo per uno state register, gli altri sono solo shift registers -> Possibile ottimizzazione
+                .shift_en(shift_en),
+                .shift_type(shift_type),
+                .last_cycle(last_cycle),
+                .data_in(state_reg_in_shares[s]), 
+                .in_shifted_dplus1(state_reg_in_shiftdplus1_shares[s]), 
+                .in_shifted_1bit(state_reg_in_shift1_shares[s]),      
+                .out_shifted_dplus1(state_reg_out_shiftdplus1_shares[s]),
+                .data_out(state_reg_out_shares[s]) 
+            );
+        end
+    endgenerate
+
+    assign state_reg_out = state_reg_out_shares[0]; //output dello stato del registro di stato, prendo il primo dominio (A)
 
     //Register per la chiave (key1):
     logic [WORD_SIZE-1:0] reg_key1_out;
@@ -324,11 +342,12 @@ module ascon_top (
     logic [SHIFT_PAR_D_PLUS_1-1:0] state_reg_out_x3; //uscita shift = parallelismo
     logic [SHIFT_PAR_D_PLUS_1-1:0] state_reg_out_x4; //uscita shift = parallelismo
 
-    assign state_reg_out_x0 = state_reg_out_shiftdplus1[0+:SHIFT_PAR_D_PLUS_1];
-    assign state_reg_out_x1 = state_reg_out_shiftdplus1[SHIFT_PAR_D_PLUS_1+:SHIFT_PAR_D_PLUS_1];
-    assign state_reg_out_x2 = state_reg_out_shiftdplus1[2*SHIFT_PAR_D_PLUS_1+:SHIFT_PAR_D_PLUS_1];
-    assign state_reg_out_x3 = state_reg_out_shiftdplus1[3*SHIFT_PAR_D_PLUS_1+:SHIFT_PAR_D_PLUS_1];
-    assign state_reg_out_x4 = state_reg_out_shiftdplus1[4*SHIFT_PAR_D_PLUS_1+:SHIFT_PAR_D_PLUS_1];
+    //Lo status register in cui carico i dati dall'esterno è [0]
+    assign state_reg_out_x0 = state_reg_out_shiftdplus1_shares[0][0+:SHIFT_PAR_D_PLUS_1];
+    assign state_reg_out_x1 = state_reg_out_shiftdplus1_shares[0][SHIFT_PAR_D_PLUS_1+:SHIFT_PAR_D_PLUS_1];
+    assign state_reg_out_x2 = state_reg_out_shiftdplus1_shares[0][2*SHIFT_PAR_D_PLUS_1+:SHIFT_PAR_D_PLUS_1];
+    assign state_reg_out_x3 = state_reg_out_shiftdplus1_shares[0][3*SHIFT_PAR_D_PLUS_1+:SHIFT_PAR_D_PLUS_1];
+    assign state_reg_out_x4 = state_reg_out_shiftdplus1_shares[0][4*SHIFT_PAR_D_PLUS_1+:SHIFT_PAR_D_PLUS_1];
 
     //b) applico ai vari segnali la RC:
     // In teoria basterebbe solo per x2 ma se PAR*(d+1) > 64 faccio anche il padding di 00 sugli altri segnali
@@ -461,7 +480,7 @@ module ascon_top (
     
     genvar p;
     generate
-        if (d == 2) begin : gen_cog
+        if (d == 11) begin : gen_cog //changing of the guards disabilitatio (d == 2)
             
             for (p = 0; p < PAR; p++) begin : gen_sbox
                 //Funziona perchè ad ogni nuova permutazione i bit sono già shiftati dentro lo state_reg
@@ -476,7 +495,7 @@ module ascon_top (
                     .x_out_noMask(sbox_output_unmasked[p])
                 );
             end
-        end else begin : gen_unsupported
+        end else begin : gen_no_changing
             for (p = 0; p < PAR; p++) begin : gen_sbox
                 logic [(d+1)*d/2-1:0] fresh_r;
                 //Funziona perchè ad ogni nuova permutazione i bit sono già shiftati dentro lo state_reg
@@ -539,76 +558,48 @@ module ascon_top (
             };
         end
     endgenerate
-    
-    //Ora ho due possibilità: in ogni caso faccio tornare al registro (d+1)*PAR*COL_SIZE bit, poi sarà lui a sapere se li deve campionare tutti o solo PAR*COL_SIZE
-    //Funzione per l'xor tree:
-    function automatic logic xor_tree (
-        input logic [d:0] in,  // vettore di bit da ridurre
-        input int N                      // numero effettivo di bit (uguale a num_shares)
-    );
-        // Calcola il numero massimo di livelli: serve $clog2(N) + 1
-        localparam int MAX_STAGE = $clog2(d+1) + 1;
 
-        // Ogni livello dello XOR tree ha al più num_shares elementi
-        logic [(d+1)-1:0] stage [0:MAX_STAGE-1];
-
-        int level = 0;
-        int num = N;
-
-        // === Inizializzazione del primo livello con gli input ===
-        
-        for (int i = 0; i < N; i++) begin
-            stage[0][i] = in[i];
-        end
-        
-        // === Costruzione dell'albero XOR ===
-        while (num > 1) begin
-            // Somma a coppie
-            for (int i = 0; i < num / 2; i++) begin
-                stage[level + 1][i] = stage[level][2*i] ^ stage[level][2*i + 1];
-            end
-            // Se numero dispari, porta avanti l'ultimo elemento
-            if (num % 2 == 1) begin
-                stage[level + 1][num / 2] = stage[level][num - 1];
-                num = num / 2 + 1;
-            end else begin
-                num = num / 2;
-            end
-
-            level++;
-        end
-
-        // Il risultato finale è il primo elemento dell'ultimo livello
-        return stage[level][0];
-    endfunction
-
-    //Ora devo ricombinare le shares:
-    logic [COL_SIZE*PAR-1:0] recombine_shares;
-    // Ricombinazione delle share bit a bit:
-    generate
-        for (genvar bit_idx = 0; bit_idx < PAR*COL_SIZE; bit_idx++) begin : recombine
-            // Per ogni bit (posizione) ricombina il valore proveniente da tutti i domini (d+1)
-            logic [d:0] temp_bits;
-            
-            always_comb begin
-                for (int s = 0; s <= d; s++) begin
-                    temp_bits[s] = affine_layer2nd_out[s][bit_idx];
+    `ifdef DEBUG
+        logic [STATE_WIDTH-1:0] recombine_shares_sbox;
+        generate
+            for (genvar bit_idx_sbox = 0; bit_idx_sbox < STATE_WIDTH; bit_idx_sbox++) begin : recombine
+                // Per ogni bit (posizione) ricombina il valore proveniente da tutti i domini (d+1)
+                logic [d:0] temp_bits_sbox;
+                
+                always_comb begin
+                    for (int st_reg_sbox = 0; st_reg_sbox <= d; st_reg_sbox++) begin
+                        temp_bits_sbox[st_reg_sbox] = state_reg_out_shares[st_reg_sbox][bit_idx_sbox];
+                    end
+                    recombine_shares_sbox[bit_idx_sbox] = xor_tree(temp_bits_sbox, d+1);
                 end
-                recombine_shares[bit_idx] = xor_tree(temp_bits, d+1);
             end
-        end
-    endgenerate
+        endgenerate
+        
+        assign debug_sbox_nomasked_0 = recombine_shares_sbox[0*64 +: 64];
+        assign debug_sbox_nomasked_1 = recombine_shares_sbox[1*64 +: 64];
+        assign debug_sbox_nomasked_2 = recombine_shares_sbox[2*64 +: 64];
+        assign debug_sbox_nomasked_3 = recombine_shares_sbox[3*64 +: 64];
+        assign debug_sbox_nomasked_4 = recombine_shares_sbox[4*64 +: 64];
+    `endif
+    
 
     //Assegno le entrate seriali dello state register: 
-    // PAR*COL_SIZE bit 
-    assign state_reg_in_shift1 = recombine_shares;
 
-    // (d+1)*PAR*COL_SIZE bit
+    //Ingresso Mascherato: salvo ogni shares (PAR*COL_SIZE bits) nel suo registro:
+    always_comb begin
+        for (int st = 0; st <= d; st++) begin
+            state_reg_in_shift1_shares[st] = affine_layer2nd_out[st];
+        end
+    end
+
+    
+
+    //Ingresso non masherato: (d+1)*PAR*COL_SIZE bits -> lo salvo nello state_reg[0]
     generate
         if ((PAR * (d + 1)) <= 64) begin : gen_normal
             for (genvar idx = 0; idx < COL_SIZE; idx++) begin : pack_affine
                 for (genvar d_idx = 0; d_idx < d+1; d_idx++) begin : pack_affine_int
-                    assign state_reg_in_shiftdplus1[idx*PAR*(d+1)+PAR*d_idx +: PAR] =
+                    assign state_reg_in_shiftdplus1_shares[0][idx*PAR*(d+1)+PAR*d_idx +: PAR] =
                         affine_layer2nd_out[d_idx][idx*PAR +: PAR];
                 end
             end
@@ -617,7 +608,7 @@ module ascon_top (
                 for (genvar d_idx = 0; d_idx < d+1; d_idx++) begin : pack_affine_trunc_int
                     if (PAR * d_idx < 64) begin : active_bits
                         localparam int USED_BITS = ((PAR * (d_idx + 1)) <= 64) ? PAR : (64 - PAR * d_idx);
-                        assign state_reg_in_shiftdplus1[idx*64 + PAR*d_idx +: USED_BITS] =
+                        assign state_reg_in_shiftdplus1_shares[0][idx*64 + PAR*d_idx +: USED_BITS] =
                             affine_layer2nd_out[d_idx][idx*PAR +: USED_BITS];
                     end
                     // Altrimenti non assegno nulla → padding implicito a 0
@@ -688,11 +679,11 @@ module ascon_top (
 
     always_comb begin //questo devo modificarlo per ottenere solo 2 MUX a 64 e poi 2 MUX a 320 bit guarda pag 14 Generalizzazione metodo matematico tablet!
         unique case ({sel_absorb_data, sel_init_load})
-            2'b10: state_reg_in = {state_reg_in_absorb[4], state_reg_in_absorb[3], state_reg_in_absorb[2], state_reg_in_absorb[1], state_reg_in_absorb[0]};
-            2'b01: state_reg_in = init_data;
-            2'b00: state_reg_in = input_state;
+            2'b10: state_reg_in_shares[0] = {state_reg_in_absorb[4], state_reg_in_absorb[3], state_reg_in_absorb[2], state_reg_in_absorb[1], state_reg_in_absorb[0]};
+            2'b01: state_reg_in_shares[0] = init_data;
+            2'b00: state_reg_in_shares[0] = input_state;
             //Nota l'xor con la chiave dipende dal rate:
-            2'b11: state_reg_in = {state_reg_in_absorb[4], state_reg_in_absorb[3] ^ reg_key2_out, state_reg_in_absorb[2] ^ reg_key1_out, state_reg_in_absorb[1] , state_reg_in_absorb[0]};  
+            2'b11: state_reg_in_shares[0] = {state_reg_in_absorb[4], state_reg_in_absorb[3] ^ reg_key2_out, state_reg_in_absorb[2] ^ reg_key1_out, state_reg_in_absorb[1] , state_reg_in_absorb[0]};  
         endcase
     end
 
@@ -710,11 +701,74 @@ module ascon_top (
     // Debug e assegnazione
     logic [63:0] linear_diffusion_debug [0:4];
 
+    //Ora devo ricombinare le shares prima di applicare il layer di diffusione lineare:
+    logic [STATE_WIDTH-1:0] recombine_shares;
+
+    //Funzione per l'xor tree:
+    function automatic logic xor_tree (
+        input logic [d:0] in,  // vettore di bit da ridurre
+        input int N                      // numero effettivo di bit (uguale a num_shares)
+    );
+        // Calcola il numero massimo di livelli: serve $clog2(N) + 1
+        localparam int MAX_STAGE = $clog2(d+1) + 1;
+
+        // Ogni livello dello XOR tree ha al più num_shares elementi
+        logic [(d+1)-1:0] stage [0:MAX_STAGE-1];
+
+        int level = 0;
+        int num = N;
+
+        // === Inizializzazione del primo livello con gli input ===
+        
+        for (int i = 0; i < N; i++) begin
+            stage[0][i] = in[i];
+        end
+        
+        // === Costruzione dell'albero XOR ===
+        while (num > 1) begin
+            // Somma a coppie
+            for (int i = 0; i < num / 2; i++) begin
+                stage[level + 1][i] = stage[level][2*i] ^ stage[level][2*i + 1];
+            end
+            // Se numero dispari, porta avanti l'ultimo elemento
+            if (num % 2 == 1) begin
+                stage[level + 1][num / 2] = stage[level][num - 1];
+                num = num / 2 + 1;
+            end else begin
+                num = num / 2;
+            end
+
+            level++;
+        end
+
+        // Il risultato finale è il primo elemento dell'ultimo livello
+        return stage[level][0];
+    endfunction
+
+    // Ricombinazione delle share bit a bit:
+    generate
+        for (genvar bit_idx = 0; bit_idx < STATE_WIDTH; bit_idx++) begin : recombine
+            // Per ogni bit (posizione) ricombina il valore proveniente da tutti i domini (d+1)
+            logic [d:0] temp_bits;
+            
+            always_comb begin
+                for (int st_reg = 0; st_reg <= d; st_reg++) begin
+                    temp_bits[st_reg] = state_reg_out_shares[st_reg][bit_idx];
+                end
+                recombine_shares[bit_idx] = xor_tree(temp_bits, d+1);
+            end
+        end
+    endgenerate
+
     generate
         for (genvar i = 0; i < 5; i++) begin : linear_diffusion_layer
-            assign linear_diffusion_debug[i] = state_reg_out[i*64 +: 64]
-                                            ^ rotr64(state_reg_out[i*64 +: 64], rotations_a[i])
-                                            ^ rotr64(state_reg_out[i*64 +: 64], rotations_b[i]);
+            assign linear_diffusion_debug[i] = (sel_masked_round)
+                ? recombine_shares[i*64 +: 64]
+                    ^ rotr64(recombine_shares[i*64 +: 64], rotations_a[i])
+                    ^ rotr64(recombine_shares[i*64 +: 64], rotations_b[i])
+                : state_reg_out[i*64 +: 64]
+                    ^ rotr64(state_reg_out[i*64 +: 64], rotations_a[i])
+                    ^ rotr64(state_reg_out[i*64 +: 64], rotations_b[i]);
 
             assign linear_diffusion_out[i*64 +: 64] = linear_diffusion_debug[i];
         end

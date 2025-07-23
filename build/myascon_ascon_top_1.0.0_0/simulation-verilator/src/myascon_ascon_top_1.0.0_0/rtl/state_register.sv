@@ -39,6 +39,7 @@ import ascon_params::SHIFT_PAR_D_PLUS_1_LAST;
 module state_register 
 (
     input  logic clk,
+    input  logic reset_n,
     input  logic write_en,
     input  logic shift_en,
     input  logic shift_type, // 1 = shift 1, 0 = shift d+1
@@ -110,12 +111,18 @@ module state_register
     endgenerate
 
     // === Blocco sequenziale
-    always_ff @(posedge clk) begin
-        for (int i = 0; i < COL_SIZE; i++) begin
-            state[i] <= next_state[i];
+    always @(posedge clk or negedge reset_n) begin
+        if (!reset_n) begin
+            for (int i = 0; i < COL_SIZE; i = i + 1) begin
+                state[i] <= {WORD_SIZE{1'b0}}; // azzera ogni word
+            end
+        end else begin
+            for (int i = 0; i < COL_SIZE; i = i + 1) begin
+                state[i] <= next_state[i];
+            end
         end
     end
-
+    
     // === Output combinatorio
     generate
     if (SHIFT_PAR_D_PLUS_1_LAST < WORD_SIZE) begin : gen_caseNoPArMAx

@@ -109,13 +109,16 @@ module cw305_top #(
     wire reg_addrvalid;
     wire [7:0] write_data;
     wire [7:0] read_data;
+    wire [7:0] control;
     wire reg_read;
     wire reg_write;
     wire [4:0] clk_settings;
     wire crypt_clk;
 
-    wire resetn = pushbutton;
+    wire resetn = pushbutton; // resetn is active low, control[0] is used to reset the core
+    wire resetn_sw = ~control[0];
     wire reset = !resetn;
+    wire reset_sw_i = !resetn_sw;
 
     `ifndef SS2_WRAPPER
         wire usb_clk_buf;
@@ -163,22 +166,22 @@ module cw305_top #(
     wire         msg_valid;
     wire         msg_last;
     wire         msg_eot;
-    wire        key_valid;
+    wire        load_data;
     wire         msg_select;
     wire [4:0]   valid_bytes_ad;
     wire [4:0]   valid_bytes_ptx; 
 
     reg fsm_msg_valid;
     reg fsm_msg_last;
+    reg fsm_start;
     reg fsm_msg_eot;
-    reg fsm_key_valid;
     reg fsm_msg_select;
 
     assign msg_valid = fsm_msg_valid;
     assign msg_last = fsm_msg_last;
     assign msg_eot = fsm_msg_eot;
-    assign key_valid = fsm_key_valid;
     assign msg_select = fsm_msg_select;
+    assign crypt_start = fsm_start; // start del core ascon
 
     // output
     wire [127:0] ciphertext;
@@ -196,8 +199,9 @@ module cw305_top #(
        .pTAG_WIDTH              (pTAG_WIDTH),
        .pNONCE_WIDTH            (pNONCE_WIDTH),
        .pSTATE_WIDTH            (pSTATE_WIDTH)
-    ) U_reg_aes (
+    ) U_reg_ascon (
        .reset_i                 (reset),
+       .reset_sw_i              (reset_sw_i),
        .crypto_clk              (crypt_clk),
        .usb_clk                 (usb_clk_buf),
        .reg_address             (reg_address[pADDR_WIDTH-pBYTECNT_SIZE-1:0]),
@@ -223,7 +227,7 @@ module cw305_top #(
 
        .O_valid_bytes_ad           (valid_bytes_ad),
        .O_valid_bytes_msg          (valid_bytes_ptx), // 1 byte, numero di byte validi in input
-       //.O_control               (control),          
+       .O_control               (control),          
        .O_clksettings           (clk_settings),
        .O_user_led              (led3),
        .O_key                   (crypt_key),
@@ -232,7 +236,7 @@ module cw305_top #(
        .O_cipherin              (),                     // unused usato in decript
        //.O_tagin                 ({tag2, tag1}),
        .O_noncein               (crypt_noncein),
-       .O_start                 (crypt_start)
+       .O_start                 (load_data) //O_Start lo setto tramite control[0] -> il colpo di clock dopo il load do start = 1;
     );
 
 `ifdef ICE40
@@ -292,12 +296,13 @@ wire [63:0] iv     = 64'h00001000808c0001;
 
 ascon_top u_ascon_top (
     .clk                (crypt_clk),
-    .reset_n            (resetn),
+    .reset_n            (resetn & resetn_sw),
+    .reset_n_lfsr       (resetn),
     .start              (crypt_start),
 
     .key1               (key1),
     .key2               (key2),
-    .key_valid          (key_valid),
+    .load_data          (load_data), // se la chiave è valida),
 
     .nonce1             (nonce1),
     .nonce2             (nonce2),
@@ -323,7 +328,7 @@ ascon_top u_ascon_top (
 // Segnali di stato per CW305
 assign crypt_busy     = ~ready_for_data;
 assign crypt_stateout = ascon_state; // da leggere via USB
-assign tio_trigger    = ascon_done;
+assign tio_trigger    = fsm_start;
 assign crypt_done = ascon_done;
 assign crypt_cipherout = ciphertext;
 
@@ -331,12 +336,12 @@ assign crypt_cipherout = ciphertext;
 
     //FSM per inviare i controlli al core:
 
-    parameter IDLE = 3'd0, PROCESS_AD = 3'd1, PROCESS_MSG = 3'd2, DONE = 3'd3;
+    parameter IDLE = 3'd0, LOAD_DATA = 3'd1, PROCESS_AD = 3'd2, PROCESS_MSG = 3'd3, DONE = 3'd4;
     reg [2:0] state, next_state;
 
 
-    always @(posedge crypt_clk or negedge resetn) begin
-        if (!resetn)
+    always @(posedge crypt_clk or negedge resetn or negedge resetn_sw) begin
+        if (!resetn || !resetn_sw)
             state <= IDLE;
         else
             state <= next_state;
@@ -346,6 +351,10 @@ assign crypt_cipherout = ciphertext;
         next_state = state;
         case (state)
             IDLE:
+                if (load_data)
+                    next_state = LOAD_DATA;
+
+            LOAD_DATA:
                 if (crypt_start)
                     next_state = PROCESS_AD;
 
@@ -369,18 +378,21 @@ assign crypt_cipherout = ciphertext;
         fsm_msg_valid = 0;
         fsm_msg_last = 0;
         fsm_msg_eot = 0; 
-        fsm_key_valid = 0; 
+        fsm_start = 0;
         fsm_msg_select = 0;
         case (state)
             IDLE: begin
                 //niente
             end
 
+            LOAD_DATA: begin
+                fsm_start = 1;
+            end
+
             PROCESS_AD: begin
                 fsm_msg_valid = 1; // dati validi
                 fsm_msg_last = 1; // ultimo blocco se non ci sono byte validi
                 fsm_msg_eot = 0; // EOT se non ci sono byte validi
-                fsm_key_valid = 1; // chiave non valida
                 fsm_msg_select = 0; // dati di autenticazione
             end
 
@@ -388,7 +400,6 @@ assign crypt_cipherout = ciphertext;
                 fsm_msg_valid = 1; // dati validi
                 fsm_msg_last = 1; // ultimo blocco se non ci sono byte validi
                 fsm_msg_eot = 1; // EOT se non ci sono byte validi
-                fsm_key_valid = 1; // chiave valida
                 fsm_msg_select = 1; // dati di cifratura
             end
 

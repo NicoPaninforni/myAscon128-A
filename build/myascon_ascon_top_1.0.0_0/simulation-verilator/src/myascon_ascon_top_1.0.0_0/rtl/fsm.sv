@@ -24,7 +24,7 @@ module fsm (
     input  logic reset_n,
     input  logic start,
 
-    input logic key_valid,
+    input logic load_data,
     input logic valid_data_in,
     input logic last_block,
     input logic [$clog2(2*WORD_SIZE/8):0] valid_bytes,
@@ -68,6 +68,7 @@ module fsm (
     assign debug_state = current_state;
 `endif
 
+logic rst_cnt_4; //se devo resettare il contatore dei round a 4
 logic extra_padding; //se ho fatto il padding extra
 
 typedef enum logic [4:0] {
@@ -131,7 +132,7 @@ always_ff @(posedge clk or negedge reset_n) begin
             round_counter <= 0;
         end else if (round_counter_enable) begin
             if (round_counter == number_round - 1) begin
-                if (sel_masked_round == 0)
+                if (rst_cnt_4 == 1)
                     round_counter <= 4; //Le permutazioni non mascherate (sel_maskered_round = 0) richiedono 8 round (da 4 a 11)
                 else
                     round_counter <= 0; //Le permutazioni mascherate (sel_maskered_round = 1) richiedono 12 round (da 0 a 11)
@@ -154,13 +155,13 @@ always_comb begin
 
     case (current_state)
         IDLE: begin
-            if (start) begin
+            if (load_data) begin
                 next_state = INIT_LOAD;
             end
         end
 
         INIT_LOAD: begin
-            if (key_valid) next_state = INIT_ROUND_SHIFT;
+            if (start) next_state = INIT_ROUND_SHIFT;
         end
 
         INIT_ROUND_SHIFT: begin
@@ -302,6 +303,7 @@ always_comb begin
     sel_mux_linear_diffusion_out_x3 = 0;
     sel_mux_linear_diffusion_out_x4 = 0;
     sel_masked_round = 1;
+    rst_cnt_4 = 0; //se devo resettare il contatore dei round a 4, altrimenti a 0
     sel_padding = 0;            //se ho fatto il padding, salvo l'info in un FF e al prossimo ABSORB devo leggere i dati dal registro, non direttanente dall'interfaccia
     sel_xor_signal = 0;         //Mi dice se devo fare l'xor con (0) -> 0*1 oppure con (1) -> key1 e key2
     sel_absorb_data = 0;        //se è a 1 mi dice se devo caricare nello state register state^(AD oppure MSG)
@@ -379,7 +381,8 @@ always_comb begin
             sel_xor_signal = 1; //selezione xor fra x3 e key2
             write_en = 1; //abilito il parallel load in state_reg
             number_bits = NUMBER_BIT_MASK[$clog2(NUMBER_BIT_MASK+1)-1:0];
-            sel_masked_round = 0;
+            //sel_masked_round = 0;
+            rst_cnt_4 = 1;
         end
 
         ABSORB_AD_DATA: begin
@@ -446,6 +449,7 @@ always_comb begin
             end
             write_en = 1;
             round_counter_enable = 1;
+            rst_cnt_4 = 1; //se devo resettare il contatore dei round a 4, altrimenti a 0
             number_bits =  NUMBER_BIT_NOMASK[$clog2(NUMBER_BIT_MASK+1)-1:0] ; // numero shift per processare tutti i bit
             sel_masked_round = 0;
         end
@@ -519,10 +523,12 @@ always_comb begin
         PROCESS_MSG_DIFFUSE_LAST: begin
             write_en = 1;
             round_counter_enable = 1;
+            sel_masked_round = 0;
             if (extra_padding_ff == 1) begin
-                sel_masked_round = 1; //devo resettare round counter a 0
+                //sel_masked_round = 1; //devo resettare round counter a 0
             end else begin
-                sel_masked_round = 0; //devo resettare round counter a 6
+                //sel_masked_round = 0; //devo resettare round counter a 4
+                rst_cnt_4 = 1; //se devo resettare il contatore dei round a 4, altrimenti a 0
             end
             number_bits =  NUMBER_BIT_NOMASK[$clog2(NUMBER_BIT_MASK+1)-1:0]; // numero shift per processare tutti i bit
         end

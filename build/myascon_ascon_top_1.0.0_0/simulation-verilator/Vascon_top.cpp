@@ -12,10 +12,11 @@ Vascon_top::Vascon_top(VerilatedContext* _vcontextp__, const char* _vcname__)
     : vlSymsp{new Vascon_top__Syms(_vcontextp__, _vcname__, this)}
     , clk{vlSymsp->TOP.clk}
     , reset_n{vlSymsp->TOP.reset_n}
+    , reset_n_lfsr{vlSymsp->TOP.reset_n_lfsr}
     , start{vlSymsp->TOP.start}
     , key1{vlSymsp->TOP.key1}
     , key2{vlSymsp->TOP.key2}
-    , key_valid{vlSymsp->TOP.key_valid}
+    , load_data{vlSymsp->TOP.load_data}
     , nonce1{vlSymsp->TOP.nonce1}
     , nonce2{vlSymsp->TOP.nonce2}
     , initialVector{vlSymsp->TOP.initialVector}
@@ -47,6 +48,11 @@ Vascon_top::Vascon_top(VerilatedContext* _vcontextp__, const char* _vcname__)
     , debug_round_state_2{vlSymsp->TOP.debug_round_state_2}
     , debug_round_state_3{vlSymsp->TOP.debug_round_state_3}
     , debug_round_state_4{vlSymsp->TOP.debug_round_state_4}
+    , debug_sbox_nomasked_0{vlSymsp->TOP.debug_sbox_nomasked_0}
+    , debug_sbox_nomasked_1{vlSymsp->TOP.debug_sbox_nomasked_1}
+    , debug_sbox_nomasked_2{vlSymsp->TOP.debug_sbox_nomasked_2}
+    , debug_sbox_nomasked_3{vlSymsp->TOP.debug_sbox_nomasked_3}
+    , debug_sbox_nomasked_4{vlSymsp->TOP.debug_sbox_nomasked_4}
     , debug_linear_diffusion_state3{vlSymsp->TOP.debug_linear_diffusion_state3}
     , debug_linear_diffusion_state4{vlSymsp->TOP.debug_linear_diffusion_state4}
     , rootp{&(vlSymsp->TOP)}
@@ -95,7 +101,7 @@ static void _eval_initial_loop(Vascon_top__Syms* __restrict vlSymsp) {
             Verilated::debug(1);
             __Vchange = Vascon_top___024root___change_request(&(vlSymsp->TOP));
             Verilated::debug(__Vsaved_debug);
-            VL_FATAL_MT("src/myascon_ascon_top_1.0.0_0/rtl/ascon_top.sv", 48, "",
+            VL_FATAL_MT("src/myascon_ascon_top_1.0.0_0/rtl/ascon_top.sv", 49, "",
                 "Verilated model didn't DC converge\n"
                 "- See https://verilator.org/warn/DIDNOTCONVERGE");
         } else {
@@ -126,7 +132,7 @@ void Vascon_top::eval_step() {
             Verilated::debug(1);
             __Vchange = Vascon_top___024root___change_request(&(vlSymsp->TOP));
             Verilated::debug(__Vsaved_debug);
-            VL_FATAL_MT("src/myascon_ascon_top_1.0.0_0/rtl/ascon_top.sv", 48, "",
+            VL_FATAL_MT("src/myascon_ascon_top_1.0.0_0/rtl/ascon_top.sv", 49, "",
                 "Verilated model didn't converge\n"
                 "- See https://verilator.org/warn/DIDNOTCONVERGE");
         } else {
