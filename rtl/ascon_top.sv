@@ -1,4 +1,5 @@
 /*
+// === In questa versione creo le shares al primo round e poi non le ricombino fino al Processing AD ====
 Il modulo ascon_top implementa l’intero datapath di un cifratore ASCON resistente ad attacchi side-channel, con mascheramento a d+1 condivisioni (per d=2) e supporto al parallelismo bit-level su PAR bit. La progettazione segue la logica dell’algoritmo ASCON-SCA, ma ne estende la configurabilità e il controllo hardware.
 
 Componenti principali e funzionamento:
@@ -41,10 +42,13 @@ import ascon_params::PAR; // PAR : parallelismo bit-level (numero S-BOX istanzia
 import ascon_params::WORD_SIZE; // WORD_SIZE : dimensione della parola (64 bit)
 import ascon_params::COL_SIZE; // COL_SIZE : dimensione della colonna (5 -> x0, x1, x2, x3, x4)
 import ascon_params::STATE_WIDTH; // STATE_WIDTH : larghezza dello stato (320 bit) 
+import ascon_params::SHIFT_PAR; // SHIFT_PAR : shift per il parallelismo PAR -> numero shift per esecuzione mascherata
 import ascon_params::SHIFT_PAR_D_PLUS_1; // SHIFT_PAR_D_PLUS_1 : shift per il parallelismo (d+1)*PAR -> numero shift per esecuzione non mascherata
 import ascon_params::NUMBER_BIT_MASK;  // NUMBER_BIT_MASK : numero di bit da processare per round mascherato (64 bit /PAR bit) (estremo superiore)
 import ascon_params::RAND_WIDTH; // RAND_WIDTH : numero di bit di casualità richiesti
 import ascon_params::LFSR_WIDTH; // LFSR_WIDTH : larghezza dell'LFSR (31 bit)
+import ascon_params::SHIFT_PAR_LAST;
+import ascon_params::SHIFT_PAR_D_PLUS_1_LAST;
 
 module ascon_top (
     input  logic clk,
@@ -105,13 +109,16 @@ module ascon_top (
 
     //Associazione segnali di debug:
     `ifdef DEBUG
+        logic [WORD_SIZE-1:0] debug_recombine_state[COL_SIZE-1:0];
+        logic [63:0] linear_diffusion_debug [0:4];
+
         assign debug_extra_padding_ff = extra_padding_ff;
         assign debug_bitcounter = bit_counter;
-        assign debug_state_0 = state_reg_out[0*64 +: 64];
-        assign debug_state_1 = state_reg_out[1*64 +: 64];
-        assign debug_state_2 = state_reg_out[2*64 +: 64];
-        assign debug_state_3 = state_reg_out[3*64 +: 64];
-        assign debug_state_4 = state_reg_out[4*64 +: 64];
+        assign debug_state_0 = (sel_masked_round || sel_first_round) ? debug_recombine_state[0] : state_reg_out[0*64 +: 64];
+        assign debug_state_1 = (sel_masked_round || sel_first_round) ? debug_recombine_state[1] : state_reg_out[1*64 +: 64];
+        assign debug_state_2 = (sel_masked_round || sel_first_round) ? debug_recombine_state[2] : state_reg_out[2*64 +: 64];
+        assign debug_state_3 = (sel_masked_round || sel_first_round) ? debug_recombine_state[3] : state_reg_out[3*64 +: 64];
+        assign debug_state_4 = (sel_masked_round || sel_first_round) ? debug_recombine_state[4] : state_reg_out[4*64 +: 64];
         assign debug_roundcounter = round_counter;
         assign debug_round_state_0 = round_x0_debug;
         assign debug_round_state_1 = round_x1_debug;
@@ -129,6 +136,7 @@ module ascon_top (
     logic [LFSR_WIDTH-1:0] lfsr_state_out;
 
     // == istanzio LFSR (PRNG) ==
+
     lfsr lfst_inst (
         .data_in ({RAND_WIDTH{1'b0}}),
         .state_in    (lfsr_state_in),
@@ -138,10 +146,12 @@ module ascon_top (
 
     //segnali di randomicità :
     logic [d*COL_SIZE*PAR-1:0] random_masks; //maschere casuali per la creazione delle shares
-    logic [(d+1)*d/2-1:0] random_masks_sbox; //maschere casuali per la s-box
 
+    /* verilator lint_off UNUSED */ //Per il changing of the guards non le utilizzo
+    logic [(d+1)*d/2*PAR-1:0] random_masks_sbox; //maschere casuali per la s-box
+    /* verilator lint_on UNUSED */
     assign random_masks = lfsr_out[0+:d*COL_SIZE*PAR]; //prendo i primi d*COL_SIZE*PAR bit dell'LFSR per lo share-creator
-    assign random_masks_sbox = lfsr_out[d*COL_SIZE*PAR+:((d+1)*d/2)]; //prendo i successivi (d+1)*d/2 bit dell'LFSR per s-box
+    assign random_masks_sbox = lfsr_out[d*COL_SIZE*PAR+:((d+1)*d/2)*PAR]; //prendo i successivi (d+1)*d/2 bit dell'LFSR per s-box
 
     // reset dell'LFSR: NOTA BENE -> ha un reset diverso per svolgere il TVLA (se usiamo il reset software l'LFSR non viene resettato)
     // un'altra possibilità sarebbe stata quella di resettare anche LFSR, ma caricare un seed casuale dall'esterno, ogni volta (dovevo cambiare più cose)
@@ -154,18 +164,18 @@ module ascon_top (
 
     //segnali per FSM:
     logic extra_padding_ff; //se devo fare il padding extra (ossia l'ultimo blocco di msg (aad o plaintext) è di dimensione 16 byte esatti)
-    logic shift_en, shift_type, write_en; // shift_type mi dice se devo shiftare di PAR bit o di (d+1)*PAR bit
+    logic shift_en, shift_type; // shift_type mi dice se devo shiftare di PAR bit o di (d+1)*PAR bit
+    logic [d:0] write_en; //se devo fare il parallel load dello stato (caricare i dati in input nello status register)
     logic last_cycle; // se sono all'ultimo ciclo di shift (posso shiftare un numero diverso di bit a secondo di quando fa 64 % shift_pos)
     logic reg_key1_load, reg_key2_load;
     logic sel_mux_linear_diffusion_out_x3, sel_mux_linear_diffusion_out_x4;  // prima di iniziare la finalizzazione devo fare l'xor fra l'output del LDL e la chiave
-    logic sel_init_load, sel_masked_round, sel_padding, sel_xor_signal, sel_absorb_data; // segnali per i mux di selezione (caricare input in status_reg)
+    logic sel_init_load, sel_masked_round, sel_first_round, sel_padding, sel_xor_signal, sel_absorb_data; // segnali per i mux di selezione (caricare input in status_reg)
     logic [3:0] round_counter; // contatore dei round di permutazione masked :(0-12), unmasked : (4-12) -> NOTA: non (0-8) se no la RC  
     logic unsigned [$clog2(NUMBER_BIT_MASK+1)-1:0] bit_counter; // contatore dei bit da processare per round mascherato masked: ((64 / PAR)  + 2) estremo superiore {2 stadi di FF}; unmasked : (64 / PAR + 1) estremo superiore
 
     `ifdef DEBUG
         logic shift_enable_sipo, last_cycle_sipo;  // segnali per il sipo debug
     `endif
-
 
     
     // === Istanzio fsm === (Zamboni non sarebbe contento)
@@ -200,6 +210,7 @@ module ascon_top (
         .sel_mux_linear_diffusion_out_x4(sel_mux_linear_diffusion_out_x4),
         .sel_init_load(sel_init_load),
         .sel_masked_round(sel_masked_round),
+        .sel_first_round(sel_first_round),
         .sel_padding(sel_padding),
         .sel_xor_signal(sel_xor_signal),
         .sel_absorb_data(sel_absorb_data),
@@ -228,12 +239,10 @@ module ascon_top (
     generate
         for (s = 0; s <= d; s++) begin : gen_state_regs
 
-            localparam logic write_en_i = (s == 1 || s == 2) ? 1'b0 : 1'b1;
-
             state_register state_reg_share (
                 .clk(clk),
                 .reset_n(reset_n),
-                .write_en(write_en & write_en_i), //Il parallel load è attivo solo per uno state register, gli altri sono solo shift registers -> Possibile ottimizzazione
+                .write_en(write_en[s]), //Il parallel load è attivo sempre per il primo registro, per gli altri non lo attivo solo al load iniziale ed al alla fine del processing MSG
                 .shift_en(shift_en),
                 .shift_type(shift_type),
                 .last_cycle(last_cycle),
@@ -275,13 +284,32 @@ module ascon_top (
     `ifdef DEBUG
         logic [WORD_SIZE-1:0] round_x0_debug, round_x1_debug, round_x2_debug, round_x3_debug, round_x4_debug;
 
+        wire dbg_recombined_init = sel_masked_round && !sel_first_round;
+        wire dbg_recombined_ad = (!sel_masked_round) && sel_first_round;
+
+        logic [PAR-1:0] in_shifted_1bit_x0_debug, in_shifted_1bit_x1_debug, in_shifted_1bit_x2_debug, in_shifted_1bit_x3_debug, in_shifted_1bit_x4_debug;
+
+        assign in_shifted_1bit_x0_debug = (dbg_recombined_init) ? recombined_state_out_shift_dplus1[0+:PAR]      : mux_1st_x0[0+:PAR];
+        assign in_shifted_1bit_x1_debug = (dbg_recombined_init) ? recombined_state_out_shift_dplus1[SHIFT_PAR_D_PLUS_1 +:PAR]   : mux_1st_x1[0+:PAR];
+        assign in_shifted_1bit_x2_debug = (dbg_recombined_init) ? recombined_state_out_shift_dplus1[2*SHIFT_PAR_D_PLUS_1 +:PAR] : mux_1st_x2[0+:PAR];
+        assign in_shifted_1bit_x3_debug = (dbg_recombined_init) ? recombined_state_out_shift_dplus1[3*SHIFT_PAR_D_PLUS_1 +:PAR] : mux_1st_x3[0+:PAR];
+        assign in_shifted_1bit_x4_debug = (dbg_recombined_init) ? recombined_state_out_shift_dplus1[4*SHIFT_PAR_D_PLUS_1 +:PAR] : mux_1st_x4[0+:PAR];
+
+        logic [SHIFT_PAR_D_PLUS_1-1:0] in_shifted_dplus1_x0_debug, in_shifted_dplus1_x1_debug, in_shifted_dplus1_x2_debug, in_shifted_dplus1_x3_debug, in_shifted_dplus1_x4_debug;
+
+        assign in_shifted_dplus1_x0_debug = (dbg_recombined_ad) ? recombined_state_out_shift_dplus1[0+:SHIFT_PAR_D_PLUS_1] : mux_1st_x0[0+:SHIFT_PAR_D_PLUS_1];
+        assign in_shifted_dplus1_x1_debug = (dbg_recombined_ad) ? recombined_state_out_shift_dplus1[SHIFT_PAR_D_PLUS_1 +:SHIFT_PAR_D_PLUS_1] : mux_1st_x1[0+:SHIFT_PAR_D_PLUS_1];
+        assign in_shifted_dplus1_x2_debug = (dbg_recombined_ad) ? recombined_state_out_shift_dplus1[2*SHIFT_PAR_D_PLUS_1 +:SHIFT_PAR_D_PLUS_1] : mux_1st_x2[0+:SHIFT_PAR_D_PLUS_1];
+        assign in_shifted_dplus1_x3_debug = (dbg_recombined_ad) ? recombined_state_out_shift_dplus1[3*SHIFT_PAR_D_PLUS_1 +:SHIFT_PAR_D_PLUS_1] : mux_1st_x3[0+:SHIFT_PAR_D_PLUS_1];
+        assign in_shifted_dplus1_x4_debug = (dbg_recombined_ad) ? recombined_state_out_shift_dplus1[4*SHIFT_PAR_D_PLUS_1 +:SHIFT_PAR_D_PLUS_1] : mux_1st_x4[0+:SHIFT_PAR_D_PLUS_1];
+
         //5 shift register d'uscita per leggere i dati in maniera comoda (solo per DEBUG) -> mi servono per costruire il risultato del RC operation:
         sipo_debug sipo_reg_x0_debug (
             .clk(clk),
             .reset_n(reset_n),
             .shift_en(shift_enable_sipo),
-            .in_shifted_dplus1(mux_1st_x0[0+:SHIFT_PAR_D_PLUS_1]),
-            .in_shifted_1bit(mux_1st_x0[0+:PAR]),
+            .in_shifted_dplus1(in_shifted_dplus1_x0_debug),
+            .in_shifted_1bit(in_shifted_1bit_x0_debug),
             .shift_type(shift_type),
             .last_cycle(last_cycle_sipo),
             .data_out(round_x0_debug)
@@ -291,8 +319,8 @@ module ascon_top (
             .clk(clk),
             .reset_n(reset_n),
             .shift_en(shift_enable_sipo),
-            .in_shifted_dplus1(mux_1st_x1[0+:SHIFT_PAR_D_PLUS_1]),
-            .in_shifted_1bit(mux_1st_x1[0+:PAR]),
+            .in_shifted_dplus1(in_shifted_dplus1_x1_debug),
+            .in_shifted_1bit(in_shifted_1bit_x1_debug),
             .last_cycle(last_cycle_sipo),
             .shift_type(shift_type),
             .data_out(round_x1_debug)
@@ -302,8 +330,8 @@ module ascon_top (
             .clk(clk),
             .reset_n(reset_n),
             .shift_en(shift_enable_sipo),
-            .in_shifted_dplus1(mux_1st_x2[0+:SHIFT_PAR_D_PLUS_1]),
-            .in_shifted_1bit(mux_1st_x2[0+:PAR]),
+            .in_shifted_dplus1(in_shifted_dplus1_x2_debug),
+            .in_shifted_1bit(in_shifted_1bit_x2_debug),
             .last_cycle(last_cycle_sipo),
             .shift_type(shift_type),
             .data_out(round_x2_debug)
@@ -313,8 +341,8 @@ module ascon_top (
             .clk(clk),
             .reset_n(reset_n),
             .shift_en(shift_enable_sipo),
-            .in_shifted_dplus1(mux_1st_x3[0+:SHIFT_PAR_D_PLUS_1]),
-            .in_shifted_1bit(mux_1st_x3[0+:PAR]),
+            .in_shifted_dplus1(in_shifted_dplus1_x3_debug),
+            .in_shifted_1bit(in_shifted_1bit_x3_debug),
             .last_cycle(last_cycle_sipo),
             .shift_type(shift_type),
             .data_out(round_x3_debug)
@@ -324,8 +352,8 @@ module ascon_top (
             .clk(clk),
             .reset_n(reset_n),
             .shift_en(shift_enable_sipo),
-            .in_shifted_dplus1(mux_1st_x4[0+:SHIFT_PAR_D_PLUS_1]),
-            .in_shifted_1bit(mux_1st_x4[0+:PAR]),
+            .in_shifted_dplus1(in_shifted_dplus1_x4_debug),
+            .in_shifted_1bit(in_shifted_1bit_x4_debug),
             .last_cycle(last_cycle_sipo),
             .shift_type(shift_type),
             .data_out(round_x4_debug)
@@ -336,19 +364,23 @@ module ascon_top (
 
     // Input Network : divido i segnali nelle 5 componenti: x0,x1,x2,x3,x4 (per comodità)
     // state_reg_out_xi è un array di PAR*(d+1) bit
-    logic [SHIFT_PAR_D_PLUS_1-1:0] state_reg_out_x0; 
-    logic [SHIFT_PAR_D_PLUS_1-1:0] state_reg_out_x1; 
-    logic [SHIFT_PAR_D_PLUS_1-1:0] state_reg_out_x2; 
-    logic [SHIFT_PAR_D_PLUS_1-1:0] state_reg_out_x3; 
-    logic [SHIFT_PAR_D_PLUS_1-1:0] state_reg_out_x4; 
+    logic [SHIFT_PAR_D_PLUS_1-1:0] state_reg_out_x0[d:0]; 
+    logic [SHIFT_PAR_D_PLUS_1-1:0] state_reg_out_x1[d:0]; 
+    logic [SHIFT_PAR_D_PLUS_1-1:0] state_reg_out_x2[d:0]; 
+    logic [SHIFT_PAR_D_PLUS_1-1:0] state_reg_out_x3[d:0]; 
+    logic [SHIFT_PAR_D_PLUS_1-1:0] state_reg_out_x4[d:0]; 
 
     //Lo status register in cui carico i dati dall'esterno è [0] (gli altri li uso solo per conservare le shares)
-    assign state_reg_out_x0 = state_reg_out_shiftdplus1_shares[0][0+:SHIFT_PAR_D_PLUS_1];
-    assign state_reg_out_x1 = state_reg_out_shiftdplus1_shares[0][SHIFT_PAR_D_PLUS_1+:SHIFT_PAR_D_PLUS_1];
-    assign state_reg_out_x2 = state_reg_out_shiftdplus1_shares[0][2*SHIFT_PAR_D_PLUS_1+:SHIFT_PAR_D_PLUS_1];
-    assign state_reg_out_x3 = state_reg_out_shiftdplus1_shares[0][3*SHIFT_PAR_D_PLUS_1+:SHIFT_PAR_D_PLUS_1];
-    assign state_reg_out_x4 = state_reg_out_shiftdplus1_shares[0][4*SHIFT_PAR_D_PLUS_1+:SHIFT_PAR_D_PLUS_1];
-
+    genvar share;
+    generate 
+        for (share = 0; share <= d; share++) begin : gen_input_network
+            assign state_reg_out_x0[share] = state_reg_out_shiftdplus1_shares[share][0+:SHIFT_PAR_D_PLUS_1];
+            assign state_reg_out_x1[share] = state_reg_out_shiftdplus1_shares[share][SHIFT_PAR_D_PLUS_1+:SHIFT_PAR_D_PLUS_1];
+            assign state_reg_out_x2[share] = state_reg_out_shiftdplus1_shares[share][2*SHIFT_PAR_D_PLUS_1+:SHIFT_PAR_D_PLUS_1];
+            assign state_reg_out_x3[share] = state_reg_out_shiftdplus1_shares[share][3*SHIFT_PAR_D_PLUS_1+:SHIFT_PAR_D_PLUS_1];
+            assign state_reg_out_x4[share] = state_reg_out_shiftdplus1_shares[share][4*SHIFT_PAR_D_PLUS_1+:SHIFT_PAR_D_PLUS_1];
+        end
+    endgenerate
     //b) applico ai vari segnali la RC:
     // In teoria basterebbe solo per x2 ma se PAR*(d+1) > 64 faccio anche il padding di 00 sugli altri segnali
     logic [(d+1)*PAR-1:0] mux_1st_x0;
@@ -377,43 +409,52 @@ module ascon_top (
     generate
         for (i_input_net = 0; i_input_net < d+1; i_input_net++) begin : mux_logic
 
-            // Se sel_masked_round è attivo, ho solo un'uscita di PAR bit che mi interessa dallo status register 
-            // Altrimenti, leggo (d+1)*PAR bit ognuno dei quali deve ricevere una fetta diversa della RC
-            assign rc_block[i_input_net] = (sel_masked_round) 
-                ? round_constant_padded[unsigned'((bit_counter * PAR)) +: PAR]
-                : round_constant_padded[unsigned'((unsigned'((d+1)) * unsigned'(bit_counter) * PAR) + unsigned'((i_input_net * PAR))) +: PAR];
+            localparam int BIT_COUNTER_MAX_FULL = NUMBER_BIT_MASK - 1;
+            localparam [$clog2(NUMBER_BIT_MASK+1)-1:0]  BIT_COUNTER_MAX = BIT_COUNTER_MAX_FULL[$clog2(NUMBER_BIT_MASK+1)-1:0];
 
+            always_comb begin
+                logic [PAR-1:0] rc_block_temp;
+                if (bit_counter < BIT_COUNTER_MAX) begin
+                    if (sel_masked_round) begin
+                        rc_block_temp = round_constant_padded[(bit_counter * PAR) +: PAR];
+                    end else begin
+                        rc_block_temp = round_constant_padded[(((d+1) * bit_counter * PAR) + (i_input_net * PAR)) +: PAR];
+                    end
+                end else begin
+                    rc_block_temp = '0;
+                end
+                rc_block[i_input_net] = rc_block_temp;
+            end
             // === Applicazione della costante RC a x2, e propagazione degli altri stati ===
 
             // Caso normale: se PAR*(d+1) <= 64, possiamo usare tutti i bit direttamente
             if (PAR*(d+1) <= 64) begin : gen_normal
-                assign mux_1st_x0[i_input_net*PAR+:PAR] = state_reg_out_x0[i_input_net*PAR+:PAR];
-                assign mux_1st_x1[i_input_net*PAR+:PAR] = state_reg_out_x1[i_input_net*PAR+:PAR];
-                assign mux_1st_x2[i_input_net*PAR+:PAR] = state_reg_out_x2[i_input_net*PAR+:PAR] ^ rc_block[i_input_net]; // solo x2 XORa con RC
-                assign mux_1st_x3[i_input_net*PAR+:PAR] = state_reg_out_x3[i_input_net*PAR+:PAR];
-                assign mux_1st_x4[i_input_net*PAR+:PAR] = state_reg_out_x4[i_input_net*PAR+:PAR];
+                assign mux_1st_x0[i_input_net*PAR+:PAR] = state_reg_out_x0[0][i_input_net*PAR+:PAR];
+                assign mux_1st_x1[i_input_net*PAR+:PAR] = state_reg_out_x1[0][i_input_net*PAR+:PAR];
+                assign mux_1st_x2[i_input_net*PAR+:PAR] = state_reg_out_x2[0][i_input_net*PAR+:PAR] ^ rc_block[i_input_net]; // solo x2 XORa con RC
+                assign mux_1st_x3[i_input_net*PAR+:PAR] = state_reg_out_x3[0][i_input_net*PAR+:PAR];
+                assign mux_1st_x4[i_input_net*PAR+:PAR] = state_reg_out_x4[0][i_input_net*PAR+:PAR];
 
             end else begin : gen_padded
                 // Caso in cui PAR*(d+1) > 64: ultima slice potrebbe avere meno di PAR bit validi
 
                 if (i_input_net < d) begin : gen_body
                     // Le prime d condivisioni sono piene → usa PAR bit direttamente
-                    assign mux_1st_x0[i_input_net*PAR+:PAR] = state_reg_out_x0[i_input_net*PAR+:PAR];
-                    assign mux_1st_x1[i_input_net*PAR+:PAR] = state_reg_out_x1[i_input_net*PAR+:PAR];
-                    assign mux_1st_x2[i_input_net*PAR+:PAR] = state_reg_out_x2[i_input_net*PAR+:PAR] ^ rc_block[i_input_net];
-                    assign mux_1st_x3[i_input_net*PAR+:PAR] = state_reg_out_x3[i_input_net*PAR+:PAR];
-                    assign mux_1st_x4[i_input_net*PAR+:PAR] = state_reg_out_x4[i_input_net*PAR+:PAR];
+                    assign mux_1st_x0[i_input_net*PAR+:PAR] = state_reg_out_x0[0][i_input_net*PAR+:PAR];
+                    assign mux_1st_x1[i_input_net*PAR+:PAR] = state_reg_out_x1[0][i_input_net*PAR+:PAR];
+                    assign mux_1st_x2[i_input_net*PAR+:PAR] = state_reg_out_x2[0][i_input_net*PAR+:PAR] ^ rc_block[i_input_net];
+                    assign mux_1st_x3[i_input_net*PAR+:PAR] = state_reg_out_x3[0][i_input_net*PAR+:PAR];
+                    assign mux_1st_x4[i_input_net*PAR+:PAR] = state_reg_out_x4[0][i_input_net*PAR+:PAR];
 
                 end else begin : gen_last
                     // Ultima condivisione → potenzialmente contiene meno di PAR bit
-                    localparam int LAST_PAR_USED = 64 - (d * PAR); // quanti bit effettivi sono rimasti da usare
 
                     // Si zero-paddano i bit superiori non validi
-                    assign mux_1st_x0[i_input_net*PAR+:PAR] = { {(PAR - LAST_PAR_USED){1'b0}}, state_reg_out_x0[i_input_net*PAR+:LAST_PAR_USED] };
-                    assign mux_1st_x1[i_input_net*PAR+:PAR] = { {(PAR - LAST_PAR_USED){1'b0}}, state_reg_out_x1[i_input_net*PAR+:LAST_PAR_USED] };
-                    assign mux_1st_x2[i_input_net*PAR+:PAR] = { {(PAR - LAST_PAR_USED){1'b0}}, state_reg_out_x2[i_input_net*PAR+:LAST_PAR_USED] } ^ rc_block[i_input_net];
-                    assign mux_1st_x3[i_input_net*PAR+:PAR] = { {(PAR - LAST_PAR_USED){1'b0}}, state_reg_out_x3[i_input_net*PAR+:LAST_PAR_USED] };
-                    assign mux_1st_x4[i_input_net*PAR+:PAR] = { {(PAR - LAST_PAR_USED){1'b0}}, state_reg_out_x4[i_input_net*PAR+:LAST_PAR_USED] };
+                    assign mux_1st_x0[i_input_net*PAR+:PAR] = { {(PAR - SHIFT_PAR_LAST){1'b0}}, state_reg_out_x0[0][i_input_net*PAR+:SHIFT_PAR_LAST] };
+                    assign mux_1st_x1[i_input_net*PAR+:PAR] = { {(PAR - SHIFT_PAR_LAST){1'b0}}, state_reg_out_x1[0][i_input_net*PAR+:SHIFT_PAR_LAST] };
+                    assign mux_1st_x2[i_input_net*PAR+:PAR] = { {(PAR - SHIFT_PAR_LAST){1'b0}}, state_reg_out_x2[0][i_input_net*PAR+:SHIFT_PAR_LAST] } ^ rc_block[i_input_net];
+                    assign mux_1st_x3[i_input_net*PAR+:PAR] = { {(PAR - SHIFT_PAR_LAST){1'b0}}, state_reg_out_x3[0][i_input_net*PAR+:SHIFT_PAR_LAST] };
+                    assign mux_1st_x4[i_input_net*PAR+:PAR] = { {(PAR - SHIFT_PAR_LAST){1'b0}}, state_reg_out_x4[0][i_input_net*PAR+:SHIFT_PAR_LAST] };
                 end
             end
         end
@@ -421,7 +462,7 @@ module ascon_top (
 
 
     // === Creazione delle shares ===
-
+    // === In questa versione creo le shares al primo round e poi non le ricombino fino al Processing AD ====
     logic [(d+1)*PAR*COL_SIZE-1:0] shares_out; 
     logic [PAR*COL_SIZE-1:0] shares_in; 
     //Ho bisogno di selezionare i 5*PAR bit della prima input network, quindi i primi PAR di ogni componente (le shares mi servono solo per il masked round):
@@ -434,20 +475,84 @@ module ascon_top (
         .shares_out(shares_out)
     );
 
+    // XOR di tutte le share (stato intero, 320 bit)
+    logic [SHIFT_PAR_D_PLUS_1*COL_SIZE-1:0] recombined_state_out_shift_dplus1;
+        always_comb begin
+        recombined_state_out_shift_dplus1 = '0;
+        for (int si = 0; si <= d; si++) begin
+            if (si == 0)
+                recombined_state_out_shift_dplus1 = {mux_1st_x4[0+:SHIFT_PAR_D_PLUS_1], mux_1st_x3[0+:SHIFT_PAR_D_PLUS_1], mux_1st_x2[0+:SHIFT_PAR_D_PLUS_1], mux_1st_x1[0+:SHIFT_PAR_D_PLUS_1], mux_1st_x0[0+:SHIFT_PAR_D_PLUS_1]}; //prendo il primo dominio (non mascherato)
+            else
+                recombined_state_out_shift_dplus1 ^= state_reg_out_shiftdplus1_shares[si];
+        end
+    end
+
     //multiplexer per gestire l'ingresso della S-Box (prendo le shares oppure le d+1 colonne diverse):
     logic [PAR*COL_SIZE-1:0] affine_layer_in [d:0];
 
+    // === Mux 4-vie per l'ingresso dell'affine/S-box per OGNI dominio ===
     genvar i_affine;
     generate
-        //Assegnazione dei vari domini (devo dividere i dati sui vari domini, ognuno dei quali avrà 5*PAR bit)
-        // i_affine è il dominio (A,B,C)
-        for (i_affine = 0; i_affine < d+1; i_affine++) begin : gen_affine_assign
-            assign affine_layer_in[i_affine] = (sel_masked_round) 
-            //Devo selezionare le shares: x0_sharesA, x1_sharesA, x2_sharesA, x3_sharesA, x4_sharesA e poi x0_sharesB etc.
-            ? {shares_out[i_affine*PAR*COL_SIZE+:PAR*COL_SIZE]} 
-            //Devo selezionare le d+1 colonne diverse in uscita dalle input network:
-            : {mux_1st_x4[i_affine*PAR+:PAR], mux_1st_x3[i_affine*PAR+:PAR], mux_1st_x2[i_affine*PAR+:PAR], mux_1st_x1[i_affine*PAR+:PAR], mux_1st_x0[i_affine*PAR+:PAR]};
+    for (i_affine = 0; i_affine < d+1; i_affine++) begin : gen_affine_assign
+        always_comb begin
+            unique case (1'b1)
+
+                // 1) Round mascherato + creazione share: usa shareCreator (PAR*COL_SIZE per dominio)
+                (sel_masked_round && sel_first_round): begin
+                    affine_layer_in[i_affine] = shares_out[i_affine*PAR*COL_SIZE +: PAR*COL_SIZE];
+                end
+
+                // 2) Round mascherato successivo (niente create): 
+                //    - dominio 0 prende i PAR*5 post-RC (mux_1st_x* con slice [0+:PAR])
+                //    - domini >0 prendono i PAR per word dal proprio state_register (senza RC)
+                (sel_masked_round && !sel_first_round): begin
+                    if (i_affine == 0) begin
+                        affine_layer_in[i_affine] = { mux_1st_x4[0+:PAR], mux_1st_x3[0+:PAR],
+                                                        mux_1st_x2[0+:PAR], mux_1st_x1[0+:PAR],
+                                                        mux_1st_x0[0+:PAR] };
+                    end else begin
+                        affine_layer_in[i_affine] = { state_reg_out_shiftdplus1_shares[i_affine][4*SHIFT_PAR_D_PLUS_1 +: PAR],
+                                                    state_reg_out_shiftdplus1_shares[i_affine][3*SHIFT_PAR_D_PLUS_1 +: PAR],
+                                                    state_reg_out_shiftdplus1_shares[i_affine][2*SHIFT_PAR_D_PLUS_1 +: PAR],
+                                                    state_reg_out_shiftdplus1_shares[i_affine][1*SHIFT_PAR_D_PLUS_1 +: PAR],
+                                                    state_reg_out_shiftdplus1_shares[i_affine][0*SHIFT_PAR_D_PLUS_1 +: PAR] 
+                        };
+                    end
+                end
+
+                // 3) Round non mascherato: prima esecuzione del process AD → uso ricombinato
+                (!sel_masked_round && sel_first_round): begin
+                if (PAR*(d+1) <= 64 || i_affine < d) begin
+                    affine_layer_in[i_affine] = {
+                    /* verilator lint_off SELRANGE */
+                    recombined_state_out_shift_dplus1[4*SHIFT_PAR_D_PLUS_1 + i_affine*PAR +: PAR],
+                    /* verilator lint_on SELRANGE */
+                    recombined_state_out_shift_dplus1[3*SHIFT_PAR_D_PLUS_1 + i_affine*PAR +: PAR],
+                    recombined_state_out_shift_dplus1[2*SHIFT_PAR_D_PLUS_1 + i_affine*PAR +: PAR],
+                    recombined_state_out_shift_dplus1[1*SHIFT_PAR_D_PLUS_1 + i_affine*PAR +: PAR],
+                    recombined_state_out_shift_dplus1[0*SHIFT_PAR_D_PLUS_1 + i_affine*PAR +: PAR]
+                    };
+                end else begin : last_share_pad
+                    affine_layer_in[i_affine] = {
+                    {{(PAR - SHIFT_PAR_LAST){1'b0}}, recombined_state_out_shift_dplus1[4*SHIFT_PAR_D_PLUS_1 + i_affine*PAR +: SHIFT_PAR_LAST]},
+                    {{(PAR - SHIFT_PAR_LAST){1'b0}}, recombined_state_out_shift_dplus1[3*SHIFT_PAR_D_PLUS_1 + i_affine*PAR +: SHIFT_PAR_LAST]},
+                    {{(PAR - SHIFT_PAR_LAST){1'b0}}, recombined_state_out_shift_dplus1[2*SHIFT_PAR_D_PLUS_1 + i_affine*PAR +: SHIFT_PAR_LAST]},
+                    {{(PAR - SHIFT_PAR_LAST){1'b0}}, recombined_state_out_shift_dplus1[1*SHIFT_PAR_D_PLUS_1 + i_affine*PAR +: SHIFT_PAR_LAST]},
+                    {{(PAR - SHIFT_PAR_LAST){1'b0}}, recombined_state_out_shift_dplus1[0*SHIFT_PAR_D_PLUS_1 + i_affine*PAR +: SHIFT_PAR_LAST]}
+                    };
+                end
+                end
+            // 4) Round non mascherato: colonne diverse dallo state register 0 (non al primo round)
+            default: begin
+            affine_layer_in[i_affine] = { mux_1st_x4[i_affine*PAR +: PAR],
+                                            mux_1st_x3[i_affine*PAR +: PAR],
+                                            mux_1st_x2[i_affine*PAR +: PAR],
+                                            mux_1st_x1[i_affine*PAR +: PAR],
+                                            mux_1st_x0[i_affine*PAR +: PAR] };
+            end
+        endcase
         end
+    end
     endgenerate
 
     // === First layer affine ===
@@ -503,11 +608,11 @@ module ascon_top (
    
 
     //collego gli input alla s-box, vorrei usare il changing of the guards:
-    //NOTA IL CHANGING OF THE GUARDS E' SUPPORTATO SOLO PER IL GRADO 2 (in questo codice)
+    //NOTA IL CHANGING OF THE GUARDS E' SUPPORTATO SOLO PER IL GRADO 1 e 2 (in questo codice)
     
     genvar p;
     generate
-        if (d == 11) begin : gen_cog //changing of the guards disabilitatio (d == 2)
+        if (d == 2) begin : gen_cog //changing of the guards disabilitatio (d == 2)
             
             for (p = 0; p < PAR; p++) begin : gen_sbox
                 // la fresh_r è corretta per il changing of the guards perchè i bit all'interno dello status reg sono già shiftati
@@ -522,10 +627,23 @@ module ascon_top (
                     .x_out_noMask(sbox_output_unmasked[p])
                 );
             end
+        end else if (d == 1) begin : gen_no_cog //changing of the guards disabilitatio (d == 1)
+            for (p = 0; p < PAR; p++) begin : gen_sbox
+                logic [(d+1)*d/2-1:0] fresh_r;
+                assign fresh_r = state_reg_out[(11+p)%64];
+                ascon_sbox_d2 u_sbox (
+                    .clk(clk),
+                    .x_in(sbox_input[p]),
+                    .fresh_r(fresh_r),
+                    .sel_masked_round(sel_masked_round),
+                    .x_out(sbox_output[p]),
+                    .x_out_noMask(sbox_output_unmasked[p])
+                );
+            end
         end else begin : gen_no_changing
             for (p = 0; p < PAR; p++) begin : gen_sbox
                 logic [(d+1)*d/2-1:0] fresh_r;
-                assign fresh_r = random_masks_sbox;
+                assign fresh_r = random_masks_sbox[p*((d+1)*d/2) +: ((d+1)*d/2)];
                 ascon_sbox_d2 u_sbox (
                     .clk(clk),
                     .x_in(sbox_input[p]),
@@ -646,7 +764,6 @@ module ascon_top (
     //Definizione dei possibili state_in (su 320 bit) del registro di stato:
     logic [WORD_SIZE-1:0] state_reg_in_absorb[4:0]; //bypass per il registro di stato (serve per l'assorbimento di MSG o AD)
     logic [STATE_WIDTH-1:0] init_data; //concatenazione input (IV, key1, key2, nonce1, nonce2)
-    logic [STATE_WIDTH-1:0] linear_diffusion_out; //uscita del layer di diffusione lineare
 
     // == Gestione del padding ==
     logic [2*WORD_SIZE-1:0] data_in_padded;
@@ -706,6 +823,7 @@ module ascon_top (
     assign ciphertext = {state_reg_in_absorb[1], state_reg_in_absorb[0]};
 
     logic [STATE_WIDTH-1:0] input_state;
+    logic [STATE_WIDTH-1:0] linear_diffusion_out_shares [d:0];    // percorso masked, per-share
 
     always_comb begin //questo devo modificarlo per ottenere solo 2 MUX a 64 e poi 2 MUX a 320 bit guarda pag 14 Generalizzazione metodo matematico tablet!
         unique case ({sel_absorb_data, sel_init_load})
@@ -715,6 +833,10 @@ module ascon_top (
             //Nota l'xor con la chiave dipende dal rate:
             2'b11: state_reg_in_shares[0] = {state_reg_in_absorb[4], state_reg_in_absorb[3] ^ reg_key2_out, state_reg_in_absorb[2] ^ reg_key1_out, state_reg_in_absorb[1] , state_reg_in_absorb[0]};  
         endcase
+
+        for (int st = 1; st <= d; st++) begin
+            state_reg_in_shares[st] = linear_diffusion_out_shares[st];
+        end
     end
 
     // === Linear diffusion layer ===
@@ -729,10 +851,10 @@ module ascon_top (
     endfunction
 
     // Debug e assegnazione
-    logic [63:0] linear_diffusion_debug [0:4];
+    
 
     //Ora devo ricombinare le shares prima di applicare il layer di diffusione lineare:
-    logic [STATE_WIDTH-1:0] recombine_shares;
+    //logic [STATE_WIDTH-1:0] recombine_shares;
 
     //Funzione per l'xor tree: per ricombinare le condivisioni bit a bit
     function automatic logic xor_tree (
@@ -776,7 +898,7 @@ module ascon_top (
     endfunction
 
     // Ricombinazione delle share bit a bit:
-    generate
+    /*generate
         for (genvar bit_idx = 0; bit_idx < STATE_WIDTH; bit_idx++) begin : recombine
             // Per ogni bit (posizione) ricombina il valore proveniente da tutti i domini (d+1)
             logic [d:0] temp_bits;
@@ -788,54 +910,94 @@ module ascon_top (
                 recombine_shares[bit_idx] = xor_tree(temp_bits, d+1);
             end
         end
-    endgenerate
+    endgenerate */
 
-    // Applicazione del layer di diffusione lineare:
+    //LDL: linear diffusion layer
+
+    // ===== MASKED: LDL su ogni share =====
     generate
-        for (genvar i = 0; i < 5; i++) begin : linear_diffusion_layer
-            assign linear_diffusion_debug[i] = (sel_masked_round)
-                ? recombine_shares[i*64 +: 64]
-                    ^ rotr64(recombine_shares[i*64 +: 64], rotations_a[i])
-                    ^ rotr64(recombine_shares[i*64 +: 64], rotations_b[i])
-                : state_reg_out[i*64 +: 64]
-                    ^ rotr64(state_reg_out[i*64 +: 64], rotations_a[i])
-                    ^ rotr64(state_reg_out[i*64 +: 64], rotations_b[i]);
+    for (genvar gs = 0; gs <= d; gs++) begin : ldl_masked_per_share
+        for (genvar i = 0; i < 5; i++) begin : per_col
+        wire [63:0] w = state_reg_out_shares[gs][i*64 +: 64];
+        wire [63:0] y = w ^ rotr64(w, rotations_a[i]) ^ rotr64(w, rotations_b[i]);
 
-            assign linear_diffusion_out[i*64 +: 64] = linear_diffusion_debug[i];
+        if (gs == 0) begin : share0
+            // share 0 sempre attiva
+            assign linear_diffusion_out_shares[0][i*64 +: 64] = y;
+        end else begin : sharen
+            // altre share abilitate solo in masked round
+            assign linear_diffusion_out_shares[gs][i*64 +: 64] = y;
         end
+        end
+    end
     endgenerate
+
+
+    `ifdef DEBUG
+        always_comb begin
+            for (int j = 0; j < 5; j++) begin
+                linear_diffusion_debug[j] = '0;
+                for (int sj = 0; sj <= d; sj++)
+                linear_diffusion_debug[j] ^= linear_diffusion_out_shares[sj][j*64 +: 64];
+            end
+        end
+
+        always_comb begin
+            for (int j = 0; j < 5; j++) begin
+                debug_recombine_state[j] = '0;
+                for (int sj = 0; sj <= d; sj++)
+                debug_recombine_state[j] ^= state_reg_out_shares[sj][j*64 +: 64];
+            end
+        end
+    `endif
 
     //In alcuni casi devo fare l'xor con la chiave per x3 e x4 oppure con 00000...01 solo per x4:
     logic [WORD_SIZE-1:0] mux_linear_diffusion_out_x4;
     logic [WORD_SIZE-1:0] mux_linear_diffusion_out_x3;
     logic [63:0] xor_signal;
 
-   // Linear diffusion layer già calcolato qui sopra
+   // Prendi la slice dal LDL della share 0 (vale sia in masked sia in unmasked)
+    wire [63:0] ld_x3_s0 = linear_diffusion_out_shares[0][3*64 +: 64];
+    wire [63:0] ld_x4_s0 = linear_diffusion_out_shares[0][4*64 +: 64];
+
+    // Selezione segnale XOR per x4: chiave2 oppure 0x01...00
     assign xor_signal = (sel_xor_signal) ? reg_key2_out : {1'b1, {(WORD_SIZE-1){1'b0}}};
 
-    // Output corretto per x4
+    // x4: eventuale XOR con xor_signal
     assign mux_linear_diffusion_out_x4 = (sel_mux_linear_diffusion_out_x4)
-                                        ? (linear_diffusion_debug[4] ^ xor_signal)
-                                        : linear_diffusion_debug[4];
+                                    ? (ld_x4_s0 ^ xor_signal)
+                                    :  ld_x4_s0;
 
+    // x3: eventuale XOR con key1
     assign mux_linear_diffusion_out_x3 = (sel_mux_linear_diffusion_out_x3)
-                                        ? (linear_diffusion_debug[3] ^ reg_key1_out)
-                                        : linear_diffusion_debug[3];
-
-
+                                    ? (ld_x3_s0 ^ reg_key1_out)
+                                    :  ld_x3_s0;
     
+    //dello state register 0:
     assign input_state = {
         mux_linear_diffusion_out_x4,               // MSB
         mux_linear_diffusion_out_x3,
-        linear_diffusion_out[2*WORD_SIZE +: WORD_SIZE],
-        linear_diffusion_out[1*WORD_SIZE +: WORD_SIZE],
-        linear_diffusion_out[0*WORD_SIZE +: WORD_SIZE]  // LSB
+        linear_diffusion_out_shares[0][2*WORD_SIZE +: WORD_SIZE],
+        linear_diffusion_out_shares[0][1*WORD_SIZE +: WORD_SIZE],
+        linear_diffusion_out_shares[0][0*WORD_SIZE +: WORD_SIZE]  // LSB
     };
 
     
-    //Ora devo gestire l'output del tag:
-    assign tag1 = linear_diffusion_out[3*WORD_SIZE+:WORD_SIZE] ^ reg_key1_out;
-    assign tag2 = linear_diffusion_out[4*WORD_SIZE+:WORD_SIZE] ^ reg_key2_out;
+    // Ricombinazione per il tag (post-LDL), solo per x3 e x4
+    logic [WORD_SIZE-1:0] tag_x3_unmasked, tag_x4_unmasked;
+
+    always_comb begin
+    tag_x3_unmasked = '0;
+    tag_x4_unmasked = '0;
+    for (int sh = 0; sh <= d; sh++) begin
+        tag_x3_unmasked ^= linear_diffusion_out_shares[sh][3*WORD_SIZE +: WORD_SIZE];
+        tag_x4_unmasked ^= linear_diffusion_out_shares[sh][4*WORD_SIZE +: WORD_SIZE];
+    end
+    end
+
+    // XOR con le chiavi per ottenere il tag finale
+    assign tag1 = tag_x3_unmasked ^ reg_key1_out;
+    assign tag2 = tag_x4_unmasked ^ reg_key2_out;
 
 endmodule
 

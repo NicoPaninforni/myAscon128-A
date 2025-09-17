@@ -3,7 +3,7 @@ package ascon_params;
 
     // === Main parameters ===
     parameter int d          = 2;
-    parameter int PAR        = 1;
+    parameter int PAR        = 22;
     parameter int COL_SIZE   = 5;
     parameter int WORD_SIZE  = 64;
     parameter int STATE_WIDTH = 320;
@@ -26,7 +26,7 @@ package ascon_params;
     parameter int SHIFT_WIDTH = num_shares * PAR;
     /* verilator lint_off UNUSED */
     parameter int PADDED_WIDTH = ((WORD_SIZE + SHIFT_WIDTH - 1) / SHIFT_WIDTH) * SHIFT_WIDTH;
-    parameter int RAND_WIDTH = d*COL_SIZE*PAR + (d+1)*d/2;
+    parameter int RAND_WIDTH = d*COL_SIZE*PAR + (d+1)*d/2*PAR;
     /* verilator lint_on UNUSED */
     parameter int DATA_WIDTH       = RAND_WIDTH;
     parameter bit REVERSE          = 0;

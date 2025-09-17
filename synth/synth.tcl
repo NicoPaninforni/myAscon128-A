@@ -10,6 +10,8 @@ set target_library [list \
     /software/dk/tsmc65/digital/Front_End/timing_power_noise/NLDM/tcbn65lplvt_220a/tcbn65lplvttc.db \
 ]
 
+set REPORT_DIR report
+
 set link_library "* $target_library"
 
 # === Read RTL from FuseSoC ===
@@ -40,7 +42,9 @@ compile_ultra -no_autoungroup -no_seq_output_inversion -no_boundary_optimization
 # === Reports ===
 puts "====> Writing reports ..."
 report_area > ${REPORT_DIR}/area.rpt
+report_area -hierarchy > ${REPORT_DIR}/area_hier.rpt
 report_timing > ${REPORT_DIR}/timing.rpt
+report_timing -max_paths 10 > ${REPORT_DIR}/timing_max10.rpt
 report_power > ${REPORT_DIR}/power.rpt
 
 # === Netlist options for QuestaSim ===

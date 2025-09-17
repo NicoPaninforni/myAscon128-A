@@ -2,4 +2,10 @@
 *gtkw
 *.txt
 *.dat
-.obj_dir/
+obj_dir/
+synth/
+rtl/ascon_params.sv.bak
+build/
+*.png
+*.py
+*.csv

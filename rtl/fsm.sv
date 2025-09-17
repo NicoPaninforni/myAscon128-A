@@ -33,7 +33,7 @@ module fsm (
     output logic done, //se il processo è finito
     output logic tag_valid,
     output logic shift_en,
-    output logic write_en,
+    output logic [d:0] write_en,
     output logic shift_type,
     output logic last_cycle,
 
@@ -43,6 +43,7 @@ module fsm (
     output logic sel_mux_linear_diffusion_out_x3,
     output logic sel_mux_linear_diffusion_out_x4,
     output logic sel_init_load,  // a 1 se devo fare il load di inizializzazione
+    output logic sel_first_round, // a 1 se sono al primo round di Init, Ad, final (serve per la gestione della RC)
     output logic sel_masked_round, // a 1 se devo fare una permutazione mascherata
     output logic sel_padding, // a 1 se devo fare l'absorb di dati padded
     output logic sel_xor_signal,
@@ -99,7 +100,7 @@ typedef enum logic [4:0] {
     DONE
 } state_t;
 
-(* mark_debug = "true" *) state_t current_state;
+/*(* mark_debug = "true" *)*/ state_t current_state;
 state_t next_state;
 
 
@@ -293,7 +294,7 @@ always_comb begin
     extra_padding_load = 0;     //a 1 per campionare il segnale corrispettivo
 
     //segnali per il registro di stato:
-    write_en = 0;
+    write_en = '{default: 1'b0};
     shift_en = 0;
     shift_type = 0;             //shift_type: 0 -> shifto PAR*(d+1) bits;  1 -> shifto PAR bits
     last_cycle = 0;             //segnale per segnalare l'ultimo ciclo (possibile shift ridotto a seconda di PAR e d+1)
@@ -303,6 +304,7 @@ always_comb begin
     sel_mux_linear_diffusion_out_x3 = 0;
     sel_mux_linear_diffusion_out_x4 = 0;
     sel_masked_round = 1;
+    sel_first_round = 0;        //se sono al primo round di Init, Ad, final (serve per la gestione della RC)
     rst_cnt_4 = 0; //se devo resettare il contatore dei round a 4, altrimenti a 0
     sel_padding = 0;            //se ho fatto il padding, salvo l'info in un FF e al prossimo ABSORB devo leggere i dati dal registro, non direttanente dall'interfaccia
     sel_xor_signal = 0;         //Mi dice se devo fare l'xor con (0) -> 0*1 oppure con (1) -> key1 e key2
@@ -338,7 +340,7 @@ always_comb begin
                 reg_key2_load = 1;  
 
                 sel_init_load = 1; //Mi dice che devo caricare in state_reg i dati di inizializzazione
-                write_en = 1;  //abilito lo state_reg a fare il parallel load
+                write_en[0] = 1;  //abilito lo state_reg a fare il parallel load
         end
 
         INIT_ROUND_SHIFT: begin
@@ -346,7 +348,13 @@ always_comb begin
 
             shift_en = 1; //abilito lo shift di state_reg
             shift_type = 1; // shift di PAR bit
-            
+
+            if (round_counter == 0) begin
+                sel_first_round = 1'b1;
+            end else begin
+                sel_first_round = 1'b0;
+            end
+
             `ifdef DEBUG
                 shift_enable_sipo = 1;  //abilito gli shift per i registri di DEBUG
                 if (bit_counter == (NUMBER_BIT_MASK[$clog2(NUMBER_BIT_MASK+1)-1:0] - 2)) begin
@@ -360,6 +368,13 @@ always_comb begin
             number_bits = NUMBER_BIT_MASK[$clog2(NUMBER_BIT_MASK+1)-1:0] ;
             last_cycle = 1;  //sono all'ultimo ciclo di shift
             shift_en = 1;  
+
+            if (round_counter == 0) begin
+                sel_first_round = 1'b1;
+            end else begin
+                sel_first_round = 1'b0;
+            end
+
             `ifdef DEBUG
                 shift_enable_sipo = 1;  //abilito lo shift del sipo
             `endif
@@ -367,25 +382,46 @@ always_comb begin
         end
 
         INIT_ROUND_DIFFUSE: begin
+
+            if (round_counter == 0) begin
+                sel_first_round = 1'b1;
+            end else begin
+                sel_first_round = 1'b0;
+            end
+
             number_bits = NUMBER_BIT_MASK[$clog2(NUMBER_BIT_MASK+1)-1:0] ;
-            write_en = 1;
+            write_en = '1;
             round_counter_enable = 1;  //ho eseguito un round di permutazione
         end
 
         INIT_ROUND_DIFFUSE_LAST: begin
+
+            if (round_counter == 0) begin
+                sel_first_round = 1'b1;
+            end else begin
+                sel_first_round = 1'b0;
+            end
+
             round_counter_enable = 1; //ho eseguito un altro round di permutazione
             //MUX per selezionare S ^ (0*|Key1|Key2):
             sel_mux_linear_diffusion_out_x3 = 1; 
             sel_mux_linear_diffusion_out_x4 = 1;
             
             sel_xor_signal = 1; //selezione xor fra x3 e key2
-            write_en = 1; //abilito il parallel load in state_reg
+            write_en = '1; //abilito il parallel load in state_reg
             number_bits = NUMBER_BIT_MASK[$clog2(NUMBER_BIT_MASK+1)-1:0];
             //sel_masked_round = 0;
             rst_cnt_4 = 1;
         end
 
         ABSORB_AD_DATA: begin
+
+            if (round_counter == 4) begin
+                sel_first_round = 1'b1;
+            end else begin
+                sel_first_round = 1'b0;
+            end
+
             number_bits =  NUMBER_BIT_NOMASK[$clog2(NUMBER_BIT_MASK+1)-1:0]; // numero shift per processare tutti i bit
             read_data = 1; //segnalo all'esterno che sto legendo i dati
             if (valid_data_in == 0 && extra_padding_ff == 0 ) begin
@@ -394,7 +430,7 @@ always_comb begin
                 extra_padding_load = 1; //Metto a 0 il flag ho fatto il padding extra
                 sel_padding = 1;
                 sel_absorb_data = 1;
-                write_en = 1;
+                write_en[0] = 1;
             end else begin //solo se il dato è valido
                 if (last_block == 1) begin
                     last_block_process = 1;
@@ -406,13 +442,20 @@ always_comb begin
                         extra_padding = 1;
                     end
                 end
-                write_en = 1;
+                write_en[0] = 1;
                 sel_absorb_data = 1;
             end
             sel_masked_round = 0;
         end
 
         PROCESS_AD_SHIFT: begin
+
+            if (round_counter == 4) begin
+                sel_first_round = 1'b1;
+            end else begin
+                sel_first_round = 1'b0;
+            end
+
             sel_masked_round = 0;
             number_bits = NUMBER_BIT_NOMASK[$clog2(NUMBER_BIT_MASK+1)-1:0]; // numero shift per processare tutti i bit
             shift_en = 1; //ad ogni ciclo processo PAR*(d+1) bit (shift_type = 0)
@@ -425,6 +468,13 @@ always_comb begin
         end
 
         PROCESS_AD_SHIFT_LAST: begin
+
+            if (round_counter == 4) begin
+                sel_first_round = 1'b1;
+            end else begin
+                sel_first_round = 1'b0;
+            end
+
             sel_masked_round = 0;
             `ifdef DEBUG
                 shift_enable_sipo = 1;
@@ -435,19 +485,33 @@ always_comb begin
         end
 
         PROCESS_AD_DIFFUSE: begin
+
+            if (round_counter == 4) begin
+                sel_first_round = 1'b1;
+            end else begin
+                sel_first_round = 1'b0;
+            end
+
             sel_masked_round = 0;
-            write_en = 1;
+            write_en[0] = 1;
             round_counter_enable = 1;
         end
 
         PROCESS_AD_DIFFUSE_LAST: begin
+
+            if (round_counter == 4) begin
+                sel_first_round = 1'b1;
+            end else begin
+                sel_first_round = 1'b0;
+            end
+
             if (last_block == 1) begin //Modifica a questa linea: aggiunta && last_block
                 if (extra_padding_ff == 0 && last_block_process_ff == 1) begin
                     sel_mux_linear_diffusion_out_x4 = 1; //carico x4 ^ 0*1
                     last_block_process_load = 1;
                 end
             end
-            write_en = 1;
+            write_en[0] = 1;
             round_counter_enable = 1;
             rst_cnt_4 = 1; //se devo resettare il contatore dei round a 4, altrimenti a 0
             number_bits =  NUMBER_BIT_NOMASK[$clog2(NUMBER_BIT_MASK+1)-1:0] ; // numero shift per processare tutti i bit
@@ -463,7 +527,7 @@ always_comb begin
                 ready_for_data = 1;
             end else if (extra_padding_ff == 1) begin 
                 //ciphertext_valid = 1;
-                write_en = 1;
+                write_en[0] = 1;
                 sel_absorb_data = 1;
 
                 extra_padding_load = 1; //Metto a 0 il flag ho fatto il padding extra
@@ -473,7 +537,7 @@ always_comb begin
 
             end else begin
                 ciphertext_valid = 1;
-                write_en = 1;
+                write_en[0] = 1;
                 sel_absorb_data = 1;
                 last_block_process_load  = 1; //0 se non è l'ultimo blocco 1 altrimenti
 
@@ -516,12 +580,12 @@ always_comb begin
         PROCESS_MSG_DIFFUSE: begin
             sel_masked_round = 0;
             number_bits =  NUMBER_BIT_NOMASK[$clog2(NUMBER_BIT_MASK+1)-1:0] ; // numero shift per processare tutti i bit
-            write_en = 1;
+            write_en[0] = 1;
             round_counter_enable = 1;
         end
 
         PROCESS_MSG_DIFFUSE_LAST: begin
-            write_en = 1;
+            write_en[0] = 1;
             round_counter_enable = 1;
             sel_masked_round = 0;
             if (extra_padding_ff == 1) begin
@@ -534,6 +598,13 @@ always_comb begin
         end
 
         FINALIZATION_SHIFT: begin
+
+            if (round_counter == 0) begin
+                sel_first_round = 1'b1;
+            end else begin
+                sel_first_round = 1'b0;
+            end
+
             number_bits = NUMBER_BIT_MASK[$clog2(NUMBER_BIT_MASK+1)-1:0];
             shift_en = 1;
             shift_type = 1; // shift 1
@@ -546,6 +617,13 @@ always_comb begin
         end
 
         FINALIZATION_SHIFT_LAST: begin
+
+            if (round_counter == 0) begin
+                sel_first_round = 1'b1;
+            end else begin
+                sel_first_round = 1'b0;
+            end
+
             number_bits = NUMBER_BIT_MASK[$clog2(NUMBER_BIT_MASK+1)-1:0];
             last_cycle = 1;
             shift_en = 1;
@@ -558,13 +636,14 @@ always_comb begin
         end
 
         FINALIZATION_DIFFUSE: begin
+            if (round_counter == 0) begin
+                sel_first_round = 1'b1;
+            end else begin
+                sel_first_round = 1'b0;
+            end
+
             number_bits = NUMBER_BIT_MASK[$clog2(NUMBER_BIT_MASK+1)-1:0];
-            //if (round_counter == number_round - 1) begin
-            //    xor_signal = reg_key2_out;
-            //    sel_mux_linear_diffusion_out_x4 = 1;
-            //    sel_mux_linear_diffusion_out_x3 = 1;
-            //end
-            write_en = 1;
+            write_en = '1;
             round_counter_enable = 1;
             if (round_counter == number_round - 1)
                 tag_valid = 1;
