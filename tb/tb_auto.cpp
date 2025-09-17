@@ -13,7 +13,7 @@
 //definizione dei parameter:
 #define d 2
 #define COL_SIZE 5
-#define PAR 1
+#define PAR 22
 #define WIDTH_RAND (d * COL_SIZE * PAR)  // 110
 #define WIDTH_RAND_SBOX (d*(d+1)/2)
 

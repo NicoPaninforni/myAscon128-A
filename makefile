@@ -2,14 +2,16 @@
 # ----- CONFIGURATION ----- #
 #############################
 
-# General configuration
-MAKE               = make
-BUILD_DIR         ?= $(realpath .)/build
-CORE_NAME         ?= myascon:ascon_top:1.0.0
+MAKE                = make
+BUILD_DIR          ?= $(realpath .)/build
+CORE_NAME          ?= myascon:ascon_top:1.0.0
 
-# Get the absolute path
+# Path assoluto della repo corrente (dove sta il .core)
 mkfile_path := $(shell dirname "$(realpath $(firstword $(MAKEFILE_LIST)))")
 $(info $$ You are executing from: $(mkfile_path))
+
+# Fusesoc sempre vincolato alla directory corrente
+FUSESOC := fusesoc --cores-root $(mkfile_path)
 
 #######################
 # ----- TARGETS ----- #
@@ -31,7 +33,6 @@ print_targets:
 	@echo "  make clean                   → pulizia"
 	@echo ""
 
-
 # Target 1 - Simulazione
 .PHONY: simulation_build
 simulation_build: .check-fusesoc
@@ -39,16 +40,16 @@ simulation_build: .check-fusesoc
 	rm -rf $(BUILD_DIR)/myascon_ascon_top_1.0.0_0
 	rm -rf ~/.cache/fusesoc
 	@echo "👉 Avvio build simulazione..."
-	fusesoc run --target=simulation --setup $(CORE_NAME)
+	$(FUSESOC) run --target=simulation --setup $(CORE_NAME)
+	$(FUSESOC) run --target=simulation --build $(CORE_NAME)
 	@echo "✅ Build simulazione completata."
 
 .PHONY: simulation_run
 simulation_run: .check-fusesoc
 	@echo "👉 Avvio simulazione..."
-	fusesoc run --target=simulation $(CORE_NAME)
+	$(FUSESOC) run --target=simulation --run $(CORE_NAME)
 	@echo "✅ Simulazione completata."
 
-.PHONY: simulation_verify
 .PHONY: simulation_verify
 simulation_verify:
 	@echo "👉 Verifica rispetto al golden model..."
@@ -66,12 +67,11 @@ simulation_verify:
 simulation: simulation_build simulation_run simulation_verify
 	@echo "🎉 Simulazione completa terminata con successo!"
 
-
 # Target 2 - Sintesi con Design Compiler
 .PHONY: synthesis
 synthesis: .check-dc
 	@echo "Avvio sintesi con Design Compiler..."
-	fusesoc run --target=synthesis myascon:ascon_top:1.0.0
+	$(FUSESOC) run --target=synthesis $(CORE_NAME)
 	@echo "✅ Sintesi completata."
 	@$(MAKE) update_netlist
 	@$(MAKE) update_synth_reports
@@ -86,19 +86,16 @@ update_netlist:
 .PHONY: update_synth_reports
 update_synth_reports:
 	@echo "Aggiorno report di sintesi..."
-	mkdir -p synth/report
-	rsync -av --delete $(BUILD_DIR)/myascon_ascon_top_1.0.0_0/synthesis-design_compiler/report/ synth/report/
+	mkdir -p synth/report/new_report
+	rsync -av --delete $(BUILD_DIR)/myascon_ascon_top_1.0.0_0/synthesis-design_compiler/report/ synth/report/new_report/
 	@echo "✅ Report aggiornati."
 
-
-
-# Target 3 - Simulazione post-sintesi (placeholder)
+# Target 3 - Simulazione post-sintesi
 .PHONY: post_synth_sim
 post_synth_sim: .check-fusesoc update_netlist
 	@echo "Avvio simulazione post-sintesi..."
-	fusesoc run --target=postsynth_simulation $(CORE_NAME)
+	$(FUSESOC) run --target=postsynth_simulation $(CORE_NAME)
 	@echo "✅ Post-synthesis sim completata."
-
 
 # Target 4 - Pulizia
 .PHONY: clean
@@ -113,9 +110,7 @@ clean:
 all: synthesis post_synth_sim
 	@echo "Flow completo terminato con successo!"
 
-
 # Utilities
-# ---------
 .PHONY: .check-fusesoc
 .check-fusesoc:
 	@if ! command -v fusesoc >/dev/null 2>&1; then \

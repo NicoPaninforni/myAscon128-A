@@ -74,12 +74,10 @@ set_property PACKAGE_PIN A5 [get_ports usb_trigger]
 
 
 create_clock -period 10.000 -name usb_clk -waveform {0.000 5.000} [get_nets usb_clk]
-create_clock -period 10.000 -name tio_clkin -waveform {0.000 5.000} [get_nets tio_clkin]
+create_clock -period 10.000 -name tio_clkin -waveform {0.000 5.000} [get_ports tio_clkin]
 create_clock -period 10.000 -name pll_clk1 -waveform {0.000 5.000} [get_nets pll_clk1]
 
-set_clock_groups -asynchronous \
-                 -group [get_clocks usb_clk ] \
-                 -group [get_clocks {tio_clkin pll_clk1}]
+set_clock_groups -asynchronous -group [get_clocks usb_clk] -group [get_clocks {tio_clkin pll_clk1}]
 
 # both input clocks have same properties so there is no point in doing timing analysis for both:
 set_case_analysis 1 [get_pins U_clocks/CCLK_MUX/S]
@@ -114,4 +112,5 @@ set_property CONFIG_VOLTAGE 3.3 [current_design]
 
 set_property BITSTREAM.CONFIG.USR_ACCESS TIMESTAMP [current_design]
 set_property BITSTREAM.GENERAL.COMPRESS TRUE [current_design]
+
 

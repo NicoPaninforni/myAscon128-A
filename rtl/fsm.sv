@@ -99,7 +99,7 @@ typedef enum logic [4:0] {
     DONE
 } state_t;
 
-(* mark_debug = "true" *) state_t current_state;
+/*(* mark_debug = "true" *)*/ state_t current_state;
 state_t next_state;
 
 

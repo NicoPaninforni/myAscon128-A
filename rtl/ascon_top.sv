@@ -124,10 +124,11 @@ module ascon_top (
 
     
     //segnali per LFSR:
+    
     logic [RAND_WIDTH-1:0] lfsr_out; //output dell'LFSR
     logic [LFSR_WIDTH-1:0] lfsr_state_in;
     logic [LFSR_WIDTH-1:0] lfsr_state_out;
-
+    
     // == istanzio LFSR (PRNG) ==
     lfsr lfst_inst (
         .data_in ({RAND_WIDTH{1'b0}}),
@@ -135,11 +136,12 @@ module ascon_top (
         .state_out   (lfsr_state_out),
         .data_out    (lfsr_out)
     );
-
     //segnali di randomicità :
     logic [d*COL_SIZE*PAR-1:0] random_masks; //maschere casuali per la creazione delle shares
-    logic [(d+1)*d/2-1:0] random_masks_sbox; //maschere casuali per la s-box
 
+    /* verilator lint_off UNUSED */ //Per il changing of the guards non le utilizzo
+    logic [(d+1)*d/2-1:0] random_masks_sbox; //maschere casuali per la s-box
+    /* verilator lint_on UNUSED */
     assign random_masks = lfsr_out[0+:d*COL_SIZE*PAR]; //prendo i primi d*COL_SIZE*PAR bit dell'LFSR per lo share-creator
     assign random_masks_sbox = lfsr_out[d*COL_SIZE*PAR+:((d+1)*d/2)]; //prendo i successivi (d+1)*d/2 bit dell'LFSR per s-box
 
@@ -167,7 +169,6 @@ module ascon_top (
     `endif
 
 
-    
     // === Istanzio fsm === (Zamboni non sarebbe contento)
     fsm mealy_fsm (
         //Input:
@@ -214,7 +215,7 @@ module ascon_top (
             .last_cycle_sipo(last_cycle_sipo)
         `endif
     );
-    
+
     //Segnali per lo state_register: 
     logic [STATE_WIDTH-1:0] state_reg_in_shares [d:0]; //input del registro di stato
     logic [SHIFT_PAR_D_PLUS_1*COL_SIZE-1:0] state_reg_out_shiftdplus1_shares [d:0];  //uscita shift = parallelismo*(d+1)
@@ -379,10 +380,37 @@ module ascon_top (
 
             // Se sel_masked_round è attivo, ho solo un'uscita di PAR bit che mi interessa dallo status register 
             // Altrimenti, leggo (d+1)*PAR bit ognuno dei quali deve ricevere una fetta diversa della RC
-            assign rc_block[i_input_net] = (sel_masked_round) 
-                ? round_constant_padded[unsigned'((bit_counter * PAR)) +: PAR]
-                : round_constant_padded[unsigned'((unsigned'((d+1)) * unsigned'(bit_counter) * PAR) + unsigned'((i_input_net * PAR))) +: PAR];
-
+            
+            /*assign rc_block[i_input_net] = (sel_masked_round) 
+                        ? round_constant_padded[unsigned'((bit_counter * PAR)) +: PAR]
+                        : round_constant_padded[unsigned'((unsigned'((d+1)) * unsigned'(bit_counter) * PAR) + unsigned'((i_input_net * PAR))) +: PAR];
+            */
+            localparam int BIT_COUNTER_MAX_FULL = NUMBER_BIT_MASK - 1;
+            localparam [$clog2(NUMBER_BIT_MASK+1)-1:0]  BIT_COUNTER_MAX = BIT_COUNTER_MAX_FULL[$clog2(NUMBER_BIT_MASK+1)-1:0];
+            /*always_comb begin
+                logic [PAR-1:0] rc_block_temp;
+                if (bit_counter <  BIT_COUNTER_MAX) begin //NOTA QUESTO IF NON C'ERA ERA PER TOGLIERE DELLE X
+                    assign rc_block_temp = (sel_masked_round) 
+                        ? round_constant_padded[unsigned'((bit_counter * PAR)) +: PAR]
+                        : round_constant_padded[unsigned'((unsigned'((d+1)) * unsigned'(bit_counter) * PAR) + unsigned'((i_input_net * PAR))) +: PAR];
+                end else begin
+                    assign rc_block_temp = '0;
+                end
+                rc_block[i_input_net] = rc_block_temp;
+            end */
+            always_comb begin
+                logic [PAR-1:0] rc_block_temp;
+                if (bit_counter < BIT_COUNTER_MAX) begin
+                    if (sel_masked_round) begin
+                        rc_block_temp = round_constant_padded[(bit_counter * PAR) +: PAR];
+                    end else begin
+                        rc_block_temp = round_constant_padded[(((d+1) * bit_counter * PAR) + (i_input_net * PAR)) +: PAR];
+                    end
+                end else begin
+                    rc_block_temp = '0;
+                end
+                rc_block[i_input_net] = rc_block_temp;
+            end
             // === Applicazione della costante RC a x2, e propagazione degli altri stati ===
 
             // Caso normale: se PAR*(d+1) <= 64, possiamo usare tutti i bit direttamente
@@ -503,16 +531,29 @@ module ascon_top (
    
 
     //collego gli input alla s-box, vorrei usare il changing of the guards:
-    //NOTA IL CHANGING OF THE GUARDS E' SUPPORTATO SOLO PER IL GRADO 2 (in questo codice)
+    //NOTA IL CHANGING OF THE GUARDS E' SUPPORTATO SOLO PER IL GRADO 1 e 2 (in questo codice)
     
     genvar p;
     generate
-        if (d == 11) begin : gen_cog //changing of the guards disabilitatio (d == 2)
+        if (d == 2) begin : gen_cog //changing of the guards disabilitatio (d == 2)
             
             for (p = 0; p < PAR; p++) begin : gen_sbox
                 // la fresh_r è corretta per il changing of the guards perchè i bit all'interno dello status reg sono già shiftati
                 logic [(d+1)*d/2-1:0] fresh_r;
                 assign fresh_r = { state_reg_out[(35+p)%64], state_reg_out[(37+p)%64], state_reg_out[(11+p)%64]  };
+                ascon_sbox_d2 u_sbox (
+                    .clk(clk),
+                    .x_in(sbox_input[p]),
+                    .fresh_r(fresh_r),
+                    .sel_masked_round(sel_masked_round),
+                    .x_out(sbox_output[p]),
+                    .x_out_noMask(sbox_output_unmasked[p])
+                );
+            end
+        end else if (d == 1) begin : gen_no_cog //changing of the guards disabilitatio (d == 1)
+            for (p = 0; p < PAR; p++) begin : gen_sbox
+                logic [(d+1)*d/2-1:0] fresh_r;
+                assign fresh_r = state_reg_out[(11+p)%64];
                 ascon_sbox_d2 u_sbox (
                     .clk(clk),
                     .x_in(sbox_input[p]),

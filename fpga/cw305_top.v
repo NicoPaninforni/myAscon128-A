@@ -116,6 +116,7 @@ module cw305_top #(
     wire crypt_clk;
 
     wire resetn = pushbutton; // resetn is active low, control[0] is used to reset the core
+    //wire resetn_hw = 1'b1;
     wire resetn_sw = ~control[0];
     wire reset = !resetn;
     wire reset_sw_i = !resetn_sw;
@@ -176,6 +177,7 @@ module cw305_top #(
     reg fsm_start;
     reg fsm_msg_eot;
     reg fsm_msg_select;
+    reg start_capture;
 
     assign msg_valid = fsm_msg_valid;
     assign msg_last = fsm_msg_last;
@@ -189,7 +191,13 @@ module cw305_top #(
     wire ready_tag, ready_for_data; 
     wire read_data_core;
     wire ciphertext_valid; 
-
+    /*
+    // ====== DEBUG PROBES — BEGIN ======
+    (* mark_debug = "true", keep = "true" *) reg         dbg_ciphertext_valid;
+    (* mark_debug = "true", keep = "true" *) reg [127:0]  dbg_ciphertext;
+    (* mark_debug = "true", keep = "true" *) reg [319:0]  dbg_state_reg;
+    // ====== DEBUG PROBES — END ======
+    */
     cw305_reg_ascon #(
        .pBYTECNT_SIZE           (pBYTECNT_SIZE),
        .pADDR_WIDTH             (pADDR_WIDTH),
@@ -285,7 +293,7 @@ assign crypt_busy = ascon_busy;
         .done               (ascon_done)    
     );
     assign crypt_done = ascon_done;
-    assign tio_trigger = ascon_load;
+    assign tio_trigger = start_capture;
 `else
     // divisione chiave e nonce
 wire [63:0] key2   = crypt_key[127:64];
@@ -328,7 +336,7 @@ ascon_top u_ascon_top (
 // Segnali di stato per CW305
 assign crypt_busy     = ~ready_for_data;
 assign crypt_stateout = ascon_state; // da leggere via USB
-assign tio_trigger    = fsm_start;
+assign tio_trigger    = start_capture;
 assign crypt_done = ascon_done;
 assign crypt_cipherout = ciphertext;
 
@@ -380,6 +388,7 @@ assign crypt_cipherout = ciphertext;
         fsm_msg_eot = 0; 
         fsm_start = 0;
         fsm_msg_select = 0;
+        start_capture = 0;
         case (state)
             IDLE: begin
                 //niente
@@ -390,6 +399,7 @@ assign crypt_cipherout = ciphertext;
             end
 
             PROCESS_AD: begin
+                start_capture = 1;
                 fsm_msg_valid = 1; // dati validi
                 fsm_msg_last = 1; // ultimo blocco se non ci sono byte validi
                 fsm_msg_eot = 0; // EOT se non ci sono byte validi
@@ -408,7 +418,29 @@ assign crypt_cipherout = ciphertext;
             end
         endcase
     end
+    /*
+    // ====== DEBUG CAPTURE - BEGIN ======
+    always @(posedge crypt_clk or negedge resetn or negedge resetn_sw) begin
+        if (!resetn || !resetn_sw) begin
+            dbg_ciphertext_valid <= 1'b0;
+            dbg_ciphertext       <= {128{1'b0}};
+            dbg_state_reg        <= {320{1'b0}};
+        end else begin
+            // catturo il flag ogni ciclo (comodissimo per il trigger dell'ILA)
+            dbg_ciphertext_valid <= ciphertext_valid;
+    
+            // snapshot del CT quando valido (evita impulsi persi)
+            if (ciphertext_valid)
+                dbg_ciphertext <= ciphertext;
+    
+            // snapshot continuo dello stato (utile per vedere evoluzione)
+            dbg_state_reg <= ascon_state;
+        end
+    end
+    // ====== DEBUG CAPTURE - END ====== */
+
 
 endmodule
+
 
 `default_nettype wire

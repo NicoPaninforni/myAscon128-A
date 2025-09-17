@@ -3,7 +3,7 @@ package ascon_params;
 
     // === Main parameters ===
     parameter int d          = 2;
-    parameter int PAR        = 1;
+    parameter int PAR        = 22;
     parameter int COL_SIZE   = 5;
     parameter int WORD_SIZE  = 64;
     parameter int STATE_WIDTH = 320;

@@ -3,3 +3,9 @@
 *.txt
 *.dat
 .obj_dir/
+build/
+*.rpt
+*.svf
+synth/
+*.csv
+fpga/tb/work/

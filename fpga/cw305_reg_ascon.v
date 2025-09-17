@@ -110,41 +110,7 @@ module cw305_reg_ascon #(
   wire                    reg_crypt_go_pulse_crypt;
   wire [7:0]              status_reg;
 
-  // Aggiunta di segnali per FIFO
-  reg [pCT_WIDTH-1:0] cipher_fifo [0:pPT_LENGTH-1];
-  reg [$clog2(pPT_LENGTH):0] fifo_wr_ptr = 0;
-  reg [$clog2(pPT_LENGTH):0] fifo_rd_ptr = 0;
-  reg [pCT_WIDTH-1:0] fifo_out_reg;
-  wire [pCT_WIDTH-1:0] debug_fifo_0 = cipher_fifo[0];
-  wire [pCT_WIDTH-1:0] debug_fifo_1 = cipher_fifo[1];
-
-
-  wire [$clog2(pPT_LENGTH+1)-1:0] fifo_count;
-  assign fifo_count = fifo_wr_ptr - fifo_rd_ptr;
-
-  /*
-  // Scrittura nella FIFO (clock crypto)
-  always @(posedge crypto_clk or posedge reset_i) begin
-    if (reset_i) begin
-      fifo_wr_ptr <= 0;
-    end else if (I_cipherout_valid && fifo_count < pPT_LENGTH) begin
-      cipher_fifo[fifo_wr_ptr] <= I_cipherout;
-      fifo_wr_ptr <= fifo_wr_ptr + 1;
-    end
-  end
-
-  // Lettura dalla FIFO (clock usb)
-  always @(posedge usb_clk or posedge reset_i) begin
-    if (reset_i) begin
-      fifo_rd_ptr <= 0;
-    end else if (reg_read && reg_addrvalid && reg_address == `REG_CRYPT_FIFO_DATA && fifo_count > 0) begin
-      fifo_out_reg <= cipher_fifo[fifo_rd_ptr];
-      fifo_rd_ptr <= fifo_rd_ptr + 1;
-    end
-  end */
-
-
-
+  
 
   reg done_latched, ready_tag_latched, cipherout_valid_latched, read_data_core_latched, busy_usb_latched;
   reg status_read_ack;
@@ -210,6 +176,7 @@ module cw305_reg_ascon #(
   (* ASYNC_REG = "TRUE" *)reg  [   pPT_WIDTH-1:0] reg_crypt_textin_crypt;
   (* ASYNC_REG = "TRUE" *)reg  [   pPT_WIDTH-1:0] reg_crypt_textin_buffer_msg_crypt; // Buffer for textin
   (* ASYNC_REG = "TRUE" *)reg  [  pTAG_WIDTH-1:0] reg_crypt_tagout_crypt;
+  (* ASYNC_REG = "TRUE" *) reg [pTAG_WIDTH-1:0] reg_crypt_tagout_usb;
   (* ASYNC_REG = "TRUE" *)reg  [pNONCE_WIDTH-1:0] reg_crypt_noncein_crypt;
   (* ASYNC_REG = "TRUE" *)reg  [   pPT_WIDTH-1:0] reg_crypt_textout_usb;
   (* ASYNC_REG = "TRUE" *)reg  [   pCT_WIDTH-1:0] reg_crypt_cipherout_usb;
@@ -255,9 +222,10 @@ module cw305_reg_ascon #(
   end
 `else
   always @(posedge usb_clk) begin
-    reg_crypt_cipherout_usb  <= reg_crypt_cipherout;
+    reg_crypt_tagout_usb     <= reg_crypt_tagout;
     reg_crypt_textout_usb    <= reg_crypt_textout;
     reg_crypt_stateout_usb   <= reg_crypt_stateout;
+    reg_crypt_cipherout_usb  <= reg_crypt_cipherout;
   end
   always @(posedge crypto_clk) begin
     reg_crypt_key_crypt     <= reg_crypt_key;
@@ -293,14 +261,12 @@ module cw305_reg_ascon #(
         `REG_CRYPT_TEXTIN:    reg_read_data = reg_crypt_textin[reg_bytecnt*8+:8];
         `REG_CRYPT_TEXTIN_BUFFER_MSG: reg_read_data = reg_crypt_textin_buffer_msg[reg_bytecnt*8+:8]; // Buffer for textin
         `REG_CRYPT_CIPHERIN:  reg_read_data = reg_crypt_cipherin[reg_bytecnt*8+:8];
-        `REG_CRYPT_TAGOUT:     reg_read_data = reg_crypt_tagout[reg_bytecnt*8+:8];
+        `REG_CRYPT_TAGOUT:     reg_read_data = reg_crypt_tagout_usb[reg_bytecnt*8+:8];
         `REG_CRYPT_NONCEIN:   reg_read_data = reg_crypt_noncein[reg_bytecnt*8+:8];
         `REG_CRYPT_TEXTOUT:   reg_read_data = reg_crypt_textout_usb[reg_bytecnt*8+:8];
         `REG_CRYPT_CIPHEROUT: reg_read_data = reg_crypt_cipherout_usb[reg_bytecnt*8+:8];
         `REG_CRYPT_STATEOUT:  reg_read_data = reg_crypt_stateout_usb[reg_bytecnt*8+:8];
         `REG_CONTROL:         reg_read_data = reg_control;
-        `REG_CRYPT_FIFO_DATA: reg_read_data = fifo_out_reg[reg_bytecnt*8 +: 8];
-        `REG_CRYPT_FIFO_CNT:  reg_read_data = fifo_count;
         `REG_VALID_BYTES_AD:  reg_read_data = reg_valid_bytes_ad[reg_bytecnt*8+:8];
         `REG_VALID_BYTES_MSG: reg_read_data = reg_valid_bytes_msg[reg_bytecnt*8+:8];
         `REG_BUILDTIME:       reg_read_data = buildtime[reg_bytecnt*8+:8];
@@ -329,10 +295,6 @@ module cw305_reg_ascon #(
       reg_crypt_noncein   <= 0;
       reg_valid_bytes_ad  <= 0;
       reg_valid_bytes_msg <= 0;
-      reg_crypt_cipherout <= 0;
-      reg_crypt_textout   <= 0;
-      reg_crypt_stateout  <= 0;
-      reg_crypt_tagout    <= 0;
     end else begin
       if (reg_addrvalid && reg_write) begin
         case (reg_address)
