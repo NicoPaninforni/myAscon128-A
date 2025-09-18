@@ -1,5 +1,0 @@
-# Tests output files
-outputs/*
-
-# Python cache
-configs/__pycache__/*
