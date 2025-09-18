@@ -5,6 +5,7 @@
 obj_dir/
 build/
 *.rpt
+.vscode/
 *.svf
 synth/
 *.csv
